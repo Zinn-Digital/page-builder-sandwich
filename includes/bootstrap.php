@@ -28,6 +28,20 @@ require_once __DIR__ . '/class-plugin.php';
 \ZinnDigital\PBS\Plugin::boot();
 
 /*
+ * The shared AI core (wp/packages/zinn-ai-core, rendered into ai-core/ by wp/bin/build-ai-core.php).
+ * If another plugin on the site carries its own copy, the copies agree on one settings screen and
+ * one set of keys by themselves; see ai-core/class-core.php.
+ */
+require_once __DIR__ . '/ai-core/load.php';
+\ZinnDigital\PBS\AiCore\Core::boot(
+	array(
+		'slug' => 'page-builder-sandwich',
+		'name' => 'Page Builder Sandwich',
+		'pro'  => static fn(): bool => pbsw_fs()->can_use_premium_code(),
+	)
+);
+
+/*
  * ⛔⛔ THE PREMIUM LAYER LOADS ONLY WHEN ITS FILE IS PRESENT AND THE LICENCE ALLOWS IT.
  *
  * The free package (house and licensing-service alike) drops the whole premium-only directory,
@@ -51,6 +65,8 @@ unset( $pbsw_premium_entry );
  * @return void
  */
 function pbsw_uninstall(): void {
+	// Leaves the shared AI keys alone while another plugin that uses them is still installed.
+	\ZinnDigital\PBS\AiCore\Core::uninstall( 'page-builder-sandwich' );
 	\ZinnDigital\PBS\Assets::remove_all();
 	delete_option( \ZinnDigital\PBS\Settings::OPTION );
 }
