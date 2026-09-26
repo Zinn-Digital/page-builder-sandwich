@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.0.1
+Stable tag: 6.0.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.0.2 =
+* AI core: when a provider's plan excludes a model, say so (instead of 'rate limited') and let Save and test fall through to a model the plan includes.
 
 = 6.0.1 =
 * Shared AI core: bring your own key for OpenAI, Anthropic, Gemini, Mistral, DeepSeek, OpenRouter or any OpenAI-compatible service; live model lists; signed recommended-models list; setup wizard with a test button; encrypted keys; clear error messages. Pro: usage and cost log, monthly limits, per-role permissions.
