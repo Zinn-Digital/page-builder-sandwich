@@ -1,0 +1,271 @@
+/*
+ * Sandwich Studio chrome. Logical properties only (RTL is built by wp-scripts as studio-rtl.css,
+ * and these rules need no flipping in the first place).
+ */
+
+// Full screen: WordPress's own admin chrome is hidden on this screen only.
+body.pbsw-studio-screen {
+	overflow: hidden;
+
+	#wpadminbar,
+	#adminmenumain,
+	#wpfooter,
+	#screen-meta-links,
+	#wpbody-content > :not(#pbsw-studio-root) {
+		display: none !important;
+	}
+
+	#wpcontent,
+	#wpbody-content {
+		margin-inline-start: 0;
+		padding: 0;
+	}
+}
+
+html.wp-toolbar:has(body.pbsw-studio-screen) {
+	padding-block-start: 0;
+}
+
+.pbsw-studio-root {
+	position: fixed;
+	inset: 0;
+	z-index: 100000;
+	background: #fff;
+}
+
+.pbsw-studio-loading {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	block-size: 100%;
+	margin: 0;
+}
+
+.pbsw-studio {
+	display: flex;
+	flex-direction: column;
+	block-size: 100%;
+	color: #1e1e1e;
+	font-size: 13px;
+}
+
+.pbsw-studio-header {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	min-block-size: 60px;
+	padding-inline: 8px;
+	border-block-end: 1px solid #e0e0e0;
+	background: #fff;
+	flex-wrap: wrap;
+
+	&__start,
+	&__center,
+	&__end {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+	}
+
+	&__center {
+		flex: 1 1 auto;
+		justify-content: center;
+		min-inline-size: 0;
+		gap: 12px;
+	}
+
+	&__title {
+		inline-size: min(360px, 100%);
+		padding-block: 6px;
+		padding-inline: 8px;
+		border: 1px solid transparent;
+		border-radius: 2px;
+		font-size: 14px;
+		font-weight: 500;
+		text-align: center;
+		background: #f0f0f0;
+
+		&:hover {
+			border-color: #949494;
+		}
+
+		&:focus {
+			border-color: var(--wp-admin-theme-color, #3858e9);
+			box-shadow: 0 0 0 1px var(--wp-admin-theme-color, #3858e9);
+			outline: 2px solid transparent;
+			background: #fff;
+		}
+	}
+
+	&__devices {
+		display: flex;
+		gap: 2px;
+	}
+
+	&__state {
+		color: #50575e;
+		white-space: nowrap;
+		margin-inline-end: 4px;
+	}
+
+	&__status {
+		padding-block: 2px;
+		padding-inline: 8px;
+		border-radius: 2px;
+		background: #f0f0f0;
+		color: #1e1e1e;
+		white-space: nowrap;
+	}
+}
+
+.pbsw-studio-safe-mode.components-notice,
+.pbsw-studio-lock.components-notice {
+	margin: 0;
+}
+
+.pbsw-studio-body {
+	display: flex;
+	flex: 1 1 auto;
+	min-block-size: 0;
+}
+
+.pbsw-studio-left,
+.pbsw-studio-right {
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 auto;
+	inline-size: 300px;
+	background: #fff;
+	overflow: auto;
+}
+
+.pbsw-studio-left {
+	inline-size: 350px;
+	border-inline-end: 1px solid #e0e0e0;
+
+	&__content {
+		flex: 1 1 auto;
+		min-block-size: 0;
+		overflow: auto;
+		position: relative;
+
+		.block-editor-inserter__main-area,
+		.block-editor-inserter__menu {
+			block-size: 100%;
+		}
+	}
+}
+
+.pbsw-studio-right {
+	border-inline-start: 1px solid #e0e0e0;
+}
+
+.pbsw-studio-panel__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-block: 8px;
+	padding-inline: 16px 8px;
+	border-block-end: 1px solid #e0e0e0;
+
+	h2 {
+		margin: 0;
+		font-size: 13px;
+		font-weight: 600;
+	}
+}
+
+.pbsw-studio-canvas {
+	flex: 1 1 auto;
+	min-inline-size: 0;
+	display: flex;
+	justify-content: center;
+	background: #ddd;
+	overflow: auto;
+}
+
+.pbsw-studio-device {
+	inline-size: 100%;
+	block-size: 100%;
+	background: #fff;
+	transition: inline-size 0.2s ease-out;
+
+	&.is-tablet,
+	&.is-mobile {
+		margin-block: 24px;
+		block-size: calc(100% - 48px);
+		box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		transition: none;
+	}
+}
+
+.pbsw-studio-footer {
+	min-block-size: 24px;
+	padding-inline: 8px;
+	border-block-start: 1px solid #e0e0e0;
+	background: #fff;
+}
+
+.pbsw-studio-revisions {
+	&__list {
+		margin: 0;
+		padding: 8px;
+		list-style: none;
+
+		li {
+			margin: 0;
+		}
+	}
+
+	&__item.components-button {
+		inline-size: 100%;
+		justify-content: flex-start;
+	}
+}
+
+.pbsw-studio-muted {
+	padding: 16px;
+	color: #50575e;
+}
+
+.pbsw-studio-revision-preview__canvas {
+	max-block-size: 60vh;
+	overflow: auto;
+	border: 1px solid #e0e0e0;
+	margin-block-end: 16px;
+}
+
+.pbsw-studio-recovery__actions {
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+}
+
+.pbsw-studio-help__list {
+	margin: 0;
+}
+
+.pbsw-studio-help__row {
+	display: flex;
+	gap: 16px;
+	padding-block: 6px;
+	border-block-end: 1px solid #f0f0f0;
+
+	dt {
+		flex: 0 0 140px;
+	}
+
+	dd {
+		margin: 0;
+	}
+}
+
+.pbsw-studio-snackbars {
+	position: fixed;
+	inset-block-end: 32px;
+	inset-inline-start: 16px;
+	z-index: 100001;
+}

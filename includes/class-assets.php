@@ -37,8 +37,39 @@ final class Assets {
 
 	/** Front-end sources, keyed by the name callers use. */
 	private const SOURCES = array(
-		'front.css' => 'assets/front.css',
+		'front.css'  => 'assets/front.css',
+		// Legacy (5.x) compatibility rules, enqueued only for posts that still need them (Assets\Legacy).
+		'legacy.css' => 'assets/legacy.css',
+		// Legacy (5.x) front-end behaviour, enqueued only for posts that need it (Assets\Legacy_Script).
+		'legacy.js'  => 'assets/legacy.js',
 	);
+
+	/*
+	 * ── P2 performance engine (lane L08 worker W7) ─────────────────────────────────────────
+	 * Sources registered at load time by the perf layer (includes/assets/perf/): one stylesheet
+	 * per block (pbs-p1) and the view script modules of interactive blocks (pbs-p3). Kept out of
+	 * SOURCES so the two lists merge without touching each other.
+	 */
+
+	/**
+	 * Sources added with add_source().
+	 *
+	 * @var array<string, string>
+	 */
+	private static array $added = array();
+
+	/**
+	 * Register a front-end source (a path inside this plugin) under a key.
+	 *
+	 * @param string $key      The key callers use, e.g. `block/row.css`.
+	 * @param string $relative Path relative to the plugin directory.
+	 * @return void
+	 */
+	public static function add_source( string $key, string $relative ): void {
+		self::$added[ $key ] = $relative;
+	}
+
+	// ── end P2 ─────────────────────────────────────────────────────────────────────────────
 
 	/** The token a source uses where the class prefix belongs. */
 	private const PREFIX_TOKEN = '__PREFIX__';
@@ -73,6 +104,7 @@ final class Assets {
 		$manifest = array(
 			'version' => PBSW_VERSION,
 			'prefix'  => $prefix,
+			'keys'    => self::keys_signature(),
 			'files'   => array(),
 		);
 
@@ -85,7 +117,7 @@ final class Assets {
 			$url    = trailingslashit( (string) $uploads['baseurl'] ) . $folder;
 
 			if ( wp_mkdir_p( $dir ) ) {
-				foreach ( array_keys( self::SOURCES ) as $key ) {
+				foreach ( array_keys( self::sources() ) as $key ) {
 					$body = self::source( $key, $prefix );
 					if ( null === $body ) {
 						continue;
@@ -111,7 +143,7 @@ final class Assets {
 	/**
 	 * Enqueue a front-end stylesheet under a neutral handle, from the published copy or inline.
 	 *
-	 * @param string $key A key of self::SOURCES.
+	 * @param string $key A key of self::sources().
 	 * @return void
 	 */
 	public static function enqueue_style( string $key ): void {
@@ -129,8 +161,11 @@ final class Assets {
 			return;
 		}
 
+		// ⛔ The published copy is used only when it IS this body (its name is the body's hash):
+		// the manifest is keyed on version + prefix, so a build that changed a stylesheet without
+		// a version bump went on serving the old file (measured in the visual-diff loop).
 		$url = self::published_url( $key );
-		if ( null !== $url ) {
+		if ( null !== $url && str_starts_with( basename( (string) wp_parse_url( $url, PHP_URL_PATH ) ), substr( sha1( $body ), 0, 12 ) . '.' ) ) {
 			wp_enqueue_style( $handle, $url, array(), $hash );
 			return;
 		}
@@ -141,14 +176,63 @@ final class Assets {
 	}
 
 	/**
+	 * Enqueue a front-end script under a neutral handle, deferred in the footer, from the
+	 * published copy or inline.
+	 *
+	 * @param string $key    A key of self::sources().
+	 * @param string $before JavaScript printed before it (configuration), or ''.
+	 * @return string|null The handle, or null when the source is unknown.
+	 */
+	public static function enqueue_script( string $key, string $before = '' ): ?string {
+		$prefix = Settings::prefix();
+		$body   = self::source( $key, $prefix );
+		if ( null === $body ) {
+			return null;
+		}
+
+		// Printed as the element id `<handle>-js`: the neutral prefix and a content hash.
+		$hash   = substr( sha1( $body ), 0, 8 );
+		$handle = $prefix . '-' . $hash;
+		if ( wp_script_is( $handle, 'enqueued' ) ) {
+			return $handle;
+		}
+
+		$url = self::published_url( $key );
+		if ( null !== $url ) {
+			wp_enqueue_script(
+				$handle,
+				$url,
+				array(),
+				$hash,
+				array(
+					'in_footer' => true,
+					'strategy'  => 'defer',
+				)
+			);
+		} else {
+			wp_register_script( $handle, false, array(), $hash, array( 'in_footer' => true ) );
+			wp_enqueue_script( $handle );
+			wp_add_inline_script( $handle, $body );
+		}
+		if ( '' !== $before ) {
+			// An inline script placed BEFORE keeps the deferred loading strategy (only `after` drops it).
+			wp_add_inline_script( $handle, $before, 'before' );
+		}
+
+		return $handle;
+	}
+
+	/**
 	 * The published URL for a source, if a current copy exists.
 	 *
-	 * @param string $key A key of self::SOURCES.
+	 * @param string $key A key of self::sources().
 	 * @return string|null
 	 */
 	public static function published_url( string $key ): ?string {
 		$manifest = self::manifest();
-		if ( ! self::is_current( $manifest ) ) {
+		// Version and prefix, not the key set (P2): a source registered after the last publish has
+		// no copy yet and falls back alone; every other source keeps its static file.
+		if ( PBSW_VERSION !== ( $manifest['version'] ?? null ) || Settings::prefix() !== ( $manifest['prefix'] ?? null ) ) {
 			return null;
 		}
 		$file = $manifest['files'][ $key ] ?? null;
@@ -169,21 +253,51 @@ final class Assets {
 	/**
 	 * A source's contents with the prefix token replaced.
 	 *
-	 * @param string $key    A key of self::SOURCES.
+	 * @param string $key    A key of self::sources().
 	 * @param string $prefix The class prefix.
 	 * @return string|null Null when the key or file is unknown.
 	 */
 	public static function source( string $key, string $prefix ): ?string {
-		if ( ! isset( self::SOURCES[ $key ] ) ) {
+		$sources = self::sources();
+		if ( ! isset( $sources[ $key ] ) ) {
 			return null;
 		}
-		$path = PBSW_DIR . self::SOURCES[ $key ];
+		$path = PBSW_DIR . $sources[ $key ];
 		if ( ! is_readable( $path ) ) {
 			return null;
 		}
 		$body = file_get_contents( $path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- a file inside this plugin, never a URL.
 
 		return false === $body ? null : str_replace( self::PREFIX_TOKEN, $prefix, $body );
+	}
+
+	/**
+	 * Every front-end source: this file's, the ones the performance layer registers with
+	 * add_source() (per-block CSS, view modules), and any the premium layer adds for itself through
+	 * `pbsw_asset_sources` (its files live in its own directory, which only the premium package
+	 * ships). Only a plain relative `.css`/`.js` path inside the plugin is accepted, under a key of
+	 * lowercase segments (`legacy.css`, `block/row.css`, `module/tabs.js`).
+	 *
+	 * ⛔ One method, on purpose: two branches each added a `sources()` here and git merged both
+	 * without a conflict, which is a fatal "cannot redeclare" on every page load.
+	 *
+	 * @return array<string, string>
+	 */
+	public static function sources(): array {
+		$sources = apply_filters( 'pbsw_asset_sources', array_merge( self::$added, self::SOURCES ) );
+		$out     = array();
+		foreach ( is_array( $sources ) ? $sources : array() as $key => $path ) {
+			if (
+				is_string( $key ) && is_string( $path )
+				&& 1 === preg_match( '#^[a-z0-9-]+(?:/[a-z0-9-]+)*\.(?:css|js)$#', $key )
+				&& 1 === preg_match( '#^[A-Za-z0-9_/-]+\.(?:css|js)$#', $path )
+				&& ! str_contains( $path, '..' )
+			) {
+				$out[ $key ] = $path;
+			}
+		}
+
+		return $out;
 	}
 
 	/**
@@ -205,7 +319,20 @@ final class Assets {
 	 */
 	private static function is_current( array $manifest ): bool {
 		return PBSW_VERSION === ( $manifest['version'] ?? null )
-			&& Settings::prefix() === ( $manifest['prefix'] ?? null );
+			&& Settings::prefix() === ( $manifest['prefix'] ?? null )
+			&& self::keys_signature() === ( $manifest['keys'] ?? null );
+	}
+
+	/**
+	 * A signature of the source list, so adding a source republishes (P2).
+	 *
+	 * @return string
+	 */
+	private static function keys_signature(): string {
+		$keys = array_keys( self::sources() );
+		sort( $keys );
+
+		return substr( sha1( implode( '|', $keys ) ), 0, 12 );
 	}
 
 	/**

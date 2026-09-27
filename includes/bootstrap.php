@@ -24,6 +24,9 @@ require_once __DIR__ . '/class-freemius-i18n.php';
 require_once __DIR__ . '/class-rest.php';
 require_once __DIR__ . '/class-admin.php';
 require_once __DIR__ . '/class-plugin.php';
+require_once __DIR__ . '/core/load.php';
+require_once __DIR__ . '/migrate/load.php';
+require_once __DIR__ . '/assets/load.php';
 
 \ZinnDigital\PBS\Plugin::boot();
 

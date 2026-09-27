@@ -12,6 +12,7 @@ import {
 } from '@wordpress/components';
 
 import About from './About';
+import LegacyContent from './LegacyContent';
 import { isValidPrefix } from './prefix';
 
 /**
@@ -156,6 +157,9 @@ export default function App( { data } ) {
 							</p>
 						) }
 					</PanelBody>
+				) }
+				{ data.migrationPath && (
+					<LegacyContent path={ data.migrationPath } />
 				) }
 				<About
 					version={ data.version }

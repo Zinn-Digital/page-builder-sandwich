@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/row",
+	"title": "Row",
+	"category": "design",
+	"icon": "columns",
+	"description": "A row of columns. Stays readable if the plugin is ever turned off.",
+	"keywords": [
+		"row",
+		"columns",
+		"layout"
+	],
+	"textdomain": "page-builder-sandwich",
+	"allowedBlocks": [
+		"pbs/column"
+	],
+	"attributes": {
+		"style": {
+			"type": "string",
+			"default": ""
+		},
+		"width": {
+			"type": "string",
+			"enum": [
+				"",
+				"full-width",
+				"full-width-retain-content"
+			],
+			"default": ""
+		},
+		"legacyClass": {
+			"type": "string",
+			"default": ""
+		},
+		"legacyData": {
+			"type": "object"
+		},
+		"legacy": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-core-editor"
+}

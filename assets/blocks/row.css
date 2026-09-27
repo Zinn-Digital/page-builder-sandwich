@@ -1,0 +1,33 @@
+/*
+ * Front-end styles for the row block. `__PREFIX__` is replaced with the neutral class prefix
+ * (default `zd`) when the file is published; logical properties only. Loaded only on a page
+ * where this block renders, and folded into that page's compiled stylesheet.
+ */
+.__PREFIX__-row {
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+
+/*
+ * Full width: the row breaks out of the content column to the viewport's edges. Doubled class so
+ * it wins over any single-class margin (legacy compat's row margin included) whatever order the
+ * stylesheets print in. NOT !important: a converted legacy row is positioned by the legacy
+ * behaviour script's inline styles (measured against the body, as 5.x did), which must win; the
+ * converter splits a legacy row's `margin` shorthand so no inline side margin pins it here
+ * (measured: a row with `margin: 0px` sat 330px off the viewport's edge). "Retain content" keeps
+ * the row's content at the column's width via its padding — NOT !important: that is how legacy's
+ * script set it (inline, normal priority), so legacy's own phone-width `!important` row padding
+ * still wins below 900px, as it did (measured at 390px).
+ */
+.__PREFIX__-row--full-width.__PREFIX__-row--full-width,
+.__PREFIX__-row--full-width-retain-content.__PREFIX__-row--full-width-retain-content {
+	position: relative;
+	inline-size: 100vw;
+	max-inline-size: 100vw;
+	margin-inline: calc(50% - 50vw);
+}
+
+.__PREFIX__-row--full-width-retain-content.__PREFIX__-row--full-width-retain-content {
+	padding-inline: calc(50vw - 50%);
+}

@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.0.2
+Stable tag: 6.1.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,12 @@ Nothing is sent until you opt in on the screen shown after activation, or activa
 * Terms: https://freemius.com/terms/
 * Privacy policy: https://freemius.com/privacy/
 
+Google Fonts are hosted on your own site. Only when an administrator adds a font (through the plugin's font endpoint in wp-admin, or `wp pbsw fonts download`), the plugin downloads that font family's stylesheet from `https://fonts.googleapis.com` and its font files from `https://fonts.gstatic.com`, sending nothing about your site or visitors beyond the request itself. The files are stored in your uploads folder and your visitors load them from your site; the plugin never contacts Google when a page is viewed.
+
+* Service: https://fonts.google.com
+* Terms: https://developers.google.com/terms
+* Privacy policy: https://policies.google.com/privacy
+
 AI features use the AI provider you choose, with your own API key. Nothing is sent to any AI provider until you add a key under Settings → AI providers and use an AI feature. When you do, the text the feature needs (for example, the content being written or translated) and your key are sent to that one provider, and to no one else. Keys are stored encrypted in your database and are never sent to Zinn Digital®. The "Save and test" button sends one short test request to the provider.
 
 * OpenAI: https://api.openai.com/v1 (terms: https://openai.com/policies/services-agreement/, privacy policy: https://openai.com/policies/privacy-policy/)
@@ -75,6 +81,14 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.1.0 =
+* Pages are stored as standard WordPress blocks, so they stay readable if the plugin is ever switched off, and work in the normal block editor too.
+* Pages built with older versions are upgraded automatically in the background after updating, with a backup of every page you can restore (Settings > Legacy content, or `wp pbs migrate`). Older pages keep their look, their effects and their newsletter forms.
+* Sandwich Studio: a full-screen visual editor with layers, drag and drop, undo history, a command palette (Ctrl/Cmd+K), autosave with crash recovery, revisions, copy and paste of styles between sites, and a safe mode for finding plugin conflicts.
+* Faster pages: styles and scripts load only on pages that use them, one cached stylesheet per page, no jQuery, images reserve their space, the main image loads first, Google Fonts are hosted on your own site, and LiteSpeed Cache, WP Rocket, W3 Total Cache and Zinn® Cache are cleared when you publish.
+* Add-ons written for the old developer API keep working.
+* Security: every action checks the user's permission for the exact page it changes.
 
 = 6.0.2 =
 * AI core: when a provider's plan excludes a model, say so (instead of 'rate limited') and let Save and test fall through to a model the plan includes.
