@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.6.0
+Stable tag: 6.7.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -115,6 +115,10 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.7.0 =
+* Admin screens: screen readers see one page structure (the admin shell no longer adds a second main area inside WordPress's own).
+* Admin screens: dark mode themes the settings panels and links, so every label and description is readable.
 
 = 6.6.0 =
 * New admin screens: overview, setup wizard, plans and licence, add-ons, and help and support from inside the plugin.
