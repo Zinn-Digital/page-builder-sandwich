@@ -53,6 +53,24 @@ require_once __DIR__ . '/ai-core/load.php';
 );
 
 /*
+ * The shared admin kit (wp/packages/zinn-admin-kit, rendered into admin-kit/ by
+ * wp/bin/build-admin-kit.php): the shell around the settings screen — overview, plans, add-ons,
+ * help and support, the setup wizard. Our own screens only; it adds nothing to other admin pages.
+ */
+require_once __DIR__ . '/admin-kit/load.php';
+\ZinnDigital\PBS\AdminKit\Kit::boot(
+	array(
+		'slug'           => 'page-builder-sandwich',
+		'name'           => 'Page Builder Sandwich',
+		'version'        => PBSW_VERSION,
+		'fs'             => 'pbsw_fs',
+		'menu_slug'      => \ZinnDigital\PBS\Admin::SLUG,
+		'rest_namespace' => \ZinnDigital\PBS\Rest::NAMESPACE,
+		'file'           => PBSW_FILE,
+	)
+);
+
+/*
  * ⛔⛔ THE PREMIUM LAYER LOADS ONLY WHEN ITS FILE IS PRESENT AND THE LICENCE ALLOWS IT.
  *
  * The free package (house and licensing-service alike) drops the whole premium-only directory,
