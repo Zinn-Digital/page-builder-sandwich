@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/container",
+	"title": "Container",
+	"category": "pbs-design",
+	"icon": "grid-view",
+	"description": "A box that lays out the blocks inside it with flexbox or a grid. Nest containers to build any layout. Stays readable if the plugin is ever turned off.",
+	"keywords": [
+		"container",
+		"box",
+		"grid",
+		"flexbox",
+		"columns"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"tag": {
+			"type": "string",
+			"enum": [
+				"section",
+				"div",
+				"header",
+				"footer",
+				"article",
+				"aside",
+				"main",
+				"nav"
+			],
+			"default": "div"
+		},
+		"width": {
+			"type": "string",
+			"enum": [
+				"full",
+				"boxed"
+			],
+			"default": "full"
+		},
+		"link": {
+			"type": "object"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

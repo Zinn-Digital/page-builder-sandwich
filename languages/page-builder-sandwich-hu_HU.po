@@ -92,6 +92,7 @@ msgstr "Kód és CSS"
 
 #: includes/ai-core/class-admin.php:115
 #: includes/class-admin.php:72
+#: includes/design/globals/class-site-design.php:81
 #: includes/pro__premium_only/workflow/class-network.php:221
 msgid "Sorry, you are not allowed to access this page."
 msgstr "Sajnáljuk, de nincs jogosultsága az oldal megtekintéséhez."
@@ -220,6 +221,7 @@ msgstr "Teszt"
 #: includes/ai-core/class-admin.php:426
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
+#: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Eltávolítás"
 
@@ -695,6 +697,7 @@ msgstr "Csatolás"
 
 #. zinn-i18n: human translation — the machine translator refused this string
 #: includes/assets/class-legacy-script.php:177
+#: src/design/pro__premium_only/effects/panel.js:374
 msgid "Background video"
 msgstr "Háttérvideó"
 
@@ -728,11 +731,44 @@ msgstr "A betűtípusfájlokat nem sikerült letölteni vagy menteni. Ellenőriz
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "A betűtípus-stíluslapot nem sikerült menteni. Ellenőrizze, hogy a feltöltési mappa írható-e."
 
+#: includes/blocks/class-content.php:87
+msgid "Dismiss this notice"
+msgstr "Értesítés elvetése"
+
+#: includes/blocks/class-registry.php:164
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "Dizájn"
+
+#: includes/blocks/class-registry.php:165
+#: src/core/dev-compat/edit.js:94
+#: src/editor/index.js:27
+msgid "Content"
+msgstr "Tartalom"
+
+#: includes/blocks/class-registry.php:166
+msgid "Media"
+msgstr "Média"
+
+#: includes/blocks/class-registry.php:167
+msgid "Marketing"
+msgstr "Marketing"
+
+#: includes/blocks/class-registry.php:168
+msgid "Site"
+msgstr "Webhely"
+
+#: includes/blocks/class-registry.php:169
+msgid "Data"
+msgstr "Adatok"
+
 #: includes/class-admin.php:78
+#: includes/design/globals/class-site-design.php:86
 msgid "The admin screen's scripts are missing from this copy of the plugin. Reinstall it from a released package."
 msgstr "A bővítmény ezen példányából hiányoznak az adminisztrációs felület parancsfájljai. Telepítse újra egy kiadott csomagból."
 
 #: includes/class-admin.php:81
+#: includes/design/globals/class-site-design.php:89
 #: includes/pro__premium_only/workflow/class-network.php:224
 msgid "This screen needs JavaScript."
 msgstr "Ehhez a képernyőhöz JavaScript szükséges."
@@ -826,6 +862,93 @@ msgstr "Szerkesztés a Sandwich Studio használatával"
 #: includes/core/class-templates.php:54
 msgid "Blank canvas"
 msgstr "Üres vászon"
+
+#: includes/design/class-breakpoints.php:89
+msgid "The tablet width must be a whole number of pixels from 480 to 2560."
+msgstr "A táblagép szélességének 480 és 2560 közötti egész pixelértéknek kell lennie."
+
+#: includes/design/class-breakpoints.php:92
+msgid "The mobile width must be a whole number of pixels, at least 240 and smaller than the tablet width."
+msgstr "A mobil szélességnek egész számnak kell lennie, legalább 240 pixelnek, és kisebbnek kell lennie a táblagép szélességénél."
+
+#: includes/design/class-breakpoints.php:102
+msgid "Each custom breakpoint needs its own id: 2 to 12 lowercase letters or digits, starting with a letter."
+msgstr "Minden egyedi töréspontnak saját azonosítóra van szüksége: 2–12 kisbetű vagy számjegy, amely betűvel kezdődik."
+
+#: includes/design/class-breakpoints.php:117
+msgid "A custom breakpoint applies either up to a width (200 to 4000 pixels) or from a width (200 to 6000 pixels), not both."
+msgstr "Egyéni töréspont vagy egy bizonyos szélességig (200-tól 4000 pixelig), vagy egy bizonyos szélességtől (200-tól 6000 pixelig) érvényes, de egyszerre a kettő nem."
+
+#: includes/design/class-breakpoints.php:175
+#: src/design/editor/breakpoint-items.js:18
+msgid "Tablet"
+msgstr "Táblagép"
+
+#: includes/design/class-breakpoints.php:180
+#: src/design/editor/breakpoint-items.js:19
+msgid "Mobile"
+msgstr "Mobil"
+
+#: includes/design/globals/class-site-design.php:66
+#: includes/design/globals/class-site-design.php:67
+#: includes/design/globals/class-site-design.php:83
+#: src/design/site-design/editor.js:23
+#: src/design/site-design/editor.js:28
+#: src/design/site-design/editor.js:45
+#: src/design/site-design/editor.js:55
+msgid "Site design"
+msgstr "Weboldal tervezés"
+
+#: includes/design/globals/class-site-design.php:84
+msgid "Colours, fonts and styles shared by every page of the site and by your theme."
+msgstr "Színek, betűtípusok és stílusok, amelyeket a webhely minden oldala és a sablonja is megoszt."
+
+#: includes/design/globals/class-theme-globals.php:158
+msgid "The site's global styles could not be opened."
+msgstr "A webhely globális stílusait nem sikerült megnyitni."
+
+#: includes/design/globals/class-theme-globals.php:293
+msgid "That font is not one of the site's fonts."
+msgstr "Ez a betűtípus nem tartozik a webhely betűtípusai közé."
+
+#: includes/design/globals/class-theme-globals.php:365
+msgid "Each colour needs a unique name made of lowercase letters, digits and hyphens."
+msgstr "Minden színhez kisbetűkből, számjegyekből és kötőjelekből álló, egyedi név szükséges."
+
+#. translators: %s: colour slug.
+#: includes/design/globals/class-theme-globals.php:369
+#, php-format
+msgid "The colour \"%s\" is not a valid CSS colour."
+msgstr "A(z) „%s” szín nem érvényes CSS-szín."
+
+#: includes/design/globals/class-theme-globals.php:407
+msgid "Each font needs a unique name made of lowercase letters, digits and hyphens."
+msgstr "Minden betűtípusnak kisbetűkből, számokból és kötőjelekből álló, egyedi névre van szüksége."
+
+#. translators: %s: font name.
+#: includes/design/globals/class-theme-globals.php:411
+#: src/design/site-design/FontsSection.js:47
+#, php-format, js-format
+msgid "The font stack for \"%s\" may contain only font names, quotes, commas and spaces."
+msgstr "A(z) \"%s\" betűtípus-verem csak betűtípusneveket, idézőjeleket, vesszőket és szóközöket tartalmazhat."
+
+#: includes/design/icons/class-icons.php:73
+msgid "Uploaded icons"
+msgstr "Feltöltött ikonok"
+
+#: includes/design/icons/class-icons.php:253
+#: src/core/edit.js:230
+msgid "Icon"
+msgstr "Ikon"
+
+#: includes/design/icons/class-icons.php:267
+msgid "This file is not an SVG icon we can use. It may be damaged, or it only held content that is removed for safety (scripts, links, embedded images or fonts)."
+msgstr "Ez a fájl nem egy olyan SVG-ikon, amelyet használni tudnánk. Lehet, hogy sérült, vagy csak olyan tartalmat tartalmazott, amely biztonsági okokból el lett távolítva (szkriptek, hivatkozások, beágyazott képek vagy betűtípusok)."
+
+#: includes/design/icons/class-icons.php:297
+#: src/design/icons/IconPicker.js:377
+msgid "The icon could not be deleted."
+msgstr "Az ikont nem sikerült törölni."
 
 #: includes/freemius-strings.php:21
 #: includes/freemius-strings.php:6306
@@ -2156,6 +2279,12 @@ msgstr "White-label mód engedélyezése"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/design/editor/controls/length.js:279
+#: src/design/props/align-items.js:19
+#: src/design/props/align-self.js:19
+#: src/design/props/justify-content.js:27
+#: src/design/props/place-items.js:19
+#: src/design/props/text-align.js:18
 msgid "End"
 msgstr "Vége"
 
@@ -2171,6 +2300,7 @@ msgstr "Adja meg az új e-mail címet"
 
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
+#: src/blocks/alert/edit.js:75
 msgid "Error"
 msgstr "Hiba"
 
@@ -2765,6 +2895,11 @@ msgstr "Az alábbi termékek csökkentett módba lettek helyezve, mert észlelt�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/design/pro__premium_only/custom-breakpoints.js:76
+#: src/design/pro__premium_only/globals/BrandKitSection.js:125
+#: src/design/pro__premium_only/globals/ClassesSection.js:62
+#: src/design/site-design/ColorsSection.js:41
+#: src/design/site-design/FontsSection.js:95
 msgid "Name"
 msgstr "Név"
 
@@ -3846,6 +3981,12 @@ msgstr "Közösségi média (Facebook, Twitter stb.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/design/editor/controls/length.js:281
+#: src/design/props/align-items.js:17
+#: src/design/props/align-self.js:17
+#: src/design/props/justify-content.js:25
+#: src/design/props/place-items.js:17
+#: src/design/props/text-align.js:16
 msgid "Start"
 msgstr "Indítás"
 
@@ -3898,6 +4039,7 @@ msgstr "Próbaidőszak indítása"
 
 #: includes/freemius-strings.php:2370
 #: includes/freemius-strings.php:5255
+#: src/design/editor/panel.js:114
 msgid "State"
 msgstr "Állapot"
 
@@ -4197,6 +4339,8 @@ msgstr "Hogy tetszik eddig a(z) %1$s? Tesztelje az összes prémium %2$s funkci�
 
 #: includes/freemius-strings.php:2596
 #: includes/freemius-strings.php:5575
+#: src/blocks/alert/edit.js:55
+#: src/design/pro__premium_only/effects/controls.js:101
 msgid "Type"
 msgstr "Típus"
 
@@ -4252,7 +4396,7 @@ msgstr "Szeretné folytatni a frissítést?"
 
 #: includes/freemius-strings.php:2638
 #: includes/freemius-strings.php:5617
-#: src/studio/components/header.js:252
+#: src/studio/components/header.js:283
 msgid "Update"
 msgstr "Frissítés"
 
@@ -4263,7 +4407,7 @@ msgstr "Licenc frissítése"
 
 #: includes/freemius-strings.php:2646
 #: includes/freemius-strings.php:5632
-#: src/admin/App.js:79
+#: src/admin/App.js:80
 msgid "Upgrade"
 msgstr "Frissítés"
 
@@ -4311,6 +4455,7 @@ msgstr "Felhasználók"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/design/pro__premium_only/globals/TokenList.js:43
 msgid "Value"
 msgstr "Érték"
 
@@ -4363,6 +4508,7 @@ msgstr "Fizetős funkciók megtekintése"
 
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
+#: src/blocks/alert/edit.js:71
 msgid "Warning"
 msgstr "Figyelem"
 
@@ -4880,6 +5026,14 @@ msgstr "%s ezelőtt"
 msgid "A migration step is running right now. Try again in a minute."
 msgstr "Egy migrálási lépés fut jelenleg. Próbálja meg újra egy perc múlva."
 
+#: includes/pro__premium_only/blocks/class-site.php:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:13
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:27
+#: src/design/pro__premium_only/globals/index.js:41
+#: src/design/site-design/sections.js:25
+msgid "Dark mode"
+msgstr "Sötét mód"
+
 #: includes/pro__premium_only/class-legacy-pro.php:152
 msgid "Thank you for subscribing!"
 msgstr "Köszönjük, hogy feliratkozott!"
@@ -4935,9 +5089,125 @@ msgstr "Ez az e-mail cím már fel van iratkozva."
 msgid "MailPoet plugin not found. Please contact the admin."
 msgstr "A MailPoet bővítmény nem található. Kérjük, lépjen kapcsolatba a rendszergazdával."
 
+#: includes/pro__premium_only/design/class-brand-kit.php:139
+msgid "Choose the brand fonts from the site's fonts."
+msgstr "Válassza ki a márkabetűtípusokat a webhely betűtípusai közül."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:180
+msgid "That font is no longer in the font library."
+msgstr "Az a betűtípus már nem szerepel a betűtárban."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:184
+msgid "That font has no files yet. Upload at least one."
+msgstr "Ahhoz a betűtípushoz még nincsenek fájlok. Tölts fel legalább egyet."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:316
+msgid "An Adobe Fonts kit id is 5 to 12 letters and digits, as shown in your Adobe Fonts web project."
+msgstr "Az Adobe Fonts készlet azonosítója 5-12 betűből és számjegyből áll, ahogyan az az Adobe Fonts webes projektjében látható."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:322
+msgid "Adobe Fonts did not return that kit. Check the id, and that the web project is published."
+msgstr "Az Adobe Fonts nem küldte vissza ezt a készletet. Ellenőrizze az azonosítót, és azt, hogy a webes projekt közzé van-e téve."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:326
+msgid "That Adobe Fonts kit has no fonts in it."
+msgstr "Az Adobe Fonts készlet nem tartalmaz betűtípusokat."
+
+#: includes/pro__premium_only/design/class-dark-mode.php:105
+msgid "Choose how the site picks its colour scheme."
+msgstr "Válassza ki, hogy a webhely hogyan válassza ki a színsémáját."
+
+#. translators: %s: colour name.
+#: includes/pro__premium_only/design/class-dark-mode.php:116
+#, php-format
+msgid "The dark value for \"%s\" is not a valid CSS colour."
+msgstr "A(z) „%s” sötét értéke nem érvényes CSS-szín."
+
+#: includes/pro__premium_only/design/class-global-classes.php:93
+msgid "This site has reached the maximum number of global classes."
+msgstr "Ez a webhely elérte a globális osztályok maximális számát."
+
+#: includes/pro__premium_only/design/class-global-classes.php:97
+#: includes/pro__premium_only/design/class-global-classes.php:130
+msgid "Give the class a name."
+msgstr "Adj nevet az osztálynak."
+
+#. translators: %s: class name.
+#: includes/pro__premium_only/design/class-global-classes.php:165
+#, php-format
+msgid "%s (copy)"
+msgstr "%s (másolat)"
+
+#: includes/pro__premium_only/design/class-global-classes.php:338
+msgid "A class name must start with a letter and use only lowercase letters, digits and hyphens."
+msgstr "Egy osztály nevének betűvel kell kezdődnie, és csak kisbetűket, számokat és kötőjeleket tartalmazhat."
+
+#: includes/pro__premium_only/design/class-global-classes.php:342
+msgid "Another class already uses that name."
+msgstr "Ezt a nevet már egy másik osztály használja."
+
+#: includes/pro__premium_only/design/class-global-classes.php:403
+msgid "That class no longer exists. Reload the list."
+msgstr "Az az osztály már nem létezik. Frissítse a listát."
+
+#: includes/pro__premium_only/design/class-tokens.php:50
+msgid "Extra small"
+msgstr "Extra kicsi"
+
+#: includes/pro__premium_only/design/class-tokens.php:51
+#: includes/pro__premium_only/design/class-tokens.php:59
+#: includes/pro__premium_only/design/class-tokens.php:65
+msgid "Small"
+msgstr "Kicsi"
+
+#: includes/pro__premium_only/design/class-tokens.php:52
+#: includes/pro__premium_only/design/class-tokens.php:60
+#: includes/pro__premium_only/design/class-tokens.php:66
+msgid "Medium"
+msgstr "Közepes"
+
+#: includes/pro__premium_only/design/class-tokens.php:53
+#: includes/pro__premium_only/design/class-tokens.php:61
+#: includes/pro__premium_only/design/class-tokens.php:67
+msgid "Large"
+msgstr "Nagy"
+
+#: includes/pro__premium_only/design/class-tokens.php:54
+msgid "Extra large"
+msgstr "Extra nagy"
+
+#: includes/pro__premium_only/design/class-tokens.php:55
+msgid "Huge"
+msgstr "Óriási"
+
+#: includes/pro__premium_only/design/class-tokens.php:58
+#: src/core/edit.js:183
+#: src/design/editor/controls/complex.js:448
+#: src/design/props/text-decoration.js:16
+#: src/design/props/text-transform.js:16
+#: src/design/pro__premium_only/effects/controls.js:272
+#: src/design/pro__premium_only/effects/panel.js:286
+#: src/design/pro__premium_only/effects/panel.js:382
+msgid "None"
+msgstr "Nincs"
+
+#: includes/pro__premium_only/design/class-tokens.php:62
+msgid "Round"
+msgstr "Forduló"
+
+#: includes/pro__premium_only/design/class-tokens.php:121
+msgid "Each entry needs a unique short name made of lowercase letters, digits and hyphens."
+msgstr "Minden bejegyzéshez kisbetűkből, számjegyekből és kötőjelekből álló, egyedi rövid név szükséges."
+
+#. translators: %s: token name.
+#: includes/pro__premium_only/design/class-tokens.php:130
+#, php-format
+msgid "The value of \"%s\" is not a value this setting accepts."
+msgstr "A(z) „%s” értéke nem egy olyan érték, amelyet ez a beállítás elfogad."
+
 #: includes/pro__premium_only/workflow/class-maintenance.php:127
 msgid "We are doing some maintenance on this site. Please check back soon."
-msgstr "Jelenleg karbantartást végzünk ezen a webhelyen. Kérjük, látogasson vissza később."
+msgstr "Karbantartást vézünk ezen a webhelyen. Kérjük, látogasson vissza később."
 
 #: includes/pro__premium_only/workflow/class-maintenance.php:128
 msgid "This site is launching soon."
@@ -4949,7 +5219,7 @@ msgstr "Karbantartási mód bekapcsolva"
 
 #: includes/pro__premium_only/workflow/class-maintenance.php:177
 msgid "Pre-launch mode is on"
-msgstr "Az előindítási mód be van kapcsolva"
+msgstr "Az elindítás előtti mód be van kapcsolva"
 
 #: includes/pro__premium_only/workflow/class-network.php:168
 msgid "Network templates"
@@ -4958,7 +5228,7 @@ msgstr "Hálózati sablonok"
 #: includes/pro__premium_only/workflow/class-replace-jobs.php:241
 #: includes/pro__premium_only/workflow/class-replace-jobs.php:535
 msgid "That find-and-replace job no longer exists."
-msgstr "Az a keresés és csere feladat már nem létezik."
+msgstr "Az a keresés és csere már nem létezik."
 
 #: includes/pro__premium_only/workflow/class-replace-jobs.php:248
 msgid "That step is not available for this job right now."
@@ -4974,11 +5244,11 @@ msgstr "A színeknek hexadecimális kódoknak kell lenniük, például #1a73e8 v
 
 #: includes/pro__premium_only/workflow/class-replacer.php:111
 msgid "The new link must be a full web address (https://…), a path starting with /, or an anchor starting with #."
-msgstr "Az új hivatkozásnak teljes webcímnek (https://…), /-rel kezdődő elérési útnak vagy #-rel kezdődő horgonynak kell lennie."
+msgstr "Az új hivatkozásnak teljes webcímnek (https://...), /-el kezdődő útvonalnak vagy #-nel kezdődő horgonynak kell lennie."
 
 #: includes/pro__premium_only/workflow/class-review.php:72
 msgid "Client review comments"
-msgstr "Ügyfélelemzési megjegyzések"
+msgstr "Ügyfél-ellenőrzési megjegyzések"
 
 #: includes/pro__premium_only/workflow/class-review.php:325
 msgid "Write a comment first."
@@ -4998,7 +5268,7 @@ msgstr "Az a hozzászólás már nem létezik."
 #: includes/pro__premium_only/workflow/class-review.php:384
 #, php-format
 msgid "New review comment on “%s”"
-msgstr "Új értékelési hozzászólás a következőhöz: „%s”"
+msgstr "Új véleményhozzászólás ehhez: „%s”"
 
 #. translators: 1: commenter name, 2: comment, 3: editor link.
 #: includes/pro__premium_only/workflow/class-review.php:387
@@ -5011,7 +5281,7 @@ msgid ""
 "Open the page in the editor to answer or resolve it:\n"
 "%3$s"
 msgstr ""
-"%1$s írta:\n"
+"%1$s ezt írta:\n"
 "\n"
 "%2$s\n"
 "\n"
@@ -5024,7 +5294,7 @@ msgstr "Ez az értékelési hivatkozás már nem érvényes. Kérjen egy újat."
 
 #: includes/pro__premium_only/workflow/class-review.php:436
 msgid "Too many comments from this link in the last hour. Try again later."
-msgstr "Túl sok hozzászólás érkezett erről a hivatkozásról az elmúlt órában. Próbálja meg később."
+msgstr "Túl sok hozzászólás érkezett erről a linkről az elmúlt órában. Próbálja meg később újra."
 
 #: includes/pro__premium_only/workflow/class-roles.php:234
 msgid "Your role cannot create templates or patterns."
@@ -5032,32 +5302,32 @@ msgstr "A szerepköröd nem hozhat létre sablonokat vagy mintákat."
 
 #: includes/pro__premium_only/workflow/class-roles.php:312
 msgid "You can change the text and images on this page, but not its layout or design. Your change was not saved."
-msgstr "Módosíthatja az ezen az oldalon található szöveget és képeket, de a megjelenését vagy a dizájnját nem. A módosítás nem lett mentve."
+msgstr "Módosíthatja az ezen az oldalon található szöveget és képeket, de a megjelenését vagy a kialakítását nem. A módosítás nem lett mentve."
 
 #: includes/pro__premium_only/workflow/class-roles.php:317
 msgid "Your role cannot change styles. Undo the style changes and save again."
-msgstr "A szerepköröd nem módosíthat stílusokat. Vonja vissza a stílusmódosításokat, és mentse újra."
+msgstr "A szerepköröd nem változtathat stílust. Vonja vissza a stílusmódosításokat, és mentse újra."
 
 #: includes/pro__premium_only/workflow/class-roles.php:320
 msgid "Your role cannot add or change custom code (custom CSS or HTML blocks). Undo those changes and save again."
-msgstr "Az Ön szerepköre nem adhat hozzá és nem módosíthat egyéni kódot (egyéni CSS- vagy HTML-blokkokat). Vonja vissza ezeket a módosításokat, és mentse újra."
+msgstr "Az ön szerepköre nem adhat hozzá és nem módosíthat egyéni kódot (egyéni CSS- vagy HTML-blokkokat). Vonja vissza ezeket a módosításokat, majd mentse újra."
 
 #: includes/workflow/class-transfer-routes.php:137
 #: includes/workflow/class-transfer.php:282
 msgid "This is not an export file from this plugin."
-msgstr "Ez nem ennek a bővítménynek az exportfájlja."
+msgstr "Ez nem ehhez a bővítményhez tartozó exportfájl."
 
 #: includes/workflow/class-transfer.php:286
 msgid "This export file was made by a newer version of the plugin. Update the plugin on this site, then import it again."
-msgstr "Ez az exportált fájl a bővítmény egy újabb verziójával készült. Frissítse a bővítményt ezen a webhelyen, majd importálja újra."
+msgstr "Ez az exportfájl a bővítmény újabb verziójával készült. Frissítse a bővítményt ezen a webhelyen, majd importálja újra."
 
 #: includes/workflow/class-transfer.php:289
 msgid "The export file is damaged: its list of items is missing."
-msgstr "Az exportfájl sérült: hiányzik az elemek listája."
+msgstr "Az exportfájl sérült: az elemek listája hiányzik."
 
 #: includes/workflow/class-transfer.php:292
 msgid "The export file is damaged or was edited after it was made (its checksum does not match). Export it again from the other site."
-msgstr "Az exportfájl sérült, vagy a létrehozása után módosították (az ellenőrzőösszege nem egyezik). Exportálja újra a másik oldalról."
+msgstr "Az exportált fájl sérült, vagy a létrehozása után módosították (az ellenőrzőösszege nem egyezik). Exportálja újra a másik webhelyről."
 
 #. translators: %s: item name from the export file.
 #: includes/workflow/class-transfer.php:337
@@ -5069,13 +5339,13 @@ msgstr "„%s” importálása nem sikerült: ez a webhely nem tartalmaz ilyen t
 #: includes/workflow/class-transfer.php:343
 #, php-format
 msgid "“%s” was not imported: you are not allowed to create that kind of item."
-msgstr "A(z) „%s” nem lett importálva: nincs engedélye ilyen típusú elem létrehozására."
+msgstr "A(z) „%s” importálása sikertelen: az ilyen típusú elemek létrehozása nem engedélyezett."
 
 #. translators: %s: item name from the export file.
 #: includes/workflow/class-transfer.php:354
 #, php-format
 msgid "“%s” was not replaced: you are not allowed to edit the one on this site."
-msgstr "A(z) „%s” nem lett cserélve: nincsen jogosultsága szerkeszteni az ezen az oldalon lévőt."
+msgstr "A(z) „%s” helyettesítése nem történt meg: ennek a webhelynek a módosítására nincs jogosultsága."
 
 #. translators: 1: item name from the export file, 2: the reason.
 #: includes/workflow/class-transfer.php:374
@@ -5091,7 +5361,7 @@ msgstr "A beállításokat nem sikerült importálni: csak egy rendszergazda mó
 #: includes/workflow/class-transfer.php:555
 #, php-format
 msgid "The image %1$s was not copied: %2$s"
-msgstr "A(z) %1$s kép másolása sikertelen: %2$s"
+msgstr "A(z) %1$s kép másolása nem sikerült: %2$s"
 
 #: src/admin/About.js:17
 msgid "Built by Neil Lock, CEO of Zinn Digital® Ltd"
@@ -5111,52 +5381,82 @@ msgstr "Page Builder Sandwich webhely"
 msgid "Zinn Digital® website"
 msgstr "Zinn Digital® webhely"
 
-#: src/admin/App.js:51
+#: src/admin/App.js:52
 msgid "Settings saved."
 msgstr "Beállítások elmentve."
 
-#: src/admin/App.js:84
+#: src/admin/App.js:85
 msgid "See the Pro plans and pricing"
 msgstr "Tekintse meg a Pro csomagokat és az árakat"
 
-#: src/admin/App.js:94
+#: src/admin/App.js:95
 msgid "Front-end output"
 msgstr "Front-end kimenet"
 
-#: src/admin/App.js:102
+#: src/admin/App.js:103
 msgid "Class name prefix"
 msgstr "Osztálynév előtag"
 
-#: src/admin/App.js:106
+#: src/admin/App.js:107
 msgid "Every class name the plugin prints on your pages starts with this prefix, so the pages do not reveal which plugin built them. 1 to 8 lowercase letters or digits, starting with a letter."
 msgstr "Minden osztálynév, amelyet a bővítmény megjelenít az oldalakon, ezzel a előtaggal kezdődik, így az oldalak nem fedik fel, hogy melyik bővítmény hozta létre őket. 1–8 kisbetű vagy számjegy, betűvel kezdődően."
 
-#: src/admin/App.js:119
+#: src/admin/App.js:120
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:268
+#: src/design/site-design/components.js:102
 #: src/studio/components/commands.js:196
 #: src/workflow/pro__premium_only/MaintenancePanel.js:195
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:189
 msgid "Save"
 msgstr "Mentés"
 
-#: src/admin/App.js:125
+#: src/admin/App.js:129
 msgid "Beta updates"
 msgstr "Béta frissítések"
 
-#: src/admin/App.js:132
+#: src/admin/App.js:136
 msgid "This site receives beta versions as updates."
 msgstr "Ez a webhely béta verziókat kap frissítésként."
 
-#: src/admin/App.js:136
+#: src/admin/App.js:140
 msgid "This site receives stable versions only."
 msgstr "Ez a webhely kizárólag stabil verziókat kap."
 
-#: src/admin/App.js:145
+#: src/admin/App.js:149
 msgid "Change this on the Account page"
 msgstr "Változtassa meg ezt a Fiók oldalon"
 
-#: src/admin/App.js:154
+#: src/admin/App.js:158
 msgid "Beta versions are offered to licensed Pro installations that are connected to their account. Once connected, you can join from the Account page."
 msgstr "A béta verziókat a fiókjukhoz csatlakoztatott, licenccel rendelkező Pro-telepítések számára kínáljuk. A csatlakozást követően a Fiók oldalon csatlakozhat."
+
+#: src/admin/Breakpoints.js:58
+msgid "Breakpoints saved. Pages pick up the new widths on their next view."
+msgstr "Töréspontok elmentve. Az oldalak a következő megtekintéskor veszik át az új szélességeket."
+
+#: src/admin/Breakpoints.js:79
+msgid "Breakpoints"
+msgstr "Töréspontok"
+
+#: src/admin/Breakpoints.js:94
+msgid "Styles set for Tablet apply up to the tablet width, and styles set for Mobile up to the mobile width. Desktop styles apply everywhere else."
+msgstr "A táblagépre beállított stílusok a táblagép szélességéig érvényesek, a mobilra beállítottak pedig a mobil szélességéig. Az asztali stílusok mindenhol máshol érvényesek."
+
+#: src/admin/Breakpoints.js:102
+msgid "Tablet: up to (px)"
+msgstr "Tablet: legfeljebb (px)"
+
+#: src/admin/Breakpoints.js:115
+msgid "Mobile: up to (px)"
+msgstr "Mobil: legfeljebb (px)"
+
+#: src/admin/Breakpoints.js:146
+msgid "Save breakpoints"
+msgstr "Töréspontok mentése"
+
+#: src/admin/Breakpoints.js:162
+msgid "Use the default widths"
+msgstr "Alapértelmezett szélességek használata"
 
 #: src/admin/LegacyContent.js:21
 msgid "The request converting this post stopped before it finished, so the post was skipped. Open it to convert it, or convert it again from here."
@@ -5261,6 +5561,223 @@ msgstr "A visszavonás elindult. A folyamat a háttérben fut tovább, így elha
 msgid "Undo all conversions"
 msgstr "Minden átalakítás visszavonása"
 
+#: src/blocks/alert/edit.js:52
+msgid "Alert"
+msgstr "Figyelmeztetés"
+
+#: src/blocks/alert/edit.js:60
+msgid "Information"
+msgstr "Információ"
+
+#: src/blocks/alert/edit.js:67
+msgid "Success"
+msgstr "Sikeres"
+
+#: src/blocks/alert/edit.js:81
+msgid "Warnings and errors are announced to screen reader users straight away; information and success notices are read when they finish what they are doing."
+msgstr "A figyelmeztetések és hibák azonnal bejelentésre kerülnek a képernyőolvasó felhasználói számára; az információk és a sikeres műveletekről szóló értesítések akkor olvashatók fel, amikor befejezik az aktuális feladatukat."
+
+#: src/blocks/alert/edit.js:87
+msgid "Show icon"
+msgstr "Ikon megjelenítése"
+
+#: src/blocks/alert/edit.js:92
+msgid "Visitors can close it"
+msgstr "A látogatók bezárhatják"
+
+#: src/blocks/alert/edit.js:130
+msgid "Title (optional)"
+msgstr "Cím (opcionális)"
+
+#: src/blocks/alert/edit.js:143
+msgid "Write the message…"
+msgstr "Üzenet írása…"
+
+#: src/blocks/layout/edit.js:42
+msgid "section — a thematic section"
+msgstr "szakasz — tematikus szakasz"
+
+#: src/blocks/layout/edit.js:43
+msgid "div — no meaning"
+msgstr "div – nincs jelentősége"
+
+#: src/blocks/layout/edit.js:44
+msgid "header — introductory content"
+msgstr "fejléc – bevezető tartalom"
+
+#: src/blocks/layout/edit.js:45
+msgid "footer — closing content"
+msgstr "lábléc – lezáró tartalom"
+
+#: src/blocks/layout/edit.js:46
+msgid "article — self-contained content"
+msgstr "cikk – önálló tartalom"
+
+#: src/blocks/layout/edit.js:47
+msgid "aside — related content"
+msgstr "oldalsáv – kapcsolódó tartalom"
+
+#: src/blocks/layout/edit.js:48
+msgid "main — the main content (once per page)"
+msgstr "main — a fő tartalom (oldalanként egyszer)"
+
+#: src/blocks/layout/edit.js:52
+msgid "nav — navigation links"
+msgstr "nav – navigációs hivatkozások"
+
+#: src/blocks/layout/edit.js:123
+msgid "Stack (flexbox, column)"
+msgstr "Verem (flexbox, oszlop)"
+
+#: src/blocks/layout/edit.js:142
+msgid "Row (flexbox)"
+msgstr "Sor (flexbox)"
+
+#: src/blocks/layout/edit.js:158
+#: src/blocks/layout/edit.js:204
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Rács"
+
+#: src/blocks/layout/edit.js:170
+#: src/design/editor/panel.js:38
+msgid "Layout"
+msgstr "Elrendezés"
+
+#. translators: %s: a screen size such as "Tablet".
+#: src/blocks/layout/edit.js:174
+#, js-format
+msgid "Editing: %s"
+msgstr "Szerkesztés alatt: %s"
+
+#: src/blocks/layout/edit.js:181
+msgid "Lay out children as"
+msgstr "Elemek elrendezése mint"
+
+#. translators: %s: the layout in effect, e.g. "flex".
+#. translators: %s: the value a setting inherits from a wider screen size.
+#. translators: %s: a colour inherited from a wider screen size.
+#. translators: %s: inherited value.
+#: src/blocks/layout/edit.js:191
+#: src/design/editor/controls/basic.js:31
+#: src/design/editor/controls/color.js:83
+#: src/design/editor/controls/complex.js:127
+#, js-format
+msgid "Inherited (%s)"
+msgstr "Örökölt (%s)"
+
+#: src/blocks/layout/edit.js:200
+#: src/design/props/display.js:28
+msgid "Flexbox"
+msgstr "Flexbox"
+
+#: src/blocks/layout/edit.js:208
+msgid "Stacked blocks"
+msgstr "Egymásra rakott blokkok"
+
+#: src/blocks/layout/edit.js:219
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Oszlopok"
+
+#: src/blocks/layout/edit.js:227
+msgid "Drag in the canvas, or type"
+msgstr "Húzza be a vászonra, vagy gépeljen"
+
+#: src/blocks/layout/edit.js:244
+#: src/core/edit.js:90
+#: src/design/props/content-width.js:15
+msgid "Content width"
+msgstr "Tartalomszélesség"
+
+#: src/blocks/layout/edit.js:249
+msgid "Boxed (the theme’s content width)"
+msgstr "Dobozos (a téma tartalomszélessége)"
+
+#: src/blocks/layout/edit.js:256
+#: src/core/edit.js:97
+msgid "Full width"
+msgstr "Teljes szélességű"
+
+#: src/blocks/layout/edit.js:265
+msgid "Minimum height"
+msgstr "Minimális magasság"
+
+#: src/blocks/layout/edit.js:280
+msgid "HTML tag"
+msgstr "HTML-címke"
+
+#: src/blocks/layout/edit.js:292
+#: src/core/edit.js:150
+msgid "Link"
+msgstr "Hivatkozás"
+
+#: src/blocks/layout/edit.js:299
+msgid "Make the whole block a link to"
+msgstr "Legyen az egész blokk egy hivatkozás erre:"
+
+#: src/blocks/layout/edit.js:315
+msgid "Link text for screen readers"
+msgstr "Hivatkozásszöveg képernyőolvasók számára"
+
+#: src/blocks/layout/edit.js:319
+msgid "What the link does, for visitors who cannot see the block."
+msgstr "Amit a hivatkozás csinál, azoknak a látogatóknak, akik nem látják a blokkot."
+
+#: src/blocks/layout/edit.js:335
+#: src/core/edit.js:159
+msgid "Open in a new tab"
+msgstr "Megnyitás új lapon"
+
+#: src/blocks/layout/edit.js:350
+msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
+msgstr "Ne helyezzen linkeket vagy gombokat egy hivatkozott blokkon belül: a linken belüli link nem működik a böngészőkben."
+
+#: src/blocks/layout/grid-overlay.js:261
+msgid "Drag to resize these columns"
+msgstr "Húzza meg az oszlopok átméretezéséhez"
+
+#: src/blocks/layout/grid-overlay.js:276
+msgid "Drag to resize this row"
+msgstr "Húzza át ennek a sornak az átméretezéséhez"
+
+#: src/blocks/layout/grid-overlay.js:290
+msgid "Drag across cells to set how many columns and rows this block spans"
+msgstr "Húzza át a cellákat annak beállításához, hogy ez a blokk hány oszlopot és sort öleljen fel"
+
+#: src/blocks/layout/grid-overlay.js:319
+msgid "+ Column"
+msgstr "+ Oszlop"
+
+#: src/blocks/layout/grid-overlay.js:336
+msgid "− Column"
+msgstr "− Oszlop"
+
+#: src/blocks/layout/grid-overlay.js:345
+msgid "+ Row"
+msgstr "+ Sor"
+
+#: src/blocks/layout/grid-overlay.js:360
+msgid "− Row"
+msgstr "− Sor"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
+msgid "Switch"
+msgstr "Váltás"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:37
+msgid "Label"
+msgstr "Címke"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
+msgid "Read out by screen readers, and shown when “Show label” is on."
+msgstr "Képernyőolvasók olvassák fel, és akkor jelenik meg, amikor a „Címke megjelenítése” beállítás be van kapcsolva."
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:32
+msgid "Show label"
+msgstr "Címke megjelenítése"
+
 #: src/core/dev-compat/edit.js:54
 msgid "Shortcode tag"
 msgstr "Shortkód címke"
@@ -5276,11 +5793,6 @@ msgstr "Attribútum neve"
 #: src/core/dev-compat/edit.js:90
 msgid "Add attribute"
 msgstr "Attribútum hozzáadása"
-
-#: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:27
-msgid "Content"
-msgstr "Tartalom"
 
 #: src/core/dev-compat/edit.js:130
 #: src/core/dev-compat/edit.js:152
@@ -5298,6 +5810,7 @@ msgid "The \"%s\" control from the old editor is not available in the block edit
 msgstr "A régi szerkesztő „%s” vezérlője nem érhető el a blokkszerkesztőben. Adja meg az értéket szövegként."
 
 #: src/core/dev-compat/option-controls.js:81
+#: src/design/editor/controls/complex.js:283
 msgid "Choose image"
 msgstr "Kép kiválasztása"
 
@@ -5309,143 +5822,123 @@ msgstr "Fájl kiválasztása"
 msgid "— Default —"
 msgstr "— Alapértelmezett —"
 
-#: src/core/edit.js:32
+#: src/core/edit.js:34
 msgid "Advanced styling"
 msgstr "Speciális stílusok"
 
-#: src/core/edit.js:36
+#: src/core/edit.js:38
 msgid "Inline CSS"
 msgstr "Beágyazott CSS"
 
-#: src/core/edit.js:37
+#: src/core/edit.js:39
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS-deklarációk, például: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:47
+#: src/core/edit.js:49
 msgid "Effects (legacy classes)"
 msgstr "Effektek (örökölt osztályok)"
 
-#: src/core/edit.js:51
+#: src/core/edit.js:53
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Régebbi verziókból átvett, szóközzel elválasztott effektusnevek, például: hover-shadow"
 
-#: src/core/edit.js:81
+#: src/core/edit.js:83
+#: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Sor"
 
-#: src/core/edit.js:84
+#: src/core/edit.js:86
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
 msgid "Width"
 msgstr "Szélesség"
 
-#: src/core/edit.js:88
-msgid "Content width"
-msgstr "Tartalomszélesség"
-
-#: src/core/edit.js:95
-msgid "Full width"
-msgstr "Teljes szélességű"
-
-#: src/core/edit.js:102
+#: src/core/edit.js:104
 msgid "Full width, content kept in the middle"
 msgstr "Teljes szélességű, a tartalom középre igazítva"
 
-#: src/core/edit.js:148
-msgid "Link"
-msgstr "Hivatkozás"
-
-#: src/core/edit.js:152
+#: src/core/edit.js:154
 msgid "Link address"
 msgstr "Hivatkozás címe"
 
-#: src/core/edit.js:157
-msgid "Open in a new tab"
-msgstr "Megnyitás új lapon"
-
-#: src/core/edit.js:168
+#: src/core/edit.js:170
 msgid "Link relationship"
 msgstr "Link kapcsolata"
 
-#: src/core/edit.js:177
+#: src/core/edit.js:179
+#: src/design/props/text-align.js:13
 msgid "Alignment"
 msgstr "Igazítás"
 
-#: src/core/edit.js:181
-msgid "None"
-msgstr "Nincs"
-
-#: src/core/edit.js:185
+#: src/core/edit.js:187
 msgid "Left"
 msgstr "Bal"
 
-#: src/core/edit.js:189
+#: src/core/edit.js:191
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:138
+#: src/design/pro__premium_only/effects/controls.js:241
 msgid "Centre"
 msgstr "Közép"
 
-#: src/core/edit.js:193
+#: src/core/edit.js:195
 msgid "Right"
 msgstr "Jobb"
 
-#: src/core/edit.js:206
+#: src/core/edit.js:208
 msgid "Button text"
 msgstr "Gomb szövege"
 
-#: src/core/edit.js:207
+#: src/core/edit.js:209
 msgid "Add text…"
 msgstr "Szöveg hozzáadása…"
 
-#: src/core/edit.js:231
-msgid "Icon"
-msgstr "Ikon"
-
-#: src/core/edit.js:233
-msgid "SVG markup"
-msgstr "SVG-jelölőkód"
-
-#: src/core/edit.js:234
-msgid "Scripts, links and external references are removed before the icon is shown."
-msgstr "A szkriptek, linkek és külső hivatkozások eltávolításra kerülnek az ikon megjelenítése előtt."
-
-#: src/core/edit.js:243
+#: src/core/edit.js:238
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Akadálymentes címke"
 
-#: src/core/edit.js:247
+#: src/core/edit.js:242
 msgid "Leave empty for a decorative icon."
 msgstr "Hagyja üresen egy dekoratív ikonhoz."
 
-#: src/core/edit.js:261
-msgid "Paste SVG markup in the block settings."
-msgstr "Illessze be az SVG-kódot a blokkbeállítások közé."
+#: src/core/edit.js:256
+msgid "Choose an icon in the block settings."
+msgstr "Válasszon ki egy ikont a blokkbeállításokban."
 
-#: src/core/edit.js:288
+#: src/core/edit.js:283
 msgid "New setting name"
 msgstr "Új beállítás neve"
 
-#: src/core/edit.js:289
+#: src/core/edit.js:284
 msgid "For example: title or text"
 msgstr "Például: cím vagy szöveg"
 
-#: src/core/edit.js:304
+#: src/core/edit.js:299
 msgid "Add setting"
 msgstr "Beállítás hozzáadása"
 
-#: src/core/edit.js:315
-#: src/core/edit.js:318
+#: src/core/edit.js:310
+#: src/core/edit.js:313
 msgid "Widget"
 msgstr "Widget"
 
-#: src/core/edit.js:322
+#: src/core/edit.js:317
 msgid "Choose a widget"
 msgstr "Válasszon ki egy widgetet"
 
-#: src/core/edit.js:354
-#: src/core/edit.js:358
+#: src/core/edit.js:349
+#: src/core/edit.js:353
 msgid "Widget area"
 msgstr "Widgetterület"
 
-#: src/core/edit.js:362
+#: src/core/edit.js:357
 msgid "Choose a widget area"
 msgstr "Válasszon ki egy widget-területet"
 
@@ -5469,19 +5962,2020 @@ msgstr "Ez a beágyazás betöltődés után átméretezi magát, ami elmozdítj
 msgid "Layout shift"
 msgstr "Elrendezés eltolódása"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Fejléc"
+#: src/design/editor/breakpoint-items.js:24
+msgid "Desktop"
+msgstr "Asztali verzió"
 
+#: src/design/editor/controls/basic.js:27
+#: src/design/editor/controls/color.js:89
+#: src/design/editor/controls/complex.js:133
+#: src/design/editor/controls/complex.js:313
+#: src/design/editor/controls/complex.js:331
+#: src/design/editor/controls/complex.js:361
+#: src/design/editor/controls/complex.js:496
+#: src/design/props/position.js:16
+#: src/design/pro__premium_only/effects/controls.js:413
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: src/design/editor/controls/basic.js:178
+msgid "Every track"
+msgstr "Minden sáv"
+
+#: src/design/editor/controls/complex.js:74
+msgid "Track sizes, for example: 1fr 2fr 200px"
+msgstr "Sávméretek, például: 1fr 2fr 200px"
+
+#: src/design/editor/controls/complex.js:93
+msgid "Custom track sizes"
+msgstr "Egyéni sávszélességek"
+
+#: src/design/editor/controls/complex.js:94
+msgid "Equal tracks"
+msgstr "Egyenlő sávok"
+
+#: src/design/editor/controls/complex.js:105
+msgid "One quoted row per line, for example: \"head head\" \"side main\". Name the area on each child block."
+msgstr "Soronként egy idézőjeles sor, például: \"head head\" \"side main\". Nevezze meg a területet minden egyes gyermekblokkon."
+
+#: src/design/editor/controls/complex.js:134
+#: src/design/props/cursor.js:27
+msgid "Automatic"
+msgstr "Automatikus"
+
+#: src/design/editor/controls/complex.js:135
+msgid "Square (1:1)"
+msgstr "Négyzet (1:1)"
+
+#: src/design/editor/controls/complex.js:136
+msgid "Standard (4:3)"
+msgstr "Normál (4:3)"
+
+#: src/design/editor/controls/complex.js:137
+msgid "Classic (3:2)"
+msgstr "Klasszikus (3:2)"
+
+#: src/design/editor/controls/complex.js:138
+msgid "Wide (16:9)"
+msgstr "Széles (16:9)"
+
+#: src/design/editor/controls/complex.js:139
+msgid "Cinema (21:9)"
+msgstr "Mozi (21:9)"
+
+#: src/design/editor/controls/complex.js:140
+msgid "Tall (9:16)"
+msgstr "Magas (9:16)"
+
+#: src/design/editor/controls/complex.js:158
+msgid "Custom"
+msgstr "Egyéni"
+
+#: src/design/editor/controls/complex.js:173
+msgid "Width / height"
+msgstr "Szélesség / magasság"
+
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:242
+msgid "Top"
+msgstr "Legfelső"
+
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:243
+msgid "Bottom"
+msgstr "Alul"
+
+#: src/design/editor/controls/complex.js:266
+#: src/design/props/background-image.js:42
+msgid "Background image"
+msgstr "Háttérkép"
+
+#: src/design/editor/controls/complex.js:279
+msgid "Inherited image — replace"
+msgstr "Örökölt kép – cserélés"
+
+#: src/design/editor/controls/complex.js:292
+msgid "Remove image"
+msgstr "Kép eltávolítása"
+
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:347
+msgid "Position"
+msgstr "Pozíció"
+
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:323
+msgid "Size"
+msgstr "Méret"
+
+#: src/design/editor/controls/complex.js:335
+msgid "Cover"
+msgstr "Borító"
+
+#: src/design/editor/controls/complex.js:339
+msgid "Contain"
+msgstr "Tartalmazza"
+
+#: src/design/editor/controls/complex.js:343
+#: src/design/pro__premium_only/effects/controls.js:336
+msgid "Original size"
+msgstr "Eredeti méret"
+
+#: src/design/editor/controls/complex.js:356
+#: src/design/pro__premium_only/effects/controls.js:355
+#: src/design/pro__premium_only/effects/controls.js:362
+msgid "Repeat"
+msgstr "Ismétlés"
+
+#: src/design/editor/controls/complex.js:365
+#: src/design/pro__premium_only/effects/controls.js:358
+msgid "No repeat"
+msgstr "Nincs ismétlés"
+
+#: src/design/editor/controls/complex.js:372
+msgid "Tile"
+msgstr "Csempe"
+
+#: src/design/editor/controls/complex.js:376
+msgid "Tile across"
+msgstr "Csempe teljes szélességben"
+
+#: src/design/editor/controls/complex.js:383
+msgid "Tile down"
+msgstr "Csempe lefele"
+
+#: src/design/editor/controls/complex.js:395
+msgid "Fixed while scrolling"
+msgstr "Görgetés közben rögzítve"
+
+#: src/design/editor/controls/complex.js:449
+#: src/design/icons/IconPicker.js:40
+msgid "Solid"
+msgstr "Biztonságos"
+
+#: src/design/editor/controls/complex.js:450
+msgid "Dashed"
+msgstr "Szaggatott"
+
+#: src/design/editor/controls/complex.js:451
+msgid "Dotted"
+msgstr "Pontozott"
+
+#: src/design/editor/controls/complex.js:452
+msgid "Double"
+msgstr "Duplázás"
+
+#: src/design/editor/controls/complex.js:461
+msgid "Each side separately"
+msgstr "Mindkét oldal külön-külön"
+
+#: src/design/editor/controls/complex.js:469
+msgid "Side"
+msgstr "Oldal"
+
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:127
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Stílus"
+
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:154
+#: src/design/pro__premium_only/effects/controls.js:400
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Szín"
+
+#: src/design/editor/controls/complex.js:573
+msgid "Add a shadow"
+msgstr "Árnyék hozzáadása"
+
+#: src/design/editor/controls/complex.js:600
+msgid "Horizontal"
+msgstr "Vízszintes"
+
+#: src/design/editor/controls/complex.js:609
+msgid "Vertical"
+msgstr "Függőleges"
+
+#: src/design/editor/controls/complex.js:615
+msgid "Blur"
+msgstr "Elmosás"
+
+#: src/design/editor/controls/complex.js:621
+msgid "Spread"
+msgstr "Terjesztés"
+
+#: src/design/editor/controls/complex.js:641
+msgid "Inside"
+msgstr "Benne"
+
+#: src/design/editor/controls/complex.js:656
+msgid "Remove this shadow"
+msgstr "Árnyék eltávolítása"
+
+#: src/design/editor/controls/complex.js:667
+msgid "Everything"
+msgstr "Minden"
+
+#: src/design/editor/controls/complex.js:668
+#: src/design/site-design/sections.js:49
+#: src/editor/language-switcher.js:187
+#: src/workflow/pro__premium_only/ReplacePanel.js:126
+msgid "Colours"
+msgstr "Színek"
+
+#: src/design/editor/controls/complex.js:669
+#: src/design/props/opacity.js:14
+msgid "Opacity"
+msgstr "Átlátszatlanság"
+
+#: src/design/editor/controls/complex.js:670
+msgid "Transform"
+msgstr "Átalakítás"
+
+#: src/design/editor/controls/complex.js:671
+#: src/design/editor/panel.js:44
+#: src/design/pro__premium_only/globals/TokensSection.js:33
+msgid "Shadow"
+msgstr "Árnyék"
+
+#: src/design/editor/controls/complex.js:674
+msgid "Ease"
+msgstr "Egyszerűség"
+
+#: src/design/editor/controls/complex.js:675
+#: src/design/pro__premium_only/effects/controls.js:104
+msgid "Linear"
+msgstr "Lineáris"
+
+#: src/design/editor/controls/complex.js:676
+msgid "Ease in"
+msgstr "Egyszerű beállítás"
+
+#: src/design/editor/controls/complex.js:677
+msgid "Ease out"
+msgstr "Lágy lefutás"
+
+#: src/design/editor/controls/complex.js:678
+msgid "Ease in and out"
+msgstr "Be- és kivezetés"
+
+#: src/design/editor/controls/complex.js:687
+msgid "Duration (milliseconds)"
+msgstr "Időtartam (milliszekundum)"
+
+#: src/design/editor/controls/complex.js:713
+msgid "What animates"
+msgstr "Mi kelt életre"
+
+#: src/design/editor/controls/complex.js:726
+msgid "Easing"
+msgstr "Gyorsítás"
+
+#: src/design/editor/controls/complex.js:736
+msgid "Delay (milliseconds)"
+msgstr "Késleltetés (milliszekundum)"
+
+#: src/design/editor/controls/length.js:93
+msgid "Remove the preset"
+msgstr "Sablon eltávolítása"
+
+#: src/design/editor/controls/length.js:114
+msgid "More options"
+msgstr "További lehetőségek"
+
+#: src/design/editor/controls/length.js:138
+msgid "Number and unit"
+msgstr "Szám és egység"
+
+#: src/design/editor/controls/length.js:139
+msgid "Custom CSS value (calc, clamp…)"
+msgstr "Egyedi CSS érték (calc, clamp…)"
+
+#: src/design/editor/controls/length.js:237
+msgid "Set each side separately"
+msgstr "Mindkét oldal külön beállítása"
+
+#: src/design/editor/controls/length.js:241
+msgid "Set all sides together"
+msgstr "Minden oldal beállítása együtt"
+
+#: src/design/editor/controls/length.js:251
+msgid "All sides"
+msgstr "Minden oldal"
+
+#: src/design/editor/controls/length.js:286
+msgid "Top start"
+msgstr "Legfelibb kezdet"
+
+#: src/design/editor/controls/length.js:287
+msgid "Top end"
+msgstr "Felső kategóriás"
+
+#: src/design/editor/controls/length.js:288
+msgid "Bottom start"
+msgstr "Alulra balra"
+
+#: src/design/editor/controls/length.js:289
+msgid "Bottom end"
+msgstr "Alsó határ"
+
+#: src/design/editor/controls/length.js:300
+msgid "Between rows"
+msgstr "Sorok között"
+
+#: src/design/editor/controls/length.js:301
+msgid "Between columns"
+msgstr "Oszlopok között"
+
+#: src/design/editor/controls/token-picker.js:30
+msgid "Choose a preset"
+msgstr "Válasszon egy sablont"
+
+#: src/design/editor/controls/token-picker.js:38
+msgid "Presets"
+msgstr "Előbeállítások"
+
+#. translators: %s: the name of a design preset, e.g. "Large".
+#: src/design/editor/controls/token-picker.js:87
+#, js-format
+msgid "Preset: %s"
+msgstr "Sablon: %s"
+
+#: src/design/editor/panel.js:39
+#: src/design/pro__premium_only/globals/TokensSection.js:31
+msgid "Spacing"
+msgstr "Térköz"
+
+#: src/design/editor/panel.js:41
+msgid "Typography"
+msgstr "Tipográfia"
+
+#: src/design/editor/panel.js:42
+msgid "Colours & background"
+msgstr "Színek és háttér"
+
+#: src/design/editor/panel.js:43
+#: src/design/props/border.js:26
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "Szegély"
+
+#: src/design/editor/panel.js:46
+#: src/design/pro__premium_only/effects/panel.js:178
+msgid "Effects"
+msgstr "Effektusok"
+
+#: src/design/editor/panel.js:47
+msgid "Advanced"
+msgstr "Speciális"
+
+#. translators: %d: a screen width in pixels.
+#: src/design/editor/panel.js:59
+#, js-format
+msgid "up to %d px"
+msgstr "legfeljebb %d px"
+
+#. translators: %d: a screen width in pixels.
+#: src/design/editor/panel.js:63
+#, js-format
+msgid "from %d px"
+msgstr "%d px-től"
+
+#: src/design/editor/panel.js:65
+msgid "all widths"
+msgstr "minden szélesség"
+
+#: src/design/editor/panel.js:87
+msgid "Screen size"
+msgstr "Képernyőméret"
+
+#: src/design/editor/panel.js:120
+#: src/design/props/font-style.js:16
+#: src/design/pro__premium_only/effects/controls.js:386
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:130
+msgid "Normal"
+msgstr "Normál"
+
+#: src/design/editor/panel.js:124
+msgid "Hover"
+msgstr "Egérrel rámutatás"
+
+#. translators: %s: a screen size such as "Tablet".
+#: src/design/editor/panel.js:136
+#, js-format
+msgid "Reset every value set for %s"
+msgstr "Minden beállított érték alaphelyzetbe állítása a következőhöz: %s"
+
+#. translators: %s: the screen size a value is inherited from, e.g. "Desktop".
+#: src/design/editor/panel.js:184
+#, js-format
+msgid "Inherited from %s"
+msgstr "Örökölve innen: %s"
+
+#. translators: %s: a setting's name, e.g. "Padding".
+#: src/design/editor/panel.js:195
+#, js-format
+msgid "Reset %s"
+msgstr "%s alaphelyzetbe állítása"
+
+#: src/design/editor/panel.js:218
+msgid "Hide on"
+msgstr "Elrejtve"
+
+#. translators: 1: section title, 2: how many values are set in it.
+#: src/design/editor/panel.js:265
+#, js-format
+msgid "%1$s (%2$d set)"
+msgstr "%1$s (%2$d beállítás)"
+
+#: src/design/icons/IconField.js:42
+msgid "Replace icon"
+msgstr "Ikon cseréje"
+
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Ikon kiválasztása"
+
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Válasszon ki egy ikont"
+
+#: src/design/icons/IconGrid.js:242
+msgid "No icons match."
+msgstr "Nincs egyező ikon."
+
+#: src/design/icons/IconPicker.js:41
+msgid "Regular"
+msgstr "Normál"
+
+#: src/design/icons/IconPicker.js:42
+msgid "Brands"
+msgstr "Márkák"
+
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Körvonalas"
+
+#: src/design/icons/IconPicker.js:44
+#: src/design/pro__premium_only/effects/panel.js:268
+msgid "Rounded"
+msgstr "Kerekített"
+
+#: src/design/icons/IconPicker.js:45
+msgid "Sharp"
+msgstr "Éles"
+
+#: src/design/icons/IconPicker.js:46
+msgid "Bold"
+msgstr "Félkövér"
+
+#: src/design/icons/IconPicker.js:47
+#: src/design/pro__premium_only/effects/controls.js:332
+msgid "Fill"
+msgstr "Kitöltés"
+
+#: src/design/icons/IconPicker.js:48
+msgid "Duotone"
+msgstr "Duotone"
+
+#: src/design/icons/IconPicker.js:121
+msgid "This icon set could not be loaded. Check your connection and try again."
+msgstr "Ez az ikoncsomag nem tölthető be. Ellenőrizze a kapcsolatot, majd próbálja újra."
+
+#: src/design/icons/IconPicker.js:234
+msgid "Search icons"
+msgstr "Ikonok keresése"
+
+#: src/design/icons/IconPicker.js:253
+msgid "Search all sets"
+msgstr "Összes készlet keresése"
+
+#. translators: %d: number of icons found.
+#: src/design/icons/IconPicker.js:262
+#, js-format
+msgid "%d icons"
+msgstr "%d ikon"
+
+#: src/design/icons/IconPicker.js:265
+msgid "Loading icon sets…"
+msgstr "Ikonkészletek betöltése…"
+
+#. translators: %s: icon set name, e.g. Lucide.
+#: src/design/icons/IconPicker.js:271
+#, js-format
+msgid "%s icons"
+msgstr "%s ikon"
+
+#: src/design/icons/IconPicker.js:273
+msgid "All sets"
+msgstr "Minden készlet"
+
+#: src/design/icons/IconPicker.js:331
+msgid "This file is not a valid SVG image."
+msgstr "Ez a fájl nem érvényes SVG-kép."
+
+#: src/design/icons/IconPicker.js:354
+msgid "The icon could not be uploaded."
+msgstr "Az ikon feltöltése nem sikerült."
+
+#: src/design/icons/IconPicker.js:408
+msgid "Upload SVG"
+msgstr "SVG feltöltése"
+
+#: src/design/icons/IconPicker.js:418
+msgid "Delete selected upload"
+msgstr "Kijelölt feltöltés törlése"
+
+#: src/design/icons/IconPicker.js:427
+msgid "Scripts, links and external references are removed from uploaded SVG files before they are saved."
+msgstr "A feltöltött SVG-fájlokból a mentés előtt eltávolítjuk a szkripteket, hivatkozásokat és külső hivatkozásokat."
+
+#: src/design/icons/IconPicker.js:437
+#: src/design/icons/IconPicker.js:458
+msgid "My uploads"
+msgstr "Saját feltöltések"
+
+#: src/design/props/align-items.js:14
+msgid "Align items"
+msgstr "Elemek igazítása"
+
+#: src/design/props/align-items.js:20
+#: src/design/props/align-self.js:20
+#: src/design/props/justify-content.js:31
+#: src/design/props/place-items.js:20
+msgid "Stretch"
+msgstr "Kinyújtás"
+
+#: src/design/props/align-items.js:21
+#: src/design/props/align-self.js:21
+msgid "Baseline"
+msgstr "Alapvonal"
+
+#: src/design/props/align-self.js:13
+msgid "Align self"
+msgstr "Elem igazítása önmagához"
+
+#: src/design/props/align-self.js:16
+msgid "Auto"
+msgstr "Automatikus"
+
+#: src/design/props/aspect-ratio.js:13
+msgid "Aspect ratio"
+msgstr "Képarány"
+
+#: src/design/props/background-color.js:12
+msgid "Background colour"
+msgstr "Háttérszín"
+
+#: src/design/props/box-shadow.js:11
+msgid "Box shadow"
+msgstr "Dobozárnyék"
+
+#: src/design/props/col-span.js:11
+msgid "Column span"
+msgstr "Oszlopkiterjedés"
+
+#: src/design/props/color.js:12
+msgid "Text colour"
+msgstr "Szövegszín"
+
+#: src/design/props/cursor.js:24
+msgid "Cursor"
+msgstr "Kurzor"
+
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Nyíl"
+
+#: src/design/props/cursor.js:29
+msgid "Pointer"
+msgstr "Mutató"
+
+#: src/design/props/cursor.js:30
 #: src/editor/index.js:35
 #: src/editor/language-switcher.js:190
 #: src/workflow/pro__premium_only/ReplacePanel.js:118
 msgid "Text"
 msgstr "Szöveg"
 
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Stílus"
+#: src/design/props/cursor.js:31
+msgid "Move"
+msgstr "Áthelyezés"
+
+#: src/design/props/cursor.js:32
+msgid "Grab"
+msgstr "Beszerzés"
+
+#: src/design/props/cursor.js:33
+msgid "Not allowed"
+msgstr "Nem engedélyezett"
+
+#: src/design/props/cursor.js:34
+msgid "Help"
+msgstr "Súgó"
+
+#: src/design/props/cursor.js:35
+msgid "Crosshair"
+msgstr "Célkereszt"
+
+#: src/design/props/cursor.js:36
+msgid "Zoom in"
+msgstr "Nagyítás"
+
+#: src/design/props/display.js:24
+msgid "Display"
+msgstr "Megjelenítés"
+
+#: src/design/props/display.js:27
+msgid "Block"
+msgstr "Blokkolás"
+
+#: src/design/props/display.js:30
+msgid "Inline"
+msgstr "Beágyazott"
+
+#: src/design/props/display.js:31
+msgid "Inline block"
+msgstr "Beliner blokk"
+
+#: src/design/props/display.js:32
+msgid "Inline flexbox"
+msgstr "Beágyazott flexbox"
+
+#: src/design/props/display.js:33
+msgid "Inline grid"
+msgstr "Beágyazott rács"
+
+#: src/design/props/display.js:34
+msgid "Contents only"
+msgstr "Csak a tartalom"
+
+#: src/design/props/display.js:35
+#: src/design/props/overflow.js:17
+msgid "Hidden"
+msgstr "Rejtett"
+
+#: src/design/props/flex-basis.js:13
+msgid "Basis"
+msgstr "Alap"
+
+#: src/design/props/flex-direction.js:14
+msgid "Direction"
+msgstr "Irány"
+
+#: src/design/props/flex-direction.js:18
+msgid "Row reversed"
+msgstr "Sor megfordítva"
+
+#: src/design/props/flex-direction.js:19
+msgid "Column"
+msgstr "Oszlop"
+
+#: src/design/props/flex-direction.js:20
+msgid "Column reversed"
+msgstr "Oszlop megfordítva"
+
+#: src/design/props/flex-grow.js:14
+msgid "Grow"
+msgstr "Fejlesztés"
+
+#: src/design/props/flex-shrink.js:14
+msgid "Shrink"
+msgstr "Zsugorítás"
+
+#: src/design/props/flex-wrap.js:14
+#: src/design/props/flex-wrap.js:18
+msgid "Wrap"
+msgstr "Sortörés"
+
+#: src/design/props/flex-wrap.js:17
+msgid "No wrap"
+msgstr "Nincs tördelés"
+
+#: src/design/props/flex-wrap.js:19
+msgid "Wrap reversed"
+msgstr "Fordított tördelés"
+
+#: src/design/props/font-family.js:15
+msgid "Font"
+msgstr "Betűtípus"
+
+#: src/design/props/font-style.js:17
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:131
+msgid "Italic"
+msgstr "Dőlt"
+
+#: src/design/props/font-weight.js:11
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:119
+msgid "Weight"
+msgstr "Súly"
+
+#: src/design/props/font-weight.js:14
+msgid "Thin (100)"
+msgstr "Vékony (100)"
+
+#: src/design/props/font-weight.js:15
+msgid "Extra light (200)"
+msgstr "Extra vékony (200)"
+
+#: src/design/props/font-weight.js:16
+msgid "Light (300)"
+msgstr "Világos (300)"
+
+#: src/design/props/font-weight.js:17
+msgid "Regular (400)"
+msgstr "Normál (400)"
+
+#: src/design/props/font-weight.js:18
+msgid "Medium (500)"
+msgstr "Közepes (500)"
+
+#: src/design/props/font-weight.js:19
+msgid "Semi bold (600)"
+msgstr "Félkövér (600)"
+
+#: src/design/props/font-weight.js:20
+msgid "Bold (700)"
+msgstr "Félkövér (700)"
+
+#: src/design/props/font-weight.js:21
+msgid "Extra bold (800)"
+msgstr "Extra félkövér (800)"
+
+#: src/design/props/font-weight.js:22
+msgid "Black (900)"
+msgstr "Fekete (900)"
+
+#: src/design/props/gap.js:15
+msgid "Gap"
+msgstr "Hézag"
+
+#: src/design/props/grid-area.js:11
+msgid "Area name"
+msgstr "Terület neve"
+
+#: src/design/props/grid-areas.js:11
+msgid "Named areas"
+msgstr "Elnevezett területek"
+
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Sorok"
+
+#: src/design/props/height.js:16
+msgid "Height"
+msgstr "Magasság"
+
+#: src/design/props/inset.js:13
+msgid "Offsets"
+msgstr "Eltolások"
+
+#: src/design/props/justify-content.js:22
+msgid "Justify content"
+msgstr "Tartalom igazítása"
+
+#: src/design/props/justify-content.js:28
+msgid "Space between"
+msgstr "Helyköz"
+
+#: src/design/props/justify-content.js:29
+msgid "Space around"
+msgstr "Szabad hely körben"
+
+#: src/design/props/justify-content.js:30
+msgid "Space evenly"
+msgstr "Egyenlő távolságra"
+
+#: src/design/props/letter-spacing.js:13
+msgid "Letter spacing"
+msgstr "Betűköz"
+
+#: src/design/props/line-height.js:13
+msgid "Line height"
+msgstr "Sormagasság"
+
+#: src/design/props/margin.js:13
+msgid "Margin"
+msgstr "Margó"
+
+#: src/design/props/max-height.js:16
+msgid "Max height"
+msgstr "Maximális magasság"
+
+#: src/design/props/max-width.js:16
+msgid "Max width"
+msgstr "Maximális szélesség"
+
+#: src/design/props/min-height.js:16
+msgid "Min height"
+msgstr "Minimális magasság"
+
+#: src/design/props/min-width.js:16
+msgid "Min width"
+msgstr "Min. szélesség"
+
+#: src/design/props/order.js:15
+msgid "Order"
+msgstr "Rendelés"
+
+#: src/design/props/overflow.js:13
+msgid "Overflow"
+msgstr "Túlcsordulás"
+
+#: src/design/props/overflow.js:16
+msgid "Visible"
+msgstr "Látható"
+
+#: src/design/props/overflow.js:18
+msgid "Clip"
+msgstr "Másolás"
+
+#: src/design/props/overflow.js:19
+msgid "Scroll when needed"
+msgstr "Görgetés szükség esetén"
+
+#: src/design/props/overflow.js:20
+msgid "Always scroll"
+msgstr "Mindig görgessen"
+
+#: src/design/props/padding.js:13
+msgid "Padding"
+msgstr "Térköz"
+
+#: src/design/props/place-items.js:14
+msgid "Place items"
+msgstr "Elemek elhelyezése"
+
+#: src/design/props/position.js:17
+msgid "Relative"
+msgstr "Relatív"
+
+#: src/design/props/position.js:18
+msgid "Absolute"
+msgstr "Abszolút"
+
+#: src/design/props/position.js:19
+msgid "Fixed"
+msgstr "Javítva"
+
+#: src/design/props/position.js:20
+msgid "Sticky"
+msgstr "Kiemelt"
+
+#: src/design/props/radius.js:19
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "Sarokrádiusz"
+
+#: src/design/props/row-span.js:11
+msgid "Row span"
+msgstr "Sorösszevonás"
+
+#: src/design/props/text-align.js:19
+msgid "Justify"
+msgstr "Sorkizárás"
+
+#: src/design/props/text-decoration.js:13
+msgid "Decoration"
+msgstr "Dekoráció"
+
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Aláhúzás"
+
+#: src/design/props/text-decoration.js:18
+msgid "Overline"
+msgstr "Felülvonás"
+
+#: src/design/props/text-decoration.js:19
+msgid "Strikethrough"
+msgstr "Áthúzás"
+
+#: src/design/props/text-shadow.js:12
+msgid "Text shadow"
+msgstr "Szövegárnyék"
+
+#: src/design/props/text-transform.js:13
+msgid "Letter case"
+msgstr "Kis- és nagybetűk érzékenysége"
+
+#: src/design/props/text-transform.js:17
+msgid "Uppercase"
+msgstr "Nagybetűs"
+
+#: src/design/props/text-transform.js:18
+msgid "Lowercase"
+msgstr "Kisbetűs"
+
+#: src/design/props/text-transform.js:19
+msgid "Capitalise"
+msgstr "Nagybetűssé alakítás"
+
+#: src/design/props/transition.js:28
+#: src/design/pro__premium_only/effects/panel.js:526
+msgid "Transition"
+msgstr "Átmenet"
+
+#: src/design/props/z-index.js:15
+msgid "Stack order (z-index)"
+msgstr "Halmozási sorrend (z-index)"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:58
+msgid "Custom breakpoints"
+msgstr "Egyéni töréspontok"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:63
+msgid "Add screen sizes of your own, such as a large desktop, a landscape tablet or a small phone."
+msgstr "Adjon hozzá saját képernyőméreteket, például egy nagy asztali számítógépet, egy fekvő táblagépet vagy egy kis telet."
+
+#: src/design/pro__premium_only/custom-breakpoints.js:83
+msgid "Applies"
+msgstr "Alkalmazható"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:88
+msgid "up to a width"
+msgstr "szélességig"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:95
+msgid "from a width"
+msgstr "szélességtől"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:114
+msgid "Width (px)"
+msgstr "Szélesség (px)"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:130
+msgid "Remove this breakpoint"
+msgstr "Töréspont eltávolítása"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:150
+#: src/design/pro__premium_only/custom-breakpoints.js:153
+msgid "Large desktop"
+msgstr "Nagy asztali számítógép"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:162
+msgid "Add a breakpoint"
+msgstr "Töréspont hozzáadása"
+
+#: src/design/pro__premium_only/effects/controls.js:105
+msgid "Radial"
+msgstr "Radiális"
+
+#: src/design/pro__premium_only/effects/controls.js:106
+msgid "Conic"
+msgstr "Conic"
+
+#: src/design/pro__premium_only/effects/controls.js:114
+msgid "Angle (degrees)"
+msgstr "Szög (fok)"
+
+#: src/design/pro__premium_only/effects/controls.js:125
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Alakzat"
+
+#: src/design/pro__premium_only/effects/controls.js:128
+msgid "Ellipse"
+msgstr "Elipszis"
+
+#: src/design/pro__premium_only/effects/controls.js:129
+#: src/design/pro__premium_only/effects/controls.js:247
+msgid "Circle"
+msgstr "Kör"
+
+#. translators: %d: gradient colour stop number.
+#: src/design/pro__premium_only/effects/controls.js:149
+#, js-format
+msgid "Colour stop %d"
+msgstr "Színmegálló %d"
+
+#: src/design/pro__premium_only/effects/controls.js:161
+msgid "Position (%)"
+msgstr "Pozíció (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:179
+msgid "Remove stop"
+msgstr "Leállítás"
+
+#: src/design/pro__premium_only/effects/controls.js:193
+msgid "Add colour stop"
+msgstr "Színállítópont hozzáadása"
+
+#: src/design/pro__premium_only/effects/controls.js:197
+msgid "Clear gradient"
+msgstr "Átmenet törlése"
+
+#: src/design/pro__premium_only/effects/controls.js:211
+msgid "Blur behind (px)"
+msgstr "Háttér elmosása (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:221
+msgid "Saturation behind (%)"
+msgstr "Telítettség mögött (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:229
+msgid "Tint (use a see-through colour)"
+msgstr "Áttetsző (használjon átlátszó színt)"
+
+#: src/design/pro__premium_only/effects/controls.js:248
+msgid "Rounded square"
+msgstr "Lekerekített négyzet"
+
+#: src/design/pro__premium_only/effects/controls.js:249
+msgid "Blob"
+msgstr "Blob"
+
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Hexagon"
+msgstr "Hexagon"
+
+#: src/design/pro__premium_only/effects/controls.js:251
+#: src/design/pro__premium_only/effects/panel.js:255
+msgid "Triangle"
+msgstr "Háromszög"
+
+#: src/design/pro__premium_only/effects/controls.js:252
+msgid "Diamond"
+msgstr "Gyémánt"
+
+#: src/design/pro__premium_only/effects/controls.js:253
+msgid "Star"
+msgstr "Csillagozás"
+
+#: src/design/pro__premium_only/effects/controls.js:254
+msgid "Heart"
+msgstr "Kedvenc"
+
+#: src/design/pro__premium_only/effects/controls.js:255
+msgid "Arch"
+msgstr "Arch"
+
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Brush stroke"
+msgstr "Ecsetvonás"
+
+#: src/design/pro__premium_only/effects/controls.js:269
+msgid "Mask shape"
+msgstr "Maszk alakzata"
+
+#: src/design/pro__premium_only/effects/controls.js:279
+msgid "Custom image"
+msgstr "Egyéni kép"
+
+#: src/design/pro__premium_only/effects/controls.js:305
+msgid "Replace mask image"
+msgstr "Maszk kép cseréje"
+
+#: src/design/pro__premium_only/effects/controls.js:309
+msgid "Choose mask image"
+msgstr "Maszk kép kiválasztása"
+
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Fit"
+msgstr "Illesztés"
+
+#: src/design/pro__premium_only/effects/controls.js:363
+msgid "Repeat across"
+msgstr "Ismétlés mindenhol"
+
+#: src/design/pro__premium_only/effects/controls.js:367
+msgid "Repeat down"
+msgstr "Ismétlés alulra"
+
+#: src/design/pro__premium_only/effects/controls.js:371
+msgid "Space out"
+msgstr "Térköz növelése"
+
+#: src/design/pro__premium_only/effects/controls.js:372
+msgid "Stretch to fit"
+msgstr "Kitöltésre nyújtás"
+
+#: src/design/pro__premium_only/effects/controls.js:387
+msgid "Multiply"
+msgstr "Szorzás"
+
+#: src/design/pro__premium_only/effects/controls.js:388
+msgid "Screen"
+msgstr "Képernyő"
+
+#: src/design/pro__premium_only/effects/controls.js:389
+msgid "Overlay"
+msgstr "Fedvény"
+
+#: src/design/pro__premium_only/effects/controls.js:390
+msgid "Darken"
+msgstr "Sötétítés"
+
+#: src/design/pro__premium_only/effects/controls.js:391
+msgid "Lighten"
+msgstr "Világosítás"
+
+#: src/design/pro__premium_only/effects/controls.js:392
+msgid "Colour dodge"
+msgstr "Színfakasztás"
+
+#: src/design/pro__premium_only/effects/controls.js:393
+msgid "Colour burn"
+msgstr "Színbeégetés"
+
+#: src/design/pro__premium_only/effects/controls.js:394
+msgid "Hard light"
+msgstr "Erős fény"
+
+#: src/design/pro__premium_only/effects/controls.js:395
+msgid "Soft light"
+msgstr "Lágy fény"
+
+#: src/design/pro__premium_only/effects/controls.js:396
+msgid "Difference"
+msgstr "Különbség"
+
+#: src/design/pro__premium_only/effects/controls.js:397
+msgid "Exclusion"
+msgstr "Kizárás"
+
+#: src/design/pro__premium_only/effects/controls.js:398
+msgid "Hue"
+msgstr "Árnyalat"
+
+#: src/design/pro__premium_only/effects/controls.js:399
+msgid "Saturation"
+msgstr "Telítettség"
+
+#: src/design/pro__premium_only/effects/controls.js:401
+msgid "Luminosity"
+msgstr "Luminosity"
+
+#: src/design/pro__premium_only/effects/controls.js:410
+#: src/design/pro__premium_only/effects/props/blend-mode.js:15
+msgid "Blend mode"
+msgstr "Keverési mód"
+
+#: src/design/pro__premium_only/effects/controls.js:425
+msgid "Blur (px)"
+msgstr "Elmosás (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:426
+msgid "Brightness (%)"
+msgstr "Fényerő (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:427
+msgid "Contrast (%)"
+msgstr "Kontraszt (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:428
+msgid "Greyscale (%)"
+msgstr "Szürkeárnyalat (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:429
+msgid "Hue rotation (degrees)"
+msgstr "Színforgatás (fok)"
+
+#: src/design/pro__premium_only/effects/controls.js:430
+msgid "Saturation (%)"
+msgstr "Telítettség (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:431
+msgid "Sepia (%)"
+msgstr "Sepia (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:469
+msgid "Drop shadow"
+msgstr "Vetett árnyék"
+
+#: src/design/pro__premium_only/effects/controls.js:472
+msgid "Across (px)"
+msgstr "Vízszintes (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:473
+msgid "Down (px)"
+msgstr "Le (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:474
+msgid "Softness (px)"
+msgstr "Lágyság (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:489
+msgid "Shadow colour"
+msgstr "Árnyék színe"
+
+#: src/design/pro__premium_only/effects/controls.js:501
+msgid "Remove drop shadow"
+msgstr "Vetett árnyék eltávolítása"
+
+#: src/design/pro__premium_only/effects/panel.js:184
+msgid "Applies on every screen size."
+msgstr "Minden képernyőméreten érvényes."
+
+#: src/design/pro__premium_only/effects/panel.js:188
+msgid "Applies to the screen size chosen in the design panel."
+msgstr "A tervezőpanelen kiválasztott képernyőméretre vonatkozik."
+
+#: src/design/pro__premium_only/effects/panel.js:194
+#: src/design/pro__premium_only/effects/props/bg-gradient.js:37
+msgid "Background gradient"
+msgstr "Háttér színátmenet"
+
+#: src/design/pro__premium_only/effects/panel.js:215
+msgid "Add gradient"
+msgstr "Színátmenet hozzáadása"
+
+#: src/design/pro__premium_only/effects/panel.js:219
+#: src/design/pro__premium_only/effects/props/glass.js:15
+msgid "Glass"
+msgstr "Üveg"
+
+#: src/design/pro__premium_only/effects/panel.js:226
+#: src/design/pro__premium_only/effects/props/mask.js:17
+msgid "Mask"
+msgstr "Maszkolás"
+
+#: src/design/pro__premium_only/effects/panel.js:237
+#: src/design/pro__premium_only/effects/props/filter.js:15
+msgid "Filters"
+msgstr "Szűrők"
+
+#: src/design/pro__premium_only/effects/panel.js:248
+msgid "Wave"
+msgstr "Hullám"
+
+#: src/design/pro__premium_only/effects/panel.js:249
+msgid "Waves"
+msgstr "Hullámok"
+
+#: src/design/pro__premium_only/effects/panel.js:250
+msgid "Curve"
+msgstr "Görbe"
+
+#: src/design/pro__premium_only/effects/panel.js:251
+msgid "Curve (asymmetric)"
+msgstr "Görbe (aszimmetrikus)"
+
+#: src/design/pro__premium_only/effects/panel.js:252
+msgid "Arc"
+msgstr "Ív"
+
+#: src/design/pro__premium_only/effects/panel.js:253
+msgid "Tilt"
+msgstr "Letiltás"
+
+#: src/design/pro__premium_only/effects/panel.js:254
+msgid "Tilt (layered)"
+msgstr "Döntés (rétegzett)"
+
+#: src/design/pro__premium_only/effects/panel.js:256
+msgid "Triangle (asymmetric)"
+msgstr "Háromszög (aszimmetrikus)"
+
+#: src/design/pro__premium_only/effects/panel.js:261
+msgid "Split"
+msgstr "Felosztás"
+
+#: src/design/pro__premium_only/effects/panel.js:262
+msgid "Zigzag"
+msgstr "Cikkcakk"
+
+#: src/design/pro__premium_only/effects/panel.js:263
+msgid "Mountains"
+msgstr "Hegyek"
+
+#: src/design/pro__premium_only/effects/panel.js:264
+msgid "Clouds"
+msgstr "Felhők"
+
+#: src/design/pro__premium_only/effects/panel.js:265
+msgid "Drops"
+msgstr "Lecökkenések"
+
+#: src/design/pro__premium_only/effects/panel.js:266
+msgid "Pyramids"
+msgstr "Piramisok"
+
+#: src/design/pro__premium_only/effects/panel.js:267
+msgid "Book"
+msgstr "Foglalás"
+
+#: src/design/pro__premium_only/effects/panel.js:269
+msgid "Stairs"
+msgstr "Lépcsők"
+
+#: src/design/pro__premium_only/effects/panel.js:270
+msgid "Fan"
+msgstr "Ventillátor"
+
+#: src/design/pro__premium_only/effects/panel.js:308
+msgid "Height (px)"
+msgstr "Magasság (px)"
+
+#: src/design/pro__premium_only/effects/panel.js:316
+msgid "Mirror"
+msgstr "Tükrözés"
+
+#: src/design/pro__premium_only/effects/panel.js:322
+msgid "Invert"
+msgstr "Megfordítás"
+
+#: src/design/pro__premium_only/effects/panel.js:328
+msgid "In front of the content"
+msgstr "A tartalom előtt"
+
+#: src/design/pro__premium_only/effects/panel.js:379
+msgid "Source"
+msgstr "Forrás"
+
+#: src/design/pro__premium_only/effects/panel.js:385
+msgid "Video file (MP4 / WebM)"
+msgstr "Videófájl (MP4 / WebM)"
+
+#: src/design/pro__premium_only/effects/panel.js:400
+msgid "Choose MP4 or WebM video"
+msgstr "Válasszon MP4 vagy WebM videót"
+
+#: src/design/pro__premium_only/effects/panel.js:414
+msgid "MP4 address"
+msgstr "MP4-cím"
+
+#: src/design/pro__premium_only/effects/panel.js:419
+msgid "WebM address"
+msgstr "WebM-cím"
+
+#: src/design/pro__premium_only/effects/panel.js:432
+msgid "YouTube video ID (11 characters)"
+msgstr "YouTube-videóazonosító (11 karakter)"
+
+#: src/design/pro__premium_only/effects/panel.js:436
+msgid "Vimeo video number"
+msgstr "Vimeo videószám"
+
+#: src/design/pro__premium_only/effects/panel.js:445
+msgid "Visitors only contact the video service when they scroll to this section, and never when their device asks for reduced motion. Until then they see the poster image."
+msgstr "A látogatók csak akkor lépnek kapcsolatba a videószolgáltatással, amikor ehhez a részhez görgetnek, és soha nem akkor, amikor az eszközük csökkentett mozgást kér. Addig a poszterképet látják."
+
+#: src/design/pro__premium_only/effects/panel.js:456
+msgid "Replace poster image"
+msgstr "Plakátkép cseréje"
+
+#: src/design/pro__premium_only/effects/panel.js:460
+msgid "Choose poster image"
+msgstr "Plakátkép kiválasztása"
+
+#: src/design/pro__premium_only/effects/panel.js:480
+msgid "Background slideshow"
+msgstr "Háttér diavetítés"
+
+#: src/design/pro__premium_only/effects/panel.js:485
+msgid "Change images"
+msgstr "Képek módosítása"
+
+#: src/design/pro__premium_only/effects/panel.js:486
+msgid "Choose images"
+msgstr "Képek kiválasztása"
+
+#: src/design/pro__premium_only/effects/panel.js:503
+msgid "Choose at least two images."
+msgstr "Válasszon ki legalább két képet."
+
+#: src/design/pro__premium_only/effects/panel.js:514
+msgid "Seconds per image"
+msgstr "Kép másodpercenként"
+
+#: src/design/pro__premium_only/effects/panel.js:531
+msgid "Fade"
+msgstr "Fokozatos elhalványítás"
+
+#: src/design/pro__premium_only/effects/panel.js:535
+msgid "Slide"
+msgstr "Csúszka"
+
+#: src/design/pro__premium_only/effects/panel.js:539
+msgid "Slow zoom (Ken Burns)"
+msgstr "Lassú zoom (Ken Burns)"
+
+#: src/design/pro__premium_only/effects/panel.js:552
+msgid "Remove slideshow"
+msgstr "Diavetítés eltávolítása"
+
+#: src/design/pro__premium_only/effects/panel.js:557
+msgid "Visitors who ask their device for reduced motion see the first image only."
+msgstr "Azok a látogatók, akik csökkentett mozgásmódot kérnek a eszközüktől, csak az első képet látják."
+
+#: src/design/pro__premium_only/effects/panel.js:572
+msgid "Section effects"
+msgstr "Szakaszhatások"
+
+#: src/design/pro__premium_only/effects/panel.js:577
+msgid "Top divider"
+msgstr "Felső elválasztó"
+
+#: src/design/pro__premium_only/effects/panel.js:584
+msgid "Bottom divider"
+msgstr "Alsó elválasztó"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:30
+msgid "Choose the logo"
+msgstr "Logó kiválasztása"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:58
+msgid "Not set"
+msgstr "Nincs beállítva"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:63
+msgid "Check the brand colours: each needs a unique name and a valid colour."
+msgstr "Ellenőrizze a márkaszíneket: mindegyiknek egyedi névre és érvényes színre van szüksége."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:73
+msgid "Brand name"
+msgstr "Márkanév"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:90
+msgid "Replace logo"
+msgstr "Logo cseréje"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:91
+msgid "Choose logo"
+msgstr "Logó kiválasztása"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:96
+msgid "A logo is chosen."
+msgstr "A logó ki lett választva."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:97
+msgid "Choose the logo from the Site design page."
+msgstr "Válassza ki a logót a Webhelytervezés oldalon."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:102
+msgid "Remove logo"
+msgstr "Logó eltávolítása"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:107
+msgid "Brand colours"
+msgstr "Márkaszínek"
+
+#. translators: %s: colour name.
+#. translators: %s: token name.
+#. translators: %s: font name.
+#: src/design/pro__premium_only/globals/BrandKitSection.js:141
+#: src/design/pro__premium_only/globals/TokenList.js:60
+#: src/design/site-design/ColorsSection.js:53
+#: src/design/site-design/FontsSection.js:121
+#, js-format
+msgid "Remove %s"
+msgstr "%s eltávolítása"
+
+#. translators: %d: a number.
+#: src/design/pro__premium_only/globals/BrandKitSection.js:154
+#, js-format
+msgid "Brand %d"
+msgstr "Márka %d"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:169
+msgid "Add brand colour"
+msgstr "Márkaszín hozzáadása"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:175
+#: src/design/site-design/FontsSection.js:64
+msgid "Heading font"
+msgstr "Fejléckészlet"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:183
+#: src/design/site-design/FontsSection.js:72
+msgid "Body font"
+msgstr "Alapszöveg betűtípusa"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:190
+msgid "Tone of voice"
+msgstr "Hangnem"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:191
+msgid "How your brand writes, e.g. “Friendly and plain, short sentences, no jargon.” The AI follows it whenever it writes for this site."
+msgstr "Így ír a márkád, pl. „Barátságos és egyszerű, rövid mondatok, zsargon nélkül.” A mesterséges intelligencia ezt követi, amikor ehhez a webhelyhez ír."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:208
+msgid "Brand kit saved."
+msgstr "Márkakészlet elmentve."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:223
+msgid "The brand is applied: its colours, fonts and logo are now the site’s."
+msgstr "A márka alkalmazásra került: a színei, a betűtípusai és a logója már a webhelyéi."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:231
+msgid "Apply to site"
+msgstr "Alkalmazás a webhelyre"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:58
+msgid "All classes"
+msgstr "Minden osztály"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:68
+msgid "Class name on the page"
+msgstr "Osztálynév az oldalon"
+
+#. translators: %s: CSS class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:73
+#, js-format
+msgid "Printed as %s."
+msgstr "%s formában nyomtatva."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:76
+msgid "Start with a letter; lowercase letters, digits and hyphens only."
+msgstr "Betűvel kezdődjön; csak kisbetűk, számok és kötőjelek engedélyezettek."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:86
+msgid "Styles"
+msgstr "Stílusok"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:92
+msgid "The style controls are not loaded. Reload the page; if this stays, reinstall the plugin."
+msgstr "A stílusvezérlők nem töltődtek be. Frissítse az oldalt; ha ez továbbra is fennáll, telepítse újra a bővítményt."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:112
+msgid "Class saved. Every element using it has the new style."
+msgstr "Osztály mentve. Minden ezt használó elem az új stílust kapta."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:120
+msgid "Save class"
+msgstr "Osztály mentése"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:165
+msgid "Class created."
+msgstr "Osztály létrehozva."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:176
+msgid "New class"
+msgstr "Új osztály"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:179
+msgid "e.g. Card"
+msgstr "pl. Kártya"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:189
+msgid "Create"
+msgstr "Létrehozás"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:195
+msgid "Search classes"
+msgstr "Osztályok keresése"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:203
+msgid "No class matches."
+msgstr "Nincs egyező osztály."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:204
+msgid "No classes yet. Create one, style it, then add it to any element from its settings."
+msgstr "Még nincsenek osztályok. Hozzon létre egyet, formázza meg, majd adja hozzá bármely elemhez a beállításaiból."
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:222
+#, js-format
+msgid "Edit %s"
+msgstr "Szerkesztés: %s"
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:232
+#, js-format
+msgid "Duplicate %s"
+msgstr "Másolat készítése: %s"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:242
+msgid "Class duplicated."
+msgstr "Osztály duplikálva."
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:252
+#, js-format
+msgid "Delete %s"
+msgstr "%s törlése"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:270
+msgid "Class deleted."
+msgstr "Osztály törölve."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:274
+msgid "Delete"
+msgstr "Törlés"
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:278
+#, js-format
+msgid "Delete the class \"%s\"? Elements that use it keep their content and lose its styles."
+msgstr "Törli a(z) \"%s\" osztályt? Az ezt használó elemek megtartják a tartalmukat, de elveszítik a stílusaikat."
+
+#: src/design/pro__premium_only/globals/CodeEditor.js:87
+msgid "Only users who may add unfiltered HTML can change custom CSS."
+msgstr "Csak azok a felhasználók módosíthatják az egyéni CSS-t, akik adhatnak hozzá szűretlen HTML-t."
+
+#: src/design/pro__premium_only/globals/CodeEditor.js:95
+msgid "Some of this CSS will not be used: @import, expression(), javascript: URLs, \"<\" and unbalanced braces are removed for safety."
+msgstr "A CSS egy része nem lesz felhasználva: a @import, az expression(), a javascript: URL-ek, valamint a „<” karakter és a nem egyező kapcsos zárójelek a biztonság érdekében eltávolításra kerülnek."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:100
+msgid "Upload a font"
+msgstr "Betűtípus feltöltése"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:104
+msgid "Uploading fonts needs WordPress 6.5 or later."
+msgstr "A betűtípusok feltöltéséhez a WordPress 6.5-ös vagy újabb verziója szükséges."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:110
+msgid "Font name"
+msgstr "Betűtípus neve"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:113
+msgid "e.g. Brand Sans"
+msgstr "pl. Brand Sans"
+
+#. translators: %s: font name.
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:167
+#, js-format
+msgid "%s is uploaded and ready to use."
+msgstr "A(z) %s feltöltve és használatra kész."
+
+#. translators: %s: file types, e.g. woff2, woff, ttf.
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:175
+#, js-format
+msgid "Choose a font file (%s)"
+msgstr "Válasszon ki egy betűtípusfájlt (%s)"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:184
+msgid "Font library"
+msgstr "Betűtár"
+
+#. translators: %d: number of font files.
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:194
+#, js-format
+msgid "%d files"
+msgstr "%d fájl"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:214
+msgid "Font switched off for the site."
+msgstr "Betűtípus kikapcsolva a webhelyhez."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:215
+msgid "Font switched on for the site."
+msgstr "A betűtípus bekapcsolva a webhelyhez."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:220
+msgid "Switch off"
+msgstr "Kikapcsolás"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:221
+msgid "Switch on"
+msgstr "Bekapcsolás"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:229
+msgid "Adobe Fonts"
+msgstr "Adobe Fonts"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:232
+msgid "Paste the kit id of your Adobe Fonts web project. Its fonts are then loaded from Adobe on your pages."
+msgstr "Illessze be az Adobe Fonts webprojektjének készletazonosítóját. A betűtípusok ezután az Adobe-tól töltődnek be az oldalain."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:237
+msgid "Your web projects"
+msgstr "Webes projektjei"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:249
+msgid "Adobe Fonts connected."
+msgstr "Adobe Fonts csatlakoztatva."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:250
+msgid "Adobe Fonts disconnected."
+msgstr "Adobe Fonts leválasztva."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:256
+msgid "Kit id"
+msgstr "Kitészköz azonosító"
+
+#. translators: %s: colour name.
+#: src/design/pro__premium_only/globals/DarkModeSection.js:36
+#, js-format
+msgid "The dark value for \"%s\" is not a valid colour."
+msgstr "A(z) \"%s\" sötét értéke nem érvényes szín."
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:51
+msgid "When a visitor has not chosen"
+msgstr "Amikor a látogató nem választott"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:56
+msgid "Follow the visitor’s device"
+msgstr "Kövesse a látogató eszközét"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:59
+msgid "Light"
+msgstr "Világos"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:60
+msgid "Dark"
+msgstr "Sötét"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:64
+msgid "Dark colours"
+msgstr "Sötét színek"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:67
+msgid "Give each colour its dark version. Colours left empty stay the same in both schemes. Dark mode is on as soon as one colour has a dark value."
+msgstr "Adja meg mindegyik szín sötét változatát. Az üresen hagyott színek mindkét séma esetén változatlanok maradnak. A sötét mód azonnal bekapcsol, amint egy színnek van sötét értéke."
+
+#. translators: %s: colour name.
+#: src/design/pro__premium_only/globals/DarkModeSection.js:86
+#, js-format
+msgid "Dark version of %s"
+msgstr "A %s sötét verziója"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:105
+msgid "Dark mode saved."
+msgstr "Sötét mód mentve."
+
+#: src/design/pro__premium_only/globals/editor.js:20
+#: src/design/pro__premium_only/globals/index.js:62
+#: src/design/site-design/sections.js:28
+msgid "Page CSS"
+msgstr "Oldal CSS"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:67
+msgid "Global classes"
+msgstr "Globális osztályok"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:73
+#: src/design/pro__premium_only/globals/index.js:20
+#: src/design/site-design/sections.js:22
+msgid "Classes"
+msgstr "Osztályok"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:94
+msgid "Create classes in Site design, then add them here."
+msgstr "Hozzon létre osztályokat a Webhelytervezés menüpontban, majd adja hozzá őket itt."
+
+#: src/design/pro__premium_only/globals/ElementControls.js:104
+msgid "Custom CSS"
+msgstr "Egyéni CSS"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:105
+msgid "Write rules for this element. \"selector\" means this element, e.g. selector:hover { opacity: .8 } — plain declarations apply to the element itself."
+msgstr "Írjon szabályokat ehhez az elemhez. A \"selector\" ezt az elemet jelenti, pl. selector:hover { opacity: .8 } – az egyszerű deklarációk magára az elemre vonatkoznak."
+
+#. translators: %s: file types.
+#: src/design/pro__premium_only/globals/fonts.js:39
+#, js-format
+msgid "Font files must be %s."
+msgstr "A betűtípusfájloknak %s formátumúnak kell lenniük."
+
+#: src/design/pro__premium_only/globals/fonts.js:44
+msgid "That font file is empty or larger than 10 MB."
+msgstr "Az a betűtípusfájl üres vagy nagyobb, mint 10 MB."
+
+#: src/design/pro__premium_only/globals/index.js:21
+msgid "Style once, reuse everywhere, change in one place."
+msgstr "Stílus egyszer, újrafelhasználás bárhol, módosítás egy helyen."
+
+#: src/design/pro__premium_only/globals/index.js:27
+#: src/design/site-design/sections.js:23
+msgid "Variables"
+msgstr "Változók"
+
+#: src/design/pro__premium_only/globals/index.js:28
+msgid "Named values any element can use."
+msgstr "Névvel ellátott értékek, amelyeket bármely elem használhat."
+
+#: src/design/pro__premium_only/globals/index.js:34
+#: src/design/site-design/sections.js:24
+msgid "Spacing, radius and shadows"
+msgstr "Térköz, sugár és árnyékok"
+
+#: src/design/pro__premium_only/globals/index.js:35
+msgid "The scales every spacing, corner and shadow picker offers."
+msgstr "Az összes mérethelyesbítési, sarok- és árnyékválasztó által kínált skálák."
+
+#: src/design/pro__premium_only/globals/index.js:42
+msgid "A dark version of your colours, for visitors who want it."
+msgstr "A színeid sötét változata a sötét módot kedvelő látogatók számára."
+
+#: src/design/pro__premium_only/globals/index.js:48
+#: src/design/site-design/sections.js:26
+msgid "Brand kit"
+msgstr "Márkakészlet"
+
+#: src/design/pro__premium_only/globals/index.js:49
+msgid "Logo, colours, fonts and tone of voice, used by the AI and templates."
+msgstr "Logó, színek, betűtípusok és hangnem, amelyeket a mesterséges intelligencia és a sablonok használnak."
+
+#: src/design/pro__premium_only/globals/index.js:55
+#: src/design/site-design/sections.js:27
+msgid "Custom fonts"
+msgstr "Egyedi betűtípusok"
+
+#: src/design/pro__premium_only/globals/index.js:56
+msgid "Upload your own fonts or connect Adobe Fonts."
+msgstr "Töltse fel saját betűtípusait, vagy csatlakoztassa az Adobe Fonts szolgáltatást."
+
+#: src/design/pro__premium_only/globals/index.js:63
+msgid "CSS for this page only."
+msgstr "CSS csak ehhez az oldalhoz."
+
+#: src/design/pro__premium_only/globals/PageCss.js:47
+msgid "CSS for this page"
+msgstr "CSS ehhez az oldalhoz"
+
+#: src/design/pro__premium_only/globals/PageCss.js:48
+msgid "Loaded only on this page, after the site’s styles. Saved with the page."
+msgstr "Csak ezen az oldal látható be, a webhely stílusai után. Az oldallal együtt mentve."
+
+#: src/design/pro__premium_only/globals/TokenList.js:29
+msgid "Short name"
+msgstr "Rövid név"
+
+#. translators: %s: short name.
+#: src/design/pro__premium_only/globals/TokenList.js:98
+#, js-format
+msgid "The short name \"%s\" is used twice."
+msgstr "A(z) \"%s\" rövid név kétszer szerepel."
+
+#. translators: %s: short name.
+#: src/design/pro__premium_only/globals/TokenList.js:105
+#, js-format
+msgid "\"%s\": short names use lowercase letters, digits and hyphens."
+msgstr "„%s”: a rövid nevek kisbetűket, számokat és kötőjeleket használhatnak."
+
+#. translators: %s: short name.
+#: src/design/pro__premium_only/globals/TokenList.js:114
+#, js-format
+msgid "The value of \"%s\" is not one this setting accepts."
+msgstr "A(z) „%s” értéke nem egyezik meg a beállítás által elfogadott értékek egyikével."
+
+#: src/design/pro__premium_only/globals/TokensSection.js:32
+msgid "Radius"
+msgstr "Sugár"
+
+#: src/design/pro__premium_only/globals/TokensSection.js:50
+msgid "Add a step"
+msgstr "Lépés hozzáadása"
+
+#: src/design/pro__premium_only/globals/TokensSection.js:64
+msgid "Scales saved."
+msgstr "Méretek elmentve."
+
+#: src/design/pro__premium_only/globals/TokensSection.js:76
+msgid "Scales are back to the defaults."
+msgstr "A skálázási beállítások visszaálltak az alapértelmezettre."
+
+#: src/design/pro__premium_only/globals/TokensSection.js:80
+msgid "Reset to the default scales"
+msgstr "Visszaállítás az alapértelmezett méretre"
+
+#: src/design/pro__premium_only/globals/VariablesSection.js:35
+msgid "No variables yet. A variable holds one value — a width, a colour mix, a font size — that many elements share."
+msgstr "Még nincsenek változók. A változó egy értéket – egy szélességet, egy színkeveréket, egy betűméretet – tárol, amelyet számos elem közösen használ."
+
+#: src/design/pro__premium_only/globals/VariablesSection.js:45
+msgid "Add variable"
+msgstr "Változó hozzáadása"
+
+#: src/design/pro__premium_only/globals/VariablesSection.js:57
+msgid "Variables saved."
+msgstr "Változók elmentve."
+
+#: src/design/site-design/ColorsSection.js:29
+msgid "No colours yet."
+msgstr "Még nincsenek színek."
+
+#. translators: %d: a number.
+#: src/design/site-design/ColorsSection.js:70
+#, js-format
+msgid "Colour %d"
+msgstr "Szín %d"
+
+#: src/design/site-design/ColorsSection.js:83
+msgid "Add colour"
+msgstr "Szín hozzáadása"
+
+#: src/design/site-design/ColorsSection.js:113
+msgid "Two colours have the same name. Rename one."
+msgstr "Két színnek ugyanaz a neve. Nevezze át az egyiket."
+
+#. translators: %s: colour name.
+#: src/design/site-design/ColorsSection.js:120
+#, js-format
+msgid "\"%s\" is not a valid colour."
+msgstr "A(z) „%s” nem érvényes szín."
+
+#: src/design/site-design/ColorsSection.js:132
+msgid "Theme colours"
+msgstr "Téma színei"
+
+#: src/design/site-design/ColorsSection.js:135
+msgid "Your theme’s palette. A change here is saved as your site’s version of the colour, the same way the Site Editor saves it, and applies everywhere the colour is used."
+msgstr "A sablon színpalettája. Az itt végzett módosítás a webhely színes verziójaként lesz elmentve – ugyanúgy, ahogy a Oldalszerkesztő is menti –, és mindenhol érvénybe lép, ahol a színt használják."
+
+#: src/design/site-design/ColorsSection.js:149
+msgid "Theme colours are back to the theme’s own values."
+msgstr "A téma színei visszaálltak a téma saját értékeire."
+
+#: src/design/site-design/ColorsSection.js:156
+msgid "Reset theme colours"
+msgstr "Téma színeinek visszaállítása"
+
+#: src/design/site-design/ColorsSection.js:159
+msgid "Your colours"
+msgstr "Színeid"
+
+#: src/design/site-design/ColorsSection.js:176
+msgid "Colours saved."
+msgstr "Színek elmentve."
+
+#. translators: %s: colour name.
+#: src/design/site-design/components.js:39
+#, js-format
+msgid "Pick a colour for %s"
+msgstr "Válasszon színt a következőhöz: %s"
+
+#: src/design/site-design/components.js:70
+msgid "Clear"
+msgstr "Törlés"
+
+#: src/design/site-design/components.js:162
+msgid "The change could not be saved."
+msgstr "A módosítást nem sikerült menteni."
+
+#: src/design/site-design/editor.js:58
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Panel bezárása"
+
+#: src/design/site-design/FontsSection.js:34
+msgid "Theme default"
+msgstr "Téma alapértelmezett"
+
+#: src/design/site-design/FontsSection.js:78
+msgid "Theme fonts"
+msgstr "Témabetűípusok"
+
+#: src/design/site-design/FontsSection.js:88
+msgid "Your fonts"
+msgstr "Betűtípusaid"
+
+#: src/design/site-design/FontsSection.js:101
+msgid "Font stack"
+msgstr "Betűcsalád"
+
+#: src/design/site-design/FontsSection.js:104
+msgid "Uploaded font: its files come from the font library."
+msgstr "Feltöltött betűtípus: a fájljai a betűkészlet-könyvtárból származnak."
+
+#: src/design/site-design/FontsSection.js:138
+msgid "System sans-serif"
+msgstr "Rendszerszintű sans-serif"
+
+#: src/design/site-design/FontsSection.js:145
+msgid "Add font stack"
+msgstr "Betűkészlet hozzáadása"
+
+#: src/design/site-design/FontsSection.js:170
+msgid "Fonts saved."
+msgstr "Betűtípusok elmentve."
+
+#: src/design/site-design/sections.js:50
+msgid "Shared with your theme and the Site Editor."
+msgstr "Megosztva a sablonnal és a Oldalszerkesztővel."
+
+#: src/design/site-design/sections.js:59
+msgid "Fonts"
+msgstr "Betűtípusok"
+
+#: src/design/site-design/sections.js:60
+msgid "Heading and body fonts for the whole site."
+msgstr "Címsorok és törzsszövegek betűtípusai az egész webhelyen."
+
+#: src/design/site-design/SiteDesign.js:45
+msgid "Back to Site design"
+msgstr "Vissza a webhelytervezéshez"
+
+#: src/design/site-design/SiteDesign.js:70
+msgid "Pro"
+msgstr "Pro"
+
+#: src/design/site-design/SiteDesign.js:95
+msgid "Classes, tokens, dark mode, brand kit and custom fonts come with Pro"
+msgstr "Az osztályok, tokenek, sötét mód, márkakészlet és az egyéni betűtípusok a Pro csomag részét képezik"
+
+#: src/design/site-design/SiteDesign.js:105
+msgid "Open the Site Editor’s styles"
+msgstr "Nyissa meg a Webhelyszerkesztő stílusait"
+
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Fejléc"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -5508,10 +8002,6 @@ msgstr "Jelenlegi nyelv megjelenítése"
 msgid "Install Tranzly and list two or more languages, and the switcher appears here."
 msgstr "Telepítse a Tranzly bővítményt, adjon meg két vagy több nyelvet, és a váltó itt fog megjelenni."
 
-#: src/editor/language-switcher.js:67
-msgid "Design"
-msgstr "Dizájn"
-
 #: src/editor/language-switcher.js:72
 msgid "List"
 msgstr "Lista"
@@ -5534,7 +8024,7 @@ msgstr "Nyelvkódok"
 
 #: src/editor/language-switcher.js:102
 msgid "Show each language as"
-msgstr "Minden nyelv megjelenítése így:"
+msgstr "Minden nyelv megjelenítése mint"
 
 #: src/editor/language-switcher.js:110
 msgid "Language name"
@@ -5558,20 +8048,15 @@ msgstr "Alapértelmezés szerint ki: a zászló ország, nem nyelv."
 
 #: src/editor/language-switcher.js:144
 msgid "Include the current language"
-msgstr "Az aktuális nyelv bevonása"
+msgstr "Jelenlegi nyelv belefoglalása"
 
 #: src/editor/language-switcher.js:155
 msgid "Hide languages this page is not translated into"
-msgstr "Ezen oldal nem lefordított nyelveinek elrejtése"
+msgstr "Rejtsd el azokat a nyelveket, amelyekre ez az oldal nincs lefordítva"
 
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Egymás felett elhelyezés"
-
-#: src/editor/language-switcher.js:187
-#: src/workflow/pro__premium_only/ReplacePanel.js:126
-msgid "Colours"
-msgstr "Színek"
 
 #: src/editor/language-switcher.js:193
 msgid "Background"
@@ -5579,65 +8064,53 @@ msgstr "Háttér"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
-msgstr "Aktuális nyelvi szöveg"
+msgstr "Jelenlegi nyelvek szövege"
 
 #: src/editor/language-switcher.js:204
 msgid "Current language background"
-msgstr "Jelenlegi nyelvi háttér"
-
-#: src/editor/language-switcher.js:211
-msgid "Border"
-msgstr "Szegély"
+msgstr "Aktuális nyelvi háttér"
 
 #: src/editor/language-switcher.js:220
 msgid "Size and spacing"
 msgstr "Méret és térköz"
 
-#: src/editor/language-switcher.js:226
-msgid "Corner radius"
-msgstr "Sarokrádiusz"
-
 #: src/editor/language-switcher.js:231
 msgid "Space between languages"
-msgstr "Helyköz a nyelvek között"
+msgstr "Nyelvek közötti tárhely"
 
 #: src/editor/language-switcher.js:239
 msgid "Text size"
 msgstr "Szövegméret"
 
 #. translators: %s: user name.
-#: src/studio/app.js:118
+#: src/studio/app.js:122
 #, js-format
 msgid "%s is also editing this page. Saving may overwrite their changes."
 msgstr "%s is szerkeszti ezt az oldalt. A mentéssel felülírhatja a módosításait."
 
-#: src/studio/app.js:133
-#: src/studio/app.js:140
-#: src/studio/components/header.js:109
+#: src/studio/app.js:137
+#: src/studio/app.js:144
+#: src/studio/components/header.js:136
 msgid "Block library"
 msgstr "Blokk-könyvtár"
 
-#: src/studio/app.js:134
-#: src/studio/app.js:144
-#: src/studio/components/header.js:117
+#: src/studio/app.js:138
+#: src/studio/app.js:148
+#: src/studio/components/header.js:144
 msgid "Layers"
 msgstr "Rétegek"
 
-#: src/studio/app.js:148
-msgid "Close panel"
-msgstr "Panel bezárása"
-
-#: src/studio/app.js:171
+#: src/studio/app.js:175
 msgid "Page canvas"
 msgstr "Oldalvászon"
 
-#: src/studio/app.js:199
-#: src/studio/components/header.js:207
+#: src/studio/app.js:203
+#: src/studio/components/header.js:236
 #: src/studio/components/revisions.js:80
 msgid "Revisions"
 msgstr "Változatok"
 
-#: src/studio/app.js:201
+#: src/studio/app.js:205
 msgid "Block settings"
 msgstr "Blokkon beállítások"
 
@@ -5659,12 +8132,12 @@ msgid "Open in Studio: %s"
 msgstr "Megnyitás a Studióban: %s"
 
 #: src/studio/components/commands.js:205
-#: src/studio/components/header.js:125
+#: src/studio/components/header.js:152
 msgid "Undo"
 msgstr "Visszavonás"
 
 #: src/studio/components/commands.js:214
-#: src/studio/components/header.js:134
+#: src/studio/components/header.js:161
 msgid "Redo"
 msgstr "Ismétlés"
 
@@ -5685,7 +8158,7 @@ msgid "Open the normal editor"
 msgstr "A normál szerkesztő megnyitása"
 
 #: src/studio/components/commands.js:259
-#: src/studio/components/header.js:215
+#: src/studio/components/header.js:244
 #: src/studio/components/shortcuts.js:135
 msgid "Keyboard shortcuts"
 msgstr "Gyorsbillentyűk"
@@ -5727,89 +8200,95 @@ msgstr "Biztonságos mód kikapcsolása"
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Biztonságos mód bekapcsolása (más bővítmények ki, önnek, csak a Stúdióban)"
 
-#: src/studio/components/header.js:32
+#: src/studio/components/header.js:33
 msgid "Published"
 msgstr "Közzétéve"
 
-#: src/studio/components/header.js:33
+#: src/studio/components/header.js:34
 msgid "Scheduled"
 msgstr "Ütemezve"
 
-#: src/studio/components/header.js:34
+#: src/studio/components/header.js:35
 msgid "Pending review"
 msgstr "Ellenőrzésre vár"
 
-#: src/studio/components/header.js:35
+#: src/studio/components/header.js:36
 msgid "Private"
 msgstr "Privát"
 
-#: src/studio/components/header.js:36
 #: src/studio/components/header.js:37
+#: src/studio/components/header.js:38
 msgid "Draft"
 msgstr "Piszkozat"
 
-#: src/studio/components/header.js:68
+#: src/studio/components/header.js:69
 msgid "All changes saved"
 msgstr "Minden módosítás mentve"
 
-#: src/studio/components/header.js:70
+#: src/studio/components/header.js:71
 msgid "Saving…"
 msgstr "Mentés…"
 
-#: src/studio/components/header.js:72
+#: src/studio/components/header.js:73
 msgid "Autosaving…"
 msgstr "Automatikus mentés…"
 
-#: src/studio/components/header.js:75
 #: src/studio/components/header.js:76
+#: src/studio/components/header.js:77
 msgid "Unsaved changes"
 msgstr "Mentetlen változások"
 
-#: src/studio/components/header.js:75
+#: src/studio/components/header.js:76
 msgid "autosaved"
 msgstr "automatikus mentés"
 
-#: src/studio/components/header.js:83
+#: src/studio/components/header.js:85
 msgid "Desktop preview"
 msgstr "Asztali előnézet"
 
-#: src/studio/components/header.js:85
+#: src/studio/components/header.js:92
 msgid "Tablet preview"
 msgstr "Tabletgyári előnézet"
 
-#: src/studio/components/header.js:86
+#: src/studio/components/header.js:99
 msgid "Mobile preview"
 msgstr "Mobil előnézet"
 
-#: src/studio/components/header.js:93
+#. translators: 1: a custom screen size's name, 2: its width in pixels.
+#: src/studio/components/header.js:107
+#, js-format
+msgid "%1$s preview (%2$d px)"
+msgstr "%1$s előnézet (%2$d px)"
+
+#: src/studio/components/header.js:120
 msgid "Studio toolbar"
 msgstr "Stúdió eszköztár"
 
-#: src/studio/components/header.js:102
+#: src/studio/components/header.js:129
 msgid "Back to the normal editor"
 msgstr "Vissza a normál szerkesztőhöz"
 
-#: src/studio/components/header.js:148
+#: src/studio/components/header.js:175
 msgid "Page title"
 msgstr "Oldalcím"
 
-#: src/studio/components/header.js:158
+#: src/studio/components/header.js:185
 msgid "Preview width"
 msgstr "Előnézet szélessége"
 
-#: src/studio/components/header.js:185
+#: src/studio/components/header.js:214
 msgid "Command palette"
 msgstr "Parancskészlet"
 
-#: src/studio/components/header.js:227
+#: src/studio/components/header.js:258
 msgid "View page (opens in a new tab)"
 msgstr "Oldal megtekintése (új lapon nyílik meg)"
 
-#: src/studio/components/header.js:253
+#: src/studio/components/header.js:284
 msgid "Save draft"
 msgstr "Piszkozat mentése"
 
-#: src/studio/components/header.js:263
+#: src/studio/components/header.js:294
 msgid "Publish"
 msgstr "Közzététel"
 
@@ -5987,7 +8466,7 @@ msgstr "Mentve."
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:94
 msgid "Maintenance and pre-launch mode"
-msgstr "Karbantartási és indítás előtti üzemmód"
+msgstr "Karbantartási és indulás előtti mód"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:112
 msgid "What visitors see"
@@ -5999,11 +8478,11 @@ msgstr "A webhely a szokásos módon"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:127
 msgid "Maintenance: a notice, and search engines are told to come back later"
-msgstr "Karbantartás: értesítés, és a keresőmotorok utasítva vannak, hogy térjenek vissza később"
+msgstr "Karbantartás: értesítés, és a keresőmotorok utasítva vannak a későbbi visszatérésre"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:134
 msgid "Pre-launch: a notice, and search engines are told not to index the site"
-msgstr "Indulás előtt: értesítés, és a keresőmotorok utasítást kapnak, hogy ne indexeljék a webhelyet"
+msgstr "Indulás előtti állapot: egy értesítés, és a keresőmotorok utasítást kapnak, hogy ne indexeljék a webhelyet"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:145
 msgid "Page to show instead"
@@ -6015,11 +8494,11 @@ msgstr "Tervezzen meg tetszőleges oldalt a szerkesztővel, és válassza ki azt
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:164
 msgid "Who still sees the real site (administrators always do):"
-msgstr "Ki látja továbbra is a valódi webhelyet (az adminisztrátorok mindig):"
+msgstr "Ki látja még mindig a valós oldalt (az adminisztrátorok mindig):"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:199
 msgid "Open the site in a private window to see what visitors see."
-msgstr "Nyissa meg a webhelyet egy inkognitóablakban, hogy lássa, mit látnak a látogatók."
+msgstr "Nyissa meg a webhelyet egy privát ablakban, hogy lássa, mit látnak a látogatók."
 
 #: src/workflow/pro__premium_only/network.js:54
 msgid "Network settings saved."
@@ -6030,7 +8509,7 @@ msgstr "Hálózati beállítások elmentve."
 #, js-format
 msgid "These settings apply to the %d site in this network."
 msgid_plural "These settings apply to the %d sites in this network."
-msgstr[0] "Ezek a beállítások a hálózat %d webhelyére vonatkoznak."
+msgstr[0] "Ezek a beállítások a(z) %d webhelyre vonatkoznak ebben a hálózatban."
 msgstr[1] "Ezek a beállítások a hálózatban lévő %d webhelyre vonatkoznak."
 
 #: src/workflow/pro__premium_only/network.js:113
@@ -6051,7 +8530,7 @@ msgstr "Fehér címke minden webhelyhez"
 
 #: src/workflow/pro__premium_only/network.js:149
 msgid "Used by every site that has not saved its own white-label settings."
-msgstr "Minden olyan webhely használja, amely nem mentette el a saját fehér címkés beállításait."
+msgstr "Minden olyan webhely használja, amely nem mentette el a saját saját márkás (white-label) beállításait."
 
 #: src/workflow/pro__premium_only/network.js:156
 msgid "Turn white label on"
@@ -6084,7 +8563,7 @@ msgstr "Menüikon"
 
 #: src/workflow/pro__premium_only/network.js:193
 msgid "Role defaults for every site"
-msgstr "Szerepkör-alapértelmezések minden webhelyhez"
+msgstr "Alapértelmezett szerepkörök minden webhelyhez"
 
 #: src/workflow/pro__premium_only/network.js:230
 msgid "Save network settings"
@@ -6095,20 +8574,20 @@ msgstr "Hálózati beállítások mentése"
 #, js-format
 msgid "Searching… %d item checked so far."
 msgid_plural "Searching… %d items checked so far."
-msgstr[0] "Keresés… Eddig %d elem ellenőrizve."
+msgstr[0] "Keresés… %d elem ellenőrizve eddig."
 msgstr[1] "Keresés… Eddig %d elem ellenőrizve."
 
 #. translators: %d: number of items searched.
 #: src/workflow/pro__premium_only/replace-lib.js:36
 #, js-format
 msgid "No matches in %d items. Nothing to replace."
-msgstr "Nincs találat %d elemen. Nincs mit cserélni."
+msgstr "Nincs találat a(z) %d elem között. Nincs mit cserélni."
 
 #. translators: 1: number of matches, 2: number of pages, 3: number of items searched.
 #: src/workflow/pro__premium_only/replace-lib.js:44
 #, js-format
 msgid "%1$d matches on %2$d pages (%3$d items searched). Nothing has changed yet."
-msgstr "%1$d találat %2$d oldalon (%3$d elem átvizsgálva). Még semmi sem változott."
+msgstr "%1$d találat %2$d oldalon (%3$d elem átkutatva). Még semmi sem változott."
 
 #. translators: 1: pages changed so far, 2: pages to change.
 #: src/workflow/pro__premium_only/replace-lib.js:55
@@ -6139,8 +8618,8 @@ msgstr "Visszavonva: %1$d oldal visszaállítva. %2$d oldal módosult a csere ut
 #, js-format
 msgid "Undone: %d page restored."
 msgid_plural "Undone: %d pages restored."
-msgstr[0] "Visszavonva: %d oldal helyreállítva."
-msgstr[1] "Visszavonva: %d oldal visszaállítva."
+msgstr[0] "Visszaállítva: %d oldal helyreállítva."
+msgstr[1] "Visszavonva: %d oldal helyreállítva."
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:97
 msgid "Find and replace across all pages"
@@ -6160,11 +8639,11 @@ msgstr "Keresés"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:138
 msgid "A hex colour such as #1a73e8. Short forms (#fff) match too."
-msgstr "Egy hexadecimális szín, például #1a73e8. A rövidebb formák (#fff) is megfelelőek."
+msgstr "Hexadecimális színkód, például #1a73e8. A rövidebb formátumok (#fff) is megfelelőek."
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:150
 msgid "Replace with"
-msgstr "Cserép erre:"
+msgstr "Csere erre:"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:157
 msgid "Match upper and lower case"
@@ -6172,7 +8651,7 @@ msgstr "Kis- és nagybetűk megkülönböztetése"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:166
 msgid "Search in"
-msgstr "Keresés itt:"
+msgstr "Keresés ebben:"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:191
 msgid "Find matches"
@@ -6194,7 +8673,7 @@ msgstr "Előző"
 #: src/workflow/pro__premium_only/ReplacePanel.js:255
 #, js-format
 msgid "Page %1$d of %2$d"
-msgstr "%1$d. / %2$d. oldal"
+msgstr "%1$d. oldal / %2$d"
 
 #. translators: %d: number of pages.
 #: src/workflow/pro__premium_only/ReplacePanel.js:281
@@ -6202,7 +8681,7 @@ msgstr "%1$d. / %2$d. oldal"
 msgid "Replace on %d page"
 msgid_plural "Replace on %d pages"
 msgstr[0] "Csere ezen az oldalon: %d"
-msgstr[1] "Cserét le %d oldalon"
+msgstr[1] "Csere %d oldalon"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:296
 msgid "Undo this replacement"
@@ -6220,7 +8699,7 @@ msgstr "Megjegyzés hozzáadása"
 #: src/workflow/pro__premium_only/review-layer.js:112
 #, js-format
 msgid "Comment %1$d by %2$s: %3$s"
-msgstr "%2$s (%1$d. megjegyzése): %3$s"
+msgstr "%2$s (%1$d. megjegyzés): %3$s"
 
 #. translators: %d: number of comments.
 #: src/workflow/pro__premium_only/review-layer.js:135
@@ -6236,7 +8715,7 @@ msgstr "Az Ön neve"
 #: src/workflow/pro__premium_only/review-layer.js:158
 #: src/workflow/pro__premium_only/review-layer.js:159
 msgid "Your comment"
-msgstr "Az ön megjegyzése"
+msgstr "Az Ön megjegyzése"
 
 #: src/workflow/pro__premium_only/review-layer.js:163
 msgid "Send comment"
@@ -6254,16 +8733,16 @@ msgstr "Kattintson az oldal azon részére, amelyre a megjegyzése vonatkozik."
 #: src/workflow/pro__premium_only/review-panel.js:39
 #: src/workflow/pro__premium_only/review-panel.js:43
 msgid "Client review"
-msgstr "Ügyfélelemzés"
+msgstr "Ügyfél-ellenőrzés"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:88
 msgid "That part of the page could not be found: it may have been changed or removed since the comment was made."
-msgstr "Az oldalnak ez a része nem található: lehet, hogy a megjegyzés elküldése óta módosították vagy eltávolították."
+msgstr "Az oldalnak ez a része nem található: lehet, hogy a hozzászólás óta megváltoztatták vagy eltávolították."
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:121
 #: src/workflow/pro__premium_only/ReviewPanel.js:142
 msgid "Review link"
-msgstr "Link áttekintése"
+msgstr "Ellenőrzési hivatkozás"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:124
 msgid "Let a client comment on this page"
@@ -6279,7 +8758,7 @@ msgstr "Másolva"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
-msgstr "Hivatkozás másolása"
+msgstr "Hivatás másolása"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:162
 msgid "Make a new link (the old one stops working)"
@@ -6339,11 +8818,11 @@ msgstr "Sablonok kezelése"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:35
 msgid "Use AI"
-msgstr "Használjon mesterséges intelligenciát"
+msgstr "Mesterséges intelligencia használata"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:38
 msgid "Client mode: text and images only"
-msgstr "Ügyfél mód: csak szöveg és képek"
+msgstr "Kliens mód: csak szöveg és képek"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:85
 msgid "Role settings saved."
@@ -6355,7 +8834,7 @@ msgstr "Szerepkörök és ügyfélmód"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:103
 msgid "Choose what each role can do in the builder. Administrators can always do everything. Client mode locks the layout and design, so the role can only change text and images."
-msgstr "Válassza ki, hogy az egyes szerepkörök mit tehetnek a szerkesztőben. Az adminisztrátorok mindig mindent megtehetnek. Az ügyfél mód zárolja az elrendezést és a dizájnt, így a szerepkör csak a szöveget és a képeket tudja módosítani."
+msgstr "Válassza ki, mit tehet az egyes szerepkörök a szerkesztőben. Az adminisztrátorok mindig mindent megtehetnek. Az ügyfél mód zárolja az elrendezést és a dizájnt, így a szerepkör csak a szöveget és a képeket tudja módosítani."
 
 #: src/workflow/pro__premium_only/RolesPanel.js:122
 msgid "Role"
@@ -6371,7 +8850,7 @@ msgstr "Mentve. Az új nevek megtekintéséhez töltse újra az oldalt."
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:87
 msgid "White label"
-msgstr "White label"
+msgstr "Fehér címkés"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:103
 msgid "Rename the builder and hide our branding on this site"
@@ -6379,7 +8858,7 @@ msgstr "Nevezze át az építőt, és rejtse el márkajelzésünket ezen a webhe
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:115
 msgid "Shown everywhere the product name appears: menus, the editor, notices."
-msgstr "Mindenhol megjelenik, ahol a terméknév feltűnik: a menükben, a szerkesztőben és az értesítésekben."
+msgstr "Mindenhol megjelenik, ahol a termék neve feltűnik: a menükben, a szerkesztőben és az értesítésekben."
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:123
 msgid "Leave empty to use the builder name."
@@ -6395,11 +8874,11 @@ msgstr "Egy Dashicons név (például dashicons-admin-customizer) vagy egy https
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:153
 msgid "Hide the plugin from the Plugins screen"
-msgstr "Rejtsd el a bővítményt a Bővítmények képernyőről"
+msgstr "Rejtse el a bővítményt a Bővítmények képernyőn"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:165
 msgid "Agency users who still see the real product and these settings"
-msgstr "Ügynökségi felhasználók, akik továbbra is látják a valós terméket és ezeket a beállításokat"
+msgstr "Ügynökségi felhasználók, akik még mindig látják a valós terméket és ezeket a beállításokat"
 
 #. translators: %d: number of items.
 #: src/workflow/transfer-lib.js:53
@@ -6422,8 +8901,8 @@ msgstr[1] "%d lecserélve"
 #, js-format
 msgid "%d kept as they were"
 msgid_plural "%d kept as they were"
-msgstr[0] "%d változatlan marad"
-msgstr[1] "%d változatlan marad"
+msgstr[0] "%d változatlanul maradt"
+msgstr[1] "%d változatlanul maradt"
 
 #. translators: %d: number of settings.
 #: src/workflow/transfer-lib.js:83
@@ -6455,7 +8934,7 @@ msgstr[1] "%d elem exportálva."
 
 #: src/workflow/TransferPanel.js:129
 msgid "That file could not be read as an export file."
-msgstr "A fájl nem olvasható exportfájlként."
+msgstr "Ezt a fájlt nem lehet exportfájlként beolvasni."
 
 #: src/workflow/TransferPanel.js:139
 msgid "Import and export"
@@ -6475,7 +8954,7 @@ msgstr "Még nincsenek exportálható sablonok vagy minták."
 
 #: src/workflow/TransferPanel.js:187
 msgid "Include the settings"
-msgstr "Beállítások beleértése"
+msgstr "Beállítások mellőzése"
 
 #: src/workflow/TransferPanel.js:197
 msgid "Download the export file"
@@ -6495,28 +8974,28 @@ msgstr "Válasszon ki egy exportálandó fájlt"
 #, js-format
 msgid "The file holds %1$d item from %2$s."
 msgid_plural "The file holds %1$d items from %2$s."
-msgstr[0] "A fájl %1$d elemet tartalmaz %2$s helyről."
+msgstr[0] "A fájl %1$d elemet tartalmaz ettől: %2$s."
 msgstr[1] "A fájl %1$d elemet tartalmaz %2$s forrásból."
 
 #: src/workflow/TransferPanel.js:230
 msgid "When an item with the same name already exists here"
-msgstr "Amikor már létezik egy azonos nevű elem itt"
+msgstr "Ha egy azonos nevű elem már létezik itt"
 
 #: src/workflow/TransferPanel.js:238
 msgid "Keep the one on this site"
-msgstr "Tartsd meg az ezen az oldalon lévőt"
+msgstr "Tartsa meg az ezen az oldalon lévőt"
 
 #: src/workflow/TransferPanel.js:245
 msgid "Replace it with the imported one"
-msgstr "Cserélje le az importáltra"
+msgstr "Cserélje le a importáltra"
 
 #: src/workflow/TransferPanel.js:252
 msgid "Import a copy beside it"
-msgstr "Másolat importálása melléje"
+msgstr "Másolat importálása mellé"
 
 #: src/workflow/TransferPanel.js:262
 msgid "Apply the settings in the file"
-msgstr "Alkalmazza a beállításokat a fájlból"
+msgstr "Alkalmazza a fájlban lévő beállításokat"
 
 #: src/workflow/TransferPanel.js:271
 msgid "Copy the images into this site’s media library"
@@ -6524,7 +9003,37 @@ msgstr "Másolja át a képeket ezen webhely médiagalériájába"
 
 #: src/workflow/TransferPanel.js:285
 msgid "Show what will happen"
-msgstr "Mutassa meg, mi fog történni"
+msgstr "Megjelenítés, hogy mi fog történni"
+
+#: blocks/alert/block.json
+msgctxt "block title"
+msgid "Alert"
+msgstr "Figyelmeztetés"
+
+#: blocks/alert/block.json
+msgctxt "block description"
+msgid "A notice for your visitors: information, success, a warning or an error, with an optional title and a close button."
+msgstr "Értesítés a látogatóknak: információ, siker, figyelmeztetés vagy hiba, választható címmel és bezárás gombbal."
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "notice"
+msgstr "figyelem"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "message"
+msgstr "üzenet"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "callout"
+msgstr "Callout"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "warning"
+msgstr "figyelmeztetés"
 
 #: blocks/button/block.json
 msgctxt "block title"
@@ -6568,9 +9077,49 @@ msgstr "oszlop"
 
 #: blocks/column/block.json
 #: blocks/row/block.json
+#: blocks/section/block.json
 msgctxt "block keyword"
 msgid "layout"
 msgstr "elrendezés"
+
+#: blocks/container/block.json
+msgctxt "block title"
+msgid "Container"
+msgstr "Konténer"
+
+#: blocks/container/block.json
+msgctxt "block description"
+msgid "A box that lays out the blocks inside it with flexbox or a grid. Nest containers to build any layout. Stays readable if the plugin is ever turned off."
+msgstr "Egy doboz, amely flexbox vagy rács (grid) segítségével rendezi el a benne lévő blokkokat. Ágyazzon be tárolókat bármilyen elrendezés kialakításához. Olvasható marad, ha a bővítményt bármikor kikapcsolják."
+
+#: blocks/container/block.json
+#: blocks/section/block.json
+msgctxt "block keyword"
+msgid "container"
+msgstr "tároló"
+
+#: blocks/container/block.json
+msgctxt "block keyword"
+msgid "box"
+msgstr "doboz"
+
+#: blocks/container/block.json
+#: blocks/section/block.json
+msgctxt "block keyword"
+msgid "grid"
+msgstr "rács"
+
+#: blocks/container/block.json
+#: blocks/section/block.json
+msgctxt "block keyword"
+msgid "flexbox"
+msgstr "flexbox"
+
+#: blocks/container/block.json
+#: blocks/row/block.json
+msgctxt "block keyword"
+msgid "columns"
+msgstr "oszlopok"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -6654,6 +9203,31 @@ msgctxt "block keyword"
 msgid "multilingual"
 msgstr "többnyelvű"
 
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block title"
+msgid "Dark mode switch"
+msgstr "Sötét mód kapcsoló"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block description"
+msgid "A button that switches the website between its light and dark colours, and remembers the visitor's choice."
+msgstr "Egy gomb, amely vált a weboldal világos és sötét színei között, és megjegyzi a látogató választását."
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block keyword"
+msgid "dark"
+msgstr "Sötét"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block keyword"
+msgid "light"
+msgstr "Világos"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block keyword"
+msgid "colour scheme"
+msgstr "színséma"
+
 #: blocks/row/block.json
 msgctxt "block title"
 msgid "Row"
@@ -6669,10 +9243,20 @@ msgctxt "block keyword"
 msgid "row"
 msgstr "sor"
 
-#: blocks/row/block.json
+#: blocks/section/block.json
+msgctxt "block title"
+msgid "Section"
+msgstr "Szakasz"
+
+#: blocks/section/block.json
+msgctxt "block description"
+msgid "A full-width band of the page that lays its content out with flexbox or a grid. Stays readable if the plugin is ever turned off."
+msgstr "Az oldal teljes szélességű sávja, amely a tartalmát flexbox vagy rács (grid) segítségével rendezi el. Akkor is olvasható marad, ha a bővítményt kikapcsolják."
+
+#: blocks/section/block.json
 msgctxt "block keyword"
-msgid "columns"
-msgstr "oszlopok"
+msgid "section"
+msgstr "szakasz"
 
 #: blocks/shortcode/block.json
 msgctxt "block title"

@@ -20,6 +20,8 @@ import {
 import { useState } from '@wordpress/element';
 import ServerSideRender from '@wordpress/server-side-render';
 
+import IconField, { IconPreview } from '../design/icons/IconField';
+import '../design/icons/picker.scss';
 import { styleObject } from './style';
 import { COLUMN_STYLE, ROW_STYLE } from './save';
 
@@ -220,23 +222,16 @@ export function IconEdit( props ) {
 	const blockProps = useBlockProps( {
 		style: styleObject( attributes.style ),
 	} );
-	// Previewed through <img>: an image context never runs script, so an unsanitised SVG pasted
-	// here cannot act in the editor. The server sanitises it before any visitor sees it.
-	const src = attributes.svg
-		? `data:image/svg+xml;charset=utf-8,${ encodeURIComponent( attributes.svg ) }`
-		: '';
+	// Previewed inline through sanitizeSvg() (the twin of the server's Svg::sanitize), so the icon
+	// takes the text colour; the server sanitises again before any visitor sees it.
 	return (
 		<>
 			<InspectorControls>
 				<PanelBody title={ __( 'Icon', 'page-builder-sandwich' ) }>
-					<TextareaControl
-						label={ __( 'SVG markup', 'page-builder-sandwich' ) }
-						help={ __(
-							'Scripts, links and external references are removed before the icon is shown.',
-							'page-builder-sandwich'
-						) }
-						value={ attributes.svg }
-						onChange={ ( svg ) => setAttributes( { svg } ) }
+					<IconField
+						svg={ attributes.svg }
+						iconRef={ attributes.iconRef }
+						onChange={ setAttributes }
 					/>
 					<TextControl
 						__next40pxDefaultSize
@@ -255,11 +250,11 @@ export function IconEdit( props ) {
 				<StylePanel { ...props } legacy={ false } />
 			</InspectorControls>
 			<span { ...blockProps }>
-				{ src ? (
-					<img src={ src } alt={ attributes.label } />
+				{ attributes.svg ? (
+					<IconPreview svg={ attributes.svg } />
 				) : (
 					__(
-						'Paste SVG markup in the block settings.',
+						'Choose an icon in the block settings.',
 						'page-builder-sandwich'
 					)
 				) }

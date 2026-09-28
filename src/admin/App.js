@@ -13,6 +13,7 @@ import {
 } from '@wordpress/components';
 
 import About from './About';
+import Breakpoints from './Breakpoints';
 import LegacyContent from './LegacyContent';
 import { isValidPrefix } from './prefix';
 
@@ -119,6 +120,9 @@ export default function App( { data } ) {
 							{ __( 'Save', 'page-builder-sandwich' ) }
 						</Button>
 					</PanelBody>
+				) }
+				{ settings && data.breakpointsPath && (
+					<Breakpoints path={ data.breakpointsPath } />
 				) }
 				{ settings && ! data.whiteLabel && (
 					<PanelBody

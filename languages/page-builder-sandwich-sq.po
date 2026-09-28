@@ -92,6 +92,7 @@ msgstr "Kodi dhe CSS"
 
 #: includes/ai-core/class-admin.php:115
 #: includes/class-admin.php:72
+#: includes/design/globals/class-site-design.php:81
 #: includes/pro__premium_only/workflow/class-network.php:221
 msgid "Sorry, you are not allowed to access this page."
 msgstr "Na falni, nuk ju lejohet të hyni në këtë faqe."
@@ -220,6 +221,7 @@ msgstr "Test"
 #: includes/ai-core/class-admin.php:426
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
+#: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Hiq"
 
@@ -694,6 +696,7 @@ msgid "Map"
 msgstr "Krijo hartë"
 
 #: includes/assets/class-legacy-script.php:177
+#: src/design/pro__premium_only/effects/panel.js:374
 msgid "Background video"
 msgstr "Video në sfond"
 
@@ -727,11 +730,44 @@ msgstr "Skedarët e shkronjave nuk mund të shkarkoheshin ose ruheshin. Kontroll
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Fleta e stilit e shkronjave nuk mundi të ruhej. Kontrolloni që dosja e ngarkimeve të jetë e shkruajtshme."
 
+#: includes/blocks/class-content.php:87
+msgid "Dismiss this notice"
+msgstr "Hiq këtë njoftim"
+
+#: includes/blocks/class-registry.php:164
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "Dizajni"
+
+#: includes/blocks/class-registry.php:165
+#: src/core/dev-compat/edit.js:94
+#: src/editor/index.js:27
+msgid "Content"
+msgstr "Përmbajtja"
+
+#: includes/blocks/class-registry.php:166
+msgid "Media"
+msgstr "Media"
+
+#: includes/blocks/class-registry.php:167
+msgid "Marketing"
+msgstr "Marketing"
+
+#: includes/blocks/class-registry.php:168
+msgid "Site"
+msgstr "Faqja"
+
+#: includes/blocks/class-registry.php:169
+msgid "Data"
+msgstr "Të dhënat"
+
 #: includes/class-admin.php:78
+#: includes/design/globals/class-site-design.php:86
 msgid "The admin screen's scripts are missing from this copy of the plugin. Reinstall it from a released package."
 msgstr "Skriptet e ekranit të administratorit mungojnë në këtë kopje të shtojcës. Riinstalojeni atë nga një paketë e lëshuar."
 
 #: includes/class-admin.php:81
+#: includes/design/globals/class-site-design.php:89
 #: includes/pro__premium_only/workflow/class-network.php:224
 msgid "This screen needs JavaScript."
 msgstr "Këtij ekrani i duhet JavaScript."
@@ -825,6 +861,93 @@ msgstr "Redakto me Sandwich Studio"
 #: includes/core/class-templates.php:54
 msgid "Blank canvas"
 msgstr "Kanvas i zbrazët"
+
+#: includes/design/class-breakpoints.php:89
+msgid "The tablet width must be a whole number of pixels from 480 to 2560."
+msgstr "Gjerësia e tabletit duhet të jetë një numër i plotë pikselësh nga 480 deri në 2560."
+
+#: includes/design/class-breakpoints.php:92
+msgid "The mobile width must be a whole number of pixels, at least 240 and smaller than the tablet width."
+msgstr "Gjerësia e pajisjes celulare duhet të jetë një numër i plotë pikselësh, të paktën 240 dhe më e vogël se gjerësia e tabletit."
+
+#: includes/design/class-breakpoints.php:102
+msgid "Each custom breakpoint needs its own id: 2 to 12 lowercase letters or digits, starting with a letter."
+msgstr "Secila pikë ndërprerjeje e personalizuar ka nevojë për ID-në e saj: 2 deri në 12 shkronja të vogla ose shifra, duke filluar me një shkronjë."
+
+#: includes/design/class-breakpoints.php:117
+msgid "A custom breakpoint applies either up to a width (200 to 4000 pixels) or from a width (200 to 6000 pixels), not both."
+msgstr "Një pikë ndarjeje e personalizuar zbatohet ose deri në një gjerësi (200 deri në 4000 piksele) ose nga një gjerësi (200 deri në 6000 piksele), jo të dyja."
+
+#: includes/design/class-breakpoints.php:175
+#: src/design/editor/breakpoint-items.js:18
+msgid "Tablet"
+msgstr "Tabletë"
+
+#: includes/design/class-breakpoints.php:180
+#: src/design/editor/breakpoint-items.js:19
+msgid "Mobile"
+msgstr "Celular"
+
+#: includes/design/globals/class-site-design.php:66
+#: includes/design/globals/class-site-design.php:67
+#: includes/design/globals/class-site-design.php:83
+#: src/design/site-design/editor.js:23
+#: src/design/site-design/editor.js:28
+#: src/design/site-design/editor.js:45
+#: src/design/site-design/editor.js:55
+msgid "Site design"
+msgstr "Dizajni i faqes"
+
+#: includes/design/globals/class-site-design.php:84
+msgid "Colours, fonts and styles shared by every page of the site and by your theme."
+msgstr "Ngjyrat, shkronjat dhe stilet e ndara nga çdo faqe e sajti dhe nga tema juaj."
+
+#: includes/design/globals/class-theme-globals.php:158
+msgid "The site's global styles could not be opened."
+msgstr "Stilet globale të faqes nuk mundën të hapeshin."
+
+#: includes/design/globals/class-theme-globals.php:293
+msgid "That font is not one of the site's fonts."
+msgstr "Ky font nuk është një nga fontet e faqes."
+
+#: includes/design/globals/class-theme-globals.php:365
+msgid "Each colour needs a unique name made of lowercase letters, digits and hyphens."
+msgstr "Secila ngjyrë ka nevojë për një emër unik të përbërë nga shkronja të vogla, shifra dhe viza në mes."
+
+#. translators: %s: colour slug.
+#: includes/design/globals/class-theme-globals.php:369
+#, php-format
+msgid "The colour \"%s\" is not a valid CSS colour."
+msgstr "Ngjyra \"%s\" nuk është një ngjyrë e vlefshme CSS."
+
+#: includes/design/globals/class-theme-globals.php:407
+msgid "Each font needs a unique name made of lowercase letters, digits and hyphens."
+msgstr "Çdo font ka nevojë për një emër unik të përbërë nga shkronja të vogla, shifra dhe viza në mes."
+
+#. translators: %s: font name.
+#: includes/design/globals/class-theme-globals.php:411
+#: src/design/site-design/FontsSection.js:47
+#, php-format, js-format
+msgid "The font stack for \"%s\" may contain only font names, quotes, commas and spaces."
+msgstr "Pakorja e shkronjave për \"%s\" mund të përmbajë vetëm emra shkronjash, thonjëza, presje dhe hapësira."
+
+#: includes/design/icons/class-icons.php:73
+msgid "Uploaded icons"
+msgstr "Ikonat e ngarkuara"
+
+#: includes/design/icons/class-icons.php:253
+#: src/core/edit.js:230
+msgid "Icon"
+msgstr "Ikona"
+
+#: includes/design/icons/class-icons.php:267
+msgid "This file is not an SVG icon we can use. It may be damaged, or it only held content that is removed for safety (scripts, links, embedded images or fonts)."
+msgstr "Ky skedar nuk është një ikonë SVG që mund të përdorim. Ai mund të jetë i dëmtuar, ose përmbante vetëm përmbajtje që është hequr për siguri (skripte, lidhje, imazhe të integruara ose shkronja)."
+
+#: includes/design/icons/class-icons.php:297
+#: src/design/icons/IconPicker.js:377
+msgid "The icon could not be deleted."
+msgstr "Ikona nuk mund të fshihej."
 
 #: includes/freemius-strings.php:21
 #: includes/freemius-strings.php:6306
@@ -2155,6 +2278,12 @@ msgstr "Aktivizimi i modalitetit pa markë"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/design/editor/controls/length.js:279
+#: src/design/props/align-items.js:19
+#: src/design/props/align-self.js:19
+#: src/design/props/justify-content.js:27
+#: src/design/props/place-items.js:19
+#: src/design/props/text-align.js:18
 msgid "End"
 msgstr "Fund"
 
@@ -2170,6 +2299,7 @@ msgstr "Vendosni adresën e re të emailit"
 
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
+#: src/blocks/alert/edit.js:75
 msgid "Error"
 msgstr "Gabim"
 
@@ -2764,6 +2894,11 @@ msgstr "Produktet e mëposhtme janë vendosur në modalitetin e sigurisë sepse 
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/design/pro__premium_only/custom-breakpoints.js:76
+#: src/design/pro__premium_only/globals/BrandKitSection.js:125
+#: src/design/pro__premium_only/globals/ClassesSection.js:62
+#: src/design/site-design/ColorsSection.js:41
+#: src/design/site-design/FontsSection.js:95
 msgid "Name"
 msgstr "Emri"
 
@@ -3844,6 +3979,12 @@ msgstr "Rrjetet sociale (Facebook, Twitter, etj.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/design/editor/controls/length.js:281
+#: src/design/props/align-items.js:17
+#: src/design/props/align-self.js:17
+#: src/design/props/justify-content.js:25
+#: src/design/props/place-items.js:17
+#: src/design/props/text-align.js:16
 msgid "Start"
 msgstr "Fillo"
 
@@ -3896,6 +4037,7 @@ msgstr "Duke nisur provën"
 
 #: includes/freemius-strings.php:2370
 #: includes/freemius-strings.php:5255
+#: src/design/editor/panel.js:114
 msgid "State"
 msgstr "Shteti"
 
@@ -4195,6 +4337,8 @@ msgstr "Si ju duket %1$s deri më tani? Testoni të gjitha veçoritë tona premi
 
 #: includes/freemius-strings.php:2596
 #: includes/freemius-strings.php:5575
+#: src/blocks/alert/edit.js:55
+#: src/design/pro__premium_only/effects/controls.js:101
 msgid "Type"
 msgstr "Lloji"
 
@@ -4250,7 +4394,7 @@ msgstr "Dëshironi të vazhdoni me përditësimin?"
 
 #: includes/freemius-strings.php:2638
 #: includes/freemius-strings.php:5617
-#: src/studio/components/header.js:252
+#: src/studio/components/header.js:283
 msgid "Update"
 msgstr "Përditëso"
 
@@ -4261,7 +4405,7 @@ msgstr "Përditëso licencën"
 
 #: includes/freemius-strings.php:2646
 #: includes/freemius-strings.php:5632
-#: src/admin/App.js:79
+#: src/admin/App.js:80
 msgid "Upgrade"
 msgstr "Përmirëso"
 
@@ -4309,6 +4453,7 @@ msgstr "Përdoruesit"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/design/pro__premium_only/globals/TokenList.js:43
 msgid "Value"
 msgstr "Vlera"
 
@@ -4361,6 +4506,7 @@ msgstr "Shiko veçoritë me pagesë"
 
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
+#: src/blocks/alert/edit.js:71
 msgid "Warning"
 msgstr "Paralajmërim"
 
@@ -4878,6 +5024,14 @@ msgstr "%s më parë"
 msgid "A migration step is running right now. Try again in a minute."
 msgstr "Një hap migrimi është duke u ekzekutuar tani. Provoni përsëri pas një minute."
 
+#: includes/pro__premium_only/blocks/class-site.php:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:13
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:27
+#: src/design/pro__premium_only/globals/index.js:41
+#: src/design/site-design/sections.js:25
+msgid "Dark mode"
+msgstr "Modaliteti i errët"
+
 #: includes/pro__premium_only/class-legacy-pro.php:152
 msgid "Thank you for subscribing!"
 msgstr "Faleminderit që u abonuat!"
@@ -4933,13 +5087,129 @@ msgstr "Adresa e emailit është e abonuar tashmë."
 msgid "MailPoet plugin not found. Please contact the admin."
 msgstr "Shtojca MailPoet nuk u gjet. Ju lutemi kontaktoni administratorin."
 
+#: includes/pro__premium_only/design/class-brand-kit.php:139
+msgid "Choose the brand fonts from the site's fonts."
+msgstr "Zgjidhni shkronjat e markës nga shkronjat e faqes."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:180
+msgid "That font is no longer in the font library."
+msgstr "Ai font nuk është më në bibliotekën e fonteve."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:184
+msgid "That font has no files yet. Upload at least one."
+msgstr "Ky font nuk ka ende skeda. Ngarkoni të paktën një."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:316
+msgid "An Adobe Fonts kit id is 5 to 12 letters and digits, as shown in your Adobe Fonts web project."
+msgstr "Një ID e paketës së Adobe Fonts përbëhet nga 5 deri në 12 shkronja dhe numra, siç tregohet në projektin tuaj në internet Adobe Fonts."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:322
+msgid "Adobe Fonts did not return that kit. Check the id, and that the web project is published."
+msgstr "Adobe Fonts nuk e ktheu atë kit. Kontrolloni ID-në dhe sigurohuni që projekti i uebit të jetë publikuar."
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:326
+msgid "That Adobe Fonts kit has no fonts in it."
+msgstr "Ky komplet i Adobe Fonts nuk ka shkronja në të."
+
+#: includes/pro__premium_only/design/class-dark-mode.php:105
+msgid "Choose how the site picks its colour scheme."
+msgstr "Zgjidhni se si faqja zgjedh skemën e saj të ngjyrave."
+
+#. translators: %s: colour name.
+#: includes/pro__premium_only/design/class-dark-mode.php:116
+#, php-format
+msgid "The dark value for \"%s\" is not a valid CSS colour."
+msgstr "Vlera e errët për \"%s\" nuk është një ngjyrë e vlefshme CSS."
+
+#: includes/pro__premium_only/design/class-global-classes.php:93
+msgid "This site has reached the maximum number of global classes."
+msgstr "Ky sajt ka arritur numrin maksimal të klasave globale."
+
+#: includes/pro__premium_only/design/class-global-classes.php:97
+#: includes/pro__premium_only/design/class-global-classes.php:130
+msgid "Give the class a name."
+msgstr "Jepini një emër klasës."
+
+#. translators: %s: class name.
+#: includes/pro__premium_only/design/class-global-classes.php:165
+#, php-format
+msgid "%s (copy)"
+msgstr "%s (kopje)"
+
+#: includes/pro__premium_only/design/class-global-classes.php:338
+msgid "A class name must start with a letter and use only lowercase letters, digits and hyphens."
+msgstr "Emri i një klase duhet të fillojë me një shkronjë dhe të përdorë vetëm shkronja të vogla, shifra dhe vizë në mes."
+
+#: includes/pro__premium_only/design/class-global-classes.php:342
+msgid "Another class already uses that name."
+msgstr "Një tjetër klasë tashmë përdor atë emër."
+
+#: includes/pro__premium_only/design/class-global-classes.php:403
+msgid "That class no longer exists. Reload the list."
+msgstr "Kjo klasë nuk ekziston më. Rifresko listën."
+
+#: includes/pro__premium_only/design/class-tokens.php:50
+msgid "Extra small"
+msgstr "Shumë i vogël"
+
+#: includes/pro__premium_only/design/class-tokens.php:51
+#: includes/pro__premium_only/design/class-tokens.php:59
+#: includes/pro__premium_only/design/class-tokens.php:65
+msgid "Small"
+msgstr "E vogël"
+
+#: includes/pro__premium_only/design/class-tokens.php:52
+#: includes/pro__premium_only/design/class-tokens.php:60
+#: includes/pro__premium_only/design/class-tokens.php:66
+msgid "Medium"
+msgstr "E mesme"
+
+#: includes/pro__premium_only/design/class-tokens.php:53
+#: includes/pro__premium_only/design/class-tokens.php:61
+#: includes/pro__premium_only/design/class-tokens.php:67
+msgid "Large"
+msgstr "E madhe"
+
+#: includes/pro__premium_only/design/class-tokens.php:54
+msgid "Extra large"
+msgstr "Shumë e madhe"
+
+#: includes/pro__premium_only/design/class-tokens.php:55
+msgid "Huge"
+msgstr "I madh"
+
+#: includes/pro__premium_only/design/class-tokens.php:58
+#: src/core/edit.js:183
+#: src/design/editor/controls/complex.js:448
+#: src/design/props/text-decoration.js:16
+#: src/design/props/text-transform.js:16
+#: src/design/pro__premium_only/effects/controls.js:272
+#: src/design/pro__premium_only/effects/panel.js:286
+#: src/design/pro__premium_only/effects/panel.js:382
+msgid "None"
+msgstr "Asnjë"
+
+#: includes/pro__premium_only/design/class-tokens.php:62
+msgid "Round"
+msgstr "Rreth"
+
+#: includes/pro__premium_only/design/class-tokens.php:121
+msgid "Each entry needs a unique short name made of lowercase letters, digits and hyphens."
+msgstr "Secila hyrje ka nevojë për një emër të shkurtër unik të përbërë nga shkronja të vogla, shifra dhe viza."
+
+#. translators: %s: token name.
+#: includes/pro__premium_only/design/class-tokens.php:130
+#, php-format
+msgid "The value of \"%s\" is not a value this setting accepts."
+msgstr "Vlera e \"%s\" nuk është një vlerë që ky përcaktim e pranon."
+
 #: includes/pro__premium_only/workflow/class-maintenance.php:127
 msgid "We are doing some maintenance on this site. Please check back soon."
-msgstr "Po kryejmë disa punë mirëmbajtjeje në këtë faqe. Ju lutemi kontrollojeni përsëri së shpejti."
+msgstr "Po kryejmë disa mirëmbajtje në këtë faqe. Ju lutemi kontrolloni përsëri së shpejti."
 
 #: includes/pro__premium_only/workflow/class-maintenance.php:128
 msgid "This site is launching soon."
-msgstr "Kjo faqe do të lançohet së shpejti."
+msgstr "Ky sajt do të lançohet së shpejti."
 
 #: includes/pro__premium_only/workflow/class-maintenance.php:176
 msgid "Maintenance mode is on"
@@ -4951,20 +5221,20 @@ msgstr "Modaliteti para-lansimit është i aktivizuar"
 
 #: includes/pro__premium_only/workflow/class-network.php:168
 msgid "Network templates"
-msgstr "Modelernet rrjeti"
+msgstr "Skabllone rrjeti"
 
 #: includes/pro__premium_only/workflow/class-replace-jobs.php:241
 #: includes/pro__premium_only/workflow/class-replace-jobs.php:535
 msgid "That find-and-replace job no longer exists."
-msgstr "Ai operacion i kërkim-zëvendësimit nuk ekziston më."
+msgstr "Ai veprim i gjetjes dhe zëvendësimit nuk ekziston më."
 
 #: includes/pro__premium_only/workflow/class-replace-jobs.php:248
 msgid "That step is not available for this job right now."
-msgstr "Ky hap nuk është i disponueshëm për këtë punë për momentin."
+msgstr "Ai hap nuk është i disponueshëm për këtë punë tani."
 
 #: includes/pro__premium_only/workflow/class-replacer.php:105
 msgid "Enter what to find."
-msgstr "Shkruani se çfarë të kërkoni."
+msgstr "Vendosni se çfarë të kërkoni."
 
 #: includes/pro__premium_only/workflow/class-replacer.php:108
 msgid "Colours must be hex codes such as #1a73e8 or #fff."
@@ -4980,7 +5250,7 @@ msgstr "Komentet e vlerësimit të klientit"
 
 #: includes/pro__premium_only/workflow/class-review.php:325
 msgid "Write a comment first."
-msgstr "Shkruani një koment fillimisht."
+msgstr "Shkruani një koment më parë."
 
 #: includes/pro__premium_only/workflow/class-review.php:350
 #: includes/pro__premium_only/workflow/class-review.php:388
@@ -5030,7 +5300,7 @@ msgstr "Roli juaj nuk mund të krijojë shabllone ose modele."
 
 #: includes/pro__premium_only/workflow/class-roles.php:312
 msgid "You can change the text and images on this page, but not its layout or design. Your change was not saved."
-msgstr "Ju mund të ndryshoni tekstin dhe imazhet në këtë faqe, por jo strukturën ose dizajnin e saj. Ndryshimi juaj nuk u ruajt."
+msgstr "Ju mund të ndryshoni tekstin dhe imazhet në këtë faqe, por jo strukturën apo dizajnin e saj. Ndryshimi juaj nuk u ruajt."
 
 #: includes/pro__premium_only/workflow/class-roles.php:317
 msgid "Your role cannot change styles. Undo the style changes and save again."
@@ -5047,27 +5317,27 @@ msgstr "Ky nuk është një skedar eksporti nga ky shtojcë."
 
 #: includes/workflow/class-transfer.php:286
 msgid "This export file was made by a newer version of the plugin. Update the plugin on this site, then import it again."
-msgstr "Ky skedar eksporti është krijuar nga një version më i ri i shtojcës. Përditësoni shtojcën në këtë sajt dhe më pas importojeni përsëri."
+msgstr "Ky skedar eksporti është krijuar nga një version më i ri i shtojcës. Përditësoni shtojcën në këtë sajt, pastaj importojeni përsëri."
 
 #: includes/workflow/class-transfer.php:289
 msgid "The export file is damaged: its list of items is missing."
-msgstr "Skedari i eksportit është i dëmtuar: mungon lista e artikujve të tij."
+msgstr "Skedari i eksportit është i dëmtuar: mungon lista e tij e artikujve."
 
 #: includes/workflow/class-transfer.php:292
 msgid "The export file is damaged or was edited after it was made (its checksum does not match). Export it again from the other site."
-msgstr "Skedari i eksportit është i dëmtuar ose është modifikuar pasi është krijuar (shuma e kontrollit nuk përputhet). Eksportojeni sërish nga faqja tjetër."
+msgstr "Skedari i eksportit është i dëmtuar ose është modifikuar pasi është krijuar (shuma e kontrollit (checksum) nuk përputhet). Eksportojeni përsëri nga faqja tjetër."
 
 #. translators: %s: item name from the export file.
 #: includes/workflow/class-transfer.php:337
 #, php-format
 msgid "“%s” was not imported: this site does not have that kind of item."
-msgstr "“%s” nuk u importua: kjo faqe nuk e ka këtë lloj artikulli."
+msgstr "“%s” nuk u importua: kjo faqe nuk ka atë lloj artikulli."
 
 #. translators: %s: item name from the export file.
 #: includes/workflow/class-transfer.php:343
 #, php-format
 msgid "“%s” was not imported: you are not allowed to create that kind of item."
-msgstr "“%s” nuk u importua: nuk ju lejohet të krijoni atë lloj artikulli."
+msgstr "“%s” nuk u importua: nuk ju lejohet të krijoni këtë lloj artikulli."
 
 #. translators: %s: item name from the export file.
 #: includes/workflow/class-transfer.php:354
@@ -5109,52 +5379,82 @@ msgstr "Uebfaqja e Page Builder Sandwich"
 msgid "Zinn Digital® website"
 msgstr "Faqja e internetit Zinn Digital®"
 
-#: src/admin/App.js:51
+#: src/admin/App.js:52
 msgid "Settings saved."
 msgstr "Cilësimet u ruajtën."
 
-#: src/admin/App.js:84
+#: src/admin/App.js:85
 msgid "See the Pro plans and pricing"
 msgstr "Shikoni planet dhe çmimet Pro"
 
-#: src/admin/App.js:94
+#: src/admin/App.js:95
 msgid "Front-end output"
 msgstr "Dalja e ndërfaqes së përparme"
 
-#: src/admin/App.js:102
+#: src/admin/App.js:103
 msgid "Class name prefix"
 msgstr "Parashtesa e emrit të klasës"
 
-#: src/admin/App.js:106
+#: src/admin/App.js:107
 msgid "Every class name the plugin prints on your pages starts with this prefix, so the pages do not reveal which plugin built them. 1 to 8 lowercase letters or digits, starting with a letter."
 msgstr "Çdo emër klase që shtojca printon në faqet tuaja fillon me këtë parashtesë, kështu që faqet nuk zbulojnë se cila shtojcë i ka ndërtuar ato. 1 deri në 8 shkronja të vogla ose shifra, duke filluar me një shkronjë."
 
-#: src/admin/App.js:119
+#: src/admin/App.js:120
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:268
+#: src/design/site-design/components.js:102
 #: src/studio/components/commands.js:196
 #: src/workflow/pro__premium_only/MaintenancePanel.js:195
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:189
 msgid "Save"
 msgstr "Ruaj"
 
-#: src/admin/App.js:125
+#: src/admin/App.js:129
 msgid "Beta updates"
 msgstr "Përditësimet beta"
 
-#: src/admin/App.js:132
+#: src/admin/App.js:136
 msgid "This site receives beta versions as updates."
 msgstr "Kjo faqe merr versione beta si përditësime."
 
-#: src/admin/App.js:136
+#: src/admin/App.js:140
 msgid "This site receives stable versions only."
 msgstr "Ky sajt merr vetëm versione të qëndrueshme."
 
-#: src/admin/App.js:145
+#: src/admin/App.js:149
 msgid "Change this on the Account page"
 msgstr "Ndryshoni këtë në faqen e Llogarisë"
 
-#: src/admin/App.js:154
+#: src/admin/App.js:158
 msgid "Beta versions are offered to licensed Pro installations that are connected to their account. Once connected, you can join from the Account page."
 msgstr "Versionet beta u ofrohen instalimeve të licensuara Pro që janë të lidhura me llogarinë e tyre. Pasi të jeni lidhur, mund të bashkoheni nga faqja e Llogarisë."
+
+#: src/admin/Breakpoints.js:58
+msgid "Breakpoints saved. Pages pick up the new widths on their next view."
+msgstr "Pikat e ndërprerjes u ruajtën. Faqet marrin gjerësitë e reja në shikimin e tyre të radhës."
+
+#: src/admin/Breakpoints.js:79
+msgid "Breakpoints"
+msgstr "Pikat e ndërprerjes"
+
+#: src/admin/Breakpoints.js:94
+msgid "Styles set for Tablet apply up to the tablet width, and styles set for Mobile up to the mobile width. Desktop styles apply everywhere else."
+msgstr "Stilet e përcaktuara për Tablet zbatohen deri në gjerësinë e tabletit, ndërsa ato për Celular deri në gjerësinë e celularit. Stilet e Desktopit zbatohen kudo tjetër."
+
+#: src/admin/Breakpoints.js:102
+msgid "Tablet: up to (px)"
+msgstr "Tablet: deri në (px)"
+
+#: src/admin/Breakpoints.js:115
+msgid "Mobile: up to (px)"
+msgstr "Celular: deri në (px)"
+
+#: src/admin/Breakpoints.js:146
+msgid "Save breakpoints"
+msgstr "Ruaj pikat e ndërprerjes"
+
+#: src/admin/Breakpoints.js:162
+msgid "Use the default widths"
+msgstr "Përdor gjerësitë e paracaktuara"
 
 #: src/admin/LegacyContent.js:21
 msgid "The request converting this post stopped before it finished, so the post was skipped. Open it to convert it, or convert it again from here."
@@ -5259,6 +5559,223 @@ msgstr "Anulimi ka filluar. Ai vazhdon në sfond; mund ta lini këtë faqe."
 msgid "Undo all conversions"
 msgstr "Anulo të gjitha konvertimet"
 
+#: src/blocks/alert/edit.js:52
+msgid "Alert"
+msgstr "Sinjalizim"
+
+#: src/blocks/alert/edit.js:60
+msgid "Information"
+msgstr "Informacion"
+
+#: src/blocks/alert/edit.js:67
+msgid "Success"
+msgstr "Sukses"
+
+#: src/blocks/alert/edit.js:81
+msgid "Warnings and errors are announced to screen reader users straight away; information and success notices are read when they finish what they are doing."
+msgstr "Paralajmërimet dhe gabimet u komunikohen përdoruesve të lexuesve të ekranit menjëherë; njoftimet e informacionit dhe të suksesit lexohen kur ata përfundojnë atë që po bëjnë."
+
+#: src/blocks/alert/edit.js:87
+msgid "Show icon"
+msgstr "Shfaq ikonën"
+
+#: src/blocks/alert/edit.js:92
+msgid "Visitors can close it"
+msgstr "Vizitorët mund ta mbyllin atë"
+
+#: src/blocks/alert/edit.js:130
+msgid "Title (optional)"
+msgstr "Titulli (opsionale)"
+
+#: src/blocks/alert/edit.js:143
+msgid "Write the message…"
+msgstr "Shkruani mesazhin..."
+
+#: src/blocks/layout/edit.js:42
+msgid "section — a thematic section"
+msgstr "seksion — një seksion tematik"
+
+#: src/blocks/layout/edit.js:43
+msgid "div — no meaning"
+msgstr "div — pa kuptim"
+
+#: src/blocks/layout/edit.js:44
+msgid "header — introductory content"
+msgstr "kokërr — përmbajtje hyrëse"
+
+#: src/blocks/layout/edit.js:45
+msgid "footer — closing content"
+msgstr "fundi i faqes — përmbajtja mbyllëse"
+
+#: src/blocks/layout/edit.js:46
+msgid "article — self-contained content"
+msgstr "artikull — përmbajtje e pavarur"
+
+#: src/blocks/layout/edit.js:47
+msgid "aside — related content"
+msgstr "anësore — përmbajtje e lidhur"
+
+#: src/blocks/layout/edit.js:48
+msgid "main — the main content (once per page)"
+msgstr "main — përmbajtja kryesore (një herë për faqe)"
+
+#: src/blocks/layout/edit.js:52
+msgid "nav — navigation links"
+msgstr "nav — lidhjet e navigimit"
+
+#: src/blocks/layout/edit.js:123
+msgid "Stack (flexbox, column)"
+msgstr "Stivë (flexbox, kolonë)"
+
+#: src/blocks/layout/edit.js:142
+msgid "Row (flexbox)"
+msgstr "Rresht (flexbox)"
+
+#: src/blocks/layout/edit.js:158
+#: src/blocks/layout/edit.js:204
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Grilë"
+
+#: src/blocks/layout/edit.js:170
+#: src/design/editor/panel.js:38
+msgid "Layout"
+msgstr "Formati"
+
+#. translators: %s: a screen size such as "Tablet".
+#: src/blocks/layout/edit.js:174
+#, js-format
+msgid "Editing: %s"
+msgstr "Duke redaktuar: %s"
+
+#: src/blocks/layout/edit.js:181
+msgid "Lay out children as"
+msgstr "Radhit fëmijët si"
+
+#. translators: %s: the layout in effect, e.g. "flex".
+#. translators: %s: the value a setting inherits from a wider screen size.
+#. translators: %s: a colour inherited from a wider screen size.
+#. translators: %s: inherited value.
+#: src/blocks/layout/edit.js:191
+#: src/design/editor/controls/basic.js:31
+#: src/design/editor/controls/color.js:83
+#: src/design/editor/controls/complex.js:127
+#, js-format
+msgid "Inherited (%s)"
+msgstr "Trashëguar (%s)"
+
+#: src/blocks/layout/edit.js:200
+#: src/design/props/display.js:28
+msgid "Flexbox"
+msgstr "Flexbox"
+
+#: src/blocks/layout/edit.js:208
+msgid "Stacked blocks"
+msgstr "Blloqe të stivosura"
+
+#: src/blocks/layout/edit.js:219
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Kolonat"
+
+#: src/blocks/layout/edit.js:227
+msgid "Drag in the canvas, or type"
+msgstr "Zvarritni në kanvas, ose shkruani"
+
+#: src/blocks/layout/edit.js:244
+#: src/core/edit.js:90
+#: src/design/props/content-width.js:15
+msgid "Content width"
+msgstr "Gjerësia e përmbajtjes"
+
+#: src/blocks/layout/edit.js:249
+msgid "Boxed (the theme’s content width)"
+msgstr "Me kuti (gjerësia e përmbajtjes së temës)"
+
+#: src/blocks/layout/edit.js:256
+#: src/core/edit.js:97
+msgid "Full width"
+msgstr "Gjerësia e plotë"
+
+#: src/blocks/layout/edit.js:265
+msgid "Minimum height"
+msgstr "Lartësia minimale"
+
+#: src/blocks/layout/edit.js:280
+msgid "HTML tag"
+msgstr "Etjeta HTML"
+
+#: src/blocks/layout/edit.js:292
+#: src/core/edit.js:150
+msgid "Link"
+msgstr "Lidhje"
+
+#: src/blocks/layout/edit.js:299
+msgid "Make the whole block a link to"
+msgstr "Bëje të gjithë bllokun një lidhje për te"
+
+#: src/blocks/layout/edit.js:315
+msgid "Link text for screen readers"
+msgstr "Teksti i lidhjes për lexuesit e ekranit"
+
+#: src/blocks/layout/edit.js:319
+msgid "What the link does, for visitors who cannot see the block."
+msgstr "Çfarë bën lidhja, për vizitorët që nuk mund ta shohin bllokun."
+
+#: src/blocks/layout/edit.js:335
+#: src/core/edit.js:159
+msgid "Open in a new tab"
+msgstr "Hap në një skedë të re"
+
+#: src/blocks/layout/edit.js:350
+msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
+msgstr "Mos vendosni lidhje ose butona brenda një blloku të lidhur: një lidhje brenda një lidhjeje nuk funksionon në shfletues."
+
+#: src/blocks/layout/grid-overlay.js:261
+msgid "Drag to resize these columns"
+msgstr "Tërhiqni për të ndryshuar madhësinë e këtyre kolonave"
+
+#: src/blocks/layout/grid-overlay.js:276
+msgid "Drag to resize this row"
+msgstr "Tërhiqni për të ndryshuar madhësinë e kësaj rreshti"
+
+#: src/blocks/layout/grid-overlay.js:290
+msgid "Drag across cells to set how many columns and rows this block spans"
+msgstr "Zvarritni nëpër qeliza për të caktuar se sa kolona dhe rreshta përfshin ky bllok"
+
+#: src/blocks/layout/grid-overlay.js:319
+msgid "+ Column"
+msgstr "+ Kolona"
+
+#: src/blocks/layout/grid-overlay.js:336
+msgid "− Column"
+msgstr "− Kolona"
+
+#: src/blocks/layout/grid-overlay.js:345
+msgid "+ Row"
+msgstr "+ Rresht"
+
+#: src/blocks/layout/grid-overlay.js:360
+msgid "− Row"
+msgstr "− Rresht"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
+msgid "Switch"
+msgstr "Ndërro"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:37
+msgid "Label"
+msgstr "Etiketa"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
+msgid "Read out by screen readers, and shown when “Show label” is on."
+msgstr "Lexuar nga lexuesit e ekranit dhe shfaqur kur opsioni \"Shfaq etiketën\" është i aktivizuar."
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:32
+msgid "Show label"
+msgstr "Shfaq etiketën"
+
 #: src/core/dev-compat/edit.js:54
 msgid "Shortcode tag"
 msgstr "Etiketa e kodit të shkurtër"
@@ -5274,11 +5791,6 @@ msgstr "Emri i atributit"
 #: src/core/dev-compat/edit.js:90
 msgid "Add attribute"
 msgstr "Shto atribut"
-
-#: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:27
-msgid "Content"
-msgstr "Përmbajtja"
 
 #: src/core/dev-compat/edit.js:130
 #: src/core/dev-compat/edit.js:152
@@ -5296,6 +5808,7 @@ msgid "The \"%s\" control from the old editor is not available in the block edit
 msgstr "Kontrolli \"%s\" nga redaktori i vjetër nuk është i disponueshëm te redaktori i blloqeve. Vendosni vlerën si tekst."
 
 #: src/core/dev-compat/option-controls.js:81
+#: src/design/editor/controls/complex.js:283
 msgid "Choose image"
 msgstr "Zgjidh imazhin"
 
@@ -5307,143 +5820,123 @@ msgstr "Zgjidh skedarin"
 msgid "— Default —"
 msgstr "— Parazgjedhje —"
 
-#: src/core/edit.js:32
+#: src/core/edit.js:34
 msgid "Advanced styling"
 msgstr "Stilizim i avancuar"
 
-#: src/core/edit.js:36
+#: src/core/edit.js:38
 msgid "Inline CSS"
 msgstr "CSS i brendshëm"
 
-#: src/core/edit.js:37
+#: src/core/edit.js:39
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Deklaratat CSS, për shembull: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:47
+#: src/core/edit.js:49
 msgid "Effects (legacy classes)"
 msgstr "Efektet (klasat e vjetra)"
 
-#: src/core/edit.js:51
+#: src/core/edit.js:53
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Emrat e efekteve të ndarë me hapësirë të mbartur nga versionet më të vjetra, për shembull: hover-shadow"
 
-#: src/core/edit.js:81
+#: src/core/edit.js:83
+#: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Rresht"
 
-#: src/core/edit.js:84
+#: src/core/edit.js:86
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
 msgid "Width"
 msgstr "Gjerësia"
 
-#: src/core/edit.js:88
-msgid "Content width"
-msgstr "Gjerësia e përmbajtjes"
-
-#: src/core/edit.js:95
-msgid "Full width"
-msgstr "Gjerësia e plotë"
-
-#: src/core/edit.js:102
+#: src/core/edit.js:104
 msgid "Full width, content kept in the middle"
 msgstr "Gjerësi e plotë, përmbajtja e ruajtur në mes"
 
-#: src/core/edit.js:148
-msgid "Link"
-msgstr "Lidhje"
-
-#: src/core/edit.js:152
+#: src/core/edit.js:154
 msgid "Link address"
 msgstr "Adresa e lidhjes"
 
-#: src/core/edit.js:157
-msgid "Open in a new tab"
-msgstr "Hap në një skedë të re"
-
-#: src/core/edit.js:168
+#: src/core/edit.js:170
 msgid "Link relationship"
 msgstr "Lidhja e marrëdhënies"
 
-#: src/core/edit.js:177
+#: src/core/edit.js:179
+#: src/design/props/text-align.js:13
 msgid "Alignment"
 msgstr "Rreshtimi"
 
-#: src/core/edit.js:181
-msgid "None"
-msgstr "Asnjë"
-
-#: src/core/edit.js:185
+#: src/core/edit.js:187
 msgid "Left"
 msgstr "Majtas"
 
-#: src/core/edit.js:189
+#: src/core/edit.js:191
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:138
+#: src/design/pro__premium_only/effects/controls.js:241
 msgid "Centre"
 msgstr "Qendra"
 
-#: src/core/edit.js:193
+#: src/core/edit.js:195
 msgid "Right"
 msgstr "Djathtas"
 
-#: src/core/edit.js:206
+#: src/core/edit.js:208
 msgid "Button text"
 msgstr "Teksti i butonit"
 
-#: src/core/edit.js:207
+#: src/core/edit.js:209
 msgid "Add text…"
 msgstr "Shto tekst..."
 
-#: src/core/edit.js:231
-msgid "Icon"
-msgstr "Ikona"
-
-#: src/core/edit.js:233
-msgid "SVG markup"
-msgstr "Etiketa SVG"
-
-#: src/core/edit.js:234
-msgid "Scripts, links and external references are removed before the icon is shown."
-msgstr "Skriptat, lidhjet dhe referencat e jashtme hiqen para se të shfaqet ikona."
-
-#: src/core/edit.js:243
+#: src/core/edit.js:238
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Etiketa e aksesueshme"
 
-#: src/core/edit.js:247
+#: src/core/edit.js:242
 msgid "Leave empty for a decorative icon."
 msgstr "Lëreni bosh për një ikonë dekorative."
 
-#: src/core/edit.js:261
-msgid "Paste SVG markup in the block settings."
-msgstr "Ngjitni shënimet SVG te cilësimet e bllokut."
+#: src/core/edit.js:256
+msgid "Choose an icon in the block settings."
+msgstr "Zgjidhni një ikonë në cilësimet e bllokut."
 
-#: src/core/edit.js:288
+#: src/core/edit.js:283
 msgid "New setting name"
 msgstr "Emri i cilësimit të ri"
 
-#: src/core/edit.js:289
+#: src/core/edit.js:284
 msgid "For example: title or text"
 msgstr "Për shembull: titull ose tekst"
 
-#: src/core/edit.js:304
+#: src/core/edit.js:299
 msgid "Add setting"
 msgstr "Shto cilësimin"
 
-#: src/core/edit.js:315
-#: src/core/edit.js:318
+#: src/core/edit.js:310
+#: src/core/edit.js:313
 msgid "Widget"
 msgstr "Widget"
 
-#: src/core/edit.js:322
+#: src/core/edit.js:317
 msgid "Choose a widget"
 msgstr "Zgjidhni një widget"
 
-#: src/core/edit.js:354
-#: src/core/edit.js:358
+#: src/core/edit.js:349
+#: src/core/edit.js:353
 msgid "Widget area"
 msgstr "Zona e widget-it"
 
-#: src/core/edit.js:362
+#: src/core/edit.js:357
 msgid "Choose a widget area"
 msgstr "Zgjidhni një zonë widget-i"
 
@@ -5467,19 +5960,2020 @@ msgstr "Ky element i ngulitur ndryshon madhësinë e vet pasi të ngarkohet, gj�
 msgid "Layout shift"
 msgstr "Ndryshimi i skicës"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Kreu"
+#: src/design/editor/breakpoint-items.js:24
+msgid "Desktop"
+msgstr "Desktop"
 
+#: src/design/editor/controls/basic.js:27
+#: src/design/editor/controls/color.js:89
+#: src/design/editor/controls/complex.js:133
+#: src/design/editor/controls/complex.js:313
+#: src/design/editor/controls/complex.js:331
+#: src/design/editor/controls/complex.js:361
+#: src/design/editor/controls/complex.js:496
+#: src/design/props/position.js:16
+#: src/design/pro__premium_only/effects/controls.js:413
+msgid "Default"
+msgstr "Parazgjedhje"
+
+#: src/design/editor/controls/basic.js:178
+msgid "Every track"
+msgstr "Çdo regjistër"
+
+#: src/design/editor/controls/complex.js:74
+msgid "Track sizes, for example: 1fr 2fr 200px"
+msgstr "Madhësitë e gjurmëve, për shembull: 1fr 2fr 200px"
+
+#: src/design/editor/controls/complex.js:93
+msgid "Custom track sizes"
+msgstr "Madhësi të personalizuara të gjurmëve"
+
+#: src/design/editor/controls/complex.js:94
+msgid "Equal tracks"
+msgstr "Këngë të barabarta"
+
+#: src/design/editor/controls/complex.js:105
+msgid "One quoted row per line, for example: \"head head\" \"side main\". Name the area on each child block."
+msgstr "Një rresht i kuotuar për rresht, për shembull: \"head head\" \"side main\". Emërtoni zonën në secilin bllok fëmijë."
+
+#: src/design/editor/controls/complex.js:134
+#: src/design/props/cursor.js:27
+msgid "Automatic"
+msgstr "Automatikisht"
+
+#: src/design/editor/controls/complex.js:135
+msgid "Square (1:1)"
+msgstr "Katrore (1:1)"
+
+#: src/design/editor/controls/complex.js:136
+msgid "Standard (4:3)"
+msgstr "Standard (4:3)"
+
+#: src/design/editor/controls/complex.js:137
+msgid "Classic (3:2)"
+msgstr "Klasike (3:2)"
+
+#: src/design/editor/controls/complex.js:138
+msgid "Wide (16:9)"
+msgstr "E gjerë (16:9)"
+
+#: src/design/editor/controls/complex.js:139
+msgid "Cinema (21:9)"
+msgstr "Kinema (21:9)"
+
+#: src/design/editor/controls/complex.js:140
+msgid "Tall (9:16)"
+msgstr "E lartë (9:16)"
+
+#: src/design/editor/controls/complex.js:158
+msgid "Custom"
+msgstr "Personalizuar"
+
+#: src/design/editor/controls/complex.js:173
+msgid "Width / height"
+msgstr "Gjerësia / lartësia"
+
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:242
+msgid "Top"
+msgstr "Më e larta"
+
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:243
+msgid "Bottom"
+msgstr "Fundi"
+
+#: src/design/editor/controls/complex.js:266
+#: src/design/props/background-image.js:42
+msgid "Background image"
+msgstr "Imazhi i sfondit"
+
+#: src/design/editor/controls/complex.js:279
+msgid "Inherited image — replace"
+msgstr "Imazhi i trashëguar — zëvendësoje"
+
+#: src/design/editor/controls/complex.js:292
+msgid "Remove image"
+msgstr "Hiq imazhin"
+
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:347
+msgid "Position"
+msgstr "Pozicioni"
+
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:323
+msgid "Size"
+msgstr "Madhësia"
+
+#: src/design/editor/controls/complex.js:335
+msgid "Cover"
+msgstr "Kopertina"
+
+#: src/design/editor/controls/complex.js:339
+msgid "Contain"
+msgstr "Përmban"
+
+#: src/design/editor/controls/complex.js:343
+#: src/design/pro__premium_only/effects/controls.js:336
+msgid "Original size"
+msgstr "Madhësia origjinale"
+
+#: src/design/editor/controls/complex.js:356
+#: src/design/pro__premium_only/effects/controls.js:355
+#: src/design/pro__premium_only/effects/controls.js:362
+msgid "Repeat"
+msgstr "Përsërit"
+
+#: src/design/editor/controls/complex.js:365
+#: src/design/pro__premium_only/effects/controls.js:358
+msgid "No repeat"
+msgstr "Pa përsëritje"
+
+#: src/design/editor/controls/complex.js:372
+msgid "Tile"
+msgstr "Pllakë"
+
+#: src/design/editor/controls/complex.js:376
+msgid "Tile across"
+msgstr "Përhap në pllaka"
+
+#: src/design/editor/controls/complex.js:383
+msgid "Tile down"
+msgstr "Përkul në fund"
+
+#: src/design/editor/controls/complex.js:395
+msgid "Fixed while scrolling"
+msgstr "E fiksuar gjatë lëvizjes"
+
+#: src/design/editor/controls/complex.js:449
+#: src/design/icons/IconPicker.js:40
+msgid "Solid"
+msgstr "I soltë"
+
+#: src/design/editor/controls/complex.js:450
+msgid "Dashed"
+msgstr "Me vija ndërprerë"
+
+#: src/design/editor/controls/complex.js:451
+msgid "Dotted"
+msgstr "Me pika"
+
+#: src/design/editor/controls/complex.js:452
+msgid "Double"
+msgstr "Dyfisho"
+
+#: src/design/editor/controls/complex.js:461
+msgid "Each side separately"
+msgstr "Securitetit secila anë veç e veç"
+
+#: src/design/editor/controls/complex.js:469
+msgid "Side"
+msgstr "Ana"
+
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:127
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Stili"
+
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:154
+#: src/design/pro__premium_only/effects/controls.js:400
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Ngjyra"
+
+#: src/design/editor/controls/complex.js:573
+msgid "Add a shadow"
+msgstr "Shto një hije"
+
+#: src/design/editor/controls/complex.js:600
+msgid "Horizontal"
+msgstr "Horizontale"
+
+#: src/design/editor/controls/complex.js:609
+msgid "Vertical"
+msgstr "Vertikale"
+
+#: src/design/editor/controls/complex.js:615
+msgid "Blur"
+msgstr "Sfumo"
+
+#: src/design/editor/controls/complex.js:621
+msgid "Spread"
+msgstr "Shpërndaj"
+
+#: src/design/editor/controls/complex.js:641
+msgid "Inside"
+msgstr "Brenda"
+
+#: src/design/editor/controls/complex.js:656
+msgid "Remove this shadow"
+msgstr "Hiq këtë hije"
+
+#: src/design/editor/controls/complex.js:667
+msgid "Everything"
+msgstr "Çdo gjë"
+
+#: src/design/editor/controls/complex.js:668
+#: src/design/site-design/sections.js:49
+#: src/editor/language-switcher.js:187
+#: src/workflow/pro__premium_only/ReplacePanel.js:126
+msgid "Colours"
+msgstr "Ngjyrat"
+
+#: src/design/editor/controls/complex.js:669
+#: src/design/props/opacity.js:14
+msgid "Opacity"
+msgstr "Opaciteti"
+
+#: src/design/editor/controls/complex.js:670
+msgid "Transform"
+msgstr "Transformo"
+
+#: src/design/editor/controls/complex.js:671
+#: src/design/editor/panel.js:44
+#: src/design/pro__premium_only/globals/TokensSection.js:33
+msgid "Shadow"
+msgstr "Hije"
+
+#: src/design/editor/controls/complex.js:674
+msgid "Ease"
+msgstr "Lehtësi"
+
+#: src/design/editor/controls/complex.js:675
+#: src/design/pro__premium_only/effects/controls.js:104
+msgid "Linear"
+msgstr "Linear"
+
+#: src/design/editor/controls/complex.js:676
+msgid "Ease in"
+msgstr "Lehtësim"
+
+#: src/design/editor/controls/complex.js:677
+msgid "Ease out"
+msgstr "Zbutje graduale"
+
+#: src/design/editor/controls/complex.js:678
+msgid "Ease in and out"
+msgstr "Lehtësim brenda dhe jashtë"
+
+#: src/design/editor/controls/complex.js:687
+msgid "Duration (milliseconds)"
+msgstr "Kohëzgjatja (milisekonda)"
+
+#: src/design/editor/controls/complex.js:713
+msgid "What animates"
+msgstr "Çfarë animon"
+
+#: src/design/editor/controls/complex.js:726
+msgid "Easing"
+msgstr "Lehtësimi"
+
+#: src/design/editor/controls/complex.js:736
+msgid "Delay (milliseconds)"
+msgstr "Vonesa (milisekonda)"
+
+#: src/design/editor/controls/length.js:93
+msgid "Remove the preset"
+msgstr "Hiq paraprakisht të caktuarën"
+
+#: src/design/editor/controls/length.js:114
+msgid "More options"
+msgstr "Më shumë opsione"
+
+#: src/design/editor/controls/length.js:138
+msgid "Number and unit"
+msgstr "Numri dhe njësia"
+
+#: src/design/editor/controls/length.js:139
+msgid "Custom CSS value (calc, clamp…)"
+msgstr "Vlera e CSS-së e personalizuar (calc, clamp…)"
+
+#: src/design/editor/controls/length.js:237
+msgid "Set each side separately"
+msgstr "Vendosni secilën anë veç e veç"
+
+#: src/design/editor/controls/length.js:241
+msgid "Set all sides together"
+msgstr "Vendosni të gjitha anët së bashku"
+
+#: src/design/editor/controls/length.js:251
+msgid "All sides"
+msgstr "Të gjitha anët"
+
+#: src/design/editor/controls/length.js:286
+msgid "Top start"
+msgstr "Nisja në krye"
+
+#: src/design/editor/controls/length.js:287
+msgid "Top end"
+msgstr "Në krye"
+
+#: src/design/editor/controls/length.js:288
+msgid "Bottom start"
+msgstr "Poshtës në fillim"
+
+#: src/design/editor/controls/length.js:289
+msgid "Bottom end"
+msgstr "Fundi i poshtëm"
+
+#: src/design/editor/controls/length.js:300
+msgid "Between rows"
+msgstr "Midh rreshtave"
+
+#: src/design/editor/controls/length.js:301
+msgid "Between columns"
+msgstr "Mid stafave"
+
+#: src/design/editor/controls/token-picker.js:30
+msgid "Choose a preset"
+msgstr "Zgjidhni një parazgjedhje"
+
+#: src/design/editor/controls/token-picker.js:38
+msgid "Presets"
+msgstr "Parazgjedhjet"
+
+#. translators: %s: the name of a design preset, e.g. "Large".
+#: src/design/editor/controls/token-picker.js:87
+#, js-format
+msgid "Preset: %s"
+msgstr "Paraprakisht: %s"
+
+#: src/design/editor/panel.js:39
+#: src/design/pro__premium_only/globals/TokensSection.js:31
+msgid "Spacing"
+msgstr "Hapësira"
+
+#: src/design/editor/panel.js:41
+msgid "Typography"
+msgstr "Tipografia"
+
+#: src/design/editor/panel.js:42
+msgid "Colours & background"
+msgstr "Ngjyrat dhe sfondi"
+
+#: src/design/editor/panel.js:43
+#: src/design/props/border.js:26
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "Korniza"
+
+#: src/design/editor/panel.js:46
+#: src/design/pro__premium_only/effects/panel.js:178
+msgid "Effects"
+msgstr "Efektet"
+
+#: src/design/editor/panel.js:47
+msgid "Advanced"
+msgstr "I avancuar"
+
+#. translators: %d: a screen width in pixels.
+#: src/design/editor/panel.js:59
+#, js-format
+msgid "up to %d px"
+msgstr "deri në %d px"
+
+#. translators: %d: a screen width in pixels.
+#: src/design/editor/panel.js:63
+#, js-format
+msgid "from %d px"
+msgstr "nga %d px"
+
+#: src/design/editor/panel.js:65
+msgid "all widths"
+msgstr "të gjitha gjerësitë"
+
+#: src/design/editor/panel.js:87
+msgid "Screen size"
+msgstr "Madhësia e ekranit"
+
+#: src/design/editor/panel.js:120
+#: src/design/props/font-style.js:16
+#: src/design/pro__premium_only/effects/controls.js:386
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:130
+msgid "Normal"
+msgstr "Normalisht"
+
+#: src/design/editor/panel.js:124
+msgid "Hover"
+msgstr "Kurorëzo"
+
+#. translators: %s: a screen size such as "Tablet".
+#: src/design/editor/panel.js:136
+#, js-format
+msgid "Reset every value set for %s"
+msgstr "Rivendosni çdo vlerë të vendosur për %s"
+
+#. translators: %s: the screen size a value is inherited from, e.g. "Desktop".
+#: src/design/editor/panel.js:184
+#, js-format
+msgid "Inherited from %s"
+msgstr "Trashëguar nga %s"
+
+#. translators: %s: a setting's name, e.g. "Padding".
+#: src/design/editor/panel.js:195
+#, js-format
+msgid "Reset %s"
+msgstr "Rikthe %s"
+
+#: src/design/editor/panel.js:218
+msgid "Hide on"
+msgstr "Fshi"
+
+#. translators: 1: section title, 2: how many values are set in it.
+#: src/design/editor/panel.js:265
+#, js-format
+msgid "%1$s (%2$d set)"
+msgstr "%1$s (%2$d e caktuar)"
+
+#: src/design/icons/IconField.js:42
+msgid "Replace icon"
+msgstr "Zëvendëso ikonën"
+
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Zgjidhni ikonën"
+
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Zgjidhni një ikonë"
+
+#: src/design/icons/IconGrid.js:242
+msgid "No icons match."
+msgstr "Nuk ka ikona përputhëse."
+
+#: src/design/icons/IconPicker.js:41
+msgid "Regular"
+msgstr "Rregullt"
+
+#: src/design/icons/IconPicker.js:42
+msgid "Brands"
+msgstr "Markat"
+
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Me kontur"
+
+#: src/design/icons/IconPicker.js:44
+#: src/design/pro__premium_only/effects/panel.js:268
+msgid "Rounded"
+msgstr "Të rrumbullakosura"
+
+#: src/design/icons/IconPicker.js:45
+msgid "Sharp"
+msgstr "I mprehtë"
+
+#: src/design/icons/IconPicker.js:46
+msgid "Bold"
+msgstr "Bold"
+
+#: src/design/icons/IconPicker.js:47
+#: src/design/pro__premium_only/effects/controls.js:332
+msgid "Fill"
+msgstr "Mbush"
+
+#: src/design/icons/IconPicker.js:48
+msgid "Duotone"
+msgstr "Dyton"
+
+#: src/design/icons/IconPicker.js:121
+msgid "This icon set could not be loaded. Check your connection and try again."
+msgstr "Ky grup ikonash nuk mund të ngarkohej. Kontrolloni lidhjen tuaj dhe provoni përsëri."
+
+#: src/design/icons/IconPicker.js:234
+msgid "Search icons"
+msgstr "Kërko ikona"
+
+#: src/design/icons/IconPicker.js:253
+msgid "Search all sets"
+msgstr "Kërko në të gjitha grupet"
+
+#. translators: %d: number of icons found.
+#: src/design/icons/IconPicker.js:262
+#, js-format
+msgid "%d icons"
+msgstr "%d ikona"
+
+#: src/design/icons/IconPicker.js:265
+msgid "Loading icon sets…"
+msgstr "Duke ngarkuar grupet e ikonave…"
+
+#. translators: %s: icon set name, e.g. Lucide.
+#: src/design/icons/IconPicker.js:271
+#, js-format
+msgid "%s icons"
+msgstr "%s ikona"
+
+#: src/design/icons/IconPicker.js:273
+msgid "All sets"
+msgstr "Të gjitha grupet"
+
+#: src/design/icons/IconPicker.js:331
+msgid "This file is not a valid SVG image."
+msgstr "Ky skedar nuk është një imazh i vlefshëm SVG."
+
+#: src/design/icons/IconPicker.js:354
+msgid "The icon could not be uploaded."
+msgstr "Ikona nuk mund të ngarkohej."
+
+#: src/design/icons/IconPicker.js:408
+msgid "Upload SVG"
+msgstr "Ngarko SVG"
+
+#: src/design/icons/IconPicker.js:418
+msgid "Delete selected upload"
+msgstr "Fshi ngarkimin e zgjedhur"
+
+#: src/design/icons/IconPicker.js:427
+msgid "Scripts, links and external references are removed from uploaded SVG files before they are saved."
+msgstr "Skriptet, lidhjet dhe referencat e jashtme hiqen nga skedarët SVG të ngarkuar përpara se të ruhen."
+
+#: src/design/icons/IconPicker.js:437
+#: src/design/icons/IconPicker.js:458
+msgid "My uploads"
+msgstr "Ngarkimet e mia"
+
+#: src/design/props/align-items.js:14
+msgid "Align items"
+msgstr "Rreshto elementet"
+
+#: src/design/props/align-items.js:20
+#: src/design/props/align-self.js:20
+#: src/design/props/justify-content.js:31
+#: src/design/props/place-items.js:20
+msgid "Stretch"
+msgstr "Shtriq"
+
+#: src/design/props/align-items.js:21
+#: src/design/props/align-self.js:21
+msgid "Baseline"
+msgstr "Linja bazë"
+
+#: src/design/props/align-self.js:13
+msgid "Align self"
+msgstr "Aligno veten"
+
+#: src/design/props/align-self.js:16
+msgid "Auto"
+msgstr "Automatikisht"
+
+#: src/design/props/aspect-ratio.js:13
+msgid "Aspect ratio"
+msgstr "Raporti i pamjes"
+
+#: src/design/props/background-color.js:12
+msgid "Background colour"
+msgstr "Ngjyra e sfondit"
+
+#: src/design/props/box-shadow.js:11
+msgid "Box shadow"
+msgstr "Hije e kutisë"
+
+#: src/design/props/col-span.js:11
+msgid "Column span"
+msgstr "Shtrirja e kolonës"
+
+#: src/design/props/color.js:12
+msgid "Text colour"
+msgstr "Ngjyra e tekstit"
+
+#: src/design/props/cursor.js:24
+msgid "Cursor"
+msgstr "Kursori"
+
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Shigjeta"
+
+#: src/design/props/cursor.js:29
+msgid "Pointer"
+msgstr "Regulator"
+
+#: src/design/props/cursor.js:30
 #: src/editor/index.js:35
 #: src/editor/language-switcher.js:190
 #: src/workflow/pro__premium_only/ReplacePanel.js:118
 msgid "Text"
 msgstr "Teksti"
 
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Stili"
+#: src/design/props/cursor.js:31
+msgid "Move"
+msgstr "Lëviz"
+
+#: src/design/props/cursor.js:32
+msgid "Grab"
+msgstr "Merre"
+
+#: src/design/props/cursor.js:33
+msgid "Not allowed"
+msgstr "Nuk lejohet"
+
+#: src/design/props/cursor.js:34
+msgid "Help"
+msgstr "Ndihmë"
+
+#: src/design/props/cursor.js:35
+msgid "Crosshair"
+msgstr "Shenjë shënjestrimi"
+
+#: src/design/props/cursor.js:36
+msgid "Zoom in"
+msgstr "Zmadho"
+
+#: src/design/props/display.js:24
+msgid "Display"
+msgstr "Shfaq"
+
+#: src/design/props/display.js:27
+msgid "Block"
+msgstr "Blloko"
+
+#: src/design/props/display.js:30
+msgid "Inline"
+msgstr "Brenda rreshtit"
+
+#: src/design/props/display.js:31
+msgid "Inline block"
+msgstr "Bllok brenda rreshtit"
+
+#: src/design/props/display.js:32
+msgid "Inline flexbox"
+msgstr "Flexbox i integruar"
+
+#: src/design/props/display.js:33
+msgid "Inline grid"
+msgstr "Rrjet brenda rreshtit"
+
+#: src/design/props/display.js:34
+msgid "Contents only"
+msgstr "Vetëm përmbajtja"
+
+#: src/design/props/display.js:35
+#: src/design/props/overflow.js:17
+msgid "Hidden"
+msgstr "I fshehur"
+
+#: src/design/props/flex-basis.js:13
+msgid "Basis"
+msgstr "Baza"
+
+#: src/design/props/flex-direction.js:14
+msgid "Direction"
+msgstr "Drejtimi"
+
+#: src/design/props/flex-direction.js:18
+msgid "Row reversed"
+msgstr "Rreshti u përmbys"
+
+#: src/design/props/flex-direction.js:19
+msgid "Column"
+msgstr "Kolonë"
+
+#: src/design/props/flex-direction.js:20
+msgid "Column reversed"
+msgstr "Kolona e përmbysur"
+
+#: src/design/props/flex-grow.js:14
+msgid "Grow"
+msgstr "Zgjero"
+
+#: src/design/props/flex-shrink.js:14
+msgid "Shrink"
+msgstr "Zsugorodás"
+
+#: src/design/props/flex-wrap.js:14
+#: src/design/props/flex-wrap.js:18
+msgid "Wrap"
+msgstr "Mbështill"
+
+#: src/design/props/flex-wrap.js:17
+msgid "No wrap"
+msgstr "Pa mbështjellje"
+
+#: src/design/props/flex-wrap.js:19
+msgid "Wrap reversed"
+msgstr "Mbështjellje e kthyer përmbys"
+
+#: src/design/props/font-family.js:15
+msgid "Font"
+msgstr "Shkronja"
+
+#: src/design/props/font-style.js:17
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:131
+msgid "Italic"
+msgstr "Itafik"
+
+#: src/design/props/font-weight.js:11
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:119
+msgid "Weight"
+msgstr "Pesha"
+
+#: src/design/props/font-weight.js:14
+msgid "Thin (100)"
+msgstr "I hollë (100)"
+
+#: src/design/props/font-weight.js:15
+msgid "Extra light (200)"
+msgstr "Ekstra e lehtë (200)"
+
+#: src/design/props/font-weight.js:16
+msgid "Light (300)"
+msgstr "I Elehtë (300)"
+
+#: src/design/props/font-weight.js:17
+msgid "Regular (400)"
+msgstr "E rregullt (400)"
+
+#: src/design/props/font-weight.js:18
+msgid "Medium (500)"
+msgstr "Mesatare (500)"
+
+#: src/design/props/font-weight.js:19
+msgid "Semi bold (600)"
+msgstr "Gjysmë i trashë (600)"
+
+#: src/design/props/font-weight.js:20
+msgid "Bold (700)"
+msgstr "E zezë e trashë (700)"
+
+#: src/design/props/font-weight.js:21
+msgid "Extra bold (800)"
+msgstr "E zezë e trashë shtesë (800)"
+
+#: src/design/props/font-weight.js:22
+msgid "Black (900)"
+msgstr "E zezë (900)"
+
+#: src/design/props/gap.js:15
+msgid "Gap"
+msgstr "Hapësirë"
+
+#: src/design/props/grid-area.js:11
+msgid "Area name"
+msgstr "Emri i zonës"
+
+#: src/design/props/grid-areas.js:11
+msgid "Named areas"
+msgstr "Zona të emërtuara"
+
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Rreshtat"
+
+#: src/design/props/height.js:16
+msgid "Height"
+msgstr "Lartësia"
+
+#: src/design/props/inset.js:13
+msgid "Offsets"
+msgstr "Ofsetet"
+
+#: src/design/props/justify-content.js:22
+msgid "Justify content"
+msgstr "Drejto përmbajtjen"
+
+#: src/design/props/justify-content.js:28
+msgid "Space between"
+msgstr "Hapësirë midis"
+
+#: src/design/props/justify-content.js:29
+msgid "Space around"
+msgstr "Hapësira rreth"
+
+#: src/design/props/justify-content.js:30
+msgid "Space evenly"
+msgstr "Hapësirë në mënyrë të barabartë"
+
+#: src/design/props/letter-spacing.js:13
+msgid "Letter spacing"
+msgstr "Hapësira e shkronjave"
+
+#: src/design/props/line-height.js:13
+msgid "Line height"
+msgstr "Lartësia e rreshtit"
+
+#: src/design/props/margin.js:13
+msgid "Margin"
+msgstr "Kufiri"
+
+#: src/design/props/max-height.js:16
+msgid "Max height"
+msgstr "Lartësia maksimale"
+
+#: src/design/props/max-width.js:16
+msgid "Max width"
+msgstr "Gjerësia maksimale"
+
+#: src/design/props/min-height.js:16
+msgid "Min height"
+msgstr "Lartësia min"
+
+#: src/design/props/min-width.js:16
+msgid "Min width"
+msgstr "Gjerësia min"
+
+#: src/design/props/order.js:15
+msgid "Order"
+msgstr "Porosit"
+
+#: src/design/props/overflow.js:13
+msgid "Overflow"
+msgstr "Mbushja e tepërt"
+
+#: src/design/props/overflow.js:16
+msgid "Visible"
+msgstr "I dukshëm"
+
+#: src/design/props/overflow.js:18
+msgid "Clip"
+msgstr "Prejardhje"
+
+#: src/design/props/overflow.js:19
+msgid "Scroll when needed"
+msgstr "Lëviz kur është e nevojshme"
+
+#: src/design/props/overflow.js:20
+msgid "Always scroll"
+msgstr "Gjithmonë lëviz"
+
+#: src/design/props/padding.js:13
+msgid "Padding"
+msgstr "Mbushje"
+
+#: src/design/props/place-items.js:14
+msgid "Place items"
+msgstr "Vendos artikujt"
+
+#: src/design/props/position.js:17
+msgid "Relative"
+msgstr "Relative"
+
+#: src/design/props/position.js:18
+msgid "Absolute"
+msgstr "Absolute"
+
+#: src/design/props/position.js:19
+msgid "Fixed"
+msgstr "I fiksuar"
+
+#: src/design/props/position.js:20
+msgid "Sticky"
+msgstr "I ngjitur"
+
+#: src/design/props/radius.js:19
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "Rrezja e skajit"
+
+#: src/design/props/row-span.js:11
+msgid "Row span"
+msgstr "Gjerësia e rreshtit"
+
+#: src/design/props/text-align.js:19
+msgid "Justify"
+msgstr "Justifiko"
+
+#: src/design/props/text-decoration.js:13
+msgid "Decoration"
+msgstr "Dekorimi"
+
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Nënvizato"
+
+#: src/design/props/text-decoration.js:18
+msgid "Overline"
+msgstr "Vija e sipërme"
+
+#: src/design/props/text-decoration.js:19
+msgid "Strikethrough"
+msgstr "Vizë në mes"
+
+#: src/design/props/text-shadow.js:12
+msgid "Text shadow"
+msgstr "Hija e tekstit"
+
+#: src/design/props/text-transform.js:13
+msgid "Letter case"
+msgstr "Madhësia e shkronjave"
+
+#: src/design/props/text-transform.js:17
+msgid "Uppercase"
+msgstr "Shkronja të mëdha"
+
+#: src/design/props/text-transform.js:18
+msgid "Lowercase"
+msgstr "Shkronja të vogla"
+
+#: src/design/props/text-transform.js:19
+msgid "Capitalise"
+msgstr "Përdor shkronja të mëdha"
+
+#: src/design/props/transition.js:28
+#: src/design/pro__premium_only/effects/panel.js:526
+msgid "Transition"
+msgstr "Kalimi"
+
+#: src/design/props/z-index.js:15
+msgid "Stack order (z-index)"
+msgstr "Renditja e pirgut (z-index)"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:58
+msgid "Custom breakpoints"
+msgstr "Pikat e ndërprerjes së personalizuara"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:63
+msgid "Add screen sizes of your own, such as a large desktop, a landscape tablet or a small phone."
+msgstr "Shtoni madhësitë tuaja të ekranit, si një desktop i madh, një tablet në orientim horizontal ose një telefon i vogël."
+
+#: src/design/pro__premium_only/custom-breakpoints.js:83
+msgid "Applies"
+msgstr "Zbatohet"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:88
+msgid "up to a width"
+msgstr "deri në një gjerësi"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:95
+msgid "from a width"
+msgstr "nga një gjerësi"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:114
+msgid "Width (px)"
+msgstr "Gjerësia (px)"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:130
+msgid "Remove this breakpoint"
+msgstr "Hiq këtë pikë ndalimi"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:150
+#: src/design/pro__premium_only/custom-breakpoints.js:153
+msgid "Large desktop"
+msgstr "Desktop i madh"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:162
+msgid "Add a breakpoint"
+msgstr "Shto një pikë ndërprerjeje"
+
+#: src/design/pro__premium_only/effects/controls.js:105
+msgid "Radial"
+msgstr "Radiale"
+
+#: src/design/pro__premium_only/effects/controls.js:106
+msgid "Conic"
+msgstr "Conic"
+
+#: src/design/pro__premium_only/effects/controls.js:114
+msgid "Angle (degrees)"
+msgstr "Këndi (gradë)"
+
+#: src/design/pro__premium_only/effects/controls.js:125
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Formë"
+
+#: src/design/pro__premium_only/effects/controls.js:128
+msgid "Ellipse"
+msgstr "Elipsë"
+
+#: src/design/pro__premium_only/effects/controls.js:129
+#: src/design/pro__premium_only/effects/controls.js:247
+msgid "Circle"
+msgstr "Rrethi"
+
+#. translators: %d: gradient colour stop number.
+#: src/design/pro__premium_only/effects/controls.js:149
+#, js-format
+msgid "Colour stop %d"
+msgstr "Ndalesa e ngjyrës %d"
+
+#: src/design/pro__premium_only/effects/controls.js:161
+msgid "Position (%)"
+msgstr "Pozicioni (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:179
+msgid "Remove stop"
+msgstr "Hiq ndalesën"
+
+#: src/design/pro__premium_only/effects/controls.js:193
+msgid "Add colour stop"
+msgstr "Shto ndalesë ngjyre"
+
+#: src/design/pro__premium_only/effects/controls.js:197
+msgid "Clear gradient"
+msgstr "Pastro gradientin"
+
+#: src/design/pro__premium_only/effects/controls.js:211
+msgid "Blur behind (px)"
+msgstr "Sfursimi i sfondit (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:221
+msgid "Saturation behind (%)"
+msgstr "Ngopja prapa (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:229
+msgid "Tint (use a see-through colour)"
+msgstr "Nuancë (përdor një ngjyrë gjysmë të tejdukshme)"
+
+#: src/design/pro__premium_only/effects/controls.js:248
+msgid "Rounded square"
+msgstr "Katror i rrumbullakosur"
+
+#: src/design/pro__premium_only/effects/controls.js:249
+msgid "Blob"
+msgstr "Blob"
+
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Hexagon"
+msgstr "Gjashtëkëndësh"
+
+#: src/design/pro__premium_only/effects/controls.js:251
+#: src/design/pro__premium_only/effects/panel.js:255
+msgid "Triangle"
+msgstr "Trekëndësh"
+
+#: src/design/pro__premium_only/effects/controls.js:252
+msgid "Diamond"
+msgstr "Diamond"
+
+#: src/design/pro__premium_only/effects/controls.js:253
+msgid "Star"
+msgstr "Yll"
+
+#: src/design/pro__premium_only/effects/controls.js:254
+msgid "Heart"
+msgstr "Zemër"
+
+#: src/design/pro__premium_only/effects/controls.js:255
+msgid "Arch"
+msgstr "Arkitektura"
+
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Brush stroke"
+msgstr "Goditje furçë"
+
+#: src/design/pro__premium_only/effects/controls.js:269
+msgid "Mask shape"
+msgstr "Forma e maskës"
+
+#: src/design/pro__premium_only/effects/controls.js:279
+msgid "Custom image"
+msgstr "Imazh i personalizuar"
+
+#: src/design/pro__premium_only/effects/controls.js:305
+msgid "Replace mask image"
+msgstr "Zëvendëso imazhin e maskës"
+
+#: src/design/pro__premium_only/effects/controls.js:309
+msgid "Choose mask image"
+msgstr "Zgjidhni imazhin e maskës"
+
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Fit"
+msgstr "Përshtat"
+
+#: src/design/pro__premium_only/effects/controls.js:363
+msgid "Repeat across"
+msgstr "Përsërit në të gjithë"
+
+#: src/design/pro__premium_only/effects/controls.js:367
+msgid "Repeat down"
+msgstr "Përsërit poshtë"
+
+#: src/design/pro__premium_only/effects/controls.js:371
+msgid "Space out"
+msgstr "Hapësirë ​​boshe"
+
+#: src/design/pro__premium_only/effects/controls.js:372
+msgid "Stretch to fit"
+msgstr "Përshtat për të mbushur hapësirën"
+
+#: src/design/pro__premium_only/effects/controls.js:387
+msgid "Multiply"
+msgstr "Krijo kopje"
+
+#: src/design/pro__premium_only/effects/controls.js:388
+msgid "Screen"
+msgstr "Ekrani"
+
+#: src/design/pro__premium_only/effects/controls.js:389
+msgid "Overlay"
+msgstr "Shtresë e sipërme"
+
+#: src/design/pro__premium_only/effects/controls.js:390
+msgid "Darken"
+msgstr "Serrsoj"
+
+#: src/design/pro__premium_only/effects/controls.js:391
+msgid "Lighten"
+msgstr "Ndriço"
+
+#: src/design/pro__premium_only/effects/controls.js:392
+msgid "Colour dodge"
+msgstr "Zbehje me ngjyrë"
+
+#: src/design/pro__premium_only/effects/controls.js:393
+msgid "Colour burn"
+msgstr "Djegie ngjyre"
+
+#: src/design/pro__premium_only/effects/controls.js:394
+msgid "Hard light"
+msgstr "Dritë e fortë"
+
+#: src/design/pro__premium_only/effects/controls.js:395
+msgid "Soft light"
+msgstr "Dritë e butë"
+
+#: src/design/pro__premium_only/effects/controls.js:396
+msgid "Difference"
+msgstr "Diferenca"
+
+#: src/design/pro__premium_only/effects/controls.js:397
+msgid "Exclusion"
+msgstr "Përjashtimi"
+
+#: src/design/pro__premium_only/effects/controls.js:398
+msgid "Hue"
+msgstr "Nuancë"
+
+#: src/design/pro__premium_only/effects/controls.js:399
+msgid "Saturation"
+msgstr "Ngopja"
+
+#: src/design/pro__premium_only/effects/controls.js:401
+msgid "Luminosity"
+msgstr "Luminosity"
+
+#: src/design/pro__premium_only/effects/controls.js:410
+#: src/design/pro__premium_only/effects/props/blend-mode.js:15
+msgid "Blend mode"
+msgstr "Mënyra e përzierjes"
+
+#: src/design/pro__premium_only/effects/controls.js:425
+msgid "Blur (px)"
+msgstr "Turbullirë (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:426
+msgid "Brightness (%)"
+msgstr "Intensiteti (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:427
+msgid "Contrast (%)"
+msgstr "Kontrasti (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:428
+msgid "Greyscale (%)"
+msgstr "Shkallë gri (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:429
+msgid "Hue rotation (degrees)"
+msgstr "Rrotullimi i nuancës (gradë)"
+
+#: src/design/pro__premium_only/effects/controls.js:430
+msgid "Saturation (%)"
+msgstr "Ngopja (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:431
+msgid "Sepia (%)"
+msgstr "Sepia (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:469
+msgid "Drop shadow"
+msgstr "Hije e biehur"
+
+#: src/design/pro__premium_only/effects/controls.js:472
+msgid "Across (px)"
+msgstr "Përroi (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:473
+msgid "Down (px)"
+msgstr "Posl (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:474
+msgid "Softness (px)"
+msgstr "Buttësia (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:489
+msgid "Shadow colour"
+msgstr "Ngjyra e hijes"
+
+#: src/design/pro__premium_only/effects/controls.js:501
+msgid "Remove drop shadow"
+msgstr "Hiq hijen e tekstit"
+
+#: src/design/pro__premium_only/effects/panel.js:184
+msgid "Applies on every screen size."
+msgstr "Zbatohet në çdo madhësi ekrani."
+
+#: src/design/pro__premium_only/effects/panel.js:188
+msgid "Applies to the screen size chosen in the design panel."
+msgstr "Zbatohet për madhësinë e ekranit të zgjedhur në panelin e dizajnit."
+
+#: src/design/pro__premium_only/effects/panel.js:194
+#: src/design/pro__premium_only/effects/props/bg-gradient.js:37
+msgid "Background gradient"
+msgstr "Gradient sfondi"
+
+#: src/design/pro__premium_only/effects/panel.js:215
+msgid "Add gradient"
+msgstr "Shto gradient"
+
+#: src/design/pro__premium_only/effects/panel.js:219
+#: src/design/pro__premium_only/effects/props/glass.js:15
+msgid "Glass"
+msgstr "Xham"
+
+#: src/design/pro__premium_only/effects/panel.js:226
+#: src/design/pro__premium_only/effects/props/mask.js:17
+msgid "Mask"
+msgstr "Maskë"
+
+#: src/design/pro__premium_only/effects/panel.js:237
+#: src/design/pro__premium_only/effects/props/filter.js:15
+msgid "Filters"
+msgstr "Filtrat"
+
+#: src/design/pro__premium_only/effects/panel.js:248
+msgid "Wave"
+msgstr "Valë"
+
+#: src/design/pro__premium_only/effects/panel.js:249
+msgid "Waves"
+msgstr "Valët"
+
+#: src/design/pro__premium_only/effects/panel.js:250
+msgid "Curve"
+msgstr "Kurvë"
+
+#: src/design/pro__premium_only/effects/panel.js:251
+msgid "Curve (asymmetric)"
+msgstr "Kurvë (asimmetrike)"
+
+#: src/design/pro__premium_only/effects/panel.js:252
+msgid "Arc"
+msgstr "Harkë"
+
+#: src/design/pro__premium_only/effects/panel.js:253
+msgid "Tilt"
+msgstr "Shtoje"
+
+#: src/design/pro__premium_only/effects/panel.js:254
+msgid "Tilt (layered)"
+msgstr "Pjerrët (të shtresuara)"
+
+#: src/design/pro__premium_only/effects/panel.js:256
+msgid "Triangle (asymmetric)"
+msgstr "Trikëndësh (asimetrik)"
+
+#: src/design/pro__premium_only/effects/panel.js:261
+msgid "Split"
+msgstr "Ndaj"
+
+#: src/design/pro__premium_only/effects/panel.js:262
+msgid "Zigzag"
+msgstr "Zigzag"
+
+#: src/design/pro__premium_only/effects/panel.js:263
+msgid "Mountains"
+msgstr "Malet"
+
+#: src/design/pro__premium_only/effects/panel.js:264
+msgid "Clouds"
+msgstr "Retë"
+
+#: src/design/pro__premium_only/effects/panel.js:265
+msgid "Drops"
+msgstr "Pikat"
+
+#: src/design/pro__premium_only/effects/panel.js:266
+msgid "Pyramids"
+msgstr "Piramidat"
+
+#: src/design/pro__premium_only/effects/panel.js:267
+msgid "Book"
+msgstr "Rezervo"
+
+#: src/design/pro__premium_only/effects/panel.js:269
+msgid "Stairs"
+msgstr "Shkallët"
+
+#: src/design/pro__premium_only/effects/panel.js:270
+msgid "Fan"
+msgstr "Ventiliator"
+
+#: src/design/pro__premium_only/effects/panel.js:308
+msgid "Height (px)"
+msgstr "Lartësia (px)"
+
+#: src/design/pro__premium_only/effects/panel.js:316
+msgid "Mirror"
+msgstr "Pasqyro"
+
+#: src/design/pro__premium_only/effects/panel.js:322
+msgid "Invert"
+msgstr "Inverto"
+
+#: src/design/pro__premium_only/effects/panel.js:328
+msgid "In front of the content"
+msgstr "Para përmbajtjes"
+
+#: src/design/pro__premium_only/effects/panel.js:379
+msgid "Source"
+msgstr "Burimi"
+
+#: src/design/pro__premium_only/effects/panel.js:385
+msgid "Video file (MP4 / WebM)"
+msgstr "Skedë video (MP4 / WebM)"
+
+#: src/design/pro__premium_only/effects/panel.js:400
+msgid "Choose MP4 or WebM video"
+msgstr "Zgjidhni video MP4 ose WebM"
+
+#: src/design/pro__premium_only/effects/panel.js:414
+msgid "MP4 address"
+msgstr "Adresa MP4"
+
+#: src/design/pro__premium_only/effects/panel.js:419
+msgid "WebM address"
+msgstr "Adresa WebM"
+
+#: src/design/pro__premium_only/effects/panel.js:432
+msgid "YouTube video ID (11 characters)"
+msgstr "ID-ja e videos në YouTube (11 karaktere)"
+
+#: src/design/pro__premium_only/effects/panel.js:436
+msgid "Vimeo video number"
+msgstr "Numri i videos në Vimeo"
+
+#: src/design/pro__premium_only/effects/panel.js:445
+msgid "Visitors only contact the video service when they scroll to this section, and never when their device asks for reduced motion. Until then they see the poster image."
+msgstr "Vizitorët kontaktojnë shërbimin e videos vetëm kur lëvizin te ky seksion dhe kurrë kur pajisja e tyre kërkon lëvizje të reduktuar. Deri atëherë ata shohin imazhin poster."
+
+#: src/design/pro__premium_only/effects/panel.js:456
+msgid "Replace poster image"
+msgstr "Zëvendëso imazhin e posterit"
+
+#: src/design/pro__premium_only/effects/panel.js:460
+msgid "Choose poster image"
+msgstr "Zgjidh imazhin e posterit"
+
+#: src/design/pro__premium_only/effects/panel.js:480
+msgid "Background slideshow"
+msgstr "Sfond i imazheve të ndryshueshme"
+
+#: src/design/pro__premium_only/effects/panel.js:485
+msgid "Change images"
+msgstr "Ndrysho imazhet"
+
+#: src/design/pro__premium_only/effects/panel.js:486
+msgid "Choose images"
+msgstr "Zgjidh imazhet"
+
+#: src/design/pro__premium_only/effects/panel.js:503
+msgid "Choose at least two images."
+msgstr "Zgjidhni të paktën dy imazhe."
+
+#: src/design/pro__premium_only/effects/panel.js:514
+msgid "Seconds per image"
+msgstr "Sekonda për imazh"
+
+#: src/design/pro__premium_only/effects/panel.js:531
+msgid "Fade"
+msgstr "Zbeh"
+
+#: src/design/pro__premium_only/effects/panel.js:535
+msgid "Slide"
+msgstr "Rrëshqit"
+
+#: src/design/pro__premium_only/effects/panel.js:539
+msgid "Slow zoom (Ken Burns)"
+msgstr "Zmadhim i ngadaltë (Ken Burns)"
+
+#: src/design/pro__premium_only/effects/panel.js:552
+msgid "Remove slideshow"
+msgstr "Hiq shfaqjen e slideve"
+
+#: src/design/pro__premium_only/effects/panel.js:557
+msgid "Visitors who ask their device for reduced motion see the first image only."
+msgstr "Vizitorët që i kërkojnë pajisjes së tyre lëvizje të reduktuar shohin vetëm imazhin e parë."
+
+#: src/design/pro__premium_only/effects/panel.js:572
+msgid "Section effects"
+msgstr "Efektet e seksionit"
+
+#: src/design/pro__premium_only/effects/panel.js:577
+msgid "Top divider"
+msgstr "Ndarësi i sipërm"
+
+#: src/design/pro__premium_only/effects/panel.js:584
+msgid "Bottom divider"
+msgstr "Ndarësi i poshtëm"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:30
+msgid "Choose the logo"
+msgstr "Zgjidhni logon"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:58
+msgid "Not set"
+msgstr "E panvendosur"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:63
+msgid "Check the brand colours: each needs a unique name and a valid colour."
+msgstr "Kontrolloni ngjyrat e markës: secila ka nevojë për një emër unik dhe një ngjyrë të vlefshme."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:73
+msgid "Brand name"
+msgstr "Emri i markës"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:90
+msgid "Replace logo"
+msgstr "Zëvendëso siglën"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:91
+msgid "Choose logo"
+msgstr "Zgjidhni logon"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:96
+msgid "A logo is chosen."
+msgstr "Një logo është zgjedhur."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:97
+msgid "Choose the logo from the Site design page."
+msgstr "Zgjidhni logon nga faqja e dizajnit të faqes."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:102
+msgid "Remove logo"
+msgstr "Hiq logon"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:107
+msgid "Brand colours"
+msgstr "Ngjyrat e markës"
+
+#. translators: %s: colour name.
+#. translators: %s: token name.
+#. translators: %s: font name.
+#: src/design/pro__premium_only/globals/BrandKitSection.js:141
+#: src/design/pro__premium_only/globals/TokenList.js:60
+#: src/design/site-design/ColorsSection.js:53
+#: src/design/site-design/FontsSection.js:121
+#, js-format
+msgid "Remove %s"
+msgstr "Hiqni %s"
+
+#. translators: %d: a number.
+#: src/design/pro__premium_only/globals/BrandKitSection.js:154
+#, js-format
+msgid "Brand %d"
+msgstr "Marka %d"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:169
+msgid "Add brand colour"
+msgstr "Shto ngjyrën e markës"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:175
+#: src/design/site-design/FontsSection.js:64
+msgid "Heading font"
+msgstr "Shkronjat e titullit"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:183
+#: src/design/site-design/FontsSection.js:72
+msgid "Body font"
+msgstr "Fonti i trupit"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:190
+msgid "Tone of voice"
+msgstr "Ton i zërit"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:191
+msgid "How your brand writes, e.g. “Friendly and plain, short sentences, no jargon.” The AI follows it whenever it writes for this site."
+msgstr "Si shkruan marka juaj, p.sh. \"Miqësore dhe e thjeshtë, fjali të shkurtra, pa zhargon.\" AI-ja e ndjek atë sa herë që shkruan për këtë faqe."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:208
+msgid "Brand kit saved."
+msgstr "Kompleti i markës u ruajt."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:223
+msgid "The brand is applied: its colours, fonts and logo are now the site’s."
+msgstr "Marka është aplikuar: ngjyrat, shkronjat dhe logoja e saj tani janë pjesë e faqes."
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:231
+msgid "Apply to site"
+msgstr "Apliko në sajt"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:58
+msgid "All classes"
+msgstr "Të gjitha klasat"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:68
+msgid "Class name on the page"
+msgstr "Emri i klasës në faqe"
+
+#. translators: %s: CSS class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:73
+#, js-format
+msgid "Printed as %s."
+msgstr "Printuar si %s."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:76
+msgid "Start with a letter; lowercase letters, digits and hyphens only."
+msgstr "Fillo me një shkronjë; vetëm shkronja të vogla, numra dhe viza ndarëse."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:86
+msgid "Styles"
+msgstr "Stilet"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:92
+msgid "The style controls are not loaded. Reload the page; if this stays, reinstall the plugin."
+msgstr "Kontrollet e stilit nuk janë ngarkuar. Ringarkoni faqen; nëse kjo vazhdon, riinstaloni shtojcën."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:112
+msgid "Class saved. Every element using it has the new style."
+msgstr "Klasa u ruajt. Çdo element që e përdor atë ka stilin e ri."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:120
+msgid "Save class"
+msgstr "Ruaj klasën"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:165
+msgid "Class created."
+msgstr "Klasa u krijua."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:176
+msgid "New class"
+msgstr "Klasë e re"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:179
+msgid "e.g. Card"
+msgstr "p.sh. Kartë"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:189
+msgid "Create"
+msgstr "Krijo"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:195
+msgid "Search classes"
+msgstr "Kërko klasat"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:203
+msgid "No class matches."
+msgstr "Nuk ka asnjë klasë që përkon."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:204
+msgid "No classes yet. Create one, style it, then add it to any element from its settings."
+msgstr "Nuk ka ende klasa. Krijoni një, stilojeni dhe më pas shtojeni në çdo element nga cilësimet e tij."
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:222
+#, js-format
+msgid "Edit %s"
+msgstr "Modifiko %s"
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:232
+#, js-format
+msgid "Duplicate %s"
+msgstr "Kopjo %s"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:242
+msgid "Class duplicated."
+msgstr "Klasa u dyfishua."
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:252
+#, js-format
+msgid "Delete %s"
+msgstr "Fshi %s"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:270
+msgid "Class deleted."
+msgstr "Klasa u fshi."
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:274
+msgid "Delete"
+msgstr "Fshi"
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:278
+#, js-format
+msgid "Delete the class \"%s\"? Elements that use it keep their content and lose its styles."
+msgstr "Të fshihet klasa \"%s\"? Elementët që e përdorin atë ruajnë përmbajtjen e tyre dhe humbasin stilin e saj."
+
+#: src/design/pro__premium_only/globals/CodeEditor.js:87
+msgid "Only users who may add unfiltered HTML can change custom CSS."
+msgstr "Vetëm përdoruesit që mund të shtojnë HTML të pafiltruar mund të ndryshojnë CSS-në e personalizuar."
+
+#: src/design/pro__premium_only/globals/CodeEditor.js:95
+msgid "Some of this CSS will not be used: @import, expression(), javascript: URLs, \"<\" and unbalanced braces are removed for safety."
+msgstr "Një pjesë e këtij CSS-je nuk do të përdoret: @import, expression(), URL-të javascript:, \"<\" dhe kllapat e pabalancuara hiqen për siguri."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:100
+msgid "Upload a font"
+msgstr "Ngarko një font"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:104
+msgid "Uploading fonts needs WordPress 6.5 or later."
+msgstr "Ngarkimi i shkronjave kërkon WordPress 6.5 ose më vonë."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:110
+msgid "Font name"
+msgstr "Emri i shkronjës"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:113
+msgid "e.g. Brand Sans"
+msgstr "p.sh. Brand Sans"
+
+#. translators: %s: font name.
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:167
+#, js-format
+msgid "%s is uploaded and ready to use."
+msgstr "%s është ngarkuar dhe gati për t'u përdorur."
+
+#. translators: %s: file types, e.g. woff2, woff, ttf.
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:175
+#, js-format
+msgid "Choose a font file (%s)"
+msgstr "Zgjidhni një skedar fonti (%s)"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:184
+msgid "Font library"
+msgstr "Biblioteka e shkronjave"
+
+#. translators: %d: number of font files.
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:194
+#, js-format
+msgid "%d files"
+msgstr "%d skedarë"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:214
+msgid "Font switched off for the site."
+msgstr "Shkronjat e përzgjedhura u çaktivizuan për faqen."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:215
+msgid "Font switched on for the site."
+msgstr "Fonti u aktivizua për faqen."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:220
+msgid "Switch off"
+msgstr "Fike"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:221
+msgid "Switch on"
+msgstr "Ndiz"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:229
+msgid "Adobe Fonts"
+msgstr "Adobe Fonts"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:232
+msgid "Paste the kit id of your Adobe Fonts web project. Its fonts are then loaded from Adobe on your pages."
+msgstr "Ngjitni id-në e paketës të projektit tuaj në web me Adobe Fonts. Fontet e tij ngarkohen më pas nga Adobe në faqet tuaja."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:237
+msgid "Your web projects"
+msgstr "Projektet tuaja të uebit"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:249
+msgid "Adobe Fonts connected."
+msgstr "Adobe Fonts u lidh."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:250
+msgid "Adobe Fonts disconnected."
+msgstr "Adobe Fonts u shkëput."
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:256
+msgid "Kit id"
+msgstr "ID e paketës"
+
+#. translators: %s: colour name.
+#: src/design/pro__premium_only/globals/DarkModeSection.js:36
+#, js-format
+msgid "The dark value for \"%s\" is not a valid colour."
+msgstr "Vlera e errët për \"%s\" nuk është një ngjyrë e vlefshme."
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:51
+msgid "When a visitor has not chosen"
+msgstr "Kur një vizitor nuk ka zgjedhur"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:56
+msgid "Follow the visitor’s device"
+msgstr "Ndiqni pajisjen e vizitorit"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:59
+msgid "Light"
+msgstr "E lehtë"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:60
+msgid "Dark"
+msgstr "E errët"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:64
+msgid "Dark colours"
+msgstr "Ngjyra të errëta"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:67
+msgid "Give each colour its dark version. Colours left empty stay the same in both schemes. Dark mode is on as soon as one colour has a dark value."
+msgstr "Jepini secilës ngjyrë versionin e saj të errët. Ngjyrat e lëna bosh mbeten të njëjta në të dyja skemat. Mënyra e errët aktivizohet sapo një ngjyrë të ketë një vlerë të errët."
+
+#. translators: %s: colour name.
+#: src/design/pro__premium_only/globals/DarkModeSection.js:86
+#, js-format
+msgid "Dark version of %s"
+msgstr "Versioni i errët i %s"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:105
+msgid "Dark mode saved."
+msgstr "Modaliteti i errët u ruajt."
+
+#: src/design/pro__premium_only/globals/editor.js:20
+#: src/design/pro__premium_only/globals/index.js:62
+#: src/design/site-design/sections.js:28
+msgid "Page CSS"
+msgstr "CSS-i i faqes"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:67
+msgid "Global classes"
+msgstr "Klasa globale"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:73
+#: src/design/pro__premium_only/globals/index.js:20
+#: src/design/site-design/sections.js:22
+msgid "Classes"
+msgstr "Klasat"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:94
+msgid "Create classes in Site design, then add them here."
+msgstr "Krijo klasat te Dizajni i sajtit, pastaj shtoji këtu."
+
+#: src/design/pro__premium_only/globals/ElementControls.js:104
+msgid "Custom CSS"
+msgstr "CSS i personalizuar"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:105
+msgid "Write rules for this element. \"selector\" means this element, e.g. selector:hover { opacity: .8 } — plain declarations apply to the element itself."
+msgstr "Shkruani rregulla për këtë element. \"selector\" do të thotë ky element, p.sh. selector:hover { opacity: .8 } — deklaratat e thjeshta zbatohen për vetë elementin."
+
+#. translators: %s: file types.
+#: src/design/pro__premium_only/globals/fonts.js:39
+#, js-format
+msgid "Font files must be %s."
+msgstr "Skedarët e shkronjave duhet të jenë %s."
+
+#: src/design/pro__premium_only/globals/fonts.js:44
+msgid "That font file is empty or larger than 10 MB."
+msgstr "Ai skedar fonti është bosh ose më i madh se 10 MB."
+
+#: src/design/pro__premium_only/globals/index.js:21
+msgid "Style once, reuse everywhere, change in one place."
+msgstr "Stilo këtë herë të vetme, ripërdore kudo, ndryshoje në një vend të vetëm."
+
+#: src/design/pro__premium_only/globals/index.js:27
+#: src/design/site-design/sections.js:23
+msgid "Variables"
+msgstr "Variablat"
+
+#: src/design/pro__premium_only/globals/index.js:28
+msgid "Named values any element can use."
+msgstr "Vlera të emërtuara që çdo element mund t'i përdorë."
+
+#: src/design/pro__premium_only/globals/index.js:34
+#: src/design/site-design/sections.js:24
+msgid "Spacing, radius and shadows"
+msgstr "Hapësira, rrezja dhe hijet"
+
+#: src/design/pro__premium_only/globals/index.js:35
+msgid "The scales every spacing, corner and shadow picker offers."
+msgstr "Shkallët që ofron çdo zgjedhës i hapësirës, qosheve dhe hijes."
+
+#: src/design/pro__premium_only/globals/index.js:42
+msgid "A dark version of your colours, for visitors who want it."
+msgstr "Një version i errët i ngjyrave tuaja, për vizitorët që e dëshirojnë atë."
+
+#: src/design/pro__premium_only/globals/index.js:48
+#: src/design/site-design/sections.js:26
+msgid "Brand kit"
+msgstr "Paketa e markës"
+
+#: src/design/pro__premium_only/globals/index.js:49
+msgid "Logo, colours, fonts and tone of voice, used by the AI and templates."
+msgstr "Logo, ngjyrat, fontet dhe toni i zërit, të përdorura nga AI dhe modelet."
+
+#: src/design/pro__premium_only/globals/index.js:55
+#: src/design/site-design/sections.js:27
+msgid "Custom fonts"
+msgstr "Shkronja të personalizuara"
+
+#: src/design/pro__premium_only/globals/index.js:56
+msgid "Upload your own fonts or connect Adobe Fonts."
+msgstr "Ngarkoni shkronjat tuaja ose lidhni Adobe Fonts."
+
+#: src/design/pro__premium_only/globals/index.js:63
+msgid "CSS for this page only."
+msgstr "CSS vetëm për këtë faqe."
+
+#: src/design/pro__premium_only/globals/PageCss.js:47
+msgid "CSS for this page"
+msgstr "CSS për këtë faqe"
+
+#: src/design/pro__premium_only/globals/PageCss.js:48
+msgid "Loaded only on this page, after the site’s styles. Saved with the page."
+msgstr "Ngarkohet vetëm në këtë faqe, pas stileve të faqes. Ruhet me faqen."
+
+#: src/design/pro__premium_only/globals/TokenList.js:29
+msgid "Short name"
+msgstr "Emri i shkurtër"
+
+#. translators: %s: short name.
+#: src/design/pro__premium_only/globals/TokenList.js:98
+#, js-format
+msgid "The short name \"%s\" is used twice."
+msgstr "Emri i shkurtër \"%s\" përdoret dy herë."
+
+#. translators: %s: short name.
+#: src/design/pro__premium_only/globals/TokenList.js:105
+#, js-format
+msgid "\"%s\": short names use lowercase letters, digits and hyphens."
+msgstr "\"%s\": emrat e shkurtër përdorin shkronja të vogla, shifra dhe vizë në mes."
+
+#. translators: %s: short name.
+#: src/design/pro__premium_only/globals/TokenList.js:114
+#, js-format
+msgid "The value of \"%s\" is not one this setting accepts."
+msgstr "Vlera e \"%s\" nuk është një nga ato që pranon ky opsion."
+
+#: src/design/pro__premium_only/globals/TokensSection.js:32
+msgid "Radius"
+msgstr "Radius"
+
+#: src/design/pro__premium_only/globals/TokensSection.js:50
+msgid "Add a step"
+msgstr "Shto një hap"
+
+#: src/design/pro__premium_only/globals/TokensSection.js:64
+msgid "Scales saved."
+msgstr "Pikal e ruajtura."
+
+#: src/design/pro__premium_only/globals/TokensSection.js:76
+msgid "Scales are back to the defaults."
+msgstr "Përmasat u kthyen te parazgjedhjet."
+
+#: src/design/pro__premium_only/globals/TokensSection.js:80
+msgid "Reset to the default scales"
+msgstr "Kthe te shkallët e parazgjedhura"
+
+#: src/design/pro__premium_only/globals/VariablesSection.js:35
+msgid "No variables yet. A variable holds one value — a width, a colour mix, a font size — that many elements share."
+msgstr "Enduroret nuk janë ende të disponueshme. Një ndryshore mban një vlerë — një gjerësi, një përzierje ngjyrash, një madhësi shkronjash — që e ndajnë shumë elemente."
+
+#: src/design/pro__premium_only/globals/VariablesSection.js:45
+msgid "Add variable"
+msgstr "Shto variablin"
+
+#: src/design/pro__premium_only/globals/VariablesSection.js:57
+msgid "Variables saved."
+msgstr "Variablat u ruajtën."
+
+#: src/design/site-design/ColorsSection.js:29
+msgid "No colours yet."
+msgstr "Asnjë ngjyrë ende."
+
+#. translators: %d: a number.
+#: src/design/site-design/ColorsSection.js:70
+#, js-format
+msgid "Colour %d"
+msgstr "Ngjyra %d"
+
+#: src/design/site-design/ColorsSection.js:83
+msgid "Add colour"
+msgstr "Shto ngjyrë"
+
+#: src/design/site-design/ColorsSection.js:113
+msgid "Two colours have the same name. Rename one."
+msgstr "Dy ngjyra kanë të njëjtë emër. Riemërtoni njërën."
+
+#. translators: %s: colour name.
+#: src/design/site-design/ColorsSection.js:120
+#, js-format
+msgid "\"%s\" is not a valid colour."
+msgstr "\"%s\" nuk është një ngjyrë e vlefshme."
+
+#: src/design/site-design/ColorsSection.js:132
+msgid "Theme colours"
+msgstr "Ngjyrat e temës"
+
+#: src/design/site-design/ColorsSection.js:135
+msgid "Your theme’s palette. A change here is saved as your site’s version of the colour, the same way the Site Editor saves it, and applies everywhere the colour is used."
+msgstr "Paleta e temës suaj. Një ndryshim këtu ruhet si versioni i faqes suaj për ngjyrën, njësoj siç e ruan Redaktuesi i Faqes, dhe zbatohet kudo që përdoret ngjyra."
+
+#: src/design/site-design/ColorsSection.js:149
+msgid "Theme colours are back to the theme’s own values."
+msgstr "Ngjyrat e temës janë kthyer te vlerat e vetë temës."
+
+#: src/design/site-design/ColorsSection.js:156
+msgid "Reset theme colours"
+msgstr "Rivendos ngjyrat e temës"
+
+#: src/design/site-design/ColorsSection.js:159
+msgid "Your colours"
+msgstr "Ngjyrat tuaja"
+
+#: src/design/site-design/ColorsSection.js:176
+msgid "Colours saved."
+msgstr "Ngjyrat u ruajtën."
+
+#. translators: %s: colour name.
+#: src/design/site-design/components.js:39
+#, js-format
+msgid "Pick a colour for %s"
+msgstr "Zgjidhni një ngjyrë për %s"
+
+#: src/design/site-design/components.js:70
+msgid "Clear"
+msgstr "Pastro"
+
+#: src/design/site-design/components.js:162
+msgid "The change could not be saved."
+msgstr "Ndryshimi nuk mund të ruhej."
+
+#: src/design/site-design/editor.js:58
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Mbyll panelin"
+
+#: src/design/site-design/FontsSection.js:34
+msgid "Theme default"
+msgstr "Tema e paracaktuar"
+
+#: src/design/site-design/FontsSection.js:78
+msgid "Theme fonts"
+msgstr "Fontet e temës"
+
+#: src/design/site-design/FontsSection.js:88
+msgid "Your fonts"
+msgstr "Shkronjat tuaja"
+
+#: src/design/site-design/FontsSection.js:101
+msgid "Font stack"
+msgstr "Paketa e fonteve"
+
+#: src/design/site-design/FontsSection.js:104
+msgid "Uploaded font: its files come from the font library."
+msgstr "Fonti i ngarkuar: skedarët e tij vijnë nga biblioteka e fonteve."
+
+#: src/design/site-design/FontsSection.js:138
+msgid "System sans-serif"
+msgstr "Sistemi sans-serif"
+
+#: src/design/site-design/FontsSection.js:145
+msgid "Add font stack"
+msgstr "Shto grumbull fontesh"
+
+#: src/design/site-design/FontsSection.js:170
+msgid "Fonts saved."
+msgstr "Shkronjat u ruajtën."
+
+#: src/design/site-design/sections.js:50
+msgid "Shared with your theme and the Site Editor."
+msgstr "Ndajnë të njëjtën temë dhe Redaktuesin e Faqes."
+
+#: src/design/site-design/sections.js:59
+msgid "Fonts"
+msgstr "Shkronjat"
+
+#: src/design/site-design/sections.js:60
+msgid "Heading and body fonts for the whole site."
+msgstr "Shkronjat e titullit dhe të trupit të tekstit për të gjithë faqen."
+
+#: src/design/site-design/SiteDesign.js:45
+msgid "Back to Site design"
+msgstr "Kthehu te dizajni i faqes"
+
+#: src/design/site-design/SiteDesign.js:70
+msgid "Pro"
+msgstr "Pro"
+
+#: src/design/site-design/SiteDesign.js:95
+msgid "Classes, tokens, dark mode, brand kit and custom fonts come with Pro"
+msgstr "Klasat, shenjat, modaliteti i errët, kompleti i markës dhe shkronjat e personalizuara vijnë me Pro"
+
+#: src/design/site-design/SiteDesign.js:105
+msgid "Open the Site Editor’s styles"
+msgstr "Hapni stilet e Redaktuesit të Faqes"
+
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Kreu"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -5506,17 +8000,13 @@ msgstr "Shfaq gjuhën aktuale"
 msgid "Install Tranzly and list two or more languages, and the switcher appears here."
 msgstr "Instaloni Tranzly dhe listoni dy ose më shumë gjuhë, dhe çelësi do të shfaqet këtu."
 
-#: src/editor/language-switcher.js:67
-msgid "Design"
-msgstr "Dizajni"
-
 #: src/editor/language-switcher.js:72
 msgid "List"
 msgstr "Lista"
 
 #: src/editor/language-switcher.js:76
 msgid "Pills"
-msgstr "Pilula"
+msgstr "Kapsula"
 
 #: src/editor/language-switcher.js:80
 msgid "Buttons"
@@ -5524,7 +8014,7 @@ msgstr "Butona"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
-msgstr "Menu rënëse"
+msgstr "Menyja zbritëse"
 
 #: src/editor/language-switcher.js:91
 msgid "Language codes"
@@ -5532,7 +8022,7 @@ msgstr "Kodet e gjuhës"
 
 #: src/editor/language-switcher.js:102
 msgid "Show each language as"
-msgstr "Shfaq secilën gjuhë si"
+msgstr "Shfaq çdo gjuhë si"
 
 #: src/editor/language-switcher.js:110
 msgid "Language name"
@@ -5548,11 +8038,11 @@ msgstr "Emri dhe kodi"
 
 #: src/editor/language-switcher.js:134
 msgid "Flags"
-msgstr "Flamujurët"
+msgstr "Flamujt"
 
 #: src/editor/language-switcher.js:135
 msgid "Off by default: a flag is a country, not a language."
-msgstr "Joaktive si parazgjedhje: një flamur është një shtet, jo një gjuhë."
+msgstr "I fikur si parazgjedhje: një flamur është një shtet, jo një gjuhë."
 
 #: src/editor/language-switcher.js:144
 msgid "Include the current language"
@@ -5566,11 +8056,6 @@ msgstr "Fshi gjuhët në të cilat kjo faqe nuk është e përkthyer"
 msgid "Stack vertically"
 msgstr "Vendos vertikalisht"
 
-#: src/editor/language-switcher.js:187
-#: src/workflow/pro__premium_only/ReplacePanel.js:126
-msgid "Colours"
-msgstr "Ngjyrat"
-
 #: src/editor/language-switcher.js:193
 msgid "Background"
 msgstr "Sfondi"
@@ -5583,17 +8068,9 @@ msgstr "Gjuha aktuale e tekstit"
 msgid "Current language background"
 msgstr "Sfondi i gjuhës aktuale"
 
-#: src/editor/language-switcher.js:211
-msgid "Border"
-msgstr "Korniza"
-
 #: src/editor/language-switcher.js:220
 msgid "Size and spacing"
 msgstr "Madhësia dhe hapësira"
-
-#: src/editor/language-switcher.js:226
-msgid "Corner radius"
-msgstr "Rrezja e skajit"
 
 #: src/editor/language-switcher.js:231
 msgid "Space between languages"
@@ -5604,38 +8081,34 @@ msgid "Text size"
 msgstr "Madhësia e tekstit"
 
 #. translators: %s: user name.
-#: src/studio/app.js:118
+#: src/studio/app.js:122
 #, js-format
 msgid "%s is also editing this page. Saving may overwrite their changes."
 msgstr "%s po ashtu po redakton këtë faqe. Ruajtja mund të mbishkruajë ndryshimet e tyre."
 
-#: src/studio/app.js:133
-#: src/studio/app.js:140
-#: src/studio/components/header.js:109
+#: src/studio/app.js:137
+#: src/studio/app.js:144
+#: src/studio/components/header.js:136
 msgid "Block library"
 msgstr "Biblioteka e bllokut"
 
-#: src/studio/app.js:134
-#: src/studio/app.js:144
-#: src/studio/components/header.js:117
+#: src/studio/app.js:138
+#: src/studio/app.js:148
+#: src/studio/components/header.js:144
 msgid "Layers"
 msgstr "Shtresat"
 
-#: src/studio/app.js:148
-msgid "Close panel"
-msgstr "Mbyll panelin"
-
-#: src/studio/app.js:171
+#: src/studio/app.js:175
 msgid "Page canvas"
 msgstr "Kanavaca e faqes"
 
-#: src/studio/app.js:199
-#: src/studio/components/header.js:207
+#: src/studio/app.js:203
+#: src/studio/components/header.js:236
 #: src/studio/components/revisions.js:80
 msgid "Revisions"
 msgstr "Rishikimet"
 
-#: src/studio/app.js:201
+#: src/studio/app.js:205
 msgid "Block settings"
 msgstr "Cilësimet e bllokimit"
 
@@ -5657,12 +8130,12 @@ msgid "Open in Studio: %s"
 msgstr "Hape në Studio: %s"
 
 #: src/studio/components/commands.js:205
-#: src/studio/components/header.js:125
+#: src/studio/components/header.js:152
 msgid "Undo"
 msgstr "Anulo"
 
 #: src/studio/components/commands.js:214
-#: src/studio/components/header.js:134
+#: src/studio/components/header.js:161
 msgid "Redo"
 msgstr "Ribëj"
 
@@ -5683,7 +8156,7 @@ msgid "Open the normal editor"
 msgstr "Hapni redaktuesin normal"
 
 #: src/studio/components/commands.js:259
-#: src/studio/components/header.js:215
+#: src/studio/components/header.js:244
 #: src/studio/components/shortcuts.js:135
 msgid "Keyboard shortcuts"
 msgstr "Shkurtesat e tastierës"
@@ -5725,89 +8198,95 @@ msgstr "Çaktivizo modalitetin e sigurt"
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Aktivizo modalitetin e sigurt (shtojcat e tjera të fikura, vetëm për ju, në Studio)"
 
-#: src/studio/components/header.js:32
+#: src/studio/components/header.js:33
 msgid "Published"
 msgstr "Publikuar"
 
-#: src/studio/components/header.js:33
+#: src/studio/components/header.js:34
 msgid "Scheduled"
 msgstr "I planifikuar"
 
-#: src/studio/components/header.js:34
+#: src/studio/components/header.js:35
 msgid "Pending review"
 msgstr "Në pritje të shqyrtimit"
 
-#: src/studio/components/header.js:35
+#: src/studio/components/header.js:36
 msgid "Private"
 msgstr "Privat"
 
-#: src/studio/components/header.js:36
 #: src/studio/components/header.js:37
+#: src/studio/components/header.js:38
 msgid "Draft"
 msgstr "Draft"
 
-#: src/studio/components/header.js:68
+#: src/studio/components/header.js:69
 msgid "All changes saved"
 msgstr "Të gjitha ndryshimet u ruajtën"
 
-#: src/studio/components/header.js:70
+#: src/studio/components/header.js:71
 msgid "Saving…"
 msgstr "Duke ruajtur..."
 
-#: src/studio/components/header.js:72
+#: src/studio/components/header.js:73
 msgid "Autosaving…"
 msgstr "Duke ruajtur automatikisht…"
 
-#: src/studio/components/header.js:75
 #: src/studio/components/header.js:76
+#: src/studio/components/header.js:77
 msgid "Unsaved changes"
 msgstr "Ndryshime të paruajtura"
 
-#: src/studio/components/header.js:75
+#: src/studio/components/header.js:76
 msgid "autosaved"
 msgstr "ruajtur automatikisht"
 
-#: src/studio/components/header.js:83
+#: src/studio/components/header.js:85
 msgid "Desktop preview"
 msgstr "Pamje paraprake në desktop"
 
-#: src/studio/components/header.js:85
+#: src/studio/components/header.js:92
 msgid "Tablet preview"
 msgstr "Pamje paraprake për tabletë"
 
-#: src/studio/components/header.js:86
+#: src/studio/components/header.js:99
 msgid "Mobile preview"
 msgstr "Pamje paraprake për celularë"
 
-#: src/studio/components/header.js:93
+#. translators: 1: a custom screen size's name, 2: its width in pixels.
+#: src/studio/components/header.js:107
+#, js-format
+msgid "%1$s preview (%2$d px)"
+msgstr "%1$s pamje paraprake (%2$d px)"
+
+#: src/studio/components/header.js:120
 msgid "Studio toolbar"
 msgstr "Paneli i mjeteve të studios"
 
-#: src/studio/components/header.js:102
+#: src/studio/components/header.js:129
 msgid "Back to the normal editor"
 msgstr "Kthehu te redaktori normal"
 
-#: src/studio/components/header.js:148
+#: src/studio/components/header.js:175
 msgid "Page title"
 msgstr "Titulli i faqes"
 
-#: src/studio/components/header.js:158
+#: src/studio/components/header.js:185
 msgid "Preview width"
 msgstr "Gjerësia e pamjes paraprake"
 
-#: src/studio/components/header.js:185
+#: src/studio/components/header.js:214
 msgid "Command palette"
 msgstr "Paleta e komandave"
 
-#: src/studio/components/header.js:227
+#: src/studio/components/header.js:258
 msgid "View page (opens in a new tab)"
 msgstr "Shiko faqen (hapet në një skedë të re)"
 
-#: src/studio/components/header.js:253
+#: src/studio/components/header.js:284
 msgid "Save draft"
 msgstr "Ruaj skicën"
 
-#: src/studio/components/header.js:263
+#: src/studio/components/header.js:294
 msgid "Publish"
 msgstr "Publiko"
 
@@ -5985,7 +8464,7 @@ msgstr "Ruajtur."
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:94
 msgid "Maintenance and pre-launch mode"
-msgstr "Mirëmbajtja dhe modaliteti para-lëshimit"
+msgstr "Gjendja e mirëmbajtjes dhe para-lansimit"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:112
 msgid "What visitors see"
@@ -6017,7 +8496,7 @@ msgstr "Kush e shikon ende faqen e vërtetë (administratorët e shohin gjithmon
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:199
 msgid "Open the site in a private window to see what visitors see."
-msgstr "Hapeni faqen në një dritare private për të parë se çfarë shohin vizitorët."
+msgstr "Hape faqen në një dritare private për të parë se çfarë shohin vizitorët."
 
 #: src/workflow/pro__premium_only/network.js:54
 msgid "Network settings saved."
@@ -6037,15 +8516,15 @@ msgstr "Modelet e përbashkëta"
 
 #: src/workflow/pro__premium_only/network.js:116
 msgid "Patterns saved on the main site that are ticked here appear on every site, under “Network templates”. Each site inserts its own copy."
-msgstr "Modelet e ruajtura në faqen kryesore që janë zgjedhur këtu shfaqen në çdo faqe, te \"Shabllonet e rrjetit\". Çdo faqe fut kopjen e vet."
+msgstr "Modelet e ruajtura në faqen kryesore që janë zgjedhur këtu shfaqen në çdo faqe, nën \"Modelet e rrjetit\". Çdo faqe fut kopjen e vet."
 
 #: src/workflow/pro__premium_only/network.js:123
 msgid "The main site has no saved patterns yet."
-msgstr "Faji kryesor nuk ka ende asnjë model të ruajtur."
+msgstr "Faqja kryesore nuk ka ende modele të ruajtura."
 
 #: src/workflow/pro__premium_only/network.js:142
 msgid "White label for every site"
-msgstr "White label për çdo sajt"
+msgstr "Etiketë e bardhë për çdo faqe"
 
 #: src/workflow/pro__premium_only/network.js:149
 msgid "Used by every site that has not saved its own white-label settings."
@@ -6063,7 +8542,7 @@ msgstr "Emri i ndërtuesit"
 #: src/workflow/pro__premium_only/network.js:170
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:122
 msgid "Visual editor name"
-msgstr "Emri i redaktorit vizual"
+msgstr "Emri i redaktuesit pamor"
 
 #: src/workflow/pro__premium_only/network.js:172
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
@@ -6073,7 +8552,7 @@ msgstr "Autori"
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
-msgstr "Faqja e autorit"
+msgstr "Uebfaqja e autorit"
 
 #: src/workflow/pro__premium_only/network.js:179
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:145
@@ -6093,8 +8572,8 @@ msgstr "Ruaj cilësimet e rrjetit"
 #, js-format
 msgid "Searching… %d item checked so far."
 msgid_plural "Searching… %d items checked so far."
-msgstr[0] "Duke kërkuar... %d artikull i kontrolluar deri më tani."
-msgstr[1] "Duke kërkuar... %d artikuj të kontrolluar deri më tani."
+msgstr[0] "Duke kërkuar… %d artikull i kontrolluar deri më tani."
+msgstr[1] "Duke kërkuar… %d artikuj të kontrolluar deri më tani."
 
 #. translators: %d: number of items searched.
 #: src/workflow/pro__premium_only/replace-lib.js:36
@@ -6119,26 +8598,26 @@ msgstr "Duke u zëvendësuar… %1$d nga %2$d faqe u kryen."
 #, js-format
 msgid "Done: %d page changed. You can undo this."
 msgid_plural "Done: %d pages changed. You can undo this."
-msgstr[0] "Kryer: %d faqe u ndryshua. Mund ta zhbëni këtë."
-msgstr[1] "U krye: %d faqe të ndryshuara. Mund ta zhbëni këtë."
+msgstr[0] "E kryer: %d faqe u ndryshua. Këtë mund ta zhbëni."
+msgstr[1] "Kryer: %d faqe të ndryshuara. Mund ta zhbëni këtë."
 
 #: src/workflow/pro__premium_only/replace-lib.js:74
 msgid "Undoing…"
-msgstr "Duke u kthyer mbrapsht…"
+msgstr "Duke u kthyer..."
 
 #. translators: 1: pages restored, 2: pages edited since and left as they are.
 #: src/workflow/pro__premium_only/replace-lib.js:79
 #, js-format
 msgid "Undone: %1$d pages restored. %2$d pages were edited after the replacement and were left as they are."
-msgstr "E pavendosur: %1$d faqe u rivendosën. %2$d faqe u redaktuan pas zëvendësimit dhe u lanë siç ishin."
+msgstr "U anulua: %1$d faqe u rivendosën. %2$d faqe u redaktuan pas zëvendësimit dhe u lanë siç ishin."
 
 #. translators: %d: pages restored.
 #: src/workflow/pro__premium_only/replace-lib.js:88
 #, js-format
 msgid "Undone: %d page restored."
 msgid_plural "Undone: %d pages restored."
-msgstr[0] "E zhbërë: u restaurua %d faqe."
-msgstr[1] "E pandërprerë: %d faqe të rivendosura."
+msgstr[0] "E pandehur: u restaurua %d faqe."
+msgstr[1] "E pavendosur: u rivendosën %d faqe."
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:97
 msgid "Find and replace across all pages"
@@ -6170,11 +8649,11 @@ msgstr "Përputh shkronjat e mëdha dhe të vogla"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:166
 msgid "Search in"
-msgstr "Kërko te"
+msgstr "Kërko në"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:191
 msgid "Find matches"
-msgstr "Gjej përputhjet"
+msgstr "Gjej përputhje"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:204
 msgid "Page"
@@ -6186,7 +8665,7 @@ msgstr "Përputhjet"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:251
 msgid "Previous"
-msgstr "I mëparshëm"
+msgstr "E mëparshme"
 
 #. translators: 1: current page, 2: number of pages.
 #: src/workflow/pro__premium_only/ReplacePanel.js:255
@@ -6218,7 +8697,7 @@ msgstr "Shto një koment"
 #: src/workflow/pro__premium_only/review-layer.js:112
 #, js-format
 msgid "Comment %1$d by %2$s: %3$s"
-msgstr "Koment %1$d nga %2$s: %3$s"
+msgstr "Komenti %1$d nga %2$s: %3$s"
 
 #. translators: %d: number of comments.
 #: src/workflow/pro__premium_only/review-layer.js:135
@@ -6246,22 +8725,22 @@ msgstr "Faleminderit, komenti juaj u dërgua."
 
 #: src/workflow/pro__premium_only/review-layer.js:213
 msgid "Click the part of the page your comment is about."
-msgstr "Kliko pjesën e faqes për të cilën bën fjalë komenti yt."
+msgstr "Kliko pjesën e faqes për të cilën është komenti yt."
 
 #: src/workflow/pro__premium_only/review-panel.js:18
 #: src/workflow/pro__premium_only/review-panel.js:39
 #: src/workflow/pro__premium_only/review-panel.js:43
 msgid "Client review"
-msgstr "Rishikimi i klientit"
+msgstr "Vlerësimi i klientit"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:88
 msgid "That part of the page could not be found: it may have been changed or removed since the comment was made."
-msgstr "Kjo pjesë e faqes nuk u gjet: mund të jetë ndryshuar ose fshirë që nga momenti kur u bë komentimi."
+msgstr "Kjo pjesë e faqes nuk u gjet: mund të jetë ndryshuar ose hequr që nga koha kur u bë komenti."
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:121
 #: src/workflow/pro__premium_only/ReviewPanel.js:142
 msgid "Review link"
-msgstr "Shqyrto lidhjen"
+msgstr "Kliko për rishikim"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:124
 msgid "Let a client comment on this page"
@@ -6269,7 +8748,7 @@ msgstr "Lejoni një klient të komentojë në këtë faqe"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
-msgstr "Kushdo që ka linkun mund ta shohë këtë faqe, madje edhe para se të publikohet, dhe të lërë komente. Nuk kërkohet asnjë llogari."
+msgstr "Kushdo që ka linkun mund ta shohë këtë faqe, madje edhe para se të publikohet, dhe të lërë komente. Nuk kërkohet llogari."
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:155
 msgid "Copied"
@@ -6281,15 +8760,15 @@ msgstr "Kopjo lidhjen"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:162
 msgid "Make a new link (the old one stops working)"
-msgstr "Krijo një lidhje të re (e vjetra do të pushojë së punuari)"
+msgstr "Krijo një lidhje të re (e vjetra ndalon së punuari)"
 
 #. translators: %d: number of open comments.
 #: src/workflow/pro__premium_only/ReviewPanel.js:173
 #, js-format
 msgid "Comments (%d open)"
 msgid_plural "Comments (%d open)"
-msgstr[0] "Komentet (%d e hapur)"
-msgstr[1] "Komentet (%d e hapur)"
+msgstr[0] "Komentet (%d të hapura)"
+msgstr[1] "Komentet (%d të hapura)"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:184
 msgid "Show resolved comments"
@@ -6309,7 +8788,7 @@ msgstr "Dërgo përgjigjen"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:236
 msgid "Show in the editor"
-msgstr "Shfaq në redaktues"
+msgstr "Shfaq në editor"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:246
 msgid "Resolve"
@@ -6349,11 +8828,11 @@ msgstr "Cilësimet e rolit u ruajtën."
 
 #: src/workflow/pro__premium_only/RolesPanel.js:99
 msgid "Roles and client mode"
-msgstr "Rolet dhe modaliteti i klientit"
+msgstr "Roli dhe modaliteti i klientit"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:103
 msgid "Choose what each role can do in the builder. Administrators can always do everything. Client mode locks the layout and design, so the role can only change text and images."
-msgstr "Zgjidhni se çfarë mund të bëjë çdo rol në ndërtues. Administratorët mund të bëjnë gjithmonë çdo gjë. Mënyra e klientit bllokon skicimin dhe dizajnin, kështu që roli mund të ndryshojë vetëm tekstin dhe imazhet."
+msgstr "Zgjidhni se çfarë mund të bëjë secili rol në ndërtues. Administratorët mund të bëjnë gjithmonë gjithçka. Regjimi i klientit bllokon skicimin dhe dizajnin, kështu që roli mund të ndryshojë vetëm tekstin dhe imazhet."
 
 #: src/workflow/pro__premium_only/RolesPanel.js:122
 msgid "Role"
@@ -6373,11 +8852,11 @@ msgstr "Etiketë e bardhë"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:103
 msgid "Rename the builder and hide our branding on this site"
-msgstr "Ribemërtoni ndërtuesin dhe fshihni markën tonë në këtë faqe"
+msgstr "Riemërtoni ndërtuesin dhe fshihni markën tonë në këtë faqe"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:115
 msgid "Shown everywhere the product name appears: menus, the editor, notices."
-msgstr "Shfaqet kudo që shfaqet emri i produktit: në menu, në redaktues dhe në njoftime."
+msgstr "Shfaqet kudo që shfaqet emri i produktit: në menu, në editor, në njoftime."
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:123
 msgid "Leave empty to use the builder name."
@@ -6393,11 +8872,11 @@ msgstr "Një emër Dashicons (për shembull dashicons-admin-customizer) ose një
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:153
 msgid "Hide the plugin from the Plugins screen"
-msgstr "Fshihni shtojcën nga ekrani i Shtojcave"
+msgstr "Fshih shtojcën nga ekrani i Shtojcave"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:165
 msgid "Agency users who still see the real product and these settings"
-msgstr "Përdoruesit e agjencisë që ende shohin produktin real dhe këto cilësime"
+msgstr "Përdoruesit e agjencisë që shohin ende produktin real dhe këto cilësime"
 
 #. translators: %d: number of items.
 #: src/workflow/transfer-lib.js:53
@@ -6412,16 +8891,16 @@ msgstr[1] "%d e re"
 #, js-format
 msgid "%d replaced"
 msgid_plural "%d replaced"
-msgstr[0] "%d e zëvendësuar"
-msgstr[1] "%d e zëvendësuar"
+msgstr[0] "%d u zëvendësua"
+msgstr[1] "%d u zëvendësua"
 
 #. translators: %d: number of items.
 #: src/workflow/transfer-lib.js:73
 #, js-format
 msgid "%d kept as they were"
 msgid_plural "%d kept as they were"
-msgstr[0] "%d u lanë siç ishin"
-msgstr[1] "%d u lanë siç ishin"
+msgstr[0] "%d u ruajtën siç ishin"
+msgstr[1] "%d u ruajtën siç ishin"
 
 #. translators: %d: number of settings.
 #: src/workflow/transfer-lib.js:83
@@ -6453,7 +8932,7 @@ msgstr[1] "U eksportuan %d artikuj."
 
 #: src/workflow/TransferPanel.js:129
 msgid "That file could not be read as an export file."
-msgstr "Ky skedar nuk mund të lexohej si një skedar eksporti."
+msgstr "Ai skedar nuk mund të lexohej si një skedar eksporti."
 
 #: src/workflow/TransferPanel.js:139
 msgid "Import and export"
@@ -6465,7 +8944,7 @@ msgstr "Eksporto"
 
 #: src/workflow/TransferPanel.js:159
 msgid "Download your templates, patterns and site design as one file, to import on another site."
-msgstr "Shkarkoni shabllonet, modelet dhe dizajnin e faqes tuaj si një skedar i vetëm, për ta importuar në një faqe tjetër."
+msgstr "Shkarkoni shabllonet, modelet dhe dizajnin e faqes tuaj si një skedar i vetëm, për t'i importuar në një faqe tjetër."
 
 #: src/workflow/TransferPanel.js:167
 msgid "There are no templates or patterns to export yet."
@@ -6493,8 +8972,8 @@ msgstr "Zgjidhni një skedar eksporti"
 #, js-format
 msgid "The file holds %1$d item from %2$s."
 msgid_plural "The file holds %1$d items from %2$s."
-msgstr[0] "Skedari përmban %1$d element nga %2$s."
-msgstr[1] "Skedari përmban %1$d elemente nga %2$s."
+msgstr[0] "Skedari mban %1$d artikull nga %2$s."
+msgstr[1] "Skedari mban %1$d artikuj nga %2$s."
 
 #: src/workflow/TransferPanel.js:230
 msgid "When an item with the same name already exists here"
@@ -6502,11 +8981,11 @@ msgstr "Kur një artikull me të njëjtin emër ekziston tashmë këtu"
 
 #: src/workflow/TransferPanel.js:238
 msgid "Keep the one on this site"
-msgstr "Mbajeni atë në këtë sajt"
+msgstr "Ruaj atë në këtë sajt"
 
 #: src/workflow/TransferPanel.js:245
 msgid "Replace it with the imported one"
-msgstr "Zëvendësoje me atë të importuarën"
+msgstr "Zëvendësoje atë me atë të importuarën"
 
 #: src/workflow/TransferPanel.js:252
 msgid "Import a copy beside it"
@@ -6514,15 +8993,45 @@ msgstr "Importo një kopje pranë tij"
 
 #: src/workflow/TransferPanel.js:262
 msgid "Apply the settings in the file"
-msgstr "Zbato cilësimet në skedar"
+msgstr "Apliko cilësimet në skedar"
 
 #: src/workflow/TransferPanel.js:271
 msgid "Copy the images into this site’s media library"
-msgstr "Kopjoni imazhet në bibliotekën mediatike të kësaj faqeje"
+msgstr "Kopjoni imazhet në bibliotekën e medias të kësaj faqeje"
 
 #: src/workflow/TransferPanel.js:285
 msgid "Show what will happen"
-msgstr "Trego çfarë do të ndodhë"
+msgstr "Shfaq se çfarë do të ndodhë"
+
+#: blocks/alert/block.json
+msgctxt "block title"
+msgid "Alert"
+msgstr "Sinjalizim"
+
+#: blocks/alert/block.json
+msgctxt "block description"
+msgid "A notice for your visitors: information, success, a warning or an error, with an optional title and a close button."
+msgstr "Një njoftim për vizitorët tuaj: informacion, sukses, një paralajmërim ose një gabim, me një titull opsional dhe një buton mbylljeje."
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "notice"
+msgstr "njoftim"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "message"
+msgstr "mesazh"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "callout"
+msgstr "njoftim"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "warning"
+msgstr "parajmërim"
 
 #: blocks/button/block.json
 msgctxt "block title"
@@ -6566,9 +9075,49 @@ msgstr "kolona"
 
 #: blocks/column/block.json
 #: blocks/row/block.json
+#: blocks/section/block.json
 msgctxt "block keyword"
 msgid "layout"
 msgstr "skica"
+
+#: blocks/container/block.json
+msgctxt "block title"
+msgid "Container"
+msgstr "Kontenieri"
+
+#: blocks/container/block.json
+msgctxt "block description"
+msgid "A box that lays out the blocks inside it with flexbox or a grid. Nest containers to build any layout. Stays readable if the plugin is ever turned off."
+msgstr "Një kuti që radhit blloqet brenda saj me flexbox ose një rrjetë. Vendosni kontejnerë brenda kontejnerëve për të ndërtuar çdo lloj faqosjeje. Mbetet e lexueshme nëse shtojca çaktivizohet ndonjëherë."
+
+#: blocks/container/block.json
+#: blocks/section/block.json
+msgctxt "block keyword"
+msgid "container"
+msgstr "kontejner"
+
+#: blocks/container/block.json
+msgctxt "block keyword"
+msgid "box"
+msgstr "kutia"
+
+#: blocks/container/block.json
+#: blocks/section/block.json
+msgctxt "block keyword"
+msgid "grid"
+msgstr "tabelë"
+
+#: blocks/container/block.json
+#: blocks/section/block.json
+msgctxt "block keyword"
+msgid "flexbox"
+msgstr "flexbox"
+
+#: blocks/container/block.json
+#: blocks/row/block.json
+msgctxt "block keyword"
+msgid "columns"
+msgstr "kolonat"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -6640,7 +9189,7 @@ msgstr "Zgjedhësi i gjuhës"
 #: blocks/language-switcher/block.json
 msgctxt "block description"
 msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
-msgstr "I lejon vizitorët ta lexojnë këtë faqe në një gjuhë tjetër, të stiluar për t'iu përshtatur faqes suaj. Kërkon shtojcën Tranzly për gjuhët."
+msgstr "U lejon vizitorëve ta lexojnë këtë faqe në një tjetër gjuhë, të stilizuar për t'iu përshtatur faqes suaj. Kërkon shtojcën Tranzly për gjuhët."
 
 #: blocks/language-switcher/block.json
 msgctxt "block keyword"
@@ -6651,6 +9200,31 @@ msgstr "përkthim"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "shumëgjuhësh"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block title"
+msgid "Dark mode switch"
+msgstr "Çelësi i modalitetit të errët"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block description"
+msgid "A button that switches the website between its light and dark colours, and remembers the visitor's choice."
+msgstr "Një buton që kalon faqen e internetit midis ngjyrave të saj të çelura dhe të errëta, dhe mban mend zgjedhjen e vizitorit."
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block keyword"
+msgid "dark"
+msgstr "e errët"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block keyword"
+msgid "light"
+msgstr "e lehtë"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block keyword"
+msgid "colour scheme"
+msgstr "skema e ngjyrave"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -6667,10 +9241,20 @@ msgctxt "block keyword"
 msgid "row"
 msgstr "rresht"
 
-#: blocks/row/block.json
+#: blocks/section/block.json
+msgctxt "block title"
+msgid "Section"
+msgstr "Seksioni"
+
+#: blocks/section/block.json
+msgctxt "block description"
+msgid "A full-width band of the page that lays its content out with flexbox or a grid. Stays readable if the plugin is ever turned off."
+msgstr "Një brez me gjerësi të plotë i faqes që e vendos përmbajtjen e saj me flexbox ose një rrjetë. Mbetet i lexueshëm nëse shtojca çaktivizohet ndonjëherë."
+
+#: blocks/section/block.json
 msgctxt "block keyword"
-msgid "columns"
-msgstr "kolonat"
+msgid "section"
+msgstr "seksion"
 
 #: blocks/shortcode/block.json
 msgctxt "block title"

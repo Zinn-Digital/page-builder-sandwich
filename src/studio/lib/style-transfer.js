@@ -41,7 +41,7 @@ export const SHARED_STYLE_KEYS = [
  * settings: pasting style onto a new block must not turn it into a legacy one.
  */
 const NOT_STYLE =
-	/^(id|ids|ref|url|href|src|srcset|link|linkTo|linkTarget|linkDestination|linkClass|rel|target|anchor|alt|caption|content|text|title|label|value|values|tag|tagName|attrs|instance|widget|sidebar|svg|metadata|lock|templateLock|allowedBlocks|placeholder|name|slug|level|ordered|start|reversed|citation|mediaId|mediaUrl|mediaType|mediaLink|sizeSlug|dimRatio|focalPoint|legacyData|legacy|wrapData)$|(Id|Ids|Url|URL|Href)$/;
+	/^(id|ids|ref|url|href|src|srcset|link|linkTo|linkTarget|linkDestination|linkClass|rel|target|anchor|alt|caption|content|text|title|label|value|values|tag|tagName|attrs|instance|widget|sidebar|svg|iconRef|metadata|lock|templateLock|allowedBlocks|placeholder|name|slug|level|ordered|start|reversed|citation|mediaId|mediaUrl|mediaType|mediaLink|sizeSlug|dimRatio|focalPoint|legacyData|legacy|wrapData)$|(Id|Ids|Url|URL|Href)$/;
 
 /**
  * Whether one attribute definition of a block type is a style attribute.

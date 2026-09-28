@@ -56,7 +56,8 @@ final class Perf {
 	 * @return bool
 	 */
 	public static function is_pbs_content( string $content ): bool {
-		return str_contains( $content, '<!-- wp:pbs/' ) || str_contains( $content, '[pbs_' );
+		// `"pbs":{` = any block (core ones too) carrying design styles (pbs-p4).
+		return str_contains( $content, '<!-- wp:pbs/' ) || str_contains( $content, '[pbs_' ) || str_contains( $content, '"pbs":{' );
 	}
 
 	/**

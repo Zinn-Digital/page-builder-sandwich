@@ -92,6 +92,7 @@ msgstr "コードとCSS"
 
 #: includes/ai-core/class-admin.php:115
 #: includes/class-admin.php:72
+#: includes/design/globals/class-site-design.php:81
 #: includes/pro__premium_only/workflow/class-network.php:221
 msgid "Sorry, you are not allowed to access this page."
 msgstr "申し訳ありませんが、このページへのアクセス権がありません。"
@@ -220,6 +221,7 @@ msgstr "テスト"
 #: includes/ai-core/class-admin.php:426
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
+#: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "削除"
 
@@ -694,6 +696,7 @@ msgid "Map"
 msgstr "マッピング"
 
 #: includes/assets/class-legacy-script.php:177
+#: src/design/pro__premium_only/effects/panel.js:374
 msgid "Background video"
 msgstr "背景動画"
 
@@ -727,11 +730,44 @@ msgstr "フォントファイルをダウンロードまたは保存できませ
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "フォントのスタイルシートを保存できませんでした。アップロードフォルダに書き込み権限があることを確認してください。"
 
+#: includes/blocks/class-content.php:87
+msgid "Dismiss this notice"
+msgstr "この通知を非表示にする"
+
+#: includes/blocks/class-registry.php:164
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "デザイン"
+
+#: includes/blocks/class-registry.php:165
+#: src/core/dev-compat/edit.js:94
+#: src/editor/index.js:27
+msgid "Content"
+msgstr "コンテンツ"
+
+#: includes/blocks/class-registry.php:166
+msgid "Media"
+msgstr "メディア"
+
+#: includes/blocks/class-registry.php:167
+msgid "Marketing"
+msgstr "マーケティング"
+
+#: includes/blocks/class-registry.php:168
+msgid "Site"
+msgstr "サイト"
+
+#: includes/blocks/class-registry.php:169
+msgid "Data"
+msgstr "データ"
+
 #: includes/class-admin.php:78
+#: includes/design/globals/class-site-design.php:86
 msgid "The admin screen's scripts are missing from this copy of the plugin. Reinstall it from a released package."
 msgstr "このプラグインのコピーには管理画面のスクリプトがありません。リリースされたパッケージから再インストールしてください。"
 
 #: includes/class-admin.php:81
+#: includes/design/globals/class-site-design.php:89
 #: includes/pro__premium_only/workflow/class-network.php:224
 msgid "This screen needs JavaScript."
 msgstr "この画面を表示するにはJavaScriptが必要です。"
@@ -825,6 +861,93 @@ msgstr "Sandwich Studioで編集"
 #: includes/core/class-templates.php:54
 msgid "Blank canvas"
 msgstr "空白のキャンバス"
+
+#: includes/design/class-breakpoints.php:89
+msgid "The tablet width must be a whole number of pixels from 480 to 2560."
+msgstr "タブレットの幅は、480から2560までの整数（ピクセル単位）である必要があります。"
+
+#: includes/design/class-breakpoints.php:92
+msgid "The mobile width must be a whole number of pixels, at least 240 and smaller than the tablet width."
+msgstr "モバイルの幅は整数のピクセル単位で、240以上かつタブレットの幅未満である必要があります。"
+
+#: includes/design/class-breakpoints.php:102
+msgid "Each custom breakpoint needs its own id: 2 to 12 lowercase letters or digits, starting with a letter."
+msgstr "カスタムブレークポイントごとに独自の ID が必要です: アルファベットで始まる、2〜12文字の小文字のアルファベットまたは数字。"
+
+#: includes/design/class-breakpoints.php:117
+msgid "A custom breakpoint applies either up to a width (200 to 4000 pixels) or from a width (200 to 6000 pixels), not both."
+msgstr "カスタムブレークポイントは、特定の幅まで（200〜4000ピクセル）または特定の幅から（200〜6000ピクセル）のいずれか一方にのみ適用され、両方に同時に適用されることはありません。"
+
+#: includes/design/class-breakpoints.php:175
+#: src/design/editor/breakpoint-items.js:18
+msgid "Tablet"
+msgstr "タブレット"
+
+#: includes/design/class-breakpoints.php:180
+#: src/design/editor/breakpoint-items.js:19
+msgid "Mobile"
+msgstr "モバイル"
+
+#: includes/design/globals/class-site-design.php:66
+#: includes/design/globals/class-site-design.php:67
+#: includes/design/globals/class-site-design.php:83
+#: src/design/site-design/editor.js:23
+#: src/design/site-design/editor.js:28
+#: src/design/site-design/editor.js:45
+#: src/design/site-design/editor.js:55
+msgid "Site design"
+msgstr "サイトデザイン"
+
+#: includes/design/globals/class-site-design.php:84
+msgid "Colours, fonts and styles shared by every page of the site and by your theme."
+msgstr "サイトのすべてのページとテーマで共有される、色、フォント、スタイル。"
+
+#: includes/design/globals/class-theme-globals.php:158
+msgid "The site's global styles could not be opened."
+msgstr "サイトのグローバルスタイルを開けませんでした。"
+
+#: includes/design/globals/class-theme-globals.php:293
+msgid "That font is not one of the site's fonts."
+msgstr "そのフォントはサイトのフォントの1つではありません。"
+
+#: includes/design/globals/class-theme-globals.php:365
+msgid "Each colour needs a unique name made of lowercase letters, digits and hyphens."
+msgstr "各色は、小文字、数字、ハイフンを使用した一意の名前を持つ必要があります。"
+
+#. translators: %s: colour slug.
+#: includes/design/globals/class-theme-globals.php:369
+#, php-format
+msgid "The colour \"%s\" is not a valid CSS colour."
+msgstr "「%s」は有効なCSSの色ではありません。"
+
+#: includes/design/globals/class-theme-globals.php:407
+msgid "Each font needs a unique name made of lowercase letters, digits and hyphens."
+msgstr "各フォントには、小文字、数字、ハイフンを使用した一意の名前が必要です。"
+
+#. translators: %s: font name.
+#: includes/design/globals/class-theme-globals.php:411
+#: src/design/site-design/FontsSection.js:47
+#, php-format, js-format
+msgid "The font stack for \"%s\" may contain only font names, quotes, commas and spaces."
+msgstr "「%s」のフォントスタックには、フォント名、引用符、カンマ、スペースのみを含めることができます。"
+
+#: includes/design/icons/class-icons.php:73
+msgid "Uploaded icons"
+msgstr "アップロード済みのアイコン"
+
+#: includes/design/icons/class-icons.php:253
+#: src/core/edit.js:230
+msgid "Icon"
+msgstr "アイコン"
+
+#: includes/design/icons/class-icons.php:267
+msgid "This file is not an SVG icon we can use. It may be damaged, or it only held content that is removed for safety (scripts, links, embedded images or fonts)."
+msgstr "このファイルは使用できるSVGアイコンではありません。破損しているか、または安全上の理由により削除されたコンテンツ（スクリプト、リンク、埋め込み画像、フォントなど）のみが含まれている可能性があります。"
+
+#: includes/design/icons/class-icons.php:297
+#: src/design/icons/IconPicker.js:377
+msgid "The icon could not be deleted."
+msgstr "アイコンを削除できませんでした。"
 
 #: includes/freemius-strings.php:21
 #: includes/freemius-strings.php:6306
@@ -2155,6 +2278,12 @@ msgstr "ホワイトラベルモードを有効化中"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/design/editor/controls/length.js:279
+#: src/design/props/align-items.js:19
+#: src/design/props/align-self.js:19
+#: src/design/props/justify-content.js:27
+#: src/design/props/place-items.js:19
+#: src/design/props/text-align.js:18
 msgid "End"
 msgstr "終了"
 
@@ -2170,6 +2299,7 @@ msgstr "新しいメールアドレスを入力してください"
 
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
+#: src/blocks/alert/edit.js:75
 msgid "Error"
 msgstr "エラー"
 
@@ -2764,6 +2894,11 @@ msgstr "以下のサイト：%2$s がこれらのサイトの完全なコピー�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/design/pro__premium_only/custom-breakpoints.js:76
+#: src/design/pro__premium_only/globals/BrandKitSection.js:125
+#: src/design/pro__premium_only/globals/ClassesSection.js:62
+#: src/design/site-design/ColorsSection.js:41
+#: src/design/site-design/FontsSection.js:95
 msgid "Name"
 msgstr "名前"
 
@@ -3844,6 +3979,12 @@ msgstr "ソーシャルメディア（Facebook、Twitterなど）"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/design/editor/controls/length.js:281
+#: src/design/props/align-items.js:17
+#: src/design/props/align-self.js:17
+#: src/design/props/justify-content.js:25
+#: src/design/props/place-items.js:17
+#: src/design/props/text-align.js:16
 msgid "Start"
 msgstr "開始"
 
@@ -3896,6 +4037,7 @@ msgstr "トライアルを開始中"
 
 #: includes/freemius-strings.php:2370
 #: includes/freemius-strings.php:5255
+#: src/design/editor/panel.js:114
 msgid "State"
 msgstr "状態"
 
@@ -4195,6 +4337,8 @@ msgstr "%1$sの使い心地はいかがですか？%3$d日間の無料トライ�
 
 #: includes/freemius-strings.php:2596
 #: includes/freemius-strings.php:5575
+#: src/blocks/alert/edit.js:55
+#: src/design/pro__premium_only/effects/controls.js:101
 msgid "Type"
 msgstr "タイプ"
 
@@ -4250,7 +4394,7 @@ msgstr "アップデートを続行しますか？"
 
 #: includes/freemius-strings.php:2638
 #: includes/freemius-strings.php:5617
-#: src/studio/components/header.js:252
+#: src/studio/components/header.js:283
 msgid "Update"
 msgstr "更新"
 
@@ -4261,7 +4405,7 @@ msgstr "ライセンスの更新"
 
 #: includes/freemius-strings.php:2646
 #: includes/freemius-strings.php:5632
-#: src/admin/App.js:79
+#: src/admin/App.js:80
 msgid "Upgrade"
 msgstr "アップグレード"
 
@@ -4309,6 +4453,7 @@ msgstr "ユーザー"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/design/pro__premium_only/globals/TokenList.js:43
 msgid "Value"
 msgstr "値"
 
@@ -4361,6 +4506,7 @@ msgstr "有料機能を表示"
 
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
+#: src/blocks/alert/edit.js:71
 msgid "Warning"
 msgstr "警告"
 
@@ -4878,6 +5024,14 @@ msgstr "%s前"
 msgid "A migration step is running right now. Try again in a minute."
 msgstr "現在移行ステップが実行中です。1分後にもう一度お試しください。"
 
+#: includes/pro__premium_only/blocks/class-site.php:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:13
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:27
+#: src/design/pro__premium_only/globals/index.js:41
+#: src/design/site-design/sections.js:25
+msgid "Dark mode"
+msgstr "ダークモード"
+
 #: includes/pro__premium_only/class-legacy-pro.php:152
 msgid "Thank you for subscribing!"
 msgstr "ご登録いただきありがとうございます。"
@@ -4933,9 +5087,125 @@ msgstr "このメールアドレスは既に登録されています。"
 msgid "MailPoet plugin not found. Please contact the admin."
 msgstr "MailPoet プラグインが見つかりません。管理者に連絡してください。"
 
+#: includes/pro__premium_only/design/class-brand-kit.php:139
+msgid "Choose the brand fonts from the site's fonts."
+msgstr "サイトのフォントからブランドフォントを選択します。"
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:180
+msgid "That font is no longer in the font library."
+msgstr "そのフォントはフォントライブラリにはもうありません。"
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:184
+msgid "That font has no files yet. Upload at least one."
+msgstr "そのフォントにはまだファイルがありません。少なくとも1つアップロードしてください。"
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:316
+msgid "An Adobe Fonts kit id is 5 to 12 letters and digits, as shown in your Adobe Fonts web project."
+msgstr "Adobe Fonts キット ID は、Adobe Fonts のウェブプロジェクトに表示されているとおり、5〜12文字の英数字です。"
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:322
+msgid "Adobe Fonts did not return that kit. Check the id, and that the web project is published."
+msgstr "Adobe Fontsがそのキットを返しませんでした。IDを確認し、ウェブプロジェクトが公開されていることを確認してください。"
+
+#: includes/pro__premium_only/design/class-custom-fonts.php:326
+msgid "That Adobe Fonts kit has no fonts in it."
+msgstr "そのAdobe Fontsキットにはフォントが含まれていません。"
+
+#: includes/pro__premium_only/design/class-dark-mode.php:105
+msgid "Choose how the site picks its colour scheme."
+msgstr "サイトが配色を選択する方法をお選びください。"
+
+#. translators: %s: colour name.
+#: includes/pro__premium_only/design/class-dark-mode.php:116
+#, php-format
+msgid "The dark value for \"%s\" is not a valid CSS colour."
+msgstr "\"%s\" のダーク値は有効なCSSカラーではありません。"
+
+#: includes/pro__premium_only/design/class-global-classes.php:93
+msgid "This site has reached the maximum number of global classes."
+msgstr "このサイトはグローバルクラスの最大数に達しました。"
+
+#: includes/pro__premium_only/design/class-global-classes.php:97
+#: includes/pro__premium_only/design/class-global-classes.php:130
+msgid "Give the class a name."
+msgstr "クラスに名前を付けてください。"
+
+#. translators: %s: class name.
+#: includes/pro__premium_only/design/class-global-classes.php:165
+#, php-format
+msgid "%s (copy)"
+msgstr "%s (コピー)"
+
+#: includes/pro__premium_only/design/class-global-classes.php:338
+msgid "A class name must start with a letter and use only lowercase letters, digits and hyphens."
+msgstr "クラス名は文字で始まり、小文字、数字、ハイフンのみを使用する必要があります。"
+
+#: includes/pro__premium_only/design/class-global-classes.php:342
+msgid "Another class already uses that name."
+msgstr "その名前はすでに別のクラスで使用されています。"
+
+#: includes/pro__premium_only/design/class-global-classes.php:403
+msgid "That class no longer exists. Reload the list."
+msgstr "そのクラスはもう存在しません。リストを再読み込みしてください。"
+
+#: includes/pro__premium_only/design/class-tokens.php:50
+msgid "Extra small"
+msgstr "極小"
+
+#: includes/pro__premium_only/design/class-tokens.php:51
+#: includes/pro__premium_only/design/class-tokens.php:59
+#: includes/pro__premium_only/design/class-tokens.php:65
+msgid "Small"
+msgstr "小"
+
+#: includes/pro__premium_only/design/class-tokens.php:52
+#: includes/pro__premium_only/design/class-tokens.php:60
+#: includes/pro__premium_only/design/class-tokens.php:66
+msgid "Medium"
+msgstr "中"
+
+#: includes/pro__premium_only/design/class-tokens.php:53
+#: includes/pro__premium_only/design/class-tokens.php:61
+#: includes/pro__premium_only/design/class-tokens.php:67
+msgid "Large"
+msgstr "大"
+
+#: includes/pro__premium_only/design/class-tokens.php:54
+msgid "Extra large"
+msgstr "特大"
+
+#: includes/pro__premium_only/design/class-tokens.php:55
+msgid "Huge"
+msgstr "巨大"
+
+#: includes/pro__premium_only/design/class-tokens.php:58
+#: src/core/edit.js:183
+#: src/design/editor/controls/complex.js:448
+#: src/design/props/text-decoration.js:16
+#: src/design/props/text-transform.js:16
+#: src/design/pro__premium_only/effects/controls.js:272
+#: src/design/pro__premium_only/effects/panel.js:286
+#: src/design/pro__premium_only/effects/panel.js:382
+msgid "None"
+msgstr "なし"
+
+#: includes/pro__premium_only/design/class-tokens.php:62
+msgid "Round"
+msgstr "ラウンド"
+
+#: includes/pro__premium_only/design/class-tokens.php:121
+msgid "Each entry needs a unique short name made of lowercase letters, digits and hyphens."
+msgstr "各エントリには、小文字、数字、ハイフンを使用した一意の短い名前が必要です。"
+
+#. translators: %s: token name.
+#: includes/pro__premium_only/design/class-tokens.php:130
+#, php-format
+msgid "The value of \"%s\" is not a value this setting accepts."
+msgstr "「%s」の値はこの設定で受け入れられない値です。"
+
 #: includes/pro__premium_only/workflow/class-maintenance.php:127
 msgid "We are doing some maintenance on this site. Please check back soon."
-msgstr "現在、このサイトのメンテナンスを行っております。しばらくしてから再度アクセスしてください。"
+msgstr "現在、当サイトのメンテナンスを実施しております。しばらくしてから再度アクセスしてください。"
 
 #: includes/pro__premium_only/workflow/class-maintenance.php:128
 msgid "This site is launching soon."
@@ -4956,15 +5226,15 @@ msgstr "ネットワークテンプレート"
 #: includes/pro__premium_only/workflow/class-replace-jobs.php:241
 #: includes/pro__premium_only/workflow/class-replace-jobs.php:535
 msgid "That find-and-replace job no longer exists."
-msgstr "その置換え処理はすでに存在しません。"
+msgstr "その検索と置換のジョブはもう存在しません。"
 
 #: includes/pro__premium_only/workflow/class-replace-jobs.php:248
 msgid "That step is not available for this job right now."
-msgstr "現在、このジョブではそのステップを利用できません。"
+msgstr "そのステップは現在このジョブではご利用いただけません。"
 
 #: includes/pro__premium_only/workflow/class-replacer.php:105
 msgid "Enter what to find."
-msgstr "検索するキーワードを入力してください。"
+msgstr "検索ワードを入力してください。"
 
 #: includes/pro__premium_only/workflow/class-replacer.php:108
 msgid "Colours must be hex codes such as #1a73e8 or #fff."
@@ -4976,7 +5246,7 @@ msgstr "新しいリンクは、完全なウェブアドレス（https://…）�
 
 #: includes/pro__premium_only/workflow/class-review.php:72
 msgid "Client review comments"
-msgstr "クライアントの確認コメント"
+msgstr "クライアントのレビューコメント"
 
 #: includes/pro__premium_only/workflow/class-review.php:325
 msgid "Write a comment first."
@@ -4996,7 +5266,7 @@ msgstr "そのコメントはもう存在しません。"
 #: includes/pro__premium_only/workflow/class-review.php:384
 #, php-format
 msgid "New review comment on “%s”"
-msgstr "「%s」に新しいレビューコメントが投稿されました"
+msgstr "“%s”に関する新しいレビューコメント"
 
 #. translators: 1: commenter name, 2: comment, 3: editor link.
 #: includes/pro__premium_only/workflow/class-review.php:387
@@ -5018,36 +5288,36 @@ msgstr ""
 
 #: includes/pro__premium_only/workflow/class-review.php:430
 msgid "This review link is not valid any more. Ask for a new one."
-msgstr "このレビューリンクはすでに有効ではありません。新しいリンクを依頼してください。"
+msgstr "このレビューリンクはすでに無効になっています。新しいものをリクエストしてください。"
 
 #: includes/pro__premium_only/workflow/class-review.php:436
 msgid "Too many comments from this link in the last hour. Try again later."
-msgstr "このリンクからのコメントが過去1時間以内に多すぎます。しばらくしてからもう一度お試しください。"
+msgstr "過去1時間の間にこのリンクからのコメントが多すぎます。しばらくしてからもう一度お試しください。"
 
 #: includes/pro__premium_only/workflow/class-roles.php:234
 msgid "Your role cannot create templates or patterns."
-msgstr "ご自身のロールではテンプレートやパターンの作成ができません。"
+msgstr "あなたのロールでは、テンプレートやパターンを作成できません。"
 
 #: includes/pro__premium_only/workflow/class-roles.php:312
 msgid "You can change the text and images on this page, but not its layout or design. Your change was not saved."
-msgstr "このページのテキストと画像は変更できますが、レイアウトやデザインは変更できません。変更内容は保存されませんでした。"
+msgstr "このページのテキストや画像は変更できますが、レイアウトやデザインは変更できません。変更内容は保存されませんでした。"
 
 #: includes/pro__premium_only/workflow/class-roles.php:317
 msgid "Your role cannot change styles. Undo the style changes and save again."
-msgstr "ご自身の役割ではスタイルの変更ができません。スタイルの変更を元に戻し、再度保存してください。"
+msgstr "あなたのロールではスタイルの変更はできません。スタイルの変更を元に戻して、再度保存してください。"
 
 #: includes/pro__premium_only/workflow/class-roles.php:320
 msgid "Your role cannot add or change custom code (custom CSS or HTML blocks). Undo those changes and save again."
-msgstr "あなたの役割では、カスタムコード（カスタムCSSまたはHTMLブロック）の追加や変更を行うことはできません。それらの変更を元に戻して、再度保存してください。"
+msgstr "あなたの権限では、カスタムコード（カスタムCSSまたはHTMLブロック）の追加や変更はできません。それらの変更を元に戻して、再度保存してください。"
 
 #: includes/workflow/class-transfer-routes.php:137
 #: includes/workflow/class-transfer.php:282
 msgid "This is not an export file from this plugin."
-msgstr "これはこのプラグインのエクスポートファイルではありません。"
+msgstr "これはこのプラグインからのエクスポートファイルではありません。"
 
 #: includes/workflow/class-transfer.php:286
 msgid "This export file was made by a newer version of the plugin. Update the plugin on this site, then import it again."
-msgstr "このエクスポートファイルはプラグインの新しいバージョンで作成されました。このサイトのプラグインをアップデートしてから、再度インポートしてください。"
+msgstr "このエクスポートファイルは、プラグインのより新しいバージョンで作成されました。このサイトのプラグインを更新してから、再度インポートしてください。"
 
 #: includes/workflow/class-transfer.php:289
 msgid "The export file is damaged: its list of items is missing."
@@ -5055,13 +5325,13 @@ msgstr "エクスポートファイルが破損しています。アイテムの
 
 #: includes/workflow/class-transfer.php:292
 msgid "The export file is damaged or was edited after it was made (its checksum does not match). Export it again from the other site."
-msgstr "エクスポートファイルが破損しているか、作成後に編集されています（チェックサムが一致しません）。もう一度別のサイトからエクスポートしてください。"
+msgstr "エクスポートファイルが破損しているか、作成後に編集されています（チェックサムが一致しません）。もう一方のサイトから再度エクスポートしてください。"
 
 #. translators: %s: item name from the export file.
 #: includes/workflow/class-transfer.php:337
 #, php-format
 msgid "“%s” was not imported: this site does not have that kind of item."
-msgstr "「%s」はインポートされませんでした：このサイトにはその種類のアイテムがありません。"
+msgstr "「%s」はインポートされませんでした。このサイトにはその種類のアイテムがありません。"
 
 #. translators: %s: item name from the export file.
 #: includes/workflow/class-transfer.php:343
@@ -5083,7 +5353,7 @@ msgstr "“%1$s”のインポートに失敗しました: %2$s"
 
 #: includes/workflow/class-transfer.php:382
 msgid "Settings were not imported: only an administrator can change them."
-msgstr "設定はインポートされませんでした：設定を変更できるのは管理者のみです。"
+msgstr "設定をインポートできませんでした。設定を変更できるのは管理者のみです。"
 
 #. translators: 1: image address, 2: the reason.
 #: includes/workflow/class-transfer.php:555
@@ -5109,52 +5379,82 @@ msgstr "Page Builder Sandwich ウェブサイト"
 msgid "Zinn Digital® website"
 msgstr "Zinn Digital® ウェブサイト"
 
-#: src/admin/App.js:51
+#: src/admin/App.js:52
 msgid "Settings saved."
 msgstr "設定を保存しました。"
 
-#: src/admin/App.js:84
+#: src/admin/App.js:85
 msgid "See the Pro plans and pricing"
 msgstr "Proプランと料金を見る"
 
-#: src/admin/App.js:94
+#: src/admin/App.js:95
 msgid "Front-end output"
 msgstr "フロントエンド出力"
 
-#: src/admin/App.js:102
+#: src/admin/App.js:103
 msgid "Class name prefix"
 msgstr "クラス名プレフィックス"
 
-#: src/admin/App.js:106
+#: src/admin/App.js:107
 msgid "Every class name the plugin prints on your pages starts with this prefix, so the pages do not reveal which plugin built them. 1 to 8 lowercase letters or digits, starting with a letter."
 msgstr "プラグインがページに出力するすべてのクラス名はこのプレフィックスで始まるため、どのプラグインによって構築されたかがページから推測されることはありません。文字で始まる1〜8文字の小文字または数字。"
 
-#: src/admin/App.js:119
+#: src/admin/App.js:120
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:268
+#: src/design/site-design/components.js:102
 #: src/studio/components/commands.js:196
 #: src/workflow/pro__premium_only/MaintenancePanel.js:195
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:189
 msgid "Save"
 msgstr "保存"
 
-#: src/admin/App.js:125
+#: src/admin/App.js:129
 msgid "Beta updates"
 msgstr "ベータ版アップデート"
 
-#: src/admin/App.js:132
+#: src/admin/App.js:136
 msgid "This site receives beta versions as updates."
 msgstr "このサイトはアップデートとしてベータ版を受信します。"
 
-#: src/admin/App.js:136
+#: src/admin/App.js:140
 msgid "This site receives stable versions only."
 msgstr "このサイトは安定版のみを受信します。"
 
-#: src/admin/App.js:145
+#: src/admin/App.js:149
 msgid "Change this on the Account page"
 msgstr "アカウントページでこれを変更してください"
 
-#: src/admin/App.js:154
+#: src/admin/App.js:158
 msgid "Beta versions are offered to licensed Pro installations that are connected to their account. Once connected, you can join from the Account page."
 msgstr "ベータ版は、アカウントに接続されているライセンス版のProインストールでご利用いただけます。接続後、アカウントページから参加できます。"
+
+#: src/admin/Breakpoints.js:58
+msgid "Breakpoints saved. Pages pick up the new widths on their next view."
+msgstr "ブレークポイントが保存されました。次回表示時に、ページに新しい幅が適用されます。"
+
+#: src/admin/Breakpoints.js:79
+msgid "Breakpoints"
+msgstr "ブレークポイント"
+
+#: src/admin/Breakpoints.js:94
+msgid "Styles set for Tablet apply up to the tablet width, and styles set for Mobile up to the mobile width. Desktop styles apply everywhere else."
+msgstr "タブレット用に設定されたスタイルはタブレット幅まで適用され、モバイル用に設定されたスタイルはモバイル幅まで適用されます。デスクトップスタイルはそれ以外のすべての場所に適用されます。"
+
+#: src/admin/Breakpoints.js:102
+msgid "Tablet: up to (px)"
+msgstr "タブレット：最大（px）"
+
+#: src/admin/Breakpoints.js:115
+msgid "Mobile: up to (px)"
+msgstr "モバイル: 最大 (px)"
+
+#: src/admin/Breakpoints.js:146
+msgid "Save breakpoints"
+msgstr "ブレークポイントを保存"
+
+#: src/admin/Breakpoints.js:162
+msgid "Use the default widths"
+msgstr "デフォルトの幅を使用する"
 
 #: src/admin/LegacyContent.js:21
 msgid "The request converting this post stopped before it finished, so the post was skipped. Open it to convert it, or convert it again from here."
@@ -5256,6 +5556,223 @@ msgstr "元に戻す処理を開始しました。バックグラウンドで続
 msgid "Undo all conversions"
 msgstr "すべての変換を元に戻す"
 
+#: src/blocks/alert/edit.js:52
+msgid "Alert"
+msgstr "アラート"
+
+#: src/blocks/alert/edit.js:60
+msgid "Information"
+msgstr "情報"
+
+#: src/blocks/alert/edit.js:67
+msgid "Success"
+msgstr "成功"
+
+#: src/blocks/alert/edit.js:81
+msgid "Warnings and errors are announced to screen reader users straight away; information and success notices are read when they finish what they are doing."
+msgstr "警告とエラーはスクリーンリーダーのユーザーに即座に通知され、情報と成功の通知は現在の作業が完了したときに読み上げられます。"
+
+#: src/blocks/alert/edit.js:87
+msgid "Show icon"
+msgstr "アイコンを表示"
+
+#: src/blocks/alert/edit.js:92
+msgid "Visitors can close it"
+msgstr "訪問者はこれを閉じることができます"
+
+#: src/blocks/alert/edit.js:130
+msgid "Title (optional)"
+msgstr "タイトル（任意）"
+
+#: src/blocks/alert/edit.js:143
+msgid "Write the message…"
+msgstr "メッセージを入力…"
+
+#: src/blocks/layout/edit.js:42
+msgid "section — a thematic section"
+msgstr "セクション — テーマ別セクション"
+
+#: src/blocks/layout/edit.js:43
+msgid "div — no meaning"
+msgstr "div — 意味なし"
+
+#: src/blocks/layout/edit.js:44
+msgid "header — introductory content"
+msgstr "ヘッダー — 紹介コンテンツ"
+
+#: src/blocks/layout/edit.js:45
+msgid "footer — closing content"
+msgstr "フッター — 閉じコンテンツ"
+
+#: src/blocks/layout/edit.js:46
+msgid "article — self-contained content"
+msgstr "記事 — 独立したコンテンツ"
+
+#: src/blocks/layout/edit.js:47
+msgid "aside — related content"
+msgstr "関連記事"
+
+#: src/blocks/layout/edit.js:48
+msgid "main — the main content (once per page)"
+msgstr "main — メインコンテンツ（1ページにつき1つ）"
+
+#: src/blocks/layout/edit.js:52
+msgid "nav — navigation links"
+msgstr "ナビゲーションリンク"
+
+#: src/blocks/layout/edit.js:123
+msgid "Stack (flexbox, column)"
+msgstr "スタック (フレックスボックス、列)"
+
+#: src/blocks/layout/edit.js:142
+msgid "Row (flexbox)"
+msgstr "行 (flexbox)"
+
+#: src/blocks/layout/edit.js:158
+#: src/blocks/layout/edit.js:204
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "グリッド"
+
+#: src/blocks/layout/edit.js:170
+#: src/design/editor/panel.js:38
+msgid "Layout"
+msgstr "レイアウト"
+
+#. translators: %s: a screen size such as "Tablet".
+#: src/blocks/layout/edit.js:174
+#, js-format
+msgid "Editing: %s"
+msgstr "編集中: %s"
+
+#: src/blocks/layout/edit.js:181
+msgid "Lay out children as"
+msgstr "子要素の配置方法:"
+
+#. translators: %s: the layout in effect, e.g. "flex".
+#. translators: %s: the value a setting inherits from a wider screen size.
+#. translators: %s: a colour inherited from a wider screen size.
+#. translators: %s: inherited value.
+#: src/blocks/layout/edit.js:191
+#: src/design/editor/controls/basic.js:31
+#: src/design/editor/controls/color.js:83
+#: src/design/editor/controls/complex.js:127
+#, js-format
+msgid "Inherited (%s)"
+msgstr "継承元 (%s)"
+
+#: src/blocks/layout/edit.js:200
+#: src/design/props/display.js:28
+msgid "Flexbox"
+msgstr "フレックスボックス"
+
+#: src/blocks/layout/edit.js:208
+msgid "Stacked blocks"
+msgstr "スタックされたブロック"
+
+#: src/blocks/layout/edit.js:219
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "列"
+
+#: src/blocks/layout/edit.js:227
+msgid "Drag in the canvas, or type"
+msgstr "キャンバスにドラッグするか、入力してください"
+
+#: src/blocks/layout/edit.js:244
+#: src/core/edit.js:90
+#: src/design/props/content-width.js:15
+msgid "Content width"
+msgstr "コンテンツの幅"
+
+#: src/blocks/layout/edit.js:249
+msgid "Boxed (the theme’s content width)"
+msgstr "ボックス型（テーマのコンテンツ幅）"
+
+#: src/blocks/layout/edit.js:256
+#: src/core/edit.js:97
+msgid "Full width"
+msgstr "全幅"
+
+#: src/blocks/layout/edit.js:265
+msgid "Minimum height"
+msgstr "最小の高さ"
+
+#: src/blocks/layout/edit.js:280
+msgid "HTML tag"
+msgstr "HTMLタグ"
+
+#: src/blocks/layout/edit.js:292
+#: src/core/edit.js:150
+msgid "Link"
+msgstr "リンク"
+
+#: src/blocks/layout/edit.js:299
+msgid "Make the whole block a link to"
+msgstr "ブロック全体を以下のリンクにする"
+
+#: src/blocks/layout/edit.js:315
+msgid "Link text for screen readers"
+msgstr "スクリーンリーダー用のリンクテキスト"
+
+#: src/blocks/layout/edit.js:319
+msgid "What the link does, for visitors who cannot see the block."
+msgstr "ブロックを見ることができない訪問者に向けて、リンクが実行する動作。"
+
+#: src/blocks/layout/edit.js:335
+#: src/core/edit.js:159
+msgid "Open in a new tab"
+msgstr "新しいタブで開く"
+
+#: src/blocks/layout/edit.js:350
+msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
+msgstr "リンクやボタンをリンク付きブロック内に配置しないでください。リンク内のリンクはブラウザで機能しません。"
+
+#: src/blocks/layout/grid-overlay.js:261
+msgid "Drag to resize these columns"
+msgstr "ドラッグして列の幅を変更する"
+
+#: src/blocks/layout/grid-overlay.js:276
+msgid "Drag to resize this row"
+msgstr "ドラッグしてこの行のサイズを変更する"
+
+#: src/blocks/layout/grid-overlay.js:290
+msgid "Drag across cells to set how many columns and rows this block spans"
+msgstr "セルをドラッグして、このブロックが占める列数と行数を設定します"
+
+#: src/blocks/layout/grid-overlay.js:319
+msgid "+ Column"
+msgstr "+ 列"
+
+#: src/blocks/layout/grid-overlay.js:336
+msgid "− Column"
+msgstr "列 −"
+
+#: src/blocks/layout/grid-overlay.js:345
+msgid "+ Row"
+msgstr "行を追加"
+
+#: src/blocks/layout/grid-overlay.js:360
+msgid "− Row"
+msgstr "行を削除"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
+msgid "Switch"
+msgstr "切り替え"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:37
+msgid "Label"
+msgstr "ラベル"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
+msgid "Read out by screen readers, and shown when “Show label” is on."
+msgstr "スクリーンリーダーで読み上げられ、「ラベルを表示」がオンのときに表示されます。"
+
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:32
+msgid "Show label"
+msgstr "ラベルを表示"
+
 #: src/core/dev-compat/edit.js:54
 msgid "Shortcode tag"
 msgstr "ショートコードタグ"
@@ -5271,11 +5788,6 @@ msgstr "属性名"
 #: src/core/dev-compat/edit.js:90
 msgid "Add attribute"
 msgstr "属性を追加"
-
-#: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:27
-msgid "Content"
-msgstr "コンテンツ"
 
 #: src/core/dev-compat/edit.js:130
 #: src/core/dev-compat/edit.js:152
@@ -5293,6 +5805,7 @@ msgid "The \"%s\" control from the old editor is not available in the block edit
 msgstr "旧エディターの「%s」コントロールはブロックエディターでは利用できません。値をテキストとして入力してください。"
 
 #: src/core/dev-compat/option-controls.js:81
+#: src/design/editor/controls/complex.js:283
 msgid "Choose image"
 msgstr "画像を選択"
 
@@ -5304,143 +5817,123 @@ msgstr "ファイルの選択"
 msgid "— Default —"
 msgstr "- デフォルト -"
 
-#: src/core/edit.js:32
+#: src/core/edit.js:34
 msgid "Advanced styling"
 msgstr "高度なスタイリング"
 
-#: src/core/edit.js:36
+#: src/core/edit.js:38
 msgid "Inline CSS"
 msgstr "インライン CSS"
 
-#: src/core/edit.js:37
+#: src/core/edit.js:39
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS宣言（例：min-height: 380px; background-color: #333）"
 
-#: src/core/edit.js:47
+#: src/core/edit.js:49
 msgid "Effects (legacy classes)"
 msgstr "エフェクト（レガシー クラス）"
 
-#: src/core/edit.js:51
+#: src/core/edit.js:53
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "古いバージョンから引き継がれたスペース区切りのエフェクト名（例: hover-shadow）"
 
-#: src/core/edit.js:81
+#: src/core/edit.js:83
+#: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "行"
 
-#: src/core/edit.js:84
+#: src/core/edit.js:86
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
 msgid "Width"
 msgstr "幅"
 
-#: src/core/edit.js:88
-msgid "Content width"
-msgstr "コンテンツの幅"
-
-#: src/core/edit.js:95
-msgid "Full width"
-msgstr "全幅"
-
-#: src/core/edit.js:102
+#: src/core/edit.js:104
 msgid "Full width, content kept in the middle"
 msgstr "全幅、コンテンツは中央に配置"
 
-#: src/core/edit.js:148
-msgid "Link"
-msgstr "リンク"
-
-#: src/core/edit.js:152
+#: src/core/edit.js:154
 msgid "Link address"
 msgstr "リンクのアドレス"
 
-#: src/core/edit.js:157
-msgid "Open in a new tab"
-msgstr "新しいタブで開く"
-
-#: src/core/edit.js:168
+#: src/core/edit.js:170
 msgid "Link relationship"
 msgstr "リンク関係"
 
-#: src/core/edit.js:177
+#: src/core/edit.js:179
+#: src/design/props/text-align.js:13
 msgid "Alignment"
 msgstr "配置"
 
-#: src/core/edit.js:181
-msgid "None"
-msgstr "なし"
-
-#: src/core/edit.js:185
+#: src/core/edit.js:187
 msgid "Left"
 msgstr "左"
 
-#: src/core/edit.js:189
+#: src/core/edit.js:191
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:138
+#: src/design/pro__premium_only/effects/controls.js:241
 msgid "Centre"
 msgstr "中央"
 
-#: src/core/edit.js:193
+#: src/core/edit.js:195
 msgid "Right"
 msgstr "右"
 
-#: src/core/edit.js:206
+#: src/core/edit.js:208
 msgid "Button text"
 msgstr "ボタンテキスト"
 
-#: src/core/edit.js:207
+#: src/core/edit.js:209
 msgid "Add text…"
 msgstr "テキストを追加…"
 
-#: src/core/edit.js:231
-msgid "Icon"
-msgstr "アイコン"
-
-#: src/core/edit.js:233
-msgid "SVG markup"
-msgstr "SVGマークアップ"
-
-#: src/core/edit.js:234
-msgid "Scripts, links and external references are removed before the icon is shown."
-msgstr "アイコンが表示される前に、スクリプト、リンク、および外部参照は削除されます。"
-
-#: src/core/edit.js:243
+#: src/core/edit.js:238
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "アクセシibleなラベル"
 
-#: src/core/edit.js:247
+#: src/core/edit.js:242
 msgid "Leave empty for a decorative icon."
 msgstr "装飾用アイコンにする場合は空欄のままにしてください。"
 
-#: src/core/edit.js:261
-msgid "Paste SVG markup in the block settings."
-msgstr "ブロック設定にSVGマークアップを貼り付けてください。"
+#: src/core/edit.js:256
+msgid "Choose an icon in the block settings."
+msgstr "ブロック設定でアイコンを選択してください。"
 
-#: src/core/edit.js:288
+#: src/core/edit.js:283
 msgid "New setting name"
 msgstr "新しい設定名"
 
-#: src/core/edit.js:289
+#: src/core/edit.js:284
 msgid "For example: title or text"
 msgstr "例：タイトルまたはテキスト"
 
-#: src/core/edit.js:304
+#: src/core/edit.js:299
 msgid "Add setting"
 msgstr "設定を追加"
 
-#: src/core/edit.js:315
-#: src/core/edit.js:318
+#: src/core/edit.js:310
+#: src/core/edit.js:313
 msgid "Widget"
 msgstr "ウィジェット"
 
-#: src/core/edit.js:322
+#: src/core/edit.js:317
 msgid "Choose a widget"
 msgstr "ウィジェットを選択"
 
-#: src/core/edit.js:354
-#: src/core/edit.js:358
+#: src/core/edit.js:349
+#: src/core/edit.js:353
 msgid "Widget area"
 msgstr "ウィジェットエリア"
 
-#: src/core/edit.js:362
+#: src/core/edit.js:357
 msgid "Choose a widget area"
 msgstr "ウィジェットエリアを選択"
 
@@ -5464,19 +5957,2020 @@ msgstr "この埋め込みは読み込み後にサイズが自動調整される
 msgid "Layout shift"
 msgstr "レイアウトシフト"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "見出し"
+#: src/design/editor/breakpoint-items.js:24
+msgid "Desktop"
+msgstr "デスクトップ"
 
+#: src/design/editor/controls/basic.js:27
+#: src/design/editor/controls/color.js:89
+#: src/design/editor/controls/complex.js:133
+#: src/design/editor/controls/complex.js:313
+#: src/design/editor/controls/complex.js:331
+#: src/design/editor/controls/complex.js:361
+#: src/design/editor/controls/complex.js:496
+#: src/design/props/position.js:16
+#: src/design/pro__premium_only/effects/controls.js:413
+msgid "Default"
+msgstr "デフォルト"
+
+#: src/design/editor/controls/basic.js:178
+msgid "Every track"
+msgstr "すべてのトラック"
+
+#: src/design/editor/controls/complex.js:74
+msgid "Track sizes, for example: 1fr 2fr 200px"
+msgstr "トラックサイズ、例：1fr 2fr 200px"
+
+#: src/design/editor/controls/complex.js:93
+msgid "Custom track sizes"
+msgstr "カスタムトラックサイズ"
+
+#: src/design/editor/controls/complex.js:94
+msgid "Equal tracks"
+msgstr "均等なトラック"
+
+#: src/design/editor/controls/complex.js:105
+msgid "One quoted row per line, for example: \"head head\" \"side main\". Name the area on each child block."
+msgstr "1行につき引用符付きの行を1つ配置します（例：「head head」「side main」。各子ブロックのエリアに名前を付けます。"
+
+#: src/design/editor/controls/complex.js:134
+#: src/design/props/cursor.js:27
+msgid "Automatic"
+msgstr "自動"
+
+#: src/design/editor/controls/complex.js:135
+msgid "Square (1:1)"
+msgstr "正方形 (1:1)"
+
+#: src/design/editor/controls/complex.js:136
+msgid "Standard (4:3)"
+msgstr "標準 (4:3)"
+
+#: src/design/editor/controls/complex.js:137
+msgid "Classic (3:2)"
+msgstr "クラシック (3:2)"
+
+#: src/design/editor/controls/complex.js:138
+msgid "Wide (16:9)"
+msgstr "ワイド (16:9)"
+
+#: src/design/editor/controls/complex.js:139
+msgid "Cinema (21:9)"
+msgstr "シネマ (21:9)"
+
+#: src/design/editor/controls/complex.js:140
+msgid "Tall (9:16)"
+msgstr "縦長 (9:16)"
+
+#: src/design/editor/controls/complex.js:158
+msgid "Custom"
+msgstr "カスタム"
+
+#: src/design/editor/controls/complex.js:173
+msgid "Width / height"
+msgstr "幅 / 高さ"
+
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:242
+msgid "Top"
+msgstr "トップ"
+
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:243
+msgid "Bottom"
+msgstr "下部"
+
+#: src/design/editor/controls/complex.js:266
+#: src/design/props/background-image.js:42
+msgid "Background image"
+msgstr "背景画像"
+
+#: src/design/editor/controls/complex.js:279
+msgid "Inherited image — replace"
+msgstr "継承された画像 — 置き換え"
+
+#: src/design/editor/controls/complex.js:292
+msgid "Remove image"
+msgstr "画像を削除"
+
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:347
+msgid "Position"
+msgstr "位置"
+
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:323
+msgid "Size"
+msgstr "サイズ"
+
+#: src/design/editor/controls/complex.js:335
+msgid "Cover"
+msgstr "表紙"
+
+#: src/design/editor/controls/complex.js:339
+msgid "Contain"
+msgstr "含む"
+
+#: src/design/editor/controls/complex.js:343
+#: src/design/pro__premium_only/effects/controls.js:336
+msgid "Original size"
+msgstr "元のサイズ"
+
+#: src/design/editor/controls/complex.js:356
+#: src/design/pro__premium_only/effects/controls.js:355
+#: src/design/pro__premium_only/effects/controls.js:362
+msgid "Repeat"
+msgstr "繰り返し"
+
+#: src/design/editor/controls/complex.js:365
+#: src/design/pro__premium_only/effects/controls.js:358
+msgid "No repeat"
+msgstr "繰り返しなし"
+
+#: src/design/editor/controls/complex.js:372
+msgid "Tile"
+msgstr "タイル"
+
+#: src/design/editor/controls/complex.js:376
+msgid "Tile across"
+msgstr "タイル配置"
+
+#: src/design/editor/controls/complex.js:383
+msgid "Tile down"
+msgstr "タイルを小"
+
+#: src/design/editor/controls/complex.js:395
+msgid "Fixed while scrolling"
+msgstr "スクロール時に固定"
+
+#: src/design/editor/controls/complex.js:449
+#: src/design/icons/IconPicker.js:40
+msgid "Solid"
+msgstr "ソリッド"
+
+#: src/design/editor/controls/complex.js:450
+msgid "Dashed"
+msgstr "破線"
+
+#: src/design/editor/controls/complex.js:451
+msgid "Dotted"
+msgstr "ドット付き"
+
+#: src/design/editor/controls/complex.js:452
+msgid "Double"
+msgstr "2倍"
+
+#: src/design/editor/controls/complex.js:461
+msgid "Each side separately"
+msgstr "各側面を個別に"
+
+#: src/design/editor/controls/complex.js:469
+msgid "Side"
+msgstr "サイド"
+
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:127
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "スタイル"
+
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:154
+#: src/design/pro__premium_only/effects/controls.js:400
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "色"
+
+#: src/design/editor/controls/complex.js:573
+msgid "Add a shadow"
+msgstr "シャドウを追加"
+
+#: src/design/editor/controls/complex.js:600
+msgid "Horizontal"
+msgstr "水平方向"
+
+#: src/design/editor/controls/complex.js:609
+msgid "Vertical"
+msgstr "垂直"
+
+#: src/design/editor/controls/complex.js:615
+msgid "Blur"
+msgstr "ぼかし"
+
+#: src/design/editor/controls/complex.js:621
+msgid "Spread"
+msgstr "展開する"
+
+#: src/design/editor/controls/complex.js:641
+msgid "Inside"
+msgstr "内部"
+
+#: src/design/editor/controls/complex.js:656
+msgid "Remove this shadow"
+msgstr "このシャドウを削除する"
+
+#: src/design/editor/controls/complex.js:667
+msgid "Everything"
+msgstr "すべて"
+
+#: src/design/editor/controls/complex.js:668
+#: src/design/site-design/sections.js:49
+#: src/editor/language-switcher.js:187
+#: src/workflow/pro__premium_only/ReplacePanel.js:126
+msgid "Colours"
+msgstr "カラー"
+
+#: src/design/editor/controls/complex.js:669
+#: src/design/props/opacity.js:14
+msgid "Opacity"
+msgstr "不透明度"
+
+#: src/design/editor/controls/complex.js:670
+msgid "Transform"
+msgstr "変換"
+
+#: src/design/editor/controls/complex.js:671
+#: src/design/editor/panel.js:44
+#: src/design/pro__premium_only/globals/TokensSection.js:33
+msgid "Shadow"
+msgstr "シャドウ"
+
+#: src/design/editor/controls/complex.js:674
+msgid "Ease"
+msgstr "シンプル"
+
+#: src/design/editor/controls/complex.js:675
+#: src/design/pro__premium_only/effects/controls.js:104
+msgid "Linear"
+msgstr "リニア"
+
+#: src/design/editor/controls/complex.js:676
+msgid "Ease in"
+msgstr "導入しやすい"
+
+#: src/design/editor/controls/complex.js:677
+msgid "Ease out"
+msgstr "緩やかに出る"
+
+#: src/design/editor/controls/complex.js:678
+msgid "Ease in and out"
+msgstr "イーズイン・イーズアウト"
+
+#: src/design/editor/controls/complex.js:687
+msgid "Duration (milliseconds)"
+msgstr "期間（ミリ秒）"
+
+#: src/design/editor/controls/complex.js:713
+msgid "What animates"
+msgstr "アニメーション化する"
+
+#: src/design/editor/controls/complex.js:726
+msgid "Easing"
+msgstr "イージング"
+
+#: src/design/editor/controls/complex.js:736
+msgid "Delay (milliseconds)"
+msgstr "遅延（ミリ秒）"
+
+#: src/design/editor/controls/length.js:93
+msgid "Remove the preset"
+msgstr "プリセットを削除"
+
+#: src/design/editor/controls/length.js:114
+msgid "More options"
+msgstr "その他のオプション"
+
+#: src/design/editor/controls/length.js:138
+msgid "Number and unit"
+msgstr "数値と単位"
+
+#: src/design/editor/controls/length.js:139
+msgid "Custom CSS value (calc, clamp…)"
+msgstr "カスタム CSS の値 (calc、clamp など)"
+
+#: src/design/editor/controls/length.js:237
+msgid "Set each side separately"
+msgstr "それぞれの面を個別に設定する"
+
+#: src/design/editor/controls/length.js:241
+msgid "Set all sides together"
+msgstr "すべての辺をまとめて設定"
+
+#: src/design/editor/controls/length.js:251
+msgid "All sides"
+msgstr "すべての側面"
+
+#: src/design/editor/controls/length.js:286
+msgid "Top start"
+msgstr "上部開始"
+
+#: src/design/editor/controls/length.js:287
+msgid "Top end"
+msgstr "上位"
+
+#: src/design/editor/controls/length.js:288
+msgid "Bottom start"
+msgstr "下部開始"
+
+#: src/design/editor/controls/length.js:289
+msgid "Bottom end"
+msgstr "ボトムエンド"
+
+#: src/design/editor/controls/length.js:300
+msgid "Between rows"
+msgstr "行の間"
+
+#: src/design/editor/controls/length.js:301
+msgid "Between columns"
+msgstr "列の間"
+
+#: src/design/editor/controls/token-picker.js:30
+msgid "Choose a preset"
+msgstr "プリセットを選択"
+
+#: src/design/editor/controls/token-picker.js:38
+msgid "Presets"
+msgstr "プリセット"
+
+#. translators: %s: the name of a design preset, e.g. "Large".
+#: src/design/editor/controls/token-picker.js:87
+#, js-format
+msgid "Preset: %s"
+msgstr "プリセット: %s"
+
+#: src/design/editor/panel.js:39
+#: src/design/pro__premium_only/globals/TokensSection.js:31
+msgid "Spacing"
+msgstr "間隔"
+
+#: src/design/editor/panel.js:41
+msgid "Typography"
+msgstr "タイポグラフィ"
+
+#: src/design/editor/panel.js:42
+msgid "Colours & background"
+msgstr "配色と背景"
+
+#: src/design/editor/panel.js:43
+#: src/design/props/border.js:26
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "ボーダー"
+
+#: src/design/editor/panel.js:46
+#: src/design/pro__premium_only/effects/panel.js:178
+msgid "Effects"
+msgstr "エフェクト"
+
+#: src/design/editor/panel.js:47
+msgid "Advanced"
+msgstr "高度な設定"
+
+#. translators: %d: a screen width in pixels.
+#: src/design/editor/panel.js:59
+#, js-format
+msgid "up to %d px"
+msgstr "最大 %d px"
+
+#. translators: %d: a screen width in pixels.
+#: src/design/editor/panel.js:63
+#, js-format
+msgid "from %d px"
+msgstr "%d px から"
+
+#: src/design/editor/panel.js:65
+msgid "all widths"
+msgstr "すべての幅"
+
+#: src/design/editor/panel.js:87
+msgid "Screen size"
+msgstr "画面サイズ"
+
+#: src/design/editor/panel.js:120
+#: src/design/props/font-style.js:16
+#: src/design/pro__premium_only/effects/controls.js:386
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:130
+msgid "Normal"
+msgstr "通常"
+
+#: src/design/editor/panel.js:124
+msgid "Hover"
+msgstr "ホバー"
+
+#. translators: %s: a screen size such as "Tablet".
+#: src/design/editor/panel.js:136
+#, js-format
+msgid "Reset every value set for %s"
+msgstr "%sに設定されたすべての値をリセットします"
+
+#. translators: %s: the screen size a value is inherited from, e.g. "Desktop".
+#: src/design/editor/panel.js:184
+#, js-format
+msgid "Inherited from %s"
+msgstr "%s から継承"
+
+#. translators: %s: a setting's name, e.g. "Padding".
+#: src/design/editor/panel.js:195
+#, js-format
+msgid "Reset %s"
+msgstr "%sをリセット"
+
+#: src/design/editor/panel.js:218
+msgid "Hide on"
+msgstr "オフにする"
+
+#. translators: 1: section title, 2: how many values are set in it.
+#: src/design/editor/panel.js:265
+#, js-format
+msgid "%1$s (%2$d set)"
+msgstr "%1$s（%2$dセット）"
+
+#: src/design/icons/IconField.js:42
+msgid "Replace icon"
+msgstr "アイコンを置き換え"
+
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "アイコンを選択"
+
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "アイコンを選択"
+
+#: src/design/icons/IconGrid.js:242
+msgid "No icons match."
+msgstr "アイコンが一致しません。"
+
+#: src/design/icons/IconPicker.js:41
+msgid "Regular"
+msgstr "標準"
+
+#: src/design/icons/IconPicker.js:42
+msgid "Brands"
+msgstr "ブランド"
+
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "アウトライン"
+
+#: src/design/icons/IconPicker.js:44
+#: src/design/pro__premium_only/effects/panel.js:268
+msgid "Rounded"
+msgstr "角丸"
+
+#: src/design/icons/IconPicker.js:45
+msgid "Sharp"
+msgstr "シャープ"
+
+#: src/design/icons/IconPicker.js:46
+msgid "Bold"
+msgstr "太字"
+
+#: src/design/icons/IconPicker.js:47
+#: src/design/pro__premium_only/effects/controls.js:332
+msgid "Fill"
+msgstr "入力"
+
+#: src/design/icons/IconPicker.js:48
+msgid "Duotone"
+msgstr "デュオトーン"
+
+#: src/design/icons/IconPicker.js:121
+msgid "This icon set could not be loaded. Check your connection and try again."
+msgstr "アイコンセットを読み込めませんでした。接続を確認してもう一度やり直してください。"
+
+#: src/design/icons/IconPicker.js:234
+msgid "Search icons"
+msgstr "アイコンを検索"
+
+#: src/design/icons/IconPicker.js:253
+msgid "Search all sets"
+msgstr "すべてのセットを検索"
+
+#. translators: %d: number of icons found.
+#: src/design/icons/IconPicker.js:262
+#, js-format
+msgid "%d icons"
+msgstr "%d個のアイコン"
+
+#: src/design/icons/IconPicker.js:265
+msgid "Loading icon sets…"
+msgstr "アイコンセットを読み込んでいます…"
+
+#. translators: %s: icon set name, e.g. Lucide.
+#: src/design/icons/IconPicker.js:271
+#, js-format
+msgid "%s icons"
+msgstr "%s アイコン"
+
+#: src/design/icons/IconPicker.js:273
+msgid "All sets"
+msgstr "すべてのセット"
+
+#: src/design/icons/IconPicker.js:331
+msgid "This file is not a valid SVG image."
+msgstr "このファイルは有効なSVG画像ではありません。"
+
+#: src/design/icons/IconPicker.js:354
+msgid "The icon could not be uploaded."
+msgstr "アイコンをアップロードできませんでした。"
+
+#: src/design/icons/IconPicker.js:408
+msgid "Upload SVG"
+msgstr "SVGをアップロード"
+
+#: src/design/icons/IconPicker.js:418
+msgid "Delete selected upload"
+msgstr "選択したアップロードを削除"
+
+#: src/design/icons/IconPicker.js:427
+msgid "Scripts, links and external references are removed from uploaded SVG files before they are saved."
+msgstr "アップロードされたSVGファイルは、保存される前にスクリプト、リンク、および外部参照が削除されます。"
+
+#: src/design/icons/IconPicker.js:437
+#: src/design/icons/IconPicker.js:458
+msgid "My uploads"
+msgstr "マイアップロード"
+
+#: src/design/props/align-items.js:14
+msgid "Align items"
+msgstr "アイテムを揃える"
+
+#: src/design/props/align-items.js:20
+#: src/design/props/align-self.js:20
+#: src/design/props/justify-content.js:31
+#: src/design/props/place-items.js:20
+msgid "Stretch"
+msgstr "引き延ばす"
+
+#: src/design/props/align-items.js:21
+#: src/design/props/align-self.js:21
+msgid "Baseline"
+msgstr "ベースライン"
+
+#: src/design/props/align-self.js:13
+msgid "Align self"
+msgstr "自己配置"
+
+#: src/design/props/align-self.js:16
+msgid "Auto"
+msgstr "自動"
+
+#: src/design/props/aspect-ratio.js:13
+msgid "Aspect ratio"
+msgstr "アスペクト比"
+
+#: src/design/props/background-color.js:12
+msgid "Background colour"
+msgstr "背景色"
+
+#: src/design/props/box-shadow.js:11
+msgid "Box shadow"
+msgstr "ボックスシャドウ"
+
+#: src/design/props/col-span.js:11
+msgid "Column span"
+msgstr "列の結合"
+
+#: src/design/props/color.js:12
+msgid "Text colour"
+msgstr "文字色"
+
+#: src/design/props/cursor.js:24
+msgid "Cursor"
+msgstr "カーソル"
+
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "矢印"
+
+#: src/design/props/cursor.js:29
+msgid "Pointer"
+msgstr "ポインター"
+
+#: src/design/props/cursor.js:30
 #: src/editor/index.js:35
 #: src/editor/language-switcher.js:190
 #: src/workflow/pro__premium_only/ReplacePanel.js:118
 msgid "Text"
 msgstr "テキスト"
 
-#: src/editor/index.js:41
-msgid "Style"
+#: src/design/props/cursor.js:31
+msgid "Move"
+msgstr "移動"
+
+#: src/design/props/cursor.js:32
+msgid "Grab"
+msgstr "取得"
+
+#: src/design/props/cursor.js:33
+msgid "Not allowed"
+msgstr "許可されていません"
+
+#: src/design/props/cursor.js:34
+msgid "Help"
+msgstr "ヘルプ"
+
+#: src/design/props/cursor.js:35
+msgid "Crosshair"
+msgstr "十字キー"
+
+#: src/design/props/cursor.js:36
+msgid "Zoom in"
+msgstr "拡大"
+
+#: src/design/props/display.js:24
+msgid "Display"
+msgstr "表示"
+
+#: src/design/props/display.js:27
+msgid "Block"
+msgstr "ブロック"
+
+#: src/design/props/display.js:30
+msgid "Inline"
+msgstr "インライン"
+
+#: src/design/props/display.js:31
+msgid "Inline block"
+msgstr "インラインブロック"
+
+#: src/design/props/display.js:32
+msgid "Inline flexbox"
+msgstr "インライン フレックスボックス"
+
+#: src/design/props/display.js:33
+msgid "Inline grid"
+msgstr "インライングリッド"
+
+#: src/design/props/display.js:34
+msgid "Contents only"
+msgstr "コンテンツのみ"
+
+#: src/design/props/display.js:35
+#: src/design/props/overflow.js:17
+msgid "Hidden"
+msgstr "非表示"
+
+#: src/design/props/flex-basis.js:13
+msgid "Basis"
+msgstr "基本プラン"
+
+#: src/design/props/flex-direction.js:14
+msgid "Direction"
+msgstr "向き"
+
+#: src/design/props/flex-direction.js:18
+msgid "Row reversed"
+msgstr "行の順序が反転されました"
+
+#: src/design/props/flex-direction.js:19
+msgid "Column"
+msgstr "列"
+
+#: src/design/props/flex-direction.js:20
+msgid "Column reversed"
+msgstr "列の並び順が逆です"
+
+#: src/design/props/flex-grow.js:14
+msgid "Grow"
+msgstr "アップグレード"
+
+#: src/design/props/flex-shrink.js:14
+msgid "Shrink"
+msgstr "縮小"
+
+#: src/design/props/flex-wrap.js:14
+#: src/design/props/flex-wrap.js:18
+msgid "Wrap"
+msgstr "折り返す"
+
+#: src/design/props/flex-wrap.js:17
+msgid "No wrap"
+msgstr "折り返しなし"
+
+#: src/design/props/flex-wrap.js:19
+msgid "Wrap reversed"
+msgstr "逆順で折り返す"
+
+#: src/design/props/font-family.js:15
+msgid "Font"
+msgstr "フォント"
+
+#: src/design/props/font-style.js:17
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:131
+msgid "Italic"
+msgstr "斜体"
+
+#: src/design/props/font-weight.js:11
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:119
+msgid "Weight"
+msgstr "重み"
+
+#: src/design/props/font-weight.js:14
+msgid "Thin (100)"
+msgstr "薄い (100)"
+
+#: src/design/props/font-weight.js:15
+msgid "Extra light (200)"
+msgstr "極薄 (200)"
+
+#: src/design/props/font-weight.js:16
+msgid "Light (300)"
+msgstr "ライト (300)"
+
+#: src/design/props/font-weight.js:17
+msgid "Regular (400)"
+msgstr "レギュラー (400)"
+
+#: src/design/props/font-weight.js:18
+msgid "Medium (500)"
+msgstr "中 (500)"
+
+#: src/design/props/font-weight.js:19
+msgid "Semi bold (600)"
+msgstr "セミボールド (600)"
+
+#: src/design/props/font-weight.js:20
+msgid "Bold (700)"
+msgstr "太字 (700)"
+
+#: src/design/props/font-weight.js:21
+msgid "Extra bold (800)"
+msgstr "極太 (800)"
+
+#: src/design/props/font-weight.js:22
+msgid "Black (900)"
+msgstr "ブラック (900)"
+
+#: src/design/props/gap.js:15
+msgid "Gap"
+msgstr "間隔"
+
+#: src/design/props/grid-area.js:11
+msgid "Area name"
+msgstr "エリア名"
+
+#: src/design/props/grid-areas.js:11
+msgid "Named areas"
+msgstr "名前付きエリア"
+
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "行"
+
+#: src/design/props/height.js:16
+msgid "Height"
+msgstr "高さ"
+
+#: src/design/props/inset.js:13
+msgid "Offsets"
+msgstr "オフセット"
+
+#: src/design/props/justify-content.js:22
+msgid "Justify content"
+msgstr "コンテンツの配置"
+
+#: src/design/props/justify-content.js:28
+msgid "Space between"
+msgstr "空き容量"
+
+#: src/design/props/justify-content.js:29
+msgid "Space around"
+msgstr "余白"
+
+#: src/design/props/justify-content.js:30
+msgid "Space evenly"
+msgstr "均等に配置"
+
+#: src/design/props/letter-spacing.js:13
+msgid "Letter spacing"
+msgstr "文字間隔"
+
+#: src/design/props/line-height.js:13
+msgid "Line height"
+msgstr "行の高さ"
+
+#: src/design/props/margin.js:13
+msgid "Margin"
+msgstr "余白"
+
+#: src/design/props/max-height.js:16
+msgid "Max height"
+msgstr "最大高さ"
+
+#: src/design/props/max-width.js:16
+msgid "Max width"
+msgstr "最大幅"
+
+#: src/design/props/min-height.js:16
+msgid "Min height"
+msgstr "最小の高さ"
+
+#: src/design/props/min-width.js:16
+msgid "Min width"
+msgstr "最小幅"
+
+#: src/design/props/order.js:15
+msgid "Order"
+msgstr "注文"
+
+#: src/design/props/overflow.js:13
+msgid "Overflow"
+msgstr "オーバーフロー"
+
+#: src/design/props/overflow.js:16
+msgid "Visible"
+msgstr "表示中"
+
+#: src/design/props/overflow.js:18
+msgid "Clip"
+msgstr "クリップ"
+
+#: src/design/props/overflow.js:19
+msgid "Scroll when needed"
+msgstr "必要に応じてスクロール"
+
+#: src/design/props/overflow.js:20
+msgid "Always scroll"
+msgstr "常にスクロール"
+
+#: src/design/props/padding.js:13
+msgid "Padding"
+msgstr "パディング"
+
+#: src/design/props/place-items.js:14
+msgid "Place items"
+msgstr "アイテムを配置"
+
+#: src/design/props/position.js:17
+msgid "Relative"
+msgstr "相対"
+
+#: src/design/props/position.js:18
+msgid "Absolute"
+msgstr "絶対パス"
+
+#: src/design/props/position.js:19
+msgid "Fixed"
+msgstr "固定済み"
+
+#: src/design/props/position.js:20
+msgid "Sticky"
+msgstr "固定"
+
+#: src/design/props/radius.js:19
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "角丸"
+
+#: src/design/props/row-span.js:11
+msgid "Row span"
+msgstr "行のスパン"
+
+#: src/design/props/text-align.js:19
+msgid "Justify"
+msgstr "両端揃え"
+
+#: src/design/props/text-decoration.js:13
+msgid "Decoration"
+msgstr "装飾"
+
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "下線付す"
+
+#: src/design/props/text-decoration.js:18
+msgid "Overline"
+msgstr "オーバーライン"
+
+#: src/design/props/text-decoration.js:19
+msgid "Strikethrough"
+msgstr "取り消し線"
+
+#: src/design/props/text-shadow.js:12
+msgid "Text shadow"
+msgstr "テキストの影"
+
+#: src/design/props/text-transform.js:13
+msgid "Letter case"
+msgstr "大文字・小文字"
+
+#: src/design/props/text-transform.js:17
+msgid "Uppercase"
+msgstr "大文字"
+
+#: src/design/props/text-transform.js:18
+msgid "Lowercase"
+msgstr "小文字"
+
+#: src/design/props/text-transform.js:19
+msgid "Capitalise"
+msgstr "大文字にする"
+
+#: src/design/props/transition.js:28
+#: src/design/pro__premium_only/effects/panel.js:526
+msgid "Transition"
+msgstr "移行"
+
+#: src/design/props/z-index.js:15
+msgid "Stack order (z-index)"
+msgstr "重なり順 (z-index)"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:58
+msgid "Custom breakpoints"
+msgstr "カスタムブレークポイント"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:63
+msgid "Add screen sizes of your own, such as a large desktop, a landscape tablet or a small phone."
+msgstr "大型デスクトップ、横向きのタブレット、小型スマートフォンなど、独自の画面サイズを追加します。"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:83
+msgid "Applies"
+msgstr "適用対象"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:88
+msgid "up to a width"
+msgstr "幅まで"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:95
+msgid "from a width"
+msgstr "幅から"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:114
+msgid "Width (px)"
+msgstr "幅 (px)"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:130
+msgid "Remove this breakpoint"
+msgstr "このブレークポイントを削除"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:150
+#: src/design/pro__premium_only/custom-breakpoints.js:153
+msgid "Large desktop"
+msgstr "大容量デスクトップ"
+
+#: src/design/pro__premium_only/custom-breakpoints.js:162
+msgid "Add a breakpoint"
+msgstr "ブレークポイントを追加"
+
+#: src/design/pro__premium_only/effects/controls.js:105
+msgid "Radial"
+msgstr "ラジアル"
+
+#: src/design/pro__premium_only/effects/controls.js:106
+msgid "Conic"
+msgstr "コニック"
+
+#: src/design/pro__premium_only/effects/controls.js:114
+msgid "Angle (degrees)"
+msgstr "角度（度）"
+
+#: src/design/pro__premium_only/effects/controls.js:125
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "形状"
+
+#: src/design/pro__premium_only/effects/controls.js:128
+msgid "Ellipse"
+msgstr "楕円"
+
+#: src/design/pro__premium_only/effects/controls.js:129
+#: src/design/pro__premium_only/effects/controls.js:247
+msgid "Circle"
+msgstr "サークル"
+
+#. translators: %d: gradient colour stop number.
+#: src/design/pro__premium_only/effects/controls.js:149
+#, js-format
+msgid "Colour stop %d"
+msgstr "カラーストップ %d"
+
+#: src/design/pro__premium_only/effects/controls.js:161
+msgid "Position (%)"
+msgstr "位置 (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:179
+msgid "Remove stop"
+msgstr "停止を解除"
+
+#: src/design/pro__premium_only/effects/controls.js:193
+msgid "Add colour stop"
+msgstr "カラー分岐点を追加"
+
+#: src/design/pro__premium_only/effects/controls.js:197
+msgid "Clear gradient"
+msgstr "グラデーションをクリア"
+
+#: src/design/pro__premium_only/effects/controls.js:211
+msgid "Blur behind (px)"
+msgstr "背景のぼかし (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:221
+msgid "Saturation behind (%)"
+msgstr "バックグラウンドの負荷 (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:229
+msgid "Tint (use a see-through colour)"
+msgstr "色合い（透明色を使用）"
+
+#: src/design/pro__premium_only/effects/controls.js:248
+msgid "Rounded square"
+msgstr "角丸正方形"
+
+#: src/design/pro__premium_only/effects/controls.js:249
+msgid "Blob"
+msgstr "BLOB"
+
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Hexagon"
+msgstr "ヘキサゴン"
+
+#: src/design/pro__premium_only/effects/controls.js:251
+#: src/design/pro__premium_only/effects/panel.js:255
+msgid "Triangle"
+msgstr "トライアングル"
+
+#: src/design/pro__premium_only/effects/controls.js:252
+msgid "Diamond"
+msgstr "ダイヤモンド"
+
+#: src/design/pro__premium_only/effects/controls.js:253
+msgid "Star"
+msgstr "スター"
+
+#: src/design/pro__premium_only/effects/controls.js:254
+msgid "Heart"
+msgstr "お気に入り"
+
+#: src/design/pro__premium_only/effects/controls.js:255
+msgid "Arch"
+msgstr "アーキテクチャ"
+
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Brush stroke"
+msgstr "ブラシストローク"
+
+#: src/design/pro__premium_only/effects/controls.js:269
+msgid "Mask shape"
+msgstr "マスクの形状"
+
+#: src/design/pro__premium_only/effects/controls.js:279
+msgid "Custom image"
+msgstr "カスタムイメージ"
+
+#: src/design/pro__premium_only/effects/controls.js:305
+msgid "Replace mask image"
+msgstr "マスク画像を置き換え"
+
+#: src/design/pro__premium_only/effects/controls.js:309
+msgid "Choose mask image"
+msgstr "マスク画像を選択"
+
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Fit"
+msgstr "最適化"
+
+#: src/design/pro__premium_only/effects/controls.js:363
+msgid "Repeat across"
+msgstr "繰り返す"
+
+#: src/design/pro__premium_only/effects/controls.js:367
+msgid "Repeat down"
+msgstr "下に繰り返す"
+
+#: src/design/pro__premium_only/effects/controls.js:371
+msgid "Space out"
+msgstr "スペースを空ける"
+
+#: src/design/pro__premium_only/effects/controls.js:372
+msgid "Stretch to fit"
+msgstr "ウィンドウに合わせて引き伸ばす"
+
+#: src/design/pro__premium_only/effects/controls.js:387
+msgid "Multiply"
+msgstr "乗算"
+
+#: src/design/pro__premium_only/effects/controls.js:388
+msgid "Screen"
+msgstr "画面"
+
+#: src/design/pro__premium_only/effects/controls.js:389
+msgid "Overlay"
+msgstr "オーバーレイ"
+
+#: src/design/pro__premium_only/effects/controls.js:390
+msgid "Darken"
+msgstr "ダークモード"
+
+#: src/design/pro__premium_only/effects/controls.js:391
+msgid "Lighten"
+msgstr "軽量化"
+
+#: src/design/pro__premium_only/effects/controls.js:392
+msgid "Colour dodge"
+msgstr "覆い焼き（描画）"
+
+#: src/design/pro__premium_only/effects/controls.js:393
+msgid "Colour burn"
+msgstr "カラーバーン"
+
+#: src/design/pro__premium_only/effects/controls.js:394
+msgid "Hard light"
+msgstr "強い光"
+
+#: src/design/pro__premium_only/effects/controls.js:395
+msgid "Soft light"
+msgstr "ソフトライト"
+
+#: src/design/pro__premium_only/effects/controls.js:396
+msgid "Difference"
+msgstr "差分"
+
+#: src/design/pro__premium_only/effects/controls.js:397
+msgid "Exclusion"
+msgstr "除外"
+
+#: src/design/pro__premium_only/effects/controls.js:398
+msgid "Hue"
+msgstr "色相"
+
+#: src/design/pro__premium_only/effects/controls.js:399
+msgid "Saturation"
+msgstr "飽和度"
+
+#: src/design/pro__premium_only/effects/controls.js:401
+msgid "Luminosity"
+msgstr "輝度"
+
+#: src/design/pro__premium_only/effects/controls.js:410
+#: src/design/pro__premium_only/effects/props/blend-mode.js:15
+msgid "Blend mode"
+msgstr "描画モード"
+
+#: src/design/pro__premium_only/effects/controls.js:425
+msgid "Blur (px)"
+msgstr "ぼかし (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:426
+msgid "Brightness (%)"
+msgstr "明るさ (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:427
+msgid "Contrast (%)"
+msgstr "コントラスト (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:428
+msgid "Greyscale (%)"
+msgstr "グレースケール (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:429
+msgid "Hue rotation (degrees)"
+msgstr "色相回転 (度)"
+
+#: src/design/pro__premium_only/effects/controls.js:430
+msgid "Saturation (%)"
+msgstr "飽和度 (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:431
+msgid "Sepia (%)"
+msgstr "セピア (%)"
+
+#: src/design/pro__premium_only/effects/controls.js:469
+msgid "Drop shadow"
+msgstr "ドロップシャドウ"
+
+#: src/design/pro__premium_only/effects/controls.js:472
+msgid "Across (px)"
+msgstr "水平方向 (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:473
+msgid "Down (px)"
+msgstr "下 (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:474
+msgid "Softness (px)"
+msgstr "ぼかし (px)"
+
+#: src/design/pro__premium_only/effects/controls.js:489
+msgid "Shadow colour"
+msgstr "影の色"
+
+#: src/design/pro__premium_only/effects/controls.js:501
+msgid "Remove drop shadow"
+msgstr "ドロップシャドウを削除"
+
+#: src/design/pro__premium_only/effects/panel.js:184
+msgid "Applies on every screen size."
+msgstr "すべての画面サイズに適用されます。"
+
+#: src/design/pro__premium_only/effects/panel.js:188
+msgid "Applies to the screen size chosen in the design panel."
+msgstr "デザインパネルで選択した画面サイズに適用されます。"
+
+#: src/design/pro__premium_only/effects/panel.js:194
+#: src/design/pro__premium_only/effects/props/bg-gradient.js:37
+msgid "Background gradient"
+msgstr "背景のグラデーション"
+
+#: src/design/pro__premium_only/effects/panel.js:215
+msgid "Add gradient"
+msgstr "グラデーションを追加"
+
+#: src/design/pro__premium_only/effects/panel.js:219
+#: src/design/pro__premium_only/effects/props/glass.js:15
+msgid "Glass"
+msgstr "ガラス"
+
+#: src/design/pro__premium_only/effects/panel.js:226
+#: src/design/pro__premium_only/effects/props/mask.js:17
+msgid "Mask"
+msgstr "マスク"
+
+#: src/design/pro__premium_only/effects/panel.js:237
+#: src/design/pro__premium_only/effects/props/filter.js:15
+msgid "Filters"
+msgstr "フィルター"
+
+#: src/design/pro__premium_only/effects/panel.js:248
+msgid "Wave"
+msgstr "ウェーブ"
+
+#: src/design/pro__premium_only/effects/panel.js:249
+msgid "Waves"
+msgstr "ウェーブ"
+
+#: src/design/pro__premium_only/effects/panel.js:250
+msgid "Curve"
+msgstr "曲線"
+
+#: src/design/pro__premium_only/effects/panel.js:251
+msgid "Curve (asymmetric)"
+msgstr "曲線（非対称）"
+
+#: src/design/pro__premium_only/effects/panel.js:252
+msgid "Arc"
+msgstr "アーク"
+
+#: src/design/pro__premium_only/effects/panel.js:253
+msgid "Tilt"
+msgstr "傾き"
+
+#: src/design/pro__premium_only/effects/panel.js:254
+msgid "Tilt (layered)"
+msgstr "傾き（レイヤー）"
+
+#: src/design/pro__premium_only/effects/panel.js:256
+msgid "Triangle (asymmetric)"
+msgstr "三角形（非対称）"
+
+#: src/design/pro__premium_only/effects/panel.js:261
+msgid "Split"
+msgstr "分割"
+
+#: src/design/pro__premium_only/effects/panel.js:262
+msgid "Zigzag"
+msgstr "ジグザグ"
+
+#: src/design/pro__premium_only/effects/panel.js:263
+msgid "Mountains"
+msgstr "マウンテン"
+
+#: src/design/pro__premium_only/effects/panel.js:264
+msgid "Clouds"
+msgstr "クラウド"
+
+#: src/design/pro__premium_only/effects/panel.js:265
+msgid "Drops"
+msgstr "削除する"
+
+#: src/design/pro__premium_only/effects/panel.js:266
+msgid "Pyramids"
+msgstr "ピラミッド"
+
+#: src/design/pro__premium_only/effects/panel.js:267
+msgid "Book"
+msgstr "予約"
+
+#: src/design/pro__premium_only/effects/panel.js:269
+msgid "Stairs"
+msgstr "階段"
+
+#: src/design/pro__premium_only/effects/panel.js:270
+msgid "Fan"
+msgstr "ファン"
+
+#: src/design/pro__premium_only/effects/panel.js:308
+msgid "Height (px)"
+msgstr "高さ (px)"
+
+#: src/design/pro__premium_only/effects/panel.js:316
+msgid "Mirror"
+msgstr "ミラー"
+
+#: src/design/pro__premium_only/effects/panel.js:322
+msgid "Invert"
+msgstr "反転"
+
+#: src/design/pro__premium_only/effects/panel.js:328
+msgid "In front of the content"
+msgstr "コンテンツの前に"
+
+#: src/design/pro__premium_only/effects/panel.js:379
+msgid "Source"
+msgstr "ソース"
+
+#: src/design/pro__premium_only/effects/panel.js:385
+msgid "Video file (MP4 / WebM)"
+msgstr "動画ファイル (MP4 / WebM)"
+
+#: src/design/pro__premium_only/effects/panel.js:400
+msgid "Choose MP4 or WebM video"
+msgstr "MP4 または WebM 動画を選択"
+
+#: src/design/pro__premium_only/effects/panel.js:414
+msgid "MP4 address"
+msgstr "MP4アドレス"
+
+#: src/design/pro__premium_only/effects/panel.js:419
+msgid "WebM address"
+msgstr "WebMアドレス"
+
+#: src/design/pro__premium_only/effects/panel.js:432
+msgid "YouTube video ID (11 characters)"
+msgstr "YouTube動画ID（11文字）"
+
+#: src/design/pro__premium_only/effects/panel.js:436
+msgid "Vimeo video number"
+msgstr "Vimeo動画番号"
+
+#: src/design/pro__premium_only/effects/panel.js:445
+msgid "Visitors only contact the video service when they scroll to this section, and never when their device asks for reduced motion. Until then they see the poster image."
+msgstr "訪問者がこのセクションまでスクロールした時、かつデバイスが視差効果の軽減を求めていない場合にのみ、ビデオサービスに接続されます。それまではポスター画像が表示されます。"
+
+#: src/design/pro__premium_only/effects/panel.js:456
+msgid "Replace poster image"
+msgstr "ポスター画像を置き換え"
+
+#: src/design/pro__premium_only/effects/panel.js:460
+msgid "Choose poster image"
+msgstr "ポスター画像を選択"
+
+#: src/design/pro__premium_only/effects/panel.js:480
+msgid "Background slideshow"
+msgstr "背景スライドショー"
+
+#: src/design/pro__premium_only/effects/panel.js:485
+msgid "Change images"
+msgstr "画像を変更"
+
+#: src/design/pro__premium_only/effects/panel.js:486
+msgid "Choose images"
+msgstr "画像を選択"
+
+#: src/design/pro__premium_only/effects/panel.js:503
+msgid "Choose at least two images."
+msgstr "画像を2枚以上選択してください。"
+
+#: src/design/pro__premium_only/effects/panel.js:514
+msgid "Seconds per image"
+msgstr "画像あたりの秒数"
+
+#: src/design/pro__premium_only/effects/panel.js:531
+msgid "Fade"
+msgstr "フェード"
+
+#: src/design/pro__premium_only/effects/panel.js:535
+msgid "Slide"
+msgstr "スライド"
+
+#: src/design/pro__premium_only/effects/panel.js:539
+msgid "Slow zoom (Ken Burns)"
+msgstr "スローズーム（ケン・バーンズ）"
+
+#: src/design/pro__premium_only/effects/panel.js:552
+msgid "Remove slideshow"
+msgstr "スライドショーを削除"
+
+#: src/design/pro__premium_only/effects/panel.js:557
+msgid "Visitors who ask their device for reduced motion see the first image only."
+msgstr "デバイスに視差効果の軽減を設定している訪問者には、最初の画像のみが表示されます。"
+
+#: src/design/pro__premium_only/effects/panel.js:572
+msgid "Section effects"
+msgstr "セクションの演出"
+
+#: src/design/pro__premium_only/effects/panel.js:577
+msgid "Top divider"
+msgstr "上部区切り線"
+
+#: src/design/pro__premium_only/effects/panel.js:584
+msgid "Bottom divider"
+msgstr "下部区切り線"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:30
+msgid "Choose the logo"
+msgstr "ロゴを選択"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:58
+msgid "Not set"
+msgstr "未設定"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:63
+msgid "Check the brand colours: each needs a unique name and a valid colour."
+msgstr "ブランドカラーを確認してください：それぞれに固有の名前と有効なカラーが必要です。"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:73
+msgid "Brand name"
+msgstr "ブランド名"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:90
+msgid "Replace logo"
+msgstr "ロゴを置き換える"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:91
+msgid "Choose logo"
+msgstr "ロゴを選択"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:96
+msgid "A logo is chosen."
+msgstr "ロゴが選択されました。"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:97
+msgid "Choose the logo from the Site design page."
+msgstr "サイトデザインページからロゴを選択してください。"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:102
+msgid "Remove logo"
+msgstr "ロゴを削除"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:107
+msgid "Brand colours"
+msgstr "ブランドカラー"
+
+#. translators: %s: colour name.
+#. translators: %s: token name.
+#. translators: %s: font name.
+#: src/design/pro__premium_only/globals/BrandKitSection.js:141
+#: src/design/pro__premium_only/globals/TokenList.js:60
+#: src/design/site-design/ColorsSection.js:53
+#: src/design/site-design/FontsSection.js:121
+#, js-format
+msgid "Remove %s"
+msgstr "%s を削除"
+
+#. translators: %d: a number.
+#: src/design/pro__premium_only/globals/BrandKitSection.js:154
+#, js-format
+msgid "Brand %d"
+msgstr "ブランド %d"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:169
+msgid "Add brand colour"
+msgstr "ブランドカラーを追加"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:175
+#: src/design/site-design/FontsSection.js:64
+msgid "Heading font"
+msgstr "見出しフォント"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:183
+#: src/design/site-design/FontsSection.js:72
+msgid "Body font"
+msgstr "本文フォント"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:190
+msgid "Tone of voice"
+msgstr "トーン＆マナー"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:191
+msgid "How your brand writes, e.g. “Friendly and plain, short sentences, no jargon.” The AI follows it whenever it writes for this site."
+msgstr "ブランドの文体（例：「親しみやすく分かりやすい、短い文、専門用語なし」）。AIはこのサイトの文章を作成する際に、このスタイルに従います。"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:208
+msgid "Brand kit saved."
+msgstr "ブランドキットが保存されました。"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:223
+msgid "The brand is applied: its colours, fonts and logo are now the site’s."
+msgstr "ブランドが適用されました。色彩、フォント、ロゴがサイトに反映されています。"
+
+#: src/design/pro__premium_only/globals/BrandKitSection.js:231
+msgid "Apply to site"
+msgstr "サイトに適用"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:58
+msgid "All classes"
+msgstr "すべてのクラス"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:68
+msgid "Class name on the page"
+msgstr "ページ上のクラス名"
+
+#. translators: %s: CSS class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:73
+#, js-format
+msgid "Printed as %s."
+msgstr "%sとして印刷されます。"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:76
+msgid "Start with a letter; lowercase letters, digits and hyphens only."
+msgstr "英字で始め、小文字、数字、ハイフンのみを使用してください。"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:86
+msgid "Styles"
 msgstr "スタイル"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:92
+msgid "The style controls are not loaded. Reload the page; if this stays, reinstall the plugin."
+msgstr "スタイルコントロールが読み込まれていません。ページを再読み込みしてください。それでも解決しない場合は、プラグインを再インストールしてください。"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:112
+msgid "Class saved. Every element using it has the new style."
+msgstr "クラスが保存されました。このクラスを使用しているすべての要素に新しいスタイルが適用されます。"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:120
+msgid "Save class"
+msgstr "クラスを保存"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:165
+msgid "Class created."
+msgstr "クラスを作成しました。"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:176
+msgid "New class"
+msgstr "新しいクラス"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:179
+msgid "e.g. Card"
+msgstr "例：カード"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:189
+msgid "Create"
+msgstr "作成"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:195
+msgid "Search classes"
+msgstr "クラスを検索"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:203
+msgid "No class matches."
+msgstr "一致するクラスがありません。"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:204
+msgid "No classes yet. Create one, style it, then add it to any element from its settings."
+msgstr "クラスはまだありません。作成してスタイルを設定し、設定画面から任意の要素に追加してください。"
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:222
+#, js-format
+msgid "Edit %s"
+msgstr "%s の編集"
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:232
+#, js-format
+msgid "Duplicate %s"
+msgstr "%sを複製"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:242
+msgid "Class duplicated."
+msgstr "クラスが複製されました。"
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:252
+#, js-format
+msgid "Delete %s"
+msgstr "%sを削除"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:270
+msgid "Class deleted."
+msgstr "クラスを削除しました。"
+
+#: src/design/pro__premium_only/globals/ClassesSection.js:274
+msgid "Delete"
+msgstr "削除"
+
+#. translators: %s: class name.
+#: src/design/pro__premium_only/globals/ClassesSection.js:278
+#, js-format
+msgid "Delete the class \"%s\"? Elements that use it keep their content and lose its styles."
+msgstr "「%s」クラスを削除しますか？このクラスを使用している要素は、コンテンツは保持されますが、スタイルは失われます。"
+
+#: src/design/pro__premium_only/globals/CodeEditor.js:87
+msgid "Only users who may add unfiltered HTML can change custom CSS."
+msgstr "フィルターなしのHTMLを追加できるユーザーのみが、カスタムCSSを変更できます。"
+
+#: src/design/pro__premium_only/globals/CodeEditor.js:95
+msgid "Some of this CSS will not be used: @import, expression(), javascript: URLs, \"<\" and unbalanced braces are removed for safety."
+msgstr "このCSSの一部は使用されません。安全性の確保のため、@import、expression()、javascript: URL、「<」、および対応の取れないカッコは削除されます。"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:100
+msgid "Upload a font"
+msgstr "フォントをアップロード"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:104
+msgid "Uploading fonts needs WordPress 6.5 or later."
+msgstr "フォントのアップロードには WordPress 6.5 以降が必要です。"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:110
+msgid "Font name"
+msgstr "フォント名"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:113
+msgid "e.g. Brand Sans"
+msgstr "例: ブランドサンセリフ"
+
+#. translators: %s: font name.
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:167
+#, js-format
+msgid "%s is uploaded and ready to use."
+msgstr "%s がアップロードされ、使用の準備ができました。"
+
+#. translators: %s: file types, e.g. woff2, woff, ttf.
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:175
+#, js-format
+msgid "Choose a font file (%s)"
+msgstr "フォントファイルを選択 (%s)"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:184
+msgid "Font library"
+msgstr "フォントライブラリ"
+
+#. translators: %d: number of font files.
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:194
+#, js-format
+msgid "%d files"
+msgstr "%d個のファイル"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:214
+msgid "Font switched off for the site."
+msgstr "サイトのフォントが無効になりました。"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:215
+msgid "Font switched on for the site."
+msgstr "サイトのフォントが有効になりました。"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:220
+msgid "Switch off"
+msgstr "オフにする"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:221
+msgid "Switch on"
+msgstr "有効にする"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:229
+msgid "Adobe Fonts"
+msgstr "Adobe Fonts"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:232
+msgid "Paste the kit id of your Adobe Fonts web project. Its fonts are then loaded from Adobe on your pages."
+msgstr "Adobe FontsのWebプロジェクトのキットIDを貼り付けてください。これにより、Adobeからフォントがページに読み込まれます。"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:237
+msgid "Your web projects"
+msgstr "お客様のウェブプロジェクト"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:249
+msgid "Adobe Fonts connected."
+msgstr "Adobe Fonts が接続されました。"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:250
+msgid "Adobe Fonts disconnected."
+msgstr "Adobe Fonts の接続が切れました。"
+
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:256
+msgid "Kit id"
+msgstr "キットID"
+
+#. translators: %s: colour name.
+#: src/design/pro__premium_only/globals/DarkModeSection.js:36
+#, js-format
+msgid "The dark value for \"%s\" is not a valid colour."
+msgstr "\"%s\" のダーク値が無効な色です。"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:51
+msgid "When a visitor has not chosen"
+msgstr "訪問者が選択していない場合"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:56
+msgid "Follow the visitor’s device"
+msgstr "訪問者のデバイスに従う"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:59
+msgid "Light"
+msgstr "ライト"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:60
+msgid "Dark"
+msgstr "ダーク"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:64
+msgid "Dark colours"
+msgstr "ダークモード"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:67
+msgid "Give each colour its dark version. Colours left empty stay the same in both schemes. Dark mode is on as soon as one colour has a dark value."
+msgstr "それぞれのカラーにダークバージョンを設定してください。空欄のカラーは、両方のスキームで同じままになります。いずれかのカラーにダーク値が設定されるとすぐにダークモードが有効になります。"
+
+#. translators: %s: colour name.
+#: src/design/pro__premium_only/globals/DarkModeSection.js:86
+#, js-format
+msgid "Dark version of %s"
+msgstr "%sのダークバージョン"
+
+#: src/design/pro__premium_only/globals/DarkModeSection.js:105
+msgid "Dark mode saved."
+msgstr "ダークモードの設定を保存しました。"
+
+#: src/design/pro__premium_only/globals/editor.js:20
+#: src/design/pro__premium_only/globals/index.js:62
+#: src/design/site-design/sections.js:28
+msgid "Page CSS"
+msgstr "ページCSS"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:67
+msgid "Global classes"
+msgstr "グローバルクラス"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:73
+#: src/design/pro__premium_only/globals/index.js:20
+#: src/design/site-design/sections.js:22
+msgid "Classes"
+msgstr "クラス"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:94
+msgid "Create classes in Site design, then add them here."
+msgstr "サイトデザインでクラスを作成してから、ここに追加してください。"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:104
+msgid "Custom CSS"
+msgstr "カスタムCSS"
+
+#: src/design/pro__premium_only/globals/ElementControls.js:105
+msgid "Write rules for this element. \"selector\" means this element, e.g. selector:hover { opacity: .8 } — plain declarations apply to the element itself."
+msgstr "この要素のルールを記述します。「selector」はこの要素を意味します（例: selector:hover { opacity: .8 }）。通常の宣言はこの要素自体に適用されます。"
+
+#. translators: %s: file types.
+#: src/design/pro__premium_only/globals/fonts.js:39
+#, js-format
+msgid "Font files must be %s."
+msgstr "フォントファイルは%sである必要があります。"
+
+#: src/design/pro__premium_only/globals/fonts.js:44
+msgid "That font file is empty or larger than 10 MB."
+msgstr "そのフォントファイルは空であるか、10 MBを超えています。"
+
+#: src/design/pro__premium_only/globals/index.js:21
+msgid "Style once, reuse everywhere, change in one place."
+msgstr "一度スタイルを設定すれば、どこでも再利用でき、1か所で変更できます。"
+
+#: src/design/pro__premium_only/globals/index.js:27
+#: src/design/site-design/sections.js:23
+msgid "Variables"
+msgstr "変数"
+
+#: src/design/pro__premium_only/globals/index.js:28
+msgid "Named values any element can use."
+msgstr "任意の要素で使用できる名前付き値。"
+
+#: src/design/pro__premium_only/globals/index.js:34
+#: src/design/site-design/sections.js:24
+msgid "Spacing, radius and shadows"
+msgstr "間隔、角丸、シャドウ"
+
+#: src/design/pro__premium_only/globals/index.js:35
+msgid "The scales every spacing, corner and shadow picker offers."
+msgstr "すべてのスペーシング、コーナー、シャドウピッカーが提供するスケール。"
+
+#: src/design/pro__premium_only/globals/index.js:42
+msgid "A dark version of your colours, for visitors who want it."
+msgstr "ご希望の訪問客向けに、カラーをダークバージョンに変更します。"
+
+#: src/design/pro__premium_only/globals/index.js:48
+#: src/design/site-design/sections.js:26
+msgid "Brand kit"
+msgstr "ブランドキット"
+
+#: src/design/pro__premium_only/globals/index.js:49
+msgid "Logo, colours, fonts and tone of voice, used by the AI and templates."
+msgstr "AIやテンプレートで使用される、ロゴ、カラー、フォント、トーン＆マナー。"
+
+#: src/design/pro__premium_only/globals/index.js:55
+#: src/design/site-design/sections.js:27
+msgid "Custom fonts"
+msgstr "カスタムフォント"
+
+#: src/design/pro__premium_only/globals/index.js:56
+msgid "Upload your own fonts or connect Adobe Fonts."
+msgstr "独自のフォントをアップロードするか、Adobe Fontsを連携してください。"
+
+#: src/design/pro__premium_only/globals/index.js:63
+msgid "CSS for this page only."
+msgstr "このページ専用のCSS。"
+
+#: src/design/pro__premium_only/globals/PageCss.js:47
+msgid "CSS for this page"
+msgstr "このページのCSS"
+
+#: src/design/pro__premium_only/globals/PageCss.js:48
+msgid "Loaded only on this page, after the site’s styles. Saved with the page."
+msgstr "このページでのみ、サイトのスタイルの後に読み込まれます。ページと一緒に保存されます。"
+
+#: src/design/pro__premium_only/globals/TokenList.js:29
+msgid "Short name"
+msgstr "短い名前"
+
+#. translators: %s: short name.
+#: src/design/pro__premium_only/globals/TokenList.js:98
+#, js-format
+msgid "The short name \"%s\" is used twice."
+msgstr "短い名前 \"%s\" が2回使用されています。"
+
+#. translators: %s: short name.
+#: src/design/pro__premium_only/globals/TokenList.js:105
+#, js-format
+msgid "\"%s\": short names use lowercase letters, digits and hyphens."
+msgstr "「%s」：短い名前には小文字、数字、ハイフンを使用してください。"
+
+#. translators: %s: short name.
+#: src/design/pro__premium_only/globals/TokenList.js:114
+#, js-format
+msgid "The value of \"%s\" is not one this setting accepts."
+msgstr "「%s」の値はこの設定で受け付けられない値です。"
+
+#: src/design/pro__premium_only/globals/TokensSection.js:32
+msgid "Radius"
+msgstr "半径"
+
+#: src/design/pro__premium_only/globals/TokensSection.js:50
+msgid "Add a step"
+msgstr "ステップを追加"
+
+#: src/design/pro__premium_only/globals/TokensSection.js:64
+msgid "Scales saved."
+msgstr "スケールが保存されました。"
+
+#: src/design/pro__premium_only/globals/TokensSection.js:76
+msgid "Scales are back to the defaults."
+msgstr "スケールがデフォルトに戻りました。"
+
+#: src/design/pro__premium_only/globals/TokensSection.js:80
+msgid "Reset to the default scales"
+msgstr "デフォルトのスケールにリセット"
+
+#: src/design/pro__premium_only/globals/VariablesSection.js:35
+msgid "No variables yet. A variable holds one value — a width, a colour mix, a font size — that many elements share."
+msgstr "まだ変数はありません。変数は、複数の要素で共有される1つの値（幅、色のブレンド、フォントサイズなど）を保持します。"
+
+#: src/design/pro__premium_only/globals/VariablesSection.js:45
+msgid "Add variable"
+msgstr "変数を追加"
+
+#: src/design/pro__premium_only/globals/VariablesSection.js:57
+msgid "Variables saved."
+msgstr "変数を保存しました。"
+
+#: src/design/site-design/ColorsSection.js:29
+msgid "No colours yet."
+msgstr "カラーはまだ設定されていません。"
+
+#. translators: %d: a number.
+#: src/design/site-design/ColorsSection.js:70
+#, js-format
+msgid "Colour %d"
+msgstr "カラー %d"
+
+#: src/design/site-design/ColorsSection.js:83
+msgid "Add colour"
+msgstr "色を追加"
+
+#: src/design/site-design/ColorsSection.js:113
+msgid "Two colours have the same name. Rename one."
+msgstr "2つの色が同じ名前を持っています。名前を変更してください。"
+
+#. translators: %s: colour name.
+#: src/design/site-design/ColorsSection.js:120
+#, js-format
+msgid "\"%s\" is not a valid colour."
+msgstr "「%s」は有効な色ではありません。"
+
+#: src/design/site-design/ColorsSection.js:132
+msgid "Theme colours"
+msgstr "テーマカラー"
+
+#: src/design/site-design/ColorsSection.js:135
+msgid "Your theme’s palette. A change here is saved as your site’s version of the colour, the same way the Site Editor saves it, and applies everywhere the colour is used."
+msgstr "お使いのテーマのパレット。ここでの変更は、サイトエディターでの保存と同様に、サイト固有の色として保存され、その色が使用されているすべての場所に適用されます。"
+
+#: src/design/site-design/ColorsSection.js:149
+msgid "Theme colours are back to the theme’s own values."
+msgstr "テーマの色が、テーマ固有の値に戻りました。"
+
+#: src/design/site-design/ColorsSection.js:156
+msgid "Reset theme colours"
+msgstr "テーマの色をリセット"
+
+#: src/design/site-design/ColorsSection.js:159
+msgid "Your colours"
+msgstr "カラー設定"
+
+#: src/design/site-design/ColorsSection.js:176
+msgid "Colours saved."
+msgstr "配色を保存しました。"
+
+#. translators: %s: colour name.
+#: src/design/site-design/components.js:39
+#, js-format
+msgid "Pick a colour for %s"
+msgstr "%s の色を選択してください"
+
+#: src/design/site-design/components.js:70
+msgid "Clear"
+msgstr "クリア"
+
+#: src/design/site-design/components.js:162
+msgid "The change could not be saved."
+msgstr "変更を保存できませんでした。"
+
+#: src/design/site-design/editor.js:58
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "パネルを閉じる"
+
+#: src/design/site-design/FontsSection.js:34
+msgid "Theme default"
+msgstr "テーマのデフォルト"
+
+#: src/design/site-design/FontsSection.js:78
+msgid "Theme fonts"
+msgstr "テーマフォント"
+
+#: src/design/site-design/FontsSection.js:88
+msgid "Your fonts"
+msgstr "フォント"
+
+#: src/design/site-design/FontsSection.js:101
+msgid "Font stack"
+msgstr "フォントスタック"
+
+#: src/design/site-design/FontsSection.js:104
+msgid "Uploaded font: its files come from the font library."
+msgstr "アップロードされたフォント：フォントライブラリからファイルが取得されています。"
+
+#: src/design/site-design/FontsSection.js:138
+msgid "System sans-serif"
+msgstr "システム サンセリフ"
+
+#: src/design/site-design/FontsSection.js:145
+msgid "Add font stack"
+msgstr "フォントスタックを追加"
+
+#: src/design/site-design/FontsSection.js:170
+msgid "Fonts saved."
+msgstr "フォントが保存されました。"
+
+#: src/design/site-design/sections.js:50
+msgid "Shared with your theme and the Site Editor."
+msgstr "テーマおよびサイトエディターと共有されます。"
+
+#: src/design/site-design/sections.js:59
+msgid "Fonts"
+msgstr "フォント"
+
+#: src/design/site-design/sections.js:60
+msgid "Heading and body fonts for the whole site."
+msgstr "サイト全体の見出しと本文のフォント。"
+
+#: src/design/site-design/SiteDesign.js:45
+msgid "Back to Site design"
+msgstr "サイトデザインに戻る"
+
+#: src/design/site-design/SiteDesign.js:70
+msgid "Pro"
+msgstr "プロ"
+
+#: src/design/site-design/SiteDesign.js:95
+msgid "Classes, tokens, dark mode, brand kit and custom fonts come with Pro"
+msgstr "Proプランには、クラス、トークン、ダークモード、ブランドキット、カスタムフォントが含まれています"
+
+#: src/design/site-design/SiteDesign.js:105
+msgid "Open the Site Editor’s styles"
+msgstr "サイトエディターのスタイルを開く"
+
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "見出し"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -5503,10 +7997,6 @@ msgstr "現在の言語を表示する"
 msgid "Install Tranzly and list two or more languages, and the switcher appears here."
 msgstr "Tranzlyをインストールして2つ以上の言語を設定すると、ここに言語スイッチャーが表示されます。"
 
-#: src/editor/language-switcher.js:67
-msgid "Design"
-msgstr "デザイン"
-
 #: src/editor/language-switcher.js:72
 msgid "List"
 msgstr "一覧"
@@ -5529,7 +8019,7 @@ msgstr "言語コード"
 
 #: src/editor/language-switcher.js:102
 msgid "Show each language as"
-msgstr "各言語を表示："
+msgstr "各言語の表示形式："
 
 #: src/editor/language-switcher.js:110
 msgid "Language name"
@@ -5549,7 +8039,7 @@ msgstr "フラグ"
 
 #: src/editor/language-switcher.js:135
 msgid "Off by default: a flag is a country, not a language."
-msgstr "デフォルトではオフ：フラグは言語ではなく国です。"
+msgstr "デフォルトでは無効：フラグは言語ではなく国です。"
 
 #: src/editor/language-switcher.js:144
 msgid "Include the current language"
@@ -5561,12 +8051,7 @@ msgstr "このページが翻訳されていない言語を非表示にする"
 
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
-msgstr "垂直に配置"
-
-#: src/editor/language-switcher.js:187
-#: src/workflow/pro__premium_only/ReplacePanel.js:126
-msgid "Colours"
-msgstr "カラー"
+msgstr "縦に並べる"
 
 #: src/editor/language-switcher.js:193
 msgid "Background"
@@ -5578,19 +8063,11 @@ msgstr "現在の言語テキスト"
 
 #: src/editor/language-switcher.js:204
 msgid "Current language background"
-msgstr "現在の言語設定"
-
-#: src/editor/language-switcher.js:211
-msgid "Border"
-msgstr "ボーダー"
+msgstr "現在の言語背景"
 
 #: src/editor/language-switcher.js:220
 msgid "Size and spacing"
 msgstr "サイズと間隔"
-
-#: src/editor/language-switcher.js:226
-msgid "Corner radius"
-msgstr "角の丸み"
 
 #: src/editor/language-switcher.js:231
 msgid "Space between languages"
@@ -5601,38 +8078,34 @@ msgid "Text size"
 msgstr "文字サイズ"
 
 #. translators: %s: user name.
-#: src/studio/app.js:118
+#: src/studio/app.js:122
 #, js-format
 msgid "%s is also editing this page. Saving may overwrite their changes."
 msgstr "%sもこのページを編集しています。保存すると、そのユーザーの変更が上書きされる可能性があります。"
 
-#: src/studio/app.js:133
-#: src/studio/app.js:140
-#: src/studio/components/header.js:109
+#: src/studio/app.js:137
+#: src/studio/app.js:144
+#: src/studio/components/header.js:136
 msgid "Block library"
 msgstr "ブロックライブラリ"
 
-#: src/studio/app.js:134
-#: src/studio/app.js:144
-#: src/studio/components/header.js:117
+#: src/studio/app.js:138
+#: src/studio/app.js:148
+#: src/studio/components/header.js:144
 msgid "Layers"
 msgstr "レイヤー"
 
-#: src/studio/app.js:148
-msgid "Close panel"
-msgstr "パネルを閉じる"
-
-#: src/studio/app.js:171
+#: src/studio/app.js:175
 msgid "Page canvas"
 msgstr "ページキャンバス"
 
-#: src/studio/app.js:199
-#: src/studio/components/header.js:207
+#: src/studio/app.js:203
+#: src/studio/components/header.js:236
 #: src/studio/components/revisions.js:80
 msgid "Revisions"
 msgstr "リビジョン"
 
-#: src/studio/app.js:201
+#: src/studio/app.js:205
 msgid "Block settings"
 msgstr "ブロック設定"
 
@@ -5654,12 +8127,12 @@ msgid "Open in Studio: %s"
 msgstr "Studioで開く: %s"
 
 #: src/studio/components/commands.js:205
-#: src/studio/components/header.js:125
+#: src/studio/components/header.js:152
 msgid "Undo"
 msgstr "元に戻す"
 
 #: src/studio/components/commands.js:214
-#: src/studio/components/header.js:134
+#: src/studio/components/header.js:161
 msgid "Redo"
 msgstr "やり直す"
 
@@ -5680,7 +8153,7 @@ msgid "Open the normal editor"
 msgstr "通常のエディタを開く"
 
 #: src/studio/components/commands.js:259
-#: src/studio/components/header.js:215
+#: src/studio/components/header.js:244
 #: src/studio/components/shortcuts.js:135
 msgid "Keyboard shortcuts"
 msgstr "キーボード ショートカット"
@@ -5722,89 +8195,95 @@ msgstr "セーフモードをオフにする"
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "セーフモードを有効にする（他のプラグインをオフ、ユーザー様向け、Studioのみ）"
 
-#: src/studio/components/header.js:32
+#: src/studio/components/header.js:33
 msgid "Published"
 msgstr "公開済み"
 
-#: src/studio/components/header.js:33
+#: src/studio/components/header.js:34
 msgid "Scheduled"
 msgstr "予約済み"
 
-#: src/studio/components/header.js:34
+#: src/studio/components/header.js:35
 msgid "Pending review"
 msgstr "審査待ち"
 
-#: src/studio/components/header.js:35
+#: src/studio/components/header.js:36
 msgid "Private"
 msgstr "プライベート"
 
-#: src/studio/components/header.js:36
 #: src/studio/components/header.js:37
+#: src/studio/components/header.js:38
 msgid "Draft"
 msgstr "下書き"
 
-#: src/studio/components/header.js:68
+#: src/studio/components/header.js:69
 msgid "All changes saved"
 msgstr "すべての変更が保存されました"
 
-#: src/studio/components/header.js:70
+#: src/studio/components/header.js:71
 msgid "Saving…"
 msgstr "保存中…"
 
-#: src/studio/components/header.js:72
+#: src/studio/components/header.js:73
 msgid "Autosaving…"
 msgstr "自動保存中…"
 
-#: src/studio/components/header.js:75
 #: src/studio/components/header.js:76
+#: src/studio/components/header.js:77
 msgid "Unsaved changes"
 msgstr "未保存の変更"
 
-#: src/studio/components/header.js:75
+#: src/studio/components/header.js:76
 msgid "autosaved"
 msgstr "自動保存済み"
 
-#: src/studio/components/header.js:83
+#: src/studio/components/header.js:85
 msgid "Desktop preview"
 msgstr "デスクトッププレビュー"
 
-#: src/studio/components/header.js:85
+#: src/studio/components/header.js:92
 msgid "Tablet preview"
 msgstr "タブレットプレビュー"
 
-#: src/studio/components/header.js:86
+#: src/studio/components/header.js:99
 msgid "Mobile preview"
 msgstr "モバイルプレビュー"
 
-#: src/studio/components/header.js:93
+#. translators: 1: a custom screen size's name, 2: its width in pixels.
+#: src/studio/components/header.js:107
+#, js-format
+msgid "%1$s preview (%2$d px)"
+msgstr "%1$s プレビュー (%2$d px)"
+
+#: src/studio/components/header.js:120
 msgid "Studio toolbar"
 msgstr "スタジオツールバー"
 
-#: src/studio/components/header.js:102
+#: src/studio/components/header.js:129
 msgid "Back to the normal editor"
 msgstr "通常のエディターに戻る"
 
-#: src/studio/components/header.js:148
+#: src/studio/components/header.js:175
 msgid "Page title"
 msgstr "ページタイトル"
 
-#: src/studio/components/header.js:158
+#: src/studio/components/header.js:185
 msgid "Preview width"
 msgstr "プレビューの幅"
 
-#: src/studio/components/header.js:185
+#: src/studio/components/header.js:214
 msgid "Command palette"
 msgstr "コマンドパレット"
 
-#: src/studio/components/header.js:227
+#: src/studio/components/header.js:258
 msgid "View page (opens in a new tab)"
 msgstr "ページを表示 (新しいタブで開きます)"
 
-#: src/studio/components/header.js:253
+#: src/studio/components/header.js:284
 msgid "Save draft"
 msgstr "下書きを保存"
 
-#: src/studio/components/header.js:263
+#: src/studio/components/header.js:294
 msgid "Publish"
 msgstr "公開"
 
@@ -5980,7 +8459,7 @@ msgstr "保存しました。"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:94
 msgid "Maintenance and pre-launch mode"
-msgstr "メンテナンスおよびプレローンチモード"
+msgstr "メンテナンスおよびローンチ前モード"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:112
 msgid "What visitors see"
@@ -5992,11 +8471,11 @@ msgstr "通常どおりのサイト"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:127
 msgid "Maintenance: a notice, and search engines are told to come back later"
-msgstr "メンテナンス：通知を表示し、検索エンジンには後ほど再訪するよう伝えます"
+msgstr "メンテナンス：通知を表示し、検索エンジンには後ほど再訪問するよう指示します"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:134
 msgid "Pre-launch: a notice, and search engines are told not to index the site"
-msgstr "事前公開：通知が表示され、検索エンジンにはサイトをインデックスしないよう指示されます"
+msgstr "ローンチ前: 通知、および検索エンジンにサイトをインデックスしないよう指示します"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:145
 msgid "Page to show instead"
@@ -6004,15 +8483,15 @@ msgstr "代わりに表示するページ"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:149
 msgid "Design any page with the builder and choose it here. Without one, visitors see a short notice with the site’s name."
-msgstr "ビルダーで任意のページを作成し、ここで選択します。未選択の場合、訪問者にはサイト名が表示された簡単な通知が表示されます。"
+msgstr "ビルダーで任意のページをデザインし、ここで選択します。設定しない場合、訪問者にはサイト名が記載された短い通知が表示されます。"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:164
 msgid "Who still sees the real site (administrators always do):"
-msgstr "実際のサイトを閲覧できるユーザー（管理者には常に表示されます）："
+msgstr "実際のサイトを引き続き表示できるユーザー（管理者は常に表示できます）:"
 
 #: src/workflow/pro__premium_only/MaintenancePanel.js:199
 msgid "Open the site in a private window to see what visitors see."
-msgstr "プライベートウィンドウでサイトを開いて、訪問者にどのように表示されるかを確認してください。"
+msgstr "訪問者に見える状態を確認するには、プライベートウィンドウでサイトを開いてください。"
 
 #: src/workflow/pro__premium_only/network.js:54
 msgid "Network settings saved."
@@ -6031,7 +8510,7 @@ msgstr "共有テンプレート"
 
 #: src/workflow/pro__premium_only/network.js:116
 msgid "Patterns saved on the main site that are ticked here appear on every site, under “Network templates”. Each site inserts its own copy."
-msgstr "メインサイトで保存され、ここでチェックを入れたパターンは、すべてのサイトの「ネットワークテンプレート」に表示されます。各サイトに独自のコピーが挿入されます。"
+msgstr "メインサイトで保存され、ここでチェックを入れたパターンは、すべてのサイトに「ネットワークテンプレート」として表示されます。各サイトは独自のコピーを挿入します。"
 
 #: src/workflow/pro__premium_only/network.js:123
 msgid "The main site has no saved patterns yet."
@@ -6067,7 +8546,7 @@ msgstr "作成者"
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
-msgstr "著者のウェブサイト"
+msgstr "著者ウェブサイト"
 
 #: src/workflow/pro__premium_only/network.js:179
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:145
@@ -6093,26 +8572,26 @@ msgstr[0] "検索中… %d 件のアイテムを確認しました。"
 #: src/workflow/pro__premium_only/replace-lib.js:36
 #, js-format
 msgid "No matches in %d items. Nothing to replace."
-msgstr "%d 件中一致する項目はありません。置換する対象がありません。"
+msgstr "%d件中一致する項目はありません。置換する項目はありません。"
 
 #. translators: 1: number of matches, 2: number of pages, 3: number of items searched.
 #: src/workflow/pro__premium_only/replace-lib.js:44
 #, js-format
 msgid "%1$d matches on %2$d pages (%3$d items searched). Nothing has changed yet."
-msgstr "%2$dページ中%1$d件の一致が見つかりました（検索対象: %3$d項目）。まだ何も変更されていません。"
+msgstr "%2$dページ中で%1$d件の一致が見つかりました（検索対象アイテム数：%3$d）。まだ何も変更されていません。"
 
 #. translators: 1: pages changed so far, 2: pages to change.
 #: src/workflow/pro__premium_only/replace-lib.js:55
 #, js-format
 msgid "Replacing… %1$d of %2$d pages done."
-msgstr "置換中… %1$d / %2$d ページ完了。"
+msgstr "置き換え中… %1$d / %2$d ページが完了しました。"
 
 #. translators: %d: number of pages changed.
 #: src/workflow/pro__premium_only/replace-lib.js:65
 #, js-format
 msgid "Done: %d page changed. You can undo this."
 msgid_plural "Done: %d pages changed. You can undo this."
-msgstr[0] "完了しました：%dページの変更が適用されました。この操作は元に戻すことができます。"
+msgstr[0] "完了しました：%dページの変更を行いました。これは元に戻すことができます。"
 
 #: src/workflow/pro__premium_only/replace-lib.js:74
 msgid "Undoing…"
@@ -6122,18 +8601,18 @@ msgstr "元に戻しています…"
 #: src/workflow/pro__premium_only/replace-lib.js:79
 #, js-format
 msgid "Undone: %1$d pages restored. %2$d pages were edited after the replacement and were left as they are."
-msgstr "元に戻しました：%1$dページを復元しました。%2$dページは置換後に編集されたため、そのまま残されました。"
+msgstr "取り消し済み: %1$d ページが復元されました。%2$d ページは置換後に編集されたため、そのまま残されました。"
 
 #. translators: %d: pages restored.
 #: src/workflow/pro__premium_only/replace-lib.js:88
 #, js-format
 msgid "Undone: %d page restored."
 msgid_plural "Undone: %d pages restored."
-msgstr[0] "取り消し済み：%dページの復元が完了しました。"
+msgstr[0] "元に戻しました: %d ページが復元されました。"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:97
 msgid "Find and replace across all pages"
-msgstr "すべてのページで検索と置換"
+msgstr "すべてのページで検索して置換"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
@@ -6153,7 +8632,7 @@ msgstr "#1a73e8 などの16進数のカラーコード。#fff のような短縮
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:150
 msgid "Replace with"
-msgstr "置き換え"
+msgstr "置換"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:157
 msgid "Match upper and lower case"
@@ -6161,11 +8640,11 @@ msgstr "大文字と小文字を区別する"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:166
 msgid "Search in"
-msgstr "検索対象"
+msgstr "検索先"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:191
 msgid "Find matches"
-msgstr "一致項目の検索"
+msgstr "一致するものを検索"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:204
 msgid "Page"
@@ -6173,7 +8652,7 @@ msgstr "ページ"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:210
 msgid "Matches"
-msgstr "一致"
+msgstr "一致する項目"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:251
 msgid "Previous"
@@ -6183,22 +8662,22 @@ msgstr "前へ"
 #: src/workflow/pro__premium_only/ReplacePanel.js:255
 #, js-format
 msgid "Page %1$d of %2$d"
-msgstr "ページ %1$d / %2$d"
+msgstr "%1$d ページ / 全 %2$d ページ"
 
 #. translators: %d: number of pages.
 #: src/workflow/pro__premium_only/ReplacePanel.js:281
 #, js-format
 msgid "Replace on %d page"
 msgid_plural "Replace on %d pages"
-msgstr[0] "%dページ目を置き換える"
+msgstr[0] "%dページで置換"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:296
 msgid "Undo this replacement"
-msgstr "この置換を元に戻す"
+msgstr "この置き換えを元に戻す"
 
 #: src/workflow/pro__premium_only/review-layer.js:78
 msgid "Review comments"
-msgstr "コメントの確認"
+msgstr "コメントを確認"
 
 #: src/workflow/pro__premium_only/review-layer.js:83
 msgid "Add a comment"
@@ -6214,12 +8693,12 @@ msgstr "%2$s によるコメント %1$d: %3$s"
 #: src/workflow/pro__premium_only/review-layer.js:135
 #, js-format
 msgid "%d comments on this page."
-msgstr "このページには%d件のコメントがあります。"
+msgstr "このページには %d 件のコメントがあります。"
 
 #: src/workflow/pro__premium_only/review-layer.js:152
 #: src/workflow/pro__premium_only/review-layer.js:153
 msgid "Your name"
-msgstr "お名前"
+msgstr "氏名"
 
 #: src/workflow/pro__premium_only/review-layer.js:158
 #: src/workflow/pro__premium_only/review-layer.js:159
@@ -6232,30 +8711,30 @@ msgstr "コメントを送信"
 
 #: src/workflow/pro__premium_only/review-layer.js:197
 msgid "Thank you, your comment was sent."
-msgstr "ご意見を送信いただきありがとうございます。"
+msgstr "ありがとうございます。コメントが送信されました。"
 
 #: src/workflow/pro__premium_only/review-layer.js:213
 msgid "Click the part of the page your comment is about."
-msgstr "コメントの対象となるページの部分をクリックしてください。"
+msgstr "コメントを紐付けるページの箇所をクリックしてください。"
 
 #: src/workflow/pro__premium_only/review-panel.js:18
 #: src/workflow/pro__premium_only/review-panel.js:39
 #: src/workflow/pro__premium_only/review-panel.js:43
 msgid "Client review"
-msgstr "クライアントレビュー"
+msgstr "クライアントのレビュー"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:88
 msgid "That part of the page could not be found: it may have been changed or removed since the comment was made."
-msgstr "ページのその部分が見つかりませんでした。コメントが投稿されてから変更または削除された可能性があります。"
+msgstr "ページのその部分は見つかりませんでした。コメントが投稿されてから変更または削除された可能性があります。"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:121
 #: src/workflow/pro__premium_only/ReviewPanel.js:142
 msgid "Review link"
-msgstr "リンクの確認"
+msgstr "確認リンク"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:124
 msgid "Let a client comment on this page"
-msgstr "クライアントがこのページにコメントを残せるようにする"
+msgstr "クライアントにこのページへのコメントを許可する"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
@@ -6271,7 +8750,7 @@ msgstr "リンクをコピー"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:162
 msgid "Make a new link (the old one stops working)"
-msgstr "新しいリンクを作成（古いリンクは使えなくなります）"
+msgstr "新しいリンクを作成する（古いリンクは動作しなくなります）"
 
 #. translators: %d: number of open comments.
 #: src/workflow/pro__premium_only/ReviewPanel.js:173
@@ -6286,7 +8765,7 @@ msgstr "解決済みのコメントを表示"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:193
 msgid "No comments to show."
-msgstr "コメントはありません。"
+msgstr "表示するコメントはありません。"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:222
 msgid "Reply"
@@ -6294,7 +8773,7 @@ msgstr "返信"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:233
 msgid "Send reply"
-msgstr "返信を送信"
+msgstr "返信する"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:236
 msgid "Show in the editor"
@@ -6302,7 +8781,7 @@ msgstr "エディターで表示"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:246
 msgid "Resolve"
-msgstr "解決"
+msgstr "解決する"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:253
 msgid "Reopen"
@@ -6314,7 +8793,7 @@ msgstr "オープン・サンドイッチ・スタジオ"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:25
 msgid "Change styles"
-msgstr "スタイルを変更"
+msgstr "スタイルの変更"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:29
 msgid "Custom CSS and HTML"
@@ -6334,11 +8813,11 @@ msgstr "クライアントモード：テキストと画像のみ"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:85
 msgid "Role settings saved."
-msgstr "ロール設定を保存しました。"
+msgstr "役割の設定が保存されました。"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:99
 msgid "Roles and client mode"
-msgstr "ロールとクライアントモード"
+msgstr "役割とクライアントモード"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:103
 msgid "Choose what each role can do in the builder. Administrators can always do everything. Client mode locks the layout and design, so the role can only change text and images."
@@ -6346,11 +8825,11 @@ msgstr "ビルダー内で各役割の権限を選択してください。管理
 
 #: src/workflow/pro__premium_only/RolesPanel.js:122
 msgid "Role"
-msgstr "ロール"
+msgstr "役割"
 
 #: src/workflow/pro__premium_only/RolesPanel.js:170
 msgid "Save role settings"
-msgstr "役割設定を保存"
+msgstr "ロール設定を保存"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:68
 msgid "Saved. Reload the page to see the new names."
@@ -6362,11 +8841,11 @@ msgstr "ホワイトラベル"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:103
 msgid "Rename the builder and hide our branding on this site"
-msgstr "このサイトのビルダー名を変更し、当社のブランド名を非表示にする"
+msgstr "このサイトのビルダー名を変更し、当社のブランドを非表示にする"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:115
 msgid "Shown everywhere the product name appears: menus, the editor, notices."
-msgstr "製品名が表示される場所（メニュー、エディター、通知など）すべてに表示されます。"
+msgstr "製品名が表示されるすべての場所（メニュー、エディター、通知）に表示されます。"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:123
 msgid "Leave empty to use the builder name."
@@ -6378,7 +8857,7 @@ msgstr "プラグイン画面の説明"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:146
 msgid "A Dashicons name (for example dashicons-admin-customizer) or an https:// image address."
-msgstr "Dashicons名（例：dashicons-admin-customizer）または https:// から始まる画像アドレス。"
+msgstr "Dashicons 名（例: dashicons-admin-customizer）または https:// から始まる画像アドレス。"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:153
 msgid "Hide the plugin from the Plugins screen"
@@ -6386,21 +8865,21 @@ msgstr "プラグイン画面からプラグインを非表示にする"
 
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:165
 msgid "Agency users who still see the real product and these settings"
-msgstr "実際の商品とこれらの設定をまだ表示している代理店ユーザー"
+msgstr "実際のプロダクトやこれらの設定が依然として表示されるエージェンシーユーザー"
 
 #. translators: %d: number of items.
 #: src/workflow/transfer-lib.js:53
 #, js-format
 msgid "%d new"
 msgid_plural "%d new"
-msgstr[0] "%d件の新着"
+msgstr[0] "%d件の新規"
 
 #. translators: %d: number of items.
 #: src/workflow/transfer-lib.js:63
 #, js-format
 msgid "%d replaced"
 msgid_plural "%d replaced"
-msgstr[0] "%d件置換されました"
+msgstr[0] "%d件置き換えられました"
 
 #. translators: %d: number of items.
 #: src/workflow/transfer-lib.js:73
@@ -6414,13 +8893,13 @@ msgstr[0] "%d件はそのまま維持されました"
 #, js-format
 msgid "%d setting"
 msgid_plural "%d settings"
-msgstr[0] "%d個の設定"
+msgstr[0] "%d件の設定"
 
 #. translators: %s: a list such as "2 new, 1 replaced".
 #: src/workflow/transfer-lib.js:96
 #, js-format
 msgid "Importing will give: %s."
-msgstr "インポートすると次のようになります: %s。"
+msgstr "インポートすると次が生成されます: %s。"
 
 #. translators: %s: a list such as "2 new, 1 replaced".
 #: src/workflow/transfer-lib.js:101
@@ -6433,11 +8912,11 @@ msgstr "インポート済み：%s。"
 #, js-format
 msgid "Exported %d item."
 msgid_plural "Exported %d items."
-msgstr[0] "%d件のアイテムをエクスポートしました。"
+msgstr[0] "%d件のエクスポートが完了しました。"
 
 #: src/workflow/TransferPanel.js:129
 msgid "That file could not be read as an export file."
-msgstr "そのファイルをエクスポートファイルとして読み込めませんでした。"
+msgstr "そのファイルをエクスポートファイルとして読み込むことができませんでした。"
 
 #: src/workflow/TransferPanel.js:139
 msgid "Import and export"
@@ -6449,7 +8928,7 @@ msgstr "エクスポート"
 
 #: src/workflow/TransferPanel.js:159
 msgid "Download your templates, patterns and site design as one file, to import on another site."
-msgstr "テンプレート、パターン、およびサイトのデザインを1つのファイルとしてダウンロードし、別のサイトにインポートします。"
+msgstr "テンプレート、パターン、サイトデザインを1つのファイルとしてダウンロードし、別のサイトにインポートできます。"
 
 #: src/workflow/TransferPanel.js:167
 msgid "There are no templates or patterns to export yet."
@@ -6481,11 +8960,11 @@ msgstr[0] "このファイルには %2$s からのアイテムが %1$d 個含ま
 
 #: src/workflow/TransferPanel.js:230
 msgid "When an item with the same name already exists here"
-msgstr "同名のアイテムがすでにここに存在する場合"
+msgstr "同じ名前のアイテムがすでにここに存在する場合"
 
 #: src/workflow/TransferPanel.js:238
 msgid "Keep the one on this site"
-msgstr "このサイトの項目を残す"
+msgstr "このサイトのものを維持する"
 
 #: src/workflow/TransferPanel.js:245
 msgid "Replace it with the imported one"
@@ -6493,7 +8972,7 @@ msgstr "インポートしたもので置き換える"
 
 #: src/workflow/TransferPanel.js:252
 msgid "Import a copy beside it"
-msgstr "隣にコピーをインポート"
+msgstr "隣にコピーをインポートする"
 
 #: src/workflow/TransferPanel.js:262
 msgid "Apply the settings in the file"
@@ -6501,11 +8980,41 @@ msgstr "ファイルの設定を適用する"
 
 #: src/workflow/TransferPanel.js:271
 msgid "Copy the images into this site’s media library"
-msgstr "このサイトのメディアライブラリに画像をコピーします"
+msgstr "このサイトのメディアライブラリに画像をコピーする"
 
 #: src/workflow/TransferPanel.js:285
 msgid "Show what will happen"
-msgstr "実行結果を表示する"
+msgstr "実行される変更を確認する"
+
+#: blocks/alert/block.json
+msgctxt "block title"
+msgid "Alert"
+msgstr "アラート"
+
+#: blocks/alert/block.json
+msgctxt "block description"
+msgid "A notice for your visitors: information, success, a warning or an error, with an optional title and a close button."
+msgstr "訪問者向けのお知らせ：情報、成功、警告、またはエラー。任意のタイトルと閉じるボタン付き。"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "notice"
+msgstr "通知"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "message"
+msgstr "メッセージ"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "callout"
+msgstr "コールアウト"
+
+#: blocks/alert/block.json
+msgctxt "block keyword"
+msgid "warning"
+msgstr "警告"
 
 #: blocks/button/block.json
 msgctxt "block title"
@@ -6549,9 +9058,49 @@ msgstr "列"
 
 #: blocks/column/block.json
 #: blocks/row/block.json
+#: blocks/section/block.json
 msgctxt "block keyword"
 msgid "layout"
 msgstr "レイアウト"
+
+#: blocks/container/block.json
+msgctxt "block title"
+msgid "Container"
+msgstr "コンテナ"
+
+#: blocks/container/block.json
+msgctxt "block description"
+msgid "A box that lays out the blocks inside it with flexbox or a grid. Nest containers to build any layout. Stays readable if the plugin is ever turned off."
+msgstr "Flexboxまたはグリッドを使用して内部のブロックを配置するボックスです。コンテナをネストして、あらゆるレイアウトを構築できます。プラグインを無効にしても読みやすさを維持します。"
+
+#: blocks/container/block.json
+#: blocks/section/block.json
+msgctxt "block keyword"
+msgid "container"
+msgstr "コンテナ"
+
+#: blocks/container/block.json
+msgctxt "block keyword"
+msgid "box"
+msgstr "ボックス"
+
+#: blocks/container/block.json
+#: blocks/section/block.json
+msgctxt "block keyword"
+msgid "grid"
+msgstr "グリッド"
+
+#: blocks/container/block.json
+#: blocks/section/block.json
+msgctxt "block keyword"
+msgid "flexbox"
+msgstr "flexbox"
+
+#: blocks/container/block.json
+#: blocks/row/block.json
+msgctxt "block keyword"
+msgid "columns"
+msgstr "列"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -6618,12 +9167,12 @@ msgstr "svg"
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
-msgstr "言語スイッチャー"
+msgstr "言語切替"
 
 #: blocks/language-switcher/block.json
 msgctxt "block description"
 msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
-msgstr "訪問者がこのページを別の言語で読めるようにし、ページのデザインに合わせたスタイルを適用します。言語を使用するには Tranzly プラグインが必要です。"
+msgstr "訪問者がこのページを別の言語で読めるようにし、ページのデザインに合わせることができます。言語の利用には Tranzly プラグインが必要です。"
 
 #: blocks/language-switcher/block.json
 msgctxt "block keyword"
@@ -6634,6 +9183,31 @@ msgstr "翻訳"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "多言語"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block title"
+msgid "Dark mode switch"
+msgstr "ダークモードスイッチ"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block description"
+msgid "A button that switches the website between its light and dark colours, and remembers the visitor's choice."
+msgstr "ウェブサイトの表示をライトモードとダークモードに切り替え、訪問者の選択を記憶するボタン。"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block keyword"
+msgid "dark"
+msgstr "ダーク"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block keyword"
+msgid "light"
+msgstr "ライト"
+
+#: blocks/pro__premium_only/dark-mode-switch/block.json
+msgctxt "block keyword"
+msgid "colour scheme"
+msgstr "配色"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -6650,10 +9224,20 @@ msgctxt "block keyword"
 msgid "row"
 msgstr "行"
 
-#: blocks/row/block.json
+#: blocks/section/block.json
+msgctxt "block title"
+msgid "Section"
+msgstr "セクション"
+
+#: blocks/section/block.json
+msgctxt "block description"
+msgid "A full-width band of the page that lays its content out with flexbox or a grid. Stays readable if the plugin is ever turned off."
+msgstr "コンテンツをフレックスボックスまたはグリッドで配置する、ページの全幅のバンド。プラグインがオフになっても読みやすさが維持されます。"
+
+#: blocks/section/block.json
 msgctxt "block keyword"
-msgid "columns"
-msgstr "列"
+msgid "section"
+msgstr "セクション"
 
 #: blocks/shortcode/block.json
 msgctxt "block title"

@@ -7,6 +7,12 @@
 const path = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 
+/** The Pro blocks' entry (build/blocks-pro…premium_only.js), see below. */
+const PRO_BLOCKS = `blocks-pro_${ '_premium_only' }`;
+
+/** The Pro design entry (build/design-pro…premium_only.js). */
+const PRO_DESIGN = `design-pro_${ '_premium_only' }`;
+
 /**
  * A premium entry's derived RTL sheet (`x-pro__premium_only-rtl.css`) carries the premium marker
  * MID-name, so neither the free build's strip rule nor Freemius's removes it, and
@@ -45,6 +51,38 @@ module.exports = {
 		'studio-button': path.resolve(
 			__dirname,
 			'src/studio/editor-button/index.js'
+		),
+		// pbs-p4: the design system (Style tab, preview, ids) — every block's design panel.
+		design: path.resolve( __dirname, 'src/design/index.js' ),
+		// Lane L09: the design-system blocks (free), and their Pro twin under a premium-only entry
+		// name, so its build output is dropped from the free package. The token is assembled from
+		// two halves because it must not appear in a file the free package ships (bootstrap.php).
+		blocks: path.resolve( __dirname, 'src/blocks/index.js' ),
+		[ PRO_BLOCKS ]: path.resolve(
+			__dirname,
+			`src/blocks/pro_${ '_premium_only' }/index.js`
+		),
+		// pbs-d3 (Pro): the custom-breakpoint editor on the settings screen, same split.
+		[ PRO_DESIGN ]: path.resolve(
+			__dirname,
+			`src/design/pro_${ '_premium_only' }/index.js`
+		),
+		// pbs-r14 (Pro): effect props + Effects panels. A premium path, so the free build drops it.
+		[ `effects-pro_${ '_premium_only' }` ]: path.resolve(
+			__dirname,
+			`src/design/pro_${ '_premium_only' }/effects/index.js`
+		),
+		// P4 design globals (L09 W2): the Site design sidebar/page (free) and its premium parts,
+		// premium entry names assembled like PRO_BLOCKS so the token stays out of shipped files.
+		'site-design': path.resolve( __dirname, 'src/design/site-design/editor.js' ),
+		'site-design-page': path.resolve( __dirname, 'src/design/site-design/admin.js' ),
+		[ `site-design-pro_${ '_premium_only' }` ]: path.resolve(
+			__dirname,
+			`src/design/pro_${ '_premium_only' }/globals/index.js`
+		),
+		[ `design-editor-pro_${ '_premium_only' }` ]: path.resolve(
+			__dirname,
+			`src/design/pro_${ '_premium_only' }/globals/editor.js`
 		),
 		// Lane L12 (P14): workflow panels; Pro/Agency bundles live in premium-only paths.
 		workflow: path.resolve( __dirname, 'src/workflow/index.js' ),

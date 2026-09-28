@@ -236,8 +236,12 @@ final class Assets {
 			return null;
 		}
 		$file = $manifest['files'][ $key ] ?? null;
-
-		return is_array( $file ) && is_string( $file['url'] ?? null ) ? $file['url'] : null;
+		if ( ! is_array( $file ) || ! is_string( $file['url'] ?? null ) ) {
+			return null;
+		}
+		// ⛔ Re-based on TODAY's uploads URL, never read back as stored: a site that moved after the
+		// publish kept loading its stylesheets and view modules from the old host (Files::current_url()).
+		return Assets\Perf\Files::current_url( $file['url'] );
 	}
 
 	/**

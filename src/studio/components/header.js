@@ -4,8 +4,8 @@
 import { useDispatch, useSelect } from '@wordpress/data';
 import { store as coreStore } from '@wordpress/core-data';
 import { store as commandsStore } from '@wordpress/commands';
-import { Button } from '@wordpress/components';
-import { __, isRTL } from '@wordpress/i18n';
+import { Button, Slot } from '@wordpress/components';
+import { __, isRTL, sprintf } from '@wordpress/i18n';
 import { dateI18n, getSettings } from '@wordpress/date';
 import {
 	backup,
@@ -27,6 +27,7 @@ import { useBoot, useUi } from '../context';
 import { useSave } from '../hooks/use-save';
 import { SafeModeButton } from './safe-mode';
 import { titleOf } from '../lib/entity';
+import { breakpoints } from '../lib/devices';
 
 const STATUS_LABELS = {
 	publish: __( 'Published', 'page-builder-sandwich' ),
@@ -76,14 +77,40 @@ export default function Header( { lastAutosave } ) {
 			: __( 'Unsaved changes', 'page-builder-sandwich' );
 	}
 
+	// Desktop, Tablet, Mobile, then every custom breakpoint (pbs-d3), each resizing the canvas.
 	const devices = [
 		[
 			'desktop',
 			desktop,
 			__( 'Desktop preview', 'page-builder-sandwich' ),
 		],
-		[ 'tablet', tablet, __( 'Tablet preview', 'page-builder-sandwich' ) ],
-		[ 'mobile', mobile, __( 'Mobile preview', 'page-builder-sandwich' ) ],
+		...breakpoints().map( ( bp ) => {
+			if ( bp.id === 'tablet' ) {
+				return [
+					'tablet',
+					tablet,
+					__( 'Tablet preview', 'page-builder-sandwich' ),
+				];
+			}
+			if ( bp.id === 'mobile' ) {
+				return [
+					'mobile',
+					mobile,
+					__( 'Mobile preview', 'page-builder-sandwich' ),
+				];
+			}
+			return [
+				bp.id,
+				null,
+				sprintf(
+					/* translators: 1: a custom screen size's name, 2: its width in pixels. */
+					__( '%1$s preview (%2$d px)', 'page-builder-sandwich' ),
+					bp.label,
+					bp.min ?? bp.max
+				),
+				bp.label,
+			];
+		} ),
 	];
 
 	return (
@@ -160,15 +187,17 @@ export default function Header( { lastAutosave } ) {
 						'page-builder-sandwich'
 					) }
 				>
-					{ devices.map( ( [ key, icon, label ] ) => (
+					{ devices.map( ( [ key, icon, label, text ] ) => (
 						<Button
 							key={ key }
-							icon={ icon }
+							icon={ icon || undefined }
 							label={ label }
 							isPressed={ ui.device === key }
 							onClick={ () => ui.setDevice( key ) }
 							size="compact"
-						/>
+						>
+							{ icon ? undefined : text }
+						</Button>
 					) ) }
 				</div>
 			</div>
@@ -220,6 +249,8 @@ export default function Header( { lastAutosave } ) {
 					onClick={ () => ui.setHelpOpen( true ) }
 					size="compact"
 				/>
+				{ /* Plugins scoped `pbs-studio` add tools here (the Site design panel, L09). */ }
+				<Slot name="PbswStudioHeaderTools" />
 				<SafeModeButton />
 				{ boot.viewUrl && (
 					<Button

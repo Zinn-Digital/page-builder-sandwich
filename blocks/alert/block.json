@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/alert",
+	"title": "Alert",
+	"category": "pbs-content",
+	"icon": "warning",
+	"description": "A notice for your visitors: information, success, a warning or an error, with an optional title and a close button.",
+	"keywords": [
+		"notice",
+		"message",
+		"callout",
+		"warning"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"variant": {
+			"type": "string",
+			"enum": [
+				"info",
+				"success",
+				"warning",
+				"error"
+			],
+			"default": "info"
+		},
+		"title": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"content": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"showIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"dismissible": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false,
+		"interactivity": true
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

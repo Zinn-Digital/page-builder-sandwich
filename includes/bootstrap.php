@@ -25,8 +25,12 @@ require_once __DIR__ . '/class-rest.php';
 require_once __DIR__ . '/class-admin.php';
 require_once __DIR__ . '/class-plugin.php';
 require_once __DIR__ . '/core/load.php';
+require_once __DIR__ . '/blocks/load.php';
+require_once __DIR__ . '/design/icons/load.php';
 require_once __DIR__ . '/migrate/load.php';
+require_once __DIR__ . '/design/load.php';
 require_once __DIR__ . '/assets/load.php';
+require_once __DIR__ . '/design/globals/load.php';
 require_once __DIR__ . '/workflow/load.php';
 
 \ZinnDigital\PBS\Plugin::boot();
@@ -39,9 +43,12 @@ require_once __DIR__ . '/workflow/load.php';
 require_once __DIR__ . '/ai-core/load.php';
 \ZinnDigital\PBS\AiCore\Core::boot(
 	array(
-		'slug' => 'page-builder-sandwich',
-		'name' => 'Page Builder Sandwich',
-		'pro'  => static fn(): bool => pbsw_fs()->can_use_premium_code(),
+		'slug'     => 'page-builder-sandwich',
+		'name'     => 'Page Builder Sandwich',
+		'pro'      => static fn(): bool => pbsw_fs()->can_use_premium_code(),
+		// Every AI request this plugin sends passes through `pbsw_ai_messages` ($messages, $context:
+		// task, purpose, provider, model, user); the premium brand kit adds the brand (pbs-d10).
+		'messages' => static fn( array $messages, array $context ): array => (array) apply_filters( 'pbsw_ai_messages', $messages, $context ),
 	)
 );
 

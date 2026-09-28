@@ -255,7 +255,7 @@ final class Fonts {
 		if ( ! is_array( $entry ) || ! is_string( $entry['url'] ?? null ) ) {
 			return false;
 		}
-		wp_enqueue_style( Settings::prefix() . '-f' . substr( (string) $entry['hash'], 0, 8 ), (string) $entry['url'], array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- the file name is its content hash.
+		wp_enqueue_style( Settings::prefix() . '-f' . substr( (string) $entry['hash'], 0, 8 ), Files::current_url( (string) $entry['url'] ), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- the file name is its content hash.
 
 		return true;
 	}

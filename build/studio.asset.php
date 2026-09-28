@@ -17,7 +17,8 @@
 		'wp-keycodes',
 		'wp-media-utils',
 		'wp-notices',
+		'wp-plugins',
 		'wp-primitives'
 	),
-	'version' => 'f395a3848449fd12c551'
+	'version' => '1f4471d91e1cc7aff4c3'
 );

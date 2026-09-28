@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.3.1
+Stable tag: 6.4.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,10 @@ This is the first release of Page Builder Sandwich rebuilt from the ground up. I
 * **Settings and About screen** under the Page Builder Sandwich menu: set the class prefix and see the beta-update status for licensed installations.
 
 The admin screens stay clearly branded; only what your visitors see is neutral.
+
+= Bundled icon sets =
+
+The icon picker offers these free icon sets, shipped with the plugin (editor only; a chosen icon is placed on the page as inline SVG): Font Awesome Free (icons: CC BY 4.0), Lucide (ISC), Material Symbols (Apache License 2.0) and Phosphor (MIT). Each set's licence is included in `assets/icons/licenses/`. The sets are rebuilt from their published packages, pinned by version and checksum, with `php wp/bin/pbs-icons-build.php` in the plugin's source repository.
 
 = Workflow and agency tools =
 
@@ -57,6 +61,13 @@ Google Fonts are hosted on your own site. Only when an administrator adds a font
 * Terms: https://developers.google.com/terms
 * Privacy policy: https://policies.google.com/privacy
 
+Background videos from YouTube or Vimeo (Pro). Only when an author chooses a YouTube or Vimeo video as a section's background, a visitor's browser loads that video's player — from YouTube's privacy-enhanced domain `https://www.youtube-nocookie.com` or from `https://player.vimeo.com` with "do not track" set — and only once the visitor scrolls to that section and their device does not ask for reduced motion. Until then the page shows the poster image stored on your own site and contacts neither service. The request sends what any embedded video sends (the visitor's IP address and browser details, and the video's ID); the plugin sends nothing else.
+
+* YouTube terms: https://www.youtube.com/t/terms
+* YouTube (Google) privacy policy: https://policies.google.com/privacy
+* Vimeo terms: https://vimeo.com/terms
+* Vimeo privacy policy: https://vimeo.com/privacy
+
 AI features use the AI provider you choose, with your own API key. Nothing is sent to any AI provider until you add a key under Settings → AI providers and use an AI feature. When you do, the text the feature needs (for example, the content being written or translated) and your key are sent to that one provider, and to no one else. Keys are stored encrypted in your database and are never sent to Zinn Digital®. The "Save and test" button sends one short test request to the provider.
 
 * OpenAI: https://api.openai.com/v1 (terms: https://openai.com/policies/services-agreement/, privacy policy: https://openai.com/policies/privacy-policy/)
@@ -72,6 +83,12 @@ Recommended models list (off unless you turn it on). If you turn on the daily ch
 * Service: https://zinndigital.com
 * Terms: https://zinndigital.com/legal/terms
 * Privacy policy: https://zinndigital.com/legal/privacy
+
+Adobe Fonts (Pro, off unless you connect it). If you enter an Adobe Fonts kit id under Appearance → Site design → Custom fonts, the plugin requests `https://typekit.com/api/v1/json/kits/<kit id>/published` once when you save it, to read the kit's font names (the request carries only the kit id). From then on your pages, and the editor, load the kit's stylesheet from `https://use.typekit.net/<kit id>.css`, and your visitors' browsers download the fonts from Adobe. Remove the kit id to stop it.
+
+* Service: https://fonts.adobe.com
+* Terms: https://www.adobe.com/legal/terms.html
+* Privacy policy: https://www.adobe.com/privacy/policy.html
 
 == Installation ==
 
@@ -90,6 +107,17 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.4.0 =
+* New: design system. A Style tab on every block, including WordPress's own blocks: layout (flex and grid), spacing, size, typography, colours and backgrounds, borders, shadows and position, set per device and for hover. Styles are saved as settings and printed as one stylesheet per page, never as inline styles.
+* New: Section and Container blocks with flexbox and CSS grid, and a visual grid editor on the canvas (drag column and row lines, add or remove tracks, drag a block's corner to span cells).
+* New: three breakpoints (desktop, tablet, mobile) with editable widths, previewed live in the editor; Pro adds your own breakpoints.
+* New: Site design (Appearance → Site design, and a sidebar in the editor and Sandwich Studio): site colours and fonts shared with your theme's settings, so the builder and the Site Editor always match.
+* New (Pro): global classes and CSS variables, spacing, radius and shadow scales, custom CSS per block and per page, dark mode for your website with a Dark mode switch block, a brand kit the AI features use, and custom fonts (upload, or connect Adobe Fonts).
+* New: icon library with Font Awesome Free, Lucide, Material Symbols and Phosphor, searchable, plus your own SVG uploads (cleaned on the server). Icons are placed as inline SVG; no icon font is ever loaded.
+* New (Pro): visual effects: gradients, glass, masks, blend modes, filters, shape dividers, background video (YouTube and Vimeo load only when scrolled to) and slideshow backgrounds, all still under reduced-motion settings.
+* New: block framework for the design blocks (block categories, one registry, per-block stylesheets loaded only where used) and the Alert block (info, success, warning, error; optional title and icon; dismissible).
+* Fix: block stylesheets and scripts keep working after the site's address changes.
 
 = 6.3.1 =
 * Fix: the Pro build no longer ships a stray right-to-left stylesheet for the client review layer, which stopped the free and Pro packages from building.

@@ -56,7 +56,7 @@ final class Page_Css {
 	public const META_FILE = '_pbsw_page_css_file';
 
 	/** Bumped when the stored shape changes. */
-	private const SCHEMA = 2; // 2: no style rules (styles stay inline).
+	private const SCHEMA = 3; // 2: no style rules (styles stay inline). 3: design rules (pbs-p4) via pbsw_page_css_extra.
 
 	/** How deep synced patterns (`core/block`) are followed. */
 	private const MAX_REF_DEPTH = 4;
@@ -91,20 +91,35 @@ final class Page_Css {
 	 * @param callable|null                    $resolve_ref      `fn( int $ref ): array` → the parsed blocks of a synced pattern.
 	 * @param bool                             $button_shortcode The content uses `[pbs_button]`.
 	 * @param callable|null                    $read_source      `fn( string $key ): ?string` → a block stylesheet with the prefix applied.
-	 * @return array{css: string, names: array<int, string>}
+	 * @param int                              $post_id          The post compiled (0 when none; passed to the extra filter).
+	 * @return array{css: string, names: array<int, string>, blocks: array<int, array<string, mixed>>}
 	 */
-	public static function compile( array $blocks, string $prefix, ?callable $resolve_ref = null, bool $button_shortcode = false, ?callable $read_source = null ): array {
+	public static function compile( array $blocks, string $prefix, ?callable $resolve_ref = null, bool $button_shortcode = false, ?callable $read_source = null, int $post_id = 0 ): array {
 		$blocks = self::expand_refs( $blocks, $resolve_ref, 0 );
 		$names  = Block_Assets::names_in( $blocks, $button_shortcode );
 
 		$read_source = $read_source ?? static fn( string $key ): ?string => Assets::source( $key, $prefix );
 		$css         = '';
+		$map         = Block_Assets::map();
 		foreach ( $names as $name ) {
-			$css .= self::minify( (string) $read_source( Block_Assets::MAP[ $name ] ) );
+			$css .= self::minify( (string) $read_source( $map[ $name ] ) );
 		}
+		/**
+		 * Filters the CSS appended to a page's compiled sheet after the blocks' own stylesheets
+		 * (pbs-p4: the design system's `.<prefix>-s-<id>` rules). Compiled, not minified here:
+		 * a listener returns its CSS ready to serve.
+		 *
+		 * @param string                           $extra   CSS so far ('').
+		 * @param array<int, array<string, mixed>> $blocks  Parsed blocks, synced patterns expanded.
+		 * @param string                           $prefix  Class prefix.
+		 * @param int                              $post_id The post (0 when none).
+		 */
+		$css .= (string) apply_filters( 'pbsw_page_css_extra', '', $blocks, $prefix, $post_id );
+
 		return array(
-			'css'   => $css,
-			'names' => $names,
+			'css'    => $css,
+			'names'  => $names,
+			'blocks' => $blocks,
 		);
 	}
 
@@ -196,7 +211,7 @@ final class Page_Css {
 		}
 
 		$blocks   = parse_blocks( $content );
-		$compiled = self::compile( $blocks, Settings::prefix(), array( self::class, 'ref_blocks' ), has_shortcode( $content, 'pbs_button' ) );
+		$compiled = self::compile( $blocks, Settings::prefix(), array( self::class, 'ref_blocks' ), has_shortcode( $content, 'pbs_button' ), null, $post_id );
 		$state    = array(
 			'schema' => self::SCHEMA,
 			'sig'    => self::signature( $post ),
@@ -219,6 +234,16 @@ final class Page_Css {
 				$state['css']  = $compiled['css']; // Printed inline: uploads is not writable.
 			}
 		}
+
+		/**
+		 * Filters a post's compiled state before it is stored (pbs-p4 records which design rules
+		 * the sheet carries, so the render filter does not print them again).
+		 *
+		 * @param array<string, mixed>             $state   State.
+		 * @param array<int, array<string, mixed>> $blocks  Parsed blocks, synced patterns expanded.
+		 * @param int                              $post_id Post ID.
+		 */
+		$state = (array) apply_filters( 'pbsw_page_css_state', $state, $compiled['blocks'], $post_id );
 
 		update_post_meta( $post_id, self::META, wp_slash( $state ) );
 		update_post_meta( $post_id, self::META_FILE, $state['hash'] );
@@ -319,7 +344,7 @@ final class Page_Css {
 		$handle = Settings::prefix() . '-' . substr( '' === $hash ? 'none' : $hash, 0, 8 );
 		if ( '' !== $hash ) {
 			if ( is_string( $state['url'] ?? null ) ) {
-				wp_enqueue_style( $handle, (string) $state['url'], array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- the file name is its content hash.
+				wp_enqueue_style( $handle, Files::current_url( (string) $state['url'] ), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- the file name is its content hash.
 			} else {
 				wp_register_style( $handle, false, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- inline only.
 				wp_enqueue_style( $handle );
@@ -388,7 +413,15 @@ final class Page_Css {
 			}
 		}
 
-		return sha1( self::SCHEMA . '|' . PBSW_VERSION . '|' . Settings::prefix() . '|' . md5( $content ) . '|' . $refs );
+		/**
+		 * Filters what else makes a compiled state current (pbs-p4: the breakpoints).
+		 *
+		 * @param string   $extra '' so far.
+		 * @param \WP_Post $post  Post.
+		 */
+		$extra = (string) apply_filters( 'pbsw_page_css_signature', '', $post );
+
+		return sha1( self::SCHEMA . '|' . PBSW_VERSION . '|' . Settings::prefix() . '|' . md5( $content ) . '|' . $refs . $extra );
 	}
 
 	/**

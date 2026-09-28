@@ -1,0 +1,29 @@
+/*
+ * pbs/section (pbs-d1). Zero-specificity defaults (:where) so every design rule wins whatever
+ * order the sheets arrive in. Logical properties only.
+ */
+:where(.__PREFIX__-section) {
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	position: relative;
+}
+
+:where(.__PREFIX__-section--boxed) {
+	display: block;
+}
+
+:where(.__PREFIX__-section__in) {
+	display: flex;
+	position: relative;
+	flex-direction: column;
+	box-sizing: border-box;
+	inline-size: 100%;
+	max-inline-size: var(--__PREFIX__-cw, var(--wp--style--global--content-size, 1140px));
+	margin-inline: auto;
+}
+
+a:where(.__PREFIX__-section) {
+	color: inherit;
+	text-decoration: none;
+}

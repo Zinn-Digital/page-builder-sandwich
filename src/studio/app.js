@@ -27,11 +27,13 @@ import {
 	Button,
 	Notice,
 	Popover,
+	Slot,
 	SlotFillProvider,
 	SnackbarList,
 	Spinner,
 } from '@wordpress/components';
 import { CommandMenu } from '@wordpress/commands';
+import { PluginArea } from '@wordpress/plugins';
 import { store as noticesStore } from '@wordpress/notices';
 import { uploadMedia } from '@wordpress/media-utils';
 import { __, sprintf } from '@wordpress/i18n';
@@ -47,8 +49,10 @@ import { BlockMenuItems, PasteDialog } from './components/style-transfer-panel';
 import { useAutosave, useSave } from './hooks/use-save';
 import { getSidebars } from './lib/sidebars';
 import { useSnapshot } from './hooks/use-snapshot';
+import { deviceWidth, toBreakpoint, toDevice } from './lib/devices';
 
-const DEVICE_WIDTH = { desktop: null, tablet: 780, mobile: 380 };
+/** The design system's editor store (src/design/store.js), registered by build/design.js. */
+const DESIGN_STORE = 'pbsw/design';
 
 /**
  * Snackbars and errors.
@@ -98,7 +102,7 @@ function Editor() {
 	useSnapshot( resolved, boot.snapshotInterval );
 	useLeaveWarning();
 
-	const width = DEVICE_WIDTH[ ui.device ];
+	const width = deviceWidth( ui.device );
 	const layoutClass = boot.settings?.supportsLayout
 		? 'is-layout-constrained has-global-padding'
 		: 'is-layout-flow';
@@ -201,19 +205,32 @@ function Editor() {
 								__( 'Block settings', 'page-builder-sandwich' )
 					}
 				>
-					{ ui.revisionsOpen && (
-						<Revisions
-							onClose={ () => ui.setRevisionsOpen( false ) }
-						/>
-					) }
-					{ ! ui.revisionsOpen && openSidebar && (
-						<openSidebar.Component
-							onClose={ () => ui.setSidebar( null ) }
-						/>
-					) }
-					{ ! ui.revisionsOpen && ! openSidebar && (
-						<BlockInspector />
-					) }
+					{ /* A `pbs-studio` plugin panel (Site design, L09) takes the place of the inspector while open;
+					otherwise revisions, a registered Studio sidebar (L12), or the block inspector. */ }
+					<Slot name="PbswStudioSidebar">
+						{ ( fills ) => {
+							if ( fills.length ) {
+								return fills;
+							}
+							if ( ui.revisionsOpen ) {
+								return (
+									<Revisions
+										onClose={ () =>
+											ui.setRevisionsOpen( false )
+										}
+									/>
+								);
+							}
+							if ( openSidebar ) {
+								return (
+									<openSidebar.Component
+										onClose={ () => ui.setSidebar( null ) }
+									/>
+								);
+							}
+							return <BlockInspector />;
+						} }
+					</Slot>
 				</div>
 			</div>
 			<div className="pbsw-studio-footer">
@@ -227,6 +244,7 @@ function Editor() {
 			<PasteDialog />
 			<ShortcutsHelp />
 			<Notices />
+			<PluginArea scope="pbs-studio" />
 			<Popover.Slot />
 		</div>
 	);
@@ -268,7 +286,24 @@ export default function App( { boot } ) {
 	);
 
 	const [ left, setLeft ] = useState( null );
-	const [ device, setDevice ] = useState( 'desktop' );
+	// The preview width IS the design breakpoint being edited (pbs-d2): one state for the canvas
+	// and the Style tab. Local state only if the design bundle is missing.
+	const [ localDevice, setLocalDevice ] = useState( 'desktop' );
+	const hasDesign = !! window.pbswDesignStore;
+	const designBp = useSelect(
+		( select ) =>
+			hasDesign ? select( DESIGN_STORE ).getBreakpoint() : null,
+		[ hasDesign ]
+	);
+	const dispatch = useDispatch();
+	const device = hasDesign ? toDevice( designBp ) : localDevice;
+	const setDevice = useCallback(
+		( next ) =>
+			hasDesign
+				? dispatch( DESIGN_STORE ).setBreakpoint( toBreakpoint( next ) )
+				: setLocalDevice( next ),
+		[ hasDesign, dispatch ]
+	);
 	const [ revisionsOpen, setRevisionsOpen ] = useState( false );
 	const [ sidebar, setSidebar ] = useState( null );
 	const sidebars = useMemo( () => getSidebars(), [] );
@@ -315,6 +350,7 @@ export default function App( { boot } ) {
 		[
 			left,
 			device,
+			setDevice,
 			revisionsOpen,
 			sidebars,
 			sidebar,

@@ -1,0 +1,105 @@
+/*
+ * Front-end styles for the alert block. `__PREFIX__` is replaced with the neutral class prefix
+ * (default `zd`) when the file is published; logical properties only (wp/bin/pbs-logical-css.php).
+ * Loaded only on a page where this block renders, and folded into that page's compiled stylesheet.
+ * Colours: text on its own tint, every pair at least 7:1 (WCAG AAA) so a theme's link colour
+ * inside the alert stays readable too.
+ */
+.__PREFIX__-alert {
+	--__PREFIX__-alert-fg: #0b3a66;
+	--__PREFIX__-alert-bg: #e8f1fb;
+	--__PREFIX__-alert-accent: #1d6fc4;
+	display: flex;
+	gap: 0.75em;
+	align-items: flex-start;
+	box-sizing: border-box;
+	margin-block: 1em;
+	padding-block: 0.875em;
+	padding-inline: 1em;
+	border-inline-start: 4px solid var(--__PREFIX__-alert-accent);
+	border-radius: 4px;
+	background-color: var(--__PREFIX__-alert-bg);
+	color: var(--__PREFIX__-alert-fg);
+	line-height: 1.5;
+}
+
+.__PREFIX__-alert[hidden] {
+	display: none;
+}
+
+.__PREFIX__-alert--success {
+	--__PREFIX__-alert-fg: #0f4d2c;
+	--__PREFIX__-alert-bg: #e7f5ec;
+	--__PREFIX__-alert-accent: #1f8a4c;
+}
+
+.__PREFIX__-alert--warning {
+	--__PREFIX__-alert-fg: #5c3300;
+	--__PREFIX__-alert-bg: #fff4e0;
+	--__PREFIX__-alert-accent: #c77700;
+}
+
+.__PREFIX__-alert--error {
+	--__PREFIX__-alert-fg: #7a1111;
+	--__PREFIX__-alert-bg: #fdeaea;
+	--__PREFIX__-alert-accent: #c62828;
+}
+
+.__PREFIX__-alert a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.__PREFIX__-alert__icon {
+	flex: none;
+	line-height: 0;
+	color: var(--__PREFIX__-alert-accent);
+}
+
+.__PREFIX__-alert__body {
+	flex: 1 1 auto;
+	min-inline-size: 0;
+}
+
+.__PREFIX__-alert__title,
+.__PREFIX__-alert__text {
+	margin-block: 0;
+}
+
+.__PREFIX__-alert__title {
+	font-weight: 700;
+}
+
+.__PREFIX__-alert__title + .__PREFIX__-alert__text {
+	margin-block-start: 0.25em;
+}
+
+.__PREFIX__-alert__close {
+	flex: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	inline-size: 2rem;
+	block-size: 2rem;
+	margin-block: -0.25em;
+	margin-inline-start: auto;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+}
+
+.__PREFIX__-alert__close[hidden] {
+	display: none;
+}
+
+.__PREFIX__-alert__close:hover {
+	background-color: rgb(0 0 0 / 8%);
+}
+
+.__PREFIX__-alert__close:focus-visible {
+	outline: 2px solid currentcolor;
+	outline-offset: 2px;
+}

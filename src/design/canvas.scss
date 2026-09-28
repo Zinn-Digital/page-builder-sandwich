@@ -1,0 +1,85 @@
+// Editor CANVAS styles (inside the editor iframe, never on the front end): the visual grid editor.
+
+.pbsw-grid-overlay {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	z-index: 20;
+
+	&__col,
+	&__row {
+		position: absolute;
+		box-sizing: border-box;
+		outline: 1px dashed rgba(56, 88, 233, 0.55);
+		outline-offset: -1px;
+		background: rgba(56, 88, 233, 0.04);
+	}
+
+	&__handle {
+		position: absolute;
+		pointer-events: auto;
+		border: 0;
+		padding: 0;
+		background: transparent;
+		touch-action: none;
+
+		&::after {
+			content: "";
+			position: absolute;
+			background: #3858e9;
+			border-radius: 4px;
+			opacity: 0.7;
+		}
+
+		&:hover::after,
+		&:focus-visible::after {
+			opacity: 1;
+		}
+
+		&.is-col {
+			inline-size: 8px;
+			cursor: col-resize;
+
+			&::after {
+				inset-block: calc(50% - 16px);
+				inset-inline: 2px;
+			}
+		}
+
+		&.is-row {
+			block-size: 8px;
+			cursor: row-resize;
+
+			&::after {
+				inset-inline: calc(50% - 16px);
+				inset-block: 2px;
+			}
+		}
+	}
+
+	&__span {
+		position: absolute;
+		pointer-events: auto;
+		inline-size: 16px;
+		block-size: 16px;
+		padding: 0;
+		border: 2px solid #fff;
+		border-radius: 50%;
+		background: #3858e9;
+		cursor: nwse-resize;
+		touch-action: none;
+		box-shadow: 0 0 0 1px #3858e9;
+	}
+
+	&__tools {
+		position: absolute;
+		display: flex;
+		gap: 4px;
+		pointer-events: auto;
+		font-size: 12px;
+	}
+}
+
+.pbsw-design-hidden-here {
+	opacity: 0.35;
+}

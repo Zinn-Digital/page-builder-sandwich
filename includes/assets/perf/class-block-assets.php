@@ -10,10 +10,14 @@ declare( strict_types = 1 );
 namespace ZinnDigital\PBS\Assets\Perf;
 
 use ZinnDigital\PBS\Assets;
+use ZinnDigital\PBS\Blocks\Registry;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+// The block list is the registry's (lane L09): required here so this class works on its own.
+require_once dirname( __DIR__, 2 ) . '/blocks/class-registry.php';
 
 /**
  * Each block's stylesheet loads only on a page where that block renders.
@@ -30,13 +34,41 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Block_Assets {
 
-	/** Block name → published source key. */
-	public const MAP = array(
-		'pbs/row'    => 'block/row.css',
-		'pbs/column' => 'block/column.css',
-		'pbs/button' => 'block/button.css',
-		'pbs/icon'   => 'block/icon.css',
-	);
+	/**
+	 * The four P1 block stylesheets (name → published source key). Kept as a constant for the
+	 * callers that name it; the live map is map(), which adds every registry block and every
+	 * block the premium layer adds.
+	 */
+	public const MAP = Registry::CORE_STYLES;
+
+	/**
+	 * Blocks added at boot (the premium registry): name → published source key.
+	 *
+	 * @var array<string, string>
+	 */
+	private static array $extra = array();
+
+	/**
+	 * Block name → published source key: the registry's blocks plus any added at boot.
+	 *
+	 * @return array<string, string>
+	 */
+	public static function map(): array {
+		return array_merge( Registry::styles(), self::$extra );
+	}
+
+	/**
+	 * Add a block's stylesheet (the premium registry, at boot).
+	 *
+	 * @param string $name     Block name, e.g. `pbs/pricing`.
+	 * @param string $relative Stylesheet path inside the plugin.
+	 * @return void
+	 */
+	public static function add( string $name, string $relative ): void {
+		$key                  = 'block/' . basename( $relative );
+		self::$extra[ $name ] = $key;
+		Assets::add_source( $key, $relative );
+	}
 
 	/** Legacy shortcodes that render a block's markup, → the block they render as. */
 	public const SHORTCODES = array(
@@ -49,8 +81,12 @@ final class Block_Assets {
 	 * @return void
 	 */
 	public static function register(): void {
-		foreach ( self::MAP as $name => $key ) {
-			Assets::add_source( $key, 'assets/blocks/' . substr( $name, 4 ) . '.css' );
+		foreach ( Registry::style_sources() as $key => $relative ) {
+			Assets::add_source( $key, $relative );
+		}
+		// The design-system blocks' view modules, published with the other front-end assets.
+		foreach ( Registry::MODULES as $slug ) {
+			Modules::add( $slug, 'assets/modules/' . $slug . '.js' );
 		}
 		add_filter( 'render_block', array( self::class, 'on_render_block' ), 10, 2 );
 		add_filter( 'do_shortcode_tag', array( self::class, 'on_shortcode' ), 10, 2 );
@@ -92,16 +128,17 @@ final class Block_Assets {
 	 * @return bool Whether a stylesheet was enqueued.
 	 */
 	public static function ensure( string $name ): bool {
-		if ( ! isset( self::MAP[ $name ] ) || Page_Css::covers( $name ) ) {
+		$map = self::map();
+		if ( ! isset( $map[ $name ] ) || Page_Css::covers( $name ) ) {
 			return false;
 		}
-		Assets::enqueue_style( self::MAP[ $name ] );
+		Assets::enqueue_style( $map[ $name ] );
 
 		return true;
 	}
 
 	/**
-	 * Every stylable block name used in a parsed block tree (inner blocks included), in MAP order.
+	 * Every stylable block name used in a parsed block tree (inner blocks included), in map() order.
 	 *
 	 * @param array<int, array<string, mixed>> $blocks          Parsed blocks.
 	 * @param bool                             $button_shortcode Whether the content uses `[pbs_button]`.
@@ -114,7 +151,7 @@ final class Block_Assets {
 			$found['pbs/button'] = true;
 		}
 
-		return array_values( array_filter( array_keys( self::MAP ), static fn( string $n ): bool => isset( $found[ $n ] ) ) );
+		return array_values( array_filter( array_keys( self::map() ), static fn( string $n ): bool => isset( $found[ $n ] ) ) );
 	}
 
 	/**
@@ -153,12 +190,13 @@ final class Block_Assets {
 	 * @return void
 	 */
 	private static function walk( array $blocks, array &$found ): void {
+		$map = self::map();
 		foreach ( $blocks as $block ) {
 			if ( ! is_array( $block ) ) {
 				continue;
 			}
 			$name = (string) ( $block['blockName'] ?? '' );
-			if ( isset( self::MAP[ $name ] ) ) {
+			if ( isset( $map[ $name ] ) ) {
 				$found[ $name ] = true;
 			}
 			self::walk( (array) ( $block['innerBlocks'] ?? array() ), $found );

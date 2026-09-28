@@ -1,0 +1,58 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/section",
+	"title": "Section",
+	"category": "pbs-design",
+	"icon": "align-wide",
+	"description": "A full-width band of the page that lays its content out with flexbox or a grid. Stays readable if the plugin is ever turned off.",
+	"keywords": [
+		"section",
+		"container",
+		"grid",
+		"flexbox",
+		"layout"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"tag": {
+			"type": "string",
+			"enum": [
+				"section",
+				"div",
+				"header",
+				"footer",
+				"article",
+				"aside",
+				"main",
+				"nav"
+			],
+			"default": "section"
+		},
+		"width": {
+			"type": "string",
+			"enum": [
+				"full",
+				"boxed"
+			],
+			"default": "boxed"
+		},
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
+		"link": {
+			"type": "object"
+		}
+	},
+	"supports": {
+		"align": [
+			"wide",
+			"full"
+		],
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

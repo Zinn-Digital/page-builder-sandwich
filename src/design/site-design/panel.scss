@@ -1,0 +1,324 @@
+// The Site design panel (wp-admin only). Logical properties only, so the RTL copy that
+// @wordpress/scripts writes (…-rtl.css) is correct without a second stylesheet to maintain.
+
+.pbsw-sd {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.pbsw-sd-sidebar {
+	padding: 16px;
+}
+
+.pbsw-sd-studio {
+	display: flex;
+	flex-direction: column;
+	block-size: 100%;
+	overflow: auto;
+
+	> .pbsw-sd {
+		padding: 16px;
+	}
+}
+
+.pbsw-sd-page {
+	max-inline-size: 760px;
+	margin-block-start: 16px;
+	padding: 24px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+}
+
+.pbsw-sd__head {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.pbsw-sd__title {
+	margin: 0;
+	font-size: 15px;
+	font-weight: 600;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.pbsw-sd__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+
+	&:focus {
+		outline: none;
+	}
+
+	> li + li {
+		border-block-start: 1px solid #e0e0e0;
+	}
+}
+
+.pbsw-sd__item.components-button,
+.pbsw-sd__item {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	inline-size: 100%;
+	block-size: auto;
+	min-block-size: 48px;
+	padding-block: 10px;
+	padding-inline: 12px;
+	text-align: start;
+	column-gap: 8px;
+
+	svg {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+	}
+}
+
+.pbsw-sd__item-title {
+	font-weight: 500;
+	color: #1e1e1e;
+}
+
+.pbsw-sd__item-desc {
+	grid-column: 1;
+	font-size: 12px;
+	color: #757575;
+}
+
+.pbsw-sd__item.is-locked {
+	grid-template-columns: 1fr auto;
+	opacity: 0.75;
+}
+
+.pbsw-sd__pro {
+	padding-block: 2px;
+	padding-inline: 6px;
+	border-radius: 2px;
+	background: #1e1e1e;
+	color: #fff;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.pbsw-sd__upgrade {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0;
+}
+
+.pbsw-sd-section {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.pbsw-sd-h {
+	margin-block: 8px 0;
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #1e1e1e;
+}
+
+.pbsw-sd-help {
+	margin: 0;
+	font-size: 12px;
+	color: #757575;
+}
+
+.pbsw-sd-empty {
+	margin: 0;
+	color: #757575;
+}
+
+.pbsw-sd-list {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.pbsw-sd-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 8px;
+
+	> .components-base-control {
+		flex: 1 1 140px;
+		margin-block-end: 0;
+	}
+}
+
+.pbsw-sd-color {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+
+	.components-base-control {
+		inline-size: 120px;
+		margin-block-end: 0;
+	}
+
+	.is-invalid input {
+		border-color: #cc1818;
+	}
+}
+
+.pbsw-sd-color__toggle.components-button {
+	padding: 4px;
+	block-size: 40px;
+	min-inline-size: 40px;
+}
+
+.pbsw-sd-fonts {
+	margin: 0;
+	padding-inline-start: 16px;
+	font-size: 15px;
+}
+
+.pbsw-sd-save {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 8px;
+	padding-block-start: 8px;
+	border-block-start: 1px solid #e0e0e0;
+}
+
+.pbsw-sd-error {
+	margin: 0;
+	color: #cc1818;
+}
+
+.pbsw-sd-loading {
+	display: flex;
+	justify-content: center;
+	padding: 16px;
+}
+
+.pbsw-sd-notice.components-notice {
+	margin: 0;
+}
+
+// The premium sections' styles live here too: a premium entry that emits CSS would ship its
+// `…__premium_only-rtl.css` in the FREE package (the RTL suffix hides the premium marker from the
+// build's path rule and from the licensing service's). Plain styling, no premium behaviour.
+
+.pbsw-sd-classes {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+
+	> li + li {
+		border-block-start: 1px solid #e0e0e0;
+	}
+}
+
+.pbsw-sd-class {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	padding-block: 6px;
+	padding-inline: 10px;
+}
+
+.pbsw-sd-class__name {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	min-inline-size: 0;
+
+	code,
+	small {
+		overflow: hidden;
+		font-size: 11px;
+		color: #757575;
+		text-overflow: ellipsis;
+		background: none;
+		padding: 0;
+	}
+}
+
+.pbsw-sd-token .components-base-control {
+	flex: 1 1 110px;
+}
+
+.pbsw-sd-shadow {
+	inline-size: 32px;
+	block-size: 32px;
+	margin-block-end: 4px;
+	border-radius: 4px;
+	background: #fff;
+}
+
+.pbsw-sd-dark {
+	align-items: center;
+	justify-content: space-between;
+}
+
+.pbsw-sd-dark__light {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	min-inline-size: 110px;
+}
+
+.pbsw-sd-dark__swatch {
+	inline-size: 20px;
+	block-size: 20px;
+	border: 1px solid rgb(0 0 0 / 0.2);
+	border-radius: 50%;
+}
+
+.pbsw-sd-logo {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+
+	img {
+		max-block-size: 48px;
+		max-inline-size: 160px;
+	}
+}
+
+.pbsw-code {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+
+	.CodeMirror {
+		block-size: auto;
+		min-block-size: 140px;
+		border: 1px solid #949494;
+		border-radius: 2px;
+	}
+}
+
+.pbsw-code__label {
+	font-size: 11px;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.pbsw-code__area {
+	inline-size: 100%;
+	font-family: Menlo, Consolas, monaco, monospace;
+	font-size: 13px;
+}
+
+.pbsw-sd-tabs .components-tab-panel__tab-content {
+	padding-block-start: 12px;
+}
