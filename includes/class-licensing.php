@@ -28,6 +28,24 @@ final class Licensing {
 	}
 
 	/**
+	 * Is this site on the Agency plan (white label, client review, multisite network features)?
+	 *
+	 * Agency code lives only in premium paths, so the free package never reaches this with `true`.
+	 *
+	 * @return bool
+	 */
+	public static function is_agency(): bool {
+		$agency = self::can_use_premium() && pbsw_fs()->is_plan( 'agency' );
+
+		/**
+		 * Filters whether the Agency plan's features are available on this site.
+		 *
+		 * @param bool $agency True on the Agency plan.
+		 */
+		return (bool) apply_filters( 'pbsw_is_agency', $agency );
+	}
+
+	/**
 	 * The upgrade URL, or null when there is nothing to sell (premium already usable).
 	 *
 	 * ⭐ Upsells are runtime-gated rather than build-gated (CONTRACT §3): there are no free-only

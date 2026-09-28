@@ -107,6 +107,15 @@ final class Admin {
 		wp_set_script_translations( self::HANDLE, 'page-builder-sandwich', PBSW_DIR . 'languages' );
 		wp_add_inline_script( self::HANDLE, 'window.pbsAdmin = ' . wp_json_encode( self::data() ) . ';', 'before' );
 
+		/**
+		 * Fires after the admin screen's script is enqueued, so a module can enqueue a script that
+		 * adds a panel through the `pbs.admin.panels` JavaScript filter (it must depend on this
+		 * handle; the screen renders on DOM ready, after every footer script has run).
+		 *
+		 * @param string $handle The admin screen's script handle.
+		 */
+		do_action( 'pbsw_admin_enqueue', self::HANDLE );
+
 		if ( is_readable( PBSW_DIR . 'build/settings.css' ) ) {
 			wp_enqueue_style( self::HANDLE, PBSW_URL . 'build/settings.css', array( 'wp-components' ), (string) ( $asset['version'] ?? PBSW_VERSION ) );
 			wp_style_add_data( self::HANDLE, 'rtl', 'replace' );

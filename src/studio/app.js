@@ -45,6 +45,7 @@ import { SafeModeBanner } from './components/safe-mode';
 import { ShortcutsHelp, StudioShortcuts } from './components/shortcuts';
 import { BlockMenuItems, PasteDialog } from './components/style-transfer-panel';
 import { useAutosave, useSave } from './hooks/use-save';
+import { getSidebars } from './lib/sidebars';
 import { useSnapshot } from './hooks/use-snapshot';
 
 const DEVICE_WIDTH = { desktop: null, tablet: 780, mobile: 380 };
@@ -91,6 +92,7 @@ function useLeaveWarning() {
 function Editor() {
 	const boot = useBoot();
 	const ui = useUi();
+	const openSidebar = ui.sidebars.find( ( x ) => x.name === ui.sidebar );
 	const [ resolved, setResolved ] = useState( false );
 	const lastAutosave = useAutosave( boot.autosaveInterval );
 	useSnapshot( resolved, boot.snapshotInterval );
@@ -195,14 +197,21 @@ function Editor() {
 					aria-label={
 						ui.revisionsOpen
 							? __( 'Revisions', 'page-builder-sandwich' )
-							: __( 'Block settings', 'page-builder-sandwich' )
+							: openSidebar?.title ||
+								__( 'Block settings', 'page-builder-sandwich' )
 					}
 				>
-					{ ui.revisionsOpen ? (
+					{ ui.revisionsOpen && (
 						<Revisions
 							onClose={ () => ui.setRevisionsOpen( false ) }
 						/>
-					) : (
+					) }
+					{ ! ui.revisionsOpen && openSidebar && (
+						<openSidebar.Component
+							onClose={ () => ui.setSidebar( null ) }
+						/>
+					) }
+					{ ! ui.revisionsOpen && ! openSidebar && (
 						<BlockInspector />
 					) }
 				</div>
@@ -261,6 +270,8 @@ export default function App( { boot } ) {
 	const [ left, setLeft ] = useState( null );
 	const [ device, setDevice ] = useState( 'desktop' );
 	const [ revisionsOpen, setRevisionsOpen ] = useState( false );
+	const [ sidebar, setSidebar ] = useState( null );
+	const sidebars = useMemo( () => getSidebars(), [] );
 	const [ helpOpen, setHelpOpen ] = useState( false );
 	const [ pasteIntent, setPasteIntent ] = useState( null );
 
@@ -285,14 +296,32 @@ export default function App( { boot } ) {
 			device,
 			setDevice,
 			revisionsOpen,
-			setRevisionsOpen,
+			setRevisionsOpen: ( v ) => {
+				setSidebar( null );
+				setRevisionsOpen( v );
+			},
+			sidebars,
+			sidebar,
+			setSidebar: ( name ) => {
+				setRevisionsOpen( false );
+				setSidebar( name );
+			},
 			helpOpen,
 			setHelpOpen,
 			pasteIntent,
 			setPasteIntent,
 			goNormalEditor,
 		} ),
-		[ left, device, revisionsOpen, helpOpen, pasteIntent, goNormalEditor ]
+		[
+			left,
+			device,
+			revisionsOpen,
+			sidebars,
+			sidebar,
+			helpOpen,
+			pasteIntent,
+			goNormalEditor,
+		]
 	);
 
 	const settings = useMemo( () => {

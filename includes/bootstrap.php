@@ -27,6 +27,7 @@ require_once __DIR__ . '/class-plugin.php';
 require_once __DIR__ . '/core/load.php';
 require_once __DIR__ . '/migrate/load.php';
 require_once __DIR__ . '/assets/load.php';
+require_once __DIR__ . '/workflow/load.php';
 
 \ZinnDigital\PBS\Plugin::boot();
 

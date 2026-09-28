@@ -14,6 +14,9 @@ msgstr ""
 #: includes/class-admin.php:55
 #: includes/class-admin.php:56
 #: includes/class-admin.php:75
+#: includes/pro__premium_only/workflow/class-network.php:188
+#: includes/pro__premium_only/workflow/class-network.php:189
+#: includes/pro__premium_only/workflow/class-network.php:223
 msgid "Page Builder Sandwich"
 msgstr "Page Builder Sandwich"
 
@@ -89,338 +92,352 @@ msgstr "โค้ดและ CSS"
 
 #: includes/ai-core/class-admin.php:115
 #: includes/class-admin.php:72
+#: includes/pro__premium_only/workflow/class-network.php:221
 msgid "Sorry, you are not allowed to access this page."
 msgstr "ขออภัย คุณไม่ได้รับอนุญาตให้เข้าถึงหน้านี้"
 
 #. translators: %s: list of plugin names, e.g. "Tranzly, Page Builder Sandwich".
-#: includes/ai-core/class-admin.php:125
+#: includes/ai-core/class-admin.php:128
 #, php-format
 msgid "These settings are shared by every plugin that uses them: %s."
 msgstr "การตั้งค่าเหล่านี้ใช้ร่วมกันโดยปลั๊กอินทุกตัวที่ใช้งาน: %s"
 
-#: includes/ai-core/class-admin.php:128
+#: includes/ai-core/class-admin.php:131
 msgid "Your keys are encrypted in this site's database and are only ever sent to the provider you chose — never to us."
 msgstr "คีย์ของคุณถูกเข้ารหัสในฐานข้อมูลของเว็บไซต์นี้และจะถูกส่งไปยังผู้ให้บริการที่คุณเลือกเท่านั้น โดยจะไม่ถูกส่งมาที่เราเด็ดขาด"
 
-#: includes/ai-core/class-admin.php:155
+#: includes/ai-core/class-admin.php:158
 msgid "Step 1 of 2: choose an AI provider"
 msgstr "ขั้นตอนที่ 1 จาก 2: เลือกผู้ให้บริการ AI"
 
-#: includes/ai-core/class-admin.php:156
+#: includes/ai-core/class-admin.php:159
 msgid "You bring your own key, so you pay the provider directly for what you use. Not sure? Any of these works well; you can add more later."
 msgstr "คุณใช้คีย์ของคุณเอง ดังนั้นจึงชำระเงินให้กับผู้ให้บริการโดยตรงตามการใช้งานจริง ไม่แน่ใจหรือ ระบบใดๆ เหล่านี้ใช้งานได้ดี คุณสามารถเพิ่มภายหลังได้อีก"
 
-#: includes/ai-core/class-admin.php:166
+#: includes/ai-core/class-admin.php:169
 #: includes/freemius-strings.php:1570
 #: includes/freemius-strings.php:4586
+#: src/workflow/pro__premium_only/ReplacePanel.js:270
 msgid "Next"
 msgstr "ถัดไป"
 
 #. translators: %s: AI provider name.
-#: includes/ai-core/class-admin.php:175
+#: includes/ai-core/class-admin.php:178
 #, php-format
 msgid "Step 2 of 2: connect %s"
 msgstr "ขั้นตอนที่ 2 จาก 2: เชื่อมต่อ %s"
 
-#: includes/ai-core/class-admin.php:180
+#: includes/ai-core/class-admin.php:183
 msgid "Enter the address of your OpenAI-compatible service, ending in /v1. A key is only needed if the service asks for one."
 msgstr "ป้อนที่อยู่ของบริการที่เข้ากันได้กับ OpenAI ของคุณ โดยลงท้ายด้วย /v1 จำเป็นต้องใช้คีย์ก็ต่อเมื่อบริการนั้นร้องขอเท่านั้น"
 
 #. translators: %s: link to the provider's API key page.
-#: includes/ai-core/class-admin.php:185
+#: includes/ai-core/class-admin.php:188
 #, php-format
 msgid "Open %s and sign in (or create a free account)."
 msgstr "เปิด %s แล้วลงชื่อเข้าใช้ (หรือสร้างบัญชีฟรี)"
 
 #. translators: %s: AI provider name.
-#: includes/ai-core/class-admin.php:189
+#: includes/ai-core/class-admin.php:192
 #, php-format
 msgid "the %s API keys page"
 msgstr "หน้าคีย์ API %s"
 
-#: includes/ai-core/class-admin.php:194
+#: includes/ai-core/class-admin.php:197
 msgid "Create a new key and copy it."
 msgstr "สร้างคีย์ใหม่แล้วคัดลอก"
 
-#: includes/ai-core/class-admin.php:195
+#: includes/ai-core/class-admin.php:198
 msgid "Paste it below and press \"Save and test\". We send one tiny request to check it works."
 msgstr "วางข้อความลงด้านล่างแล้วกด \"บันทึกและทดสอบ\" เราจะส่งคำขอขนาดเล็กหนึ่งรายการเพื่อตรวจสอบว่าใช้งานได้"
 
 #. translators: %s: link to the provider's billing page.
-#: includes/ai-core/class-admin.php:200
+#: includes/ai-core/class-admin.php:203
 #, php-format
 msgid "Most providers need a little credit on the account before a key works: %s."
 msgstr "ผู้ให้บริการส่วนใหญ่ต้องการเครดิตในบัญชีเล็กน้อยก่อนที่คีย์จะทำงาน: %s"
 
-#: includes/ai-core/class-admin.php:201
+#: includes/ai-core/class-admin.php:204
 msgid "add credit"
 msgstr "เพิ่มเครดิต"
 
-#: includes/ai-core/class-admin.php:206
+#: includes/ai-core/class-admin.php:209
 msgid "← Choose a different provider"
 msgstr "← เลือกผู้ให้บริการรายอื่น"
 
-#: includes/ai-core/class-admin.php:224
+#: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
 msgid "Address"
 msgstr "ที่อยู่"
 
 #. translators: %s: the last four characters of the saved key.
-#: includes/ai-core/class-admin.php:228
+#: includes/ai-core/class-admin.php:231
 #, php-format
 msgid "Saved key ends in …%s — paste a new one to replace it"
 msgstr "คีย์ที่บันทึกไว้ลงท้ายด้วย …%s — วางคีย์ใหม่เพื่อแทนที่"
 
-#: includes/ai-core/class-admin.php:230
+#: includes/ai-core/class-admin.php:233
 msgid "Key (optional)"
 msgstr "คีย์ (ไม่บังคับ)"
 
-#: includes/ai-core/class-admin.php:230
+#: includes/ai-core/class-admin.php:233
 msgid "API key"
 msgstr "คีย์ API"
 
-#: includes/ai-core/class-admin.php:232
+#: includes/ai-core/class-admin.php:235
 msgid "Save and test"
 msgstr "บันทึกและทดสอบ"
 
-#: includes/ai-core/class-admin.php:242
+#: includes/ai-core/class-admin.php:245
 msgid "Providers"
 msgstr "ผู้ให้บริการ"
 
-#: includes/ai-core/class-admin.php:243
-#: includes/ai-core/class-admin.php:365
+#: includes/ai-core/class-admin.php:246
+#: includes/ai-core/class-admin.php:404
 msgid "Provider"
 msgstr "ผู้ให้บริการ"
 
-#: includes/ai-core/class-admin.php:243
+#: includes/ai-core/class-admin.php:246
 msgid "Status"
 msgstr "สถานะ"
 
-#: includes/ai-core/class-admin.php:243
+#: includes/ai-core/class-admin.php:246
 #: includes/freemius-strings.php:1252
 #: includes/freemius-strings.php:4347
 msgid "Key"
 msgstr "คีย์"
 
-#: includes/ai-core/class-admin.php:248
+#: includes/ai-core/class-admin.php:251
 msgid "Get a key"
 msgstr "รับคีย์"
 
-#: includes/ai-core/class-admin.php:253
+#: includes/ai-core/class-admin.php:256
 msgid "Test"
 msgstr "ทดสอบ"
 
-#: includes/ai-core/class-admin.php:254
-#: includes/ai-core/class-admin.php:387
+#: includes/ai-core/class-admin.php:257
+#: includes/ai-core/class-admin.php:426
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 msgid "Remove"
 msgstr "นำออก"
 
-#: includes/ai-core/class-admin.php:273
+#: includes/ai-core/class-admin.php:276
 msgid "Saved by a newer plugin version: update this plugin, or enter the key again."
 msgstr "บันทึกด้วยปลั๊กอินเวอร์ชันที่ใหม่กว่า: โปรดอัปเดตปลั๊กอินนี้ หรือป้อนคีย์อีกครั้ง"
 
-#: includes/ai-core/class-admin.php:275
+#: includes/ai-core/class-admin.php:278
 msgid "The saved key can no longer be opened (the site's security keys changed). Enter it again."
 msgstr "คีย์ที่บันทึกไว้จะไม่สามารถเปิดได้อีกแล้ว (คีย์ความปลอดภัยของเว็บไซต์เปลี่ยนแปลงไป) โปรดป้อนใหม่อีกครั้ง"
 
-#: includes/ai-core/class-admin.php:278
+#: includes/ai-core/class-admin.php:281
 msgid "Not connected"
 msgstr "ไม่ได้เชื่อมต่อ"
 
 #. translators: %s: date and time of the last successful test.
-#: includes/ai-core/class-admin.php:284
+#: includes/ai-core/class-admin.php:287
 #, php-format
 msgid "Connected — last test passed %s"
 msgstr "เชื่อมต่อแล้ว — การทดสอบล่าสุดผ่านเมื่อ %s"
 
 #. translators: %s: why the last test failed.
-#: includes/ai-core/class-admin.php:290
+#: includes/ai-core/class-admin.php:293
 #, php-format
 msgid "Last test failed: %s"
 msgstr "การทดสอบล่าสุดล้มเหลว: %s"
 
-#: includes/ai-core/class-admin.php:293
+#: includes/ai-core/class-admin.php:296
 msgid "Connected — not tested yet"
 msgstr "เชื่อมต่อแล้ว — ยังไม่ได้ทดสอบ"
 
-#: includes/ai-core/class-admin.php:302
+#: includes/ai-core/class-admin.php:305
 msgid "Which model to use"
 msgstr "รุ่นใดที่จะใช้"
 
-#: includes/ai-core/class-admin.php:303
+#: includes/ai-core/class-admin.php:306
 msgid "★ marks our recommendation for that task. The list includes every model your key can use, read live from the provider."
 msgstr "★ หมายถึงคำแนะนำของเราสำหรับงานนั้น รายการนี้รวมถึงทุกรุ่นที่คีย์ของคุณสามารถใช้งานได้ ซึ่งดึงข้อมูลแบบสดจากผู้ให้บริการ"
 
-#: includes/ai-core/class-admin.php:311
+#: includes/ai-core/class-admin.php:314
 msgid "— Recommended for the provider —"
 msgstr "— แนะนำสำหรับผู้ให้บริการ —"
 
-#: includes/ai-core/class-admin.php:330
+#: includes/ai-core/class-admin.php:334
 msgid "Save models"
 msgstr "บันทึกโมเดล"
 
-#: includes/ai-core/class-admin.php:332
+#: includes/ai-core/class-admin.php:336
 msgid "Refresh the model lists from the providers"
 msgstr "รีเฟรชรายการโมเดลจากผู้ให้บริการ"
 
-#: includes/ai-core/class-admin.php:344
+#: includes/ai-core/class-admin.php:356
+msgid "Images"
+msgstr "รูปภาพ"
+
+#: includes/ai-core/class-admin.php:358
+msgid "Connect OpenAI or Google Gemini to make images."
+msgstr "เชื่อมต่อ OpenAI หรือ Google Gemini เพื่อสร้างรูปภาพ"
+
+#: includes/ai-core/class-admin.php:362
+msgid "— The newest image model of the first connected provider —"
+msgstr "— อโมเดลภาพใหม่ล่าสุดจากผู้ให้บริการรายแรกที่เชื่อมต่อ —"
+
+#: includes/ai-core/class-admin.php:383
 msgid "best quality"
 msgstr "คุณภาพดีที่สุด"
 
-#: includes/ai-core/class-admin.php:346
+#: includes/ai-core/class-admin.php:385
 msgid "lowest cost"
 msgstr "ต้นทุนต่ำที่สุด"
 
-#: includes/ai-core/class-admin.php:348
+#: includes/ai-core/class-admin.php:387
 msgid "fastest"
 msgstr "เร็วที่สุด"
 
-#: includes/ai-core/class-admin.php:360
+#: includes/ai-core/class-admin.php:399
 msgid "Add a model yourself"
 msgstr "เพิ่มโมเดลด้วยตนเอง"
 
-#: includes/ai-core/class-admin.php:361
+#: includes/ai-core/class-admin.php:400
 msgid "A model came out today? Paste its exact name to use it straight away."
 msgstr "มีโมเดลใหม่ออกมาวันนี้ใช่ไหม วางชื่อจริงของโมเดลนั้นเพื่อใช้งานได้ทันที"
 
-#: includes/ai-core/class-admin.php:372
+#: includes/ai-core/class-admin.php:411
 msgid "Model name"
 msgstr "ชื่อรุ่น"
 
-#: includes/ai-core/class-admin.php:373
+#: includes/ai-core/class-admin.php:412
 msgid "Add model"
 msgstr "เพิ่มโมเดล"
 
-#: includes/ai-core/class-admin.php:403
+#: includes/ai-core/class-admin.php:442
 msgid "Recommended models list"
 msgstr "รายชื่อรุ่นที่แนะนำ"
 
-#: includes/ai-core/class-admin.php:406
+#: includes/ai-core/class-admin.php:445
 msgid "The recommended models list could not be verified, so no recommendations are shown. Reinstall the plugin, or turn on daily updates below."
 msgstr "ไม่สามารถตรวจสอบรายชื่อรุ่นที่แนะนำได้ จึงไม่มีการแสดงคำแนะนำ โปรดติดตั้งปลั๊กอินใหม่อีกครั้ง หรือเปิดใช้งานการอัปเดตรายวันด้านล่างนี้"
 
 #. translators: %s: publication date.
-#: includes/ai-core/class-admin.php:409
+#: includes/ai-core/class-admin.php:448
 #, php-format
 msgid "The list in use was published on %s. Each plugin update brings a fresh one."
 msgstr "รายการที่ใช้งานอยู่เผยแพร่เมื่อ %s การอัปเดตปลั๊กอินแต่ละครั้งจะนำรายการใหม่มาให้"
 
-#: includes/ai-core/class-admin.php:416
+#: includes/ai-core/class-admin.php:455
 msgid "Also check Zinn Digital® once a day for an updated list."
 msgstr "โปรดตรวจสอบ Zinn Digital® วันละครั้งเช่นกันเพื่อดูรายการที่อัปเดตแล้ว"
 
-#: includes/ai-core/class-admin.php:417
+#: includes/ai-core/class-admin.php:456
 msgid "Only a plain download request is sent: no key, no site address, nothing about your content. The list is signed, and a list that fails the signature check is ignored."
 msgstr "ระบบจะส่งเฉพาะคำขอรวบรวมข้อมูลแบบธรรมดา: ไม่มีคีย์, ไม่มีที่อยู่เว็บไซต์, ไม่มีข้อมูลใดๆ เกี่ยวกับเนื้อหาของคุณ รายการดังกล่าวได้รับการลงนาม และรายการใดที่ไม่ผ่านการตรวจสอบลายเซ็นจะถูกเพิกเฉย"
 
 #. translators: 1: date and time, 2: result such as "updated".
-#: includes/ai-core/class-admin.php:422
+#: includes/ai-core/class-admin.php:461
 #, php-format
 msgid "Last checked %1$s: %2$s."
 msgstr "ตรวจสอบล่าสุดเมื่อ %1$s: %2$s"
 
-#: includes/ai-core/class-admin.php:428
+#: includes/ai-core/class-admin.php:467
 msgid "Save, and check now if turned on"
 msgstr "บันทึก และตรวจสอบทันทีหากเปิดใช้งานอยู่"
 
-#: includes/ai-core/class-admin.php:441
+#: includes/ai-core/class-admin.php:480
 msgid "a newer list was installed"
 msgstr "มีการติดตั้งรายการที่ใหม่กว่าแล้ว"
 
-#: includes/ai-core/class-admin.php:443
+#: includes/ai-core/class-admin.php:482
 msgid "already up to date"
 msgstr "เป็นปัจจุบันอยู่แล้ว"
 
-#: includes/ai-core/class-admin.php:445
+#: includes/ai-core/class-admin.php:484
 msgid "the download failed the signature check and was ignored"
 msgstr "การดาวน์โหลดไม่ผ่านการตรวจสอบลายเซ็นและถูกละเว้น"
 
-#: includes/ai-core/class-admin.php:447
+#: includes/ai-core/class-admin.php:486
 msgid "Zinn Digital® could not be reached; the current list stays in use"
 msgstr "ไม่สามารถติดต่อ Zinn Digital® ได้ รายการปัจจุบันจึงยังคงใช้งานอยู่"
 
-#: includes/ai-core/class-admin.php:450
+#: includes/ai-core/class-admin.php:489
 msgid "turned off"
 msgstr "ปิดใช้งานแล้ว"
 
-#: includes/ai-core/class-admin.php:487
+#: includes/ai-core/class-admin.php:526
 msgid "Open"
 msgstr "เปิด"
 
-#: includes/ai-core/class-admin.php:530
+#: includes/ai-core/class-admin.php:569
 msgid "Check their status page"
 msgstr "ตรวจสอบหน้าสถานะของพวกเขา"
 
-#: includes/ai-core/class-admin.php:533
+#: includes/ai-core/class-admin.php:572
 msgid "Open your billing page"
 msgstr "เปิดหน้าการเรียกเก็บเงินของคุณ"
 
-#: includes/ai-core/class-admin.php:535
+#: includes/ai-core/class-admin.php:574
 msgid "Open your API keys page"
 msgstr "เปิดหน้าคีย์ API ของคุณ"
 
-#: includes/ai-core/class-admin.php:538
+#: includes/ai-core/class-admin.php:577
 msgid "Open the AI settings"
 msgstr "เปิดการตั้งค่า AI"
 
-#: includes/ai-core/class-admin.php:549
+#: includes/ai-core/class-admin.php:588
 #: includes/ai-core/pro__premium_only/class-pro-policy.php:296
 msgid "Sorry, you are not allowed to do that."
 msgstr "ขออภัย คุณไม่ได้รับอนุญาตให้ดำเนินการดังกล่าว"
 
-#: includes/ai-core/class-admin.php:575
-#: includes/ai-core/class-admin.php:609
+#: includes/ai-core/class-admin.php:614
+#: includes/ai-core/class-admin.php:648
 msgid "Unknown provider."
 msgstr "ไม่รู้จักผู้ให้บริการ"
 
-#: includes/ai-core/class-admin.php:583
+#: includes/ai-core/class-admin.php:622
 msgid "Enter the address of your service, for example http://localhost:11434/v1."
 msgstr "ป้อนที่อยู่ของบริการของคุณ เช่น http://localhost:11434/v1"
 
-#: includes/ai-core/class-admin.php:590
+#: includes/ai-core/class-admin.php:629
 msgid "That does not look like an API key. Copy it again, without spaces."
 msgstr "คีย์ API นั้นไม่ถูกต้อง โปรดคัดลอกใหม่อีกครั้งโดยไม่มีช่องว่าง"
 
-#: includes/ai-core/class-admin.php:594
+#: includes/ai-core/class-admin.php:633
 msgid "Paste your API key first."
 msgstr "กรุณาวางคีย์ API ของคุณก่อน"
 
-#: includes/ai-core/class-admin.php:658
+#: includes/ai-core/class-admin.php:697
 msgid "Key removed."
 msgstr "ลบคีย์แล้ว"
 
-#: includes/ai-core/class-admin.php:687
+#: includes/ai-core/class-admin.php:734
 msgid "Models saved."
 msgstr "บันทึกโมเดลแล้ว"
 
-#: includes/ai-core/class-admin.php:701
+#: includes/ai-core/class-admin.php:748
 msgid "Enter the model's exact name, for example as the provider's documentation writes it."
 msgstr "ป้อนชื่อรุ่นให้ถูกต้องตามที่ระบุไว้ในเอกสารของผู้ให้บริการ เช่น"
 
 #. translators: %s: model name.
-#: includes/ai-core/class-admin.php:725
+#: includes/ai-core/class-admin.php:772
 #, php-format
 msgid "Added %s. Choose it under \"Which model to use\"."
 msgstr "เพิ่ม %s แล้ว เลือกได้ที่หัวข้อ \"เลือกรุ่นที่จะใช้\""
 
-#: includes/ai-core/class-admin.php:754
+#: includes/ai-core/class-admin.php:801
 msgid "Model removed."
 msgstr "นำออกรุ่นแล้ว"
 
-#: includes/ai-core/class-admin.php:781
+#: includes/ai-core/class-admin.php:828
 msgid "Daily updates are off. The list that came with the plugin is used."
 msgstr "ปิดการอัปเดตรายวันแล้ว ระบบจะใช้รายการที่มาพร้อมกับปลั๊กอิน"
 
 #. translators: %s: result of the check, such as "already up to date".
-#: includes/ai-core/class-admin.php:788
+#: includes/ai-core/class-admin.php:835
 #, php-format
 msgid "Checked: %s."
 msgstr "เลือกแล้ว: %s"
 
-#: includes/ai-core/class-admin.php:810
+#: includes/ai-core/class-admin.php:857
 msgid "Model lists refreshed."
 msgstr "รีเฟรชรายการโมเดลแล้ว"
 
@@ -443,6 +460,19 @@ msgstr "ยังไม่ได้เลือกโมเดลสำหรั
 #: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "ปลั๊กอินเวอร์ชันนี้ไม่รองรับผู้ให้บริการ AI รายดังกล่าว"
+
+#: includes/ai-core/class-client.php:125
+msgid "No AI provider that can make images is connected. Add an OpenAI or Google Gemini key in the AI settings."
+msgstr "ยังไม่ได้เชื่อมต่อผู้ให้บริการ AI ที่สามารถสร้างรูปภาพได้ เพิ่มคีย์ OpenAI หรือ Google Gemini ในการตั้งค่า AI"
+
+#: includes/ai-core/class-client.php:129
+#: includes/ai-core/class-provider.php:295
+msgid "This AI provider cannot make images. Choose OpenAI or Google Gemini for images in the AI settings."
+msgstr "ผู้ให้บริการ AI รายนี้ไม่สามารถสร้างรูปภาพได้ โปรดเลือก OpenAI หรือ Google Gemini สำหรับการสร้างรูปภาพในการตั้งค่า AI"
+
+#: includes/ai-core/class-client.php:135
+msgid "Your AI key cannot use any image model. Check the key's permissions with the provider, or choose another provider for images."
+msgstr "คีย์ AI ของคุณไม่สามารถใช้โมเดลรูปภาพใดๆ ได้ โปรดตรวจสอบสิทธิ์ของคีย์กับผู้ให้บริการ หรือเลือกผู้ให้บริการรายอื่นสำหรับรูปภาพ"
 
 #: includes/ai-core/class-failure.php:141
 msgid "This site could not reach your AI service. Check that it is running and that its address is reachable from your web server (a service on your own computer is not reachable from a hosted site)."
@@ -500,7 +530,7 @@ msgstr "%s กำลังประสบปัญหาในขณะนี้
 msgid "The AI request failed for a reason we could not identify. Try again; if it keeps happening, contact support with the details below."
 msgstr "คำขอ AI ล้มเหลวด้วยเหตุผลที่เราไม่สามารถระบุได้ โปรดลองอีกครั้ง หากยังเกิดปัญหาเดิม โปรดติดต่อฝ่ายสนับสนุนพร้อมระบุรายละเอียดด้านล่างนี้"
 
-#: includes/ai-core/class-provider.php:162
+#: includes/ai-core/class-provider.php:164
 msgid "The AI provider answered in a form this plugin could not read. Try again; if it keeps happening, choose another model or contact support."
 msgstr "ผู้ให้บริการ AI ตอบกลับมาในรูปแบบที่ปลั๊กอินนี้ไม่สามารถอ่านได้ ลองใหม่อีกครั้ง หากยังเกิดปัญหานี้อยู่ ให้เลือกโมเดลอื่นหรือติดต่อฝ่ายสนับสนุน"
 
@@ -702,6 +732,7 @@ msgid "The admin screen's scripts are missing from this copy of the plugin. Rein
 msgstr "สคริปต์ของหน้าจอผู้ดูแลระบบหายไปจากปลั๊กอินนี้ โปรดติดตั้งใหม่จากแพ็กเกจที่ปล่อยออกมาอย่างเป็นทางการ"
 
 #: includes/class-admin.php:81
+#: includes/pro__premium_only/workflow/class-network.php:224
 msgid "This screen needs JavaScript."
 msgstr "หน้าจอนี้จำเป็นต้องใช้ JavaScript"
 
@@ -1397,6 +1428,7 @@ msgstr "ซื้อไลเซนส์ตอนนี้"
 #: includes/freemius-strings.php:479
 #: includes/freemius-strings.php:3453
 #: src/studio/components/revisions.js:150
+#: src/workflow/pro__premium_only/review-layer.js:167
 msgid "Cancel"
 msgstr "ยกเลิก"
 
@@ -4218,7 +4250,7 @@ msgstr "คุณต้องการดำเนินการอัปเด
 
 #: includes/freemius-strings.php:2638
 #: includes/freemius-strings.php:5617
-#: src/studio/components/header.js:238
+#: src/studio/components/header.js:252
 msgid "Update"
 msgstr "อัปเดต"
 
@@ -4229,7 +4261,7 @@ msgstr "อัปเดตไลเซนส์"
 
 #: includes/freemius-strings.php:2646
 #: includes/freemius-strings.php:5632
-#: src/admin/App.js:78
+#: src/admin/App.js:79
 msgid "Upgrade"
 msgstr "อัปเกรด"
 
@@ -4901,6 +4933,164 @@ msgstr "อีเมลนี้ได้สมัครสมาชิกเร
 msgid "MailPoet plugin not found. Please contact the admin."
 msgstr "ไม่พบปลั๊กอิน MailPoet โปรดติดต่อผู้ดูแลระบบ"
 
+#: includes/pro__premium_only/workflow/class-maintenance.php:127
+msgid "We are doing some maintenance on this site. Please check back soon."
+msgstr "เรากำลังดำเนินการบำรุงรักษาเว็บไซต์นี้ โปรดกลับมาตรวจสอบใหม่อีกครั้งในเร็วๆ นี้"
+
+#: includes/pro__premium_only/workflow/class-maintenance.php:128
+msgid "This site is launching soon."
+msgstr "เว็บไซต์นี้จะเปิดให้บริการเร็วๆ นี้"
+
+#: includes/pro__premium_only/workflow/class-maintenance.php:176
+msgid "Maintenance mode is on"
+msgstr "โหมดบำรุงรักษาเปิดอยู่"
+
+#: includes/pro__premium_only/workflow/class-maintenance.php:177
+msgid "Pre-launch mode is on"
+msgstr "โหมดก่อนเปิดตัวเปิดอยู่"
+
+#: includes/pro__premium_only/workflow/class-network.php:168
+msgid "Network templates"
+msgstr "เทมเพลตเครือข่าย"
+
+#: includes/pro__premium_only/workflow/class-replace-jobs.php:241
+#: includes/pro__premium_only/workflow/class-replace-jobs.php:535
+msgid "That find-and-replace job no longer exists."
+msgstr "งานค้นหาและแทนที่นั้นไม่มีอยู่อีกต่อไปแล้ว"
+
+#: includes/pro__premium_only/workflow/class-replace-jobs.php:248
+msgid "That step is not available for this job right now."
+msgstr "ขั้นตอนนั้นยังไม่พร้อมใช้งานสำหรับงานนี้ในขณะนี้"
+
+#: includes/pro__premium_only/workflow/class-replacer.php:105
+msgid "Enter what to find."
+msgstr "ป้อนสิ่งที่ต้องการค้นหา"
+
+#: includes/pro__premium_only/workflow/class-replacer.php:108
+msgid "Colours must be hex codes such as #1a73e8 or #fff."
+msgstr "สีต้องเป็นรหัสฐานสิบหก (hex codes) เช่น #1a73e8 หรือ #fff"
+
+#: includes/pro__premium_only/workflow/class-replacer.php:111
+msgid "The new link must be a full web address (https://…), a path starting with /, or an anchor starting with #."
+msgstr "ลิงก์ใหม่ต้องเป็นที่อยู่เว็บแบบเต็ม (https://…) เส้นทางที่ขึ้นต้นด้วย / หรือแองเคอร์ที่ขึ้นต้นด้วย #"
+
+#: includes/pro__premium_only/workflow/class-review.php:72
+msgid "Client review comments"
+msgstr "ความคิดเห็นจากลูกค้าเกี่ยวกับโฮสติ้ง"
+
+#: includes/pro__premium_only/workflow/class-review.php:325
+msgid "Write a comment first."
+msgstr "เขียนความคิดเห็นก่อน"
+
+#: includes/pro__premium_only/workflow/class-review.php:350
+#: includes/pro__premium_only/workflow/class-review.php:388
+msgid "Client"
+msgstr "ลูกค้า"
+
+#: includes/pro__premium_only/workflow/class-review.php:364
+#: includes/pro__premium_only/workflow/class-review.php:560
+msgid "That comment no longer exists."
+msgstr "ความคิดเห็นนั้นไม่มีอยู่อีกต่อไปแล้ว"
+
+#. translators: %s: page title.
+#: includes/pro__premium_only/workflow/class-review.php:384
+#, php-format
+msgid "New review comment on “%s”"
+msgstr "ความคิดเห็นรีวิวใหม่เกี่ยวกับ “%s”"
+
+#. translators: 1: commenter name, 2: comment, 3: editor link.
+#: includes/pro__premium_only/workflow/class-review.php:387
+#, php-format
+msgid ""
+"%1$s wrote:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Open the page in the editor to answer or resolve it:\n"
+"%3$s"
+msgstr ""
+"%1$s เขียนว่า:\n"
+"\n"
+"%2$s\n"
+"\n"
+"เปิดหน้านี้ในเครื่องมือแก้ไขเพื่อตอบกลับหรือแก้ไขปัญหา:\n"
+"%3$s"
+
+#: includes/pro__premium_only/workflow/class-review.php:430
+msgid "This review link is not valid any more. Ask for a new one."
+msgstr "ลิงก์รีวิวนี้ไม่สามารถใช้งานได้อีกต่อไป โปรดขอลิงก์ใหม่"
+
+#: includes/pro__premium_only/workflow/class-review.php:436
+msgid "Too many comments from this link in the last hour. Try again later."
+msgstr "มีความคิดเห็นจากลิงก์นี้มากเกินไปในช่วงชั่วโมงที่ผ่านมา โปรดลองใหม่อีกครั้งในภายหลัง"
+
+#: includes/pro__premium_only/workflow/class-roles.php:234
+msgid "Your role cannot create templates or patterns."
+msgstr "บทบาทของคุณไม่สามารถสร้างเทมเพลตหรือแพตเทิร์นได้"
+
+#: includes/pro__premium_only/workflow/class-roles.php:312
+msgid "You can change the text and images on this page, but not its layout or design. Your change was not saved."
+msgstr "คุณสามารถเปลี่ยนข้อความและรูปภาพในหน้านี้ได้ แต่ไม่สามารถเปลี่ยนเค้าโครงหรือการออกแบบได้ การเปลี่ยนแปลงของคุณไม่ได้รับการบันทึก"
+
+#: includes/pro__premium_only/workflow/class-roles.php:317
+msgid "Your role cannot change styles. Undo the style changes and save again."
+msgstr "บทบาทของคุณไม่สามารถเปลี่ยนรูปแบบได้ เลิกทำรายการเปลี่ยนแปลงรูปแบบแล้วบันทึกอีกครั้ง"
+
+#: includes/pro__premium_only/workflow/class-roles.php:320
+msgid "Your role cannot add or change custom code (custom CSS or HTML blocks). Undo those changes and save again."
+msgstr "บทบาทของคุณไม่สามารถเพิ่มหรือเปลี่ยนแปลงโค้ดที่กำหนดเองได้ (บล็อก Custom CSS หรือ HTML) ให้ยกเลิกการเปลี่ยนแปลงเหล่านั้นแล้วบันทึกอีกครั้ง"
+
+#: includes/workflow/class-transfer-routes.php:137
+#: includes/workflow/class-transfer.php:282
+msgid "This is not an export file from this plugin."
+msgstr "ไฟล์นี้ไม่ใช่ไฟล์ส่งออกข้อมูลจากปลั๊กอินนี้"
+
+#: includes/workflow/class-transfer.php:286
+msgid "This export file was made by a newer version of the plugin. Update the plugin on this site, then import it again."
+msgstr "ไฟล์ส่งออกนี้สร้างขึ้นจากปลั๊กอินเวอร์ชันที่ใหม่กว่า โปรดอัปเดตปลั๊กอินบนเว็บไซต์นี้ แล้วนำเข้าใหม่อีกครั้ง"
+
+#: includes/workflow/class-transfer.php:289
+msgid "The export file is damaged: its list of items is missing."
+msgstr "ไฟล์ส่งออกเสียหาย: รายการไอเทมหายไป"
+
+#: includes/workflow/class-transfer.php:292
+msgid "The export file is damaged or was edited after it was made (its checksum does not match). Export it again from the other site."
+msgstr "ไฟล์ส่งออกเสียหายหรือถูกแก้ไขหลังจากสร้างขึ้น (ค่าตรวจสอบความถูกต้องไม่ตรงกัน) โปรดส่งออกอีกครั้งจากเว็บไซต์อื่น"
+
+#. translators: %s: item name from the export file.
+#: includes/workflow/class-transfer.php:337
+#, php-format
+msgid "“%s” was not imported: this site does not have that kind of item."
+msgstr "\"%s\" ไม่ถูกนำเข้า: เว็บไซต์นี้ไม่มีรายการประเภทนั้น"
+
+#. translators: %s: item name from the export file.
+#: includes/workflow/class-transfer.php:343
+#, php-format
+msgid "“%s” was not imported: you are not allowed to create that kind of item."
+msgstr "“%s” ไม่ถูกนำเข้า: คุณไม่ได้รับอนุญาตให้สร้างรายการประเภทนั้น"
+
+#. translators: %s: item name from the export file.
+#: includes/workflow/class-transfer.php:354
+#, php-format
+msgid "“%s” was not replaced: you are not allowed to edit the one on this site."
+msgstr "“%s” ไม่ถูกแทนที่: คุณไม่ได้รับอนุญาตให้แก้ไขรายการบนเว็บไซต์นี้"
+
+#. translators: 1: item name from the export file, 2: the reason.
+#: includes/workflow/class-transfer.php:374
+#, php-format
+msgid "“%1$s” was not imported: %2$s"
+msgstr "“%1$s” ไม่สามารถนำเข้าได้: %2$s"
+
+#: includes/workflow/class-transfer.php:382
+msgid "Settings were not imported: only an administrator can change them."
+msgstr "ไม่สามารถนำเข้าการตั้งค่าได้: มีเพียงผู้ดูแลระบบเท่านั้นที่สามารถเปลี่ยนแปลงได้"
+
+#. translators: 1: image address, 2: the reason.
+#: includes/workflow/class-transfer.php:555
+#, php-format
+msgid "The image %1$s was not copied: %2$s"
+msgstr "ไม่สามารถคัดลอกรูปภาพ %1$s ได้: %2$s"
+
 #: src/admin/About.js:17
 msgid "Built by Neil Lock, CEO of Zinn Digital® Ltd"
 msgstr "สร้างโดย Neil Lock ประธานเจ้าหน้าที่บริหารของ Zinn Digital® Ltd"
@@ -4919,48 +5109,50 @@ msgstr "เว็บไซต์ Page Builder Sandwich"
 msgid "Zinn Digital® website"
 msgstr "เว็บไซต์ Zinn Digital®"
 
-#: src/admin/App.js:50
+#: src/admin/App.js:51
 msgid "Settings saved."
 msgstr "บันทึกการตั้งค่าแล้ว"
 
-#: src/admin/App.js:83
+#: src/admin/App.js:84
 msgid "See the Pro plans and pricing"
 msgstr "ดูแผนบริการ Pro และราคา"
 
-#: src/admin/App.js:93
+#: src/admin/App.js:94
 msgid "Front-end output"
 msgstr "ผลลัพธ์ส่วนหน้าเว็บ"
 
-#: src/admin/App.js:101
+#: src/admin/App.js:102
 msgid "Class name prefix"
 msgstr "คำนำหน้าชื่อคลาส"
 
-#: src/admin/App.js:105
+#: src/admin/App.js:106
 msgid "Every class name the plugin prints on your pages starts with this prefix, so the pages do not reveal which plugin built them. 1 to 8 lowercase letters or digits, starting with a letter."
 msgstr "ชื่อคลาสทุกชื่อที่ปลั๊กอินแสดงผลบนหน้าเว็บของคุณจะเริ่มต้นด้วยคำนำหน้านี้ เพื่อไม่ให้หน้าเว็บเปิดเผยว่าสร้างขึ้นจากปลั๊กอินใด ใช้ตัวอักษรพิมพ์เล็กหรือตัวเลข 1 ถึง 8 ตัว โดยต้องขึ้นต้นด้วยตัวอักษร"
 
-#: src/admin/App.js:118
+#: src/admin/App.js:119
 #: src/studio/components/commands.js:196
+#: src/workflow/pro__premium_only/MaintenancePanel.js:195
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:189
 msgid "Save"
 msgstr "บันทึก"
 
-#: src/admin/App.js:124
+#: src/admin/App.js:125
 msgid "Beta updates"
 msgstr "การอัปเดตเบตา"
 
-#: src/admin/App.js:131
+#: src/admin/App.js:132
 msgid "This site receives beta versions as updates."
 msgstr "เว็บไซต์นี้รับรุ่นเบตาเป็นข้อมูลอัปเดต"
 
-#: src/admin/App.js:135
+#: src/admin/App.js:136
 msgid "This site receives stable versions only."
 msgstr "ไซต์นี้รับเฉพาะเวอร์ชันเสถียรเท่านั้น"
 
-#: src/admin/App.js:144
+#: src/admin/App.js:145
 msgid "Change this on the Account page"
 msgstr "เปลี่ยนการตั้งค่านี้ที่หน้าบัญชี"
 
-#: src/admin/App.js:153
+#: src/admin/App.js:154
 msgid "Beta versions are offered to licensed Pro installations that are connected to their account. Once connected, you can join from the Account page."
 msgstr "เวอร์ชันเบต้าเปิดให้บริการสำหรับผู้ใช้ที่ติดตั้งใช้งาน Pro แบบมีไลเซนส์และเชื่อมต่อกับบัญชีของตนแล้ว เมื่อเชื่อมต่อแล้ว คุณสามารถเข้าร่วมได้จากหน้าบัญชี"
 
@@ -5278,6 +5470,7 @@ msgstr "หัวข้อ"
 
 #: src/editor/index.js:35
 #: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
 msgid "Text"
 msgstr "ข้อความ"
 
@@ -5308,7 +5501,7 @@ msgstr "แสดงภาษาปัจจุบัน"
 
 #: src/editor/language-switcher.js:46
 msgid "Install Tranzly and list two or more languages, and the switcher appears here."
-msgstr "ติดตั้ง Tranzly และเพิ่มภาษาตั้งแต่สองภาษาขึ้นไป แล้วตัวสลับภาษาจะแสดงขึ้นที่นี่"
+msgstr "ติดตั้ง Tranzly และเพิ่มสองภาษาขึ้นไป แล้วตัวสลับภาษาจะปรากฏที่นี่"
 
 #: src/editor/language-switcher.js:67
 msgid "Design"
@@ -5320,7 +5513,7 @@ msgstr "รายการ"
 
 #: src/editor/language-switcher.js:76
 msgid "Pills"
-msgstr "ป้ายกำกับ"
+msgstr "ปุ่มแท็บ"
 
 #: src/editor/language-switcher.js:80
 msgid "Buttons"
@@ -5352,7 +5545,7 @@ msgstr "ชื่อและรหัส"
 
 #: src/editor/language-switcher.js:134
 msgid "Flags"
-msgstr "แฟล็ก"
+msgstr "ธง"
 
 #: src/editor/language-switcher.js:135
 msgid "Off by default: a flag is a country, not a language."
@@ -5364,13 +5557,14 @@ msgstr "รวมภาษาปัจจุบัน"
 
 #: src/editor/language-switcher.js:155
 msgid "Hide languages this page is not translated into"
-msgstr "ซ่อนภาษาที่หน้านี้ยังไม่ได้แปล"
+msgstr "ซ่อนภาษาที่หน้าเว็บนี้ยังไม่ได้แปล"
 
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
-msgstr "เรียงซ้อนในแนวตั้ง"
+msgstr "เรียงในแนวตั้ง"
 
 #: src/editor/language-switcher.js:187
+#: src/workflow/pro__premium_only/ReplacePanel.js:126
 msgid "Colours"
 msgstr "สี"
 
@@ -5384,7 +5578,7 @@ msgstr "ภาษาปัจจุบัน"
 
 #: src/editor/language-switcher.js:204
 msgid "Current language background"
-msgstr "ภาษาปัจจุบันของพื้นหลัง"
+msgstr "ภาษาพื้นหลังปัจจุบัน"
 
 #: src/editor/language-switcher.js:211
 msgid "Border"
@@ -5400,45 +5594,45 @@ msgstr "รัศมีมุมโค้ง"
 
 #: src/editor/language-switcher.js:231
 msgid "Space between languages"
-msgstr "พื้นที่ว่างระหว่างภาษา"
+msgstr "พื้นที่ระหว่างภาษา"
 
 #: src/editor/language-switcher.js:239
 msgid "Text size"
-msgstr "ขนาดข้อความ"
+msgstr "ขนาดตัวอักษร"
 
 #. translators: %s: user name.
-#: src/studio/app.js:116
+#: src/studio/app.js:118
 #, js-format
 msgid "%s is also editing this page. Saving may overwrite their changes."
 msgstr "%s กำลังแก้ไขหน้านี้อยู่เช่นกัน การบันทึกอาจเขียนทับการเปลี่ยนแปลงของพวกเขาได้"
 
-#: src/studio/app.js:131
-#: src/studio/app.js:138
+#: src/studio/app.js:133
+#: src/studio/app.js:140
 #: src/studio/components/header.js:109
 msgid "Block library"
 msgstr "คลังบล็อก"
 
-#: src/studio/app.js:132
-#: src/studio/app.js:142
+#: src/studio/app.js:134
+#: src/studio/app.js:144
 #: src/studio/components/header.js:117
 msgid "Layers"
 msgstr "เลเยอร์"
 
-#: src/studio/app.js:146
+#: src/studio/app.js:148
 msgid "Close panel"
 msgstr "ปิดแผงควบคุม"
 
-#: src/studio/app.js:169
+#: src/studio/app.js:171
 msgid "Page canvas"
 msgstr "พื้นที่หน้าเว็บ"
 
-#: src/studio/app.js:197
-#: src/studio/components/header.js:193
+#: src/studio/app.js:199
+#: src/studio/components/header.js:207
 #: src/studio/components/revisions.js:80
 msgid "Revisions"
 msgstr "ฉบับแก้ไข"
 
-#: src/studio/app.js:198
+#: src/studio/app.js:201
 msgid "Block settings"
 msgstr "ตั้งค่าการบล็อก"
 
@@ -5449,6 +5643,7 @@ msgid "Add block: %s"
 msgstr "เพิ่มบล็อก: %s"
 
 #: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
 msgid "(no title)"
 msgstr "(ไม่มีชื่อเรื่อง)"
 
@@ -5485,7 +5680,7 @@ msgid "Open the normal editor"
 msgstr "เปิดเครื่องมือแก้ไขปกติ"
 
 #: src/studio/components/commands.js:259
-#: src/studio/components/header.js:201
+#: src/studio/components/header.js:215
 #: src/studio/components/shortcuts.js:135
 msgid "Keyboard shortcuts"
 msgstr "แป้นพิมพ์ลัด"
@@ -5601,15 +5796,15 @@ msgstr "ความกว้างของตัวอย่าง"
 msgid "Command palette"
 msgstr "พาเล็ตคำสั่ง"
 
-#: src/studio/components/header.js:213
+#: src/studio/components/header.js:227
 msgid "View page (opens in a new tab)"
 msgstr "ดูหน้าเว็บ (เปิดในแท็บใหม่)"
 
-#: src/studio/components/header.js:239
+#: src/studio/components/header.js:253
 msgid "Save draft"
 msgstr "บันทึกฉบับร่าง"
 
-#: src/studio/components/header.js:249
+#: src/studio/components/header.js:263
 msgid "Publish"
 msgstr "เผยแพร่"
 
@@ -5779,8 +5974,538 @@ msgid "Published."
 msgstr "เผยแพร่แล้ว"
 
 #: src/studio/hooks/use-save.js:88
+#: src/workflow/pro__premium_only/MaintenancePanel.js:83
 msgid "Saved."
 msgstr "บันทึกแล้ว"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:94
+msgid "Maintenance and pre-launch mode"
+msgstr "โหมดการบำรุงรักษาและก่อนเปิดตัวเว็บไซต์"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:112
+msgid "What visitors see"
+msgstr "สิ่งที่ผู้เยี่ยมชมเห็น"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:120
+msgid "The site, as normal"
+msgstr "เว็บไซต์ตามปกติ"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:127
+msgid "Maintenance: a notice, and search engines are told to come back later"
+msgstr "การบำรุงรักษา: ประกาศ และแจ้งให้เครื่องมือค้นหากลับมาใหม่ภายหลัง"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:134
+msgid "Pre-launch: a notice, and search engines are told not to index the site"
+msgstr "ก่อนเปิดตัว: มีประกาศ และแจ้งเสิร์ชเอนจินไม่ให้ดัชนีเว็บไซต์"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:145
+msgid "Page to show instead"
+msgstr "หน้าที่แสดงแทน"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:149
+msgid "Design any page with the builder and choose it here. Without one, visitors see a short notice with the site’s name."
+msgstr "ออกแบบหน้าเว็บใดๆ ก็ได้ด้วยเครื่องมือสร้าง แล้วเลือกหน้านั้นที่นี่ หากไม่มี ผู้เข้าชมจะเห็นประกาศสั้นๆ ที่มีชื่อเว็บไซต์"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:164
+msgid "Who still sees the real site (administrators always do):"
+msgstr "ใครที่ยังคงเห็นเว็บไซต์จริง (ผู้ดูแลระบบจะเห็นเสมอ):"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:199
+msgid "Open the site in a private window to see what visitors see."
+msgstr "เปิดไซต์ในหน้าต่างส่วนตัวเพื่อดูสิ่งที่ผู้เข้าชมเห็น"
+
+#: src/workflow/pro__premium_only/network.js:54
+msgid "Network settings saved."
+msgstr "บันทึกการตั้งค่าเครือข่ายแล้ว"
+
+#. translators: %d: number of sites.
+#: src/workflow/pro__premium_only/network.js:102
+#, js-format
+msgid "These settings apply to the %d site in this network."
+msgid_plural "These settings apply to the %d sites in this network."
+msgstr[0] "การตั้งค่าเหล่านี้มีผลกับไซต์ %d แห่งในเครือข่ายนี้"
+
+#: src/workflow/pro__premium_only/network.js:113
+msgid "Shared templates"
+msgstr "เทมเพลตแบบแชร์"
+
+#: src/workflow/pro__premium_only/network.js:116
+msgid "Patterns saved on the main site that are ticked here appear on every site, under “Network templates”. Each site inserts its own copy."
+msgstr "รูปแบบที่บันทึกไว้บนเว็บไซต์หลักที่เลือกไว้ที่นี่จะปรากฏบนทุกเว็บไซต์ ภายใต้ \"เทมเพลตเครือข่าย\" แต่ละเว็บไซต์จะแทรกสำเนาของตนเอง"
+
+#: src/workflow/pro__premium_only/network.js:123
+msgid "The main site has no saved patterns yet."
+msgstr "เว็บไซต์หลักยังไม่มีรูปแบบที่บันทึกไว้"
+
+#: src/workflow/pro__premium_only/network.js:142
+msgid "White label for every site"
+msgstr "ป้ายขาวสำหรับทุกเว็บไซต์"
+
+#: src/workflow/pro__premium_only/network.js:149
+msgid "Used by every site that has not saved its own white-label settings."
+msgstr "ใช้งานโดยทุกไซต์ที่ยังไม่ได้บันทึกการตั้งค่าป้ายกำกับสีขาวของตนเอง"
+
+#: src/workflow/pro__premium_only/network.js:156
+msgid "Turn white label on"
+msgstr "เปิดใช้งานป้ายกำกับขาว"
+
+#: src/workflow/pro__premium_only/network.js:166
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:114
+msgid "Builder name"
+msgstr "ชื่อตัวสร้างเว็บไซต์"
+
+#: src/workflow/pro__premium_only/network.js:170
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:122
+msgid "Visual editor name"
+msgstr "ชื่อตัวแก้ไขภาพแบบภาพ"
+
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "ผู้เขียน"
+
+#: src/workflow/pro__premium_only/network.js:175
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
+msgid "Author website"
+msgstr "เว็บไซต์ผู้เขียน"
+
+#: src/workflow/pro__premium_only/network.js:179
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:145
+msgid "Menu icon"
+msgstr "ไอคอนเมนู"
+
+#: src/workflow/pro__premium_only/network.js:193
+msgid "Role defaults for every site"
+msgstr "ค่าเริ่มต้นของบทบาทสำหรับทุกไซต์"
+
+#: src/workflow/pro__premium_only/network.js:230
+msgid "Save network settings"
+msgstr "บันทึกการตั้งค่าเครือข่าย"
+
+#. translators: %d: number of items searched so far.
+#: src/workflow/pro__premium_only/replace-lib.js:24
+#, js-format
+msgid "Searching… %d item checked so far."
+msgid_plural "Searching… %d items checked so far."
+msgstr[0] "กำลังค้นหา... ตรวจสอบไปแล้ว %d รายการ"
+
+#. translators: %d: number of items searched.
+#: src/workflow/pro__premium_only/replace-lib.js:36
+#, js-format
+msgid "No matches in %d items. Nothing to replace."
+msgstr "ไม่พบผลลัพธ์ใน %d รายการ ไม่มีสิ่งที่จะแทนที่"
+
+#. translators: 1: number of matches, 2: number of pages, 3: number of items searched.
+#: src/workflow/pro__premium_only/replace-lib.js:44
+#, js-format
+msgid "%1$d matches on %2$d pages (%3$d items searched). Nothing has changed yet."
+msgstr "พบ %1$d รายการใน %2$d หน้า (ค้นหาจาก %3$d รายการ) ยังไม่มีการเปลี่ยนแปลงใดๆ"
+
+#. translators: 1: pages changed so far, 2: pages to change.
+#: src/workflow/pro__premium_only/replace-lib.js:55
+#, js-format
+msgid "Replacing… %1$d of %2$d pages done."
+msgstr "กำลังแทนที่... เสร็จสิ้น %1$d จาก %2$d หน้า"
+
+#. translators: %d: number of pages changed.
+#: src/workflow/pro__premium_only/replace-lib.js:65
+#, js-format
+msgid "Done: %d page changed. You can undo this."
+msgid_plural "Done: %d pages changed. You can undo this."
+msgstr[0] "เสร็จสิ้น: เปลี่ยนแปลง %d หน้าแล้ว คุณสามารถยกเลิกการดำเนินการนี้ได้"
+
+#: src/workflow/pro__premium_only/replace-lib.js:74
+msgid "Undoing…"
+msgstr "กำลังเลิกทำ..."
+
+#. translators: 1: pages restored, 2: pages edited since and left as they are.
+#: src/workflow/pro__premium_only/replace-lib.js:79
+#, js-format
+msgid "Undone: %1$d pages restored. %2$d pages were edited after the replacement and were left as they are."
+msgstr "เลิกทำแล้ว: กู้คืนหน้า %1$d หน้าแล้ว หน้า %2$d หน้าถูกแก้ไขหลังจากการแทนที่และคงไว้ตามเดิม"
+
+#. translators: %d: pages restored.
+#: src/workflow/pro__premium_only/replace-lib.js:88
+#, js-format
+msgid "Undone: %d page restored."
+msgid_plural "Undone: %d pages restored."
+msgstr[0] "เลิกทำแล้ว: กู้คืนหน้า %d หน้าแล้ว"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:97
+msgid "Find and replace across all pages"
+msgstr "ค้นหาและแทนที่ในทุกหน้า"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:114
+msgid "Replace"
+msgstr "แทนที่"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "ลิงก์"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:135
+msgid "Find"
+msgstr "ค้นหา"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:138
+msgid "A hex colour such as #1a73e8. Short forms (#fff) match too."
+msgstr "รหัสสีแบบเฮกซ์ เช่น #1a73e8 รูปแบบย่อ (#fff) ก็ใช้ได้เช่นกัน"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:150
+msgid "Replace with"
+msgstr "แทนที่ด้วย"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:157
+msgid "Match upper and lower case"
+msgstr "จับคู่อักษรตัวพิมพ์ใหญ่และตัวพิมพ์เล็ก"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:166
+msgid "Search in"
+msgstr "ค้นหาใน"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:191
+msgid "Find matches"
+msgstr "ค้นหาที่ตรงกัน"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:204
+msgid "Page"
+msgstr "หน้า"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:210
+msgid "Matches"
+msgstr "ตรงกัน"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:251
+msgid "Previous"
+msgstr "ก่อนหน้า"
+
+#. translators: 1: current page, 2: number of pages.
+#: src/workflow/pro__premium_only/ReplacePanel.js:255
+#, js-format
+msgid "Page %1$d of %2$d"
+msgstr "หน้า %1$d จาก %2$d"
+
+#. translators: %d: number of pages.
+#: src/workflow/pro__premium_only/ReplacePanel.js:281
+#, js-format
+msgid "Replace on %d page"
+msgid_plural "Replace on %d pages"
+msgstr[0] "แทนที่ในหน้า %d"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:296
+msgid "Undo this replacement"
+msgstr "เลิกทำรายการแทนที่นี้"
+
+#: src/workflow/pro__premium_only/review-layer.js:78
+msgid "Review comments"
+msgstr "ตรวจสอบความคิดเห็น"
+
+#: src/workflow/pro__premium_only/review-layer.js:83
+msgid "Add a comment"
+msgstr "เพิ่มความคิดเห็น"
+
+#. translators: 1: comment number, 2: author, 3: comment.
+#: src/workflow/pro__premium_only/review-layer.js:112
+#, js-format
+msgid "Comment %1$d by %2$s: %3$s"
+msgstr "ความคิดเห็นที่ %1$d โดย %2$s: %3$s"
+
+#. translators: %d: number of comments.
+#: src/workflow/pro__premium_only/review-layer.js:135
+#, js-format
+msgid "%d comments on this page."
+msgstr "ความคิดเห็น %d รายการในหน้านี้"
+
+#: src/workflow/pro__premium_only/review-layer.js:152
+#: src/workflow/pro__premium_only/review-layer.js:153
+msgid "Your name"
+msgstr "ชื่อของคุณ"
+
+#: src/workflow/pro__premium_only/review-layer.js:158
+#: src/workflow/pro__premium_only/review-layer.js:159
+msgid "Your comment"
+msgstr "ความคิดเห็นของคุณ"
+
+#: src/workflow/pro__premium_only/review-layer.js:163
+msgid "Send comment"
+msgstr "ส่งความคิดเห็น"
+
+#: src/workflow/pro__premium_only/review-layer.js:197
+msgid "Thank you, your comment was sent."
+msgstr "ขอบคุณครับ ส่งความคิดเห็นของคุณเรียบร้อยแล้วครับ"
+
+#: src/workflow/pro__premium_only/review-layer.js:213
+msgid "Click the part of the page your comment is about."
+msgstr "คลิกที่ส่วนของหน้าเว็บที่คอมเมนต์ของคุณระบุถึง"
+
+#: src/workflow/pro__premium_only/review-panel.js:18
+#: src/workflow/pro__premium_only/review-panel.js:39
+#: src/workflow/pro__premium_only/review-panel.js:43
+msgid "Client review"
+msgstr "ตรวจสอบข้อมูลลูกค้า"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:88
+msgid "That part of the page could not be found: it may have been changed or removed since the comment was made."
+msgstr "ไม่พบส่วนนั้นของหน้านี้: อาจมีการเปลี่ยนแปลงหรือถูกลบนับตั้งแต่ที่มีการแสดงความคิดเห็น"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:121
+#: src/workflow/pro__premium_only/ReviewPanel.js:142
+msgid "Review link"
+msgstr "ตรวจสอบลิงก์"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:124
+msgid "Let a client comment on this page"
+msgstr "อนุญาตให้ลูกค้าแสดงความคิดเห็นในหน้านี้"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:128
+msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
+msgstr "ทุกคนที่มีลิงก์สามารถดูหน้านี้ได้ แม้ว่าจะยังไม่ได้เผยแพร่ และสามารถแสดงความคิดเห็นได้ โดยไม่ต้องมีบัญชีผู้ใช้"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "คัดลอกแล้ว"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:156
+msgid "Copy link"
+msgstr "คัดลอกลิงก์"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:162
+msgid "Make a new link (the old one stops working)"
+msgstr "สร้างลิงก์ใหม่ (ลิงก์เดิมจะใช้งานไม่ได้)"
+
+#. translators: %d: number of open comments.
+#: src/workflow/pro__premium_only/ReviewPanel.js:173
+#, js-format
+msgid "Comments (%d open)"
+msgid_plural "Comments (%d open)"
+msgstr[0] "ความคิดเห็น (เปิดอยู่ %d รายการ)"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:184
+msgid "Show resolved comments"
+msgstr "แสดงความคิดเห็นที่แก้ไขแล้ว"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:193
+msgid "No comments to show."
+msgstr "ไม่มีความคิดเห็นที่จะแสดง"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:222
+msgid "Reply"
+msgstr "ตอบกลับ"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:233
+msgid "Send reply"
+msgstr "ส่งการตอบกลับ"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:236
+msgid "Show in the editor"
+msgstr "แสดงในตัวแก้ไข"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:246
+msgid "Resolve"
+msgstr "แก้ไข"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:253
+msgid "Reopen"
+msgstr "เปิดใหม่อีกครั้ง"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:21
+msgid "Open Sandwich Studio"
+msgstr "สตูดิโอโอเพ่นแซนด์วิช"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:25
+msgid "Change styles"
+msgstr "เปลี่ยนรูปแบบสไตล์"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:29
+msgid "Custom CSS and HTML"
+msgstr "CSS และ HTML กำหนดเอง"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:33
+msgid "Manage templates"
+msgstr "จัดการเทมเพลต"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:35
+msgid "Use AI"
+msgstr "ใช้ AI"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:38
+msgid "Client mode: text and images only"
+msgstr "โหมดไคลเอ็นต์: ข้อความและรูปภาพเท่านั้น"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:85
+msgid "Role settings saved."
+msgstr "บันทึกการตั้งค่าบทบาทเรียบร้อยแล้ว"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:99
+msgid "Roles and client mode"
+msgstr "บทบาทและโหมดลูกค้า"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:103
+msgid "Choose what each role can do in the builder. Administrators can always do everything. Client mode locks the layout and design, so the role can only change text and images."
+msgstr "เลือกสิ่งที่แต่ละบทบาทสามารถทำได้ในตัวสร้างเว็บไซต์ ผู้ดูแลระบบสามารถทำได้ทุกอย่างเสมอ โหมดลูกค้าจะล็อกเลย์บอร์ดและการออกแบบไว้ ดังนั้นบทบาทนี้จึงเปลี่ยนได้เฉพาะข้อความและรูปภาพเท่านั้น"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:122
+msgid "Role"
+msgstr "บทบาท"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:170
+msgid "Save role settings"
+msgstr "บันทึกการตั้งค่าบทบาท"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:68
+msgid "Saved. Reload the page to see the new names."
+msgstr "บันทึกแล้ว โหลดหน้าเว็บใหม่เพื่อดูชื่อใหม่"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:87
+msgid "White label"
+msgstr "ป้ายชื่อที่กำหนดเอง"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:103
+msgid "Rename the builder and hide our branding on this site"
+msgstr "เปลี่ยนชื่อเครื่องมือสร้างเว็บไซต์และซ่อนแบรนด์ของเราบนเว็บไซต์นี้"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:115
+msgid "Shown everywhere the product name appears: menus, the editor, notices."
+msgstr "แสดงในทุกที่ที่ชื่อผลิตภัณฑ์ปรากฏ: เมนู ตัวแก้ไข และประกาศต่าง ๆ"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:123
+msgid "Leave empty to use the builder name."
+msgstr "เว้นว่างไว้เพื่อใช้ชื่อตัวสร้างเว็บไซต์"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:138
+msgid "Description on the Plugins screen"
+msgstr "คำอธิบายบนหน้าจอปลั๊กอิน"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:146
+msgid "A Dashicons name (for example dashicons-admin-customizer) or an https:// image address."
+msgstr "ชื่อ Dashicons (ตัวอย่างเช่น dashicons-admin-customizer) หรือที่อยู่รูปภาพ https://"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:153
+msgid "Hide the plugin from the Plugins screen"
+msgstr "ซ่อนปลั๊กอินจากหน้าจอปลั๊กอิน"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:165
+msgid "Agency users who still see the real product and these settings"
+msgstr "ผู้ใช้เอเจนซี่ที่ยังคงเห็นผลิตภัณฑ์จริงและการตั้งค่าเหล่านี้"
+
+#. translators: %d: number of items.
+#: src/workflow/transfer-lib.js:53
+#, js-format
+msgid "%d new"
+msgid_plural "%d new"
+msgstr[0] "ใหม่ %d รายการ"
+
+#. translators: %d: number of items.
+#: src/workflow/transfer-lib.js:63
+#, js-format
+msgid "%d replaced"
+msgid_plural "%d replaced"
+msgstr[0] "แทนที่แล้ว %d รายการ"
+
+#. translators: %d: number of items.
+#: src/workflow/transfer-lib.js:73
+#, js-format
+msgid "%d kept as they were"
+msgid_plural "%d kept as they were"
+msgstr[0] "คงไว้ %d รายการตามเดิม"
+
+#. translators: %d: number of settings.
+#: src/workflow/transfer-lib.js:83
+#, js-format
+msgid "%d setting"
+msgid_plural "%d settings"
+msgstr[0] "%d การตั้งค่า"
+
+#. translators: %s: a list such as "2 new, 1 replaced".
+#: src/workflow/transfer-lib.js:96
+#, js-format
+msgid "Importing will give: %s."
+msgstr "การนำเข้าจะทำให้ได้: %s."
+
+#. translators: %s: a list such as "2 new, 1 replaced".
+#: src/workflow/transfer-lib.js:101
+#, js-format
+msgid "Imported: %s."
+msgstr "นำเข้าแล้ว: %s."
+
+#. translators: %d: number of items exported.
+#: src/workflow/TransferPanel.js:72
+#, js-format
+msgid "Exported %d item."
+msgid_plural "Exported %d items."
+msgstr[0] "ส่งออกแล้ว %d รายการ"
+
+#: src/workflow/TransferPanel.js:129
+msgid "That file could not be read as an export file."
+msgstr "ไม่สามารถอ่านไฟล์ดังกล่าวเป็นไฟล์ส่งออกได้"
+
+#: src/workflow/TransferPanel.js:139
+msgid "Import and export"
+msgstr "นำเข้าและส่งออก"
+
+#: src/workflow/TransferPanel.js:157
+msgid "Export"
+msgstr "ส่งออก"
+
+#: src/workflow/TransferPanel.js:159
+msgid "Download your templates, patterns and site design as one file, to import on another site."
+msgstr "ดาวน์โหลดเทมเพลต แพทเทิร์น และการออกแบบเว็บไซต์ของคุณเป็นไฟล์เดียวเพื่อนำไปimportยังเว็บไซต์อื่น"
+
+#: src/workflow/TransferPanel.js:167
+msgid "There are no templates or patterns to export yet."
+msgstr "ยังไม่มีเทมเพลตหรือแพตเทิร์นให้ส่งออกในขณะนี้"
+
+#: src/workflow/TransferPanel.js:187
+msgid "Include the settings"
+msgstr "รวมการตั้งค่า"
+
+#: src/workflow/TransferPanel.js:197
+msgid "Download the export file"
+msgstr "ดาวน์โหลดไฟล์ส่งออก"
+
+#: src/workflow/TransferPanel.js:200
+#: src/workflow/TransferPanel.js:296
+msgid "Import"
+msgstr "นำเข้า"
+
+#: src/workflow/TransferPanel.js:207
+msgid "Choose an export file"
+msgstr "เลือกไฟล์ส่งออก"
+
+#. translators: 1: number of items in the file, 2: the site it came from.
+#: src/workflow/TransferPanel.js:219
+#, js-format
+msgid "The file holds %1$d item from %2$s."
+msgid_plural "The file holds %1$d items from %2$s."
+msgstr[0] "ไฟล์นี้มี %1$d รายการจาก %2$s"
+
+#: src/workflow/TransferPanel.js:230
+msgid "When an item with the same name already exists here"
+msgstr "เมื่อมีรายการที่มีชื่อเดียวกันนี้อยู่แล้วที่นี่"
+
+#: src/workflow/TransferPanel.js:238
+msgid "Keep the one on this site"
+msgstr "เก็บรายการบนไซต์นี้ไว้"
+
+#: src/workflow/TransferPanel.js:245
+msgid "Replace it with the imported one"
+msgstr "แทนที่ด้วยอันที่นำเข้า"
+
+#: src/workflow/TransferPanel.js:252
+msgid "Import a copy beside it"
+msgstr "นำเข้าสำเนาไว้ด้านข้าง"
+
+#: src/workflow/TransferPanel.js:262
+msgid "Apply the settings in the file"
+msgstr "นำการตั้งค่าในไฟล์ไปใช้"
+
+#: src/workflow/TransferPanel.js:271
+msgid "Copy the images into this site’s media library"
+msgstr "คัดลอกรูปภาพไปยังคลังสื่อของเว็บไซต์นี้"
+
+#: src/workflow/TransferPanel.js:285
+msgid "Show what will happen"
+msgstr "แสดงสิ่งที่จะเกิดขึ้น"
 
 #: blocks/button/block.json
 msgctxt "block title"
@@ -5893,12 +6618,12 @@ msgstr "svg"
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
-msgstr "เครื่องมือสลับภาษา"
+msgstr "สลับภาษา"
 
 #: blocks/language-switcher/block.json
 msgctxt "block description"
 msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
-msgstr "ช่วยให้ผู้เข้าชมอ่านหน้านี้ในภาษาอื่นได้ โดยจัดรูปแบบให้เข้ากับหน้าของคุณ จำเป็นต้องมีปลั๊กอิน Tranzly สำหรับภาษาต่างๆ"
+msgstr "ให้ผู้เข้าชมอ่านหน้านี้ในภาษาอื่น โดยจัดรูปแบบให้เข้ากับหน้าของคุณ จำเป็นต้องมีปลั๊กอิน Tranzly สำหรับภาษาต่างๆ"
 
 #: blocks/language-switcher/block.json
 msgctxt "block keyword"

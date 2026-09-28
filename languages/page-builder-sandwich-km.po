@@ -14,6 +14,9 @@ msgstr ""
 #: includes/class-admin.php:55
 #: includes/class-admin.php:56
 #: includes/class-admin.php:75
+#: includes/pro__premium_only/workflow/class-network.php:188
+#: includes/pro__premium_only/workflow/class-network.php:189
+#: includes/pro__premium_only/workflow/class-network.php:223
 msgid "Page Builder Sandwich"
 msgstr "Page Builder Sandwich"
 
@@ -89,338 +92,352 @@ msgstr "កូដ និង CSS"
 
 #: includes/ai-core/class-admin.php:115
 #: includes/class-admin.php:72
+#: includes/pro__premium_only/workflow/class-network.php:221
 msgid "Sorry, you are not allowed to access this page."
 msgstr "សូមអភ័យទោស អ្នកមិនត្រូវបានអនុញ្ញាតឱ្យចូលប្រើទំព័រនេះទេ។"
 
 #. translators: %s: list of plugin names, e.g. "Tranzly, Page Builder Sandwich".
-#: includes/ai-core/class-admin.php:125
+#: includes/ai-core/class-admin.php:128
 #, php-format
 msgid "These settings are shared by every plugin that uses them: %s."
 msgstr "ការកំណត់ទាំងនេះត្រូវបានចែករំលែកដោយគ្រប់កម្មវិធីជំនួយដែលប្រើប្រាស់ពួកវា៖ %s។"
 
-#: includes/ai-core/class-admin.php:128
+#: includes/ai-core/class-admin.php:131
 msgid "Your keys are encrypted in this site's database and are only ever sent to the provider you chose — never to us."
 msgstr "គ្រាប់ចុចរបស់អ្នកត្រូវបានអ៊ិនគ្រីបនៅក្នុងមូលដ្ឋានទិន្នន័យរបស់គេហទំព័រនេះ ហើយត្រូវបានបញ្ជូនទៅកាន់អ្នកផ្តល់សេវាដែលអ្នកបានជ្រើសរើសប៉ុណ្ណោះ គឺមិនធ្លាប់ត្រូវបានបញ្ជូនមកកាន់ពួកយើងឡើយ។"
 
-#: includes/ai-core/class-admin.php:155
+#: includes/ai-core/class-admin.php:158
 msgid "Step 1 of 2: choose an AI provider"
 msgstr "ជំហានទី ១ នៃទី ២៖ ជ្រើសរើសអ្នកផ្តល់សេវា AI"
 
-#: includes/ai-core/class-admin.php:156
+#: includes/ai-core/class-admin.php:159
 msgid "You bring your own key, so you pay the provider directly for what you use. Not sure? Any of these works well; you can add more later."
 msgstr "អ្នកនាំយកសោផ្ទាល់ខ្លួនរបស់អ្នក ដូច្នេះអ្នកទូទាត់ប្រាក់ដោយផ្ទាល់ទៅកាន់អ្នកផ្តល់សេវាសម្រាប់អ្វីដែលអ្នកប្រើ។ មិនប្រាកដមែនទេ? ទាំងនេះណាមួយដំណើរការបានល្អ; អ្នកអាចបន្ថែមពេលក្រោយទៀត។"
 
-#: includes/ai-core/class-admin.php:166
+#: includes/ai-core/class-admin.php:169
 #: includes/freemius-strings.php:1570
 #: includes/freemius-strings.php:4586
+#: src/workflow/pro__premium_only/ReplacePanel.js:270
 msgid "Next"
 msgstr "បន្ទាប់"
 
 #. translators: %s: AI provider name.
-#: includes/ai-core/class-admin.php:175
+#: includes/ai-core/class-admin.php:178
 #, php-format
 msgid "Step 2 of 2: connect %s"
 msgstr "ជំហានទី ២ ក្នុងចំណោម ២៖ ភ្ជាប់ %s"
 
-#: includes/ai-core/class-admin.php:180
+#: includes/ai-core/class-admin.php:183
 msgid "Enter the address of your OpenAI-compatible service, ending in /v1. A key is only needed if the service asks for one."
 msgstr "បញ្ចូលអាសយដ្ឋាននៃសេវាកម្មដែលត្រូវគ្នានឹង OpenAI របស់អ្នក ដែលបញ្ចប់ដោយ /v1។ តោនសោគឺត្រូវការទាល់តែសេវាកម្មនោះស្នើសុំវាប៉ុណ្ណោះ។"
 
 #. translators: %s: link to the provider's API key page.
-#: includes/ai-core/class-admin.php:185
+#: includes/ai-core/class-admin.php:188
 #, php-format
 msgid "Open %s and sign in (or create a free account)."
 msgstr "បើក %s ហើយចូលគណនី (ឬបង្កើតគណនីឥតគិតថ្លៃ)។"
 
 #. translators: %s: AI provider name.
-#: includes/ai-core/class-admin.php:189
+#: includes/ai-core/class-admin.php:192
 #, php-format
 msgid "the %s API keys page"
 msgstr "ទំព័រគ្រាប់ចុច API %s"
 
-#: includes/ai-core/class-admin.php:194
+#: includes/ai-core/class-admin.php:197
 msgid "Create a new key and copy it."
 msgstr "បង្កើតសោថ្មីមួយ ហើយចម្លងវា។"
 
-#: includes/ai-core/class-admin.php:195
+#: includes/ai-core/class-admin.php:198
 msgid "Paste it below and press \"Save and test\". We send one tiny request to check it works."
 msgstr "សូមបិទភ្ជាប់វាខាងក្រោមហើយចុចលើពាក្យ \"រក្សាទុកនិងព្យាយាមម្តងទៀត\"។ យើងនឹងផ្ញើសំណើដ៏តូចមួយដើម្បីពិនិត្យមើលថាវាដំណើរការ។"
 
 #. translators: %s: link to the provider's billing page.
-#: includes/ai-core/class-admin.php:200
+#: includes/ai-core/class-admin.php:203
 #, php-format
 msgid "Most providers need a little credit on the account before a key works: %s."
 msgstr "អ្នកផ្តល់សេវាភាគច្រើនត្រូវការឥណទានបន្តិចបន្តួចនៅលើគណនីមុនពេលគ្រាប់ចុចដំណើរការ៖ %s។"
 
-#: includes/ai-core/class-admin.php:201
+#: includes/ai-core/class-admin.php:204
 msgid "add credit"
 msgstr "បន្ថែមឥណទាន"
 
-#: includes/ai-core/class-admin.php:206
+#: includes/ai-core/class-admin.php:209
 msgid "← Choose a different provider"
 msgstr "← ជ្រើសរើសអ្នកផ្តល់សេវាផ្សេង"
 
-#: includes/ai-core/class-admin.php:224
+#: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
 msgid "Address"
 msgstr "អាសយដ្ឋាន"
 
 #. translators: %s: the last four characters of the saved key.
-#: includes/ai-core/class-admin.php:228
+#: includes/ai-core/class-admin.php:231
 #, php-format
 msgid "Saved key ends in …%s — paste a new one to replace it"
 msgstr "គន្លឹះដែលបានរក្សាទុកបញ្ចប់ដោយ …%s — សូមបិទភ្ជាប់ថ្មីដើម្បីជំនួសវា"
 
-#: includes/ai-core/class-admin.php:230
+#: includes/ai-core/class-admin.php:233
 msgid "Key (optional)"
 msgstr "សោ (ស្រេចចិត្ត)"
 
-#: includes/ai-core/class-admin.php:230
+#: includes/ai-core/class-admin.php:233
 msgid "API key"
 msgstr "សោ API"
 
-#: includes/ai-core/class-admin.php:232
+#: includes/ai-core/class-admin.php:235
 msgid "Save and test"
 msgstr "រក្សាទុក និងសាកល្បង"
 
-#: includes/ai-core/class-admin.php:242
+#: includes/ai-core/class-admin.php:245
 msgid "Providers"
 msgstr "អ្នកផ្តល់សេវា"
 
-#: includes/ai-core/class-admin.php:243
-#: includes/ai-core/class-admin.php:365
+#: includes/ai-core/class-admin.php:246
+#: includes/ai-core/class-admin.php:404
 msgid "Provider"
 msgstr "អ្នកផ្តល់សេវា"
 
-#: includes/ai-core/class-admin.php:243
+#: includes/ai-core/class-admin.php:246
 msgid "Status"
 msgstr "ស្ថានភាព"
 
-#: includes/ai-core/class-admin.php:243
+#: includes/ai-core/class-admin.php:246
 #: includes/freemius-strings.php:1252
 #: includes/freemius-strings.php:4347
 msgid "Key"
 msgstr "សោ"
 
-#: includes/ai-core/class-admin.php:248
+#: includes/ai-core/class-admin.php:251
 msgid "Get a key"
 msgstr "ទទួលយកសោ"
 
-#: includes/ai-core/class-admin.php:253
+#: includes/ai-core/class-admin.php:256
 msgid "Test"
 msgstr "សាកល្បង"
 
-#: includes/ai-core/class-admin.php:254
-#: includes/ai-core/class-admin.php:387
+#: includes/ai-core/class-admin.php:257
+#: includes/ai-core/class-admin.php:426
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 msgid "Remove"
 msgstr "លុបចេញ"
 
-#: includes/ai-core/class-admin.php:273
+#: includes/ai-core/class-admin.php:276
 msgid "Saved by a newer plugin version: update this plugin, or enter the key again."
 msgstr "រក្សាទុកដោយកំណែជំនួយការថ្មីជាងនេះ៖ សូមធ្វើបច្ចុប្បន្នភាពជំនួយការនេះ ឬបញ្ចូលគ្រាប់ចុចម្តងទៀត។"
 
-#: includes/ai-core/class-admin.php:275
+#: includes/ai-core/class-admin.php:278
 msgid "The saved key can no longer be opened (the site's security keys changed). Enter it again."
 msgstr "សោដែលបានរក្សាទុកមិនអាចបើកបានទៀតទេ (សោសុវត្ថិភាពរបស់គេហទំព័រត្រូវបានផ្លាស់ប្តូរ)។ សូមបញ្ចូលវាឡើងវិញ។"
 
-#: includes/ai-core/class-admin.php:278
+#: includes/ai-core/class-admin.php:281
 msgid "Not connected"
 msgstr "មិនបានតភ្ជាប់"
 
 #. translators: %s: date and time of the last successful test.
-#: includes/ai-core/class-admin.php:284
+#: includes/ai-core/class-admin.php:287
 #, php-format
 msgid "Connected — last test passed %s"
 msgstr "បានតភ្ជាប់ — ការធ្វើតេស្តចុងក្រោយបានឆ្លងកាត់ %s"
 
 #. translators: %s: why the last test failed.
-#: includes/ai-core/class-admin.php:290
+#: includes/ai-core/class-admin.php:293
 #, php-format
 msgid "Last test failed: %s"
 msgstr "ការធ្វើតេស្តចុងក្រោយបានបរាជ័យ៖ %s"
 
-#: includes/ai-core/class-admin.php:293
+#: includes/ai-core/class-admin.php:296
 msgid "Connected — not tested yet"
 msgstr "បានតភ្ជាប់ - មិនទាន់បានសាកល្បងនៅឡើយទេ"
 
-#: includes/ai-core/class-admin.php:302
+#: includes/ai-core/class-admin.php:305
 msgid "Which model to use"
 msgstr "តើត្រូវប្រើម៉ូដែលណា"
 
-#: includes/ai-core/class-admin.php:303
+#: includes/ai-core/class-admin.php:306
 msgid "★ marks our recommendation for that task. The list includes every model your key can use, read live from the provider."
 msgstr "★ ចំណាំការណែនាំរបស់យើងសម្រាប់កិច្ចការនោះ។ បញ្ជីនេះរួមបញ្ចូលទាំងរាល់ម៉ូដដែលគ្រាប់ចុចរបស់អ្នកអាចប្រើប្រាស់ ដោយអានផ្ទាល់ពីអ្នកផ្តល់សេវា។"
 
-#: includes/ai-core/class-admin.php:311
+#: includes/ai-core/class-admin.php:314
 msgid "— Recommended for the provider —"
 msgstr "— ណែនាំសម្រាប់អ្នកផ្តល់សេវា —"
 
-#: includes/ai-core/class-admin.php:330
+#: includes/ai-core/class-admin.php:334
 msgid "Save models"
 msgstr "រក្សាទុកម៉ូដែល"
 
-#: includes/ai-core/class-admin.php:332
+#: includes/ai-core/class-admin.php:336
 msgid "Refresh the model lists from the providers"
 msgstr "ធ្វើបច្ចុប្បន្នភាពបញ្ជីម៉ូដែលពីអ្នកផ្តល់សេវា"
 
-#: includes/ai-core/class-admin.php:344
+#: includes/ai-core/class-admin.php:356
+msgid "Images"
+msgstr "រូបភាព"
+
+#: includes/ai-core/class-admin.php:358
+msgid "Connect OpenAI or Google Gemini to make images."
+msgstr "ភ្ជាប់ OpenAI ឬ Google Gemini ដើម្បីបង្កើតរូបភាព។"
+
+#: includes/ai-core/class-admin.php:362
+msgid "— The newest image model of the first connected provider —"
+msgstr "— ម៉ូដរូបភាពថ្មីបំផុតរបស់អ្នកផ្តល់សេវាដែលបានតភ្ជាប់ដំបូងគេ —"
+
+#: includes/ai-core/class-admin.php:383
 msgid "best quality"
 msgstr "គុណភាពល្អបំផុត"
 
-#: includes/ai-core/class-admin.php:346
+#: includes/ai-core/class-admin.php:385
 msgid "lowest cost"
 msgstr "តម្លៃទាបបំផុត"
 
-#: includes/ai-core/class-admin.php:348
+#: includes/ai-core/class-admin.php:387
 msgid "fastest"
 msgstr "លឿនបំផុត"
 
-#: includes/ai-core/class-admin.php:360
+#: includes/ai-core/class-admin.php:399
 msgid "Add a model yourself"
 msgstr "បន្ថែមម៉ូដែលដោយខ្លួនឯង"
 
-#: includes/ai-core/class-admin.php:361
+#: includes/ai-core/class-admin.php:400
 msgid "A model came out today? Paste its exact name to use it straight away."
 msgstr "ម៉ូដែលថ្មីមួយចេញថ្ងៃនេះមែនទេ? បញ្ចូលឈ្មោះពិតប្រាកដរបស់វាដើម្បីប្រើប្រាស់ភ្លាមៗ។"
 
-#: includes/ai-core/class-admin.php:372
+#: includes/ai-core/class-admin.php:411
 msgid "Model name"
 msgstr "ឈ្មោះម៉ូដែល"
 
-#: includes/ai-core/class-admin.php:373
+#: includes/ai-core/class-admin.php:412
 msgid "Add model"
 msgstr "បន្ថែមម៉ូដែល"
 
-#: includes/ai-core/class-admin.php:403
+#: includes/ai-core/class-admin.php:442
 msgid "Recommended models list"
 msgstr "បញ្ជីម៉ូដែលដែលបានណែនាំ"
 
-#: includes/ai-core/class-admin.php:406
+#: includes/ai-core/class-admin.php:445
 msgid "The recommended models list could not be verified, so no recommendations are shown. Reinstall the plugin, or turn on daily updates below."
 msgstr "បញ្ជីម៉ូដែលដែលបានណែនាំមិនអាចផ្ទៀងផ្ទាត់បានទេ ដូច្នេះគ្មានការណែនាំណាមួយត្រូវបានបង្ហាញទេ។ សូមដំឡើងជំនួយការឡើងវិញ ឬបើកដំណើរការបច្ចុប្បន្នភាពប្រចាំថ្ងៃខាងក្រោម។"
 
 #. translators: %s: publication date.
-#: includes/ai-core/class-admin.php:409
+#: includes/ai-core/class-admin.php:448
 #, php-format
 msgid "The list in use was published on %s. Each plugin update brings a fresh one."
 msgstr "បញ្ជីដែលកំពុងប្រើត្រូវបានផ្សាយនៅលើ %s។ រាល់ការអាប់ដេតកម្មវិធីជំនួយនីមួយៗនាំមកនូវបញ្ជីថ្មីមួយ។"
 
-#: includes/ai-core/class-admin.php:416
+#: includes/ai-core/class-admin.php:455
 msgid "Also check Zinn Digital® once a day for an updated list."
 msgstr "សូមពិនិត្យមើល Zinn Digital® ម្តងក្នុងមួយថ្ងៃផងដែរ ដើម្បីមើលបញ្ជីដែលបានធ្វើបច្ចុប្បន្នភាព។"
 
-#: includes/ai-core/class-admin.php:417
+#: includes/ai-core/class-admin.php:456
 msgid "Only a plain download request is sent: no key, no site address, nothing about your content. The list is signed, and a list that fails the signature check is ignored."
 msgstr "មានតែសំណើទាញយកធម្មតាប៉ុណ្ណោះដែលត្រូវបានបញ្ជូន៖ គ្មានគ្រាប់ចុច គ្មានអាសយដ្ឋានគេហទំព័រ គ្មានអ្វីអំពីមាតិការបស់អ្នកទេ។ បញ្ជីនេះត្រូវបានចុះហត្ថលេខា ហើយបញ្ជីដែលមិនឆ្លងកាត់ការពិនិត្យហត្ថលេខា នឹងត្រូវមិនអើពើ។"
 
 #. translators: 1: date and time, 2: result such as "updated".
-#: includes/ai-core/class-admin.php:422
+#: includes/ai-core/class-admin.php:461
 #, php-format
 msgid "Last checked %1$s: %2$s."
 msgstr "បានពិនិត្យចុងក្រោយ %1$s៖ %2$s។"
 
-#: includes/ai-core/class-admin.php:428
+#: includes/ai-core/class-admin.php:467
 msgid "Save, and check now if turned on"
 msgstr "រក្សាទុក ហើយពិនិត្យមើលឥឡូវនេះប្រសិនបើបានបើក"
 
-#: includes/ai-core/class-admin.php:441
+#: includes/ai-core/class-admin.php:480
 msgid "a newer list was installed"
 msgstr "បញ្ជីថ្មីជាងនេះត្រូវបានដំឡើង"
 
-#: includes/ai-core/class-admin.php:443
+#: includes/ai-core/class-admin.php:482
 msgid "already up to date"
 msgstr "បានធ្វើបច្ចុប្បន្នភាពរួចរាល់ហើយ"
 
-#: includes/ai-core/class-admin.php:445
+#: includes/ai-core/class-admin.php:484
 msgid "the download failed the signature check and was ignored"
 msgstr "ការទាញយកបានបរាជ័យក្នុងការពិនិត្យមើលហត្ថលេខា ហើយត្រូវបានព្រងើយកន្តើយ"
 
-#: includes/ai-core/class-admin.php:447
+#: includes/ai-core/class-admin.php:486
 msgid "Zinn Digital® could not be reached; the current list stays in use"
 msgstr "Zinn Digital® មិនអាចទាក់ទងបានទេ បញ្ជីបច្ចុប្បន្ននៅតែបន្តប្រើប្រាស់"
 
-#: includes/ai-core/class-admin.php:450
+#: includes/ai-core/class-admin.php:489
 msgid "turned off"
 msgstr "បានបិទ"
 
-#: includes/ai-core/class-admin.php:487
+#: includes/ai-core/class-admin.php:526
 msgid "Open"
 msgstr "បើក"
 
-#: includes/ai-core/class-admin.php:530
+#: includes/ai-core/class-admin.php:569
 msgid "Check their status page"
 msgstr "ពិនិត្យមើលទំព័រស្ថានភាពរបស់ពួកគេ"
 
-#: includes/ai-core/class-admin.php:533
+#: includes/ai-core/class-admin.php:572
 msgid "Open your billing page"
 msgstr "បើកទំព័រទូទាត់ប្រាក់របស់អ្នក"
 
-#: includes/ai-core/class-admin.php:535
+#: includes/ai-core/class-admin.php:574
 msgid "Open your API keys page"
 msgstr "បើកទំព័រគ្រាប់ចុច API របស់អ្នក"
 
-#: includes/ai-core/class-admin.php:538
+#: includes/ai-core/class-admin.php:577
 msgid "Open the AI settings"
 msgstr "បើកការកំណត់ AI"
 
-#: includes/ai-core/class-admin.php:549
+#: includes/ai-core/class-admin.php:588
 #: includes/ai-core/pro__premium_only/class-pro-policy.php:296
 msgid "Sorry, you are not allowed to do that."
 msgstr "សូមអភ័យទោស អ្នកមិនត្រូវបានអនុញ្ញាតឱ្យធ្វើសកម្មភាពនេះទេ។"
 
-#: includes/ai-core/class-admin.php:575
-#: includes/ai-core/class-admin.php:609
+#: includes/ai-core/class-admin.php:614
+#: includes/ai-core/class-admin.php:648
 msgid "Unknown provider."
 msgstr "មិនស្គាល់អ្នកផ្តល់សេវា។"
 
-#: includes/ai-core/class-admin.php:583
+#: includes/ai-core/class-admin.php:622
 msgid "Enter the address of your service, for example http://localhost:11434/v1."
 msgstr "សូមបញ្ចូលអាសយដ្ឋាននៃសេវាកម្មរបស់អ្នក ឧទាហរណ៍ http://localhost:11434/v1។"
 
-#: includes/ai-core/class-admin.php:590
+#: includes/ai-core/class-admin.php:629
 msgid "That does not look like an API key. Copy it again, without spaces."
 msgstr "នោះមិនមែនជាគ្រាប់ចុច API ទេ។ សូមចម្លងវាម្ដងទៀតដោយគ្មានដកឃ្លា។"
 
-#: includes/ai-core/class-admin.php:594
+#: includes/ai-core/class-admin.php:633
 msgid "Paste your API key first."
 msgstr "សូមបិទភ្ជាប់កូនសោ API របស់អ្នកជាមុនសិន។"
 
-#: includes/ai-core/class-admin.php:658
+#: includes/ai-core/class-admin.php:697
 msgid "Key removed."
 msgstr "សោត្រូវបានលុបចេញ។"
 
-#: includes/ai-core/class-admin.php:687
+#: includes/ai-core/class-admin.php:734
 msgid "Models saved."
 msgstr "ម៉ូដែលត្រូវបានរក្សាទុក។"
 
-#: includes/ai-core/class-admin.php:701
+#: includes/ai-core/class-admin.php:748
 msgid "Enter the model's exact name, for example as the provider's documentation writes it."
 msgstr "បញ្ចូលឈ្មោះពិតប្រាកដរបស់ម៉ូដែល ឧទាហរណ៍ដូចដែលបានសរសេរនៅក្នុងឯកសាររបស់ភ្នាក់ងារផ្តល់សេវា។"
 
 #. translators: %s: model name.
-#: includes/ai-core/class-admin.php:725
+#: includes/ai-core/class-admin.php:772
 #, php-format
 msgid "Added %s. Choose it under \"Which model to use\"."
 msgstr "បានបន្ថែម %s។ សូមជ្រើសរើសវានៅក្រោម \"តើត្រូវប្រើម៉ូដែលណា\"។"
 
-#: includes/ai-core/class-admin.php:754
+#: includes/ai-core/class-admin.php:801
 msgid "Model removed."
 msgstr "បានលុបម៉ូដែលចេញ។"
 
-#: includes/ai-core/class-admin.php:781
+#: includes/ai-core/class-admin.php:828
 msgid "Daily updates are off. The list that came with the plugin is used."
 msgstr "ការអាប់ដេតប្រចាំថ្ងៃត្រូវបានបិទ។ បញ្ជីដែលភ្ជាប់មកជាមួយកម្មវិធីជំនួយត្រូវបានប្រើ។"
 
 #. translators: %s: result of the check, such as "already up to date".
-#: includes/ai-core/class-admin.php:788
+#: includes/ai-core/class-admin.php:835
 #, php-format
 msgid "Checked: %s."
 msgstr "បានធីក៖ %s។"
 
-#: includes/ai-core/class-admin.php:810
+#: includes/ai-core/class-admin.php:857
 msgid "Model lists refreshed."
 msgstr "បញ្ជីគំរូត្រូវបានផ្ទុកឡើងវិញ។"
 
@@ -443,6 +460,19 @@ msgstr "គ្មានម៉ូដែលណាមួយត្រូវបាន
 #: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "ក្រុមហ៊ុនផ្តល់សេវា AI នោះមិនត្រូវបានគាំទ្រដោយជំនាន់នៃកម្មវិធីជំនួយនេះទេ។"
+
+#: includes/ai-core/class-client.php:125
+msgid "No AI provider that can make images is connected. Add an OpenAI or Google Gemini key in the AI settings."
+msgstr "គ្មានអ្នកផ្ដល់សេវា AI ណាដែលអាចបង្កើតរូបភាពត្រូវបានតភ្ជាប់ទេ។ សូមបន្ថែមគ្រាប់ចុច OpenAI ឬ Google Gemini នៅក្នុងការកំណត់ AI។"
+
+#: includes/ai-core/class-client.php:129
+#: includes/ai-core/class-provider.php:295
+msgid "This AI provider cannot make images. Choose OpenAI or Google Gemini for images in the AI settings."
+msgstr "អ្នកផ្តល់សេវា AI នេះមិនអាចបង្កើតរូបភាពបានទេ។ សូមជ្រើសរើស OpenAI ឬ Google Gemini សម្រាប់រូបភាពនៅក្នុងការកំណត់ AI។"
+
+#: includes/ai-core/class-client.php:135
+msgid "Your AI key cannot use any image model. Check the key's permissions with the provider, or choose another provider for images."
+msgstr "គ្រាប់ចុច AI របស់អ្នកមិនអាចប្រើប្រាស់គំរូរូបភាពណាមួយបានទេ។ សូមពិនិត្យមើលសិទ្ធិរបស់គ្រាប់ចុចជាមួយអ្នកផ្តល់សេវា ឬជ្រើសរើសអ្នកផ្តល់សេវាផ្សេងទៀតសម្រាប់រូបភាព។"
 
 #: includes/ai-core/class-failure.php:141
 msgid "This site could not reach your AI service. Check that it is running and that its address is reachable from your web server (a service on your own computer is not reachable from a hosted site)."
@@ -500,7 +530,7 @@ msgstr "%s កំពុងជួបប្រទះបញ្ហានៅពេល
 msgid "The AI request failed for a reason we could not identify. Try again; if it keeps happening, contact support with the details below."
 msgstr "សំណើ AI បានបរាជ័យដោយសារមូលហេតុដែលយើងមិនអាចកំណត់បាន។ សូមព្យាយាមម្តងទៀត បើវានៅតែកើតឡើង សូមទាក់ទងមកផ្នែកជំនួយដោយផ្ដល់ព័ត៌មានលម្អិតខាងក្រោម។"
 
-#: includes/ai-core/class-provider.php:162
+#: includes/ai-core/class-provider.php:164
 msgid "The AI provider answered in a form this plugin could not read. Try again; if it keeps happening, choose another model or contact support."
 msgstr "អ្នកផ្តល់សេវា AI បានឆ្លើយតបក្នុងទម្រង់ដែលកម្មវិធីជំនួយនេះមិនអាចអានបាន។ សូមព្យាយាមម្តងទៀត ប្រសិនបើវានៅតែបន្តកើតឡើង សូមជ្រើសរើសម៉ូឌែលផ្សេងទៀត ឬទាក់ទងផ្នែកគាំទ្រ។"
 
@@ -702,6 +732,7 @@ msgid "The admin screen's scripts are missing from this copy of the plugin. Rein
 msgstr "ស្គ្រីបរបស់អេក្រង់រដ្ឋបាលគឺបាត់ពីច្បាប់ចម្លងនៃកម្មវិធីជំនួយនេះ។ សូមដំឡើងវាឡើងវិញពីកញ្ចប់ដែលបានចេញផ្សាយ។"
 
 #: includes/class-admin.php:81
+#: includes/pro__premium_only/workflow/class-network.php:224
 msgid "This screen needs JavaScript."
 msgstr "អេក្រង់នេះត្រូវការ JavaScript។"
 
@@ -1397,6 +1428,7 @@ msgstr "ទិញអាជ្ញាប័ណ្ណឥឡូវនេះ"
 #: includes/freemius-strings.php:479
 #: includes/freemius-strings.php:3453
 #: src/studio/components/revisions.js:150
+#: src/workflow/pro__premium_only/review-layer.js:167
 msgid "Cancel"
 msgstr "បោះបង់"
 
@@ -4218,7 +4250,7 @@ msgstr "តើអ្នកចង់បន្តការអាប់ដេតន
 
 #: includes/freemius-strings.php:2638
 #: includes/freemius-strings.php:5617
-#: src/studio/components/header.js:238
+#: src/studio/components/header.js:252
 msgid "Update"
 msgstr "អាប់ដេត"
 
@@ -4229,7 +4261,7 @@ msgstr "ធ្វើបច្ចុប្បន្នភាពអាជ្ញា
 
 #: includes/freemius-strings.php:2646
 #: includes/freemius-strings.php:5632
-#: src/admin/App.js:78
+#: src/admin/App.js:79
 msgid "Upgrade"
 msgstr "តំឡើងកំណែបន្ថែម"
 
@@ -4901,6 +4933,164 @@ msgstr "អាសយដ្ឋានអ៊ីមែលនេះត្រូវប
 msgid "MailPoet plugin not found. Please contact the admin."
 msgstr "មិនរកឃើញកម្មវិធីបន្ថែម MailPoet ទេ។ សូមទាក់ទងអ្នកគ្រប់គ្រង។"
 
+#: includes/pro__premium_only/workflow/class-maintenance.php:127
+msgid "We are doing some maintenance on this site. Please check back soon."
+msgstr "យើងកំពុងធ្វើការថែទាំគេហទំព័រនេះ។ សូមពិនិត្យមើលម្ដងទៀតក្នុងពេលឆាប់ៗនេះ។"
+
+#: includes/pro__premium_only/workflow/class-maintenance.php:128
+msgid "This site is launching soon."
+msgstr "គេហទំព័រនេះនឹងដាក់ឱ្យដំណើរការក្នុងពេលឆាប់ៗនេះ។"
+
+#: includes/pro__premium_only/workflow/class-maintenance.php:176
+msgid "Maintenance mode is on"
+msgstr "របៀបថែទាំកំពុងបើកដំណើរការ"
+
+#: includes/pro__premium_only/workflow/class-maintenance.php:177
+msgid "Pre-launch mode is on"
+msgstr "របៀបមុនពេលបើកដំណើរការត្រូវបានបើក"
+
+#: includes/pro__premium_only/workflow/class-network.php:168
+msgid "Network templates"
+msgstr "គំរូ​បណ្តាញ"
+
+#: includes/pro__premium_only/workflow/class-replace-jobs.php:241
+#: includes/pro__premium_only/workflow/class-replace-jobs.php:535
+msgid "That find-and-replace job no longer exists."
+msgstr "ការងារស្វែងរកនិងជំនួសនោះមិនមានទៀតទេ។"
+
+#: includes/pro__premium_only/workflow/class-replace-jobs.php:248
+msgid "That step is not available for this job right now."
+msgstr "ជំហាននោះមិនទាន់មានសម្រាប់កិច្ចការនេះនៅពេលនេះទេ។"
+
+#: includes/pro__premium_only/workflow/class-replacer.php:105
+msgid "Enter what to find."
+msgstr "បញ្ចូលអ្វីដែលត្រូវស្វែងរក។"
+
+#: includes/pro__premium_only/workflow/class-replacer.php:108
+msgid "Colours must be hex codes such as #1a73e8 or #fff."
+msgstr "ពណ៌ត្រូវតែជាកូដ hex ដូចជា #1a73e8 ឬ #fff។"
+
+#: includes/pro__premium_only/workflow/class-replacer.php:111
+msgid "The new link must be a full web address (https://…), a path starting with /, or an anchor starting with #."
+msgstr "តំណភ្ជាប់ថ្មីត្រូវតែជាអាសយដ្ឋានវេបសាយពេញលេញ (https://…), ផ្លូវដែលចាប់ផ្តើមដោយ / ឬអក្សរភ្ជាប់ដែលចាប់ផ្តើមដោយ #។"
+
+#: includes/pro__premium_only/workflow/class-review.php:72
+msgid "Client review comments"
+msgstr "មតិយោបល់របស់អ្នកប្រើប្រាស់"
+
+#: includes/pro__premium_only/workflow/class-review.php:325
+msgid "Write a comment first."
+msgstr "សរសេរមតិយោបល់ជាមុនសិន។"
+
+#: includes/pro__premium_only/workflow/class-review.php:350
+#: includes/pro__premium_only/workflow/class-review.php:388
+msgid "Client"
+msgstr "អតិថិជន"
+
+#: includes/pro__premium_only/workflow/class-review.php:364
+#: includes/pro__premium_only/workflow/class-review.php:560
+msgid "That comment no longer exists."
+msgstr "មតិយោបល់នោះលែងមានទៀតហើយ។"
+
+#. translators: %s: page title.
+#: includes/pro__premium_only/workflow/class-review.php:384
+#, php-format
+msgid "New review comment on “%s”"
+msgstr "មតិវាយតម្លៃថ្មីនៅលើ “%s”"
+
+#. translators: 1: commenter name, 2: comment, 3: editor link.
+#: includes/pro__premium_only/workflow/class-review.php:387
+#, php-format
+msgid ""
+"%1$s wrote:\n"
+"\n"
+"%2$s\n"
+"\n"
+"Open the page in the editor to answer or resolve it:\n"
+"%3$s"
+msgstr ""
+"%1$s បានសរសេរ៖\n"
+"\n"
+"%2$s\n"
+"\n"
+"សូមបើកទំព័រនេះក្នុងកម្មវិធីកែសម្រួលដើម្បីឆ្លើយតប ឬដោះស្រាយវា៖\n"
+"%3$s"
+
+#: includes/pro__premium_only/workflow/class-review.php:430
+msgid "This review link is not valid any more. Ask for a new one."
+msgstr "តំណ​វាយតម្លៃនេះ​លែង​មាន​សុពលភាព​ទៀត​ហើយ។ សូម​ស្នើសុំ​តំណ​ថ្មី។"
+
+#: includes/pro__premium_only/workflow/class-review.php:436
+msgid "Too many comments from this link in the last hour. Try again later."
+msgstr "មតិយោបល់ពីតំណនេះច្រើនពេកហើយក្នុងរយៈពេលមួយម៉ោងចុងក្រោយនេះ។ សូមព្យាយាមម្តងទៀតនៅពេលក្រោយ។"
+
+#: includes/pro__premium_only/workflow/class-roles.php:234
+msgid "Your role cannot create templates or patterns."
+msgstr "តួនាទីរបស់អ្នកមិនអាចបង្កើតគំរូ ឬលំនាំបានទេ។"
+
+#: includes/pro__premium_only/workflow/class-roles.php:312
+msgid "You can change the text and images on this page, but not its layout or design. Your change was not saved."
+msgstr "អ្នកអាចផ្លាស់ប្តូរអត្ថបទ និងរូបភាពនៅលើទំព័រនេះ ប៉ុន្តែមិនមែនប្លង់ ឬការរចនារបស់វាទេ។ ការផ្លាស់ប្តូររបស់អ្នកមិនត្រូវបានរក្សាទុកទេ។"
+
+#: includes/pro__premium_only/workflow/class-roles.php:317
+msgid "Your role cannot change styles. Undo the style changes and save again."
+msgstr "តួនាទីរបស់អ្នកមិនអាចប្ដូររចនាប័ទ្មបានទេ។ សូមមិនធ្វើការផ្លាស់ប្ដូររចនាប័ទ្មវិញ ហើយរក្សាទុកម្ដងទៀត។"
+
+#: includes/pro__premium_only/workflow/class-roles.php:320
+msgid "Your role cannot add or change custom code (custom CSS or HTML blocks). Undo those changes and save again."
+msgstr "តួនាទីរបស់អ្នកមិនអាចបន្ថែម ឬផ្លាស់ប្តូរកូដផ្ទាល់ខ្លួន (ប្លុក CSS ឬ HTML ផ្ទាល់ខ្លួន) បានទេ។ សូមលុបការផ្លាស់ប្តូរទាំងនោះ ហើយរក្សាទុកម្តងទៀត។"
+
+#: includes/workflow/class-transfer-routes.php:137
+#: includes/workflow/class-transfer.php:282
+msgid "This is not an export file from this plugin."
+msgstr "នេះមិនមែនជាឯកសារនាំចេញពីកម្មវិធីជំនួយនេះទេ។"
+
+#: includes/workflow/class-transfer.php:286
+msgid "This export file was made by a newer version of the plugin. Update the plugin on this site, then import it again."
+msgstr "ឯកសារនាំចេញនេះត្រូវបានបង្កើតឡើងដោយកំណែថ្មីជាងមុននៃកម្មវិធីជំនួយ។ សូមអាប់ដេតកម្មវិធីជំនួយនៅលើគេហទំព័រនេះ រួចនាំចូលវាម្តងទៀត។"
+
+#: includes/workflow/class-transfer.php:289
+msgid "The export file is damaged: its list of items is missing."
+msgstr "ឯកសារនាំចេញត្រូវបានខូចខាត៖ បញ្ជីមុខទំនិញរបស់វាបាត់។"
+
+#: includes/workflow/class-transfer.php:292
+msgid "The export file is damaged or was edited after it was made (its checksum does not match). Export it again from the other site."
+msgstr "ឯកសារនាំចេញខូច ឬត្រូវបានកែសម្រួលបន្ទាប់ពីបង្កើត (checksum របស់វាខុសគ្នា)។ សូមនាំចេញវាម្ដងទៀតពីគេហទំព័រផ្សេង។"
+
+#. translators: %s: item name from the export file.
+#: includes/workflow/class-transfer.php:337
+#, php-format
+msgid "“%s” was not imported: this site does not have that kind of item."
+msgstr "\"%s\" មិនត្រូវបាននាំចូលទេ៖ គេហទំព័រនេះមិនមានទំនិញប្រភេទនោះទេ។"
+
+#. translators: %s: item name from the export file.
+#: includes/workflow/class-transfer.php:343
+#, php-format
+msgid "“%s” was not imported: you are not allowed to create that kind of item."
+msgstr "“%s” មិន​ត្រូវ​បាន​នាំ​ចូល​ទេ៖ អ្នក​មិន​ត្រូវ​បាន​អនុញ្ញាត​ឱ្យ​បង្កើត​ធាតុ​ប្រភេទ​នោះ​ទេ។"
+
+#. translators: %s: item name from the export file.
+#: includes/workflow/class-transfer.php:354
+#, php-format
+msgid "“%s” was not replaced: you are not allowed to edit the one on this site."
+msgstr "“%s” មិនត្រូវបានជំនួសទេ៖ អ្នកមិនត្រូវបានអនុញ្ញាតឱ្យកែសម្រួលធាតុនៅលើគេហទំព័រនេះទេ។"
+
+#. translators: 1: item name from the export file, 2: the reason.
+#: includes/workflow/class-transfer.php:374
+#, php-format
+msgid "“%1$s” was not imported: %2$s"
+msgstr "“%1$s” មិន​ត្រូវ​បាន​នាំ​ចូល​ទេ៖ %2$s"
+
+#: includes/workflow/class-transfer.php:382
+msgid "Settings were not imported: only an administrator can change them."
+msgstr "ការកំណត់មិនត្រូវបាននាំចូលទេ៖ មានតែអ្នកគ្រប់គ្រងប៉ុណ្ណោះដែលអាចផ្លាស់ប្តូរវាបាន។"
+
+#. translators: 1: image address, 2: the reason.
+#: includes/workflow/class-transfer.php:555
+#, php-format
+msgid "The image %1$s was not copied: %2$s"
+msgstr "រូបភាព %1$s មិនត្រូវបានចម្លងទេ៖ %2$s"
+
 #: src/admin/About.js:17
 msgid "Built by Neil Lock, CEO of Zinn Digital® Ltd"
 msgstr "បង្កើតឡើងដោយ Neil Lock នាយកប្រតិបត្តិរបស់ Zinn Digital® Ltd"
@@ -4919,48 +5109,50 @@ msgstr "គេហទំព័រ Page Builder Sandwich"
 msgid "Zinn Digital® website"
 msgstr "គេហទំព័រ Zinn Digital®"
 
-#: src/admin/App.js:50
+#: src/admin/App.js:51
 msgid "Settings saved."
 msgstr "បានរក្សាទុកការកំណត់។"
 
-#: src/admin/App.js:83
+#: src/admin/App.js:84
 msgid "See the Pro plans and pricing"
 msgstr "មើលផែនការ Pro និងតម្លៃ"
 
-#: src/admin/App.js:93
+#: src/admin/App.js:94
 msgid "Front-end output"
 msgstr "លទ្ធផលផ្នែកខាងមុខ"
 
-#: src/admin/App.js:101
+#: src/admin/App.js:102
 msgid "Class name prefix"
 msgstr "បុព្វបទឈ្មោះថ្នាក់"
 
-#: src/admin/App.js:105
+#: src/admin/App.js:106
 msgid "Every class name the plugin prints on your pages starts with this prefix, so the pages do not reveal which plugin built them. 1 to 8 lowercase letters or digits, starting with a letter."
 msgstr "ឈ្មោះថ្នាក់នីមួយៗដែលកម្មវិធីជំនួយបង្ហាញនៅលើទំព័ររបស់អ្នកចាប់ផ្តើមដោយបុព្វបទនេះ ដូច្នេះទំព័រទាំងនោះមិនបង្ហាញថាអ្នកណាជាអ្នកបង្កើតកម្មវិធីជំនួយនោះទេ។ ពី ១ ដល់ 8 អក្សរតូច ឬលេខ ដោយចាប់ផ្តើមដោយអក្សរ។"
 
-#: src/admin/App.js:118
+#: src/admin/App.js:119
 #: src/studio/components/commands.js:196
+#: src/workflow/pro__premium_only/MaintenancePanel.js:195
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:189
 msgid "Save"
 msgstr "រក្សាទុក"
 
-#: src/admin/App.js:124
+#: src/admin/App.js:125
 msgid "Beta updates"
 msgstr "បច្ចុប្បន្នភាពបេតា"
 
-#: src/admin/App.js:131
+#: src/admin/App.js:132
 msgid "This site receives beta versions as updates."
 msgstr "គេហទំព័រនេះទទួលបានកំណែបេតាជាបច្ចុប្បន្នភាព។"
 
-#: src/admin/App.js:135
+#: src/admin/App.js:136
 msgid "This site receives stable versions only."
 msgstr "គេហទំព័រនេះទទួលបានតែកំណែមានស្ថេរភាពប៉ុណ្ណោះ។"
 
-#: src/admin/App.js:144
+#: src/admin/App.js:145
 msgid "Change this on the Account page"
 msgstr "សូមផ្លាស់ប្តូរការកំណត់នេះនៅលើទំព័រគណនី"
 
-#: src/admin/App.js:153
+#: src/admin/App.js:154
 msgid "Beta versions are offered to licensed Pro installations that are connected to their account. Once connected, you can join from the Account page."
 msgstr "កំណែបេតាត្រូវបានផ្តល់ជូនដល់ការដំឡើង Pro ដែលមានអាជ្ញាប័ណ្ណដែលបានតភ្ជាប់ទៅកាន់គណនីរបស់ពួកគេ។ នៅពេលដែលបានតភ្ជាប់ អ្នកអាចចូលរួមពីទំព័រគណនី។"
 
@@ -5278,6 +5470,7 @@ msgstr "ចំណងជើង"
 
 #: src/editor/index.js:35
 #: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
 msgid "Text"
 msgstr "អត្ថបទ"
 
@@ -5308,7 +5501,7 @@ msgstr "បង្ហាញភាសាquoបច្ចុប្បន្ន"
 
 #: src/editor/language-switcher.js:46
 msgid "Install Tranzly and list two or more languages, and the switcher appears here."
-msgstr "ដំឡើង Tranzly និងរាយបញ្ជីភាសាពីរ ឬច្រើន រួចប៊ូតុងប្តូរនឹងបង្ហាញនៅទីនេះ។"
+msgstr "ដំឡើង Tranzly និងរាយបញ្ជីភាសាពីរ ឬច្រើន រួចប៊ូតុងប្តូរភាសានឹងបង្ហាញនៅទីនេះ។"
 
 #: src/editor/language-switcher.js:67
 msgid "Design"
@@ -5352,7 +5545,7 @@ msgstr "ឈ្មោះ និងកូដ"
 
 #: src/editor/language-switcher.js:134
 msgid "Flags"
-msgstr "ទង់"
+msgstr "ស្លាកសញ្ញា"
 
 #: src/editor/language-switcher.js:135
 msgid "Off by default: a flag is a country, not a language."
@@ -5360,7 +5553,7 @@ msgstr "បិទតាមលំនាំដើម៖ ទង់ជាតិគ�
 
 #: src/editor/language-switcher.js:144
 msgid "Include the current language"
-msgstr "រាប់បញ្ចូលភាសាបច្ចុប្បន្ន"
+msgstr "ដាក់បញ្ចូលភាសាបច្ចុប្បន្ន"
 
 #: src/editor/language-switcher.js:155
 msgid "Hide languages this page is not translated into"
@@ -5368,9 +5561,10 @@ msgstr "លាក់ភាសាដែលទំព័រនេះមិនត្
 
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
-msgstr "ដាក់ជង់បញ្ឈរ"
+msgstr "ជង់បញ្ឈរ"
 
 #: src/editor/language-switcher.js:187
+#: src/workflow/pro__premium_only/ReplacePanel.js:126
 msgid "Colours"
 msgstr "ពណ៌"
 
@@ -5392,7 +5586,7 @@ msgstr "ស៊ុម"
 
 #: src/editor/language-switcher.js:220
 msgid "Size and spacing"
-msgstr "ទំហំ និងចន្លោះឃ្លា"
+msgstr "ទំហំ និងគម្លាត"
 
 #: src/editor/language-switcher.js:226
 msgid "Corner radius"
@@ -5400,45 +5594,45 @@ msgstr "កាំជ្រុង"
 
 #: src/editor/language-switcher.js:231
 msgid "Space between languages"
-msgstr "ចន្លោះរវាងភាសា"
+msgstr "ទំហំផ្ទុកទិន្នន័យរវាងភាសា"
 
 #: src/editor/language-switcher.js:239
 msgid "Text size"
 msgstr "ទំហំអត្ថបទ"
 
 #. translators: %s: user name.
-#: src/studio/app.js:116
+#: src/studio/app.js:118
 #, js-format
 msgid "%s is also editing this page. Saving may overwrite their changes."
 msgstr "%s ក៏កំពុងកែសម្រួលទំព័រនេះដែរ។ ការរក្សាទុកអាចនឹងសរសេរជាន់លើការផ្លាស់ប្តូររបស់ពួកគេ។"
 
-#: src/studio/app.js:131
-#: src/studio/app.js:138
+#: src/studio/app.js:133
+#: src/studio/app.js:140
 #: src/studio/components/header.js:109
 msgid "Block library"
 msgstr "បណ្ណាល័យប្លុក"
 
-#: src/studio/app.js:132
-#: src/studio/app.js:142
+#: src/studio/app.js:134
+#: src/studio/app.js:144
 #: src/studio/components/header.js:117
 msgid "Layers"
 msgstr "ស្រទាប់"
 
-#: src/studio/app.js:146
+#: src/studio/app.js:148
 msgid "Close panel"
 msgstr "បិទបន្ទះ"
 
-#: src/studio/app.js:169
+#: src/studio/app.js:171
 msgid "Page canvas"
 msgstr "ផ្ទាំងទំព័រ"
 
-#: src/studio/app.js:197
-#: src/studio/components/header.js:193
+#: src/studio/app.js:199
+#: src/studio/components/header.js:207
 #: src/studio/components/revisions.js:80
 msgid "Revisions"
 msgstr "កំណែប្រែ"
 
-#: src/studio/app.js:198
+#: src/studio/app.js:201
 msgid "Block settings"
 msgstr "ការកំណត់ការបិទបាំង"
 
@@ -5449,6 +5643,7 @@ msgid "Add block: %s"
 msgstr "បន្ថែមប្លុក៖ %s"
 
 #: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
 msgid "(no title)"
 msgstr "(គ្មានចំណងជើង)"
 
@@ -5485,7 +5680,7 @@ msgid "Open the normal editor"
 msgstr "បើកកម្មវិធីកែសម្រួលធម្មតា"
 
 #: src/studio/components/commands.js:259
-#: src/studio/components/header.js:201
+#: src/studio/components/header.js:215
 #: src/studio/components/shortcuts.js:135
 msgid "Keyboard shortcuts"
 msgstr "ផ្លូវកាត់ក្តារចុច"
@@ -5601,15 +5796,15 @@ msgstr "ទទងមើលទទឹង"
 msgid "Command palette"
 msgstr "ក្ដារលាយបញ្ជា"
 
-#: src/studio/components/header.js:213
+#: src/studio/components/header.js:227
 msgid "View page (opens in a new tab)"
 msgstr "មើលទំព័រ (បើកក្នុងផ្ទាំងថ្មី)"
 
-#: src/studio/components/header.js:239
+#: src/studio/components/header.js:253
 msgid "Save draft"
 msgstr "រក្សាទុកសេចក្តីព្រាង"
 
-#: src/studio/components/header.js:249
+#: src/studio/components/header.js:263
 msgid "Publish"
 msgstr "បោះពុម្ពផ្សាយ"
 
@@ -5779,8 +5974,538 @@ msgid "Published."
 msgstr "បានផ្សាយបោះពុម្ព"
 
 #: src/studio/hooks/use-save.js:88
+#: src/workflow/pro__premium_only/MaintenancePanel.js:83
 msgid "Saved."
 msgstr "បានរក្សាទុក។"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:94
+msgid "Maintenance and pre-launch mode"
+msgstr "របៀបថែទាំ និងរបៀបមុនពេលដាក់ដំណើរការ"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:112
+msgid "What visitors see"
+msgstr "អ្វីដែលអ្នកចូលមើលមើលឃើញ"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:120
+msgid "The site, as normal"
+msgstr "គេហទំព័រនេះ ធម្មតា"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:127
+msgid "Maintenance: a notice, and search engines are told to come back later"
+msgstr "ការថែទាំ៖ ការជូនដំណឹងមួយ ហើយម៉ាស៊ីនស្វែងរកត្រូវបានប្រាប់ឱ្យត្រឡប់មកវិញនៅពេលក្រោយ"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:134
+msgid "Pre-launch: a notice, and search engines are told not to index the site"
+msgstr "ការបើកដំណើរការជាមុន៖ ការជូនដំណឹងមួយ ហើយម៉ាស៊ីនស្វែងរកត្រូវបានប្រាប់ថាកុំធ្វើលិបិក្រមគេហទំព័រនេះ"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:145
+msgid "Page to show instead"
+msgstr "ទំព័រសម្រាប់បង្ហាញជំនួសវិញ"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:149
+msgid "Design any page with the builder and choose it here. Without one, visitors see a short notice with the site’s name."
+msgstr "រចនាទំព័រណាមួយជាមួយកម្មវិធីបង្កើត ហើយជ្រើសរើសវាទីនេះ។ បើគ្មានវាទេ អ្នកទស្សនានឹងឃើញសេចក្តីជូនដំណឹងខ្លីមួយដែលមានឈ្មោះគេហទំព័រ។"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:164
+msgid "Who still sees the real site (administrators always do):"
+msgstr "អ្នកណាខ្លះនៅតែឃើញគេហទំព័រពិតប្រាកដ (អ្នកគ្រប់គ្រងតែងតែឃើញ):"
+
+#: src/workflow/pro__premium_only/MaintenancePanel.js:199
+msgid "Open the site in a private window to see what visitors see."
+msgstr "សូមបើកគេហទំព័រនេះក្នុងបង្អួចឯកជនដើម្បីមើលអ្វីដែលអ្នកទស្សនាឃើញ។"
+
+#: src/workflow/pro__premium_only/network.js:54
+msgid "Network settings saved."
+msgstr "ការកំណត់បណ្តាញត្រូវបានរក្សាទុក។"
+
+#. translators: %d: number of sites.
+#: src/workflow/pro__premium_only/network.js:102
+#, js-format
+msgid "These settings apply to the %d site in this network."
+msgid_plural "These settings apply to the %d sites in this network."
+msgstr[0] "ការកំណត់ទាំងនេះអនុវត្តចំពោះគេហទំព័រ %d នៅក្នុងបណ្តាញនេះ។"
+
+#: src/workflow/pro__premium_only/network.js:113
+msgid "Shared templates"
+msgstr "គំរូដែលបានចែករំលែក"
+
+#: src/workflow/pro__premium_only/network.js:116
+msgid "Patterns saved on the main site that are ticked here appear on every site, under “Network templates”. Each site inserts its own copy."
+msgstr "គំរូដែលបានរក្សាទុកនៅលើគេហទំព័រមេដែលបានធីកនៅទីនេះនឹងបង្ហាញនៅលើគេហទំព័រនីមួយៗ ក្រោម «គំរូប្រព័ន្ធបណ្តាញ»។ គេហទំព័រនីមួយៗបញ្ចូលច្បាប់ចម្លងផ្ទាល់ខ្លួន។"
+
+#: src/workflow/pro__premium_only/network.js:123
+msgid "The main site has no saved patterns yet."
+msgstr "គេហទំព័រចម្បងមិនទាន់មានលំនាំដែលបានរក្សាទុកនៅឡើយទេ។"
+
+#: src/workflow/pro__premium_only/network.js:142
+msgid "White label for every site"
+msgstr "ស្លាកពណ៌សសម្រាប់គ្រប់គេហទំព័រ"
+
+#: src/workflow/pro__premium_only/network.js:149
+msgid "Used by every site that has not saved its own white-label settings."
+msgstr "ត្រូវបានប្រើប្រាស់ដោយរាល់គេហទំព័រដែលមិនទាន់បានរក្សាទុកការកំណត់ស្លាកយីហោផ្ទាល់ខ្លួនរបស់ខ្លួន។"
+
+#: src/workflow/pro__premium_only/network.js:156
+msgid "Turn white label on"
+msgstr "បើកផ្លាកយីហោផ្ទាល់ខ្លួន"
+
+#: src/workflow/pro__premium_only/network.js:166
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:114
+msgid "Builder name"
+msgstr "ឈ្មោះកម្មវិធីកសាង"
+
+#: src/workflow/pro__premium_only/network.js:170
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:122
+msgid "Visual editor name"
+msgstr "ឈ្មោះកម្មវិធីនិពន្ធដែលមើលឃើញ"
+
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "អ្នកនិពន្ធ"
+
+#: src/workflow/pro__premium_only/network.js:175
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
+msgid "Author website"
+msgstr "គេហទំព័ររបស់អ្នកនិពន្ធ"
+
+#: src/workflow/pro__premium_only/network.js:179
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:145
+msgid "Menu icon"
+msgstr "រូបតំណាងម៉ឺនុយ"
+
+#: src/workflow/pro__premium_only/network.js:193
+msgid "Role defaults for every site"
+msgstr "តួនាទីលំនាំដើមសម្រាប់រាល់គេហទំព័រ"
+
+#: src/workflow/pro__premium_only/network.js:230
+msgid "Save network settings"
+msgstr "រក្សាទុកការកំណត់បណ្តាញ"
+
+#. translators: %d: number of items searched so far.
+#: src/workflow/pro__premium_only/replace-lib.js:24
+#, js-format
+msgid "Searching… %d item checked so far."
+msgid_plural "Searching… %d items checked so far."
+msgstr[0] "កំពុងស្វែងរក... បានពិនិត្យទំនិញចំនួន %d រហូតមកទល់ពេលនេះ។"
+
+#. translators: %d: number of items searched.
+#: src/workflow/pro__premium_only/replace-lib.js:36
+#, js-format
+msgid "No matches in %d items. Nothing to replace."
+msgstr "គ្មានលទ្ធផលត្រូវគ្នាក្នុង %d ធាតុទេ។ គ្មានអ្វីត្រូវជំនួសទេ។"
+
+#. translators: 1: number of matches, 2: number of pages, 3: number of items searched.
+#: src/workflow/pro__premium_only/replace-lib.js:44
+#, js-format
+msgid "%1$d matches on %2$d pages (%3$d items searched). Nothing has changed yet."
+msgstr "ការផ្ទៀងផ្ទាត់ចំនួន %1$d លើទំព័រចំនួន %2$d (បានស្វែងរកចំនួន %3$d ធាតុ)។ គ្មានអ្វីផ្លាស់ប្តូរនៅឡើយទេ។"
+
+#. translators: 1: pages changed so far, 2: pages to change.
+#: src/workflow/pro__premium_only/replace-lib.js:55
+#, js-format
+msgid "Replacing… %1$d of %2$d pages done."
+msgstr "កំពុងជំនួស... បានបញ្ចប់ %1$d នៃ %2$d ទំព័រ។"
+
+#. translators: %d: number of pages changed.
+#: src/workflow/pro__premium_only/replace-lib.js:65
+#, js-format
+msgid "Done: %d page changed. You can undo this."
+msgid_plural "Done: %d pages changed. You can undo this."
+msgstr[0] "រួចរាល់៖ បានផ្លាស់ប្តូរទំព័រ %d។ អ្នកអាចលុបចោលសកម្មភាពនេះវិញបាន។"
+
+#: src/workflow/pro__premium_only/replace-lib.js:74
+msgid "Undoing…"
+msgstr "កំពុងដកសកម្មភាពចេញ…"
+
+#. translators: 1: pages restored, 2: pages edited since and left as they are.
+#: src/workflow/pro__premium_only/replace-lib.js:79
+#, js-format
+msgid "Undone: %1$d pages restored. %2$d pages were edited after the replacement and were left as they are."
+msgstr "មិនទាន់បានធ្វើ៖ បានស្ដារឡើងវិញនូវទំព័រចំនួន %1$d។ ទំព័រចំនួន %2$d ត្រូវបានកែសម្រួលបន្ទាប់ពីការជំនួស ហើយត្រូវបានទុកចោលដូចដើម។"
+
+#. translators: %d: pages restored.
+#: src/workflow/pro__premium_only/replace-lib.js:88
+#, js-format
+msgid "Undone: %d page restored."
+msgid_plural "Undone: %d pages restored."
+msgstr[0] "មិនធ្វើវិញ៖ បានស្តារទំព័រចំនួន %d។"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:97
+msgid "Find and replace across all pages"
+msgstr "ស្វែងរក និងជំនួសនៅលើគ្រប់ទំព័រទាំងអស់"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:114
+msgid "Replace"
+msgstr "ជំនួស"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "តំណភ្ជាប់"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:135
+msgid "Find"
+msgstr "ស្វែងរក"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:138
+msgid "A hex colour such as #1a73e8. Short forms (#fff) match too."
+msgstr "កូដពណ៌គោលដប់ប្រាំមួយ (Hex) ដូចជា #1a73e8។ ទម្រង់ខ្លី (#fff) ក៏ត្រូវគ្នាផងដែរ។"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:150
+msgid "Replace with"
+msgstr "ជំនួសដោយ"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:157
+msgid "Match upper and lower case"
+msgstr "ផ្គូផ្គងអក្សរធំនិងអក្សរតូច"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:166
+msgid "Search in"
+msgstr "ស្វែងរកក្នុង"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:191
+msgid "Find matches"
+msgstr "ស្វែងរកការផ្ទៀងផ្ទាត់"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:204
+msgid "Page"
+msgstr "ទំព័រ"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:210
+msgid "Matches"
+msgstr "ការផ្ទៀងផ្ទាត់"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:251
+msgid "Previous"
+msgstr "មុន"
+
+#. translators: 1: current page, 2: number of pages.
+#: src/workflow/pro__premium_only/ReplacePanel.js:255
+#, js-format
+msgid "Page %1$d of %2$d"
+msgstr "ទំព័រ %1$d នៃ %2$d"
+
+#. translators: %d: number of pages.
+#: src/workflow/pro__premium_only/ReplacePanel.js:281
+#, js-format
+msgid "Replace on %d page"
+msgid_plural "Replace on %d pages"
+msgstr[0] "ជំនួសនៅលើទំព័រ %d"
+
+#: src/workflow/pro__premium_only/ReplacePanel.js:296
+msgid "Undo this replacement"
+msgstr "មិនធ្វើការជំនួសនេះវិញ"
+
+#: src/workflow/pro__premium_only/review-layer.js:78
+msgid "Review comments"
+msgstr "ពិនិត្យមតិយោបល់"
+
+#: src/workflow/pro__premium_only/review-layer.js:83
+msgid "Add a comment"
+msgstr "បន្ថែមមតិយោបល់"
+
+#. translators: 1: comment number, 2: author, 3: comment.
+#: src/workflow/pro__premium_only/review-layer.js:112
+#, js-format
+msgid "Comment %1$d by %2$s: %3$s"
+msgstr "មតិយោបល់ %1$d ដោយ %2$s៖ %3$s"
+
+#. translators: %d: number of comments.
+#: src/workflow/pro__premium_only/review-layer.js:135
+#, js-format
+msgid "%d comments on this page."
+msgstr "មតិយោបល់ %d នៅលើទំព័រនេះ។"
+
+#: src/workflow/pro__premium_only/review-layer.js:152
+#: src/workflow/pro__premium_only/review-layer.js:153
+msgid "Your name"
+msgstr "ឈ្មោះរបស់អ្នក"
+
+#: src/workflow/pro__premium_only/review-layer.js:158
+#: src/workflow/pro__premium_only/review-layer.js:159
+msgid "Your comment"
+msgstr "មតិយោបល់របស់អ្នក"
+
+#: src/workflow/pro__premium_only/review-layer.js:163
+msgid "Send comment"
+msgstr "បញ្ជូនមតិយោបល់"
+
+#: src/workflow/pro__premium_only/review-layer.js:197
+msgid "Thank you, your comment was sent."
+msgstr "សូមអរគុណ មតិយោបល់របស់អ្នកត្រូវបានបញ្ជូនហើយ។"
+
+#: src/workflow/pro__premium_only/review-layer.js:213
+msgid "Click the part of the page your comment is about."
+msgstr "ចុចលើផ្នែកនៃទំព័រដែលមតិរបស់អ្នកពាក់ព័ន្ធ។"
+
+#: src/workflow/pro__premium_only/review-panel.js:18
+#: src/workflow/pro__premium_only/review-panel.js:39
+#: src/workflow/pro__premium_only/review-panel.js:43
+msgid "Client review"
+msgstr "ការពិនិត្យរបស់អតិថិជន"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:88
+msgid "That part of the page could not be found: it may have been changed or removed since the comment was made."
+msgstr "ផ្នែកនោះនៃទំព័ររកមិនឃើញទេ៖ វាអាចត្រូវបានផ្លាស់ប្តូរ ឬលុបចេញចាប់តាំងពីមតិយោបល់ត្រូវបានបង្កើតឡើង។"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:121
+#: src/workflow/pro__premium_only/ReviewPanel.js:142
+msgid "Review link"
+msgstr "ពិនិត្យមើលតំណភ្ជាប់"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:124
+msgid "Let a client comment on this page"
+msgstr "អនុញ្ញាតឱ្យអតិថិជនមតិយោបល់លើទំព័រនេះ"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:128
+msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
+msgstr "អ្នក​រាល់​គ្នា​ដែល​មាន​តំណ​អាច​មើល​ទំព័រ​នេះ គឺ​ទោះ​បី​ជា​វា​មិន​ទាន់​ត្រូវ​បាន​ផ្សាយ​ចេញ​ក៏​ដោយ និង​អាច​ទុក​មតិ​យោបល់​បាន។ មិន​ចាំបាច់​មាន​គណនី​ទេ។"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "បានចម្លង"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:156
+msgid "Copy link"
+msgstr "ចម្លងតំណ"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:162
+msgid "Make a new link (the old one stops working)"
+msgstr "បង្កើតតំណភ្ជាប់ថ្មី (តំណភ្ជាប់ចាស់នឹងឈប់ដំណើរការ)"
+
+#. translators: %d: number of open comments.
+#: src/workflow/pro__premium_only/ReviewPanel.js:173
+#, js-format
+msgid "Comments (%d open)"
+msgid_plural "Comments (%d open)"
+msgstr[0] "មតិយោបល់ (%d បើក)"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:184
+msgid "Show resolved comments"
+msgstr "បង្ហាញមតិយោបល់ដែលបានដោះស្រាយ"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:193
+msgid "No comments to show."
+msgstr "គ្មានមតិយោបល់ដើម្បីបង្ហាញទេ។"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:222
+msgid "Reply"
+msgstr "ឆ្លើយតប"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:233
+msgid "Send reply"
+msgstr "ផ្ញើការឆ្លើយតប"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:236
+msgid "Show in the editor"
+msgstr "បង្ហាញក្នុងកម្មវិធីនិពន្ធ"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:246
+msgid "Resolve"
+msgstr "ដោះស្រាយ"
+
+#: src/workflow/pro__premium_only/ReviewPanel.js:253
+msgid "Reopen"
+msgstr "បើកឡើងវិញ"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:21
+msgid "Open Sandwich Studio"
+msgstr "ស្ទូឌីយោ អូផែន សិនវិច"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:25
+msgid "Change styles"
+msgstr "ផ្លាស់ប្ដូររចនាប័ទ្ម"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:29
+msgid "Custom CSS and HTML"
+msgstr "CSS និង HTML ផ្ទាល់ខ្លួន"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:33
+msgid "Manage templates"
+msgstr "គ្រប់គ្រងគំរូ"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:35
+msgid "Use AI"
+msgstr "ប្រើប្រាស់ AI"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:38
+msgid "Client mode: text and images only"
+msgstr "របៀបអតិថិជន៖ អត្ថបទ និងរូបភាពប៉ុណ្ណោះ"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:85
+msgid "Role settings saved."
+msgstr "ការកំណត់តួនាទីត្រូវបានរក្សាទុក។"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:99
+msgid "Roles and client mode"
+msgstr "តួនាទី និងរបៀបអតិថិជន"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:103
+msgid "Choose what each role can do in the builder. Administrators can always do everything. Client mode locks the layout and design, so the role can only change text and images."
+msgstr "ជ្រើសរើសអ្វីដែលតួនាទីនីមួយៗអាចធ្វើបាននៅក្នុងកម្មវិធីកសាង។ អ្នកគ្រប់គ្រងតែងតែអាចធ្វើអ្វីៗគ្រប់យ៉ាង។ របៀបម៉ូដអតិថិជនចាក់សោប្លង់ និងការរចនា ដូច្នេះតួនាទីអាចប្តូរបានតែអត្ថបទ និងរូបភាពប៉ុណ្ណោះ។"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:122
+msgid "Role"
+msgstr "តួនាទី"
+
+#: src/workflow/pro__premium_only/RolesPanel.js:170
+msgid "Save role settings"
+msgstr "រក្សាទុកការកំណត់តួនាទី"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:68
+msgid "Saved. Reload the page to see the new names."
+msgstr "បានរក្សាទុក។ សូមផ្ទុកទំព័រឡើងវិញដើម្បីមើលឈ្មោះថ្មី។"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:87
+msgid "White label"
+msgstr "ស្លាកសញ្ញាផ្ទាល់ខ្លួន"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:103
+msgid "Rename the builder and hide our branding on this site"
+msgstr "ប្តូរឈ្មោះកម្មវិធីបង្កើតគេហទំព័រ និងលាក់ស្លាកយីហោរបស់យើងនៅលើគេហទំព័រនេះ"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:115
+msgid "Shown everywhere the product name appears: menus, the editor, notices."
+msgstr "បង្ហាញនៅគ្រប់ទីកន្លែងដែលឈ្មោះផលិតផលលេចចេញ៖ ម៉ឺនុយ កម្មវិធីនិពន្ធ និងការជូនដំណឹង។"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:123
+msgid "Leave empty to use the builder name."
+msgstr "ទុកទទេដើម្បីប្រើប្រាស់ឈ្មោះកម្មវិធីបង្កើត។"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:138
+msgid "Description on the Plugins screen"
+msgstr "ការពន្យល់នៅលើអេក្រង់ជំនួយបន្ថែម (Plugins)"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:146
+msgid "A Dashicons name (for example dashicons-admin-customizer) or an https:// image address."
+msgstr "ឈ្មោះ Dashicons (ឧទាហរណ៍ dashicons-admin-customizer) ឬអាសយដ្ឋានរូបភាព https://។"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:153
+msgid "Hide the plugin from the Plugins screen"
+msgstr "លាក់កម្មវិធីជំនួយពីអេក្រង់កម្មវិធីជំនួយ"
+
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:165
+msgid "Agency users who still see the real product and these settings"
+msgstr "ភ្នាក់ងារអ្នកប្រើប្រាស់ដែលនៅតែឃើញផលិតផលពិតប្រាកដ និងការកំណត់ទាំងនេះ"
+
+#. translators: %d: number of items.
+#: src/workflow/transfer-lib.js:53
+#, js-format
+msgid "%d new"
+msgid_plural "%d new"
+msgstr[0] "%d ថ្មី"
+
+#. translators: %d: number of items.
+#: src/workflow/transfer-lib.js:63
+#, js-format
+msgid "%d replaced"
+msgid_plural "%d replaced"
+msgstr[0] "បានជំនួស %d"
+
+#. translators: %d: number of items.
+#: src/workflow/transfer-lib.js:73
+#, js-format
+msgid "%d kept as they were"
+msgid_plural "%d kept as they were"
+msgstr[0] "%d ត្រូវ​បាន​រក្សា​ទុក​ដូច​ដើម"
+
+#. translators: %d: number of settings.
+#: src/workflow/transfer-lib.js:83
+#, js-format
+msgid "%d setting"
+msgid_plural "%d settings"
+msgstr[0] "ការកំណត់ %d"
+
+#. translators: %s: a list such as "2 new, 1 replaced".
+#: src/workflow/transfer-lib.js:96
+#, js-format
+msgid "Importing will give: %s."
+msgstr "ការនាំចូលនឹងផ្ដល់ជូន៖ %s។"
+
+#. translators: %s: a list such as "2 new, 1 replaced".
+#: src/workflow/transfer-lib.js:101
+#, js-format
+msgid "Imported: %s."
+msgstr "បាននាំចូល៖ %s។"
+
+#. translators: %d: number of items exported.
+#: src/workflow/TransferPanel.js:72
+#, js-format
+msgid "Exported %d item."
+msgid_plural "Exported %d items."
+msgstr[0] "បាននាំចេញ %d មុខទំនិញ។"
+
+#: src/workflow/TransferPanel.js:129
+msgid "That file could not be read as an export file."
+msgstr "ឯកសារនោះមិនអាចត្រូវបានអានជាឯកសារនាំចេញទេ។"
+
+#: src/workflow/TransferPanel.js:139
+msgid "Import and export"
+msgstr "នាំចូលនិងនាំចេញ"
+
+#: src/workflow/TransferPanel.js:157
+msgid "Export"
+msgstr "នាំចេញ"
+
+#: src/workflow/TransferPanel.js:159
+msgid "Download your templates, patterns and site design as one file, to import on another site."
+msgstr "ទាញយកគំរូ គំរូទម្រង់ និងការរចនាគេហទំព័ររបស់អ្នកជាឯកសារតែមួយ ដើម្បីនាំចូលនៅលើគេហទំព័រផ្សេង។"
+
+#: src/workflow/TransferPanel.js:167
+msgid "There are no templates or patterns to export yet."
+msgstr "មិនទាន់មានគំរូ ឬទម្រង់ណាមួយសម្រាប់នាំចេញនៅឡើយទេ។"
+
+#: src/workflow/TransferPanel.js:187
+msgid "Include the settings"
+msgstr "រួមបញ្ចូលការកំណត់"
+
+#: src/workflow/TransferPanel.js:197
+msgid "Download the export file"
+msgstr "ទាញយកឯកសារនាំចេញ"
+
+#: src/workflow/TransferPanel.js:200
+#: src/workflow/TransferPanel.js:296
+msgid "Import"
+msgstr "នាំចូល"
+
+#: src/workflow/TransferPanel.js:207
+msgid "Choose an export file"
+msgstr "ជ្រើសរើសឯកសារនាំចេញមួយ"
+
+#. translators: 1: number of items in the file, 2: the site it came from.
+#: src/workflow/TransferPanel.js:219
+#, js-format
+msgid "The file holds %1$d item from %2$s."
+msgid_plural "The file holds %1$d items from %2$s."
+msgstr[0] "ឯកសារនេះមានផ្ទុកធាតុចំនួន %1$d ពី %2$s។"
+
+#: src/workflow/TransferPanel.js:230
+msgid "When an item with the same name already exists here"
+msgstr "ពេលមានធាតុដែលមានឈ្មោះដូចគ្នាដែលមានរួចហើយនៅទីនេះ"
+
+#: src/workflow/TransferPanel.js:238
+msgid "Keep the one on this site"
+msgstr "រក្សាទុកមួយនេះនៅលើគេហទំព័រនេះ"
+
+#: src/workflow/TransferPanel.js:245
+msgid "Replace it with the imported one"
+msgstr "ជំនួសវាដោយឯកសារដែលបាននាំចូល"
+
+#: src/workflow/TransferPanel.js:252
+msgid "Import a copy beside it"
+msgstr "នាំចូលច្បាប់ចម្លងនៅជាប់វា"
+
+#: src/workflow/TransferPanel.js:262
+msgid "Apply the settings in the file"
+msgstr "អនុវត្តការកំណត់នៅក្នុងឯកសារ"
+
+#: src/workflow/TransferPanel.js:271
+msgid "Copy the images into this site’s media library"
+msgstr "ចម្លងរូបភាពទៅក្នុងបណ្ណាល័យមេឌៀរបស់គេហទំព័រនេះ"
+
+#: src/workflow/TransferPanel.js:285
+msgid "Show what will happen"
+msgstr "បង្ហាញពីអ្វីដែលនឹងកើតឡើង"
 
 #: blocks/button/block.json
 msgctxt "block title"
@@ -5893,12 +6618,12 @@ msgstr "svg"
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
-msgstr "ឧបករណ៍ប្តូរភាសា"
+msgstr "កម្មវិធីប្ដូរភាសា"
 
 #: blocks/language-switcher/block.json
 msgctxt "block description"
 msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
-msgstr "អនុញ្ញាតឱ្យអ្នកទស្សនាអានទំព័រនេះជាភាសាផ្សេង ដោយបានរៀបចំស្ទីលឱ្យត្រូវនឹងទំព័ររបស់អ្នក។ តម្រូវឱ្យមានកម្មវិធីជំនួយ Tranzly សម្រាប់ភាសាទាំងនោះ។"
+msgstr "អនុញ្ញាតឱ្យអ្នកទស្សនាអានទំព័រនេះជាភាសាផ្សេង ដោយបានរចនាឱ្យសមស្របនឹងទំព័ររបស់អ្នក។ តម្រូវឱ្យមានកម្មវិធីជំនួយ Tranzly សម្រាប់ភាសាទាំងនោះ។"
 
 #: blocks/language-switcher/block.json
 msgctxt "block keyword"

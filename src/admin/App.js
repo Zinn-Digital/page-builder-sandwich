@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { useEffect, useState } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
+import { applyFilters } from '@wordpress/hooks';
 import {
 	Button,
 	ExternalLink,
@@ -119,7 +120,7 @@ export default function App( { data } ) {
 						</Button>
 					</PanelBody>
 				) }
-				{ settings && (
+				{ settings && ! data.whiteLabel && (
 					<PanelBody
 						title={ __( 'Beta updates', 'page-builder-sandwich' ) }
 						initialOpen
@@ -161,11 +162,22 @@ export default function App( { data } ) {
 				{ data.migrationPath && (
 					<LegacyContent path={ data.migrationPath } />
 				) }
-				<About
-					version={ data.version }
-					productUrl={ data.productUrl }
-					companyUrl={ data.companyUrl }
-				/>
+				{ /*
+				 * Panels added by modules (workflow, SEO, AI, developer tools): each entry is
+				 * { name, Component }; Component receives { data }.
+				 */ }
+				{ applyFilters( 'pbs.admin.panels', [], data ).map(
+					( { name, Component } ) => (
+						<Component key={ name } data={ data } />
+					)
+				) }
+				{ ! data.whiteLabel && (
+					<About
+						version={ data.version }
+						productUrl={ data.productUrl }
+						companyUrl={ data.companyUrl }
+					/>
+				) }
 			</Panel>
 		</div>
 	);

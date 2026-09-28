@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.1.3
+Stable tag: 6.3.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,14 @@ This is the first release of Page Builder Sandwich rebuilt from the ground up. I
 * **Settings and About screen** under the Page Builder Sandwich menu: set the class prefix and see the beta-update status for licensed installations.
 
 The admin screens stay clearly branded; only what your visitors see is neutral.
+
+= Workflow and agency tools =
+
+* **Import and export** (free): move templates, patterns, the site design and the plugin's settings to another site as one file, or with `wp pbs export` / `wp pbs import`.
+* **Roles and client mode** (Pro): choose what each role can do in the builder, and lock a role to editing text and images only.
+* **Maintenance and pre-launch mode** (Pro): show visitors a page you designed, with the right answer for search engines.
+* **Find and replace across all pages** (Pro): text, links or colours, with a preview first and one-click undo.
+* **White label, client review and multisite** (Agency): rename the builder for client sites, let clients comment on a page before it goes live, and share templates across a network.
 
 = Build from source =
 
@@ -82,6 +90,17 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.3.1 =
+* Fix: the Pro build no longer ships a stray right-to-left stylesheet for the client review layer, which stopped the free and Pro packages from building.
+
+= 6.3.0 =
+* AI: the shared AI core can now read images (for designing from a screenshot) and make images with OpenAI or Google Gemini. Choose the image model under Settings → AI providers.
+
+= 6.2.0 =
+* New: import and export of templates, patterns, the site design and settings (with WP-CLI commands).
+* New (Pro): role manager and client mode, maintenance and pre-launch mode, find and replace across all pages with undo.
+* New (Agency): white label, client review comments, multisite network defaults and shared templates.
 
 = 6.1.3 =
 * A language switcher element: the site's languages from Tranzly (when it is active) as a list, pills, buttons, a dropdown or language codes, with your own colours, spacing and size; accessible, with optional flags.

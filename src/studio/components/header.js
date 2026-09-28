@@ -187,6 +187,20 @@ export default function Header( { lastAutosave } ) {
 					onClick={ () => openCommands() }
 					size="compact"
 				/>
+				{ ui.sidebars.map( ( panel ) => (
+					<Button
+						key={ panel.name }
+						icon={ panel.icon }
+						label={ panel.title }
+						isPressed={ ui.sidebar === panel.name }
+						onClick={ () =>
+							ui.setSidebar(
+								ui.sidebar === panel.name ? null : panel.name
+							)
+						}
+						size="compact"
+					/>
+				) ) }
 				{ boot.supportsRevisions && (
 					<Button
 						icon={ backup }
