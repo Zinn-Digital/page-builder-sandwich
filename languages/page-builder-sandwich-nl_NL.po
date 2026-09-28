@@ -440,7 +440,7 @@ msgstr "AI is nog niet ingesteld. Voeg een sleutel toe voor een AI-provider in d
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "Er is geen model geselecteerd voor deze taak. Kies er een in de AI-instellingen."
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "Die AI-provider wordt niet ondersteund door deze versie van de plug-in."
 
@@ -5084,7 +5084,7 @@ msgid "Add attribute"
 msgstr "Atributen toevoegen"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "Inhoud"
 
@@ -5212,7 +5212,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "Scripts, links en externe verwijzingen worden verwijderd voordat het pictogram wordt weergegeven."
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Toegankelijkheidslabel"
 
@@ -5274,37 +5275,139 @@ msgstr "Dit insluitsel past na het laden automatisch de grootte aan, waardoor de
 msgid "Layout shift"
 msgstr "Opmaakverschuiving"
 
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "Koptekst"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "Tekst"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "Stijl"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "Plain"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "Accentering"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "Geen talen om tussen te wisselen. De wisselaar verschijnt wanneer een vertaalplugin twee of meer talen weergeeft."
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "Wisselaar"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "Huidige taal weergeven"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "Installeer Tranzly en voeg twee of meer talen toe, waarna de wisselaar hier verschijnt."
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "Ontwerp"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "Lijst"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "Labels"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Knoppen"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "Vervolgkeuzemenu"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "Taalcodes"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "Elke taal weergeven als"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "Taalnaam"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "Taalcode"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "Naam en code"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "Vlaggen"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "Standaard uitgeschakeld: een vlag is een land, geen taal."
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "Huidige taal opnemen"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "Verberg talen waarin deze pagina niet is vertaald"
+
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "Verticaal stapelen"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "Kleuren"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Achtergrond"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "Huidige taaltekst"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "Huidige taalachtergrond"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "Rand"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "Grootte en afstand"
+
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "Hoekenradius"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "Taalruimte"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "Tekstgrootte"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5741,11 +5844,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "Toont de talen van de site van de vertaalplugin, indien er één actief is. Anders wordt er niets weergegeven."
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "Taal"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "wisselaar"
@@ -5789,6 +5894,26 @@ msgstr "pictogram"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "Taalwisselaar"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "Laat bezoekers deze pagina in een andere taal lezen, in een stijl die past bij uw pagina. Vereist de Tranzly plug-in voor de talen."
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "vertaling"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "meertalig"
 
 #: blocks/row/block.json
 msgctxt "block title"

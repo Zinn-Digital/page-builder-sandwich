@@ -441,7 +441,7 @@ msgstr "AI ಇನ್ನೂ ಕಾನ್ಫಿಗರ್ ಆಗಿಲ್ಲ. AI �
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "ಈ ಕಾರ್ಯಕ್ಕಾಗಿ ಯಾವುದೇ ಮಾದರಿಯನ್ನು ಆಯ್ಕೆ ಮಾಡಲಾಗಿಲ್ಲ. AI ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಒಂದನ್ನು ಆಯ್ಕೆಮಾಡಿ."
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "ಪ್ಲಗಿನ್‌ನ ಈ ಆವೃತ್ತಿಯಿಂದ ಆ AI ಒದಗಿಸುವವರನ್ನು ಬೆಂಬಲಿಸುವುದಿಲ್ಲ."
 
@@ -5087,7 +5087,7 @@ msgid "Add attribute"
 msgstr "ಗುಣಲಕ್ಷಣವನ್ನು ಸೇರಿಸಿ"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "ವಿಷಯಗಳು"
 
@@ -5215,7 +5215,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "ಚಿಹ್ನೆಯನ್ನು ತೋರಿಸುವ ಮೊದಲು ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು, ಲಿಂಕ್‌ಗಳು ಮತ್ತು ಬಾಹ್ಯ ಉಲ್ಲೇಖಗಳನ್ನು ತೆಗೆದುಹಾಕಲಾಗುತ್ತದೆ."
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "ಪ್ರವೇಶಿಸಬಹುದಾದ ಲೇಬಲ್"
 
@@ -5277,37 +5278,139 @@ msgstr "ಈ ಎಂಬೆಡ್ ಲೋಡ್ ಆದ ನಂತರ ಸ್ವತಃ 
 msgid "Layout shift"
 msgstr "ಲೇಔಟ್ ಶಿಫ್ಟ್"
 
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "ಶೀರ್ಷಿಕೆ"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "ಪಠ್ಯ"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "ಶೈಲಿ"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "ಪ್ಲೇನ್"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "ಆಮ್ಲಪದಾರ್ಥ"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "ಬದಲಾಯಿಸಲು ಯಾವುದೇ ಭಾಷೆಗಳಿಲ್ಲ. ಅನುವಾದ ಪ್ಲಗಿನ್ ಎರಡು ಅಥವಾ ಹೆಚ್ಚಿನ ಭಾಷೆಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡಿದಾಗ ಸ್ವಿಚರ್ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತದೆ."
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "ಸ್ವಿಚರ್"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "ಪ್ರಸ್ತುತ ಭಾಷೆಯನ್ನು ತೋರಿಸಿ"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "Tranzly ಅನ್ನು ಇನ್‌ಸ್ಟಾಲ್ ಮಾಡಿ ಮತ್ತು ಎರಡು ಅಥವಾ ಹೆಚ್ಚಿನ ಭಾಷೆಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡಿ, ಮತ್ತು ಸ್ವಿಚರ್ ಇಲ್ಲಿ ಕಾಣಿಸಿಕೊಳ್ಳುತ್ತದೆ."
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "ವಿನ್ಯಾಸ"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "ಪಟ್ಟಿ"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "ಮಾತ್ರೆಗಳು"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ಬಟನ್‌ಗಳು"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "ಡ್ರಾಪ್‌ಡೌನ್"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "ಭಾಷಾ ಕೋಡ್‌ಗಳು"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "ಪ್ರತಿಯೊಂದು ಭಾಷೆಯನ್ನು ಹೀಗೆ ತೋರಿಸಿ"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "ಭಾಷೆಯ ಹೆಸರು"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "ಭಾಷಾ ಕೋಡ್"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "ಹೆಸರು ಮತ್ತು ಕೋಡ್"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "ಫ್ಲಾಗ್‌ಗಳು"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "ಡೀಫಾಲ್ಟ್ ಆಗಿ ಆಫ್ ಆಗಿದೆ: ಧ್ವಜವು ಭಾಷೆಯಲ್ಲ, ಒಂದು ದೇಶ."
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "ಪ್ರಸ್ತುತ ಭಾಷೆಯನ್ನು ಸೇರಿಸಿ"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "ಈ ಪುಟವನ್ನು ಅನುವಾದಿಸದ ಭಾಷೆಗಳನ್ನು ಮರೆಮಾಡಿ"
+
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "ಲಂಬವಾಗಿ ಜೋಡಿಸಿ"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "ಬಣ್ಣಗಳು"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "ಹಿನ್ನೆಲೆ"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "ಪ್ರಸ್ತುತ ಭಾಷೆಯ ಪಠ್ಯ"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "ಪ್ರಸ್ತುತ ಭಾಷೆಯ ಹಿನ್ನೆಲೆ"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "ಗಡಿ"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "ಗಾತ್ರ ಮತ್ತು ಅಂತರ"
+
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "ಮೂಲೆಯ ತ್ರಿಜ್ಯ"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "ಭಾಷೆಗಳ ನಡುವಿನ ಅಂತರ"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "ಪಠ್ಯದ ಗಾತ್ರ"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5744,11 +5847,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "ಅನುವಾದ ಪ್ಲಗಿನ್ ಸಕ್ರಿಯವಾಗಿದ್ದಾಗ, ಸೈಟ್‌ನ ಭಾಷೆಗಳನ್ನು ಪಟ್ಟಿ ಮಾಡುತ್ತದೆ. ಇಲ್ಲದಿದ್ದರೆ ಏನನ್ನೂ ಪ್ರದರ್ಶಿಸುವುದಿಲ್ಲ."
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "ಭಾಷೆ"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "ಸ್ವಿಚರ್"
@@ -5792,6 +5897,26 @@ msgstr "ಚಿಹ್ನೆ"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "ಭಾಷಾ ಬದಲಾಯಿಸುವ ಸಾಧನ"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "ಸಂದರ್ಶಕರು ಈ ಪುಟವನ್ನು ನಿಮ್ಮ ಪುಟಕ್ಕೆ ತಕ್ಕಂತೆ ಶೈಲಿಗೊಳಿಸಲಾದ ಬೇರೊಂದು ಭಾಷೆಯಲ್ಲಿ ಓದಲು ಅನುಮತಿಸುತ್ತದೆ. ಭಾಷೆಗಳಿಗಾಗಿ Tranzly ಪ್ಲಗಿನ್ ಅಗತ್ಯವಿದೆ."
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "ಅನುವಾದ"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "ಬಹುಭಾಷಾ"
 
 #: blocks/row/block.json
 msgctxt "block title"

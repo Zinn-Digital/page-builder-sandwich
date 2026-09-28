@@ -61,5 +61,11 @@ final class Blocks {
 			PBSW_DIR . 'blocks/fixture-switcher',
 			array( 'render_callback' => array( Fixture::class, 'render_switcher_block' ) )
 		);
+		// The language switcher element (Tranzly tz-l2): languages and markup from Tranzly's API.
+		require_once PBSW_DIR . 'blocks/language-switcher/class-language-switcher.php';
+		register_block_type(
+			PBSW_DIR . 'blocks/language-switcher',
+			array( 'render_callback' => array( Language_Switcher::class, 'render' ) )
+		);
 	}
 }

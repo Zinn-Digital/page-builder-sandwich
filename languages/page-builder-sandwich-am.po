@@ -440,7 +440,7 @@ msgstr "AI ገና አልተዋቀረም። በAI መቼቶች ውስጥ ለአ�
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "ለዚህ ተግባር ምንም ሞዴል አልተመረጠም። በAI ቅንብሮች ውስጥ አንዱን ይምረጡ።"
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "ይህ የ AI አቅራቢ በፕለጊኑ በዚህ ስሪት አይደገፍም።"
 
@@ -5085,7 +5085,7 @@ msgid "Add attribute"
 msgstr "ባህሪ አክል"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "ይዘት"
 
@@ -5213,7 +5213,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "አዶው ከመታየቱ በፊት ስክሪፕቶች፣ ማገናኛዎች እና ውጫዊ ማጣቀሻዎች ይወገዳሉ።"
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "የሚደረስበት መለያ"
 
@@ -5275,37 +5276,139 @@ msgstr "ይህ ተለጣፊ ይዘት (embed) ከተጫነ በኋላ መጠኑ�
 msgid "Layout shift"
 msgstr "የአቀማመጥ መፈናቀል"
 
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "ርዕስ"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "ጽሑፍ"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "ቅጥ"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "ቀላል"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "የድምፅ ዘይቤ"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "የሚቀያየሩ ቋንቋዎች የሉም። የቋንቋ መቀየሪያው የሚታየው የትርጉም ተሰኪ (ፕለጊን) ሁለት ወይም ከዚያ በላይ ቋንቋዎችን ሲዘርዝር ነው።"
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "መቀየሪያ"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "የአሁን ቋንቋውን አሳይ"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "Tranzly ን ጫኑ እና ሁለት ወይም ከዚያ በላይ ቋንቋዎችን ይዘርዝሩ፣ መቀየሪያውም እዚህ ይታያል።"
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "ዲዛይን"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "ዝርዝር"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "ክኒሶች"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ቁልፎች"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "ተቆልቋይ ምናሌ"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "የቋንቋ ኮዶች"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "እያንዳንዱን ቋንቋ እንደዚህ አሳይ"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "የቋንቋ ስም"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "የቋንቋ ኮድ"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "ስም እና ኮድ"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "ሰንደቆች"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "በነባሪ ጠፍቷል፡ ባንዲራ ሀገር እንጂ ቋንቋ አይደለም።"
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "የአባሉን ቋንቋ አካትት"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "ይህ ገጽ ያልተተረጎመባቸውን ቋንቋዎች ደብቅ"
+
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "ቁላል በቁም ያስቀምጡ"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "ቀለማት"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "የኋላ ዐውድ"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "የአሁን ቋንቋ ጽሑፍ"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "የአሁን የቋንቋ ዳራ"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "ድንበር"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "መጠን እና ክፍተት"
+
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "የማዕዘን ራዲየስ"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "በቋንቋዎች መካከል ያለው ቦታ"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "የጽሑፍ መጠን"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5742,11 +5845,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "ትርጉም ፕለጊን በሚሰራበት ጊዜ፣ የጣቢያውን ቋንቋዎች ይዘረዝራል። ያለበለዚያ ምንም ነገር አያሳይም።"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "ቋንቋ"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "መቀያየሪያ"
@@ -5790,6 +5895,26 @@ msgstr "አዶ"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "የቋንቋ መቀየሪያ"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "ጎብኚዎች ይህን ገጽ ከገጽዎ ጋር በሚመሳከር መልኩ በሌላ ቋንቋ እንዲያነቡ ያስችላቸዋል። ለቋንቋዎቹ የTranzly ተሰኪ (plugin) ያስፈልጋል።"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "ትርጉም"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "ባለብዙ ቋንቋዎች"
 
 #: blocks/row/block.json
 msgctxt "block title"

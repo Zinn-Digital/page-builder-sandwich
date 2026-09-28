@@ -440,7 +440,7 @@ msgstr "AI မသတ်မှတ်ရသေးပါ။ AI ဆက်တင်�
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "ဤလုပ်ဆောင်ချက်အတွက် မော်ဒယ်ကို မရွေးချယ်ရသေးပါ။ AI ဆက်တင်များတွင် တစ်ခုကို ရွေးပါ။"
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "ထို AI ပံ့ပိုးပေးသူကို ပလပ်အင်၏ ဤဗားရှင်းတွင် မထောက်ပံ့ပါ။"
 
@@ -5081,7 +5081,7 @@ msgid "Add attribute"
 msgstr "ဂုဏ်သတ္တိ ထည့်ရန်"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "အကြောင်းအရာ"
 
@@ -5209,7 +5209,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "သင်္ကေတကို မပြသမီ စာသား၊ လင့်ခ်များနှင့် ပြင်ပကိုးကားချက်များကို ဖယ်ရှားလိုက်သည်။"
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "လက်လှမ်းမီနိုင်သော တံဆိပ်"
 
@@ -5271,37 +5272,139 @@ msgstr "ဤထည့်သွင်းထားသော အရာသည် ၎�
 msgid "Layout shift"
 msgstr "အပြင်အဆင် ရွှေ့ပြောင်းမှု"
 
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "ခေါင်းစဉ်"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "စာသား"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "စတိုင်"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "သာမန်"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "ဝဏ္ဏတုန်း"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "ပြောင်းလဲရန် ဘာသာစကား မရှိပါ။ ဘာသာပြန် ပလပ်အင်တစ်ခုတွင် ဘာသာစကား နှစ်ခု သို့မဟုတ် ထို့ထက်ပို၍ ဖော်ပြထားသည့်အခါ ပြောင်းလဲသည့်ခလုတ် ပေါ်လာပါမည်။"
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "ပြောင်းလဲစက်"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "လက်sushi လက်ရှိဘာသာစကားကိုပြသပါ"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "Tranzly ကို ထည့်သွင်းပြီး ဘာသာစကား နှစ်ခု သို့မဟုတ် ထို့ထက်ပို၍ စာရင်းပြုစုပါက ဘာသာစကားပြောင်းစက်သည် ဤနေရာတွင် ပေါ်လာမည်ဖြစ်သည်။"
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "ဒီဇိုင်း"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "စာရင်း"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "ဆေးပြားများ"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ခလုတ်များ"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "ဆင်းသက်မီနူး"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "ဘာသာစကား ကုဒ်များ"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "ဘာသာစကားတစ်ခုချင်းစီကို ပြသရန်"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "ဘာသာစကားအမည်"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "ဘာသာစကား ကုဒ်"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "အမည်နှင့် ကုဒ်"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "အလံများ"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "မူလအားဖြင့် ပိတ်ထားသည်- အလံသည် ဘာသာစကားမဟုတ်ဘဲ နိုင်ငံတစ်ခု ဖြစ်သည်။"
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "လက်ရှိဘာသာစကားကို ထည့်သွင်းပါ"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "ဤစာမျက်နှာကို ဘာသာမပြန်ဆိုထားသော ဘာသာစကားများကို ဖျောက်ထားပါ"
+
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "ဒေါင်လိုက်စီပါ"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "အရောင်များ"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "နောက်ခံ"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "လက်ရှိ ဘာသာစကား စာသား"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "လက်ရှိ ဘာသာစကား နောက်ခံ"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "ဘောင်"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "အရွယ်အစားနှင့် နေရာလွတ်"
+
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "ထောင့်အဝိုင်း ပမာဏ"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "ဘာသာစကားများကြားရှိ နေရာလပ်"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "စာသား အရွယ်အစား"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5736,11 +5839,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "ဘာသာပြန်ပလပ်အင်တစ်ခု တက်ကြွနေသည့်အခါ ဆိုဒ်၏ဘာသာပြန်ဆိုချက်များကို စာရင်းပြုစုပေးသည်။ မဟုတ်ပါက ဘာမျှမပေါ်စေရ။"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "ဘာသာစကား"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "ပြောင်းလဲကိရိယာ"
@@ -5784,6 +5889,26 @@ msgstr "အိုင်ကွန်"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "ဘာသာစကားပြောင်းစက်"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "ဧည့်သည်များကို ဤစာမျက်နှာကို သင့်စာမျက်နှာနှင့် လိုက်ဖက်အောင် ဒီဇိုင်းထုတ်ထားသော အခြားဘာသာစကားတစ်ခုဖြင့် ဖတ်ရှုနိုင်စေပါသည်။ ဘာသာစကားများအတွက် Tranzly ပလပ်ဂင် လိုအပ်ပါသည်။"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "ဘာသာပြန်ဆိုမှု"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "ဘာသာစကားမျိုးစုံသုံး"
 
 #: blocks/row/block.json
 msgctxt "block title"

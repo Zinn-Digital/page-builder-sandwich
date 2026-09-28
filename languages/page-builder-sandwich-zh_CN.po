@@ -440,7 +440,7 @@ msgstr "AI 尚未设置。请在 AI 设置中添加 AI 提供商的密钥。"
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "此任务未选择模型。请在 AI 设置中选择一个。"
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "此版本的插件不支持该 AI 提供商。"
 
@@ -5081,7 +5081,7 @@ msgid "Add attribute"
 msgstr "添加属性"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "内容"
 
@@ -5209,7 +5209,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "在显示图标之前，脚本、链接和外部引用将被移除。"
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "辅助功能标签"
 
@@ -5271,37 +5272,139 @@ msgstr "此嵌入内容在加载后会自动调整大小，从而移动下方的
 msgid "Layout shift"
 msgstr "布局偏移"
 
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "标题"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "文本"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "样式"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "纯文本"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "重点色"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "没有可切换的语言。当翻译插件列出两种或更多语言时，此切换器才会显示。"
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "切换器"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "显示当前语言"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "安装 Tranzly 并添加两种或更多语言，切换器将显示在这里。"
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "设计"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "列表"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "标签"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "按钮"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "下拉菜单"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "语言代码"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "显示每种语言为"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "语言名称"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "语言代码"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "名称和代码"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "标记"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "默认关闭：国旗代表国家，而非语言。"
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "包含当前语言"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "隐藏此页面未翻译的语言"
+
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "垂直堆叠"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "颜色"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "背景"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "当前语言文本"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "当前语言背景"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "边框"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "大小和间距"
+
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "圆角半径"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "语言间距"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "文字大小"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5736,11 +5839,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "列出翻译插件中的网站语言（当插件处于激活状态时）。否则不呈现任何内容。"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "语言"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "切换器"
@@ -5784,6 +5889,26 @@ msgstr "图标"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "SVG"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "语言切换器"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "让访客能够以其他语言阅读此页面，其样式与您的页面相匹配。语言功能需要 Tranzly 插件。"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "翻译"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "多语言"
 
 #: blocks/row/block.json
 msgctxt "block title"

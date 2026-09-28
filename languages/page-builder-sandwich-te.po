@@ -441,7 +441,7 @@ msgstr "AI ఇప్పటివరకు సెటప్ కాలేదు. AI
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "ఈ టాస్క్ కోసం ఏ మోడల్ ఎంచుకోలేదు. AI సెట్టింగ్‌లలో ఒకదానిని ఎంచుకోండి."
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "ఆ ప్లగ్-ఇన్ వెర్షన్ ద్వారా ఆ AI ప్రొవైడర్ సపోర్ట్ చేయబడదు."
 
@@ -5087,7 +5087,7 @@ msgid "Add attribute"
 msgstr "గుణధర్మాన్ని జోడించు"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "కంటెంట్"
 
@@ -5215,7 +5215,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "ఐకాన్ చూపించడానికి ముందు స్క్రిప్ట్‌లు, లింక్‌లు మరియు బాహ్య రిఫరెన్స్‌లు తొలగించబడతాయి."
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "అందుబాటులో ఉండే లేబుల్"
 
@@ -5277,37 +5278,139 @@ msgstr "ఈ ఎంబెడ్ లోడ్ అయిన తర్వాత ద�
 msgid "Layout shift"
 msgstr "లేఅవుట్ షిఫ్ట్"
 
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "శీర్షిక"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "పాఠ్యం"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "శైలి"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "ప్లెయిన్"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "యాసెంట్"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "మార్చడానికి ఎలాంటి భాషలు లేవు. అనువాద ప్లగిన్ రెండు లేదా అంతకంటే ఎక్కువ భాషలను జాబితా చేసినప్పుడు స్విచ్చర్ కనిపిస్తుంది."
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "స్విచ్చర్"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "ప్రస్తుత భాషను చూపించు"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "Tranzly ని ఇన్‌స్టాల్ చేసి, రెండు లేదా అంతకంటే ఎక్కువ భాషలను జాబితా చేయండి, అప్పుడు స్విచ్చర్ ఇక్కడ కనిపిస్తుంది."
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "రూపకల్పన"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "జాబితా"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "పిల్స్"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "బటన్‌లు"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "డ్రాప్‌డౌన్"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "భాషా కోడ్‌లు"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "ప్రతిభాషను ఇలా చూపించు"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "భాషా పేరు"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "భాషా కోడ్"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "పేరు మరియు కోడ్"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "ఫ్లాగ్‌లు"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "డిఫాల్ట్‌గా ఆఫ్‌లో ఉంది: జెండా అనేది ఒక దేశం, భాష కాదు."
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "ప్రస్తుత భాషను చేర్చండి"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "ఈ పేజీ అనువదించబడిన భాషలను దాచు"
+
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "నిలువుగా అమర్చండి"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "రంగులు"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "నేపథ్యం"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "ప్రస్తుత భాషా పాఠ్యం"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "ప్రస్తుత భాషా నేపథ్యం"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "బార్డర్"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "పరిమాణం మరియు అంతరం"
+
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "మూలలో వక్రత"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "భాషల మధ్య ఖాళీ"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "పాఠం పరిమాణం"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5744,11 +5847,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "అనువాద ప్లగిన్ సక్రియంగా ఉన్నప్పుడు, సైట్ యొక్క భాషలను జాబితా చేస్తుంది. లేకపోతే అది ఏదీ రెండర్ చేయదు."
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "భాష"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "స్విచ్చర్"
@@ -5792,6 +5897,26 @@ msgstr "చిహ్నం"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "భాషా స్విచ్చర్"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "సందర్శకులు ఈ పేజీని మీ పేజీ శైలికి సరిపోయేలా వేరే భాషలో చదవడానికి అనుమతిస్తుంది. భాషల కోసం Tranzly ప్లగ్ఇన్ అవసరం."
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "అనువాదం"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "బహుభాషా"
 
 #: blocks/row/block.json
 msgctxt "block title"

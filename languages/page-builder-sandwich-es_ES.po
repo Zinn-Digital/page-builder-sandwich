@@ -440,7 +440,7 @@ msgstr "La inteligencia artificial aún no está configurada. Añada una clave p
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "No se ha seleccionado ningún modelo para esta tarea. Elija uno en la configuración de IA."
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "Ese proveedor de inteligencia artificial no es compatible con esta versión del complemento."
 
@@ -5087,7 +5087,7 @@ msgid "Add attribute"
 msgstr "Añadir atributo"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "Contenido"
 
@@ -5215,7 +5215,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "Los scripts, enlaces y referencias externas se eliminan antes de mostrar el icono."
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Etiqueta accesible"
 
@@ -5277,37 +5278,139 @@ msgstr "Este elemento incrustado cambia de tamaño después de cargarse, lo que 
 msgid "Layout shift"
 msgstr "Cambio de diseño"
 
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "Encabezado"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "Texto"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "Estilo"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "Plano"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "Acento"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "No hay idiomas entre los que cambiar. El selector aparece cuando un complemento de traducción enumera dos o más idiomas."
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "Selector"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "Mostrar el idioma actual"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "Instale Tranzly y añada dos o más idiomas para que el selector aparezca aquí."
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "Diseño"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "Lista"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "Pestañas"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Botones"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "Desplegable"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "Códigos de idioma"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "Mostrar cada idioma como"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "Nombre del idioma"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "Código de idioma"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "Nombre y código"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "Marcadores"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "Desactivado por defecto: una bandera es un país, no un idioma."
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "Incluir el idioma actual"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "Ocultar los idiomas a los que esta página no está traducida"
+
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "Apilar verticalmente"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "Colores"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Fondo"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "Idioma actual"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "Idioma actual del fondo"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "Borde"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "Tamaño y espaciado"
+
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "Radio de esquina"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "Espacio entre idiomas"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "Tamaño del texto"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5746,11 +5849,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "Muestra los idiomas del sitio del complemento de traducción, cuando hay uno activo. De lo contrario, no muestra nada."
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "idioma"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "selector"
@@ -5794,6 +5899,26 @@ msgstr "icono"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "Selector de idioma"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "Permite que los visitantes lean esta página en otro idioma, con un diseño adaptado a su página. Requiere el plugin Tranzly para los idiomas."
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "traducción"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "multilingüe"
 
 #: blocks/row/block.json
 msgctxt "block title"

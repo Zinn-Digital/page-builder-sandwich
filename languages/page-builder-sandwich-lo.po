@@ -440,7 +440,7 @@ msgstr "AI ຍັງບໍ່ທັນໄດ້ຕັ້ງຄ່າເທື່
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "ບໍ່ໄດ້ເລືອກຮູບແບບສຳລັບວຽກນີ້. ກະລຸນາເລືອກອັນໜຶ່ງໃນການຕັ້ງຄ່າ AI."
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "ຕົວແທນ AI ນັ້ນບໍ່ໄດ້ຮັບການຮອງຮັບໂດຍປລັກອິນເວີຊັນນີ້."
 
@@ -5084,7 +5084,7 @@ msgid "Add attribute"
 msgstr "ເພີ່ມແອັດທຣິບິວທ໌"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "ເນື້ອຫາ"
 
@@ -5212,7 +5212,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "ສະຄຣິບ, ລິ້ງ ແລະ ການອ້າງອີງພາຍນອກຈະຖືກລຶບອອກກ່ອນທີ່ໄອຄອນຈະສະແດງຂຶ້ນ."
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "ປ້າຍກຳກັບທີ່ເຂົ້າເຖິງໄດ້"
 
@@ -5275,37 +5276,140 @@ msgid "Layout shift"
 msgstr "ການປ່ຽນແປງຮູບແບບການຈັດວາງ"
 
 #. zinn-i18n: human translation — the machine translator refused this string
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "ຫົວຂໍ້"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "ຂໍ້ຄວາມ"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "ຮູບແບບ"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "ທຳມະດາ"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "ສຳນຽງອັກສອນ"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "ບໍ່ມີພາສາໃຫ້ສະຫຼັບລະຫວ່າງກັນ. ປຸ່ມສະຫຼັບຈະສະແດງຂຶ້ນມາເມື່ອມີປລັກອິນແປພາສາສະແດງລາຍຊື່ສອງພາສາຂຶ້ນໄປ."
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "ເຄື່ອງມືສະຫຼັບ"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "ສະແດງພາສາປັດຈຸບັນ"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "ຕິດຕັ້ງ Tranzly ແລະ ລະບຸສອງພາສາ ຫຼື ຫຼາຍກວ່ານັ້ນ, ແລ້ວປຸ່ມປ່ຽນພາສາຈະປະກົດຂຶ້ນຢູ່ທີ່ນີ້."
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "ອອກແບບ"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "ລາຍການ"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "ຢາເມັດ"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ປຸ່ມ"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "ເມນູເລື່ອນລົງ"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "ລະຫັດພາສາ"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "ສະແດງແຕ່ລະພາສາເປັນ"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "ຊື່ພາສາ"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "ລະຫັດພາສາ"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "ຊື່ ແລະ ລະຫັດ"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "ທຸງ"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "ປິດໄວ້ໂດຍຄ່າເລີ່ມຕົ້ນ: ທຸງຊາດແມ່ນປະເທດ ບໍ່ແມ່ນພາສາ."
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "ລວມພາສາປັດຈຸບັນ"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "ຊ່ອນພາສາທີ່ໜ້ານີ້ຍັງບໍ່ໄດ້ຮັບການແປ"
+
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "ຈັດລຽງຕາມແນວຕັ້ງ"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "ສີ"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "ພື້ນຫຼັງ"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "ພາສາປັດຈຸບັນ"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "ພື້ນຫຼັງພາສາປັດຈຸບັນ"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "ເສັ້ນຂອບ"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "ຂະໜາດ ແລະ ໄລຍະຫ່າງ"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "ລັດສະໝີມຸມ"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "ຊ່ອງຫວ່າງລະຫວ່າງພາສາ"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "ຂະໜາດຂໍ້ຄວາມ"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5740,11 +5844,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "ສະແດງລາຍການພາສາຂອງເວັບໄຊຈາກປລັກອິນແປພາສາ, ເມື່ອມີການເປີດໃຊ້ງານ. ຖ້າບໍ່ມີແມ່ນຈະບໍ່ສະແດງຫຍັງເລີຍ."
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "ພາສາ"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "ຕົວສະຫຼັບ"
@@ -5788,6 +5894,26 @@ msgstr "ໄອຄອນ"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "ເຄື່ອງມືປ່ຽນພາສາ"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "ອະນຸຍາດໃຫ້ຜູ້ເຂົ້າຊົມອ່ານໜ້ານີ້ເປັນພາສາອື່ນ, ຈັດຮູບແບບໃຫ້ກົງກັບໜ້າຂອງທ່ານ. ຕ້ອງການປລັກອິນ Tranzly ສຳລັບພາສາຕ່າງໆ."
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "ການແປ"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "ຫຼາຍພາສາ"
 
 #: blocks/row/block.json
 msgctxt "block title"

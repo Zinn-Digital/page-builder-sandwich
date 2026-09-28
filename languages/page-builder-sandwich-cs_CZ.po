@@ -440,7 +440,7 @@ msgstr "Umělá inteligence ještě není nastavená. Přidejte klíč pro posky
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "Pro tuto úlohu není vybrán žádný model. Zvolte jeden v nastavení AI."
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "Tento poskytovatel umělé inteligence není touto verzí modulu podporován."
 
@@ -5090,7 +5090,7 @@ msgid "Add attribute"
 msgstr "Přidat atribut"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "Obsah"
 
@@ -5218,7 +5218,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "Skripty, odkazy a externí reference jsou před zobrazením ikony odstraněny."
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Popis pro čtečky obrazovky"
 
@@ -5280,37 +5281,139 @@ msgstr "Tento vložený prvek po načtení změní svou velikost, čímž posune
 msgid "Layout shift"
 msgstr "Posun rozvržení"
 
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "Nadpis"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "Text"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "Styl"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "Prostý"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "Akcent"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "Žádné jazyky, mezi kterými by šlo přepínat. Přepínač se zobrazí, když plugin pro překlad uvádí dva nebo více jazyků."
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "Přepínač"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "Zobrazit aktuální jazyk"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "Nainstalujte Tranzly a přidejte dva nebo více jazyků, a přepínač se zobrazí zde."
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "Návrh"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "Seznam"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "Štítky"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Tlačítka"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "Rozbalovací nabídka"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "Jazykové kódy"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "Zobrazit každý jazyk jako"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "Název jazyka"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "Jazykový kód"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "Název a kód"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "Příznaky"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "Ve výchozím nastavení vypnuto: vlajka představuje stát, nikoli jazyk."
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "Zahrnout aktuální jazyk"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "Skrýt jazyky, do kterých tato stránka není přeložena"
+
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "Svisle zarovnat"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "Barvy"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Pozadí"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "Aktuální jazyk textu"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "Aktuální jazykové pozadí"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "Ohraničení"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "Velikost a řádkování"
+
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "Poloměr rohu"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "Mezera mezi jazyky"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "Velikost textu"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5751,11 +5854,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "Zobrazí seznam jazyků webu z překladového pluginu, je-li aktivní. Jinak se nezobrazí nic."
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "Jazyk"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "přepínač"
@@ -5799,6 +5904,26 @@ msgstr "ikona"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "Přepínač jazyka"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "Umožňuje návštěvníkům číst tuto stránku v jiném jazyce, ve vzhledu odpovídajícím vaší stránce. Pro jazyky je vyžadován plugin Tranzly."
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "překlad"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "vícejazyčný"
 
 #: blocks/row/block.json
 msgctxt "block title"

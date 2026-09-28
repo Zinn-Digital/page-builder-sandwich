@@ -440,7 +440,7 @@ msgstr "AI இன்னும் அமைக்கப்படவில்ல�
 msgid "No model is chosen for this task. Pick one in the AI settings."
 msgstr "இந்தப் பணிக்கு எந்த மாதிரியும் தேர்ந்தெடுக்கப்படவில்லை. AI அமைப்புகளில் ஒன்றை எடுக்கவும்."
 
-#: includes/ai-core/class-client.php:83
+#: includes/ai-core/class-client.php:87
 msgid "That AI provider is not supported by this version of the plugin."
 msgstr "இந்த செருகுநிரலின் பதிப்பால் அந்த AI வழங்குநர் ஆதரிக்கப்படவில்லை."
 
@@ -5086,7 +5086,7 @@ msgid "Add attribute"
 msgstr "பண்பைச் சேர்"
 
 #: src/core/dev-compat/edit.js:94
-#: src/editor/index.js:25
+#: src/editor/index.js:27
 msgid "Content"
 msgstr "உள்ளடக்கம்"
 
@@ -5214,7 +5214,8 @@ msgid "Scripts, links and external references are removed before the icon is sho
 msgstr "சின்னச்சினை காட்டப்படுவதற்கு முன்பு ஸ்கிரிப்டுகள், இணைப்புகள் மற்றும் வெளிப்புற குறிப்புகள் அகற்றப்படும்."
 
 #: src/core/edit.js:243
-#: src/editor/index.js:81
+#: src/editor/index.js:83
+#: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "அணுகக்கூடிய லேபிள்"
 
@@ -5276,37 +5277,140 @@ msgstr "இந்த எம்பெட் (embed) ஏற்றிய பிற�
 msgid "Layout shift"
 msgstr "லேஅவுட் மாற்றம்"
 
-#: src/editor/index.js:28
+#: src/editor/index.js:30
 msgid "Heading"
 msgstr "தலைப்பு"
 
-#: src/editor/index.js:33
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
 msgid "Text"
 msgstr "உரை"
 
-#: src/editor/index.js:39
+#: src/editor/index.js:41
 msgid "Style"
 msgstr "பாணி"
 
-#: src/editor/index.js:43
+#: src/editor/index.js:45
 msgid "Plain"
 msgstr "எளிய"
 
-#: src/editor/index.js:47
+#: src/editor/index.js:49
 msgid "Accent"
 msgstr "உச்சரிப்பு"
 
-#: src/editor/index.js:66
+#: src/editor/index.js:68
 msgid "No languages to switch between. The switcher appears when a translation plugin lists two or more languages."
 msgstr "மாற்ற மொழிகள் எதுவும் இல்லை. மொழிபெயர்ப்பு செருகுநிரல் இரண்டு அல்லது அதற்கு மேற்பட்ட மொழிகளைப் பட்டியலிடும்போது மாற்றி தோன்றும்."
 
-#: src/editor/index.js:78
+#: src/editor/index.js:80
+#: src/editor/language-switcher.js:63
 msgid "Switcher"
 msgstr "மாற்றி"
 
-#: src/editor/index.js:89
+#: src/editor/index.js:91
 msgid "Show the current language"
 msgstr "தற்போதைய மொழியைக் காட்டுங்கள்"
+
+#: src/editor/language-switcher.js:46
+msgid "Install Tranzly and list two or more languages, and the switcher appears here."
+msgstr "Tranzly ஐ நிறுவி, இரண்டு அல்லது அதற்கு மேற்பட்ட மொழிகளைப் பட்டியலிடுங்கள், மொழி மாற்றும் பொத்தான் இங்கு தோன்றும்."
+
+#: src/editor/language-switcher.js:67
+msgid "Design"
+msgstr "வடிவமைப்பு"
+
+#: src/editor/language-switcher.js:72
+msgid "List"
+msgstr "பட்டியலிடு"
+
+#: src/editor/language-switcher.js:76
+msgid "Pills"
+msgstr "மாத்திரைகள்"
+
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "பொத்தான்கள்"
+
+#: src/editor/language-switcher.js:84
+msgid "Dropdown"
+msgstr "கீழிறங்கும் பட்டியல்"
+
+#: src/editor/language-switcher.js:91
+msgid "Language codes"
+msgstr "மொழி குறியீடுகள்"
+
+#: src/editor/language-switcher.js:102
+msgid "Show each language as"
+msgstr "ஒவ்வொரு மொழியையும் காட்டுக"
+
+#: src/editor/language-switcher.js:110
+msgid "Language name"
+msgstr "மொழிப்பெயர்"
+
+#: src/editor/language-switcher.js:117
+msgid "Language code"
+msgstr "மொழி குறியீடு"
+
+#: src/editor/language-switcher.js:124
+msgid "Name and code"
+msgstr "பெயர் மற்றும் குறியீடு"
+
+#: src/editor/language-switcher.js:134
+msgid "Flags"
+msgstr "கொடிகிளாக்கள்"
+
+#: src/editor/language-switcher.js:135
+msgid "Off by default: a flag is a country, not a language."
+msgstr "இயல்புநிலையாக முடக்கப்பட்டிருக்கிறது: கொடி என்பது ஒரு நாடு, மொழி அல்ல."
+
+#: src/editor/language-switcher.js:144
+msgid "Include the current language"
+msgstr "தற்போதைய மொழியைச் சேர்க்கவும்"
+
+#: src/editor/language-switcher.js:155
+msgid "Hide languages this page is not translated into"
+msgstr "இந்தப் பக்கம் மொழிபெயர்க்கப்படாத மொழிகளை மறைக்கவும்"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: src/editor/language-switcher.js:166
+msgid "Stack vertically"
+msgstr "செங்குத்தாக அடுக்கு"
+
+#: src/editor/language-switcher.js:187
+msgid "Colours"
+msgstr "நிறங்கள்"
+
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "பின்னணி"
+
+#: src/editor/language-switcher.js:197
+msgid "Current language text"
+msgstr "தற்போதைய மொழி உரை"
+
+#: src/editor/language-switcher.js:204
+msgid "Current language background"
+msgstr "தற்போதைய மொழி பின்னணி"
+
+#: src/editor/language-switcher.js:211
+msgid "Border"
+msgstr "எல்லை"
+
+#: src/editor/language-switcher.js:220
+msgid "Size and spacing"
+msgstr "அளவு மற்றும் இடைவெளி"
+
+#: src/editor/language-switcher.js:226
+msgid "Corner radius"
+msgstr "மூலை ஆரம்"
+
+#: src/editor/language-switcher.js:231
+msgid "Space between languages"
+msgstr "மொழிகளுக்கு இடையே உள்ள இடைவெளி"
+
+#: src/editor/language-switcher.js:239
+msgid "Text size"
+msgstr "உரை அளவு"
 
 #. translators: %s: user name.
 #: src/studio/app.js:116
@@ -5743,11 +5847,13 @@ msgid "Lists the site's languages from the translation plugin, when one is activ
 msgstr "மொழிபெயர்ப்பு செருகுநிரல் செயலில் இருக்கும்போது, தளத்தின் மொழிகளைப் பட்டியலிடுகிறது. இல்லையெனில் எதையும் வழங்காது."
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "language"
 msgstr "மொழி"
 
 #: blocks/fixture-switcher/block.json
+#: blocks/language-switcher/block.json
 msgctxt "block keyword"
 msgid "switcher"
 msgstr "ஸ்விட்சர்"
@@ -5791,6 +5897,26 @@ msgstr "சின்னம்"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/language-switcher/block.json
+msgctxt "block title"
+msgid "Language switcher"
+msgstr "மொழி மாற்றி"
+
+#: blocks/language-switcher/block.json
+msgctxt "block description"
+msgid "Lets visitors read this page in another language, styled to match your page. Needs the Tranzly plugin for the languages."
+msgstr "உங்கள் பக்கத்தின் பாணியுடன் பொருந்தும் வகையில் வடிவமைக்கப்பட்ட இந்தப் பக்கத்தை வேறு மொழியில் படிக்க பார்வையாளர்களை அனுமதிக்கிறது. மொழிகளுக்கு Tranzly செருகுநிரல் தேவைப்படுகிறது."
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "translation"
+msgstr "மொழிபெயர்ப்பு"
+
+#: blocks/language-switcher/block.json
+msgctxt "block keyword"
+msgid "multilingual"
+msgstr "பல்மொழி"
 
 #: blocks/row/block.json
 msgctxt "block title"

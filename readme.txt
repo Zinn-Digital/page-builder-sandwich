@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.1.2
+Stable tag: 6.1.3
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,7 @@ This is the first release of Page Builder Sandwich rebuilt from the ground up. I
 * **Footprint-free front end.** Everything the plugin prints on your pages uses neutral class names that start with a short prefix (`zd` unless you change it). There are no HTML comments, no generator tags, and the plugin's name does not appear in the page source.
 * **Neutral asset paths.** Front-end styles are copied to `wp-content/uploads/<prefix>-assets/` under a content-hash file name, so page source does not point at the plugin's folder. If that folder cannot be written, the styles are printed inline instead.
 * **A sample content block** (a heading and a paragraph, plain or accented) and a **sample language switcher block** that lists your languages when a compatible translation plugin provides them.
+* **A language switcher element.** With Tranzly active, it shows your site's languages as a list, pills, buttons, a dropdown or language codes, each linking to this page's translation, styled with your own colours, spacing and size. It is keyboard and screen-reader friendly, and flags are optional.
 * **Settings and About screen** under the Page Builder Sandwich menu: set the class prefix and see the beta-update status for licensed installations.
 
 The admin screens stay clearly branded; only what your visitors see is neutral.
@@ -81,6 +82,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.1.3 =
+* A language switcher element: the site's languages from Tranzly (when it is active) as a list, pills, buttons, a dropdown or language codes, with your own colours, spacing and size; accessible, with optional flags.
 
 = 6.1.2 =
 * AI: the shared AI core gives the plugin one hook point on every request it sends (used by the brand kit in the design system).
