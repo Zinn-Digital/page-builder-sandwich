@@ -42,11 +42,18 @@ export default function SiteDesign( { hasPost = false, initial = '' } ) {
 				<div className="pbsw-sd__head">
 					<Button
 						icon={ isRTL() ? chevronRight : chevronLeft }
-						label={ __( 'Back to Site design', 'page-builder-sandwich' ) }
+						label={ __(
+							'Back to Site design',
+							'page-builder-sandwich'
+						) }
 						onClick={ () => setActive( '' ) }
 						size="compact"
 					/>
-					<h2 className="pbsw-sd__title" tabIndex={ -1 } ref={ headingRef }>
+					<h2
+						className="pbsw-sd__title"
+						tabIndex={ -1 }
+						ref={ headingRef }
+					>
 						{ current.title }
 					</h2>
 				</div>
@@ -65,7 +72,9 @@ export default function SiteDesign( { hasPost = false, initial = '' } ) {
 					<li key={ s.name }>
 						{ s.upsell ? (
 							<div className="pbsw-sd__item is-locked">
-								<span className="pbsw-sd__item-title">{ s.title }</span>
+								<span className="pbsw-sd__item-title">
+									{ s.title }
+								</span>
 								<span className="pbsw-sd__pro">
 									{ __( 'Pro', 'page-builder-sandwich' ) }
 								</span>
@@ -77,7 +86,9 @@ export default function SiteDesign( { hasPost = false, initial = '' } ) {
 								icon={ isRTL() ? chevronLeft : chevronRight }
 								iconPosition="right"
 							>
-								<span className="pbsw-sd__item-title">{ s.title }</span>
+								<span className="pbsw-sd__item-title">
+									{ s.title }
+								</span>
 								{ s.description && (
 									<span className="pbsw-sd__item-desc">
 										{ s.description }
@@ -102,7 +113,10 @@ export default function SiteDesign( { hasPost = false, initial = '' } ) {
 			{ data.siteEditUrl && (
 				<p className="pbsw-sd-help">
 					<ExternalLink href={ data.siteEditUrl }>
-						{ __( 'Open the Site Editor’s styles', 'page-builder-sandwich' ) }
+						{ __(
+							'Open the Site Editor’s styles',
+							'page-builder-sandwich'
+						) }
 					</ExternalLink>
 				</p>
 			) }

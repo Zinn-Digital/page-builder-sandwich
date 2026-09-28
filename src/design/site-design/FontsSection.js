@@ -49,15 +49,20 @@ export default function FontsSection() {
 					'page-builder-sandwich'
 				),
 				bad.name || bad.slug
-		  )
+			)
 		: '';
 	const taken = [ ...data.fonts.theme, ...custom ].map( ( f ) => f.slug );
 	const update = ( i, patch ) =>
-		setCustom( custom.map( ( f, j ) => ( i === j ? { ...f, ...patch } : f ) ) );
+		setCustom(
+			custom.map( ( f, j ) => ( i === j ? { ...f, ...patch } : f ) )
+		);
 
 	return (
 		<div className="pbsw-sd-section">
-			<ResultNotice notice={ notice } onRemove={ () => setNotice( null ) } />
+			<ResultNotice
+				notice={ notice }
+				onRemove={ () => setNotice( null ) }
+			/>
 			<SelectControl
 				__next40pxDefaultSize
 				__nextHasNoMarginBottom
@@ -98,13 +103,16 @@ export default function FontsSection() {
 						/>
 						<TextControl
 							__next40pxDefaultSize
-							label={ __( 'Font stack', 'page-builder-sandwich' ) }
+							label={ __(
+								'Font stack',
+								'page-builder-sandwich'
+							) }
 							help={
 								f.hasFiles
 									? __(
 											'Uploaded font: its files come from the font library.',
 											'page-builder-sandwich'
-									  )
+										)
 									: undefined
 							}
 							value={ f.fontFamily }
@@ -122,7 +130,9 @@ export default function FontsSection() {
 								f.name || f.slug
 							) }
 							onClick={ () =>
-								setCustom( custom.filter( ( _, j ) => j !== i ) )
+								setCustom(
+									custom.filter( ( _, j ) => j !== i )
+								)
 							}
 						/>
 					</div>
@@ -135,7 +145,10 @@ export default function FontsSection() {
 							...custom,
 							{
 								slug: slugify( 'system-sans', taken ),
-								name: __( 'System sans-serif', 'page-builder-sandwich' ),
+								name: __(
+									'System sans-serif',
+									'page-builder-sandwich'
+								),
 								fontFamily:
 									'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif',
 							},

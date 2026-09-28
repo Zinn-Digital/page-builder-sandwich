@@ -123,7 +123,8 @@ function esc( value ) {
  * @return {string} Trimmed value.
  */
 function phpTrim( value ) {
-	// eslint-disable-next-line no-control-regex -- PHP trim() strips NUL and vertical tab too.
+	// PHP trim()'s own character list, control characters included on purpose.
+	// eslint-disable-next-line no-control-regex
 	return value.replace( /^[ \t\n\r\0\x0B]+|[ \t\n\r\0\x0B]+$/g, '' );
 }
 
@@ -146,6 +147,8 @@ function attributeName( attr ) {
 
 function attributeValue( key, raw ) {
 	const value = phpTrim( raw );
+
+	// Browsers ignore C0 controls and spaces inside a scheme, so they are squashed before the check.
 	// eslint-disable-next-line no-control-regex
 	const squashed = value.replace( /[\x00-\x20]+/g, '' ).toLowerCase();
 	if (

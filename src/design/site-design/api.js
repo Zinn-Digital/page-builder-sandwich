@@ -9,13 +9,15 @@ import apiFetch from '@wordpress/api-fetch';
  * @return {Object} Boot data.
  */
 export function boot() {
-	return window.pbswSiteDesign || {
-		edition: 'free',
-		namespace: 'pbs/v1',
-		base: '/design',
-		prefix: 'zd',
-		canWriteCss: false,
-	};
+	return (
+		window.pbswSiteDesign || {
+			edition: 'free',
+			namespace: 'pbs/v1',
+			base: '/design',
+			prefix: 'zd',
+			canWriteCss: false,
+		}
+	);
 }
 
 /**

@@ -36,7 +36,9 @@ export function isColor( value ) {
  */
 export function isFontStack( stack ) {
 	const s = String( stack || '' );
-	return s.length > 0 && s.length <= 300 && /^[\p{L}\p{N} ,"'._-]+$/u.test( s );
+	return (
+		s.length > 0 && s.length <= 300 && /^[\p{L}\p{N} ,"'._-]+$/u.test( s )
+	);
 }
 
 /**
@@ -74,7 +76,10 @@ export function slugify( name, taken = [] ) {
 export function fontOptions( fonts ) {
 	const seen = new Set();
 	const out = [];
-	for ( const font of [ ...( fonts?.theme || [] ), ...( fonts?.custom || [] ) ] ) {
+	for ( const font of [
+		...( fonts?.theme || [] ),
+		...( fonts?.custom || [] ),
+	] ) {
 		if ( ! seen.has( font.slug ) ) {
 			seen.add( font.slug );
 			out.push( { label: font.name || font.slug, value: font.slug } );

@@ -193,8 +193,11 @@ export default function IconGrid( {
 				break;
 			}
 			cells.push(
+				// The WAI-ARIA listbox pattern with aria-activedescendant: the LISTBOX holds focus and
+				// handles keys and clicks (delegated below); an option is never focused itself.
 				<div
 					key={ item.key }
+					data-index={ index }
 					id={ `${ idPrefix }-${ index }` }
 					role="option"
 					aria-selected={ item.key === selectedKey }
@@ -210,11 +213,6 @@ export default function IconGrid( {
 						insetInlineStart: c * CELL,
 						inlineSize: CELL,
 						blockSize: CELL,
-					} }
-					onMouseDown={ ( e ) => e.preventDefault() }
-					onClick={ () => {
-						setActive( index );
-						onPick( item );
 					} }
 					// Sanitised by sanitizeSvg() (the twin of Core\Svg::sanitize).
 					dangerouslySetInnerHTML={ { __html: renderIcon( item ) } }
@@ -234,6 +232,21 @@ export default function IconGrid( {
 				items.length ? `${ idPrefix }-${ active }` : undefined
 			}
 			onKeyDown={ onKeyDown }
+			onMouseDown={ ( e ) => {
+				// A click on an option must not move focus off the listbox.
+				if ( e.target.closest( '[role="option"]' ) ) {
+					e.preventDefault();
+				}
+			} }
+			onClick={ ( e ) => {
+				const cell = e.target.closest( '[role="option"]' );
+				if ( ! cell ) {
+					return;
+				}
+				const index = Number( cell.dataset.index );
+				setActive( index );
+				onPick( items[ index ] );
+			} }
 			onScroll={ ( e ) => setScrollTop( e.currentTarget.scrollTop ) }
 			style={ { blockSize: HEIGHT } }
 		>

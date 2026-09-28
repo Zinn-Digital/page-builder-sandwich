@@ -6,7 +6,13 @@ import { __, sprintf } from '@wordpress/i18n';
 import { useEffect, useState } from '@wordpress/element';
 import { Button, TextControl } from '@wordpress/components';
 import { plus, trash } from '@wordpress/icons';
-import { ColorField, Loading, ResultNotice, SaveRow, runRequest } from './components';
+import {
+	ColorField,
+	Loading,
+	ResultNotice,
+	SaveRow,
+	runRequest,
+} from './components';
 import { globals, saveGlobals } from './globals';
 import { firstInvalidColor, slugify } from './lib';
 
@@ -21,7 +27,9 @@ import { firstInvalidColor, slugify } from './lib';
  */
 function ColorList( { items, onChange, canAdd, taken } ) {
 	const update = ( i, patch ) =>
-		onChange( items.map( ( c, j ) => ( i === j ? { ...c, ...patch } : c ) ) );
+		onChange(
+			items.map( ( c, j ) => ( i === j ? { ...c, ...patch } : c ) )
+		);
 	return (
 		<div className="pbsw-sd-list">
 			{ items.length === 0 && (
@@ -127,7 +135,10 @@ export default function ColorsSection() {
 
 	return (
 		<div className="pbsw-sd-section">
-			<ResultNotice notice={ notice } onRemove={ () => setNotice( null ) } />
+			<ResultNotice
+				notice={ notice }
+				onRemove={ () => setNotice( null ) }
+			/>
 			<h3 className="pbsw-sd-h">
 				{ __( 'Theme colours', 'page-builder-sandwich' ) }
 			</h3>

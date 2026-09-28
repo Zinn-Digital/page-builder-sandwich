@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.4.0
+Stable tag: 6.4.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.4.1 =
+* Maintenance: the design system's editor scripts pass the WordPress coding standards' JavaScript checks (no change to what the editor or your pages do).
 
 = 6.4.0 =
 * New: design system. A Style tab on every block, including WordPress's own blocks: layout (flex and grid), spacing, size, typography, colours and backgrounds, borders, shadows and position, set per device and for hover. Styles are saved as settings and printed as one stylesheet per page, never as inline styles.

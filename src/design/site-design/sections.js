@@ -21,7 +21,11 @@ function upsells() {
 	return [
 		[ 'classes', __( 'Classes', 'page-builder-sandwich' ), 30 ],
 		[ 'variables', __( 'Variables', 'page-builder-sandwich' ), 40 ],
-		[ 'tokens', __( 'Spacing, radius and shadows', 'page-builder-sandwich' ), 50 ],
+		[
+			'tokens',
+			__( 'Spacing, radius and shadows', 'page-builder-sandwich' ),
+			50,
+		],
 		[ 'dark-mode', __( 'Dark mode', 'page-builder-sandwich' ), 60 ],
 		[ 'brand-kit', __( 'Brand kit', 'page-builder-sandwich' ), 70 ],
 		[ 'custom-fonts', __( 'Custom fonts', 'page-builder-sandwich' ), 80 ],

@@ -177,12 +177,14 @@ export function score( entry, words ) {
 	if ( ! words.length ) {
 		return 1;
 	}
-	const name = entry.name.toLowerCase();
 	let total = 0;
 	for ( const w of words ) {
 		if ( ! entry.hay.includes( w ) ) {
 			return 0;
 		}
+	}
+	const name = entry.name.toLowerCase();
+	for ( const w of words ) {
 		total += name.includes( w ) ? 3 : 1;
 	}
 	if ( name === words.join( '-' ) || name === words.join( '_' ) ) {

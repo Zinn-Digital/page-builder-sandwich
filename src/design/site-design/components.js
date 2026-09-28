@@ -18,9 +18,9 @@ import { isColor } from './lib';
  * A colour swatch that opens a picker, plus the value as text (for pasting a brand colour).
  *
  * @param {Object}   props
- * @param {string}   props.label    Accessible name.
- * @param {string}   props.value    Colour.
- * @param {Function} props.onChange New colour.
+ * @param {string}   props.label      Accessible name.
+ * @param {string}   props.value      Colour.
+ * @param {Function} props.onChange   New colour.
  * @param {boolean}  props.allowEmpty Show a clear button.
  */
 export function ColorField( { label, value, onChange, allowEmpty = false } ) {
@@ -36,7 +36,10 @@ export function ColorField( { label, value, onChange, allowEmpty = false } ) {
 						aria-expanded={ isOpen }
 						label={ sprintf(
 							/* translators: %s: colour name. */
-							__( 'Pick a colour for %s', 'page-builder-sandwich' ),
+							__(
+								'Pick a colour for %s',
+								'page-builder-sandwich'
+							),
 							label
 						) }
 						showTooltip
@@ -78,11 +81,11 @@ export function ColorField( { label, value, onChange, allowEmpty = false } ) {
  * The save row at the end of a section: button, busy state, result.
  *
  * @param {Object}   props
- * @param {Function} props.onSave  Save.
- * @param {boolean}  props.saving  Busy.
- * @param {boolean}  props.dirty   Unsaved changes.
- * @param {string}   props.error   Problem to show before saving.
- * @param {string}   props.label   Button label.
+ * @param {Function} props.onSave Save.
+ * @param {boolean}  props.saving Busy.
+ * @param {boolean}  props.dirty  Unsaved changes.
+ * @param {string}   props.error  Problem to show before saving.
+ * @param {string}   props.label  Button label.
  */
 export function SaveRow( { onSave, saving, dirty, error, label } ) {
 	return (

@@ -52,10 +52,15 @@ function StudioSidebar() {
 				<Fill name="PbswStudioSidebar">
 					<div className="pbsw-sd-studio">
 						<div className="pbsw-studio-panel__head">
-							<h2>{ __( 'Site design', 'page-builder-sandwich' ) }</h2>
+							<h2>
+								{ __( 'Site design', 'page-builder-sandwich' ) }
+							</h2>
 							<Button
 								icon={ closeSmall }
-								label={ __( 'Close panel', 'page-builder-sandwich' ) }
+								label={ __(
+									'Close panel',
+									'page-builder-sandwich'
+								) }
 								onClick={ () => setOpen( false ) }
 								size="small"
 							/>
