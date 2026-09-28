@@ -135,7 +135,7 @@ final class Files {
 		}
 
 		return str_starts_with( $real, trailingslashit( $base ) )
-			&& 1 === preg_match( '#/[a-z][a-z0-9]{0,7}-assets/(?:fonts/)?(?:g-)?[0-9a-f]{12}\.(?:css|js|woff2)$#', $real );
+			&& 1 === preg_match( '#/[a-z][a-z0-9]{0,7}-assets/(?:(?:fonts|lottie)/)?(?:g-)?[0-9a-f]{12}\.(?:css|js|woff2|json)$#', $real );
 	}
 
 	/**
@@ -145,12 +145,13 @@ final class Files {
 	 */
 	public static function delete_all(): int {
 		$deleted = 0;
-		foreach ( array( '', 'fonts' ) as $sub ) {
+		// `lottie`: the Pro animation files (uploaded JSON, re-encoded and written by this class).
+		foreach ( array( '', 'fonts', 'lottie' ) as $sub ) {
 			$folder = self::folder( $sub );
 			if ( null === $folder ) {
 				continue;
 			}
-			foreach ( (array) glob( $folder[0] . '/*.{css,woff2}', GLOB_BRACE ) as $file ) {
+			foreach ( (array) glob( $folder[0] . '/*.{css,woff2,json}', GLOB_BRACE ) as $file ) {
 				if ( is_string( $file ) && self::delete( $file ) ) {
 					++$deleted;
 				}

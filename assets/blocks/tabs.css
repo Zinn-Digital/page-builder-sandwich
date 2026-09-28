@@ -99,3 +99,54 @@
 .__PREFIX__-tabs__add {
 	align-self: center;
 }
+
+/*
+ * "Accordion on phones" (a Pro option; the markup is printed only when it is on): disclosure
+ * buttons before each panel, shown instead of the tab row on narrow screens.
+ */
+.__PREFIX__-tabs__toggle {
+	display: none;
+}
+
+@media (max-width: 600px) {
+
+	.__PREFIX__-tabs--mobile-accordion > .__PREFIX__-tabs__list {
+		display: none;
+	}
+
+	.__PREFIX__-tabs--mobile-accordion .__PREFIX__-tabs__toggle {
+		display: flex;
+		gap: 1em;
+		align-items: center;
+		justify-content: space-between;
+		inline-size: 100%;
+		margin: 0;
+		padding-block: 0.9em;
+		padding-inline: 0;
+		border: 0;
+		border-block-end: 1px solid var(--__PREFIX__-tabs-line);
+		background: transparent;
+		color: inherit;
+		font: inherit;
+		font-weight: 600;
+		text-align: start;
+		cursor: pointer;
+	}
+
+	.__PREFIX__-tabs--mobile-accordion .__PREFIX__-tabs__toggle:focus-visible {
+		outline: 2px solid var(--__PREFIX__-tabs-accent);
+		outline-offset: 2px;
+	}
+
+	.__PREFIX__-tabs--mobile-accordion .__PREFIX__-tabs__toggle[aria-expanded="true"] .__PREFIX__-tabs__toggle-icon {
+		transform: rotate(180deg);
+	}
+
+	.__PREFIX__-tabs--mobile-accordion .__PREFIX__-tabs__toggle[aria-expanded="true"] + .__PREFIX__-tab[hidden] {
+		display: block;
+	}
+
+	.__PREFIX__-tabs--mobile-accordion .__PREFIX__-tabs__toggle[aria-expanded="false"] + .__PREFIX__-tab {
+		display: none;
+	}
+}

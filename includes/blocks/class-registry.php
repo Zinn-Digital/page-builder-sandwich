@@ -38,7 +38,7 @@ final class Registry {
 	public const EDITOR_HANDLE = 'pbsw-blocks-editor';
 
 	/** The six block categories: slug suffix → nothing (titles are translated in categories()). */
-	public const GROUPS = array( 'design', 'content', 'media', 'marketing', 'site', 'data' );
+	public const GROUPS = array( 'design', 'content', 'media', 'marketing', 'site', 'data', 'affiliate' );
 
 	/**
 	 * The P1 blocks registered by Core\Blocks that have a front-end stylesheet — kept in the same
@@ -210,6 +210,7 @@ final class Registry {
 			'pbs-marketing' => __( 'Marketing', 'page-builder-sandwich' ),
 			'pbs-site'      => __( 'Site', 'page-builder-sandwich' ),
 			'pbs-data'      => __( 'Data', 'page-builder-sandwich' ),
+			'pbs-affiliate' => __( 'Affiliate & iGaming', 'page-builder-sandwich' ),
 		);
 	}
 

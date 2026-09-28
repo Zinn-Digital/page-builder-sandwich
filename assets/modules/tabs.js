@@ -18,6 +18,16 @@ store( '__PREFIX__', {
 		},
 	},
 	actions: {
+		// The Pro "accordion on phones" option: its disclosure buttons (the markup is Pro's).
+		tabsToggle() {
+			const { ref } = getElement();
+			ref.setAttribute(
+				'aria-expanded',
+				ref.getAttribute( 'aria-expanded' ) === 'true'
+					? 'false'
+					: 'true'
+			);
+		},
 		tabsSelect() {
 			const ctx = getContext();
 			ctx.tabsSel = ctx.tabsI;

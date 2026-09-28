@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.10.0
+Stable tag: 6.11.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,10 @@ The icon picker offers these free icon sets, shipped with the plugin (editor onl
 * **Maintenance and pre-launch mode** (Pro): show visitors a page you designed, with the right answer for search engines.
 * **Find and replace across all pages** (Pro): text, links or colours, with a preview first and one-click undo.
 * **White label, client review and multisite** (Agency): rename the builder for client sites, let clients comment on a page before it goes live, and share templates across a network.
+
+= Bundled libraries =
+
+The 3D model viewer block (Pro) uses model-viewer 4.3.1 (Apache License 2.0), shipped with the plugin in `assets/vendor/pro__premium_only/model-viewer/` together with its licence and the licences of the libraries it includes (three.js, lit, gainmap-js). It is loaded from your own site, and only on pages that show a 3D model.
 
 = Build from source =
 
@@ -90,6 +94,25 @@ Code block. Syntax highlighting uses highlight.js 11.12.0 (BSD-3-Clause), bundle
 
 QR code block. QR codes are drawn in the editor by qrcode-generator 2.0.4 (MIT), bundled with the plugin; no QR service is used.
 
+Crypto prices block (Pro). Prices come from CoinGecko's public API and need no key or account. Your site, not your visitors, asks CoinGecko: `https://api.coingecko.com/api/v3/simple/price` for current prices and `https://api.coingecko.com/api/v3/coins/<coin>/market_chart` for a price chart, sending only the coins and currency the block shows. The answers are kept on your site and refreshed in the background every few minutes (prices) or every hour (charts), and only while a page with the block is being visited; a visitor's page never waits for CoinGecko, and nothing about your visitors is sent. Previewing the block in the editor refreshes prices that are out of date.
+
+* Service: https://www.coingecko.com
+* Terms: https://www.coingecko.com/en/terms
+* Privacy policy: https://www.coingecko.com/en/privacy
+
+Reviews block (Pro, only if you set it up under Appearance → Site design → Reviews).
+
+* Google Places API (New): Google's terms do not allow its reviews to be stored, so when a visitor views a page with a Reviews block that shows Google, the visitor's browser asks your site for them and your site requests `https://places.googleapis.com/v1/places/<your place ID>` with your own API key (sent in a header). Each such page view is one request on your key, billed by Google. What is sent: the place ID, your key and the site language; nothing about the visitor. The plugin stores only the place ID. Terms: https://cloud.google.com/maps-platform/terms and https://cloud.google.com/maps-platform/terms/maps-service-terms, privacy policy: https://policies.google.com/privacy
+* Trustpilot: once a day, in the background, your site requests `https://api.trustpilot.com/v1/business-units/<your business unit ID>` and its reviews with your own API key (sent in a header), and keeps them on your site, so page views never call Trustpilot. Terms: https://legal.trustpilot.com/for-businesses/business-terms, privacy policy: https://legal.trustpilot.com/for-reviewers/end-user-privacy-terms
+
+Share buttons (Pro). These are plain links to each network's own share page (Facebook, X, LinkedIn, WhatsApp, Reddit, Telegram, Pinterest, Bluesky, Threads) carrying the page's address and title. Nothing is loaded from any network until a visitor presses a button; the network then opens in a new tab, under its own terms and privacy policy.
+
+Age gate and responsible gambling notice (Pro). Both use the visitor's country when your host or CDN provides it in the request (for example Cloudflare's `CF-IPCountry` header); the plugin never looks a country up and sends nothing anywhere to learn it. The age gate remembers the visitor's answer in a cookie on your own site. The notice can link to a national help service (for example BeGambleAware in the UK); those are links only, opened by the visitor.
+
+Short links (Pro). Short links (`/go/<name>/`) are handled by your own site: a visit is counted and sent on to the address you entered. No link service is used.
+
+Icons. The share, menu, search and arrow icons of the Pro blocks come from Font Awesome Free (icons CC BY 4.0), bundled with the plugin.
+
 AI features use the AI provider you choose, with your own API key. Nothing is sent to any AI provider until you add a key under Settings → AI providers and use an AI feature. When you do, the text the feature needs (for example, the content being written or translated) and your key are sent to that one provider, and to no one else. Keys are stored encrypted in your database and are never sent to Zinn Digital®. The "Save and test" button sends one short test request to the provider.
 
 * OpenAI: https://api.openai.com/v1 (terms: https://openai.com/policies/services-agreement/, privacy policy: https://openai.com/policies/privacy-policy/)
@@ -120,6 +143,20 @@ Adobe Fonts (Pro, off unless you connect it). If you enter an Adobe Fonts kit id
 * Terms: https://www.adobe.com/legal/terms.html
 * Privacy policy: https://www.adobe.com/privacy/policy.html
 
+YouTube and Vimeo videos in the video playlist and video gallery blocks (Pro). A page shows each video as a poster image stored on your own site and a play button; nothing is requested from YouTube or Vimeo until a visitor presses play. Then that one video's player is loaded from YouTube's privacy-enhanced domain `https://www.youtube-nocookie.com`, or from `https://player.vimeo.com` with "do not track" set, sending what any embedded video sends (the visitor's IP address and browser details, and the video's ID). The poster images are fetched once, when an author saves a post that uses these blocks (not when a page is viewed): from `https://i.ytimg.com` for YouTube, and for Vimeo the thumbnail address is read from `https://vimeo.com/api/oembed.json` and the image downloaded from `https://i.vimeocdn.com`. Those requests carry only the video's ID. A video given a poster from the media library is never fetched.
+
+* YouTube terms: https://www.youtube.com/t/terms
+* YouTube (Google) privacy policy: https://policies.google.com/privacy
+* Vimeo terms: https://vimeo.com/terms
+* Vimeo privacy policy: https://vimeo.com/privacy
+
+Newsletter signups (Pro, only if you set one up). A Newsletter signup block, or a newsletter form made with an older version, sends the email address a visitor types into it — and nothing else about them — from your server to the service you chose for that form, only when the visitor ticks the consent box and presses the button: Mailchimp (`https://<data centre>.api.mailchimp.com/3.0/`, with the API key you saved) or AWeber (`https://www.aweber.com/scripts/addlead.pl`). MailPoet runs inside your own site and sends nothing elsewhere.
+
+* Mailchimp: terms https://mailchimp.com/legal/terms/, privacy policy https://www.intuit.com/privacy/statement/
+* AWeber: terms https://www.aweber.com/service-agreement.htm, privacy policy https://www.aweber.com/privacy.htm
+
+Share buttons (Pro). The Share bar and Click to share quote blocks are plain links that open the chosen network's own share page (Facebook, X, LinkedIn, WhatsApp, Telegram, Reddit, Pinterest, Bluesky or Threads) with the page's address and title filled in. Nothing is loaded from those networks when a page is viewed; the network is contacted only if a visitor clicks the link, and then by the visitor's browser, under that network's terms and privacy policy.
+
 == Installation ==
 
 1. Upload the `page-builder-sandwich` folder to `/wp-content/plugins/`, or install the zip from Plugins → Add New → Upload Plugin.
@@ -137,6 +174,11 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.11.0 =
+* New (Pro): marketing, media, data and site blocks, including sliders, galleries, pricing tables, countdowns, reviews, business hours, a store locator and a navigation menu, each with a design panel, accessible markup and right-to-left layouts.
+* New (Pro): a reviews block. Trustpilot reviews are refreshed once a day; Google reviews are fetched live for each visitor, because Google's terms do not allow them to be stored (each page view with the block is one Google API call on your key).
+* Translation-ready lists: list blocks keep icons, links and ids out of translation, so only the words are translated.
 
 = 6.10.0 =
 * New: 35 free blocks for content, media, marketing, site and data, each with a design panel, accessible markup and right-to-left layouts.

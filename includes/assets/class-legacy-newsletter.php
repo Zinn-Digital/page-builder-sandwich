@@ -87,24 +87,29 @@ final class Legacy_Newsletter {
 				'permission_callback' => '__return_true',
 				'callback'            => array( self::class, 'subscribe' ),
 				'args'                => array(
-					'post'  => array(
+					'post'    => array(
 						'type'     => 'integer',
 						'required' => true,
 						'minimum'  => 1,
 					),
-					'form'  => array(
+					'form'    => array(
 						'type'     => 'string',
 						'required' => true,
 						'pattern'  => '^[A-Za-z0-9_-]{1,64}$',
 					),
-					'email' => array(
+					'email'   => array(
 						'type'      => 'string',
 						'required'  => true,
 						'maxLength' => 254,
 					),
-					'nonce' => array(
+					'nonce'   => array(
 						'type'     => 'string',
 						'required' => true,
+					),
+					// The visitor ticked the form's consent box (a form that asks for one refuses without it).
+					'consent' => array(
+						'type'    => 'boolean',
+						'default' => false,
 					),
 				),
 			)
@@ -124,7 +129,8 @@ final class Legacy_Newsletter {
 			(string) $request->get_param( 'form' ),
 			(string) $request->get_param( 'email' ),
 			(string) $request->get_param( 'nonce' ),
-			self::client_key( $post_id )
+			self::client_key( $post_id ),
+			true === rest_sanitize_boolean( $request->get_param( 'consent' ) )
 		);
 
 		return new \WP_REST_Response(
@@ -144,9 +150,10 @@ final class Legacy_Newsletter {
 	 * @param string $email   The visitor's address.
 	 * @param string $nonce   The nonce the page printed.
 	 * @param string $client  Rate-limit bucket for this client and post.
+	 * @param bool   $consent The visitor ticked the form's consent box.
 	 * @return array{ok: bool, status: int, message: string}
 	 */
-	public static function handle( int $post_id, string $form, string $email, string $nonce, string $client ): array {
+	public static function handle( int $post_id, string $form, string $email, string $nonce, string $client, bool $consent = false ): array {
 		if ( ! wp_verify_nonce( $nonce, self::nonce_action( $post_id ) ) ) {
 			return self::refuse( 403, __( 'Security error, please refresh the page and try again.', 'page-builder-sandwich' ) );
 		}
@@ -169,6 +176,11 @@ final class Legacy_Newsletter {
 		$email = trim( $email );
 		if ( ! is_email( $email ) ) {
 			return self::refuse( 400, __( 'Invalid email address.', 'page-builder-sandwich' ) );
+		}
+		// A form that asks for consent (the design-system signup block does) is never subscribed
+		// without it — the box is required in the page, and this is the check that cannot be skipped.
+		if ( 'required' === ( $settings['data-consent'] ?? '' ) && ! $consent ) {
+			return self::refuse( 400, __( 'Please tick the box to agree before subscribing.', 'page-builder-sandwich' ) );
 		}
 		if ( ! self::within_rate( $client ) ) {
 			return self::refuse( 429, __( 'Too many attempts. Please try again in a few minutes.', 'page-builder-sandwich' ) );
@@ -196,9 +208,12 @@ final class Legacy_Newsletter {
 	 * @return array<string, string> Empty when the post has no such form.
 	 */
 	public static function form_settings( int $post_id, string $form ): array {
-		$all = json_decode( (string) get_post_meta( $post_id, self::META, true ), true );
-		if ( ! is_array( $all ) || '' === $form ) {
+		if ( '' === $form ) {
 			return array();
+		}
+		$all = json_decode( (string) get_post_meta( $post_id, self::META, true ), true );
+		if ( ! is_array( $all ) ) {
+			return self::other_form( $post_id, $form );
 		}
 		$lead = Settings::prefix() . '-l-';
 		$keys = array( $form );
@@ -212,7 +227,30 @@ final class Legacy_Newsletter {
 				return array_map( 'strval', array_filter( $all[ $key ], 'is_scalar' ) );
 			}
 		}
-		return array();
+		return self::other_form( $post_id, $form );
+	}
+
+	/**
+	 * A form this post's stored 5.x settings do not have: the premium layer's signup block keeps
+	 * its service and list in its own block attributes, and answers through
+	 * `pbsw_newsletter_form_settings`. Still only the post's OWN content is consulted — the
+	 * filter is handed the post id and the printed form id, never anything the request chose.
+	 *
+	 * @param int    $post_id Post id.
+	 * @param string $form    Printed form id.
+	 * @return array<string, string>
+	 */
+	private static function other_form( int $post_id, string $form ): array {
+		/**
+		 * The settings of a form that is not a 5.x one (data-* ⇒ value), or an empty array.
+		 *
+		 * @param array<string, string> $settings Settings (empty).
+		 * @param int                   $post_id  Post id.
+		 * @param string                $form     Printed form id.
+		 */
+		$settings = apply_filters( 'pbsw_newsletter_form_settings', array(), $post_id, $form );
+
+		return is_array( $settings ) ? array_map( 'strval', array_filter( $settings, 'is_scalar' ) ) : array();
 	}
 
 	/**
