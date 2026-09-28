@@ -343,6 +343,10 @@ msgid "Save as reusable pattern"
 msgstr "U kaydi qaab dib loo isticmaali karo"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Hubiyaha helitaanka"
 
@@ -992,6 +996,7 @@ msgstr "← Dooq bixiye kale"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Cinwaanka"
 
@@ -1045,6 +1050,8 @@ msgstr "Tijaabi"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Ka tirtir"
@@ -1098,6 +1105,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Ka cusboonaysii liiska noocyada bixiyeyaasha"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Sawirrada"
 
@@ -1190,6 +1198,7 @@ msgid "turned off"
 msgstr "damchay"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Furo"
 
@@ -1451,6 +1460,7 @@ msgstr "Weli lama samayn codsiyo AI ah."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "La dhammeeyey"
 
@@ -1518,7 +1528,11 @@ msgstr "Isku dayo aad u badan. Fadlan isku day mar kale daqiiqado kooban kadib."
 msgid "Something went wrong. Please contact the admin."
 msgstr "Wax qalad ah ayaa dhacay. Fadlan la xiriir maamulaha."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Khariirad"
 
@@ -1541,52 +1555,386 @@ msgstr "Qoyskaasi lama kaydiyo."
 msgid "Removed."
 msgstr "Waa la saaray."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Taasi ma aha magac qoys far sax ah."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts ma soo celinin qoyskaas. Hubi magaca oo dib u day."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Faylasha farta lama soo dejisan karo ama lama keydin karo. Hubi in galka soo-gelinta la qori karo."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Qoraalka farta ee stylesheet-ka lama keydin karin. Hubi in galka soo-gelinta la qori karo."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Ka takhal ogeysiintaan"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(wuxuu ku furmayaa tab cusub)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "La dhammeeyay:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Luuq:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Tusaha erayada"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s ka mid ah %1$s ayaa la qiimeeyay"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Horumarinta"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Nuugi koodka"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "La nuquleeyay"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Widget-kaas looma heli karo boggan."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Email"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Telefoon"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Kulanka RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Shabakad"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Isku xir"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (ayaa ku furmaya tab cusub)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Qiimeysay %d oo ah 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(lagula talinayo)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Ku jira"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Lama dareersan"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Tusmada isbarbardhiga"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Wac %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Email %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Qoraal %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Ku sheekayso WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Nala soo xiriir"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Kala hadaaq WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Foomkani ma heli karo hadda."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Foomkan lama soo bandhigi karo sababtoo ah %s ma shaqeynayo."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Khariiradda: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Muujinta khariidadda waxay ka soo dejineysaa OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Muuji khariidadda"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Fur khariidadda OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Kalandarka ballanta ee ka yimid %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Muujinta jadwalka ballamuhu waxay ka soo dejineysaa %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Muuji jadwalka ballamaha"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Boog ka qor %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Koodka QR ee %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Naqshadaynta"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Muxuu ku jiraa"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Warbaahin"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Suuqgeyn"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Goobta"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Xogta"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Qoraallada la xiriira"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Faahfaahinta qoraalka"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Waxaa qoray"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "La daabacay"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "La cusboonaysiiyay"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Gudaha"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Calaamadeeyay"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d daqiiqo oo akhris ah"
+msgstr[1] "%d daqiiqadood oo akhris ah"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Faallooyin weli ma jiraan"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d faallo"
+msgstr[1] "%d faallooyin"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Khariidadda Shabakadda"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(Cinwaan la'aan)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Dhammaan qoraallada uu qoray %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Waxkan waa mid la ilaalinayo. Geli erayga sirta ah si aad u aragto."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Furahaas sirta ah sax ma aha. Mar labaad isku day."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Furaha sirta ah"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Muuji waxyaabaha ku jira"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Boggaas lama fureri karo."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Isku-dayo aad u badan. Sug daqiiqado oo dib u dayo."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Furaha sirta ah waa inay noqotaa int u dhaxaysa 4 iyo 200 xaraf."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "In ka badan"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Xidh"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Tabka %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Muxuu ka kooban yahay"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1689,6 +2037,10 @@ msgstr "Ku tiri Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Shiraarka madhan"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "U gudub waxa ku jira"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Ballaca kiniinka waa inay noqotaa tiro buuxda oo ah pixels laga bilaabo 480 ilaa 2560."
@@ -1763,7 +2115,11 @@ msgid "Uploaded icons"
 msgstr "Summersii la soo geliyay"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Icon"
 
@@ -2558,6 +2914,8 @@ msgstr "%s waa ciwaanka iimaylka macmiilkayga"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Koodh"
 
@@ -3055,13 +3413,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Wax ka beddel"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Email"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Cinwaanka iimaylka"
 
@@ -3111,6 +3465,10 @@ msgstr "Habaynta sumadda cad ayaa socota"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3133,6 +3491,7 @@ msgstr "Geli ciwaanka email-ka cusub"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Khalad"
 
@@ -3732,6 +4091,7 @@ msgstr "Alaabooyinka hoos ku qoran waxaa la geliyey habka badbaadada sababtoo ah
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3835,6 +4195,7 @@ msgstr "Kala-soocalkan wuxuu u baahan yahay nooc PHP ah oo cusub."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Maya"
 
@@ -4823,6 +5184,13 @@ msgstr "Baraha bulshada (Facebook, Twitter, iwm.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5108,6 +5476,9 @@ msgstr "Waqtiga calaamadsan"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Ciwaan"
 
@@ -5183,6 +5554,8 @@ msgstr "Sidee u jeceshahay %1$s ilaa iyo hadda? Tijaabi dhammaan sifooyinka %2$s
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Nooca"
@@ -5298,6 +5671,7 @@ msgstr "Isticmaalayaasha"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Qiime"
@@ -5353,6 +5727,7 @@ msgstr "Eeg astaamaha la bixiyo"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Digniin"
 
@@ -5679,6 +6054,7 @@ msgid "Optional"
 msgstr "Ikhtiyaari"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Qorshe"
 
@@ -6002,18 +6378,26 @@ msgstr "Dheeraad yar oo cidhiidhi ah"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Yar"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Dhexe"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Weyn"
 
@@ -6026,7 +6410,9 @@ msgid "Huge"
 msgstr "Weyn"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6340,16 +6726,9 @@ msgid "The trial could not be started."
 msgstr "Tijaabada lama bilaabi karin."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Astaamaha"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Ku jira"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Lama dareersan"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6707,10 +7086,6 @@ msgstr "Ciwaanka gelitaanka"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Magaca isticmaalaha"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Furaha sirta ah"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7106,15 +7481,62 @@ msgstr "Dib u celinta waa billowday. Waxay ka socotaa gadaal; waad ka bixi karta
 msgid "Undo all conversions"
 msgstr "Gadaal u celi dhammaan beddelallada"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Walxayaal"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Fur marka boggu rarto"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Cinwaanku waa cinmaan"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Ka dhig cinwaanka madax marka walxuhu ay qaybo ka yihiin bogga, si ay booqdayaashu uga dhex boodaan."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Madaxa %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Su'aal ama cinwaanka qaybta"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Akodiyan"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Hal shay oo kaliya ayaa furfuran hal mar"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "U calaamadi sida FAQ ee mashiinnada raadinta"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Waxay ku dareysaa xog habaysan oo FAQ ah oo laga dhisay ciwaanada (su'aalaha) iyo qoraalkooda (jawaabaha)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Digniin"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Macluumaad"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Guul"
 
@@ -7123,6 +7545,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Digniinaha iyo khaladaadka waxaa loo sheegaa isticmaaleyaasha akhriyaha shaashadda isla markiiba; macluumaadka iyo ogeysiisyada guusha waxaa la akhriyaa marka ay dhameeyaan waxa ay wadaan."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Tus astaamaha"
 
@@ -7138,64 +7561,702 @@ msgstr "Ciwaan (ikhtiyaari)"
 msgid "Write the message…"
 msgstr "Qor fariinta…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "qeyb —qeyb mawduuc ah"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Xarunta"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — ma laha macne"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Calaamad"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "madax - waxyaabaha hordhaca ah"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Midab"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "footer — xiraada nuxurka"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Mowduuca midabkiisa gaarka ah"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "maqaal — ku filan naftiisa"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Dhex-dhexaad"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "geedka — macluumaadka la xiriira"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Booska"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — waxa ku jira barta ugu weyn (hal mar boggiikiiba)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Sumad"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — xiriiriyeyaasha hagidda"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Buugga ballamaha"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Galka (flexbox, tiir)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Adeeg"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Safka (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Ciwaanka bogga ballansashada"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Grid"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Tusaale ahaan %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Waxa uu jadwalku qabto, kaas oo ay akhriyaan qalabka wax akhriya ee indhaha la' isla markaana ka muuqda hoostiisa."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Tani ma aha ciwaanka bogga ballansiga ee %s, markaa waxba kuma soo bixi doonaan bogga."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Horumarinta jadwalka"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Cinwaanka xiriirinta"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Badhanka wuxuu muuqdaa marka uu leeyahay calaamad iyo cinmaan labadaba."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Ka fur tab cusub"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Ficilka ficilka"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Qaab-dhismeedka"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Badhamada hoose"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Badhamada ku xiga qoraalka"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Isku-dabarridda"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Badhanka ugu weyn"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Badhanka labaad"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Cinwaan…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Hal jumladood oo ku saabsan sababta…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Badhanka labaad (ikhtiyaari)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Liiska hubinta"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Midabka calaamadda"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Safafka"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Safka %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Hawl…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Kudar sadarka"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Luqadda"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Si toos ah u olow"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Tilmaam la'aan"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Magaca faylka"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Waa la tusiyaa koodhka korkiisa, tusaale ahaan functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Lambarka xarigga"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Koobiyso badhanka"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Duub safafka dhaadheer"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Qor ama dhejiso koodhka…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Qoraal"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Madaxyo"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Adka %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Muuqso %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Ku dar tiir"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Safafka"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Safka %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Kudar saf"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Saxeexa (waxa la isbarbardhigayo)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Nooca unugga: %s. Beddel"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Wicitaanka taleefanka"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Farriinta qoraalka ah"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Badhamada"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Lambarka টেলিfoonka, oo wata koodhka dalka"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Badhanka qoraalka"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Ka saar badankaan"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Kudar badhan"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Fariinta WhatsApp ee lagu bilaabayo (ikhtiyaari)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Badhamada xiriirka"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Ku dar lambarka telefoonka, cinwaanka iimaylka ama lambarka WhatsApp dhinaca bidix/midig."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Lab labo ah"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Heerka cinwaanka"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Isticmaal H1 hal mar boggiisa kasta, cinwaankiisa ugu weyn."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Qaybta labaad eeg"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Midabka lahjadda"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Shabag"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Qorshe"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Hoosta ka hoos xariiq"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Qaybta labaad ee safkeeda gaarka ah"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Qeybta koowaad"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "qaybta labaad"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Qalin calaamadeeye"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Hoosta xariiqda dhumucda leh"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Asalra"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Muuji"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Ka saar iftiiminta"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Xaraf weyn oo bilow ah"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Xarafka koowaad ee weyn"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Xarfaha ugu horreeya ee sanduuqa ku jira, dooro qaabka \"Drop cap in a box\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Xarafka weyn ee sanduuqa ku jira"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Barfaalka lahjadaha"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Xigashada soo baxa (barta la jaanqaadka)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Oraah laga soo xigtay qoraalka, taas oo si weyn loo dhigay agagaarka xariiq midab leh si ay indhaha u soo jiidato."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "ora ku xigta"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Liiska astaamaha"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Teleefannada, sifooyinku had iyo jeer way is dul-saaraan."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Tilmaamaha"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Muujinta %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Summaddaada"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Muujiye…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Sharax…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Ku dar astaan"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Ku rakib oo awood geli Contact Form 7, WPForms, Gravity Forms ama Fluent Forms, kadibna halkan ka dooro mid ka mid ah foomamkeeda."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Foomka furaha (plugin)"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Dooro…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Foomka"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Dooro foom…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s wali ma lahan foomam"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s kama shaqeynayo boggan, markaas foomkan lama soo bandhigi karo."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Liiska foomamka waa la soo dejin waayay."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Qaabka foomka"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Goobaha"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "La tilmaamay"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Buuxsamay"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Hoosta laga hoosta xarriiqay"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Ballaca badhanka"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Qor qoraalka ku habboon"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Ballac buuxa"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Midabada, farshaxanka, bannaanaynta iyo geesaha waxay ka yimaadaan naqshaddaada mareegaha iyo dejinta naqshadda qaybtan."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "So bandhig foomka laga keenayo foomkaaga plugin-ka, kaas oo loo qaabeeyey inuu waafaqo mareegtaada."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Ma u baahan tahay furaha foomka? Contact Form 7 waa bilaash."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Eray-bixin"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "U kala sooc A ilaa Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Boggu wuxuu tusiyaa shuruudaha iyagoo kala ah alifbeetada; halkan waxay ku sugnaanayaan siday ahayd markii aad qortay."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Muuji tusmada A–Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Xiriiriyaha shuruudaha ee laga isticmaalay meelaha kale ee boggan"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Markii ugu horreysay ee erey kasta uu ka muuqdo qoraalka bogga wuxuu ku xidhmaa qeexitaankiisa. Ciwaanada, badhamada, koodka iyo xiriiriyeyaasha jira waa la iska daayaa."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Shuruudaha"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Muddada %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Muddo"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Waxa ay ka dhigan tahay..."
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Ku dar erey"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Liiska astaamaha"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Midka midka kale ka hooseeya"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Isbarbar dhig"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Qodobka liiska…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Sanduuqa xogta"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Ama ka dooro astaan kasta oo ka tirsan maktabadda:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Qoraalka xiriiriyaha"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Sheeg halka uu xiriirku aado (\"Arag qiimayahayaga\"), ee ha dhihin \"Akhri wax dheeraad ah\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Hal ama laba jumladood…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "qeyb —qeyb mawduuc ah"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — ma laha macne"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "madax - waxyaabaha hordhaca ah"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "footer — xiraada nuxurka"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "maqaal — ku filan naftiisa"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "geedka — macluumaadka la xiriira"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — waxa ku jira barta ugu weyn (hal mar boggiikiiba)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — xiriiriyeyaasha hagidda"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Galka (flexbox, tiir)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Safka (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Grid"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Wax ka beddelka: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "U habee carruurta sida"
 
@@ -7203,7 +8264,7 @@ msgstr "U habee carruurta sida"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7211,70 +8272,50 @@ msgstr "U habee carruurta sida"
 msgid "Inherited (%s)"
 msgstr "Dhaxlay (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Blocks-ka is dul saaran"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Madaxyo"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Jiid shiraarka, ama qor"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Ballaca nuxurka"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Sanduuq (ballaca nuxurka mawduuca)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Ballac buuxa"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Joogrsaha ugu yar"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Astaamaha HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Isku xir"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Samee baloogga oo dhan inuu noqdo xiriiriye ku aaddan"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Qoraalka xiriiriyaha ee akhriyayaasha shaashadda"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Waxa xiriirku sameeyo, booqdayaasha aan arki karin baloogga."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Ka fur tab cusub"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Haku ridin xiriiriyeyaal ama badhamo gudaha baloog ku xiran: xiriiriye ku dhex jira xiriiriye kama shaqeeyo biraawsarrada."
 
@@ -7306,14 +8347,144 @@ msgstr "+ Safafka"
 msgid "− Row"
 msgstr "Safka"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Meel"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Geli iskuduwaha ama xiriirka OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Openstreetmap.org ka raadi goobta, kadibna ka nuquliso ciwaanka bar-browser-ka, ama midig-gujiso khariidada oo dooro \"Muuji ciwaanka\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Jurolaad"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Dhigaha dhulka"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Magaca goobta"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Waxaa lagu soo bandhigaa khariidada hoosteeda waxaana akhriya qalabka akhriska shaashadda."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Geli istaahilada (tusaale ahaan 51.5074, -0.1278) ama xiriirinta OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Isku-dudujaha ama xiriiriyaha"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Horay u eeg khariidadda"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Ka eeg %1$s, %2$s OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Qoraa"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Taariikhda la daabacay"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Taariikhda la cusboonaysiiyay (markii ay ka duwan tahay)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Qeybaha"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Calaamadaha"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Waqtiga akhriska"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Tirada faallooyinka"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Faahfaahinta la muujinayo"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Dooro ugu yaraan hal tafaasiil si aad u tuso."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Barta horumarka"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Ugu badnaan"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 boqolkiiba; tiro kale kasta oo ah tiro-koob, sida 8 ee 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Muuji boqolleyda"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Furaha sirta ah waa la dejiyay. Booqashadayaashu waxay arkayaan foomka erayga sirta ah halkii ay ka arki lahaayeen nuxurkan ilaa iyo inta ay ka gelinayaan."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Weli ereyska sirta ah looma dejinin, markaa booqdayaashu wax walba halkan kuma arkaan."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Erayga sirta ah ee cusub"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Deji erayga sirta ah"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Furaha sirta ah waa la dejiyay. Kaydi bogga si aad u dhaqangeliso; booqdayaasha furay waxay u baahan doonaan midka cusub."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Haddii Page Builder Sandwich abid la damiyo, waxyaabaha ku jira waxaa loo muujinayaa qof kasta."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Fariinta ku jirta foomka erayga sirta ah (ikhtiyaari)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Beddel"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Sumad"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7323,30 +8494,698 @@ msgstr "Akhriyayaasha shaashadda ayaa akhriya, waana la tusiyaa marka “Muuji s
 msgid "Show label"
 msgstr "Muuji sumadda"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Cinwaanka shabakadda ama qoraalka"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Koodka QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Sharaxaadda akhriska shaashadda"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "U daab ban si aad u isticmaasho \"QR code for\" iyo qoraalka."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Ku qor cinwaanka shabakadda, xiriirinta taleefanka (tel:) ama qoraal kasta."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Tani aad bay ugu dheer tahay code-ka QR-ka. Gaabi."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Ku dar faallo"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Baarka horumarka akhriska"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Daaqadda geeskeeda"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Sare"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Hoose"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Waxaa lagu muujiyaa xagga hoose ee daaqadda marka booqdayaashu ay hoos u rolaan bogga."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Waxaa lagu muujiyaa xagga sare ee daaqadda sida booqdayaashu u dhex-rogayaan."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Intadee"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Waxay xiriir la leedahay"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Qeybaha ama calaamadaha"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Marka aanay jirin wax la xiriira, tus kan ugu cusub beddelkeeda"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Madax"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "U daa madhan \"Qoraallada la xiriira\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Muuji sawirka la soo xulay"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Muuji taariikhda"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Muuji soo koobitaan"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Ma jiraan qoraallo wadaaga qaybaha ama calaamadaha qoraalkan weli. Marka ay qaar yimaadaan, waxay ka muuqdaan halkan."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Daaqadda wada-sheekaysiga"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Guddiga ka baxsan bogga"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Cabbirka"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Wuxuu ka soo sibxanaa"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Bilowgu waa dhinaca ay akhrisku ka bilaabmaan: midigta carabiga, bidixda Ingiriiska."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Xir marka bogga dambe la gujiyo"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Ciwaanka daaqadda"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Calaamadda saxda"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Wareeg"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Gudubka"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Dhibic"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Gacmeed"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Xiddig"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Midabka astaanta"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Sidii qoraalka oo kale"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Mowduuca koowaad"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Mawduuca labaad"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Midabka mawduuca"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Madaxyada ku hay nidaamka bogga hoostiisa: madax heerkiisu hooseeyo qaybta uu ku jiro."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Xullo astaamaha"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Isticmaal astaanta caadiga ah"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Xulo astaamaha"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Kor u rari"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Hoos u dhaqaaji"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Muuji cinwaan nooc kasta"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Ma jiro wax la daabacay oo ku jira noocyada aad dooratay."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Xiriiriyeyaasha"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Xiriiriyaha %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Shabakad"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Cinwaanka astaanta, mailto:you@example.com ama tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Magaca loo akhriyo akhristayaasha shaashadda"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Calaamad kale"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Ku dar xiriiriye"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Eeg"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Habka"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Summaddaha kaliya"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Qaabka"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Wareeg geesood ah"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Iskār"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Fur astaamaha cusub"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Heerka xiddigaha"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Qiimaynta"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Xidigaha tiradaoda"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Tirada tus"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Tallaabooyinka"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Bogga hoos u deg"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Isbarbar dhig (waxay is dul saaraan telefoonnada)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Midabka lambarka"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Tallaabooyinka kala sarraysa"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Tallaabada %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Tallaabada…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Maxaa la samaynayaa…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Ku dar tallaabo"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Tabka"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Ku dar madaxyada bogga waxaana lagu taxli doonaa halkan."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Aruuriyaha tusmada"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Ka bilaabaya heerka cinwaanka"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Isku xigxiga madaxyada"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Tiroobay"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Waa la soo koobi karaa"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Bilow la duubay"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Muuji qaybta la akhrinayo"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Tabosyada"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Magaca akhriyayaasha shaashadda"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Ikhtiyaari ah. Waxay sheegaysaa waxa ay tabs-ku ku saabsan yihiin, tusaale ahaan \"Qorshayaasha\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Fur marka uu boggu soo rarto"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Tabs-ka dhinaca hoos u socda"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Ku dar tab"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Markhaati-fur"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Beddel sawirka"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Sawir dooro"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Ka saar sawirka"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Sharaxaada sawirka"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "U daadi madhan marka uu sawirku tusi karo oo keliya qofka magaciisu ku xiga yahay."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Qioraha xiddigaha (0 = ma jiro)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Magaca hoostiisa xigashada"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Sawirka ku xiga oraahda"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Waxa macmiilku yiri…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Doorka ama shirkadda"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Qalab-tilmaameed"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Qoraalka caawiyaha"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Ka dhig mid gaaban: hal ama laba weedhood. Shaashad-akhrisiyeyaasha waxay ku akhriyaan erayga ay sharxayso."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Muuji"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Sare"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Hoose"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Eray ё 3 eray-yar"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Codso"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Xogta koontada"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Qofka xisaabtiisa"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Qoraaga qoraalka"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Muuji sawirka astaanta"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Muuji taariikh nololeedka"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Muuji xiriiriyeyaasha qoraallada iyo barta internetka"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Qoraaga astaantiisa"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Dooro cidda profile-keeda la tusayo."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Lambarka WhatsApp, oo ay ku jirto koodhka dalka"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Tusaale ahaan +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Fariinta lagu bilaabayo (ikhtiyaari)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Muuji qoraalka ag yaal astaanta"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Geeska"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Dhamaadka hoose (midig ee Ingiriiska)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Gunta hoose (bidix ku yaal Ingiriiska)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Ku dar lambarkaaga WhatsApp dhinaca dhinaca. Ilaa intaas badhanka looma tusayo bogga."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Boggan, badhankani wuxuu ku sabbaynayaa geeska hoose ee shaashadda."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Astaamaha gaaban"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Isticmaal xarfaha, nambarada, xariijimaha iyo hoosta ka xarriiqaha kaliya."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Magaca sifada"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Ku dar sifada"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Sifooyinka kale"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Ka dooro calaamadda gaaban goobaha baloogga."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Sawir-gacmeedka"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Cabbirka sawirka"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Sawir yar"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Cabirka buuxa"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Ku xirnow"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Bogga lifaaqa"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Fayisha warbaahinta"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Maqal"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Muuqaal"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Ciwaanka faylka"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Wareeg"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Si toos ah u ciyaar"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Muqaalka boodhka"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Liiska heesaha"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Aqoonsiyada Warbaahinta, oo ay kala saarayaan hakad"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Muuji liiska raadka"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Geli"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Ciwaanka la gelinayo"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Ballaca ugu badan"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Cinwaan-hoosaad"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML-ka sawirka iyo qoraalka hoose"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Ballaca"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Talo: Xannibaanka foomku wuxuu tusiyaa foomkan oo loo qaabeeyey si uu u waafaqo mareegtaada."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Muuji cinwaanka foomka"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Muuji sharaxaafta foomka"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Gudbi adigoon dib u shubin bogga"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7367,123 +9206,108 @@ msgstr "Xulo faylka"
 msgid "— Default —"
 msgstr "— Caadi ah —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Qaabeynta horumarsan"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS-ka gudaha ah"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Go'aannada CSS, tusaale ahaan: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Saamaynta (noocyadii hore)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Magacyada saamaynta ee bannaan-u-kala-baxsan ee laga soo qaaday noocyadii hore, tusaale ahaan: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Saf"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Ballaca"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Ballac buuxa, nuxurka waxaa lagu hayaa dhexda"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Cinwaanka xiriirinta"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Xiriirka xiriirinta"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Isku-dabarridda"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Bidix"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Xarunta"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Midig"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Badhanka qoraalka"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Ku dar qoraal…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Meeseynta"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Kala ah safkeeda"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Safka dhexdiisa, oo ku xiga waxyaabaha kale"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Otomaatik ah (oo ku taal safkeeda gaarka ah ee heerka ugu sarreeya ee bogga)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Summaddu la heli karo"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Astaamaha qurxinta uga tag eber."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Ka dooro sumad goobta dejinta baloogga."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Magaca dejinta cusub"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Tusaale ahaan: cinwaan ama qoraal"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Ku dar habeyn"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Widget"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Xulo qalab yar"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Goobta widget-ka"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Dooro aagagga farmaajada"
 
@@ -7506,6 +9330,142 @@ msgstr "Kani wuxuu iskaba beddelaa cabbirka marka uu soo shubo, taas oo dhaqaaji
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Isbeddelka qaab-dhismeedka"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Widget-kani ma qeexo dejintiisa, markaa waxaa loo tirtiraa sida magac iyo qiime lammaane ah."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Dhibaato"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Hubi"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Muuji baloogga"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Isticmaal midab mawduuc ah oo akhriska u fudud"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Ka dhig H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Qoraalka kale ee beddelka ah"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Kaydi qoraalka beddelka ah"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Sawirkani waa mid qurxin ah"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "La hubinayaa…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Ma jiraan dhibaatooyin helitaan ah oo laga helay boggan."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d dhibaato"
+msgstr[1] "%d dhibaatooyin"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d shay oo la hubiyo"
+msgstr[1] "%d shay oo la hubiyo"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Dib u hubi"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Baaritaanka tooska ah waxa uu helaa dhibaatooyin badan laakiin ma aha dhammaantood. Sidoo kale isku day bogga adoo isticmaalaya kiiboodhka keliya iyo akhriyaha shaashadda."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Midabka qoraalku waa %1$s:1; wuxuu u baahan yahay ugu yaraan %2$s:1 si loo akhriyi karo."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "guji halkan,halkan,wax badan akhri,wax badan,xiriiriye,xiriiriyahan,wax badan baro,tag"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Xiriiriyuhu ma laha qoraal, sidaa darteed akhriyaha shaashaduhu wuxuu ku dhawaaqaa oo keliya \"xiriiriye\". Ku dar qoraal ama calaamad."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Qoraalka xiriiriyaha “%s” ma tilmaamayo meesha uu aado. Halkaas beddelkeeda sharax meesha loo socdo."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Curalee leh ayaa leh tabindex togan, taas oo beddeleysa nidaamka kiiboodhka oo ka fogeyneysa nidaamka akhriska. Isticmaal 0 ama ka saar."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Wax la guji karo lagama gaari karo kiiboodhka. Isticmaal badhan ama xiriiriye dhab ah."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Qeyb hoose ku jirta ma leh ciwaan, markaas akhriyaha shaashaduhu ma sheegi karo waxa ay tahay."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Foomka gelinta ma laha summad, sidaa darteed ujeedadiisa lama shaacinayo."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Madaxani wuu madhan yahay. Isticmaaleyaasha akhriyaha shaashaddu waxay ku dhex maraan madaxyada; ka saar ama ku dar qoraal."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Cinwaanka boggu horey ayuu u yahay H1; adeegso H2 heerka ugu sarreeya ee nuxurka."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "H%1$d Tani waxay ka boodaysaa hal heer; kii ka horreeyay wuxuu ahaa H%2$d. Ka dhig H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Sawirkani ma laha qoraal kale (alt text). Sifee, ama u calaamadee mid qurxin ah haddii uusan waxba ku kordhinayn."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Xir guddiga"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7580,18 +9540,6 @@ msgstr "Gaar ah"
 msgid "Width / height"
 msgstr "Ballaca / Joogugga"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Sare"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Hoose"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7604,20 +9552,6 @@ msgstr "Sawirka la dhaxlay - beddel"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Ka saar sawirka"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Booska"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Cabbirka"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7683,22 +9617,6 @@ msgstr "Dhinac kasta si gooni ah"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Dhanka"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Habka"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Midab"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7948,14 +9866,6 @@ msgstr "%1$s (%2$d la dejiyey)"
 msgid "Replace icon"
 msgstr "Bedel astaamaha"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Xullo astaamaha"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Xulo astaamaha"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Icons aaney jirin."
@@ -7967,10 +9877,6 @@ msgstr "Caadi ah"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Calaamadaha ganacsiga"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "La tilmaamay"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8099,21 +10005,9 @@ msgstr "Midabka qoraalka"
 msgid "Cursor"
 msgstr "Tilmaamaha jiidaha"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Gacmeed"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Tilmaame"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Qoraal"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8271,10 +10165,6 @@ msgstr "Magaca aagga"
 msgid "Named areas"
 msgstr "Meelaha la magacaabay"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Safafka"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Dhererka"
@@ -8392,10 +10282,6 @@ msgstr "Xaqiiji"
 msgid "Decoration"
 msgstr "Ereyga Qurxinta"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Hoosta ka hoos xariiq"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Khadka sare"
@@ -8478,19 +10364,9 @@ msgstr "Conic"
 msgid "Angle (degrees)"
 msgstr "Xagal (digrii)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Qaabka"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Elipsiska"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Wareeg"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8526,10 +10402,6 @@ msgstr "Saturation behind (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Midab (isticmaal midab daah-furan)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Wareeg geesood ah"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8546,10 +10418,6 @@ msgstr "Saddex xagal"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamond"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Xiddig"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9430,11 +11298,6 @@ msgstr "Nadiifi"
 msgid "The change could not be saved."
 msgstr "Isbeddelka lama kaydin karo."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Xir guddiga"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Mawduuca caadiga ah"
@@ -9491,9 +11354,49 @@ msgstr "Fasallada, calaamadaha, habka madow, xirmada astaanta iyo farshaxannada 
 msgid "Open the Site Editor’s styles"
 msgstr "Fur qaababka Tafatiraha Mareegta"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Madax"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Madax leh dherer xariiq oo adag, oo lagu habeeyey tabka Style."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Sadqof qoraal ah, oo lagu qaabeeyey tabka Style."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Sawir"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Sawir geesal wareegsan leh, oo lagu habeeyay tabka Habka."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Muuqaal ka socda Maktabadda Warbaahinta, oo lagu qurxiyay tabka Qaabka."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Banaan-sameeye"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Meel madhan oo u dhexeysa baloogyada; ku deji dherer kala duwan shaashad kasta oo ku taal tabka Qaabka (Style)."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Kaburow"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Khad jiif ah oo u dhexeeya qaybaha, oo lagu habeeyey tabka Style."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Ku dar waxyaabo ka yimid goob kale (muuqaal, qoraal, khariidad) adigoo soo dhejinaya ciwaankeeda."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Sawirro dhowr ah oo ku jira shabakad, oo lagu habeeyey tabta Qaabka."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9527,10 +11430,6 @@ msgstr "Liiska"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Kiniiniyada"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Badhamada"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9575,10 +11474,6 @@ msgstr "Qari luqadaha aan boggan lagu tarjumin"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Isku xidh toosan"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Asalra"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9637,11 +11532,6 @@ msgstr "Dejinta xannibaadda"
 #, js-format
 msgid "Add block: %s"
 msgstr "Kudar baloog: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(Cinwaan la'aan)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9717,10 +11607,6 @@ msgstr "Dam modo amaanka"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Daar habka nabdoon (plugins-ka kale waa dansan yihiin, adiga awgeed, Studio kaliya)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "La daabacay"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10060,11 +11946,6 @@ msgstr "Magaca dhisaha"
 msgid "Visual editor name"
 msgstr "Magaca tifaftiraha muuqaalka"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Qoraa"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10138,10 +12019,6 @@ msgstr[1] "Waa la nooleeyay: %d bogag."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Beddel"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Xiriiriyeyaasha"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10252,10 +12129,6 @@ msgstr "U oggloow macmiil inuu faallo ka bixiyo boggan"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Qof kasta oo leh xiriiriyaha wuxuu arki karaa boggan, xitaa ka hor intaan la daabacin, wuxuuna ka tagi karaa faallooyin. Kooto looma baahna."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "La nuquleeyay"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10498,6 +12371,53 @@ msgstr "Sawirrada ku guuri maktabadda warbaahinta ee mareegtan"
 msgid "Show what will happen"
 msgstr "Tus waxa dhici doona"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Qeybta akordeonaha"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Hal qayb oo ka mid ah akadoon (accordion): cinwaan furaya waxa ku jira."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Akorjankiisa"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Su'aalo ama qaybo furma oo xirma. Ikhtiyaar ahaan mid mid, iyo ikhtiyaar ahaan loo calaamadiyay sidii FAQ loogu talagalay mashiinnada raadinta."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "accordion"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Su'alaha Badiya La Weydiiyo"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "rogleh"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "la laab"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "faahfaahin"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10514,6 +12434,7 @@ msgid "notice"
 msgstr "Ogaysiis"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "fariin"
@@ -10528,6 +12449,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "digniin"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Calaamad"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Sumad gaaban sida Cusub, Iib ama Qiimaha ugu fiican."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "calaamadda"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "Calaamad"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "kiniin"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "cusub"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Buugga ballamaha"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Calendly ama Cal.com jadwalka ballamaha, kaas oo la soo raro oo keliya marka booqdaha uu codsado."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "Ballan"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "ballan"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "Qorshee"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10539,6 +12525,7 @@ msgid "A link styled as a button."
 msgstr "Isku xirka loo qaabeeyey sidii badhan oo kale."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "badhanka"
@@ -10552,6 +12539,98 @@ msgstr "ku xir"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "ficirka ficilka"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Halka ficilka la galo"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Madax, jumlad iyo hal ama laba badhan oo ka codsanaya booqdaha inuu wax qabto."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "cta"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "Calan"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "iska diiwaangeliso"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Liiska hubinta"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Liiska hawlaha, oo mid kastaa lagu calaamadeeyay inay dhammaatay ama ay weli harsan tahay, oo lagu qoray ereyo loogu talagalay akhriyeyaasha shaashadda iyo sidoo kale calaamadda saxda ah."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Loo baahan yahay in la qabto"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "hawlgallada"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "astaamaha jeegga"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "liiska"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Koodhka"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Liiska koodka oo wata iftiiminta naxwaha, lambarrada safafka iyo badhamada koobiyaynta. Wuxuu ahaadaa mid la akhriyi karo haddii qalabka dheeriga ah la damiyo."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "koodhka"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "naxwaha"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "Muuji"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "qayb yar"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "barnaamij-samayn"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10575,6 +12654,85 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "Qaab-dhismeedka"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Shaxda isbarbardhigga"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Qorshayaasha ama badeecadaha oo is barbar yaalla, oo wata calaamado haa iyo maya ah oo ay akhristayaasha shaashaduhu u akhriyaan erayo ahaan."
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "isbarbardhig"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Qiimaha"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "qorshayaasha"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "miiska"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "astaamaha"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Badhamada xiriirka"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Badhamada laguugu soo waco, laguugu soo qoro iimaylka, fariinta qoraalka ah ama fariinta WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "la xiriir"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "wac"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "telefoon"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "email"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "sms"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10592,11 +12750,13 @@ msgid "container"
 msgstr "weelka"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "sanduuq"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10613,6 +12773,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "tiirarka"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Madax laban-laab ah"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Madax laba qaybood ka kooban, qaybta labaad waxaa lagu qurxiyay midab, isku-dhaqaaq midabeed, qarka dibadda ah ama hoosta laga xariiqay."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "cin-raac"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "cinwaan"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "gradiyanti"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Liiska astaamaha"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Astaamaha oo ku jira shabag, mid walba waxaa leh astaanta, cinwaanka iyo sharaxaad gaaban."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Faa'iidooyinka"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "Adeegyada"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10657,6 +12863,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "qoraal"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Foom"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Wuxuu muujiyaa foom ka socda Contact Form 7, WPForms, Gravity Forms ama Fluent Forms, kaas oo loo qaabeeyey inuu la jaanqaado boggaaga."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "foomka"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Eray bixin"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Shuruudaha iyo qeexitaankooda, oo loo kala soocay A ilaa Z, mid walba leh xiriirkiisa gaarka ah. Waxay ku xiriirin kartaa xusidda koowaad ee eray kasta oo bogga ku yaal qeexitaankiisa."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Shuruudaha"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "qeexitaanada"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "qaamuuska"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Liiska astaamaha"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Liis ay saf walba ka billowmato astaamaha: calaamadda saxda, fallaarta, ama nooc kasta oo astaamo ah oo ka tirsan maktabadda."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "xabado"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "calaamadaha yar yar"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10677,6 +12963,32 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Sanduuqa xogta"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Astaan, cinwaan gaaban, hal ama laba weedh iyo xiriiriye ikhtiyaari ah: adeegyada, faa'iidooyinka ama faahfaahinta xiriirka."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "Astaamaha"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "Adeegga"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "kaarka"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10696,6 +13008,205 @@ msgstr "turjumid"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "luqado badan"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Khariidad"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Khariidadda meel ka timid OpenStreetMap: ma jirto fure, waxna kama soo dejisanayaan OpenStreetMap ilaa booqdaha uu ka codsado khariidadda."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "khariidad"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "Goobta"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "cinmanka"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Daaqadda yar"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Badhan furaya daaqad bogga dushiisa ah, oo wata baloogyo kasta oo gudaha ku jira."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "daaqadda soo boodaysa"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "soo-baxa daaqadda"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "lightbox"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "wada-hadal"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Guddiga bannaanka ka ah"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Badhan si habaysan u soo jiidaya guddid oo ka imanaya dhinaca daaqada, oo ay ku jiraan baloogyada gudaha ku jira."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "meel-ka-baxsan"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "darjadda"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "garabka dhinaca"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "baalofka"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "liiska xulashada"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Faahfaahinta qoraalka"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Qoraaga qoraalka, taariikhaha, qaybaha, calaamadaha, wakhtiga akhriska iyo tirada faallooyinka."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "qoraa"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "Taariikhda"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "waqtiga akhriska"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "Qoraaga"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Baarka horumarka"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Baa calaamadaysan oo tusiya sida shay u socday, sida xirfad ama yool."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "horumarinta"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "bar"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "xirfad"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "Hadafka"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Ku qoran erayada sirta ah oo la ilaaliyo"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Waxay xannibaysaa oo keliya booqdayaasha haysta lambarka sirta ah ee ay arki karaan. Illaa inta ay ka gelqanayaan, wax lagu qoro kuma jiro bogga haba yaraatee."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "Erayga sirta ah"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Lagu ilaaliyo"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "gaar ah"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "qufuli"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "xubnaha"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10721,6 +13232,86 @@ msgstr "Iftiin"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "midabka qorshaha"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Koodka QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Koodh QR ah oo loogu talagalay cinwaanka shabakadda ama qoraal kasta, oo lagu sawiray boggaaga (ma jiro adeeg QR ah oo la isticmaalo)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "kaarka qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "barcode"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "iskaanka"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Barta horumarka akhriska"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Baar dhuuban oo ku yaal cidhifka daaqadda kaas oo buuxsama marka booqdayaasuhu ay dhex rogtaan bogga."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "Akhrinaya"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "rogexo"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Qoraalada la xiriira"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Qoraallada wadaagaya qaybaha ama calaamadaha qoraalkan, iyaga oo wata sawiradooda, taariikhahooda iyo soo-koobidooda."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "la xiriira"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "Qoraallada"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "sida oo kale"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "wax badan"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10784,13 +13375,284 @@ msgstr "Wuxuu muujinayaa widget-yada mid ka mid ah meelaha widget-ka ee mawduuca
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "garabka dhinaca"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "agagaarka widget-ka"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Khariidadda Shabakadda"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Bog liiska u ah dhammaan bogagga iyo qoraallada la daabacay (iyo waxyaabaha kale ee dadweynaha), iyadoo la ilaalinayo geedka bogga."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "Khariidadda bogagga"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "khariidadda bogga"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "index"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "bogagga oo dhan"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Astaamaha baraha bulshada"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Isku xirka astaamahaaga, kuwaas oo lagu sawiray astaamaha shabakadaha laftooda."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "baraha bulshada"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "isku-xirayaasha"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "raac"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "Koontooyinka"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Xiddigaha qiimaynta"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Qiimeyn lagu muujiyey xiddigo, oo ah tillaabooyin nus-xiddig ah."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "Xiddigaha"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "qiimaynta"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "dhibcaha"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Tallaabooyinka"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Tallaabooyinka tirooyinka leh ee geeddi-socod, si ay u kala dambeeyaan, hoos ugu deega bogga ama garab istaag."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "habee"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "sida loo"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "Jadwalka wakhtiga"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "lambaraysan"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Galka"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Hal tab oo ka mid ah xannibaadda Tabs: cinwaankeeda iyo guddigeeda."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Tusaha tusmada"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Liiska cinwaannada bogga, ee si otomaatig ah loo dhisay, kaas oo ku xiraya mid kasta."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Miiska tusmada"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "waxyaabaha ku jira"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "cin-hyraedyada"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Tabs"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Agabka ku jira tabs-ka: booqdayashu waxay u kala beddelaan guddiyada iyagoo isticmaalaya jiirka ama kiiboodhka."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "Tabब"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "tab leh"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "guddiyada"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Markhaati-kac"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Oraah ka timid macaamiil oo wata magacooda, doorkooda, sawirkooda iyo qiimeyn xiddigeed oo ikhtiyaari ah."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "dib u eeg"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "Oraah"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "macaamiisha"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Fikir-celinta"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Talo-tixraac"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Erey ama weedh muujineysa sharraxaad kooban marka la dul-mario ama la isticmaalo batoonka kiiboodhka."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "tilmaamaha caawinta"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Talo-bixin"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "qeexitaan"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Qoraaga astaantiisa"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Sawirka qoraaga, magaca, taariikh nololeedkiisa iyo xiriiriyeyaasha, ama kuwa isticmaale la doortay."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "taariikh nololeed"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "muuqaalka kooban"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "ku saabsan"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Badhanka sheekaysiga WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Badhax sabeynaya oo ku yaal geeska bogga oo furaya sheeko WhatsApp ah oo adiga kula leh."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "sheeko"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "sabeynaya"
 
 #: blocks/widget/block.json
 msgctxt "block title"

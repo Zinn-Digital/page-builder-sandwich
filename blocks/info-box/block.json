@@ -1,0 +1,93 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/info-box",
+	"title": "Info box",
+	"category": "pbs-content",
+	"icon": "info-outline",
+	"description": "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details.",
+	"keywords": [
+		"box",
+		"feature",
+		"service",
+		"card"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"svg": {
+			"type": "string",
+			"default": ""
+		},
+		"iconRef": {
+			"type": "string",
+			"default": ""
+		},
+		"icon": {
+			"type": "string",
+			"enum": [
+				"info",
+				"star",
+				"check",
+				"arrow",
+				"dot",
+				"circle"
+			],
+			"default": "info"
+		},
+		"showIcon": {
+			"type": "boolean",
+			"default": true
+		},
+		"title": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"content": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"linkUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"linkText": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"newTab": {
+			"type": "boolean",
+			"default": false
+		},
+		"align": {
+			"type": "string",
+			"enum": [
+				"start",
+				"center"
+			],
+			"default": "start"
+		},
+		"level": {
+			"type": "integer",
+			"default": 2
+		},
+		"accent": {
+			"type": "string",
+			"enum": [
+				"text",
+				"primary",
+				"secondary",
+				"contrast"
+			],
+			"default": "primary"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

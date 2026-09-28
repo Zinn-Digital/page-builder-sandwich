@@ -1,0 +1,95 @@
+/*
+ * Front-end styles for pbs/badge. `__PREFIX__` is the neutral class prefix; logical
+ * properties only (wp/bin/pbs-logical-css.php). Loaded only where this block renders.
+ * Colours: every text/background pair is at least 7:1 (WCAG AAA). The accent variant uses the
+ * theme's contrast/base pair, which a theme picks to be readable.
+ */
+.__PREFIX__-badge {
+	margin-block: 0.5em;
+	text-align: start;
+}
+
+.__PREFIX__-badge--center {
+	text-align: center;
+}
+
+.__PREFIX__-badge--end {
+	text-align: end;
+}
+
+.__PREFIX__-badge__label {
+	display: inline-block;
+	padding-block: 0.2em;
+	padding-inline: 0.7em;
+	border-radius: 999px;
+	font-size: 0.8125em;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	line-height: 1.4;
+}
+
+.__PREFIX__-badge__label--accent {
+	background-color: var(--wp--preset--color--contrast, #111);
+	color: var(--wp--preset--color--base, #fff);
+}
+
+.__PREFIX__-badge__label--neutral {
+	background-color: #e9e9ed;
+	color: #1e1e1e;
+}
+
+.__PREFIX__-badge__label--info {
+	background-color: #e8f1fb;
+	color: #0b3a66;
+}
+
+.__PREFIX__-badge__label--success {
+	background-color: #e7f5ec;
+	color: #0f4d2c;
+}
+
+.__PREFIX__-badge__label--warning {
+	background-color: #fff4e0;
+	color: #5c3300;
+}
+
+.__PREFIX__-badge__label--error {
+	background-color: #fdeaea;
+	color: #7a1111;
+}
+
+/* Shared by the G-B blocks. Each block file carries its own copy, because a page loads only the
+   stylesheets of the blocks it uses. */
+.__PREFIX__-accent--primary {
+	--__PREFIX__-accent: var(--wp--preset--color--primary, var(--wp--preset--color--accent-3, #5b21b6));
+}
+
+.__PREFIX__-accent--secondary {
+	--__PREFIX__-accent: var(--wp--preset--color--secondary, var(--wp--preset--color--accent-4, #3f3f46));
+}
+
+.__PREFIX__-accent--contrast {
+	--__PREFIX__-accent: var(--wp--preset--color--contrast, currentcolor);
+}
+
+.__PREFIX__-accent--text {
+	--__PREFIX__-accent: currentcolor;
+}
+
+.__PREFIX__-kit-icon,
+.__PREFIX__-kit-icon svg {
+	display: inline-block;
+	line-height: 0;
+}
+
+.__PREFIX__-sr {
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}

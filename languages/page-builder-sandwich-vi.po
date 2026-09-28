@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Lưu thành mẫu tái sử dụng"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Trình kiểm tra khả năng truy cập"
 
@@ -990,6 +994,7 @@ msgstr "← Chọn một nhà cung cấp khác"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Địa chỉ"
 
@@ -1043,6 +1048,8 @@ msgstr "Kiểm tra"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Gỡ bỏ"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Làm mới danh sách mô hình từ các nhà cung cấp"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Hình ảnh"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "Đã tắt"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Mở"
 
@@ -1448,6 +1457,7 @@ msgstr "Chưa có yêu cầu AI nào được thực hiện."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Hoàn tất"
 
@@ -1515,7 +1525,11 @@ msgstr "Quá nhiều lần thử. Vui lòng thử lại sau vài phút."
 msgid "Something went wrong. Please contact the admin."
 msgstr "Đã có lỗi xảy ra. Vui lòng liên hệ với quản trị viên."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Ánh xạ"
 
@@ -1538,52 +1552,383 @@ msgstr "Gia đình đó không được lưu trữ."
 msgid "Removed."
 msgstr "Đã xóa."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Đó không phải là tên họ phông chữ hợp lệ."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts không trả về phông chữ đó. Vui lòng kiểm tra lại tên và thử lại."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Không thể tải xuống hoặc lưu các tệp phông chữ. Hãy kiểm tra xem thư mục tải lên có quyền ghi hay không."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Không thể lưu bảng định kiểu phông chữ. Hãy kiểm tra xem thư mục tải lên có thể ghi được không."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Bỏ qua thông báo này"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(mở trong tab mới)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Hoàn tất:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Cần làm:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Bảng thuật ngữ"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Được %1$s trên tổng số %2$s sao"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Tiến trình"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Sao chép mã"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Đã sao chép"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Tiện ích đó không khả dụng trên trang web này."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Email"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Điện thoại"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Kênh RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Trang web"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Liên kết"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (mở trong tab mới)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Được %d trên 5 sao"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(khuyên dùng)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Đã bao gồm"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Không bao gồm"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Bảng so sánh"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Gọi %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Email %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Văn bản %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Nhắn tin qua WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Liên hệ với chúng tôi"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Nhắn tin với chúng tôi qua WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Biểu mẫu này hiện không khả dụng."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Biểu mẫu này không thể hiển thị vì %s không hoạt động."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Ánh xạ: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Hiển thị bản đồ sẽ tải bản đồ đó từ OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Hiển thị bản đồ"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Mở bản đồ trên OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Lịch đặt chỗ từ %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Hiển thị lịch đặt phòng tải lịch đó từ %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Hiển thị lịch đặt chỗ"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Đặt vào %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Mã QR cho %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Thiết kế"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Nội dung"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Phương tiện"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Tiếp thị"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Trang web"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Dữ liệu"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Bài viết liên quan"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Chi tiết bài viết"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Bởi"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Đã xuất bản"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Đã cập nhật"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Trong"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Đã gắn thẻ"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d phút đọc"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Chưa có bình luận nào"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d bình luận"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Sơ đồ trang web"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(không có tiêu đề)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Tất cả bài viết của %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Nội dung này được bảo vệ. Nhập mật khẩu để xem."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Mật khẩu đó không đúng. Hãy thử lại."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Mật khẩu"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Hiển thị nội dung"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Không thể mở khóa trang đó."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Quá nhiều lần thử. Vui lòng đợi vài phút rồi thử lại."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Mật khẩu phải dài từ 4 đến 200 ký tự."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Thêm"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Đóng"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Thẻ %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Nội dung"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2031,10 @@ msgstr "Chỉnh sửa với Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Trang trắng"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Chuyển đến nội dung"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Chiều rộng của máy tính bảng phải là một số nguyên pixel từ 480 đến 2560."
@@ -1760,7 +2109,11 @@ msgid "Uploaded icons"
 msgstr "Biểu tượng đã tải lên"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Biểu tượng"
 
@@ -2553,6 +2906,8 @@ msgstr "%s là địa chỉ email của khách hàng của tôi"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Mã"
 
@@ -3047,13 +3402,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Chỉnh sửa"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Email"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Địa chỉ email"
 
@@ -3103,6 +3454,10 @@ msgstr "Đang bật chế độ nhãn trắng"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3480,7 @@ msgstr "Nhập địa chỉ email mới"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Lỗi"
 
@@ -3723,6 +4079,7 @@ msgstr "Các sản phẩm bên dưới đã được chuyển sang chế độ a
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4183,7 @@ msgstr "Plugin này yêu cầu phiên bản PHP mới hơn."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Không"
 
@@ -4811,6 +5169,13 @@ msgstr "Mạng xã hội (Facebook, Twitter, v.v.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5461,9 @@ msgstr "Dấu thời gian"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Tiêu đề"
 
@@ -5171,6 +5539,8 @@ msgstr "Bạn thấy %1$s thế nào rồi? Hãy dùng thử tất cả các tí
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Loại"
@@ -5286,6 +5656,7 @@ msgstr "Người dùng"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Giá trị"
@@ -5340,6 +5711,7 @@ msgstr "Xem các tính năng trả phí"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Cảnh báo"
 
@@ -5666,6 +6038,7 @@ msgid "Optional"
 msgstr "Tùy chọn"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Gói dịch vụ"
 
@@ -5988,18 +6361,26 @@ msgstr "Cực kỳ nhỏ"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Nhỏ"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Trung bình"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Lớn"
 
@@ -6012,7 +6393,9 @@ msgid "Huge"
 msgstr "Rất lớn"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6324,16 +6707,9 @@ msgid "The trial could not be started."
 msgstr "Không thể bắt đầu dùng thử."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Tính năng"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Đã bao gồm"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Không bao gồm"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6687,10 +7063,6 @@ msgstr "Địa chỉ đăng nhập"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Tên người dùng"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Mật khẩu"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7081,15 +7453,62 @@ msgstr "Đã bắt đầu hoàn tác. Quá trình này tiếp tục chạy ẩn;
 msgid "Undo all conversions"
 msgstr "Hoàn tác mọi chuyển đổi"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Mục"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Mở khi trang tải xong"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Tiêu đề là một đề mục"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Biến tiêu đề thành một tiêu đề chính khi các mục là các phần của trang, để khách truy cập có thể chuyển đổi giữa chúng."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Tiêu đề %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Tiêu đề câu hỏi hoặc phần"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Accordion"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Chỉ mở một mục tại một thời điểm"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Đánh dấu là Câu hỏi thường gặp cho công cụ tìm kiếm"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Thêm dữ liệu cấu trúc Câu hỏi thường gặp được xây dựng từ các tiêu đề (câu hỏi) và nội dung của chúng (câu trả lời)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Cảnh báo"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Thông tin"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Thành công"
 
@@ -7098,6 +7517,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Cảnh báo và lỗi được thông báo ngay lập tức cho người dùng trình đọc màn hình; thông tin và thông báo thành công sẽ được đọc khi họ hoàn tất công việc đang làm."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Hiển thị biểu tượng"
 
@@ -7113,64 +7533,702 @@ msgstr "Tiêu đề (tùy chọn)"
 msgid "Write the message…"
 msgstr "Viết tin nhắn…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "phần — một phần theo chủ đề"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Trung tâm"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — không có ý nghĩa"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Huy hiệu"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "tiêu đề — nội dung giới thiệu"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Màu sắc"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "chân trang — nội dung kết thúc"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Điểm nhấn giao diện"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "bài viết — nội dung độc lập"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Trung lập"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "bên lề — nội dung liên quan"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Vị trí"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — nội dung chính (mỗi trang một lần)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Nhãn"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — liên kết điều hướng"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Lịch đặt chỗ"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Ngăn xếp (flexbox, cột)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Dịch vụ"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Hàng (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Địa chỉ trang đặt phòng"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Lưới"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Ví dụ: %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Mục đích của lịch, được đọc bởi các trình đọc màn hình và hiển thị bên dưới nó."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Đây không phải là địa chỉ trang đặt chỗ %s, vì vậy sẽ không có gì hiển thị trên trang này."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Xem trước lịch"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Địa chỉ liên kết"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Nút sẽ hiển thị khi có cả nhãn và địa chỉ."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Mở trong tab mới"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Kêu gọi hành động"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Giao diện"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Các nút bên dưới"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Các nút bên cạnh văn bản"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Căn lề"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Nút chính"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Nút thứ hai"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Tiêu đề…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Một câu về lý do tại sao…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Nút thứ hai (tùy chọn)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Danh mục kiểm tra"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Màu dấu tích"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Dòng"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Dòng %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Tác vụ..."
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Thêm dòng"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Ngôn ngữ"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Tự động phát hiện"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Không làm nổi bật"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Tên tệp"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Hiển thị phía trên mã, ví dụ: functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Số dòng"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Nút sao chép"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Xuống dòng tự động"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Viết hoặc dán mã…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Văn bản"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Cột"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Cột %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Đánh dấu nổi bật %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Thêm cột"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Hàng"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Hàng %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Thêm hàng"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Chú thích (nội dung đang được so sánh)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Loại ô: %s. Thay đổi"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Cuộc gọi điện thoại"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Tin nhắn văn bản"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Nút"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Số điện thoại, kèm mã quốc gia"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Nút văn bản"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Xóa nút này"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Thêm nút"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Tin nhắn WhatsApp để bắt đầu (tùy chọn)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Nút liên hệ"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Thêm số điện thoại, địa chỉ email hoặc số WhatsApp vào thanh bên."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Tiêu đề kép"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Cấp độ tiêu đề"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Sử dụng thẻ H1 một lần cho mỗi trang, dành cho tiêu đề chính của trang đó."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Giao diện phần thứ hai"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Màu nhấn"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Độ dốc"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Dàn ý"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Gạch chân"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Phần thứ hai trên dòng riêng"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Phần đầu"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "phần thứ hai"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Bút dạ"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Gạch chân đậm"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Nền"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Làm nổi bật"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Xóa đánh dấu"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Chữ cái đầu dòng lớn"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Chữ cái đầu to"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Đối với chữ cái đầu tiên trong hộp, hãy chọn kiểu \"Chữ cái lớn đầu đoạn trong hộp\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Chữ cái đầu dòng trong khung"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Thanh điểm nhấn"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Trích dẫn nổi bật (thanh điểm nhấn)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Một đoạn trích từ văn bản, được hiển thị lớn bên cạnh một thanh màu để thu hút sự chú ý."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "báo giá"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Danh sách tính năng"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Trên điện thoại, các tính năng luôn được xếp chồng lên nhau."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Tính năng"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Tính năng %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Biểu tượng riêng"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Tính năng…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Mô tả…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Thêm tính năng"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Cài đặt và kích hoạt Contact Form 7, WPForms, Gravity Forms hoặc Fluent Forms, sau đó chọn một trong các biểu mẫu tại đây."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Plugin biểu mẫu"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Chọn…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Mẫu"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Chọn một hình thức…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s chưa có biểu mẫu nào"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s không hoạt động trên trang web này, vì vậy biểu mẫu này không thể hiển thị."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Không thể tải danh sách biểu mẫu."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Kiểu biểu mẫu"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Các trường"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Đã phác thảo"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Đã điền"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Gạch chân"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Độ rộng nút"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Vừa khít văn bản"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Toàn chiều rộng"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Màu sắc, phông chữ, khoảng cách và các góc lấy từ thiết kế trang web của bạn và cài đặt thiết kế của khối này."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Hiển thị biểu mẫu từ plugin biểu mẫu của bạn, được định kiểu để khớp với trang web của bạn."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Bạn cần một plugin biểu mẫu? Contact Form 7 là miễn phí."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Thuật ngữ"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Sắp xếp từ A đến Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Trang hiển thị các thuật ngữ theo thứ tự bảng chữ cái; ở đây chúng giữ nguyên thứ tự bạn đã viết."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Hiển thị chỉ mục từ A đến Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Liên kết các thuật ngữ được sử dụng ở nơi khác trên trang này"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Lần đầu tiên mỗi thuật ngữ xuất hiện trong văn bản trang, nó sẽ liên kết đến định nghĩa của thuật ngữ đó. Tiêu đề, nút, mã và các liên kết hiện có được giữ nguyên."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Điều khoản"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Thuật ngữ %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Hạn sử dụng"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Ý nghĩa của nó…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Thêm thuật ngữ"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Danh sách biểu tượng"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Xếp chồng lên nhau"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Song song"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Danh mục…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Hộp thông tin"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Hoặc chọn bất kỳ biểu tượng nào từ thư viện:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Văn bản liên kết"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Hãy nêu rõ liên kết dẫn đi đâu (\"Xem bảng giá\"), thay vì viết \"Đọc thêm\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Một hoặc hai câu…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "phần — một phần theo chủ đề"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — không có ý nghĩa"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "tiêu đề — nội dung giới thiệu"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "chân trang — nội dung kết thúc"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "bài viết — nội dung độc lập"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "bên lề — nội dung liên quan"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — nội dung chính (mỗi trang một lần)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — liên kết điều hướng"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Ngăn xếp (flexbox, cột)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Hàng (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Lưới"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Đang chỉnh sửa: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Sắp xếp các phần tử con thành"
 
@@ -7178,7 +8236,7 @@ msgstr "Sắp xếp các phần tử con thành"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7186,70 +8244,50 @@ msgstr "Sắp xếp các phần tử con thành"
 msgid "Inherited (%s)"
 msgstr "Kế thừa (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Khối chồng"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Cột"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Kéo vào vùng thiết kế, hoặc nhập"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Độ rộng nội dung"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Hộp (chiều rộng nội dung của chủ đề)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Toàn chiều rộng"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Chiều cao tối thiểu"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Thẻ HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Liên kết"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Biến toàn bộ khối thành một liên kết đến"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Văn bản liên kết dành cho trình đọc màn hình"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Hành động của liên kết đối với khách truy cập không thể nhìn thấy khối."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Mở trong tab mới"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Không đặt liên kết hoặc nút bấm bên trong một khối được liên kết: liên kết nằm bên trong liên kết không hoạt động trong các trình duyệt."
 
@@ -7281,14 +8319,143 @@ msgstr "+ Thêm hàng"
 msgid "− Row"
 msgstr "− Hàng"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Vị trí"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Dán tọa độ hoặc liên kết OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Trên trang openstreetmap.org, hãy tìm địa chỉ đó, sau đó sao chép địa chỉ từ thanh trình duyệt, hoặc nhấp chuột phải vào bản đồ và chọn \"Hiển thị địa chỉ\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Vĩ độ"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Kinh độ"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Phóng to"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Tên địa điểm"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Hiển thị dưới bản đồ và được đọc bởi trình đọc màn hình."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Dán tọa độ (ví dụ: 51.5074, -0.1278) hoặc một liên kết OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Tọa độ hoặc liên kết"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Xem trước bản đồ"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Kiểm tra %1$s, %2$s trên OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Tác giả"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Ngày xuất bản"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Ngày cập nhật (khi khác)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Danh mục"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Thẻ"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Thời gian đọc"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Số lượng bình luận"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Chi tiết cần hiển thị"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Hãy chọn ít nhất một chi tiết để hiển thị."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Thanh tiến trình"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Tối đa"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 cho một tỷ lệ phần trăm; bất kỳ số nào khác cho một số lượng, chẳng hạn như 8 trên 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Hiển thị tỷ lệ phần trăm"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Đã thiết lập mật khẩu. Khách truy cập sẽ nhìn thấy biểu mẫu mật khẩu thay vì nội dung này cho đến khi họ nhập mật khẩu."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Chưa có mật khẩu nào được thiết lập, vì vậy khách truy cập không thấy gì ở đây."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Mật khẩu mới"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Đặt mật khẩu"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Đã đặt mật khẩu. Lưu trang để áp dụng; khách truy cập đã mở khóa trang này sẽ cần mật khẩu mới."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Nếu Page Builder Sandwich bị tắt, nội dung này sẽ hiển thị cho tất cả mọi người."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Tin nhắn phía trên biểu mẫu mật khẩu (tùy chọn)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Chuyển đổi"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Nhãn"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7298,30 +8465,698 @@ msgstr "Được đọc bởi trình đọc màn hình và hiển thị khi bậ
 msgid "Show label"
 msgstr "Hiển thị nhãn"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Địa chỉ web hoặc văn bản"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Mã QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Mô tả cho trình đọc màn hình"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Để trống để sử dụng \"Mã QR cho\" và văn bản."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Nhập địa chỉ web, liên kết điện thoại (tel:) hoặc bất kỳ văn bản nào."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Nội dung này quá dài cho mã QR. Hãy rút ngắn lại."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Thêm chú thích"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Thanh tiến trình đọc"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Cạnh cửa sổ"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Trang đầu"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Dưới"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Hiển thị dọc theo phía dưới cùng của cửa sổ khi khách truy cập cuộn trang."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Hiển thị dọc theo đầu cửa sổ khi khách truy cập cuộn trang."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Số lượng"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Liên kết bởi"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Danh mục hoặc thẻ"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Khi không có nội dung liên quan, hãy hiển thị nội dung mới nhất thay thế"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Tiêu đề"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Để trống cho phần \"Bài viết liên quan\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Hiển thị ảnh nổi bật"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Hiển thị ngày"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Hiển thị bản tóm tắt"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Chưa có bài viết nào chia sẻ chuyên mục hoặc thẻ của bài viết này. Khi có bài viết phù hợp, chúng sẽ hiển thị ở đây."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Hộp thoại"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Bảng điều khiển trượt"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Dung lượng"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Trượt từ"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Điểm bắt đầu là phía bắt đầu đọc: bên trái trong tiếng Anh, bên phải trong tiếng Ả Rập."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Đóng khi nhấp vào trang phía sau"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Tiêu đề của cửa sổ"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Dấu kiểm"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Vòng tròn"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Hủy"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Dấu chấm"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Mũi tên"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Đánh dấu sao"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Màu biểu tượng"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Giống như văn bản"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Màu chủ đạo giao diện"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Màu phụ của giao diện"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Độ tương phản chủ đề"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Giữ các tiêu đề theo đúng thứ tự trên trang: tiêu đề thấp hơn một cấp so với phần chứa nó."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Chọn biểu tượng"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Sử dụng biểu tượng mặc định"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Chọn một biểu tượng"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Di chuyển lên"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Di chuyển xuống"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Hiển thị một tiêu đề cho mỗi loại"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Chưa có nội dung nào được xuất bản trong các loại bạn đã chọn."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Đường dẫn"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Liên kết %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Mạng"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Một địa chỉ hồ sơ, mailto:you@example.com hoặc tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Tên được đọc cho trình đọc màn hình"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Biểu tượng khác"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Thêm liên kết"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Xem"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Kiểu"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Chỉ biểu tượng"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Hình dạng"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Hình vuông bo góc"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Hình vuông"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Mở hồ sơ trong tab mới"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Đánh giá bằng sao"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Đánh giá"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Số sao"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Hiển thị số lượng"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Các bước"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Cuộn xuống trang"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Song song (xếp chồng trên điện thoại)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Màu số"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Thứ tự các bước"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Bước %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Bước…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Phải làm gì…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Thêm bước"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Tab"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Thêm các tiêu đề vào trang và chúng sẽ được liệt kê ở đây."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Mục lục"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Từ cấp tiêu đề"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Đến cấp độ tiêu đề"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Đã đánh số"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Có thể thu gọn"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Bắt đầu ở trạng thái thu gọn"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Làm nổi bật phần đang được đọc"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Thẻ"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Tên cho trình đọc màn hình"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Tùy chọn. Cho biết các tab nói về chủ đề gì, ví dụ: \"Gói dịch vụ\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Mở khi tải trang"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Thẻ dọc theo cạnh"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Thêm thẻ"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Lời chứng thực"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Thay thế ảnh"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Chọn ảnh"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Xóa ảnh"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Mô tả ảnh"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Để trống khi ảnh chỉ hiển thị người có tên ở bên cạnh."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Xếp hạng sao (0 = không có)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Tên dưới trích dẫn"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Ảnh bên cạnh trích dẫn"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Khách hàng đã nói gì…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Vai trò hoặc công ty"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Chú thích công cụ"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Văn bản chú thích"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Hãy viết ngắn gọn: một hoặc hai câu. Trình đọc màn hình sẽ đọc phần này cùng với từ mà nó giải thích."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Hiển thị"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Phía trên"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Dưới"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Từ hoặc cụm từ"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Áp dụng"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Hồ sơ"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Hồ sơ của ai"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Tác giả bài viết"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Hiển thị ảnh đại diện"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Hiển thị tiểu sử"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Hiển thị liên kết đến bài viết và trang web"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Hồ sơ tác giả"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Chọn hồ sơ để hiển thị."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Số WhatsApp, kèm mã quốc gia"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Ví dụ: +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Tin nhắn bắt đầu (tùy chọn)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Hiển thị văn bản bên cạnh biểu tượng"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Góc"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Cuối trang (phải trong tiếng Anh)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Dưới cùng bên trái (trái trong tiếng Anh)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Thêm số WhatsApp của bạn vào thanh bên. Cho đến lúc đó, nút này sẽ không hiển thị trên trang."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Trên trang, nút này nổi ở một góc dưới của màn hình."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Thẻ Shortcode"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Chỉ sử dụng chữ cái, số, dấu gạch ngang và dấu gạch dưới."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Tên thuộc tính"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Thêm thuộc tính"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Thuộc tính khác"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Chọn một thẻ shortcode trong cài đặt khối."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Thư viện ảnh"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Kích thước ảnh"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Ảnh thu nhỏ"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Kích thước đầy đủ"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Liên kết tới"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Trang tệp đính kèm"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Tệp phương tiện"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Âm thanh"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Video"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Đường dẫn tệp"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Lặp lại"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Tự động phát"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Ảnh áp phích"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Danh sách phát"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "ID phương tiện, được phân tách bằng dấu phẩy"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Hiển thị danh sách bài hát"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Nhúng"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Địa chỉ để nhúng"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Chiều rộng tối đa"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Chú thích"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML ảnh và chú thích"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Độ rộng"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Mẹo: Khối Biểu mẫu hiển thị biểu mẫu này được định kiểu khớp với trang web của bạn."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Hiển thị tiêu đề biểu mẫu"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Hiển thị mô tả biểu mẫu"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Gửi không cần tải lại trang"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7342,123 +9177,108 @@ msgstr "Chọn tệp"
 msgid "— Default —"
 msgstr "— Mặc định —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Kiểu dáng nâng cao"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS nội tuyến"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Các khai báo CSS, ví dụ: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Hiệu ứng (lớp cũ)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Tên hiệu ứng được phân tách bằng khoảng trắng được chuyển từ các phiên bản cũ, ví dụ: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Hàng"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Độ rộng"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Độ rộng toàn màn hình, nội dung được giữ ở giữa"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Địa chỉ liên kết"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Mối quan hệ liên kết"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Căn lề"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Trái"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Trung tâm"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Phải"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Nút văn bản"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Thêm văn bản…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Vị trí"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Trên dòng riêng của nó"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Trong dòng, bên cạnh các nội dung khác"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Tự động (dòng riêng ở cấp cao nhất của trang)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Nhãn truy cập được"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Để trống nếu đây là biểu tượng trang trí."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Chọn một biểu tượng trong cài đặt khối."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Tên cài đặt mới"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Ví dụ: tiêu đề hoặc văn bản"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Thêm cài đặt"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Tiện ích con"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Chọn một tiện ích"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Khu vực widget"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Chọn vùng tiện ích"
 
@@ -7481,6 +9301,140 @@ msgstr "Thẻ nhúng này tự động điều chỉnh kích thước sau khi t�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Độ dịch chuyển bố cục"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Tiện ích con này không mô tả các cài đặt của nó, vì vậy chúng được chỉnh sửa dưới dạng các cặp tên và giá trị."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Sự cố"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Kiểm tra"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Hiển thị khối"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Sử dụng màu chủ đạo dễ đọc"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Đổi thành H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Văn bản thay thế"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Lưu văn bản thay thế"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Hình ảnh này mang tính trang trí"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Đang kiểm tra..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Không tìm thấy vấn đề khả năng truy cập nào trên trang này."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d vấn đề"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d mục cần kiểm tra"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Kiểm tra lại"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Một quá trình kiểm tra tự động phát hiện được nhiều vấn đề nhưng không phải tất cả. Bạn cũng hãy thử sử dụng trang web chỉ với bàn phím và với trình đọc màn hình."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Độ tương phản văn bản là %1$s:1; cần ít nhất %2$s:1 để có thể đọc được."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "nhấn vào đây,tại đây,đọc thêm,thêm,liên kết,liên kết này,tìm hiểu thêm,đi"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Một liên kết không có văn bản, vì vậy trình đọc màn hình chỉ thông báo “liên kết”. Hãy thêm văn bản hoặc nhãn."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Văn bản liên kết “%s” không cho biết nó dẫn đến đâu. Thay vào đó, hãy mô tả đích đến."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Một phần tử có thuộc tính tabindex dương, điều này làm thay đổi thứ tự bàn phím đi chệch khỏi thứ tự đọc. Hãy sử dụng giá trị 0 hoặc xóa nó đi."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Không thể thao tác trên thành phần có thể nhấp bằng bàn phím. Hãy sử dụng một nút hoặc liên kết thực sự."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Một khung nhúng không có tiêu đề, vì vậy trình đọc màn hình không thể cho biết đó là gì."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Một trường biểu mẫu không có nhãn, do đó mục đích của nó không được thông báo."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Tiêu đề này đang trống. Người dùng trình đọc màn hình điều hướng bằng tiêu đề; hãy xóa tiêu đề này hoặc thêm văn bản."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Tiêu đề trang đã là thẻ H1; hãy sử dụng H2 cho cấp cao nhất của nội dung."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Thẻ H%1$d này bỏ qua một cấp; thẻ trước nó là H%2$d. Hãy chuyển thành thẻ H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Hình ảnh này không có văn bản thay thế. Hãy mô tả nó, hoặc đánh dấu là hình trang trí nếu nó không bổ sung giá trị gì."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Đóng bảng điều khiển"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7555,18 +9509,6 @@ msgstr "Tùy chỉnh"
 msgid "Width / height"
 msgstr "Chiều rộng / chiều cao"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Trang đầu"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Dưới"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7579,20 +9521,6 @@ msgstr "Hình ảnh kế thừa — thay thế"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Xóa ảnh"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Vị trí"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Dung lượng"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7658,22 +9586,6 @@ msgstr "Mỗi bên một cách riêng biệt"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Bên"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Kiểu"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Màu sắc"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7923,14 +9835,6 @@ msgstr "%1$s (%2$d bộ)"
 msgid "Replace icon"
 msgstr "Thay thế biểu tượng"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Chọn biểu tượng"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Chọn một biểu tượng"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Không có biểu tượng nào khớp."
@@ -7942,10 +9846,6 @@ msgstr "Thông thường"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Thương hiệu"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Đã phác thảo"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8074,21 +9974,9 @@ msgstr "Màu văn bản"
 msgid "Cursor"
 msgstr "Con trỏ"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Mũi tên"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Bản ghi DNS"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Văn bản"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8246,10 +10134,6 @@ msgstr "Tên khu vực"
 msgid "Named areas"
 msgstr "Vùng đã đặt tên"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Hàng"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Chiều cao"
@@ -8367,10 +10251,6 @@ msgstr "Căn đều hai bên"
 msgid "Decoration"
 msgstr "Trang trí"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Gạch chân"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Gạch trên đầu"
@@ -8453,19 +10333,9 @@ msgstr "Conic"
 msgid "Angle (degrees)"
 msgstr "Góc (độ)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Hình dạng"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Hình elip"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Vòng tròn"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8501,10 +10371,6 @@ msgstr "Mức bão hòa (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Pha màu (dùng màu trong suốt)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Hình vuông bo góc"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Khối dữ liệu"
@@ -8521,10 +10387,6 @@ msgstr "Hình tam giác"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Kim cương"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Đánh dấu sao"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9402,11 +11264,6 @@ msgstr "Xóa"
 msgid "The change could not be saved."
 msgstr "Không thể lưu thay đổi."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Đóng bảng điều khiển"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Giao diện mặc định"
@@ -9463,9 +11320,49 @@ msgstr "Các lớp, mã thông báo, chế độ tối, bộ công cụ thương
 msgid "Open the Site Editor’s styles"
 msgstr "Mở các kiểu của Trình chỉnh sửa trang web"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Tiêu đề"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Tiêu đề có chiều cao dòng gọn hơn, được định dạng kiểu bằng tab Kiểu."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Một đoạn văn bản, được định dạng kiểu cách bằng tab Kiểu."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Hình ảnh"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Một hình ảnh có các góc bo tròn, được định kiểu bằng tab Kiểu."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Một video từ Thư viện đa phương tiện, được định dạng kiểu bằng tab Kiểu."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Khoảng trắng"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Khoảng trống giữa các khối; đặt chiều cao khác nhau cho từng kích thước màn hình trong tab Kiểu."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Dải phân cách"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Một đường kẻ ngang giữa các phần, được tạo kiểu bằng tab Kiểu."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Nội dung từ một trang web khác (video, bài đăng, bản đồ) bằng cách dán địa chỉ của nội dung đó."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Một số hình ảnh nằm trong lưới, được định kiểu bằng tab Kiểu."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9499,10 +11396,6 @@ msgstr "Danh sách"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Nhãn"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Nút"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9547,10 +11440,6 @@ msgstr "Ẩn các ngôn ngữ chưa được dịch trang này"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Xếp chồng theo chiều dọc"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Nền"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9609,11 +11498,6 @@ msgstr "Cài đặt chặn"
 #, js-format
 msgid "Add block: %s"
 msgstr "Thêm khối: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(không có tiêu đề)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9689,10 +11573,6 @@ msgstr "Tắt chế độ an toàn"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Bật chế độ an toàn (tắt các plugin khác, dành riêng cho bạn, chỉ trong Studio)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Đã xuất bản"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10029,11 +11909,6 @@ msgstr "Tên trình xây dựng"
 msgid "Visual editor name"
 msgstr "Tên trình soạn thảo trực quan"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Tác giả"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10104,10 +11979,6 @@ msgstr[0] "Đã hoàn tác: đã khôi phục %d trang."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Thay thế"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Đường dẫn"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10216,10 +12087,6 @@ msgstr "Cho phép khách hàng bình luận trên trang này"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Bất kỳ ai có liên kết đều có thể xem trang này, ngay cả trước khi trang được xuất bản và để lại bình luận. Không cần tài khoản."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Đã sao chép"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10455,6 +12322,52 @@ msgstr "Sao chép các hình ảnh vào thư viện phương tiện của trang 
 msgid "Show what will happen"
 msgstr "Xem những gì sẽ xảy ra"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Mục nội dung thu gọn"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Một phần của thanh thu gọn: tiêu đề mở nội dung của nó."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Thanh cuộn dọc"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Các câu hỏi hoặc phần nội dung có thể mở và đóng. Tùy chọn hiển thị từng mục một, và tùy chọn đánh dấu dưới dạng Câu hỏi thường gặp (FAQ) cho các công cụ tìm kiếm."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "Thanh cuộn dọc"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Câu hỏi thường gặp"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "Bật/tắt"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "Thu gọn"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "Chi tiết"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10471,6 +12384,7 @@ msgid "notice"
 msgstr "Thông báo"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "tin nhắn"
@@ -10485,6 +12399,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "Cảnh báo"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Huy hiệu"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Một nhãn ngắn gọn như Mới, Giảm giá hoặc Giá tốt nhất."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "Nhãn"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "Thẻ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "nhãn"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "mới"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Lịch đặt phòng"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Lịch đặt hẹn Calendly hoặc Cal.com, chỉ được tải khi khách truy cập yêu cầu."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "ĐẶT CHỖ"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "Calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "Lịch hẹn"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "Lên lịch"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10496,6 +12475,7 @@ msgid "A link styled as a button."
 msgstr "Một liên kết được định dạng kiểu nút."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "Nút"
@@ -10509,6 +12489,98 @@ msgstr "liên kết"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "Kêu gọi hành động"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Lời kêu gọi hành động"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Một tiêu đề, một câu và một hoặc hai nút yêu cầu khách truy cập thực hiện hành động."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "CTA"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "Banner"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Đăng ký"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Danh sách kiểm tra"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Một danh sách các tác vụ, mỗi tác vụ được đánh dấu hoàn thành hoặc chưa hoàn thành, bằng lời cho trình đọc màn hình cũng như bằng dấu kiểm."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Cần làm"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "Tác vụ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "số lượng tích"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "Danh sách"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Mã"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Một danh sách mã có tô sáng cú pháp, số dòng và nút sao chép. Vẫn dễ đọc nếu plugin bị tắt."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "Mã nguồn"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "Cú pháp"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "Làm nổi bật"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "đoạn mã ngắn"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "Lập trình"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10532,6 +12604,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "Bố cục"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Bảng so sánh"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Các gói hoặc sản phẩm đặt cạnh nhau, với các dấu có và không được trình đọc màn hình đọc thành từ."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "So sánh"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Bảng giá"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "các gói"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "Bảng"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "Tính năng"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Các nút liên hệ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Nút để gọi, gửi email, nhắn tin hoặc liên hệ với bạn qua WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "liên hệ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "Gọi"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "Điện thoại"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "Email"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "whatsapp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10549,11 +12699,13 @@ msgid "container"
 msgstr "Container"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "Hộp"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10570,6 +12722,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "Cột"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Tiêu đề kép"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Tiêu đề gồm hai phần, phần thứ hai được làm nổi bật bằng màu sắc, độ dốc, đường viền hoặc đường gạch chân."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "Tiêu đề"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "Tiêu đề"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "Độ dốc"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Danh sách tính năng"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Các tính năng dạng lưới, mỗi tính năng có một biểu tượng, tiêu đề và mô tả ngắn."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Lợi ích"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "Dịch vụ"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10613,6 +12811,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "văn bản"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Biểu mẫu"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Hiển thị biểu mẫu từ Contact Form 7, WPForms, Gravity Forms hoặc Fluent Forms, được định dạng kiểu cách để phù hợp với trang web của bạn."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "biểu mẫu"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Thuật ngữ"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Thuật ngữ và định nghĩa của chúng, được sắp xếp từ A đến Z, mỗi mục có một liên kết riêng. Có thể liên kết lần nhắc đầu tiên của mỗi thuật ngữ trên trang tới định nghĩa của thuật ngữ đó."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Điều khoản"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "Các định nghĩa"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "Từ điển"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Danh sách biểu tượng"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Một danh sách trong đó mỗi dòng bắt đầu bằng một biểu tượng: dấu kiểm, mũi tên hoặc bất kỳ biểu tượng nào từ thư viện."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "Danh sách dấu chấm tròn"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "Biểu tượng"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10633,6 +12911,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Hộp thông tin"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Một biểu tượng, một tiêu đề ngắn, một hoặc hai câu và một liên kết tùy chọn: dành cho dịch vụ, lợi ích hoặc chi tiết liên hệ."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "Tính năng"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "dịch vụ"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "Thẻ"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10652,6 +12955,204 @@ msgstr "bản dịch"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "đa ngôn ngữ"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Ánh xạ"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Bản đồ của một địa điểm từ OpenStreetMap: không có mã khóa và không có gì tải từ OpenStreetMap cho đến khi khách truy cập yêu cầu bản đồ."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "Ánh xạ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "Vị trí"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "địa chỉ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Cửa sổ bật lên"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Một nút mở ra một cửa sổ đè lên trang, với bất kỳ khối nào bên trong."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "hộp thoại"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "Cửa sổ bật lên"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "Hộp đèn"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "hộp thoại"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Bảng điều khiển trượt"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Một nút trượt một bảng điều khiển từ cạnh cửa sổ vào, với bất kỳ khối nào bên trong."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "off-canvas"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "ngăn kéo"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "Thanh bên"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "trang quản trị"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "Menu"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Chi tiết bài viết"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Tác giả của bài viết, ngày tháng, danh mục, thẻ, thời gian đọc và số lượng bình luận."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "Tác giả"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "Ngày"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "Thời gian đọc"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "bởi"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Thanh tiến trình"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Thanh có nhãn hiển thị mức độ hoàn thành của một việc gì đó, chẳng hạn như kỹ năng hoặc mục tiêu."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "Tiến trình"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "thanh"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "kỹ năng"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "Mục tiêu"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Nội dung được bảo vệ bằng mật khẩu"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Chỉ chặn khách truy cập có mật khẩu mới có thể xem. Cho đến khi họ nhập mật khẩu, nội dung hoàn toàn không có trên trang."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "Mật khẩu"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Đã bảo vệ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "Riêng tư"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "Khóa"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "thành viên"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10677,6 +13178,86 @@ msgstr "Sáng"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "bảng màu"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Mã QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Mã QR cho một địa chỉ web hoặc bất kỳ văn bản nào, được vẽ trực tiếp trên trang web của bạn (không sử dụng dịch vụ mã QR nào)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "Mã QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "Mã QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "Mã vạch"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "Quét"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Thanh tiến trình đọc"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Một thanh mỏng ở mép cửa sổ sẽ đầy dần khi khách truy cập cuộn trang."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "Đang đọc"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "Cuộn"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Bài viết liên quan"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Các bài viết có cùng danh mục hoặc thẻ với bài viết này, kèm theo hình ảnh, ngày tháng và phần tóm tắt."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "liên quan"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "Bài viết"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "tương tự"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "Thêm"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10740,13 +13321,284 @@ msgstr "Hiển thị các tiện ích trong một trong các khu vực tiện í
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "Thanh bên"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "khu vực widget"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Sơ đồ trang web"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Trang liệt kê tất cả các trang và bài viết đã xuất bản (cùng với nội dung công khai khác), giữ nguyên cấu trúc phân cấp trang."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "sơ đồ trang web"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "sơ đồ trang web"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "Chỉ mục"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "tất cả các trang"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Biểu tượng mạng xã hội"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Liên kết tới hồ sơ của bạn, được hiển thị bằng biểu tượng chính chủ của các mạng xã hội."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "Mạng xã hội"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "liên kết"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "Theo dõi"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "hồ sơ"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Xếp hạng sao"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Đánh giá hiển thị dưới dạng sao, với các bước tăng nửa sao."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "sao"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "Đánh giá"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "Điểm số"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Các bước"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Các bước được đánh số của một quy trình, theo thứ tự, dọc xuống trang hoặc đặt cạnh nhau."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "xử lý"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "hướng dẫn"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "Dòng thời gian"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "được đánh số"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Thẻ tab"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Một tab của khối Tabs: tiêu đề và bảng điều khiển của tab đó."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Mục lục"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Một danh sách các đề mục trên trang, được tạo tự động, liên kết đến từng đề mục."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Mục lục"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "nội dung"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "Tiêu đề phần"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Thẻ chuyển trang"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Nội dung trong các tab: người truy cập chuyển đổi giữa các bảng điều khiển bằng chuột hoặc bàn phím."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "Thẻ"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "có thẻ"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "giao diện điều khiển"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Lời chứng thực"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Một câu trích dẫn từ khách hàng kèm theo tên, vai trò, ảnh và đánh giá bằng sao tùy chọn."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "xem lại"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "báo giá"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "Khách hàng"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Phản hồi"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Chú thích công cụ"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Một từ hoặc cụm-từ hiển thị một lời giải thích ngắn khi di chuột qua và khi lấy nét bằng bàn phím."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "chú thích công cụ"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Gợi ý"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "Định nghĩa"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Hồ sơ tác giả"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Ảnh đại diện, tên, tiểu sử và các liên kết của tác giả, hoặc của một người dùng đã chọn."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "Tiểu sử"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "hồ sơ"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "Giới thiệu"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Nút trò chuyện WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Một nút nổi ở một góc trang dùng để mở cuộc trò chuyện WhatsApp với bạn."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "trò chuyện"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "Đang thả nổi"
 
 #: blocks/widget/block.json
 msgctxt "block title"

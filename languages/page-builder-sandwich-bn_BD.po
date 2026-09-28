@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "পুনর্ব্যবহহারযোগ্য প্যাটার্ন হিসেবে সংরক্ষণ করুন"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "অ্যাক্সেসিবিলিটি চেকার"
 
@@ -990,6 +994,7 @@ msgstr "← অন্য একটি প্রদানকারী বেছ�
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "ঠিকানা"
 
@@ -1043,6 +1048,8 @@ msgstr "পরীক্ষা"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "সরিয়ে ফেলুন"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "প্রদানকারীদের কাছ থেকে মডেলের তালিকা রিফ্রেশ করুন"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "ছবিসমূহ"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "বন্ধ আছে"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "খুলুন"
 
@@ -1448,6 +1457,7 @@ msgstr "এখনও কোনো এআই অনুরোধ করা হয়�
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "সম্পন্ন"
 
@@ -1515,7 +1525,11 @@ msgstr "অনেকগুলো চেষ্টা করা হয়েছে।
 msgid "Something went wrong. Please contact the admin."
 msgstr "কিছু একটা সমস্যা হয়েছে। অনুগ্রহ করে অ্যাডমিনের সাথে যোগাযোগ করুন।"
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "ম্যাপ"
 
@@ -1538,52 +1552,385 @@ msgstr "ওই ফ্যামিলিটি সংরক্ষিত নেই
 msgid "Removed."
 msgstr "সরানো হয়েছে।"
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "সেটি একটি বৈধ ফন্ট ফ্যামিলি নাম নয়।"
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts সেই ফ্যামিলিটি ফিরিয়ে দেয়নি। নামটি পরীক্ষা করে আবার চেষ্টা করুন।"
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "ফন্ট ফাইলগুলো ডাউনলোড বা সংরক্ষণ করা যায়নি। আপলোড ফোল্ডারটিতে লেখার অনুমতি আছে কি না তা পরীক্ষা করুন।"
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "ফন্ট স্টাইলশিট সংরক্ষণ করা যায়নি। আপলোড ফোল্ডারে লেখার অনুমতি আছে কি না তা পরীক্ষা করুন।"
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "এই বিজ্ঞপ্তিটি সরিয়ে দিন"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(একটি নতুন ট্যাবে খোলে)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "সম্পন্ন:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "করনীয়:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "গ্লোসারি ইনডেক্স"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s-এর মধ্যে %1$s রেটিং দেওয়া হয়েছে"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "অগ্রগতি"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "কোড কপি করুন"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "লিপিবদ্ধ করা হয়েছে"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "এই সাইটে ওই উইজেটটি উপলব্ধ নয়।"
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "ইমেল"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "ফোন"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS ফিড"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "ওয়েবসাইট"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "লিংক"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (একটি নতুন ট্যাবে খোলে)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "৫ এর মধ্যে %d রেটিং দেওয়া হয়েছে"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(প্রস্তাবিত)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "অন্তর্ভুক্ত"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "অন্তর্ভুক্ত নয়"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "তুলনা সারণী"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "%s এ কল করুন"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "ইমেল %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "টেক্সট %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "হোয়াটসঅ্যাপে চ্যাট করুন"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "যোগাযোগ করুন"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "হোয়াটসঅ্যাপে আমাদের সাথে চ্যাট করুন"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "এই ফর্মটি এই মুহূর্তে উপলব্ধ নেই।"
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s সক্রিয় না থাকায় এই ফর্মটি দেখানো যাচ্ছে না।"
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "ম্যাপ: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "ম্যাপটি দেখানো হলে এটি OpenStreetMap থেকে লোড হয়।"
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "মানচিত্র দেখান"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMap-এ ম্যাপটি খুলুন"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s থেকে বুকিং ক্যালেন্ডার"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "বুকিং ক্যালেন্ডার দেখানো হলে এটি %s থেকে লোড হয়।"
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "বুকিং ক্যালেন্ডার দেখান"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%s এ বুক করুন"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s-এর জন্য QR কোড"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "ডিজাইন"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "কনটেন্ট"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "মিডিয়া"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "মার্কেটিং"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "সাইট"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "ডেটা"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "সম্পর্কিত পোস্টগুলি"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "পোস্টের বিবরণ"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "দ্বারা"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "প্রকাশিত"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "আপডেট করা হয়েছে"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "মধ্যে"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "ট্যাগ করা হয়েছে"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d মিনিট পড়ার সময়"
+msgstr[1] "%d মিনিটের পঠন"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "এখনো কোনো মন্তব্য নেই"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%dটি মন্তব্য"
+msgstr[1] "%dটি মন্তব্য"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "সাইটম্যাপ"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(কোন শিরোনাম নেই)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s-এর সমস্ত পোস্ট"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "এই কন্টেন্টটি সুরক্ষিত। এটি দেখতে পাসওয়ার্ড লিখুন।"
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "সেই পাসওয়ার্ডটি সঠিক নয়। আবার চেষ্টা করুন।"
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "পাসওয়ার্ড"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "কন্টেন্ট দেখান"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "ওই পৃষ্ঠাটি আনলক করা যাবে না।"
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "অনেকগুলো ব্যর্থ চেষ্টা হয়েছে। কয়েক মিনিট অপেক্ষা করে আবার চেষ্টা করুন।"
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "পাসওয়ার্ডটি ৪ থেকে ২০০ অক্ষরের হতে হবে।"
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "আরও"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "বন্ধ করুন"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "ট্যাব %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "বিষয়বস্তু"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "স্যান্ডউইচ স্টুডিও দিয়ে স
 msgid "Blank canvas"
 msgstr "খালি ক্যানভাস"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "কনটেন্টে যান"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "ট্যাবলেটের প্রস্থ ৪ থেকে ২৫৬০ পিক্সেলের মধ্যে একটি পূর্ণসংখ্যা হতে হবে।"
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "আপলোড করা আইকনগুলি"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "আইকন"
 
@@ -2553,6 +2908,8 @@ msgstr "%s আমার ক্লায়েন্টের ইমেল ঠি
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "কোড"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "সম্পাদনা করুন"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "ইমেল"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "ইমেইল ঠিকানা"
 
@@ -3103,6 +3456,10 @@ msgstr "হোয়াইট-লেবেল মোড সচল করা হচ�
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "নতুন ইমেল ঠিকানা লিখুন"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "ত্রুটি"
 
@@ -3723,6 +4081,7 @@ msgstr "যেহেতু আমরা লক্ষ করেছি যে %2$s
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "এই প্লাগইনটির জন্য পিএইচপি
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "না"
 
@@ -4811,6 +5171,13 @@ msgstr "সোশ্যাল মিডিয়া (ফেসবুক, টু�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "টাইমস্ট্যাম্প"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "শিরোনাম"
 
@@ -5171,6 +5541,8 @@ msgstr "এখনও পর্যন্ত %1$s আপনার কেমন ল
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "ধরন"
@@ -5286,6 +5658,7 @@ msgstr "ব্যবহারকারীরা"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "মান"
@@ -5340,6 +5713,7 @@ msgstr "প্রদান করা ফিচারগুলো দেখুন
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "সতর্কতা"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "ঐচ্ছিক"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "প্ল্যান"
 
@@ -5988,18 +6363,26 @@ msgstr "খুব ছোট"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "ছোট"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "মাঝারি"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "বড়"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "বিশাল"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "ট্রায়াল শুরু করা যায়নি।"
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "বৈশিষ্ট্য"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "অন্তর্ভুক্ত"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "অন্তর্ভুক্ত নয়"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "লগইন ঠিকানা"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "ব্যবহারকারী নাম"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "পাসওয়ার্ড"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7090,15 +7464,62 @@ msgstr "পূর্বাবস্থায় ফেরানো শুরু 
 msgid "Undo all conversions"
 msgstr "সব রূপান্তর পূর্বাবস্থায় ফিরিয়ে দিন"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "আইটেম"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "পেজ লোড হওয়ার সময় খুলুন"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "শিরোনাম একটি শিরোনাম"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "যখন আইটেমগুলো পৃষ্ঠার বিভাগ হয়, তখন শিরোনামটিকে একটি হেডিং করুন, যাতে দর্শনার্থীরা সেগুলোর মধ্যে যাতায়াত করতে পারে।"
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "শিরোনাম %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "প্রশ্ন বা বিভাগের শিরোনাম"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "অ্যাকর্ডিয়ন"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "একবারে শুধুমাত্র একটি আইটেম খোলা থাকবে"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "সার্চ ইঞ্জিনের জন্য FAQ হিসেবে চিহ্নিত করুন"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "শিরোনাম (প্রশ্ন) এবং সেগুলোর পাঠ্য (উত্তর) থেকে তৈরি এফএকিউ (FAQ) স্ট্রাকচার্ড ডেটা যোগ করে।"
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "সতর্কতা"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "তথ্য"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "সফল"
 
@@ -7107,6 +7528,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "সতর্কতা এবং ত্রুটিগুলি স্ক্রিন রিডার ব্যবহারকারীদের অবিলম্বে জানিয়ে দেওয়া হয়; তথ্য এবং সফলতার নোটিশগুলি তারা যা করছেন তা শেষ করার পরে পঠিত হয়।"
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "আইকন দেখান"
 
@@ -7122,64 +7544,702 @@ msgstr "শিরোনাম (ঐচ্ছিক)"
 msgid "Write the message…"
 msgstr "বার্তা লিখুন…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "সেকশন — একটি থিম্যাটিক সেকশন"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "কেন্দ্র"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — অর্থহীন"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "ব্যাজ"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "হেডার — সূচনামূলক বিষয়বস্তু"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "রঙ"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "ফুটার — সমাপ্তি বিষয়বস্তু"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "থিম অ্যাকসেন্ট"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "নিবন্ধ — স্বয়ংসম্পূর্ণ কন্টেন্ট"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "নিরপেক্ষ"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "এক side — সম্পর্কিত বিষয়বস্তu"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "অবস্থান"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — মূল বিষয়বস্তু (প্রতি পৃষ্ঠায় একবার)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "লেবেল"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "নেভিগেশন — নেভিগেশন লিঙ্কসমূহ"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "বুকিং ক্যালেন্ডার"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "স্ট্যাক (ফ্লেক্সবক্স, কলাম)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "সেবা"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "রো (ফ্লেক্সবক্স)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "বুকিং পৃষ্ঠার ঠিকানা"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "গ্রিড"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "উদাহরণস্বরূপ %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "স্ক্রিন রিডার দ্বারা পঠিত এবং এর নিচে প্রদর্শিত ক্যালেন্ডারটি মূলত কী জন্য ব্যবহৃত হয়।"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "এটি কোনো %s বুকিং পৃষ্ঠার ঠিকানা নয়, তাই পৃষ্ঠায় কিছুই প্রদর্শিত হবে না।"
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "ক্যালেন্ডার প্রিভিউ করুন"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "লিঙ্কের ঠিকানা"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "বোতামটিতে যখন একটি লেবেল এবং একটি ঠিকানা উভয়ই থাকে তখনই এটি প্রদর্শিত হয়।"
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "একটি নতুন ট্যাবে খুলুন"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "পদক্ষেপের আহ্বান"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "লেআউট"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "নীচের বাটনগুলো"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "লেখer পাশের বোতামগুলি"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "অ্যালাইনমেন্ট"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "প্রধান বোতাম"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "দ্বিতীয় বাটন"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "হেডিং…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "যে কারণে একটি বাক্য…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "দ্বিতীয় বোতাম (ঐচ্ছিক)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "চেকলিস্ট"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "টিকের রঙ"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "লাইনসমূহ"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "লাইন %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "কাজ…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "লাইন যোগ করুন"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "ভাষা"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "স্বয়ংক্রিয়ভাবে সনাক্ত করুন"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "হাইলাইটিং নেই"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "ফাইলের নাম"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "কোডের উপরে দেখানো হয়েছে, উদাহরণস্বরূপ functions.php।"
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "লাইনের সংখ্যা"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "কপি বোতাম"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "দীর্ঘ লাইন মোড়ান"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "কোড লিখুন বা পেস্ট করুন…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "টেক্সট"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "কলামসমূহ"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "কলাম %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "হাইলাইট করুন %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "কলাম যোগ করুন"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "সারিগুলি"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "সারি %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "সারি যোগ করুন"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "ক্যাপশন (কী তুলনা করা হচ্ছে)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "সেলের ধরণ: %s। পরিবর্তন করুন"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "ফোন কল"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "টেক্সট মেসেজ"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "হোয়াটসঅ্যাপ"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "বোতামগুলি"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "দেশ কোডসহ ফোন নম্বর"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "বাটনের লেখা"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "এই বোতামটি সরান"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "একটি বোতাম যোগ করুন"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "শুরু করার জন্য WhatsApp বার্তা (ঐচ্ছিক)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "যোগাযোগের বোতামগুলি"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "সাইডবারে একটি ফোন নম্বর, একটি ইমেল ঠিকানা বা একটি WhatsApp নম্বর যোগ করুন।"
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "দ্বৈত শিরোনাম"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "হেডিং লেভেল"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "প্রতি পৃষ্ঠায় মূল শিরোনামের জন্য একবার H1 ব্যবহার করুন।"
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "দ্বিতীয় অংশের চেহারা"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "অ্যাকসেন্ট রঙ"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "গ্রেডিয়েন্ট"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "আউটলাইন"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "আন্ডারলাইন"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "দ্বিতীয় অংশ নিজের লাইনে"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "প্রথম অংশ"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "দ্বিতীয় অংশ"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "মার্কিং পেন"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "মোটা আন্ডারলাইন"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "পটভূমি"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "হাইলাইট"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "হাইলাইট সরান"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "ড্রপ ক্যাপ"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "বড় প্রথম অক্ষর"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "বক্সের প্রথম অক্ষরের জন্য, \"ড্রপ ক্যাপ ইন এ বক্স\" স্টাইলটি বেছে নিন।"
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "বক্সে ড্রপ ক্যাপ"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "অসেন্ট বার"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "পুল কোট (অ্যাকসেন্ট বার)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "দৃষ্টি আকর্ষণ করার জন্য একটি রঙিন বারের পাশে বড় আকারে সেট করা পাঠ্য থেকে একটি উদ্ধৃতি।"
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "উদ্ধৃতি"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "ফিচার তালিকা"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "ফোনে ফিচারগুলো সবসময় পর পর সাজানো থাকে।"
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "বৈশিষ্ট্যসমূহ"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "ফিচার %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "নিজের আইকন"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "ফিচার..."
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "এটি বর্ণনা করুন..."
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "বৈশিষ্ট্য যোগ করুন"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms বা Fluent Forms ইনস্টল এবং অ্যাক্টিভেট করুন, তারপর এখান থেকে এর একটি ফর্ম বেছে নিন।"
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "ফর্ম প্লাগইন"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "পছন্দ করুন…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "ফর্ম"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "একটি ফর্ম বেছে নিন..."
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s-এ এখনও কোনো ফর্ম নেই"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "এই সাইটে %s সক্রিয় নয়, তাই এই ফর্মটি দেখানো যাবে না।"
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "ফর্ম তালিকা লোড করা যায়নি।"
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "ফর্ম স্টাইল"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "ফিল্ডসমূহ"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "রূপরেখাযুক্ত"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "পূর্ণ"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "আন্ডারলাইন করা"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "বোতামের প্রস্থ"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "টেক্সট ফিট করুন"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "পূর্ণ প্রস্থ"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "রঙ, ফন্ট, ব্যবধান এবং কোণগুলো আপনার সাইটের ডিজাইন এবং এই ব্লকের ডিজাইন সেটিংস থেকে আসে।"
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "আপনার সাইটের সাথে মানানসই স্টাইলে আপনার ফর্ম প্লাগইন থেকে একটি ফর্ম দেখান।"
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "একটি ফর্ম প্লাগইন প্রয়োজন? Contact Form 7 বিনামূল্যে।"
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "শব্দকোষ"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "এ থেকে জেড সাজান"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "পৃষ্ঠাটি পদগুলোকে বর্ণানুক্রমিক ক্রমানুসারে দেখায়; এখানে সেগুলো আপনার লেখা ক্রমেই থাকে।"
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "একটি এ–জেড সূচক দেখান"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "এই পৃষ্ঠার অন্য কোথাও ব্যবহৃত লিঙ্কের শর্তাবলী"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "পৃষ্ঠার পাঠ্যে প্রতিটি পদের প্রথম বার উপস্থিতিতে এটি তার সংজ্ঞার সাথে লিঙ্ক করে। শিরোনাম, বোতাম, কোড এবং বিদ্যমান লিঙ্কগুলো অপরিবর্তিত রাখা হয়।"
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "শর্তাবলী"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "টার্ম %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "মেয়াদ"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "এর অর্থ কী…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "টার্ম যোগ করুন"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "আইকন তালিকা"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "একটির নিচে অন্যটি"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "পাশাপাশি"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "তালিক আইটেম…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "তথ্য বাক্স"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "অথবা লাইব্রেরি থেকে যেকোনো আইকন বেছে নিন:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "লিংক টেক্সট"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "লিঙ্কটি কোথায় যায় তা উল্লেখ করুন (\"আমাদের মূল্য দেখুন\"), \"আরও পড়ুন\" নয়।"
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "একটি বা দুটি বাক্য…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "সেকশন — একটি থিম্যাটিক সেকশন"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — অর্থহীন"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "হেডার — সূচনামূলক বিষয়বস্তু"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "ফুটার — সমাপ্তি বিষয়বস্তু"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "নিবন্ধ — স্বয়ংসম্পূর্ণ কন্টেন্ট"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "এক side — সম্পর্কিত বিষয়বস্তu"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — মূল বিষয়বস্তু (প্রতি পৃষ্ঠায় একবার)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "নেভিগেশন — নেভিগেশন লিঙ্কসমূহ"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "স্ট্যাক (ফ্লেক্সবক্স, কলাম)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "রো (ফ্লেক্সবক্স)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "গ্রিড"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "সম্পাদনা করা হচ্ছে: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "শিশুদের এই হিসেবে সাজান"
 
@@ -7187,7 +8247,7 @@ msgstr "শিশুদের এই হিসেবে সাজান"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7195,70 +8255,50 @@ msgstr "শিশুদের এই হিসেবে সাজান"
 msgid "Inherited (%s)"
 msgstr "উত্তরাধিকারসূত্রে প্রাপ্ত (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "ফ্লেক্সবক্স"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "স্ট্যাক করা ব্লক"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "কলামসমূহ"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "ক্যানভাসে ড্রাগ করুন, অথবা টাইপ করুন"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "কন্টেন্টের প্রস্থ"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "বক্সড (থিমের কন্টেন্টের প্রস্থ)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "পূর্ণ প্রস্থ"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "সর্বনিম্ন উচ্চতা"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML ট্যাগ"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "লিংক"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "পুরো ব্লকটিকে একটি লিঙ্কে পরিণত করুন"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "স্ক্রিন রিডারের জন্য লিঙ্কের পাঠ্য"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "যে ভিজিটররা ব্লকটি দেখতে পায় না, তাদের জন্য লিংকটি যা করে।"
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "একটি নতুন ট্যাবে খুলুন"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "লিংক করা ব্লকের ভিতরে কোনো লিংক বা বোতাম রাখবেন না: ব্রাউজারে লিংকের ভিতরে থাকা লিংক কাজ করে না।"
 
@@ -7290,14 +8330,143 @@ msgstr "+ সারি"
 msgid "− Row"
 msgstr "− সারি"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "স্থান"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "স্থানাঙ্ক বা একটি ওপেনস্ট্রিটম্যাপ লিঙ্ক পেস্ট করুন"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org এ জায়গাটি খুঁজুন, তারপর ব্রাউজার বার থেকে ঠিকানাটি কপি করুন, অথবা মানচিত্রে ডান-ক্লিক করে \"ঠিকানা দেখান\" বেছে নিন।"
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "অক্ষাংশ"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "দ্রাঘিমাংশ"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "জুম"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "স্থানের নাম"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "মানচিত্রের নিচে দেখানো হয় এবং স্ক্রিন রিডার দ্বারা পড়ে শোনানো হয়।"
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "স্থানাঙ্ক (উদাহরণস্বরূপ 51.5074, -0.1278) অথবা একটি OpenStreetMap লিংক পেস্ট করুন।"
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "স্থানাঙ্ক বা লিঙ্ক"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "মানচিত্রের পূর্বরূপ দেখুন"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMap-এ %1$s, %2$s পরীক্ষা করুন"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "লেখক"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "প্রকাশিত তারিখ"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "হালনাগাদ করা তারিখ (যখন ভিন্ন হয়)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "বিভাগসমূহ"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "ট্যাগসমূহ"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "পড়ার সময়"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "মন্তব্যের সংখ্যা"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "দেখানোর জন্য বিবরণ"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "দেখানোর জন্য অন্তত একটি বিবরণ বেছে নিন।"
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "প্রগতি বার"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "সর্বোচ্চ"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "শতাংশের জন্য ১০০; গণনার জন্য অন্য যেকোনো সংখ্যা, যেমন ১০ এর মধ্যে ৮।"
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "শতকরা হার দেখান"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "একটি পাসওয়ার্ড সেট করা হয়েছে। দর্শনার্থীরা এই বিষয়বস্তুটি দেখার পরিবর্তে একটি পাসওয়ার্ড ফর্ম দেখতে পাবেন যতক্ষণ না তারা পাসওয়ার্ডটি প্রবেশ করান।"
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "এখনও কোনো পাসওয়ার্ড সেট করা হয়নি, তাই দর্শনার্থীরা এখানে কিছুই দেখতে পাচ্ছে না।"
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "নতুন পাসওয়ার্ড"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "পাসওয়ার্ড সেট করুন"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "পাসওয়ার্ড সেট করা হয়েছে। এটি প্রয়োগ করতে পৃষ্ঠাটি সংরক্ষণ করুন; যারা এটি আনলক করেছিলেন তাদের নতুন পাসওয়ার্ডটি প্রয়োজন হবে।"
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Page Builder Sandwich বন্ধ করে দিলে এই কন্টেন্টটি সবার কাছে দৃশ্যমান হবে।"
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "পাসওয়ার্ড ফর্মের উপরের বার্তা (ঐচ্ছিক)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "সুইচ করুন"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "লেবেল"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7307,30 +8476,698 @@ msgstr "স্ক্রিন রিডার দ্বারা পঠিত �
 msgid "Show label"
 msgstr "লেবেল দেখান"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "ওয়েব ঠিকানা বা লেখা"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR কোড"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "স্ক্রিন রিডারের বিবরণ"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"QR code for\" এবং লেখাটি ব্যবহার করতে খালি রাখুন।"
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "একটি ওয়েব ঠিকানা, একটি ফোন লিঙ্ক (tel:) অথবা যেকোনো লেখা টাইপ করুন।"
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "এটি একটি QR কোডের জন্য অনেক বড়। এটি ছোট করুন।"
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "ক্যাপশন যোগ করুন"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "পড়ার অগ্রগতি বার"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "উইন্ডোর প্রান্ত"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "শীর্ষ"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "নিচ"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "দর্শকরা স্ক্রোল করার সাথে সাথে উইন্ডোর নিচে দেখানো হয়।"
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "দর্শকেরা স্ক্রোল করার সাথে সাথে উইন্ডোর উপরে দেখানো হয়।"
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "কতগুলো"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "সম্পর্কিত সূত্র:"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "বিভাগ বা ট্যাগ"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "যখন কোনো সম্পর্ক নেই, তখন এর পরিবর্তে সবচেয়ে নতুনটি দেখান"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "শিরোনাম"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "\"সম্পর্কিত পোস্ট\"-এর জন্য খালি রাখুন।"
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "ফিচার্ড ইমেজ দেখান"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "তারিখ দেখান"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "একটি সারাংশ দেখান"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "এই পোস্টের বিভাগ বা ট্যাগগুলির সাথে মিল রয়েছে এমন কোনো পোস্ট এখনও নেই। যখন থাকবে, তখন সেগুলি এখানে দেখানো হবে।"
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "মোডাল"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "অফ-ক্যানভাস প্যানেল"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "সাইজ"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "দিক থেকে স্লাইড করে আসে"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "শুরু হলো সেই পাশ যেখান থেকে পড়া শুরু হয়: ইংরেজিতে বাঁ দিক, আর আরবিতে ডান দিক।"
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "পিছনের পৃষ্ঠায় ক্লিক করলে বন্ধ করুন"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "উইন্ডোজের শিরোনাম"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "টিক চিহ্ন"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "সার্কেল"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "ক্রস"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "বিন্দু"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "অ্যারো"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "স্টার"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "আইকনের রঙ"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "লেখার মতো একই"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "থিম প্রাইমারি"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "থিম সেকেন্ডারি"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "থিম কনট্রাস্ট"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "পৃষ্ঠায় শিরোনামগুলো ক্রমানুসারে রাখুন: যে সেকশনের মধ্যে শিরোনামটি রয়েছে, তার ঠিক এক স্তর নিচের শিরোনাম ব্যবহার করুন।"
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "আইকন বেছে নিন"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "ডিফল্ট আইকন ব্যবহার করুন"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "একটি আইকন বেছে নিন"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "উপরে সরান"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "নিচে সরান"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "প্রতিটি প্রকারের জন্য একটি শিরোনাম দেখান"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "আপনার বেছে নেওয়া ধরণগুলিতে এখনও কিছু প্রকাশিত হয়নি।"
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "লিংকসমূহ"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "লিংক %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "নেটওয়ার্ক"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "একটি প্রোফাইল ঠিকানা, mailto:you@example.com বা tel:+441234567890।"
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "স্ক্রিন রিডারের জন্য নাম পড়া হয়"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "অন্যান্য আইকন"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "লিঙ্ক যোগ করুন"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "দেখুন"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "শৈলী"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "শুধুমাত্র আইকন"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "শেপ"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "গোলাকার বর্গক্ষেত্র"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "বর্গাকার"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "নতুন ট্যাবে প্রোফাইল খুলুন"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "স্টার রেটিং"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "রেটিং"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "তারকার সংখ্যা"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "সংখ্যাটি দেখান"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "ধাপসমূহ"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "পৃষ্ঠার নিচে"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "পাশাপাশি (ফোনে স্ট্যাক করা)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "নম্বরের রঙ"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "ধাপসমূহের ক্রম"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "ধাপ %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "ধাপ…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "যা করতে হবে…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "ধাপ যোগ করুন"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "ট্যাব"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "পাতায় শিরোনাম যোগ করুন এবং সেগুলোকে এখানে তালিকাভুক্ত করা হবে।"
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "সূচিপত্র"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "শিরোনামের স্তর থেকে"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "হেডিং লেভেলে"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "নম্বরাঙ্কিত"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "সংকুচিত করা যেতে পারে"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "সংকুচিত অবস্থায় শুরু করুন"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "যে অংশটি পড়া হচ্ছে তা হাইলাইট করুন"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "ট্যাবসমূহ"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "স্ক্রিন রিডারের জন্য নাম"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "ঐচ্ছিক। ট্যাবগুলো কী সম্পর্কিত তা বলে, যেমন \"পরিকল্পনা\"।"
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "পেজ লোড হওয়ার সময় খুলুন"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "পাশে ট্যাবসমূহ"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "একটি ট্যাব যোগ করুন"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "প্রশংসাপত্র"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "ছবি প্রতিস্থাপন করুন"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "ছবি বেছে নিন"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "ছবি সরান"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "ছবির বিবরণ"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "যেহেতু ছবিতে কেবল তার পাশেই নাম থাকা ব্যক্তিটিই রয়েছে, তাই ফাঁকা রাখুন।"
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "স্টার রেটিং (০ = কোনটি নয়)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "উদ্ধৃতির অধীনে নাম"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "উদ্ধৃতির পাশের ছবি"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "গ্রাহক যা বলেছেন…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "ভূমিকা বা কোম্পানি"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "টুলটিপ"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "টুলটিপ টেক্সট"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "সংক্ষিপ্ত রাখুন: এক বা দুটি বাক্য। স্ক্রিন রিডার এটি যে শব্দটি ব্যাখ্যা করে তার সাথে এটি পড়ে।"
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "এটি দেখান"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "উপরে"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "নিচে"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "শব্দ বা বাক্যাংশ"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "প্রয়োগ করুন"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "প্রোফাইল"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "কার প্রফাইল"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "পোস্টের লেখক"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "প্রোফাইল ছবি দেখান"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "জীবনী দেখান"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "পোস্ট এবং ওয়েবসাইটের লিঙ্ক দেখান"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "লেখকের প্রফাইল"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "কার প্রোফাইল প্রদর্শন করবেন তা বেছে নিন।"
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "হোয়াটসঅ্যাপ নম্বর, কান্ট্রি কোড সহ"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "যেমন +৪৪ ৭৭০০ ৯০০১২৩।"
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "শুরু করার বার্তা (ঐচ্ছিক)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "আইকনটির পাশে পাঠ্য দেখান"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "কোণা"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "নিচের দিক (ইংরেজিতে ডান)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "নিচ থেকে শুরু (ইংরেজিতে বাঁ দিক)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "সাইডবারে আপনার হোয়াটসঅ্যাপ নম্বর যোগ করুন। ততদিন পর্যন্ত বোতামটি পৃষ্ঠায় দেখানো হবে না।"
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "এই পৃষ্ঠায়, এই বোতামটি পর্দার নীচের কোণায় ভেসে থাকে।"
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "শর্টকোড ট্যাগ"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "শুধুমাত্র অক্ষর, সংখ্যা, ড্যাশ এবং আন্ডারস্কোর ব্যবহার করুন।"
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "অ্যাট্র্রিবিউটের নাম"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "অ্যাট্রিবিউট যোগ করুন"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "শর্টকোড"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "অন্যান্য বৈশিষ্ট্যসমূহ"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "ব্লক সেটিংসে একটি শর্টকোড ট্যাগ বেছে নিন।"
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "গ্যালারি"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "ছবির সাইজ"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "থাম্বনেইল"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "পূর্ণ আকার"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "লিংক করুন"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "সংযুক্তির পাতা"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "মিডিয়া ফাইল"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "অডিও"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "ভিডিও"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "ফাইলের ঠিকানা"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "লুপ"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "স্বয়ংক্রিয়ভাবে চালান"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "পোস্টার ইমেজ"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "প্লেলিস্ট"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "মিডিয়া আইডিগুলো কমা দিয়ে আলাদা করা"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "ট্র্যাক তালিকা দেখান"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "এমবেড"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "এমবেড করার ঠিকানা"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "সর্বোচ্চ প্রস্থ"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "ক্যাপশন"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "চিত্র এবং ক্যাপশন HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "প্রস্থ"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "টিপ: ফর্ম ব্লকটি আপনার সাইটের সাথে মিল রেখে এই ফর্মটির স্টাইল প্রদর্শন করে।"
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "ফর্মের শিরোনাম দেখান"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "ফর্মের বিবরণ দেখান"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "পৃষ্ঠা রিফ্রেশ না করে জমা দিন"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7351,123 +9188,108 @@ msgstr "ফাইল বাছুন"
 msgid "— Default —"
 msgstr "— ডিফল্ট —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "উন্নত স্টাইলিং"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "ইনলাইন সিএসএস"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS ঘোষণা, উদাহরণস্বরূপ: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "প্রভাব (লিগ্যাসি ক্লাস)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "পুরোনো সংস্করণ থেকে স্থানান্তরিত স্পেস-সেপারেটেড ইফেক্ট নাম, উদাহরণস্বরূপ: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "সারি"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "প্রস্থ"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "পূর্ণ প্রস্থ, বিষয়বস্তু মাঝখানে রাখা হয়েছে"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "লিঙ্কের ঠিকানা"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "লিংক সম্পর্ক"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "অ্যালাইনমেন্ট"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "বামে"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "কেন্দ্র"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "ডান"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "বাটনের লেখা"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "টেক্সট যোগ করুন…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "প্লেসমেন্ট"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "তার নিজস্ব লাইনে"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "সারিতে, অন্যান্য বিষয়ের পাশে"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "স্বয়ংক্রিয় (পৃষ্ঠার শীর্ষ স্তরে নিজস্ব লাইন)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "অ্যাক্সেসযোগ্য লেবেল"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "একটি আলংকারিক আইকনের জন্য খালি রাখুন।"
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "ব্লক সেটিংস-এ একটি আইকন বেছে নিন।"
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "নতুন সেটিংসের নাম"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "উদাহরণস্বরূপ: শিরোনাম বা পাঠ্য"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "সেটিং যোগ করুন"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "উইজেট"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "একটি উইজেট বেছে নিন"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "উইজেট এলাকা"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "একটি উইজেট এলাকা বেছে নিন"
 
@@ -7490,6 +9312,142 @@ msgstr "এই এম্বেডটি লোড হওয়ার পরে �
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "লেআউট শিফট"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "এই উইজেটটি এর সেটিংস বর্ণনা করে না, তাই এগুলো নাম এবং মানের জোড়া হিসেবে সম্পাদিত হয়।"
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "সমস্যা"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "পরীক্ষা করুন"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "ব্লক দেখান"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "একটি পঠনযোগ্য থিম রং ব্যবহার করুন"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "এটিকে H%d করুন"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "অল্ট টেক্সট"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "অল্ট পাঠ্য সংরক্ষণ করুন"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "এই চিত্রটি আলংকারিক"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "যাচাই করা হচ্ছে…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "এই পৃষ্ঠায় কোনো অ্যাক্সেসিবিলিটি সমস্যা পাওয়া যায়নি।"
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%dটি সমস্যা"
+msgstr[1] "%d টি সমস্যা"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "পরীক্ষা করার মতো বিষয়: %dটি"
+msgstr[1] "যাচাই করার জন্য %dটি বিষয়"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "আবার চেক করুন"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "একটি স্বয়ংক্রিয় পরীক্ষণে অনেক সমস্যা ধরা পড়ে, তবে সবগুলো নয়। এছাড়া পৃষ্ঠাটি শুধু কীবোর্ড দিয়ে এবং স্ক্রিন রিডার ব্যবহার করেও পরীক্ষা করে দেখুন।"
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "টেকমাঠের বৈপরীত্য হলো %1$s:1; পড়ার উপযোগী হতে এটি কমপক্ষে %2$s:1 হওয়া প্রয়োজন।"
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "এখানে ক্লিক করুন,এখানে,আরও পড়ুন,আরও,লিংক,এই লিংক,আরও জানুন,যান"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "একটি লিঙ্কে কোনো লেখা নেই, তাই স্ক্রিন রিডার শুধুমাত্র \"লিঙ্ক\" ঘোষণা করে। একটি লেখা বা লেবেল যোগ করুন।"
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "\"%s\" লিঙ্ক পাঠ্যটি এটি কোথায় যায় তা বলে না। পরিবর্তে গন্তব্য বর্ণনা করুন।"
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "একটি উপাদানের একটি পজিটিভ tabindex আছে, যা পড়ার ক্রম থেকে কীবোর্ডের ক্রম পরিবর্তন করে। 0 ব্যবহার করুন বা এটি সরিয়ে ফেলুন।"
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "ক্লিকযোগ্য কিছু একটি কিবোর্ডের মাধ্যমে পৌঁছানো যাচ্ছে না। একটি আসল বোতাম বা লিঙ্ক ব্যবহার করুন।"
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "একটি এমবেডেড ফ্রেমের কোনো শিরোনাম নেই, তাই স্ক্রিন রিডার এটি কী তা বলতে পারে না।"
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "একটি ফর্ম ফিল্ডের কোনো লেবেল নেই, তাই এর উদ্দেশ্য ঘোষণা করা হয় না।"
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "এই শিরোনামটি খালি। স্ক্রিন রিডার ব্যবহারকারীরা শিরোনাম দিয়ে নেভিগেট করেন; এটি সরিয়ে ফেলুন অথবা এতে টেক্সট যোগ করুন।"
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "পৃষ্ঠার শিরোনামটি ইতিমধ্যেই H1; কন্টেন্টের শীর্ষ স্তরের জন্য H2 ব্যবহার করুন।"
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "এই H%1$d একটি লেভেল বাদ দেয়; এর আগেরটি হলো H%2$d। এটিকে একটি H%3$d করুন।"
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "এই ছবিটির কোনো অল্ট টেক্সট নেই। এটি বর্ণনা করুন, অথবা কোনো কাজে না লাগলে একে আলংকারিক হিসেবে চিহ্নিত করুন।"
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "প্যানেল বন্ধ করুন"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7564,18 +9522,6 @@ msgstr "কাস্টম"
 msgid "Width / height"
 msgstr "প্রস্থ / উচ্চতা"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "শীর্ষ"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "নিচ"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7588,20 +9534,6 @@ msgstr "উত্তরাধিকারসূত্রে প্রাপ্�
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "ছবি সরান"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "অবস্থান"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "সাইজ"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7667,22 +9599,6 @@ msgstr "প্রতিটি পাশ আলাদাভাবে"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "পার্শ্ব"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "শৈলী"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "রঙ"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7932,14 +9848,6 @@ msgstr "%1$s (%2$d সেট)"
 msgid "Replace icon"
 msgstr "আইকন প্রতিস্থাপন করুন"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "আইকন বেছে নিন"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "একটি আইকন বেছে নিন"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "কোনো আইকন মেলেনি।"
@@ -7951,10 +9859,6 @@ msgstr "নিয়মিত"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "ব্র্যান্ডস"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "রূপরেখাযুক্ত"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8083,21 +9987,9 @@ msgstr "টেক্সটের রং"
 msgid "Cursor"
 msgstr "কার্সার"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "অ্যারো"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "পয়েন্টার"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "টেক্সট"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8255,10 +10147,6 @@ msgstr "এলাকার নাম"
 msgid "Named areas"
 msgstr "নামকৃত ক্ষেত্রসমূহ"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "সারিগুলি"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "উচ্চতা"
@@ -8376,10 +10264,6 @@ msgstr "জাস্টিফাই"
 msgid "Decoration"
 msgstr "সজ্জা"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "আন্ডারলাইন"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "ওভারলাইন"
@@ -8462,19 +10346,9 @@ msgstr "কনিক"
 msgid "Angle (degrees)"
 msgstr "কোণ (ডিগ্রি)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "শেপ"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "উপবৃত্ত"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "সার্কেল"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8510,10 +10384,6 @@ msgstr "সৈচুরেশন পিছিয়ে আছে (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "টিন্ট (একটি স্বচ্ছ রং ব্যবহার করুন)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "গোলাকার বর্গক্ষেত্র"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "ব্লব"
@@ -8530,10 +10400,6 @@ msgstr "ত্রিভুজ"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "ডায়মন্ড"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "স্টার"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9411,11 +11277,6 @@ msgstr "ক্লিয়ার করুন"
 msgid "The change could not be saved."
 msgstr "পরিবর্তনটি সংরক্ষণ করা যায়নি।"
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "প্যানেল বন্ধ করুন"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "থিম ডিফল্ট"
@@ -9472,9 +11333,49 @@ msgstr "ক্লাসেস, টোকেনস, ডার্ক মোড, �
 msgid "Open the Site Editor’s styles"
 msgstr "সাইট এডিটরের স্টাইল খুলুন"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "শিরোনাম"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "স্টাইল ট্যাব দিয়ে স্টাইল করা, আরও কম লাইন হাইট সহ একটি হেডিং।"
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "স্টাইল ট্যাব দিয়ে স্টাইল করা একটি পাঠ্যের অনুচ্ছেদ।"
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "ছবি"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "স্টাইল ট্যাব দিয়ে স্টাইল করা, গোল কোণ বিশিষ্ট একটি ছবি।"
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "মিডিয়া লাইব্রেরি থেকে একটি ভিডিও, যা স্টাইল ট্য়াব দিয়ে স্টাইল করা হয়েছে।"
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "স্পেসার"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "ব্লকগুলির মাঝখানে ফাঁকা জায়গা; স্টাইল ট্যাব থেকে প্রতিটি স্ক্রিনের আকারের জন্য আলাদা উচ্চতা সেট করুন।"
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "বিভাজক"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "স্টাইল ট্যাব দিয়ে স্টাইল করা, বিভাগগুলির মধ্যে একটি অনুভূমিক রেখা।"
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "এর ঠিকানা পেস্ট করে অন্য সাইটের কন্টেন্ট (একটি ভিডিও, একটি পোস্ট, একটি মানচিত্র) যোগ করুন।"
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "স্টাইল ট্যাব দিয়ে স্টাইল করা একটি গ্রিডে একাধিক ছবি।"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9508,10 +11409,6 @@ msgstr "তালিকা"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "পিলসমূহ"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "বোতামগুলি"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9556,10 +11453,6 @@ msgstr "যে ভাষাগুলোতে এই পৃষ্ঠাটি �
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "উল্লম্বভাবে স্তূপ করুন"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "পটভূমি"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9618,11 +11511,6 @@ msgstr "ব্লক সেটিংস"
 #, js-format
 msgid "Add block: %s"
 msgstr "ব্লক যোগ করুন: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(কোন শিরোনাম নেই)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9698,10 +11586,6 @@ msgstr "সেফ মোড বন্ধ করুন"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "নিরাপদ মোড চালু করুন (অন্যান্য প্লাগইন বন্ধ, আপনার জন্য, শুধুমাত্র স্টুডিওতে)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "প্রকাশিত"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10041,11 +11925,6 @@ msgstr "বিল্ডারের নাম"
 msgid "Visual editor name"
 msgstr "ভিজ্যুয়াল এডিটরের নাম"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "লেখক"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10119,10 +11998,6 @@ msgstr[1] "সম্পন্ন হয়নি: %dটি পাতা পুন�
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "প্রতিস্থাপন করুন"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "লিংকসমূহ"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10232,10 +12107,6 @@ msgstr "এই পেজে একজন ক্লায়েন্টকে �
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "লিঙ্ক থাকা যে কেউ এই পৃষ্ঠাটি দেখতে পারবেন, এমনকি এটি প্রকাশিত হওয়ার আগেও, এবং মন্তব্য করতে পারবেন। কোনো অ্যাকাউন্টের প্রয়োজন নেই।"
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "লিপিবদ্ধ করা হয়েছে"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10478,6 +12349,52 @@ msgstr "ছবিগুলো এই সাইটের মিডিয়া ল�
 msgid "Show what will happen"
 msgstr "যা ঘটবে তা দেখান"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "অর্ডিয়ন আইটেম"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "অর্ডিয়নীয়ার একটি বিভাগ: একটি শিরোনাম যা এর বিষয়বস্তু খোলে।"
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "অর্ডিয়ন"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "প্রশ্ন বা বিভাগ যা খোলে এবং বন্ধ হয়। ঐচ্ছিকভাব একবারে একটি এবং ঐচ্ছিকভাব সার্চ ইঞ্জিনের জন্য একটি FAQ হিসাবে মার্ক আপ করা।"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "অর্ডিয়ন"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "টগল"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "সংকুচিত করুন"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "বিবরণ"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10494,6 +12411,7 @@ msgid "notice"
 msgstr "বিজ্ঞপ্তি"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "মেসেজ"
@@ -10508,6 +12426,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "সতর্কতা"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "ব্যাজ"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "নতুন, সেল বা সেরা মূল্যের মতো একটি সংক্ষিপ্ত লেবেল।"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "লেবেল"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "ট্যাগ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "পিল"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "নতুন"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "বুকিং ক্যালেন্ডার"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "একটি Calendly বা Cal.com বুকিং ক্যালেন্ডার, যা শুধুমাত্র ভিজিটর অনুরোধ করলেই লোড হয়।"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "বুকিং"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "ক্যালেন্ডলি"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "অ্যাপয়েন্টমেন্ট"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "সময়সূচী"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10519,6 +12502,7 @@ msgid "A link styled as a button."
 msgstr "একটি বোতামের মতো স্টাইল করা লিংক।"
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "বাটন"
@@ -10532,6 +12516,98 @@ msgstr "লিংক"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "কার্যকরী আহ্বান"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "কর্মসূচির আহ্বান"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "একটি শিরোনাম, একটি বাক্য এবং এক বা দুটি বোতাম যা দর্শককে কাজ করার অনুরোধ করে।"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "কল-টু-অ্যাকশন"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "ব্যানার"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "সাইন আপ করুন"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "চেকলিস্ট"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "স্ক্রিন রিডারের জন্য শব্দে এবং টিক চিহ্ন সহ সম্পন্ন বা এখনও বাকি থাকা হিসেবে চিহ্নিত কাজের একটি তালিকা।"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "করণীয়"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "টাস্কসমূহ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "টিকস"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "তালিকাভুক্ত করুন"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "কোড"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "সিনট্যাক্স হাইলাইটিং, লাইন নম্বর এবং একটি কপি বোতামসহ একটি কোড লিস্টিং। প্লাগইনটি বন্ধ থাকলেও এটি পঠনযোগ্য থাকে।"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "কোড"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "সিনট্যাক্স"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "হাইলাইট"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "স্নীপেট"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "প্রোগ্রামিং"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10555,6 +12631,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "লেআউট"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "তুলনা সারণী"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "পরিকল্পনা বা পণ্যগুলো পাশাপাশি, হ্যাঁ এবং না চিহ্ন সহ যা স্ক্রিন রিডাররা শব্দ হিসাবে পড়ে।"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "তুলনা করুন"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "মূল্য নির্ধারণ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "প্ল্যানসমূহ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "টেবিল"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "বৈশিষ্ট্যাবলী"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "যোগাযোগের বোতামগুলি"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "হোয়াটসঅ্যাপে আপনাকে কল, ইমেল, টেক্সট বা মেসেজ করার বোতাম।"
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "যোগাযোগ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "কল"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "ফোন"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "ইমেল"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "হোয়াটসঅ্যাপ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "এসএমএস"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10572,11 +12726,13 @@ msgid "container"
 msgstr "কনটেইনার"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "বক্স"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10593,6 +12749,52 @@ msgstr "ফ্লেক্সবক্স"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "কলামসমূহ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "দ্বৈত শিরোনাম"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "একটি শিরোনাম দুটি ভাগে বিভক্ত, যার দ্বিতীয় অংশটি একটি রঙ, গ্রেডিয়েন্ট, আউটলাইন বা আন্ডারলাইন দিয়ে হাইলাইট করা।"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "শিরোনাম"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "শিরোনাম"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "গ্রেডিয়েন্ট"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "ফিচার তালিকা"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "একটি গ্রিডে বৈশিষ্ট্যগুলি, প্রতিটিতে একটি আইকন, একটি শিরোনাম এবং একটি সংক্ষিপ্ত বিবরণ রয়েছে।"
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "সুবিধাসমূহ"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "সেবাসমূহ"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10636,6 +12838,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "টেক্সট"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "ফর্ম"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Contact Form 7, WPForms, Gravity Forms বা Fluent Forms-এর একটি ফর্ম দেখায়, যা আপনার সাইটের সাথে মিল রেখে স্টাইল করা।"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "ফর্ম"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "কন্টাক্ট ফর্ম ৭"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "গ্র্যাভিটি ফর্মস"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "শব্দকোষ"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "শর্তাবলী এবং সেগুলির সংজ্ঞা, A থেকে Z ক্রমানুসারে সাজানো, প্রতিটির নিজস্ব লিঙ্ক রয়েছে। পৃষ্ঠার প্রতিটি শর্তের প্রথম উল্লেখটিকে এর সংজ্ঞার সাথে লিঙ্ক করা যেতে পারে।"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "শর্তাবলী"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "সংজ্ঞা সমূহ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "অভিধান"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "আইকন তালিকা"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "একটি তালিকা যেখানে প্রতিটি লাইন একটি আইকন দিয়ে শুরু হয়: একটি টিক চিহ্ন, একটি তীর চিহ্ন, বা লাইব্রেরি থেকে যেকোনো আইকন।"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "বুলেট পয়েন্ট"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "আইকনসমূহ"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10656,6 +12938,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "ইনফো বক্স"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "একটি আইকন, একটি সংক্ষিপ্ত শিরোনাম, এক বা দুটি বাক্য এবং একটি ঐচ্ছিক লিঙ্ক: পরিষেবা, সুবিধা বা যোগাযোগের বিবরণের জন্য।"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "বৈশিষ্ট্য"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "সেবা"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "কার্ড"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10675,6 +12982,204 @@ msgstr "অনুবাদ"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "বহুভাষিক"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "ম্যাপ"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap থেকে একটি জায়গার মানচিত্র: কোনো কি নেই, এবং দর্শনার্থী মানচিত্রটি না চাওয়া পর্যন্ত OpenStreetMap থেকে কিছুই লোড হয় না।"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "ম্যাপ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "অবস্থান"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "ঠিকানা"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "মডাল"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "একটি বোতাম যা পৃষ্ঠার উপর একটি উইন্ডো খোলে, যার ভেতরে যেকোনো ব্লক থাকে।"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "মডাল"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "পপ-আপ"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "লাইটবক্স"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "ডায়ালগ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "অফ-ক্যানভাস প্যানেল"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "একটি বোতাম যা উইন্ডোর পাশ থেকে যেকোনো ব্লকসহ একটি প্যানেল স্লাইড করে নিয়ে আসে।"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "অফ-ক্যানভাস"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "ড্রয়ার"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "সাইডবার"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "প্যানেল"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "মেনু"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "পোস্টের বিবরণ"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "পোস্টের লেখক, তারিখ, বিভাগ, ট্যাগ, পড়ার সময় এবং মন্তব্যের সংখ্যা।"
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "লেখক"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "তারিখ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "পড়ার সময়"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "মেটা"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "বাইলাইন"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "প্রগতি বার"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "একটি চিহ্নিত বার যা দেখায় কোনো কিছু কতদূর এগিয়েছে, যেমন কোনো দক্ষতা বা লক্ষ্য।"
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "অগ্রগতি"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "বার"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "দক্ষতা"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "লক্ষ্য"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "পাসওয়ার্ড-সুরক্ষিত সামগ্রী"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "শুধুমাত্র পাসওয়ার্ড থাকা দর্শনার্থীরাই দেখতে পারেন এমন ব্লক। তারা এটি প্রবেশ করান না করা পর্যন্ত কন্টেন্টটি পেজটিতে একেবারেই থাকে না।"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "পাসওয়ার্ড"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "সংরক্ষিত"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "ব্যক্তিগত"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "লক করুন"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "সদস্যগণ"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10700,6 +13205,86 @@ msgstr "হালকা"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "রঙের স্কিম"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR কোড"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "একটি ওয়েব ঠিকানা বা যেকোনো পাঠ্যের জন্য একটি QR কোড, যা আপনার নিজের সাইটে তৈরি করা হয়েছে (কোনো QR পরিষেবা ব্যবহার করা হয় না)।"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "কিউআর"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "কিউআর কোড"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "বারকোড"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "স্ক্যান"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "পড়ার অগ্রগতি বার"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "উইন্ডোজের কিনারায় একটি সরু বার যা দর্শনার্থীরা পৃষ্ঠা স্ক্রোল করার সাথে সাথে পূর্ণ হয়।"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "পড়ার কাজ চলছে"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "স্ক্রোল"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "সম্পর্কিত পোস্টগুলি"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "যে পোস্টগুলি এই পোস্টের বিভাগ বা ট্যাগগুলি শেয়ার করে, তাদের ছবি, তারিখ এবং সারসংক্ষেপ সহ।"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "সম্পর্কিত"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "পোস্টগুলো"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "সদৃশ"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "আরও"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10763,13 +13348,284 @@ msgstr "থিমের একটি উইজেট এলাকায় উই�
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "সাইডবার"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "উইজেট এলাকা"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "সাইটম্যাপ"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "প্রকাশিত সমস্ত পৃষ্ঠা এবং পোস্টের (অন্যান্য সর্বজনীন বিষয়বস্তুসহ) একটি তালিকা প্রদর্শনকারী পৃষ্ঠা, যেখানে পৃষ্ঠার ট্রি অক্ষুণ্ণ রাখা হয়।"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "সাইটম্যাপ"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "সাইট ম্যাপ"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "সূচিপত্র"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "সব পেজ"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "সোশ্যাল আইকন"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "নেটওয়ার্কের নিজস্ব আইকন দিয়ে তৈরি আপনার প্রোফাইলের লিঙ্ক।"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "সোশ্যাল"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "লিংকসমূহ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "অনুসরণ করুন"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "প্রোফাইলসমূহ"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "স্টার রেটিং"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "অর্ধ-তারার ধাপে, তারা হিসাবে দেখানো একটি রেটিং।"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "স্টার"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "রেটিং"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "স্কোর"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "ধাপসমূহ"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "একটি প্রক্রিয়ার ক্রমানুসারে সংখ্যাযুক্ত ধাপগুলো, পৃষ্ঠার নিচে বা পাশাপাশি।"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "প্রক্রিয়া"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "কিভাবে"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "টাইমলাইন"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "ক্রমাঙ্কিত"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "ট্যাব"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "ট্যাবস ব্লকের একটি ট্যাব: এর শিরোনাম এবং এর প্যানেল।"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "সূচিপত্র"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "পৃষ্ঠার শিরোনামগুলোর একটি তালিকা, যা স্বয়ংক্রিয়ভাবে তৈরি হয় এবং প্রতিটিতে লিংক করে।"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "সূচিপত্র"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "সূচিপত্র"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "হেডিংসমূহ"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "ট্যাবসমূহ"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "ট্যাবের ভেতরের কন্টেন্ট: দর্শনার্থীরা মাউস বা কিবোর্ডের মাধ্যমে প্যানেলগুলোর মধ্যে সুইচ করতে পারে।"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "ট্যাবগুলি"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "ট্যাবযুক্ত"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "প্যানেলসমূহ"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "প্রশংসাপত্র"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "তাদের নাম, পদবি, ছবি এবং একটি ঐচ্ছিক তারকা রেটিং সহ একজন গ্রাহকের উদ্ধৃতি।"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "পর্যালোচনা"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "উদ্ধৃতি"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "গ্রাহক"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "মতামত"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "টুলটিপ"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "হোভার এবং কীবোর্ড ফোকাসের সময় একটি সংক্ষিপ্ত ব্যাখ্যা প্রদর্শন করে এমন একটি শব্দ বা বাক্যাংশ।"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "টুলটিপ"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "ইঙ্গিত"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "সংজ্ঞা"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "লেখকের প্রোফাইল"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "লেখকের ছবি, নাম, বায়ো এবং লিঙ্ক, অথবা একজন নির্বাচিত ব্যবহারকারীর।"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "বায়ো"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "প্রোফাইল"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "সম্পর্কে"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "হোয়াটসঅ্যাপ চ্যাট বাটন"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "পৃষ্ঠার একটি কোণায় একটি ভাসমান বোতাম যা আপনার সাথে WhatsApp চ্যাট খোলে।"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "চ্যাট"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "ফ্লোটিং"
 
 #: blocks/widget/block.json
 msgctxt "block title"

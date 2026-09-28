@@ -21,21 +21,27 @@ const PRO_DESIGN = `design-pro_${ '_premium_only' }`;
  */
 class DropPremiumRtl {
 	apply( compiler ) {
-		compiler.hooks.thisCompilation.tap( 'DropPremiumRtl', ( compilation ) => {
-			compilation.hooks.processAssets.tap(
-				{
-					name: 'DropPremiumRtl',
-					stage: compiler.webpack.Compilation.PROCESS_ASSETS_STAGE_REPORT,
-				},
-				() => {
-					for ( const name of Object.keys( compilation.assets ) ) {
-						if ( /__premium_only-rtl\.css$/.test( name ) ) {
-							compilation.deleteAsset( name );
+		compiler.hooks.thisCompilation.tap(
+			'DropPremiumRtl',
+			( compilation ) => {
+				compilation.hooks.processAssets.tap(
+					{
+						name: 'DropPremiumRtl',
+						stage: compiler.webpack.Compilation
+							.PROCESS_ASSETS_STAGE_REPORT,
+					},
+					() => {
+						for ( const name of Object.keys(
+							compilation.assets
+						) ) {
+							if ( /__premium_only-rtl\.css$/.test( name ) ) {
+								compilation.deleteAsset( name );
+							}
 						}
 					}
-				}
-			);
-		} );
+				);
+			}
+		);
 	}
 }
 
@@ -58,6 +64,8 @@ module.exports = {
 		// name, so its build output is dropped from the free package. The token is assembled from
 		// two halves because it must not appear in a file the free package ships (bootstrap.php).
 		blocks: path.resolve( __dirname, 'src/blocks/index.js' ),
+		// pbs-a1: the Accessibility checker (block editor sidebar and Studio panel).
+		'a11y-checker': path.resolve( __dirname, 'src/design/a11y/index.js' ),
 		[ PRO_BLOCKS ]: path.resolve(
 			__dirname,
 			`src/blocks/pro_${ '_premium_only' }/index.js`
@@ -74,8 +82,14 @@ module.exports = {
 		),
 		// P4 design globals (L09 W2): the Site design sidebar/page (free) and its premium parts,
 		// premium entry names assembled like PRO_BLOCKS so the token stays out of shipped files.
-		'site-design': path.resolve( __dirname, 'src/design/site-design/editor.js' ),
-		'site-design-page': path.resolve( __dirname, 'src/design/site-design/admin.js' ),
+		'site-design': path.resolve(
+			__dirname,
+			'src/design/site-design/editor.js'
+		),
+		'site-design-page': path.resolve(
+			__dirname,
+			'src/design/site-design/admin.js'
+		),
 		[ `site-design-pro_${ '_premium_only' }` ]: path.resolve(
 			__dirname,
 			`src/design/pro_${ '_premium_only' }/globals/index.js`

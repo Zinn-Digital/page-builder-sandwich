@@ -1,0 +1,48 @@
+/*
+ * pbs/user-profile. Zero-specificity defaults (:where) so the design panel wins. Logical properties only.
+ */
+:where(.__PREFIX__-user-profile) {
+	display: flex;
+	align-items: flex-start;
+	gap: 1.25em;
+	margin-block: 2em;
+	padding: 1.5em;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 6px;
+}
+
+:where(.__PREFIX__-user-profile__avatar) {
+	flex: none;
+	inline-size: 96px;
+	block-size: 96px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+:where(.__PREFIX__-user-profile__body) {
+	min-inline-size: 0;
+}
+
+:where(.__PREFIX__-user-profile__name) {
+	margin: 0 0 0.4em;
+	font-weight: 700;
+	font-size: 1.125em;
+}
+
+:where(.__PREFIX__-user-profile__bio) {
+	margin: 0 0 0.75em;
+}
+
+:where(.__PREFIX__-user-profile__links) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em 1.25em;
+	margin: 0;
+	font-size: 0.9375em;
+}
+
+@media (max-width: 480px) {
+	:where(.__PREFIX__-user-profile) {
+		flex-direction: column;
+	}
+}

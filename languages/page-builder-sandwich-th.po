@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "บันทึกเป็นแพตเทิร์นที่ใช้ซ้ำได้"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "เครื่องมือตรวจสอบการเข้าถึงได้"
 
@@ -990,6 +994,7 @@ msgstr "← เลือกผู้ให้บริการรายอื�
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "ที่อยู่"
 
@@ -1043,6 +1048,8 @@ msgstr "ทดสอบ"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "นำออก"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "รีเฟรชรายการโมเดลจากผู้ให้บริการ"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "รูปภาพ"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "ปิดใช้งานแล้ว"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "เปิด"
 
@@ -1448,6 +1457,7 @@ msgstr "ยังไม่มีการส่งคำขอ AI ใดๆ"
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "เสร็จสิ้น"
 
@@ -1515,7 +1525,11 @@ msgstr "พยายามเข้าสู่ระบบมากเกิน
 msgid "Something went wrong. Please contact the admin."
 msgstr "เกิดข้อผิดพลาดบางอย่าง โปรดติดต่อผู้ดูแลระบบ"
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "แมป"
 
@@ -1538,52 +1552,383 @@ msgstr "ครอบครัวนั้นไม่ได้ถูกจัด
 msgid "Removed."
 msgstr "นำออกแล้ว"
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "ชื่อตระกูลฟอนต์นั้นไม่ถูกต้อง"
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts ไม่พบชุดตัวอักษรนั้น โปรดตรวจสอบชื่อแล้วลองอีกครั้ง"
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "ไม่สามารถดาวน์โหลดหรือบันทึกไฟล์ฟอนต์ได้ โปรดตรวจสอบว่าโฟลเดอร์ uploads สามารถเขียนทับได้"
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "ไม่สามารถบันทึกสไตล์ชีตของฟอนต์ได้ โปรดตรวจสอบว่าโฟลเดอร์ uploads สามารถเขียนได้"
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "ปิดประกาศนี้"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(เปิดในแท็บใหม่)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "เสร็จสิ้น:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "ต้องทำ:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "ดัชนีคำศัพท์"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "ได้คะแนน %1$s จาก %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "ความคืบหน้า"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "คัดลอกโค้ด"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "คัดลอกแล้ว"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "วิดเจ็ตนั้นไม่สามารถใช้งานได้บนเว็บไซต์นี้"
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "อีเมล"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "โทรศัพท์"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "ฟีด RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "เว็บไซต์"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "ลิงก์"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (เปิดในแท็บใหม่)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "ได้คะแนน %d จาก 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(แนะนำ)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "รวมอยู่ด้วย"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "ไม่ได้รวมอยู่ด้วย"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "ตารางเปรียบเทียบ"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "โทรไปที่ %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "อีเมล %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "ข้อความ %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "แชทผ่าน WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "ติดต่อเรา"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "แชทกับเราบน WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "แบบฟอร์มนี้ยังไม่เปิดให้บริการในขณะนี้"
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "ไม่สามารถแสดงแบบฟอร์มนี้ได้เนื่องจาก %s ไม่ทำงาน"
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "แมป: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "การแสดงแผนที่จะเป็นการโหลดแผนที่ดังกล่าวจาก OpenStreetMap"
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "แสดงแผนที่"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "เปิดแผนที่บน OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "ปฏิทินการจองจาก %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "การแสดงปฏิทินการจองเป็นการโหลดมาจาก %s"
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "แสดงปฏิทินการจอง"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "จองใน %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "รหัส QR สำหรับ %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "ออกแบบ"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "เนื้อหา"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "สื่อ"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "การตลาด"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "เว็บไซต์"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "ข้อมูล"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "โพสต์ที่เกี่ยวข้อง"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "รายละเอียดโพสต์"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "โดย"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "เผยแพร่แล้ว"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "อัปเดตแล้ว"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "ใน"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "แท็กแล้ว"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "ใช้เวลาอ่าน %d นาที"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "ยังไม่มีความคิดเห็น"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d ความคิดเห็น"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "แผนผังเว็บไซต์"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(ไม่มีชื่อเรื่อง)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "โพสต์ทั้งหมดโดย %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "เนื้อหานี้ได้รับการป้องกัน กรุณากรอกรหัสผ่านเพื่อดูเนื้อหา"
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "รหัสผ่านนั้นไม่ถูกต้อง ลองอีกครั้ง"
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "แสดงเนื้อหา"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "ไม่สามารถปลดล็อกหน้านั้นได้"
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "พยายามมากเกินไป รอสักครู่แล้วลองใหม่อีกครั้ง"
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "รหัสผ่านต้องมีความยาว 4 ถึง 200 ตัวอักษร"
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "เพิ่มเติม"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "ปิด"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "แท็บ %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "เนื้อหา"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2031,10 @@ msgstr "แก้ไขด้วย Sandwich Studio"
 msgid "Blank canvas"
 msgstr "หน้าว่าง"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "ข้ามไปยังเนื้อหา"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "ความกว้างของแท็บเล็ตต้องเป็นจำนวนเต็มของพิกเซลตั้งแต่ 480 ถึง 2560"
@@ -1760,7 +2109,11 @@ msgid "Uploaded icons"
 msgstr "ไอคอนที่อัปโหลดแล้ว"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "ไอคอน"
 
@@ -2553,6 +2906,8 @@ msgstr "%s คือที่อยู่อีเมลของลูกค้
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "รหัส"
 
@@ -3047,13 +3402,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "แก้ไข"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "อีเมล"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "อีเมลแอดเดรส"
 
@@ -3103,6 +3454,10 @@ msgstr "การเปิดใช้งานโหมดไวท์ลาเ
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3480,7 @@ msgstr "ป้อนที่อยู่อีเมลใหม่"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "ข้อผิดพลาด"
 
@@ -3723,6 +4079,7 @@ msgstr "ผลิตภัณฑ์ด้านล่างนี้ได้ถ
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4183,7 @@ msgstr "ปลั๊กอินนี้ต้องการ PHP เวอร�
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "ไม่ใช่"
 
@@ -4811,6 +5169,13 @@ msgstr "โซเชียลมีเดีย (Facebook, Twitter และอ�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5461,9 @@ msgstr "ประทับเวลา"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "ชื่อเรื่อง"
 
@@ -5171,6 +5539,8 @@ msgstr "คุณชอบ %1$s เป็นอย่างไรบ้างจ
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "ประเภท"
@@ -5286,6 +5656,7 @@ msgstr "ผู้ใช้"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "ค่า"
@@ -5340,6 +5711,7 @@ msgstr "ดูฟีเจอร์ที่ต้องชำระเงิน
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "คำเตือน"
 
@@ -5666,6 +6038,7 @@ msgid "Optional"
 msgstr "ไม่บังคับ"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "แพ็กเกจ"
 
@@ -5988,18 +6361,26 @@ msgstr "ขนาดเล็กมากเป็นพิเศษ"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "ขนาดเล็ก"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "ปานกลาง"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "ใหญ่"
 
@@ -6012,7 +6393,9 @@ msgid "Huge"
 msgstr "ใหญ่มาก"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6324,16 +6707,9 @@ msgid "The trial could not be started."
 msgstr "ไม่สามารถเริ่มการทดลองใช้งานได้"
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "ฟีเจอร์"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "รวมอยู่ด้วย"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "ไม่ได้รวมอยู่ด้วย"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6687,10 +7063,6 @@ msgstr "ที่อยู่เข้าสู่ระบบ"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "ชื่อผู้ใช้"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "รหัสผ่าน"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7081,15 +7453,62 @@ msgstr "การเลิกทำเริ่มต้นขึ้นแล้
 msgid "Undo all conversions"
 msgstr "เลิกการแปลงทั้งหมด"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "รายการ"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "เปิดเมื่อหน้าเว็บโหลดเสร็จ"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "ชื่อเรื่องคือหัวข้อ"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "ทำให้ชื่อเรื่องเป็นหัวข้อเมื่อรายการต่างๆ เป็นส่วนต่างๆ ของหน้า เพื่อให้ผู้เยี่ยมชมสามารถข้ามไปยังส่วนนั้นๆ ได้"
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "หัวข้อที่ %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "คำถามหรือชื่อหัวข้อ"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "แผงพับ"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "เปิดได้ครั้งละหนึ่งรายการเท่านั้น"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "ทำเครื่องหมายเป็น FAQ สำหรับเครื่องมือค้นหา"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "เพิ่มข้อมูลโครงสร้าง FAQ ที่สร้างขึ้นจากชื่อ (คำถาม) และข้อความ (คำตอบ) ของรายการเหล่านั้น"
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "การแจ้งเตือน"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "ข้อมูล"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "สำเร็จ"
 
@@ -7098,6 +7517,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "คำเตือนและข้อผิดพลาดจะถูกประกาศให้ผู้ใช้โปรแกรมอ่านหน้าจอทราบทันที ส่วนข้อมูลและประกาศความสำเร็จจะถูกอ่านเมื่อพวกเขาทำงานที่ทำอยู่เสร็จสิ้นแล้ว"
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "แสดงไอคอน"
 
@@ -7113,64 +7533,702 @@ msgstr "ชื่อเรื่อง (ไม่บังคับ)"
 msgid "Write the message…"
 msgstr "เขียนข้อความ…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "ส่วน — ส่วนตามเนื้อหา"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "กึ่งกลาง"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — ไม่มีเนื้อหา"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "ป้ายกำกับ"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "ส่วนหัว — เนื้อหาเบื้องต้น"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "สี"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "ส่วนท้าย — เนื้อหาปิดท้าย"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "สีเน้นธีม"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "บทความ — เนื้อหาแบบสแตนด์อโลน"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "ค่ากลาง"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "เนื้อหาที่เกี่ยวข้อง"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "ตำแหน่ง"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — เนื้อหาหลัก (หนึ่งครั้งต่อหน้า)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "ป้ายกำกับ"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "การนำทาง — ลิงก์การนำทาง"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "ปฏิทินการจอง"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "สแตก (เฟล็กซ์บ็อกซ์, แนวตั้ง)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "บริการ"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "แถว (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "ที่อยู่หน้าการจอง"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "ตารางกริด"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "เช่นเดียวกับ %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "สิ่งที่ปฏิทินใช้สำหรับ ซึ่งโปรแกรมอ่านหน้าจอจะอ่านออกเสียงและแสดงผลอยู่ใต้ปฏิทิน"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "นี่ไม่ใช่ที่อยู่หน้าการจอง %s จึงไม่มีสิ่งใดแสดงบนหน้าเว็บ"
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "ดูตัวอย่างปฏิทิน"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "คัดลอกที่อยู่ลิงก์"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "ปุ่มจะแสดงขึ้นเมื่อมีทั้งป้ายกำกับและที่อยู่"
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "เปิดในแท็บใหม่"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "ปุ่มเรียกร้องให้ดำเนินการ"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "เลย์เอาต์"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "ปุ่มด้านล่าง"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "ปุ่มที่อยู่ถัดจากข้อความ"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "การจัดตำแหน่ง"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "ปุ่มหลัก"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "ปุ่มที่สอง"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "หัวข้อ..."
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "หนึ่งประโยคว่าทำไม…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "ปุ่มที่สอง (ไม่บังคับ)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "รายการตรวจสอบ"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "สีของเครื่องหมายถูก"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "บรรทัด"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "บรรทัดที่ %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "กำลังประมวลผล…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "เพิ่มบรรทัด"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "ภาษา"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "ตรวจหาโดยอัตโนมัติ"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "ไม่มีการไฮไลต์"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "ชื่อไฟล์"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "แสดงอยู่เหนือโค้ด เช่น functions.php"
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "หมายเลขบรรทัด"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "ปุ่มคัดลอก"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "ตัดบรรทัดยาว"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "เขียนหรือวางโค้ด..."
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "ข้อความ"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "คอลัมน์"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "คอลัมน์ %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "เน้นข้อความ %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "เพิ่มคอลัมน์"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "แถว"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "แถว %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "เพิ่มแถว"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "คำบรรยายภาพ (สิ่งที่กำลังเปรียบเทียบอยู่)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "ประเภทเซลล์: %s เปลี่ยน"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "การโทรศัพท์"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "ข้อความตัวอักษร"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ปุ่ม"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "หมายเลขโทรศัพท์ พร้อมรหัสประเทศ"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "ข้อความปุ่ม"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "นำปุ่มนี้ออก"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "เพิ่มปุ่ม"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "ข้อความ WhatsApp สำหรับเริ่มต้น (ไม่บังคับ)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "ปุ่มติดต่อ"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "เพิ่มหมายเลขโทรศัพท์ ที่อยู่อีเมล หรือหมายเลข WhatsApp ในแถบด้านข้าง"
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "หัวข้อคู่"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "ระดับหัวข้อ"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "ใช้ H1 เพียงหนึ่งครั้งต่อหน้า สำหรับชื่อเรื่องหลัก"
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "ดูส่วนที่สอง"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "สีสำเนียง"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "ไล่ระดับสี"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "โครงร่าง"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "ขีดเส้นใต้"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "ส่วนที่สองอยู่บนบรรทัดของตนเอง"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "ส่วนแรก"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "ส่วนที่สอง"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "ปากกาเคมี"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "เส้นใต้หนา"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "พื้นหลัง"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "ไฮไลต์"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "นำไฮไลต์ออก"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "ตัวอักษรตกแต่งพิเศษ"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "ตัวอักษรตัวแรกขนาดใหญ่"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "สำหรับตัวอักษรตัวแรกในกรอบ ให้เลือกสไตล์ \"ตัวอักษรตกแต่งในกรอบ\""
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "อักษรตัวแรกในกรอบ"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "แถบสีสำเนียง"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "คำคมเน้นย้ำ (แถบเน้นสี)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "ข้อความคัดจากเนื้อหา แสดงด้วยขนาดใหญ่ข้างแถบสีเพื่อดึงดูดสายตา"
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "ใบเสนอราคา"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "รายการฟีเจอร์"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "บนโทรศัพท์ ฟีเจอร์ต่างๆ จะเรียงซ้อนกันเสมอ"
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "ฟีเจอร์"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "ฟีเจอร์ %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "ไอคอนของตัวเอง"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "ฟีเจอร์..."
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "อธิบายเกี่ยวกับเรื่องนี้…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "เพิ่มฟีเจอร์"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "ติดตั้งและเปิดใช้งาน Contact Form 7, WPForms, Gravity Forms หรือ Fluent Forms จากนั้นเลือกฟอร์มใดฟอร์มหนึ่งจากที่นี่"
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "ปลั๊กอินฟอร์ม"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "เลือก…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "แบบฟอร์ม"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "เลือกแบบฟอร์ม…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s ยังไม่มีฟอร์มใดๆ"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s ไม่ได้ใช้งานอยู่บนเว็บไซต์นี้ จึงไม่สามารถแสดงฟอร์มนี้ได้"
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "ไม่สามารถโหลดรายการฟอร์มได้"
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "รูปแบบฟอร์ม"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "ช่องข้อมูล"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "มีกรอบ"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "กรอกข้อมูลแล้ว"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "ขีดเส้นใต้"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "ความกว้างของปุ่ม"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "พอดีกับข้อความ"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "เต็มความกว้าง"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "สี แบบอักษร ระยะห่าง และมุมมนมาจากดีไซน์เว็บไซต์ของคุณและการตั้งค่าดีไซน์ของบล็อกนี้"
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "แสดงฟอร์มจากปลั๊กอินฟอร์มของคุณ จัดรูปแบบให้เข้ากับเว็บไซต์ของคุณ"
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "ต้องการปลั๊กอินแบบฟอร์มใช่ไหม Contact Form 7 นั้นฟรี"
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "อภิธานศัพท์"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "เรียงจาก A ถึง Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "หน้านี้แสดงคำศัพท์ตามลำดับตัวอักษร แต่ที่นี่คำศัพท์จะยังคงอยู่ในลำดับที่คุณเขียนไว้"
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "แสดงดัชนี ก–ฮ"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "ลิงก์คำที่ใช้ในส่วนอื่นของหน้านี้"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "การปรากฏครั้งแรกของแต่ละคำในข้อความบนหน้าเว็บจะลิงก์ไปยังคำจำกัดความ หัวข้อ ปุ่ม โค้ด และลิงก์ที่มีอยู่แล้วจะไม่ถูกเปลี่ยนแปลง"
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "ข้อกำหนดการใช้งาน"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "รอบที่ %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "ระยะเวลาสัญญา"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "ความหมายคือ…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "เพิ่มคำศัพท์"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "รายการไอคอน"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "เรียงซ้อนกันแนวตั้ง"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "เคียงข้างกัน"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "รายการ..."
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "กล่องข้อมูล"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "หรือเลือกไอคอนใดก็ได้จากคลัง:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "ข้อความลิงก์"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "ระบุปลายทางของลิงก์ให้ชัดเจน (เช่น \"ดูราคาของเรา\") แทนที่จะใช้คำว่า \"อ่านเพิ่มเติม\""
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "หนึ่งหรือสองประโยค..."
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "ส่วน — ส่วนตามเนื้อหา"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — ไม่มีเนื้อหา"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "ส่วนหัว — เนื้อหาเบื้องต้น"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "ส่วนท้าย — เนื้อหาปิดท้าย"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "บทความ — เนื้อหาแบบสแตนด์อโลน"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "เนื้อหาที่เกี่ยวข้อง"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — เนื้อหาหลัก (หนึ่งครั้งต่อหน้า)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "การนำทาง — ลิงก์การนำทาง"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "สแตก (เฟล็กซ์บ็อกซ์, แนวตั้ง)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "แถว (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "ตารางกริด"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "กำลังแก้ไข: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "จัดเรียงส่วนประกอบย่อยแบบ"
 
@@ -7178,7 +8236,7 @@ msgstr "จัดเรียงส่วนประกอบย่อยแบ
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7186,70 +8244,50 @@ msgstr "จัดเรียงส่วนประกอบย่อยแบ
 msgid "Inherited (%s)"
 msgstr "สืบทอด (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "เฟล็กซ์บ็อกซ์"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "บล็อกซ้อนกัน"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "คอลัมน์"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "ลากลงในแคนวาส หรือพิมพ์"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "ความกว้างของเนื้อหา"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "กล่อง (ความกว้างเนื้อหาของธีม)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "เต็มความกว้าง"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "ความสูงขั้นต่ำ"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "แท็ก HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "ลิงก์"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "ทำให้บล็อกทั้งหมดเป็นลิงก์ไปยัง"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "ข้อความลิงก์สำหรับโปรแกรมอ่านหน้าจอ"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "สิ่งที่ลิงก์ทำ สำหรับผู้เข้าชมที่ไม่สามารถมองเห็นบล็อกนี้ได้"
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "เปิดในแท็บใหม่"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "ห้ามวางลิงก์หรือปุ่มไว้ภายในบล็อกที่มีการลิงก์: ลิงก์ที่อยู่ภายในลิงก์จะไม่ทำงานในเบราว์เซอร์"
 
@@ -7281,14 +8319,143 @@ msgstr "+ แถว"
 msgid "− Row"
 msgstr "− แถว"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "ตำแหน่ง"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "วางพิกัดหรือลิงก์ OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "บน openstreetmap.org ให้ค้นหาสถานที่ จากนั้นคัดลอกที่อยู่จากแถบเบราว์เซอร์ หรือคลิกขวาที่แผนที่แล้วเลือก \"แสดงที่อยู่\""
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "ละติจูด"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "ลองจิจูด"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "ซูม"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "ชื่อของสถานที่"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "แสดงอยู่ใต้แผนที่และอ่านออกเสียงโดยโปรแกรมอ่านหน้าจอ"
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "วางพิกัด (ตัวอย่างเช่น 51.5074, -0.1278) หรือลิงก์ OpenStreetMap"
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "พิกัดหรือลิงก์"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "ดูตัวอย่างแผนที่"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "ตรวจสอบ %1$s, %2$s บน OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "ผู้เขียน"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "วันที่เผยแพร่"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "วันที่ที่อัปเดต (เมื่อมีความแตกต่าง)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "หมวดหมู่"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "แท็ก"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "เวลาในการอ่าน"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "จำนวนความคิดเห็น"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "รายละเอียดที่จะแสดง"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "เลือกรายละเอียดอย่างน้อยหนึ่งรายการที่จะแสดง"
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "แถบความคืบหน้า"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "สูงสุด"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 สำหรับเปอร์เซ็นต์ ส่วนตัวเลขอื่นๆ สำหรับจำนวน เช่น 8 จาก 10"
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "แสดงเปอร์เซ็นต์"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "ตั้งรหัสผ่านไว้แล้ว ผู้เข้าชมจะเห็นฟอร์มกรอกรหัสผ่านแทนเนื้อหานี้จนกว่าจะป้อนรหัสผ่านดังกล่าว"
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "ยังไม่ได้ตั้งรหัสผ่าน ผู้เข้าชมจึงไม่เห็นอะไรที่นี่"
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "รหัสผ่านใหม่"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "ตั้งค่ารหัสผ่าน"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "ตั้งรหัสผ่านแล้ว บันทึกหน้าเว็บเพื่อนำไปใช้งาน ผู้เยี่ยมชมที่เคยปลดล็อกไว้จะต้องใช้รหัสผ่านใหม่นี้"
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "หาก Page Builder Sandwich ถูกปิดใช้งาน เนื้อหานี้จะแสดงให้ทุกคนเห็น"
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "ข้อความเหนือฟอร์มรหัสผ่าน (ไม่บังคับ)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "สลับ"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "ป้ายกำกับ"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7298,30 +8465,698 @@ msgstr "อ่านออกเสียงโดยโปรแกรมอ่
 msgid "Show label"
 msgstr "แสดงป้ายกำกับ"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "ที่อยู่เว็บหรือข้อความ"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "รหัส QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "คำอธิบายสำหรับโปรแกรมอ่านหน้าจอ"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "เว้นว่างไว้เพื่อใช้ \"QR code for\" และข้อความดังกล่าว"
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "พิมพ์ที่อยู่เว็บ ลิงก์โทรศัพท์ (tel:) หรือข้อความใดๆ"
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "ข้อความนี้ยาวเกินไปสำหรับคิวอาร์โค้ด โปรดทำให้สั้นลง"
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "เพิ่มคำบรรยายภาพ"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "แถบแสดงความคืบหน้าในการอ่าน"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "ขอบหน้าต่าง"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "บนสุด"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "ด้านล่าง"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "แสดงที่ด้านล่างของหน้าต่างขณะที่ผู้เข้าชมเลื่อนดู"
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "แสดงที่ด้านบนของหน้าต่างขณะที่ผู้เข้าชมเลื่อนดู"
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "จำนวนเท่าใด"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "ที่เกี่ยวข้องโดย"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "หมวดหมู่หรือแท็ก"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "เมื่อไม่มีเนื้อหาที่เกี่ยวข้อง ให้แสดงรายการใหม่ล่าสุดแทน"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "หัวข้อ"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "เว้นว่างไว้สำหรับ \"บทความที่เกี่ยวข้อง\""
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "แสดงรูปภาพเด่น"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "แสดงวันที่"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "แสดงข้อมูลสรุป"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "ยังไม่มีโพสต์ใดที่ใช้หมวดหมู่หรือแท็กเดียวกับโพสต์นี้ เมื่อมีโพสต์ที่ใช้ โพสต์เหล่านั้นจะแสดงที่นี่"
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "โมดอล"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "พาเนลแบบออฟแคนวาส"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "ขนาด"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "เลื่อนเข้ามาจาก"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "จุดเริ่มต้นคือด้านที่เริ่มต้นอ่าน: ด้านซ้ายสำหรับภาษาอังกฤษ ด้านขวาสำหรับภาษาอาหรับ"
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "ปิดเมื่อคลิกหน้าเว็บด้านหลัง"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "ชื่อหน้าต่าง"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "เครื่องหมายถูก"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "วงกลม"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "กากบาท"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "จุด"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "ลูกศร"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "ดาวกำหนดโปรด"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "สีไอคอน"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "เหมือนกับข้อความ"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "ธีมหลัก"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "ธีมรอง"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "ความตัดกันของธีม"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "เรียงลำดับหัวข้อบนหน้าเว็บให้ถูกต้อง: หัวข้อควรอยู่ต่ำกว่าระดับของส่วนที่ครอบอยู่หนึ่งระดับ"
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "เลือกไอคอน"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "ใช้ไอคอนเริ่มต้น"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "เลือกไอคอน"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "ย้ายขึ้น"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "ย้ายลง"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "แสดงหัวข้อสำหรับแต่ละประเภท"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "ยังไม่มีการเผยแพร่เนื้อหาในประเภทที่คุณเลือก"
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "ลิงก์"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "ลิงก์ %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "เครือข่าย"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "ที่อยู่โปรไฟล์, mailto:you@example.com หรือ tel:+441234567890"
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "ชื่อที่ใช้อ่านสำหรับโปรแกรมอ่านหน้าจอ"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "ไอคอนอื่น"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "เพิ่มลิงก์"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "ดู"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "สไตล์"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "ไอคอนเท่านั้น"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "รูปร่าง"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "สี่เหลี่ยมมุมมน"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "สี่เหลี่ยม"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "เปิดโปรไฟล์ในแท็บใหม่"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "คะแนนดาว"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "การให้คะแนน"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "จำนวนดาว"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "แสดงจำนวน"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "ขั้นตอน"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "เลื่อนลงไปตามหน้า"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "เรียงเคียงข้างกัน (ซ้อนทับกันบนมือถือ)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "สีตัวเลข"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "ลำดับขั้นตอน"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "ขั้นตอนที่ %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "ขั้นตอนที่..."
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "สิ่งที่ต้องทำ…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "เพิ่มขั้นตอน"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "แท็บ"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "เพิ่มหัวข้อลงในหน้าเว็บ แล้วหัวข้อเหล่านั้นจะแสดงอยู่ที่นี่"
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "สารบัญ"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "จากระดับหัวข้อ"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "ไปยังระดับหัวข้อ"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "มีหมายเลขกำกับ"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "สามารถย่อได้"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "เริ่มแบบยุบ</​"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "ไฮไลต์ส่วนที่กำลังอ่านอยู่"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "แท็บ"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "ชื่อสำหรับโปรแกรมอ่านหน้าจอ"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "ไม่บังคับ ระบุเนื้อหาของแท็บ เช่น \"แผนบริการ\""
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "เปิดเมื่อโหลดหน้า"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "แท็บแสดงที่ด้านข้าง"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "เพิ่มแท็บ"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "คำนิยม"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "เปลี่ยนรูปภาพ"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "เลือกรูปภาพ"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "นำรูปภาพออก"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "คำอธิบายรูปภาพ"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "เว้นว่างไว้เมื่อรูปภาพแสดงเฉพาะบุคคลที่มีชื่ออยู่ถัดจากรูปนั้น"
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "คะแนนดาว (0 = ไม่มี)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "ชื่อภายใต้ใบเสนอราคา"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "รูปภาพข้างใบเสนอราคา"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "สิ่งที่ลูกค้าพูด…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "บทบาทหรือบริษัท"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "คำแนะนำเครื่องมือ"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "ข้อความทูลทิป"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "ทำให้สั้น: หนึ่งหรือสองประโยค โปรแกรมอ่านหน้าจอจะอ่านข้อความนี้พร้อมกับคำที่อธิบาย"
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "แสดงข้อมูลนี้"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "ด้านบน"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "ด้านล่าง"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "คำหรือวลี"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "นำไปใช้"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "โปรไฟล์"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "โปรไฟล์ของใคร"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "ผู้เขียนโพสต์"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "แสดงรูปโปรไฟล์"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "แสดงประวัติส่วนตัว"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "แสดงลิงก์ไปยังโพสต์และเว็บไซต์"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "โปรไฟล์ผู้เขียน"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "เลือกโปรไฟล์ที่จะแสดง"
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "เบอร์ WhatsApp พร้อมรหัสประเทศ"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "เช่น +44 7700 900123"
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "ข้อความเริ่มต้น (ไม่บังคับ)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "แสดงข้อความถัดจากไอคอน"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "มุม"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "ปลายด้านล่าง (ขวาในภาษาอังกฤษ)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "ล่างสุดเริ่มต้น (ซ้ายในภาษาอังกฤษ)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "เพิ่มหมายเลข WhatsApp ของคุณในแถบด้านข้าง จนกว่าจะทำเช่นนั้น ปุ่มจะไม่แสดงบนหน้าเว็บ"
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "บนหน้านี้ ปุ่มนี้จะลอยอยู่ที่มุมด้านล่างของหน้าจอ"
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "แท็กช็อตโค้ด"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "ใช้ตัวอักษร ตัวเลข ยัติภังค์ และขีดล่างเท่านั้น"
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "ชื่อแอตทริบิวต์"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "เพิ่มแอตทริบิวต์"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "ช็อตโค้ด"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "แอตทริบิวต์อื่น ๆ"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "เลือกแท็กชอร์ตโค้ดในการตั้งค่าบล็อก"
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "แกลเลอรี"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "ขนาดรูปภาพ"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "ภาพย่อตัวอย่าง"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "ขนาดเต็ม"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "เชื่อมโยงไปที่"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "หน้าไฟล์แนบ"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "ไฟล์สื่อ"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "เสียงเพลง"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "วิดีโอ"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "ที่อยู่ไฟล์"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "วนซ้ำ"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "เล่นอัตโนมัติ"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "รูปโปสเตอร์"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "เพลย์ลิสต์"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "IDs ของสื่อ คั่นด้วยเครื่องหมายจุลภาค"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "แสดงรายชื่อเพลง"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "ฝัง"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "ที่อยู่สำหรับฝัง"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "ความกว้างสูงสุด"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "คำอธิบายภาพ"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML รูปภาพและคำบรรยายภาพ"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "ความกว้าง"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "เคล็ดลับ: บล็อกฟอร์มจะแสดงฟอร์มนี้ในรูปแบบที่เข้ากันกับเว็บไซต์ของคุณ"
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "แสดงชื่อแบบฟอร์ม"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "แสดงคำอธิบายฟอร์ม"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "ส่งข้อมูลโดยไม่ต้องโหลดหน้าเว็บใหม่"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7342,123 +9177,108 @@ msgstr "เลือกไฟล์"
 msgid "— Default —"
 msgstr "— ค่าเริ่มต้น —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "การจัดแต่งขั้นสูง"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS แบบอินไลน์"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "คำประกาศ CSS เช่น min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "เอฟเฟกต์ (คลาสเดิม)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "ชื่อเอฟเฟกต์ที่คั่นด้วยช่องว่างซึ่งยกมาจากเวอร์ชันเก่า เช่น hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "แถว"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "ความกว้าง"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "ความกว้างเต็มจอ จัดเนื้อหาให้อยู่ตรงกลาง"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "คัดลอกที่อยู่ลิงก์"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "ความสัมพันธ์ของลิงก์"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "การจัดตำแหน่ง"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "ซ้าย"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "กึ่งกลาง"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "ขวา"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "ข้อความปุ่ม"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "เพิ่มข้อความ…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "การจัดวาง"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "อยู่บนบรรทัดแยกต่างหาก"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "ในบรรทัด ถัดจากเนื้อหาอื่นๆ"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "อัตโนมัติ (บรรทัดของตนเองที่ระดับบนสุดของหน้า)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "ป้ายชื่อสำหรับเครื่องมืออ่านหน้าจอ"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "เว้นว่างไว้หากต้องการใช้ไอคอนตกแต่ง"
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "เลือกไอคอนในการตั้งค่าบล็อก"
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "ชื่อการตั้งค่าใหม่"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "ตัวอย่างเช่น: ชื่อเรื่องหรือข้อความ"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "เพิ่มการตั้งค่า"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "วิดเจ็ต"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "เลือกวิดเจ็ต"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "พื้นที่วิดเจ็ต"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "เลือกพื้นที่วิดเจ็ต"
 
@@ -7481,6 +9301,140 @@ msgstr "การฝังนี้จะปรับขนาดตัวเอ
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "เลย์เอาต์ขยับ"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "วิดเจ็ตนี้ไม่ได้อธิบายการตั้งค่า จึงแก้ไขได้ในรูปแบบคู่ชื่อและค่า"
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "ปัญหา"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "ตรวจสอบ"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "แสดงบล็อก"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "ใช้สีชุดรูปแบบที่อ่านง่าย"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "ทำให้เป็น H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "ข้อความแทนภาพ"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "บันทึกข้อความอธิบายรูปภาพ"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "รูปภาพนี้เป็นภาพตกแต่ง"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "กำลังตรวจสอบ..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "ไม่พบปัญหาการเข้าถึงบนหน้านี้"
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d ปัญหา"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d รายการที่ต้องตรวจสอบ"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "ตรวจสอบอีกครั้ง"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "การตรวจสอบอัตโนมัติพบปัญหาจำนวนมากแต่ไม่ใช่ทั้งหมด ลองทดสอบหน้าเว็บโดยใช้คีย์บอร์ดเพียงอย่างเดียวและใช้โปรแกรมอ่านหน้าจอด้วย"
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "ความตัดกันของข้อความคือ %1$s:1; จำเป็นต้องมีอย่างน้อย %2$s:1 จึงจะสามารถอ่านได้"
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "คลิกที่นี่,ที่นี่,อ่านเพิ่มเติม,เพิ่มเติม,ลิงก์,ลิงก์นี้,เรียนรู้เพิ่มเติม,ไป"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "ลิงก์ไม่มีข้อความ โปรแกรมอ่านหน้าจอจึงจะอ่านออกเสียงแค่ \"ลิงก์\" เท่านั้น โปรดเพิ่มข้อความหรือป้ายกำกับ"
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "ข้อความลิงก์ “%s” ไม่ได้ระบุว่าจะพาไปที่ไหน ให้ใช้การอธิบายปลายทางแทน"
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "องค์ประกอบมีค่า tabindex เป็นบวก ซึ่งจะเปลี่ยนลำดับการกดแป้นพิมพ์ให้ออกไปจากลำดับการอ่าน ใช้ 0 หรือลบออก"
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "ไม่สามารถเข้าถึงองค์ประกอบที่คลิกได้ด้วยแป้นพิมพ์ ให้ใช้ปุ่มหรือลิงก์จริง"
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "เฟรมแบบฝังไม่มีชื่อ โปรแกรมอ่านหน้าจอจึงไม่สามารถบอกได้ว่าเป็นอะไร"
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "ช่องฟอร์มไม่มีป้ายกำกับ จึงทำให้ไม่ทราบจุดประสงค์การใช้งาน"
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "หัวข้อนี้ว่างเปล่า โปรแกรมอ่านหน้าจอจะนำทางด้วยหัวข้อ โปรดลบออกหรือเพิ่มข้อความ"
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "ชื่อเพลาต์เป็น H1 อยู่แล้ว ใช้ H2 สำหรับเนื้อหาระดับบนสุด"
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "H%1$d นี้ข้ามระดับไป หนึ่งระดับก่อนหน้านี้คือ H%2$d ทำให้เป็น H%3$d"
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "รูปภาพนี้ไม่มีข้อความระบุภาพ (alt text) โปรดอธิบาย หรือทำเครื่องหมายว่าเป็นภาพตกแต่งหากไม่ได้ให้ข้อมูลใดเพิ่มเติม"
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "ปิดแผงควบคุม"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7555,18 +9509,6 @@ msgstr "กำหนดเอง"
 msgid "Width / height"
 msgstr "ความกว้าง / ความสูง"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "บนสุด"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "ด้านล่าง"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7579,20 +9521,6 @@ msgstr "ภาพที่สืบทอดมา — แทนที่"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "นำรูปภาพออก"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "ตำแหน่ง"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "ขนาด"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7658,22 +9586,6 @@ msgstr "แต่ละด้านแยกกัน"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "ด้านข้าง"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "สไตล์"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "สี"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7923,14 +9835,6 @@ msgstr "%1$s (%2$d ชุด)"
 msgid "Replace icon"
 msgstr "แทนที่ไอคอน"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "เลือกไอคอน"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "เลือกไอคอน"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "ไม่มีไอคอนที่ตรงกัน"
@@ -7942,10 +9846,6 @@ msgstr "ปกติ"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "แบรนด์"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "มีกรอบ"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8074,21 +9974,9 @@ msgstr "สีข้อความ"
 msgid "Cursor"
 msgstr "เคอร์เซอร์"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "ลูกศร"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "พอยเตอร์"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "ข้อความ"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8246,10 +10134,6 @@ msgstr "ชื่อพื้นที่"
 msgid "Named areas"
 msgstr "พื้นที่ที่ตั้งชื่อไว้"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "แถว"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "ความสูง"
@@ -8367,10 +10251,6 @@ msgstr "จัดชิดริมเต็ม"
 msgid "Decoration"
 msgstr "การตกแต่ง"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "ขีดเส้นใต้"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "โอเวอร์ไลน์"
@@ -8453,19 +10333,9 @@ msgstr "เรียงตามรูปกรวย"
 msgid "Angle (degrees)"
 msgstr "มุม (องศา)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "รูปร่าง"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "วงรี"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "วงกลม"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8501,10 +10371,6 @@ msgstr "การอิ่มตัวเบื้องหลัง (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "ใส่สี (ใช้สีโปร่งแสง)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "สี่เหลี่ยมมุมมน"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "บล็อบ"
@@ -8521,10 +10387,6 @@ msgstr "สามเหลี่ยม"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "ไดมอนด์"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "ดาวกำหนดโปรด"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9402,11 +11264,6 @@ msgstr "ล้างข้อมูล"
 msgid "The change could not be saved."
 msgstr "ไม่สามารถบันทึกการเปลี่ยนแปลงได้"
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "ปิดแผงควบคุม"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "ชุดรูปแบบเริ่มต้น"
@@ -9463,9 +11320,49 @@ msgstr "คลาส, โทนสี, โหมดมืด, ชุดแบร
 msgid "Open the Site Editor’s styles"
 msgstr "เปิดสไตล์ของเครื่องมือแก้ไขเว็บไซต์"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "หัวข้อ"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "หัวข้อที่มีระยะห่างบรรทัดแคบลง จัดสไตล์ด้วยแท็บสไตล์"
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "ย่อหน้าข้อความ จัดรูปแบบด้วยแท็บสไตล์"
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "รูปภาพ"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "รูปภาพที่มีมุมมน จัดรูปแบบด้วยแท็บสไตล์"
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "วิดีโอจากคลังสื่อ จัดแต่งสไตล์ด้วยแท็บสไตล์"
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "ตัวเว้นระยะ"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "พื้นที่ว่างระหว่างบล็อก กำหนดความสูงที่แตกต่างกันตามขนาดหน้าจอได้ในแท็บสไตล์"
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "เส้นคั่น"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "เส้นคั่นแนวนอนระหว่างส่วนต่างๆ จัดรูปแบบด้วยแท็บสไตล์"
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "เนื้อหาจากเว็บไซต์อื่น (วิดีโอ โพสต์ แผนที่) โดยการวางที่อยู่ของเนื้อหานั้น"
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "รูปภาพหลายรูปในตาราง จัดรูปแบบด้วยแท็บสไตล์"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9499,10 +11396,6 @@ msgstr "แสดงรายการ"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "ป้ายกำกับ"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "ปุ่ม"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9547,10 +11440,6 @@ msgstr "ซ่อนภาษาที่หน้าเว็บนี้ยั
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "เรียงซ้อนในแนวตั้ง"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "พื้นหลัง"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9609,11 +11498,6 @@ msgstr "ตั้งค่าการบล็อก"
 #, js-format
 msgid "Add block: %s"
 msgstr "เพิ่มบล็อก: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(ไม่มีชื่อเรื่อง)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9689,10 +11573,6 @@ msgstr "ปิดเซฟโหมด"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "เปิดใช้งานเซฟโมเดล (ปิดปลั๊กอินอื่นทั้งหมด สำหรับคุณ ในสตูดิโอเท่านั้น)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "เผยแพร่แล้ว"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10029,11 +11909,6 @@ msgstr "ชื่อตัวสร้างเว็บไซต์"
 msgid "Visual editor name"
 msgstr "ชื่อเครื่องมือแก้ไขภาพแบบภาพ"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "ผู้เขียน"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10104,10 +11979,6 @@ msgstr[0] "เลิกทำแล้ว: กู้คืนหน้า %d ห
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "แทนที่"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "ลิงก์"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10216,10 +12087,6 @@ msgstr "อนุญาตให้ลูกค้าแสดงความค
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "ทุกคนที่มีลิงก์สามารถดูหน้านี้ได้ แม้ว่าจะยังไม่ได้เผยแพร่ และสามารถแสดงความคิดเห็นได้ ไม่จำเป็นต้องมีบัญชี"
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "คัดลอกแล้ว"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10455,6 +12322,52 @@ msgstr "คัดลอกรูปภาพไปยังคลังสื่
 msgid "Show what will happen"
 msgstr "แสดงสิ่งที่จะเกิดขึ้น"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "รายการหีบเพลง"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "ส่วนหนึ่งของหีบเพลง: ชื่อเรื่องที่เปิดเนื้อหาของตน"
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "แถบพับได้"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "คำถามหรือส่วนเนื้อหาที่เปิดและปิดได้ เลือกเปิดทีละรายการได้ และกำหนดโครงสร้างเสริมเป็นคำถามที่พบบ่อย (FAQ) สำหรับเครื่องมือค้นหาได้"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "แผงพับข้อมูล"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "คำถามที่พบบ่อย"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "สลับ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "ยุบ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "รายละเอียด"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10471,6 +12384,7 @@ msgid "notice"
 msgstr "ประกาศ"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "ข้อความ"
@@ -10485,6 +12399,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "คำเตือน"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "ป้ายสัญลักษณ์"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "ป้ายกำกับสั้นๆ เช่น ใหม่ สินค้าลดราคา หรือคุ้มค่าที่สุด"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "ป้ายกำกับ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "แท็ก"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "ปุ่มแคปซูล"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "ใหม่"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "ปฏิทินการจอง"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "ปฏิทินการจองจาก Calendly หรือ Cal.com จะโหลดเฉพาะเมื่อผู้เข้าชมเว็บไซต์ร้องขอเท่านั้น"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "การจอง"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "การนัดหมาย"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "กำหนดเวลา"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10496,6 +12475,7 @@ msgid "A link styled as a button."
 msgstr "ลิงก์ที่มีรูปแบบเหมือนปุ่ม"
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "ปุ่ม"
@@ -10509,6 +12489,98 @@ msgstr "ลิงก์"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "ปุ่มดำเนินการ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "ปุ่มดำเนินการ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "หัวข้อ ประโยคหนึ่ง และปุ่มหนึ่งหรือสองปุ่มที่ขอให้ผู้เยี่ยมชมดำเนินการ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "เริ่มต้นใช้งาน"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "แบนเนอร์"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "สมัครใช้งาน"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "รายการตรวจสอบ"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "รายการงาน โดยแต่ละงานจะทำเครื่องหมายว่าเสร็จสิ้นหรือยังไม่เสร็จ ทั้งในรูปแบบข้อความสำหรับโปรแกรมอ่านหน้าจอและเครื่องหมายถูก"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "สิ่งที่ต้องทำ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "งาน"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "ติ๊ก"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "แสดงรายการ"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "โค้ด"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "รายการโค้ดที่แสดงการเน้นไวยากรณ์ หมายเลขบรรทัด และปุ่มคัดลอก ยังคงอ่านได้หากปลั๊กอินถูกปิดใช้งาน"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "โค้ด"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "ไวยากรณ์"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "ไฮไลท์"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "ส่วนย่อย"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "การเขียนโปรแกรม"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10532,6 +12604,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "เค้าโครง"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "ตารางเปรียบเทียบ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "แผนหรือผลิตภัณฑ์แบบวางเทียบเคียงกัน พร้อมเครื่องหมายใช่และไม่ใช่ที่โปรแกรมอ่านหน้าจออ่านออกเสียงเป็นคำ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "เปรียบเทียบ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "ราคา"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "แพ็กเกจ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "ตาราง"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "ฟีเจอร์"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "ปุ่มติดต่อ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "ปุ่มสำหรับโทร โทรอีเมล ส่งข้อความ หรือส่งข้อหาคุณทาง WhatsApp"
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "ติดต่อ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "โทร"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "โทรศัพท์"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "อีเมล"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10549,11 +12699,13 @@ msgid "container"
 msgstr "คอนเทนเนอร์"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "กล่อง"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10570,6 +12722,52 @@ msgstr "เฟล็กซ์บ็อกซ์"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "คอลัมน์"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "หัวข้อคู่"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "หัวข้อแบ่งออกเป็นสองส่วน ส่วนที่สองตกแต่งด้วยสี การไล่ระดับสี เส้นโครงร่าง หรือเส้นใต้"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "หัวข้อ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "ชื่อเรื่อง"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "การไล่ระดับสี"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "รายการฟีเจอร์"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "ฟีเจอร์ในรูปแบบตาราง แต่ละรายการมีไอคอน หัวข้อ และคำอธิบายสั้นๆ"
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "สิทธิประโยชน์"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "บริการ"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10613,6 +12811,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "ข้อความ"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "แบบฟอร์ม"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "แสดงฟอร์มจาก Contact Form 7, WPForms, Gravity Forms หรือ Fluent Forms ที่จัดรูปแบบให้เข้ากับเว็บไซต์ของคุณ"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "แบบฟอร์ม"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "ฟลูเอนท์ ฟอร์มส์"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "อภิธานศัพท์"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "คำศัพท์และคำจำกัดความ เรียงลำดับจาก A ถึง Z แต่ละรายการมีลิงก์ของตัวเอง สามารถลิงก์การกล่าวถึงคำศัพท์ครั้งแรกในหน้าไปยังคำจำกัดความได้"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "ข้อกำหนดการใช้งาน"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "คำนิยาม"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "พจนานุกรม"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "รายการไอคอน"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "รายการที่แต่ละบรรทัดเริ่มต้นด้วยไอคอน: เครื่องหมายถูก ลูกศร หรือไอคอนใดก็ได้จากไลบรารี"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "หัวข้อข่าว"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "ไอคอน"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10633,6 +12911,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "กล่องข้อมูล"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "ไอคอน หัวข้อสั้นๆ หนึ่งหรือสองประโยค และลิงก์เสริม: สำหรับบริการ ผลประโยชน์ หรือรายละเอียดการติดต่อ"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "ฟีเจอร์"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "บริการ"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "บัตร"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10652,6 +12955,204 @@ msgstr "การแปล"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "หลายภาษา"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "จับคู่"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "แผนที่ของสถานที่จาก OpenStreetMap: ไม่มีคีย์ และไม่มีการโหลดสิ่งใดจาก OpenStreetMap จนกว่าผู้เข้าชมจะขอแผนที่"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "เชื่อมโยงโดเมน"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "สถานที่ตั้ง"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "ที่อยู่"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "OpenStreetMap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "โมดัล"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "ปุ่มที่เปิดหน้าต่างทับหน้าเว็บ โดยมีบล็อกใดก็ได้อยู่ภายใน"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "โมดัล"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "ป๊อปอัป"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "ไลต์บ็อกซ์"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "กล่องโต้ตอบ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "พาเนลนอกจอแคนวาส"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "ปุ่มสำหรับเลื่อนแผงหน้าต่างเข้ามาจากด้านข้าง พร้อมกับบล็อกใดๆ ที่อยู่ด้านใน"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "ปิดแคนวาส"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "ลิ้นชัก"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "แถบด้านข้าง"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "แผงควบคุม"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "เมนู"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "รายละเอียดโพสต์"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "ผู้เขียนโพสต์ วันที่ หมวดหมู่ ป้ายกำกับ เวลาในการอ่าน และจำนวนความคิดเห็น"
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "ผู้แต่ง"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "วันที่"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "เวลาในการอ่าน"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "ข้อมูลเมตา"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "ผู้เขียนบทความ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "แถบความคืบหน้า"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "แถbarป้ายกำกับที่แสดงความคืบหน้าของสิ่งใดสิ่งหนึ่ง เช่น ทักษะหรือเป้าหมาย"
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "กำลังดำเนินการ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "แถบ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "ทักษะ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "เป้าหมาย"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "เนื้อหาที่ได้รับการป้องกันด้วยรหัสผ่าน"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "บล็อกเฉพาะผู้เยี่ยมชมที่มีรหัสผ่านเท่านั้นที่มองเห็นได้ จนกว่าจะป้อนรหัสผ่าน เนื้อหานั้นจะไม่ปรากฏในหน้าเว็บเลย"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "รหัสผ่าน"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "ที่ถูกป้องกัน"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "ส่วนตัว"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "ล็อก"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "สมาชิก"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10677,6 +13178,86 @@ msgstr "สว่าง"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "ชุดสี"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "คิวอาร์โค้ด"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "รหัส QR สำหรับที่อยู่เว็บหรือข้อความใดๆ ที่วาดขึ้นบนเว็บไซต์ของคุณเอง (ไม่มีการใช้บริการ QR)"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "คิวอาร์โค้ด"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "บาร์โค้ด"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "สแกน"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "แถบแสดงความคืบหน้าในการอ่าน"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "แถบแคบๆ ที่ขอบหน้าต่างซึ่งจะเต็มขึ้นเมื่อผู้เข้าชมเลื่อนดูหน้าเว็บ"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "กำลังอ่าน"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "เลื่อน"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "บทความที่เกี่ยวข้อง"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "โพสต์ที่ใช้หมวดหมู่หรือแท็กเดียวกับโพสต์นี้ พร้อมรูปภาพ วันที่ และบทสรุปของโพสต์เหล่านั้น"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "ที่เกี่ยวข้อง"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "โพสต์"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "ที่คล้ายกัน"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "เพิ่มเติม"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10740,13 +13321,284 @@ msgstr "แสดงวิดเจ็ตในพื้นที่วิดเ
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "แถบด้านข้าง"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "พื้นที่วิดเจ็ต"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "แผนผังเว็บไซต์"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "หน้าเพจที่แสดงรายการหน้าและโพสต์ที่เผยแพร่แล้วทั้งหมด (รวมถึงเนื้อหาสาธารณะอื่น ๆ) โดยยังคงโครงสร้างลำดับชั้นของหน้าเอาไว้"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "แผนผังเว็บไซต์"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "แผนผังเว็บไซต์"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "ดัชนี"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "ทุกหน้า"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "ไอคอนโซเชียล"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "ลิงก์ไปยังโปรไฟล์ของคุณ แสดงด้วยไอคอนของเครือข่ายนั้นๆ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "โซเชียล"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "ลิงก์"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "ติดตาม"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "โปรไฟล์"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "คะแนนดาว"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "การให้คะแนนแสดงเป็นดาว โดยเพิ่มทีละครึ่งดาว"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "ดาว"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "การให้คะแนน"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "คะแนน"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "ขั้นตอน"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "ขั้นตอนของกระบวนการที่มีหมายเลขเรียงตามลำดับ ลงมาตามหน้าเว็บหรือเรียงเคียงข้างกัน"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "ดำเนินการ"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "วิธีใช้งาน"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "ไทม์ไลน์"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "มีลำดับเลข"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "แท็บ"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "แท็บหนึ่งแท็บในบล็อกแท็บ: ชื่อและแผงควบคุมของแท็บนั้น"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "สารบัญ"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "รายการหัวข้อต่างๆ ในหน้าเว็บที่สร้างขึ้นโดยอัตโนมัติ ซึ่งเชื่อมโยงไปยังแต่ละหัวข้อ"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "สารบัญ"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "เนื้อหา"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "หัวข้อ"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "แท็บ"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "เนื้อหาในแท็บ: ผู้เยี่ยมชมสลับระหว่างแผงต่างๆ ด้วยเมาส์หรือคีย์บอร์ด"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "แท็บ"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "มีแท็บ"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "พาเนล"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "คำรับรอง"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "คำคมจากลูกค้าพร้อมชื่อ ตำแหน่ง รูปถ่าย และคะแนนดาวที่เป็นตัวเลือกเพิ่มเติม"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "ตรวจสอบ"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "ใบเสนอราคา"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "ลูกค้า"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "ข้อเสนอแนะ"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "คำแนะนำเครื่องมือ"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "คำหรือวลีที่แสดงคำอธิบายสั้นๆ เมื่อวางเมาส์เหนือหรือโฟกัสด้วยคีย์บอร์ด"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "ทูลทิป"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "คำแนะนำ"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "คำจำกัดความ"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "โปรไฟล์ผู้เขียน"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "รูปภาพ ชื่อ ประวัติ และลิงก์ของผู้เขียน หรือของผู้ใช้ที่เลือก"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "ประวัติย่อ"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "โปรไฟล์"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "เกี่ยวกับ"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "ปุ่มแชท WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "ปุ่มลอยที่มุมของหน้าจอเพื่อเปิดแชท WhatsApp กับคุณ"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "แชท"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "ลอยตัว"
 
 #: blocks/widget/block.json
 msgctxt "block title"

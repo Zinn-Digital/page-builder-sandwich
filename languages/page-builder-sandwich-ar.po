@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "حفظ كنموذج قابل لإعادة الاستخدام"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "فاحص إمكانية الوصول"
 
@@ -990,6 +994,7 @@ msgstr "← اختيار مزود مختلف"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "العنوان"
 
@@ -1043,6 +1048,8 @@ msgstr "اختبار"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "إزالة"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "تحديث قوائم النماذج من المزودين"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "صور"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "متوقف"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "فتح"
 
@@ -1448,6 +1457,7 @@ msgstr "لم يتم تقديم أي طلبات ذكاء اصطناعي بعد."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "تمّت"
 
@@ -1515,7 +1525,11 @@ msgstr "محاولات كثيرة جداً. يرجى المحاولة مرة أ�
 msgid "Something went wrong. Please contact the admin."
 msgstr "حدث خطأ ما. يرجى الاتصال بالمسؤول."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "ربط"
 
@@ -1538,52 +1552,393 @@ msgstr "هذه العائلة غير مخزنة."
 msgid "Removed."
 msgstr "أُزيلَت."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "هذا ليس اسم عائلة خط صالح."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "لم يُرجع Google Fonts تلك العائلة. تحقق من الاسم وحاول مرة أخرى."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "تعذر تنزيل ملفات الخطوط أو حفظها. تحقق من أن مجلد الرفع قابل للكتابة."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "تعذر حفظ ورقة أنماط الخط. تحقق من أن مجلد الرفع قابل للكتابة."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "تجاهل هذا الإشعار"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(يفتح في علامة تبويب جديدة)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "تم:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "للقيام بذلك:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "فهرس المصطلحات"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "مققي %1$s من %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "التقدم"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "نسخ الرمز"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "تم النسخ"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "هذا العنصر غير متوفر على هذا الموقع."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "هاتف"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "خلاصس آر اِس اِس"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "موقع الكتروني"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "رابط"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (يفتح في علامة تبويب جديدة)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "مقّيم بـ %d من أصل 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(موصى به)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "مشمول"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "غير مدرج"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "جدول المقارنة"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "اتصل بالرقم %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "البريد الإلكتروني %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "النص %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "الدردشة عبر واتساب"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "اتصل بنا"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "تحدث معنا على واتساب"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "هذا النموذج غير متوفر في الوقت الحالي."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "لا يمكن عرض هذا النموذج لأن %s غير نشط."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "ربط: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "يؤدي عرض الخريطة إلى تحميلها من OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "إظهار الخريطة"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "افتح الخريطة على OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "تقويم الحجز من %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "يؤدي عرض تقويم الحجز إلى تحميله من %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "عرض تقويم الحجوزات"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "حجز في %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "رمز الاستجابة السريعة لـ %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "تصميم"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "المحتوى"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "وسائط"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "التسويق"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "موقع"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "البيانات"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "المشاركات ذات الصلة"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "تفاصيل المنشور"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "بواسطة"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "منشور"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "مُحدَّث"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "في"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "وسم"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "قراءة لمدة %d دقيقة"
+msgstr[1] "قراءة في %d دقيقة"
+msgstr[2] "قراءة في %d دقيقة"
+msgstr[3] "قراءة في %d دقيقة"
+msgstr[4] "قراءة في %d دقيقة"
+msgstr[5] "قراءة في %d دقيقة"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "لا توجد تعليقات بعد"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "تعليق واحد (%d)"
+msgstr[1] "%d تعليق"
+msgstr[2] "%d تعليق"
+msgstr[3] "%d تعليق"
+msgstr[4] "%d تعليق"
+msgstr[5] "%d تعليق"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "خريطة الموقع"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(بدون عنوان)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "جميع المنشورات بواسطة %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "هذا المحتوى محمي. أدخل كلمة المرور لرؤيته."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "كلمة المرور هذه غير صحيحة. حاول مرة أخرى."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "عرض المحتوى"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "لا يمكن إلغاء تأمين هذه الصفحة."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "محاولات كثيرة جداً. انتظر بضع دقائق ثم حاول مرة أخرى."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "يجب أن تتراوح كلمة المرور بين 4 و200 حرف."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "المزيد"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "إغلاق"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "علامة التبويب %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "المحتويات"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2041,10 @@ msgstr "تعديل باستخدام Sandwich Studio"
 msgid "Blank canvas"
 msgstr "لوحة فارغة"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "الانتقال إلى المحتوى"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "يجب أن يكون عرض الجهاز اللوحي رقماً صحيحاً بالبكسل من 480 إلى 2560."
@@ -1760,7 +2119,11 @@ msgid "Uploaded icons"
 msgstr "أيقونات محملة"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "أيقونة"
 
@@ -2553,6 +2916,8 @@ msgstr "%s هو عنوان البريد الإلكتروني لعميلي"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "رمز"
 
@@ -3048,13 +3413,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "تعديل"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "البريد الإلكتروني"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "عنوان البريد الإلكتروني"
 
@@ -3104,6 +3465,10 @@ msgstr "تفعيل وضع العلامة البيضاء"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3126,6 +3491,7 @@ msgstr "أدخل عنوان البريد الإلكتروني الجديد"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "خطأ"
 
@@ -3725,6 +4091,7 @@ msgstr "تم وضع المنتجات أدناه في وضع الأمان لأن�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3828,6 +4195,7 @@ msgstr "يتطلب هذا المكون الإضافي إصداراً أحدث م
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "لا"
 
@@ -4814,6 +5182,13 @@ msgstr "وسائل التواصل الاجتماعي (فيسبوك، تويتر�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5099,6 +5474,9 @@ msgstr "التابع الزمني"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "العنوان"
 
@@ -5174,6 +5552,8 @@ msgstr "ما رأيك في %1$s حتى الآن؟ جرب جميع ميزات %2$
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "النوع"
@@ -5289,6 +5669,7 @@ msgstr "المستخدمون"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "القيمة"
@@ -5343,6 +5724,7 @@ msgstr "عرض الميزات المدفوعة"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "تحذير"
 
@@ -5669,6 +6051,7 @@ msgid "Optional"
 msgstr "اختياري"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "خطة"
 
@@ -5993,18 +6376,26 @@ msgstr "أصغر جداً"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "صغير"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "متوسط"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "كبير"
 
@@ -6017,7 +6408,9 @@ msgid "Huge"
 msgstr "ضخم"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6339,16 +6732,9 @@ msgid "The trial could not be started."
 msgstr "لم يُمكن بدء الفترة التجريبية."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "ميزة"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "مشمول"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "غير مدرج"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6707,10 +7093,6 @@ msgstr "عنوان تسجيل الدخول"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "اسم المستخدم"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "كلمة المرور"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7122,15 +7504,62 @@ msgstr "بدأت عملية التراجع. وهي مستمرة في الخلف�
 msgid "Undo all conversions"
 msgstr "التراجع عن كافة التحويلات"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "عنصر"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "يفتح عند تحميل الصفحة"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "العنوان هو عنوان رئيسي"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "اجعل العنوان عنواناً رئيسياً عندما تكون العناصر أجزاء من الصفحة، حتى يتمكن الزوار من الانتقال فيما بينها."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "العنوان %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "عنوان السؤال أو القسم"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "مجموعة طي"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "عنصر واحد مفتوح في كل مرة"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "وضع علامة كقسم للأسئلة الشائعة لمحركات البحث"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "يضيف بيانات منظمة للأسئلة الشائعة مُنشأة من العناوين (الأسئلة) ونصوصها (الإجابات)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "تنبيه"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "معلومات"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "نجاح"
 
@@ -7139,6 +7568,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "يتم إعلان التحذيرات والأخطاء لمستخدمي قراءة الشاشة على الفور؛ بينما تُقراءة إشعارات المعلومات والنجاح عندما ينتهون مما يقومون به."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "إظهار الأيقونة"
 
@@ -7154,64 +7584,702 @@ msgstr "العنوان (اختياري)"
 msgid "Write the message…"
 msgstr "اكتب الرسالة..."
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "قسم — قسم موضوعي"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "المركز"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — بلا معنى"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "شارة"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "محتوى تمهيدي"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "اللون"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "التذييل — المحتوى الختامي"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "لون السمة المميزة"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "مقال — محتوى مستقل بذاته"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "حيادي"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "جانبي — محتوى ذو صلة"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "الموضع"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — المحتوى الرئيسي (مرة واحدة لكل صفحة)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "تسمية"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "التنقل — روابط التنقل"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "تقويم الحجوزات"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "كومة (صندوق مرن، عمود)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "خدمة"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "صف (فليكس بوكس)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "عنوان صفحة الحجز"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "شبكة"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "على سبيل المثال %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "ما يُعد التقويم مخصصاً له، حيث تقرأه قارئات الشاشة ويُعرض تحته."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "هذا ليس عنوان صفحة حجز %s، لذلك لن يتم عرض أي شيء على الصفحة."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "معاينة التقويم"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "عنوان الرابط"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "يظهر الزر عندما يحتوي على عنوان تسمية وعنوان في الوقت نفسه."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "فتح في علامة تبويب جديدة"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "دعوة لاتخاذ إجراء"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "التخطيط"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "الأزرار ادناه"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "أزرار بجانب النص"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "محاذاة"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "الزر الرئيسي"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "الزر الثاني"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "عنوان…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "جملة واحدة عن سبب..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "الزر الثاني (اختياري)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "قائمة التحقق"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "لون العلامة"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "الأسطر"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "السطر %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "المهمة..."
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "إضافة سطر"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "اللغة"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "الاكتشاف تلقائياً"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "بدون تمييز"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "اسم الملف"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "تظهر فوق الكود، مثل functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "أرقام الأسطر"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "زر النسخ"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "التفاف الأسطر الطويلة"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "اكتب الكود أو الصقه…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "نص"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "أعمدة"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "العمود %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "تمييز %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "إضافة عمود"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "صفوف"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "الصفْد %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "إضافة صف"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "تسمية توضيحية (ما يتم مقارنته)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "نوع الخلية: %s. تغيير"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "مكالمة هاتفية"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "رسالة نصية"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "واتساب"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "أزرار"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "رقم الهاتف، مع رمز الدولة"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "نص الزر"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "إزالة هذا الزر"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "إضافة زر"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "رسالة واتساب للبدء بها (اختياري)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "أزرار الاتصال"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "أضف رقم هاتف أو عنوان بريد إلكتروني أو رقم واتساب في الشريط الجانبي."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "عنوان مزدوج"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "مستوى العنوان"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "استخدم الوسم H1 مرة واحدة في كل صفحة، لعنوانها الرئيسي."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "النظرة الثانية"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "لون التمييز"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "تدرج لوني"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "خطوط عريضة"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "تسطير"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "الجزء الثاني في سطر مستقل"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "الجزء الاول"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "الجزء الثاني"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "قلم تحديد"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "تسطير سميك"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "خلفية"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "تمييز"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "إزالة التمييز"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "حرف استهلالي كبير"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "الحرف الأول كبير"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "بالنسبة للحرف الأول في مربع، اختر نمط \"الحرف الاستهلالي في مربع\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "حرف استهلالي كبير داخل صندوق"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "شريط التمييز"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "اقتباس بارز (شريط مميز)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "اقتباس من النص، يُعرض بحجم كبير بجانب شريط ملون لجذب الانتباه."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "اقتباس"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "قائمة الميزات"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "على الهواتف، تتكدس الميزات دائمًا."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "الميزات"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "ميزة %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "أيقونة خاصة"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "ميزة…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "صفه…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "إضافة ميزة"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "قم بتثبيت وتنشيط Contact Form 7 أو WPForms أو Gravity Forms أو Fluent Forms، ثم اختر أحد نماذجها من هنا."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "إضافة النموذج"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "اختر…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "نموذج"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "اختر نموذجا..."
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "لا يحتوي %s على أي نماذج بعد"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s غير نشط على هذا الموقع، لذا لا يمكن عرض هذا النموذج."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "تعذر تحميل قائمة النماذج."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "نمط النموذج"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "حقول"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "محدد بخطوط عريضة"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "ممتلئ"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "تحت خط"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "عرض الزر"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "مطابقة النص"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "العرض الكامل"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "تأتي الألوان والخطوط والمباعدة والزوايا من تصميم موقعك وإعدادات تصميم هذه الكتلة."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "اعرض نموذجاً من الإضافة الخاصة بنماذجك، مصمماً ليتطابق مع مظهر موقعك."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "هل تحتاج إلى ملحق نماذج؟ Contact Form 7 مجاني."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "مسرد الألفاظ"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "فرز من الأألف إلى الياء"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "تعرض الصفحة المصطلحات بترتيب أبجدي؛ وهنا تبقى بالترتيب الذي كتبتها به."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "عرض فهرس من الألف إلى الياء"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "ربط المصطلحات المستخدمة في أماكن أخرى في هذه الصفحة"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "في المرة الأولى التي يظهر فيها كل مصطلح في نص الصفحة، يرتبط بتعريفه. تترك العناوين والأزرار والتعليمات البرمجية والروابط الموجودة كما هي."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "الشروط"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "المدة %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "المدة"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "ماذا يعني هذا…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "إضافة مصطلح"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "قائمة الأيقونات"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "واحد تحت الآخر"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "جنباً إلى جنب"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "عنصر القائمة…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "صندوق المعلومات"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "أو اختر أي أيقونة من المكتبة:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "نص الرابط"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "وضح إلى أين يودّي الرابط (مثل \"اعرض أسعارنا\")، ولا تقل \"اقرأ المزيد\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "جملة أو جملتان…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "قسم — قسم موضوعي"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — بلا معنى"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "محتوى تمهيدي"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "التذييل — المحتوى الختامي"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "مقال — محتوى مستقل بذاته"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "جانبي — محتوى ذو صلة"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — المحتوى الرئيسي (مرة واحدة لكل صفحة)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "التنقل — روابط التنقل"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "كومة (صندوق مرن، عمود)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "صف (فليكس بوكس)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "شبكة"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "جارٍ التعديل: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "ترتيب العناصر الفرعية كـ"
 
@@ -7219,7 +8287,7 @@ msgstr "ترتيب العناصر الفرعية كـ"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7227,70 +8295,50 @@ msgstr "ترتيب العناصر الفرعية كـ"
 msgid "Inherited (%s)"
 msgstr "موروث (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "فليكس بوكس"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "كتل متراكمة"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "أعمدة"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "اسحب داخل لوحة الرسم، أو اكتب"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "عرض المحتوى"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "مؤطر (عرض محتوى السمة)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "العرض الكامل"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "الحد الأدنى للارتفاع"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "وسم HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "رابط"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "اجعل الكتلة بأكملها رابطاً إلى"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "نص الرابط لقارئات الشاشة"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "ما يقوم به الرابط، للزوار الذين لا يمكنهم رؤية المربع."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "فتح في علامة تبويب جديدة"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "لا تضع روابط أو أزراراً داخل كتلة مرتبطة: الرابط داخل الرابط لا يعمل في المتصفحات."
 
@@ -7322,14 +8370,143 @@ msgstr "+ صف"
 msgid "− Row"
 msgstr "صف -"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "موقع الاستضافة"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "الصق الإاحداثيات أو رابط OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "على موقع openstreetmap.org، ابحث عن المكان، ثم انسخ العنوان من شريط المتصفح، أو انقر بزر الماوس الأيمن على الخريطة واختر \"إظهار العنوان\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "خط العرض"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "خط الطول"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "تكبير"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "اسم المكان"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "تظهر تحت الخريطة وتتم قراءتها بواسطة قارئات الشاشة."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "الصق الإداثيات (على سبيل المثال 51.5074, -0.1278) أو رابط خريطة الشارع المفتوح (OpenStreetMap)."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "الإداثيات أو الرابط"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "معاينة الخريطة"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "تحقق من %1$s، %2$s على OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "المؤلف"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "تاريخ النشر"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "تاريخ التحديث (عندما يختلف)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "التصنيفات"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "العلامات"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "وقت القراءة"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "عدد التعليقات"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "التفاصيل المراد إظهارها"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "اختر تفصيلاً واحداً على الأقل للعرض."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "شريط التقدم"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "الحد الأقصى"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 للنسبة المئوية؛ أي رقم آخر للعدد، مثل 8 من 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "إظهار النسبة المئوية"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "تم تعيين كلمة مرور. يرى الزوار نموذج كلمة مرور بدلاً من هذا المحتوى حتى يقوموا بإدخالها."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "لم يتم تعيين كلمة مرور بعد، لذا لا يرى الزوار شيئاً هنا."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "كلمة مرور جديدة"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "تعيين كلمة المرور"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "تم تعيين كلمة المرور. احفظ الصفحة لتطبيقها؛ سيحتاج الزوار الذين قاموا بإلغاء قفلها إلى كلمة المرور الجديدة."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "إذا تم إيقاف Page Builder Sandwich في أي وقت، فسيتم عرض هذا المحتوى للجميع."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "الرسالة فوق نموذج كلمة المرور (اختياري)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "تبديل"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "تسمية"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7339,30 +8516,698 @@ msgstr "يتم قراءتها بواسطة برامج قراءة الشاشة، 
 msgid "Show label"
 msgstr "إظهار التسمية"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "عنوان موقع الكتروني أو نص"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "رمز الاستجابة السريعة"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "وصف لبرامج قراءة الشاشة"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "اتركه فارغاً لاستخدام \"رمز الاستجابة السريعة لـ\" مع النص."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "اكتب عنوان ويب، أو رابط هاتف (tel:)، أو أي نص."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "هذا أطول من أن يتم تضمينه في رمز الاستجابة السريعة (QR). يرجى اختصاره."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "إضافة تعليق توضيحي"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "شريط تقدم القراءة"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "حافة النافذة"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "الأعلى"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "أسفل"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "تظهر أسفل النافذة أثناء تمرير الزوار للشاشة."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "يتم عرضها أعلى النافذة أثناء تمرير الزوار للصفحة."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "كم العدد"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "مرتبطة بـ"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "التصنيفات أو الوسوم"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "عندما لا يكون هناك أي ارتباط، اعرض الأحدث بدلاً من ذلك"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "عنوان"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "اتركه فارغاً من أجل \"المناشير ذات الصلة\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "إظهار الصورة البارزة"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "عرض التاريخ"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "عرض ملخص"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "لا توجد منشورات تشارك هذه المنشورات في التصنيفات أو الوسوم بعد. عندما تتوفر بعضها، ستظهر هنا."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "نافذة منبثقة"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "لوحة جانبية منزلقة"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "الحجم"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "ينزلق من جهة"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "البداية هي الجانب الذي تبدأ منه القراءة: اليسار بالإنجليزية، واليمين بالعربية."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "الإغلاق عند النقر على الصفحة الخلفية"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "عنوان النافذة"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "علامة صح"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "دائرة"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "حذف"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "نقطة"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "سهم"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "تمييز"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "لون الأيقونة"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "مثل النص"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "السمة الأساسية"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "المظهر الثانوي"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "تباين السمات"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "حافظ على ترتيب العناوين في الصفحة: اجعل العنوان أدنى بمستوى واحد من القسم الذي يقع فيه."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "اختر الأيقونة"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "استخدام الأيقونة الافتراضية"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "اختر أيقونة"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "نقل إلى أعلى"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "تحريك إلى الأسفل"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "عرض عنوان لكل نوع"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "لم يتم نشر أي شيء بالأنواع التي اخترتها."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "روابط"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "رابط %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "شبكة"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "عنوان ملف التعريف، أو mailto:you@example.com، أو tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "الاسم يُقرأ لبرامج قراءة الشاشة"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "أقونة أخرى"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "إضافة رابط"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "معاينة"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "التصميم"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "أيقونة فقط"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "الشكل"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "مربع مستدير الزوايا"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "مربع"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "فتح الملفات الشخصية في علامة تبويب جديدة"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "تقييم بالنجوم"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "التقييم"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "عدد النجوم"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "إظهار الرقم"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "الخطوات"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "إلى أسفل الصفحة"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "جنباً إلى جنب (عناصر متراصة على الهواتف)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "لون الرقم"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "ترتيب الخطوات"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "الخطوة %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "الخطوة…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "ماذا تفعل…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "إضافة خطوة"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "علامة تبويب"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "أضف عناوين إلى الصفحة وسيتم سردها هنا."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "جدول المحتويات"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "من مستوى العنوان"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "إلى مستوى العنوان"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "مرقم"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "قابل للطي"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "بدء مطوياً"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "تمييز القسم الذي يتم قراءته"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "علامات التبويب"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "اسم قارئات الشاشة"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "اختياري. يوضح محتوى علامات التبويب، مثل \"الخطط\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "فتح عند تحميل الصفحة"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "علامات التبويب على الجانب"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "إضافة علامة تبويب"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "شهادة عميل"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "استبدال الصورة"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "اختر صورة"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "إزالة الصورة"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "وصف الصورة"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "اتركه فارغاً عندما تُظهر الصورة الشخص المسمى بجانبها فقط."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "تقييم بالنجوم (0 = لا يوجد)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "الاسم الموجود تحت الاقتباس"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "صورة بجانب الاقتباس"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "ما قاله العميل…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "الدور أو الشركة"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "تلميح"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "نص تلميح أدوات"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "اجعله قصيراً: جملة أو جملتان. تقرأه برامج قراءة الشاشة مع الكلمة التي يوضحها."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "أظهره"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "أعلى"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "أدناه"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "كلمة أو عبارة"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "تطبيق"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "الملف الشخصي"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "من هو صاحب الملف الشخصي"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "كاتب المنشور"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "عرض صورة الملف الشخصي"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "عرض السيرة الذاتية"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "عرض الروابط للمنشورات والموقع الإلكتروني"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "ملف الكاتب"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "اختر الملف الشخصي الذي تريد عرضه."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "رقم واتساب، مع رمز الدولة"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "على سبيل المثال +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "رسالة للبدء بها (اختياري)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "أظهر النص بجانب الأيقونة"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "الزاوية"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "الطرف السفلي (الأيمن باللغة الإنجليزية)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "أسفل البداية (اليسار بالإنجليزية)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "أضف رقم واتساب الخاص بك في الشريط الجانبي. حتى ذلك الحين لن يتم إظهار الزر على الصفحة."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "على الصفحة، يطفو هذا الزر في زاوية سفلية من الشاشة."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "وسم الاختصار"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "استخدم الحروف والأرقام والشرطات والشرطات السفلية فقط."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "اسم السمة"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "إضافة سمة"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "رمز مختصر"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "سمات أخرى"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "اختر وسماً مختصراً في إعدادات الكتلة."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "معرض الصور"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "حجم الصورة"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "صورة مصغرة"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "الحجم الكامل"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "رابط إلى"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "صفحة المرفق"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "ملف وسائط"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "صوت"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "فيديو"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "عنوان الملف"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "حلقة"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "تشغيل تلقائي"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "صورة الغلاف"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "قائمة تشغيل"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "معرفات الوسائط، مفصولة بفواصل"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "عرض قائمة المقاطع الصوتية"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "تضمين"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "عنوان للتضمين"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "أقصى عرض"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "تسمية توضيحية"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML الصورة والتعليق"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "العرض"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "نصيحة: تعرض كتلة النموذج هذا النموذج مصمماً ليطابق موقعك."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "عرض عنوان النموذج"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "عرض وصف النموذج"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "إرسال دون إعادة تحميل الصفحة"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7383,123 +9228,108 @@ msgstr "اختيار ملف"
 msgid "— Default —"
 msgstr "— الافتراضي —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "التنسيق المتقدم"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS مضمن"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "إعلانات CSS، على سبيل المثال: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "التأثيرات (الفئات القديمة)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "أسماء التأثيرات مفصولة بمسافات والمرحلة من الإصدارات القديمة، على سبيل المثال: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "صف"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "العرض"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "العرض الكامل، مع إبقاء المحتوى في المنتصف"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "عنوان الرابط"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "علاقة الرابط"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "محاذاة"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "يسار"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "المركز"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "يمين"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "نص الزر"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "إضافة نص..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "موضع"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "على سطر منفصل"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "في السطر، بجانب محتوى آخر"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "تلقائي (سطر خاص به في المستوى العلوي للصفحة)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "تسمية وصول"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "اتركه فارغاً لأيقونة تزيينية."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "اختر أيقونة في إعدادات الكتلة."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "اسم إعداد جديد"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "على سبيل المثال: عنوان أو نص"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "إضافة إعداد"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "أداة"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "اختر أداة تفاعلية"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "منطقة الودجت"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "اختر منطقة أداة ذكية"
 
@@ -7522,6 +9352,150 @@ msgstr "يتم تغيير حجم هذا العنصر المضمّن تلقائي
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "انزياح التخطيط"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "لا تصف هذه الأداة إعداداتها، لذا يتم تحريرها كأزواج من الاسم والقيمة."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "مشكلة"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "تحقق"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "إظهار الكتلة"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "استخدم لون سمة مقروءًا"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "اجعله H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "النص البديل"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "حفظ النص البديل"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "هذه الصورة للتزيين"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "جاري التحقق…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "لم يتم العثور على مشاكل في إمكانية الوصول على هذه الصفحة."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s، %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "مشكلة %d"
+msgstr[1] "%d مشكلة"
+msgstr[2] "%d مشكلة"
+msgstr[3] "%d مشكلة"
+msgstr[4] "%d مشكلة"
+msgstr[5] "%d مشكلة"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "عنصر واحد للمراجعة (%d)"
+msgstr[1] "%d من الأمور التي يجب التحقق منها"
+msgstr[2] "%d من الأمور التي يجب التحقق منها"
+msgstr[3] "%d من الأمور التي يجب التحقق منها"
+msgstr[4] "%d من الأمور التي يجب التحقق منها"
+msgstr[5] "%d من الأمور التي يجب التحقق منها"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "التحقق مجدداً"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "يكشف الفحص التلقائي عن مشكلات عديدة ولكن ليس كلها. جرب الصفحة أيضاً باستخدام لوحة المفاتيح وحدها ومع قارئ الشاشة."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "التناقض اللوني للنص هو %1$s:1؛ ويحتاج إلى %2$s:1 على الأقل ليكون قابلاً للقراءة."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "اضغط هنا، هنا، اقرأ المزيد، المزيد، رابط، هذا الرابط، اعلم المزيد، اذهب"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "الرابط لا يحتوي على نص، لذا يعلن قارئ الشاشة عن \"رابط\" فقط. أضف نصاً أو تسمية."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "نص الرابط \"%s\" لا يوضح إلى أين يوجه. صف الوجهة بدلاً من ذلك."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "يحتوي العنصر على ترتيب تبويب (tabindex) موجب، مما يؤدي إلى تغيير ترتيب لوحة المفاتيح بعيداً عن ترتيب القراءة. استخدم 0 أو قم بإزالته."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "لا يمكن الوصول إلى عنصر قابل للنقر باستخدام لوحة المفاتيح. استخدم زرًا أو رابطًا حقيقيًا."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "الإطار المضمن ليس له عنوان، لذلك لا يمكن لقارئ الشاشة تحديد ما هو."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "حقل النموذج ليس له تسمية، لذلك لا يتم الإعلان عن الغرض منه."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "هذا العنوان فارغ. يتنقل مستخدمو قارئات الشاشة باستخدام العناوين؛ قم بإزالته أو أضف نصاً."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "عنوان الصفحة هو في الواقع الوسم H1؛ استخدم الوسم H2 للمستوى الأعلى للمحتوى."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "يتخطي هذا الـ H%1$d مستويًا؛ الذي قبله هو H%2$d. اجعله H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "هذه الصورة لا تحتوي على نص بديل. قم بوصفها، أو ضع علامة عليها كزخرفية إذا كانت لا تضيف شيئاً."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "إغلاق اللوحة"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7596,18 +9570,6 @@ msgstr "مخصص"
 msgid "Width / height"
 msgstr "العرض / الارتفاع"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "الأعلى"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "أسفل"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7620,20 +9582,6 @@ msgstr "صورة موروثة — استبدال"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "إزالة الصورة"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "الموضع"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "الحجم"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7699,22 +9647,6 @@ msgstr "كل جانب على حدة"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "الجانب"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "التصميم"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "اللون"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7964,14 +9896,6 @@ msgstr "%1$s (%2$d مجموعة)"
 msgid "Replace icon"
 msgstr "استبدال الأيقونة"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "اختر الأيقونة"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "اختر أيقونة"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "لا توجد أي أيقونات مطابقة."
@@ -7983,10 +9907,6 @@ msgstr "عادي"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "العلامات التجارية"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "محدد بخطوط عريضة"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8115,21 +10035,9 @@ msgstr "لون النص"
 msgid "Cursor"
 msgstr "المؤشر"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "سهم"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "مؤشر"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "نص"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8287,10 +10195,6 @@ msgstr "اسم المنطقة"
 msgid "Named areas"
 msgstr "المناطق المسماة"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "صفوف"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "الارتفاع"
@@ -8408,10 +10312,6 @@ msgstr "ضبط النص"
 msgid "Decoration"
 msgstr "زخرفة"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "تسطير"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "خط علوي"
@@ -8494,19 +10394,9 @@ msgstr "مخروطي"
 msgid "Angle (degrees)"
 msgstr "الزاوية (بالدرجات)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "الشكل"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "قطع ناقص"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "دائرة"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8542,10 +10432,6 @@ msgstr "تشبع الخلفية (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "صبغ (استخدم لوناً شفافاً)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "مربع مستدير الزوايا"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "كائن ثنائي"
@@ -8562,10 +10448,6 @@ msgstr "مثلث"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "الماس"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "تمييز"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9444,11 +11326,6 @@ msgstr "مسح"
 msgid "The change could not be saved."
 msgstr "لم يتم حفظ التغيير."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "إغلاق اللوحة"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "السمة الافتراضية"
@@ -9505,9 +11382,49 @@ msgstr "الفئات، والرموز، والوضع الداكن، ومجموع
 msgid "Open the Site Editor’s styles"
 msgstr "افتح أنماط محرر المواقع"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "عنوان"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "عنوان بارتفاع أسطر أضيق، مصمم باستخدام علامة تبويب الأنماط."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "فقرة من النص، منمقة باستخدام علامة التبويب \"النمط\"."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "صورة"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "صورة ذات زوايا مستديرة، منسقة باستخدام علامة تبويب الأسلوب."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "فيديو من مكتبة الوسائط، منسق باستخدام علامة التبويب \"التصميم\"."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "فاصل"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "مسافة فارغة بين الكتل؛ قم بتعيين ارتفاع مختلف لكل حجم شاشة في علامة التبويب \"التصميم\"."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "فاصل"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "خط أفقي بين الأقسام، مُنسّق باستخدام علامة التبويب \"التصميم\"."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "محتوى من موقع آخر (فيديو، منشور، خريطة) عن طريق لصق عنوانه."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "عدة صور في شبكة، منسقة باستخدام علامة التبويب \"النمط\"."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9541,10 +11458,6 @@ msgstr "قائمة"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "أقراص"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "أزرار"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9589,10 +11502,6 @@ msgstr "إخفاء اللغات التي لم تُترجم إليها هذه ا�
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "ترتيب عمودياً"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "خلفية"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9651,11 +11560,6 @@ msgstr "إعدادات الحظر"
 #, js-format
 msgid "Add block: %s"
 msgstr "إضافة كتلة: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(بدون عنوان)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9731,10 +11635,6 @@ msgstr "إيقاف الوضع الآمن"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "تفعيل الوضع الآمن (إيقاف الإضافات الأخرى، لك وحدك، في الاستوديو فقط)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "منشور"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10086,11 +11986,6 @@ msgstr "اسم المنشئ"
 msgid "Visual editor name"
 msgstr "اسم المحرر المرئي"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "المؤلف"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10176,10 +12071,6 @@ msgstr[5] "تم التراجع: تم استعادة %d صفحة."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "استبدال"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "روابط"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10293,10 +12184,6 @@ msgstr "السماح للعميل بالتعليق على هذه الصفحة"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "يمكن لأي شخص لديه الرابط رؤية هذه الصفحة، حتى قبل نشرها، وترك تعليقات. لا يلزم إنشاء حساب."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "تم النسخ"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10567,6 +12454,52 @@ msgstr "انسخ الصور إلى مكتبة الوسائط الخاصة بهذ
 msgid "Show what will happen"
 msgstr "عرض ما سيحدث"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "عنصر الأكورديون"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "قسم واحد من الأكورديون: عنوان يفتح محتواه."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "قائمة قابلة للطي"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "أسئلة أو أقسام تفتح وتغلق. اختياريّاً واحدة تلو الأخرى، واختياريّاً مُصنّفة كقسم للأسئلة الشائعة لمحركات البحث."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "أكورديون"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "الأسئلة الشائعة"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "تبديل"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "طَيّ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "التفاصيل"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10583,6 +12516,7 @@ msgid "notice"
 msgstr "إشعار"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "رسالة"
@@ -10597,6 +12531,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "تحذير"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "شارة"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "تصص قصير مثل جديد، تخفيض أو أفضل قيمة."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "التسمية"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "وسم"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "كبسولة"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "جديد"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "تقويم الحجوزات"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "تقويم حجز Calendly أو Cal.com، يتم تحميله فقط عندما يطلبه الزائر."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "حجز"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "كليندلي"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "موعد"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "جدولة"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10608,6 +12607,7 @@ msgid "A link styled as a button."
 msgstr "رابط مصمم على شكل زر."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "زر"
@@ -10621,6 +12621,98 @@ msgstr "رابط"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "دعوة لاتخاذ إجراء"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "دعوة لاتخاذ إجراء"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "عنوان، وجملة، وراران أو زرّان يطلبان من الزائر اتخاذ إجراء."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "اتخاذ إجراء"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "شافت"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "التسجيل"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "قائمة التحقق"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "قائمة بالمهام، كل واحدة منهن محددة كمنجزة أو لا تزال قيد التنفيذ، بالكلمات لقارئات الشاشة وكذلك بعلامة صح."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "قيد التنفيذ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "المهام"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "علامات التجزئة"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "قائمة"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "رمز البرمجة"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "قائمة أكواد برمجية مع تمييز بناء الجملة وأرقام الأسطر وزر نسخ. تبقى قابلة للقراءة في حال تم إيقاف تشغيل المكون الإضافي."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "رمز البرمجة"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "بنية الجملة"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "تمييز"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "مقتطف"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "البرمجة"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10644,6 +12736,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "تخطيط"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "جدول المقارنة"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "الخطط أو المنتجات جنبا إلى جنب، مع علامات بنعم ولا يقرأها قارئو الشاشة ككلمات."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "قارن"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "الأسعار"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "الخطط"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "جدول"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "الميزات"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "أزرار الاتصال"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "أزرار لتمكين العملاء من الاتصال بك، أو مراسلتك عبر البريد الإلكتروني أو الرسائل النصية أو تطبيق واتساب."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "اتصال"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "اتصال"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "هاتف"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "البريد الإلكتروني"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "واتساب"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "رسائل نصية قصيره"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10661,11 +12831,13 @@ msgid "container"
 msgstr "حاوية"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "صندوق"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10682,6 +12854,52 @@ msgstr "فليكس بوكس"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "الأعمدة"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "عنوان مزدوج"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "عنوان من جزأين، الثاني مميز بلون، أو تدرج، أو إطار، أو خط تحتي."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "عنوان"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "العنوان"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "التدرج اللوني"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "قائمة الميزات"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "الميزات في شبكة، تحتوي كل منها على أيقونة وعنوان وصف قصير."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "المزايا"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "الخدمات"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10725,6 +12943,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "نص"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "نموذج"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "يعرض نموذجاً من Contact Form 7 أو WPForms أو Gravity Forms أو Fluent Forms، مصمماً ليناسب موقعك."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "نموذج"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "دبليو بي فورمز"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "جرافيتي فورمز"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "مسرد المصطلحات"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "المصطلحات وتفسيراتها، مرتبة من الألف إلى الياء، وكل منها له رابطه الخاص. ويمكن ربط المذكور الأول لكل مصطلح في الصفحة بتعريفه."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "الشروط"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "التعريفات"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "القاموس"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "قائمة الأيقونات"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "قائمة تبدأ كل سطر منها بأيقونة: علامة صح، أو سهم، أو أي أيقونة من المكتبة."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "نقاط"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "أيقونات"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10745,6 +13043,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "SVG"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "صندوق المعلومات"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "أيقونة، وعنوان قصير، وجملة أو جملتان ورابط اختيار: للخدمات، أو المزايا، أو تفاصيل الاتصال."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "ميزة"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "خدمة"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "بطاقة"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10764,6 +13087,204 @@ msgstr "ترجمة"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "متعدد اللغات"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "ربط"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "خريطة لمكان من OpenStreetMap: بدون مفتاح، ولا يتم تحميل أي شيء من OpenStreetMap حتى يطلب الزائر الخريطة."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "ربط"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "الموقع"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "العنوان"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "خريطة الشارع المفتوحة"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "نافذة منبثقة"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "زر يفتح نافذة فوق الصفحة، مع أي كتل بداخلها."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "نافذة منبثقة"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "نافذة منبثقة"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "صندوق العرض"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "مربع حوار"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "لوحة جانبية منزلقة"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "زر يؤدي إلى انزلاق لوحة من جانب النافذة، مع أي كتل بداخلها."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "قائمة منزلقة جانباً"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "درج"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "الشريط الجانبي"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "لوحة التحكم"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "القائمة"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "تفاصيل المنشور"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "كاتب المنشور، والتواريخ، والتصنيفات، والوسوم، ووقت القراءة، وعدد التعليقات."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "الكاتب"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "التاريخ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "وقت القراءة"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "ميوتا"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "الكاتب"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "شريط التقدم"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "شريط يحمل تسمية يوضح مدى تقدم شيء ما، مثل مهارة أو هدف."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "تقدم"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "شريط"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "مهارة"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "الهدف"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "محتوى محمي بكلمة مرور"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "يحظر هذا الكتل الزوار إلا الذين لديهم كلمة المرور. حتى يقوموا بإدخالها، لا يتواجد المحتوى في الصفحة إطلاقاً."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "كلمة المرور"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "محمي"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "خاص"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "قفل"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "الأعضاء"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10789,6 +13310,86 @@ msgstr "فاتح"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "مخطط الألوان"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "رمز الاستجابة السريعة"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "رمز استجابة سريعة (QR) لعنوان ويب أو لأي نص، مرسوم على موقعك الخاص (لا يتم استخدام أي خدمة لرموز الاستجابة السريعة)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "رمز الاستجابة السريعة"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "رمز استجابة سريعة"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "الباركود"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "فحص"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "شريط تقدم القراءة"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "شريط رفيع على حافة النافذة يمتلئ أثناء قيام الزوار بالتمرير عبر الصفحة."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "جاري القراءة"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "التمرير"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "المقالات ذات الصلة"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "المناشير التي تشارك هذا المنشور في فئاته أو وسومه، مع صورها وتواريخها وملخصاتها."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "ذات صلة"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "المقالات"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "مماثل"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "المزيد"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10852,13 +13453,284 @@ msgstr "يعرض عناصر واجهة المستخدم في إحدى مناطق
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "الشريط الجانبي"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "منطقة الودجت"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "خريطة الموقع"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "صفحة تعرض كل صفحة ومنشور منشورين (وغير ذلك من المحتويات العامة)، مع الحفاظ على تسلسل صفحات الموقع."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "خريطة الموقع"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "خريطة الموقع"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "فهرس"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "كل الصفحات"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "أقسام التواصل الاجتماعي"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "روابط تؤدي إلى ملفاتك الشخصية، مرسومة باستخدام أيقونات الشبكات نفسها."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "اجتماعي"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "روابط"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "متابعة"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "ملفات التعريف"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "تقييم بالنجوم"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "تقييم معروض على شكل نجوم، بزيادات نصف نجمة."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "النجوم"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "التقييم"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "النتيجة"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "الخطوات"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "الخطوات المرقمة لعملية ما، بالترتيب، نزولاً في الصفحة أو جنباً إلى جنب."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "معالجة"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "كيفية"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "الخط الزمني"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "مرقم"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "علامة تبويب"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "علامة تبويب واحدة من كتلة علامات التتبويب: عنوانها ولوحتها."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "محتويات الجدول"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "قائمة بالعناوين الموجودة على الصفحة، يتم إنشاؤها تلقائياً، وترتبط بكل عنوان."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "جدول المحتويات"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "المحتويات"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "عناوين"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "علامات التبويب"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "محتوى في علامات التبويب: يتبدّل الزوار بين اللوحات باستخدام الفارة أو لوحة المفاتيح."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "علامات التبويب"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "أبواب مبوبة"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "لوحات"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "شهادة مستخدم"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "اقتباس من عميل يتضمن اسمه ودوره وصورته وتقييمًا اختياريًا بالنجوم."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "مراجعة"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "اقتباس"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "عميل"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "التعليقات"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "تلميح توضيحي"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "كلمة أو عبارة تعرض شرحاً قصيراً عند تمرير المؤشر أو التركيز بلوحة المفاتيح."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "تلميح"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "تلميح"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "التعريف"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "ملف تعريف الكاتب"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "صورة الكاتب، واسمه، ونبذته التعريفية وروابطه، أو تلك الخاصة بمستخدم محدد."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "نبذة تعريفية"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "ملف التعريف"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "حول"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "زر دردشة واتساب"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "زر عائم في زاوية الصفحة يفتح محادثة واتساب معك."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "دردشة"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "عائم"
 
 #: blocks/widget/block.json
 msgctxt "block title"

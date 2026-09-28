@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Сохранить как повторно используемый шаблон"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Проверка доступности"
 
@@ -991,6 +995,7 @@ msgstr "← Выбрать другого провайдера"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Адрес"
 
@@ -1044,6 +1049,8 @@ msgstr "Тест"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Удалить"
@@ -1097,6 +1104,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Обновите списки моделей от провайдеров"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Изображения"
 
@@ -1189,6 +1197,7 @@ msgid "turned off"
 msgstr "выключено"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Открыть"
 
@@ -1449,6 +1458,7 @@ msgstr "Запросы к ИИ еще не выполнялись."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Готово"
 
@@ -1516,7 +1526,11 @@ msgstr "Слишком много попыток. Пожалуйста, повт
 msgid "Something went wrong. Please contact the admin."
 msgstr "Что-то пошло не так. Пожалуйста, обратитесь к администратору."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Привязать"
 
@@ -1539,52 +1553,387 @@ msgstr "Эта семья не сохранена."
 msgid "Removed."
 msgstr "Удалено."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Указанное имя семейства шрифтов недействительно."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Шрифты Google не вернули этот набор. Проверьте название и повторите попытку."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Не удалось скачать или сохранить файлы шрифтов. Убедитесь, что папка загрузок доступна для записи."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Не удалось сохранить таблицу стилей шрифта. Убедитесь, что папка загрузок доступна для записи."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Скрыть это уведомление"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(откроется в новой вкладке)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Готово:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Задача:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Глоссарий"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Оценка: %1$s из %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Выполнение"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Копировать код"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Скопировано"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Этот виджет недоступен на этом сайте."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Эл. почта"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Телефон"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS-лента"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Ссылка"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (открывается в новой вкладке)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Оценка: %d из 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(рекомендуется)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Включено"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Не включено"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Таблица сравнения"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Позвонить %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Электронная почта %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Текст %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Написать в WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Связаться с нами"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Свяжитесь с нами в WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Эта форма сейчас недоступна."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Эта форма не может быть отображена, так как %s не активен."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Привязать: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Отображение карты загружает её из OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Показать карту"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Открыть карту на OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Календарь бронирования от %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Отображение календаря бронирования загружает его из %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Показать календарь бронирования"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Заказать на %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "QR-код для %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Дизайн"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Контент"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Медиафайлы"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Маркетинг"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Сайт"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Данные"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Похожие записи"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Сведения о посте"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "От"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Опубликовано"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Обновлено"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "В"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "С тегами"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "чтение: %d мин."
+msgstr[1] "Время чтения: %d мин."
+msgstr[2] "Время чтения: %d мин."
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Пока нет комментариев"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d комментарий"
+msgstr[1] "Комментарии: %d"
+msgstr[2] "Комментарии: %d"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Карта сайта"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(без названия)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Все записи пользователя %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Этот контент защищен. Введите пароль для просмотра."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Неверный пароль. Попробуйте еще раз."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Пароль"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Показать содержимое"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Эту страницу невозможно разблокировать."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Слишком много попыток. Подождите несколько минут и повторите попытку."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Длина пароля должна составлять от 4 до 200 символов."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Больше"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Закрыть"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Вкладка %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Содержимое"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1687,6 +2036,10 @@ msgstr "Редактировать в Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Пустой холст"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Перейти к содержимому"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Ширина планшета должна выражаться целым числом пикселей от 480 до 2560."
@@ -1761,7 +2114,11 @@ msgid "Uploaded icons"
 msgstr "Загруженные значки"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Иконка"
 
@@ -2554,6 +2911,8 @@ msgstr "%s — это адрес электронной почты моего к
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Код"
 
@@ -3048,13 +3407,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Изменить"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Эл. почта"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Адрес электронной почты"
 
@@ -3104,6 +3459,10 @@ msgstr "Включение режима white-label"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3126,6 +3485,7 @@ msgstr "Введите новый адрес электронной почты"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Ошибка"
 
@@ -3724,6 +4084,7 @@ msgstr "Нижеуказанные продукты переведены в бе
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3827,6 +4188,7 @@ msgstr "Для этого плагина требуется более нова�
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Нет"
 
@@ -4813,6 +5175,13 @@ msgstr "Социальные сети (Facebook, Twitter и т. д.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5098,6 +5467,9 @@ msgstr "Метка времени"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Заголовок"
 
@@ -5173,6 +5545,8 @@ msgstr "Как вам %1$s? Протестируйте все премиальн
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Тип"
@@ -5288,6 +5662,7 @@ msgstr "Пользователи"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Значение"
@@ -5342,6 +5717,7 @@ msgstr "Просмотреть платные функции"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Предупреждение"
 
@@ -5668,6 +6044,7 @@ msgid "Optional"
 msgstr "Необязательно"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Тарифный план"
 
@@ -5990,18 +6367,26 @@ msgstr "Очень малый"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Маленький"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Средний"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Большой"
 
@@ -6014,7 +6399,9 @@ msgid "Huge"
 msgstr "Огромный"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6330,16 +6717,9 @@ msgid "The trial could not be started."
 msgstr "Не удалось начать пробный период."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Функция"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Включено"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Не включено"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6695,10 +7075,6 @@ msgstr "Адрес для входа"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Имя пользователя"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Пароль"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7098,15 +7474,62 @@ msgstr "Отмена запущена. Она продолжается в фон
 msgid "Undo all conversions"
 msgstr "Отменить все преобразования"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Элемент"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Открывать при загрузке страницы"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Заголовок — это заголовок"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Сделайте заголовок заголовком уровня, когда элементы являются разделами страницы, чтобы посетители могли переходить между ними."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Заголовок %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Вопрос или название раздела"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Аккордеон"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Одновременно может быть открыт только один элемент"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Разметить как FAQ для поисковых систем"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Добавляет структурированные данные FAQ, созданные на основе заголовков (вопросов) и их текста (ответов)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Предупреждение"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Информация"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Успешно"
 
@@ -7115,6 +7538,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Предупреждения и ошибки озвучиваются пользователям программ экранного доступа немедленно, а информационные сообщения и сообщения об успехе зачитываются после того, как они завершат текущее действие."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Показать значок"
 
@@ -7130,64 +7554,702 @@ msgstr "Заголовок (необязательно)"
 msgid "Write the message…"
 msgstr "Напишите сообщение…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "раздел — тематический раздел"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Центр"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — без значения"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Значок"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "заголовок — вводный контент"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Цвет"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "нижний колонтитул — заключительный контент"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Акцент темы"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "статья — самостоятельный материал"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Нейтральный"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "боковая панель — связанный контент"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Позиция"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — основной контент (один раз на страницу)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Метка"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "навигация — ссылки навигации"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Календарь бронирования"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Стек (flexbox, столбец)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Сервис"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Ряд (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Адрес страницы бронирования"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Таблица"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Например, %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Назначение календаря, озвучиваемое программами чтения с экрана и отображаемое под ним."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Это не адрес страницы бронирования %s, поэтому на странице ничего не отобразится."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Предварительный просмотр календаря"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Адрес ссылки"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Кнопка отображается, когда у нее есть и текст, и адрес."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Открыть в новой вкладке"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Призыв к действию"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Макет"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Кнопки ниже"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Кнопки рядом с текстом"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Выравнивание"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Основная кнопка"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Вторая кнопка"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Заголовок…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Одна фраза о том, почему…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Вторая кнопка (необязательно)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Контрольный список"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Цвет галочки"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Строки"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Строка %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Задача…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Добавить строку"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Язык"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Определить автоматически"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Без подсветки"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Имя файла"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Отображается над кодом, например функции functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Номера строк"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Кнопка копирования"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Переносить длинные строки"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Напишите или вставьте код…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Текст"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Столбцы"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Столбец %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Подсветить %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Добавить столбец"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Строки"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Строка %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Добавить строку"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Подпись (что с чем сравнивается)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Тип ячейки: %s. Изменить"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Телефонный звонок"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Текстовое сообщение"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Кнопки"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Номер телефона с кодом страны"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Текст кнопки"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Удалить эту кнопку"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Добавить кнопку"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Сообщение WhatsApp для начала (необязательно)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Кнопки связи"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Добавьте номер телефона, адрес электронной почты или номер WhatsApp на боковую панель."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Двойной заголовок"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Уровень заголовка"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Используйте тег H1 один раз на страницу для основного заголовка."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Вторая часть вида"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Цвет акцента"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Градиент"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "План контура"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Подчеркивание"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Вторая часть с новой строки"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Первая часть"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "вторая часть"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Маркер"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Толстое подчеркивание"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Фон"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Подсветка"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Удалить выделение"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Буквица"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Большая заглавная буква"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Для первой буквы в рамке выберите стиль «Буквица в рамке»."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Буквица в рамке"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Цветная полоса акцента"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Цитата (акцентная полоса)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Цитата из текста, крупная и рядом с цветной полосой для привлечения внимания."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "Цитата"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Список функций"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "На телефонах функции всегда располагаются друг под другом."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Функции"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Функция %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Собственный значок"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Функция…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Опишите это…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Добавить функцию"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Установите и активируйте Contact Form 7, WPForms, Gravity Forms или Fluent Forms, а затем выберите одну из форм здесь."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Плагин форм"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Выберите…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Форма"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Выберите форму…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "У %s пока нет форм"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s неактивен на этом сайте, поэтому эта форма не может быть показана."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Не удалось загрузить список форм."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Стиль формы"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Поля"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "С контуром"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Заполнено"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Подчеркнутый"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Ширина кнопки"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Подогнать текст"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Во всю ширину"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Цвета, шрифты, отступы и углы берутся из дизайна вашего сайта и настроек этого блока."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Покажите форму из вашего плагина форм, оформленную в стиле вашего сайта."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Нужен плагин для форм? Contact Form 7 бесплатен."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Глоссарий"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Сортировка от А до Я"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "На странице термины отображаются в алфавитном порядке; здесь они остаются в том порядке, в котором вы их написали."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Показать алфавитный указатель"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Связанные термины, используемые на этой странице"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "При первом появлении каждого термина в тексте страницы он ведет на свое определение. Заголовки, кнопки, код и существующие ссылки остаются без изменений."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Условия"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Срок %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Срок"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Что это значит…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Добавить термин"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Список значков"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Друг под другом"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Рядом"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Элемент списка…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Информационный блок"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Или выберите любой значок из библиотеки:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Текст ссылки"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Укажите, куда ведет ссылка (например, «Посмотреть наши цены»), а не «Читать далее»."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Пара предложений…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "раздел — тематический раздел"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — без значения"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "заголовок — вводный контент"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "нижний колонтитул — заключительный контент"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "статья — самостоятельный материал"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "боковая панель — связанный контент"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — основной контент (один раз на страницу)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "навигация — ссылки навигации"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Стек (flexbox, столбец)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Ряд (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Таблица"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Редактирование: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Располагать дочерние элементы как"
 
@@ -7195,7 +8257,7 @@ msgstr "Располагать дочерние элементы как"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7203,70 +8265,50 @@ msgstr "Располагать дочерние элементы как"
 msgid "Inherited (%s)"
 msgstr "Наследуется (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Флексбокс"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Стопки блоков"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Столбцы"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Перетащите на холст или введите текст"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Ширина контента"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Свободная (ширина контента темы)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Во всю ширину"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Минимальная высота"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML-тег"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Ссылка"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Сделать весь блок ссылкой на"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Текст ссылки для программ чтения с экрана"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Назначение ссылки для посетителей, которые не видят блок."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Открыть в новой вкладке"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Не помещайте ссылки или кнопки внутрь связанного блока: ссылка внутри ссылки не работает в браузерах."
 
@@ -7298,14 +8340,143 @@ msgstr "+ Строка"
 msgid "− Row"
 msgstr "− Строка"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Разместить"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Вставьте координаты или ссылку на OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "На сайте openstreetmap.org найдите нужное место, затем скопируйте адрес из адресной строки браузера либо нажмите правой кнопкой мыши по карте и выберите «Показать адрес»."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Широта"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Долгота"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Масштаб"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Название места"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Отображается под картой и зачитывается программами чтения с экрана."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Вставьте координаты (например, 51.5074, -0.1278) или ссылку на OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Координаты или ссылка"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Просмотр карты"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Посмотрите %1$s, %2$s на OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Автор"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Дата публикации"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Дата обновления (если отличается)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Категории"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Теги"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Время чтения"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Количество комментариев"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Отображаемые данные"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Выберите хотя бы одну деталь для отображения."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Индикатор выполнения"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Максимум"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 для процента; любое другое число для количества, например 8 из 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Показывать процент"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Установлен пароль. Посетители видят форму ввода пароля вместо этого контента, пока не введут его."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Пароль еще не установлен, поэтому посетители ничего здесь не видят."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Новый пароль"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Задать пароль"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Пароль установлен. Сохраните страницу, чтобы применить его; посетители, разблокировавшие ее ранее, должны будут ввести новый."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Если Page Builder Sandwich когда-либо будет отключен, этот контент будет виден всем."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Сообщение над формой ввода пароля (необязательно)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Переключить"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Метка"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7315,30 +8486,698 @@ msgstr "Озвучивается программами чтения с экра
 msgid "Show label"
 msgstr "Показать метку"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Веб-адрес или текст"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR-код"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Описание для чтения с экрана"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Оставьте пустым, чтобы использовать «QR-код для» и текст."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Введите веб-адрес, ссылку на телефон (tel:) или любой текст."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Это слишком длинно для QR-кода. Укоротите текст."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Добавить подпись"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Индикатор чтения"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Граница окна"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Топ"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Нижний"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Отображается в нижней части окна при прокрутке страницы посетителями."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Отображается в верхней части окна при прокрутке страницы посетителями."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Сколько"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Похожие по автору"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Категории или метки"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Если ничего не связано, вместо этого показывать самые новые"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Заголовок"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Оставьте пустым для пункта \"Похожие записи\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Показать изображение записи"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Показывать дату"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Показать сводку"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "У этой публикации пока нет общих категорий или тегов с другими. Когда они появятся, они отобразятся здесь."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Модальное окно"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Боковая панель"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Размер"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Выдвигается справа от"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Начало — это сторона, с которой начинается чтение: левая в английском, правая в арабском."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Закрывать при клике на страницу на заднем плане"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Заголовок окна"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Галочка"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Круг"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Крест"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Точка"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Стрелка"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Избранное"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Цвет значка"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Как в тексте"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Основная тема"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Вторичная тема"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Контраст темы"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Соблюдайте иерархию заголовков на странице: каждый следующий заголовок должен быть на один уровень ниже раздела, в котором он находится."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Выбрать значок"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Использовать иконку по умолчанию"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Выберите значок"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Переместить выше"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Переместить вниз"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Показывать заголовок для каждого типа"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "В выбранных вами типах пока ничего не опубликовано."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Ссылки"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Ссылка %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Сеть"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Адрес профиля, mailto:you@example.com или tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Имя, зачитываемое программами чтения с экрана"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Другой значок"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Добавить ссылку"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Просмотр"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Стиль"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Только значок"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Профиль трафика"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Скругленный квадрат"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Квадрат"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Открывать профили в новой вкладке"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Оценка звёздами"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Количество звезд"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Показать количество"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Шаги"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Вниз по странице"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Рядом (на телефонах друг под другом)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Цвет номера"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Порядок шагов"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Шаг %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Шаг…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Что делать…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Добавить шаг"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Вкладка"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Добавьте заголовок на страницу, и он появится здесь."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Оглавление"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Начиная с уровня заголовка"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "До уровня заголовка"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Нумерованные"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Можно свернуть"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Начинать в свернутом виде"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Выделите озвучиваемый раздел"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Вкладки"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Название для экранных читалок"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Необязательно. Указывает, чему посвящены вкладки, например «Тарифные планы»."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Открывать при загрузке страницы"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Вкладки слева"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Добавить вкладку"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Отзыв"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Заменить фото"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Выбрать фото"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Удалить фото"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Описание фотографии"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Оставьте поле пустым, если на фотографии изображен только человек, указанный рядом с ней."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Рейтинг в звездах (0 = нет)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Имя под цитатой"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Фото рядом с цитатой"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Что сказал клиент…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Роль или компания"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Подсказка"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Текст подсказки"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Старайтесь делать текст коротким: одно или два предложения. Программы чтения с экрана зачитывают его вместе со словом, которое он поясняет."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Показать"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Выше"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Ниже"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Слово или фраза"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Применить"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Профиль"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Чей профиль"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Автор записи"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Показать фото профиля"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Показать биографию"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Показывать ссылки на публикации и веб-сайт"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Профиль автора"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Выберите, чей профиль показывать."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Номер WhatsApp с кодом страны"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Например, +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Начальное сообщение (необязательно)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Показывать текст рядом с значком"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Уголок"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Нижний конец (справа в английском)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Низ по центру (слева по-английски)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Добавьте свой номер WhatsApp на боковую панель. До этого момента кнопка не будет отображаться на странице."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "На странице эта кнопка плавает в нижнем углу экрана."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Тег шорткода"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Используйте только буквы, цифры, дефисы и символы подчеркивания."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Имя атрибута"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Добавить атрибут"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Шорткод"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Другие атрибуты"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Выберите шорткод в настройках блока."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Галерея"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Размер изображения"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Миниатюра"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Полный размер"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Ссылка на"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Страница вложения"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Медиафайл"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Аудио"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Видео"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Адрес файла"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Цикл"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Воспроизводить автоматически"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Постер"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Плейлист"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Идентификаторы медиafiles, разделенные запятыми"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Показать список треков"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Встроить"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Адрес для встраивания"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Максимальная ширина"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Подпись"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML-код изображения и подписи"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Ширина"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Совет: блок «Форма» отображает эту форму в стиле вашего сайта."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Показывать название формы"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Показать описание формы"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Отправить без перезагрузки страницы"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7359,123 +9198,108 @@ msgstr "Выбрать файл"
 msgid "— Default —"
 msgstr "— По умолчанию —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Расширенное оформление"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Инлайн-CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS-декларации, например: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Эффекты (устаревшие классы)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Имена эффектов, разделенные пробелами, перенесенные из старых версий, например: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Строка"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Ширина"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Во всю ширину, контент по центру"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Адрес ссылки"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Связь ссылки"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Выравнивание"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "По левую сторону"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Центр"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "По правому краю"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Текст кнопки"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Добавить текст…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Размещение"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "На отдельной строке"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "На линии, рядом с другим контентом"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Автоматически (на собственной строке на верхнем уровне страницы)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Доступная метка"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Оставьте пустым для декоративной иконки."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Выберите значок в настройках блока."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Новое имя настройки"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Например: заголовок или текст"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Добавить параметр"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Виджет"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Выберите виджет"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Область виджетов"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Выберите область виджетов"
 
@@ -7498,6 +9322,144 @@ msgstr "Этот встроенный элемент изменяет свой �
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Сдвиг макета"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Этот виджет не описывает свои настройки, поэтому они редактируются в виде пар имени и значения."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Проблема"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Проверить"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Показать блок"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Используйте хорошо читаемый цвет темы"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Сделать H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Альтернативный текст"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Сохранить альтернативный текст"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Это декоративное изображение"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Проверка…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "На этой странице не обнаружено проблем с доступностью."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d проблема"
+msgstr[1] "%d проблем"
+msgstr[2] "%d проблем"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "Элемент для проверки: %d"
+msgstr[1] "Необходимо проверить: %d"
+msgstr[2] "Необходимо проверить: %d"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Проверить снова"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Автоматическая проверка находит множество проблем, но не все. Также протестируйте страницу, используя только клавиатуру и программу чтения с экрана."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Контраст текста составляет %1$s:1; для читаемости требуется не менее %2$s:1."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "нажмите здесь,здесь,подробнее,ещё,ссылка,эта ссылка,узнать больше,перейти"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "У ссылки нет текста, поэтому программа чтения с экрана объявляет только «ссылка». Добавьте текст или метку."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Текст ссылки «%s» не указывает, куда она ведет. Вместо этого опишите пункт назначения."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "У элемента положительное значение tabindex, что изменяет порядок табуляции по сравнению с порядком чтения. Используйте 0 или удалите его."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Интерактивный элемент недоступен с клавиатуры. Используйте настоящую кнопку или ссылку."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Встроенный фрейм не имеет заголовка, поэтому программа чтения с экрана не может определить, что это такое."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "У поля формы нет метки, поэтому его назначение не озвучивается."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Этот заголовок пустой. Пользователи программ чтения с экрана используют заголовки для навигации: удалите его или добавьте текст."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Заголовок страницы уже является тегом H1; используйте H2 для верхнего уровня контента."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Этот тег H%1$d пропускает уровень; предыдущий был H%2$d. Сделайте его тегом H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "У этого изображения нет альтернативного текста. Опишите его или отметьте как декоративное, если оно не несет смысловой нагрузки."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Закрыть панель"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7572,18 +9534,6 @@ msgstr "Пользовательский"
 msgid "Width / height"
 msgstr "Ширина / высота"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Топ"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Нижний"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7596,20 +9546,6 @@ msgstr "Наследуемое изображение — заменить"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Удалить изображение"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Позиция"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Размер"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7675,22 +9611,6 @@ msgstr "Каждая сторона отдельно"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Сторона"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Стиль"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Цвет"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7940,14 +9860,6 @@ msgstr "%1$s (%2$d настр.)"
 msgid "Replace icon"
 msgstr "Заменить значок"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Выбрать значок"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Выберите значок"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Нет подходящих значков."
@@ -7959,10 +9871,6 @@ msgstr "Обычный"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Бренды"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "С контуром"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8091,21 +9999,9 @@ msgstr "Цвет текста"
 msgid "Cursor"
 msgstr "Курсор"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Стрелка"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Указатель"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Текст"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8263,10 +10159,6 @@ msgstr "Название зоны"
 msgid "Named areas"
 msgstr "Именованные области"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Строки"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Высота"
@@ -8384,10 +10276,6 @@ msgstr "По ширине"
 msgid "Decoration"
 msgstr "Оформление"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Подчеркивание"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Надлиния"
@@ -8470,19 +10358,9 @@ msgstr "Конический"
 msgid "Angle (degrees)"
 msgstr "Угол (градусы)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Профиль трафика"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Эллипс"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Круг"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8518,10 +10396,6 @@ msgstr "Насыщенность сзади (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Оттенок (используйте полупрозрачный цвет)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Скругленный квадрат"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Блоб"
@@ -8538,10 +10412,6 @@ msgstr "Треугольник"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Діамант"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Избранное"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9419,11 +11289,6 @@ msgstr "Очистить"
 msgid "The change could not be saved."
 msgstr "Не удалось сохранить изменение."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Закрыть панель"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Тема по умолчанию"
@@ -9480,9 +11345,49 @@ msgstr "Классы, токены, темный режим, набор брен
 msgid "Open the Site Editor’s styles"
 msgstr "Открыть стили Редактора сайта"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Заголовок"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Заголовок с более плотной межстрочной высотой, оформленный с помощью вкладки «Стиль»."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Абзац текста, оформленный с помощью вкладки «Стиль»."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Изображение"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Изображение со скругленными углами, оформленное с помощью вкладки «Стиль»."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Видео из Медиатеки, оформленное с помощью вкладки «Стиль»."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Интервал"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Пустое пространство между блоками; задайте разную высоту для каждого размера экрана на вкладке «Стиль»."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Разделитель"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Горизонтальная линия между разделами, оформленная с помощью вкладки «Стиль»."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Добавьте контент с другого сайта (видео, запись, карту), вставив его адрес."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Несколько изображений в сетке, оформленных с помощью вкладки «Стиль»."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9516,10 +11421,6 @@ msgstr "Список"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Метки"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Кнопки"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9564,10 +11465,6 @@ msgstr "Скрыть языки, на которые эта страница н�
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Расположить вертикально"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Фон"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9626,11 +11523,6 @@ msgstr "Настройки блокировки"
 #, js-format
 msgid "Add block: %s"
 msgstr "Добавить блок: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(без названия)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9706,10 +11598,6 @@ msgstr "Выключить безопасный режим"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Включить безопасный режим (другие плагины отключены, для вас, только в Studio)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Опубликовано"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10052,11 +11940,6 @@ msgstr "Имя конструктора"
 msgid "Visual editor name"
 msgstr "Название визуального редактора"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Автор"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10133,10 +12016,6 @@ msgstr[2] "Отменено: восстановлено страниц: %d."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Заменить"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Ссылки"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10247,10 +12126,6 @@ msgstr "Разрешить клиентам оставлять коммента�
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Любой, у кого есть ссылка, может просмотреть эту страницу еще до ее публикации и оставить комментарии. Учетная запись не требуется."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Скопировано"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10500,6 +12375,52 @@ msgstr "Скопируйте изображения в медиабиблиот�
 msgid "Show what will happen"
 msgstr "Показать, что произойдет"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Элемент аккордеона"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Один раздел аккордеона: заголовок, который открывает его содержимое."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Аккордеон"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Вопросы или разделы, которые открываются и закрываются. Опционально по одному за раз и с возможностью разметки в качестве FAQ для поисковых систем."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "аккордеон"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Часто задаваемые вопросы"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "переключить"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "Свернуть"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "Подробности"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10516,6 +12437,7 @@ msgid "notice"
 msgstr "уведомление"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "сообщение"
@@ -10530,6 +12452,72 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "Предупреждение"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Значок"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Короткая метка, например «Новинка», «Распродажа» или «Лучшая цена»."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "метка"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "Метка"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "плашка"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "Новый"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Календарь бронирования"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Календарь бронирования Calendly или Cal.com, который загружается только тогда, когда об этом просит посетитель."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "бронирование"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "календарь"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "Встреча"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "Запланировать"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10541,6 +12529,7 @@ msgid "A link styled as a button."
 msgstr "Ссылка, оформленная в виде кнопки."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "Кнопка"
@@ -10554,6 +12543,98 @@ msgstr "ссылка"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "Призыв к действию"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Призыв к действию"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Заголовок, предложение и одна или две кнопки, призывающие посетителя к действию."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "кнопка действия"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "Баннер"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Зарегистрироваться"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Чек-лист"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Список задач, где каждая отмечена как выполненная или предстоящая, представленный в текстовом виде для программ чтения с экрана, а также с помощью галочки."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Сделать"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "Задачи"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "тики"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "Список"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Список кода с подсветкой синтаксиса, номерами строк и кнопкой копирования. Остается читаемым, если плагин будет отключен."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "синтаксис"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "Подсветить"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "фрагмент"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "Программирование"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10577,6 +12658,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "Макет"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Таблица сравнения"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Тарифы или продукты рядом друг с другом, с отметками «да» и «нет», которые программы чтения с экрана озвучивают словами."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "Сравнить"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Тарифные планы"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "тарифные планы"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "таблица"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "Функции"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Кнопки связи"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Кнопки для звонков, отправки писем, SMS или сообщений в WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Связаться"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "Вызвать"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "телефон"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "Эл. почта"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "СМС"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10594,11 +12753,13 @@ msgid "container"
 msgstr "контейнер"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "блок"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10615,6 +12776,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "Колонки"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Двойной заголовок"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Заголовок, состоящий из двух частей, вторая из которых выделена цветом, градиентом, контуром или подчеркиванием."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "Заголовок"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "Заголовок"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "градиент"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Список функций"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Функции в сетке, каждая с иконкой, заголовком и кратким описанием."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Преимущества"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "услуги"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10658,6 +12865,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "текст"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Форма"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Отображает форму из Contact Form 7, WPForms, Gravity Forms или Fluent Forms, оформленную в стиле вашего сайта."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "форма"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Глоссарий"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Термины и их определения, отсортированные по алфавиту от А до Я, каждое со своей ссылкой. Можно связать первое упоминание каждого термина на странице с его определением."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Условия"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "Определения"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "словарь"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Список значков"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Список, где каждая строка начинается с иконки: галочки, стрелки или любой иконки из библиотеки."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "Маркеры"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "значки"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10678,6 +12965,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Информационное поле"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Иконка, короткий заголовок, предложение или два и необязательная ссылка: для услуг, преимуществ или контактных данных."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "функция"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "сервис"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "банковская карта"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10697,6 +13009,204 @@ msgstr "перевод"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "многоязычный"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Привязать"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Карта места из OpenStreetMap: без ключа, и ничто не загружается из OpenStreetMap до тех пор, пока посетитель не запросит карту."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "Привязать"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "Расположение"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "адрес"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Модальное окно"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Кнопка, которая открывает поверх страницы окно с любыми блоками внутри."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "модальное окно"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "Всплывающее окно"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "лайтбокс"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "диалог"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Выдвижная панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Кнопка, которая выдвигает панель сбоку окна вместе со всеми находящимися внутри нее блоками."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "выдвижная панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "выдвижная панель"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "Боковая панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "меню"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Детали записи"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Автор публикации, даты, категории, теги, время чтения и количество комментариев."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "Автор"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "Дата"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "время чтения"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "мета"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "автор"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Индикатор выполнения"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Маркированная полоса, показывающая степень выполнения чего-либо, например навыка или цели."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "Выполнение"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "панель"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "навык"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "цель"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Контент, защищенный паролем"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Блоки видны только посетителям, у которых есть пароль. Пока они его не введут, контент вообще не отображается на странице."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "Пароль"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Защищено"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "приватный"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "Заблокировать"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "участники"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10722,6 +13232,86 @@ msgstr "Светлая"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "цветовая схема"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR-код"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "QR-код для веб-адреса или любого текста, отображаемый прямо на вашем сайте (сторонние службы QR-кодов не используются)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR-код"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR-код"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "штрихкод"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "сканировать"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Индикатор чтения"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Тонкая полоса по краю окна, которая заполняется по мере прокрутки страницы посетителями."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "Чтение"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "Прокрутить"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Похожие записи"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Записи, имеющие те же категории или теги, что и эта запись, с их изображениями, датами и кратким описанием."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "Связанное"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "Записи"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "похожие"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "ещё"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10785,13 +13375,284 @@ msgstr "Отображает виджеты в одной из областей 
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "Боковая панель"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "область виджетов"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Карта сайта"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Страница со списком всех опубликованных страниц и записей (и другого публичного контента) с сохранением иерархии страниц."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "карта сайта"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "Карта сайта"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "индекс"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "все страницы"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Социальные иконки"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Ссылки на ваши профили, оформленные с помощью официальных иконок соцсетей."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "социальные сети"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "Ссылки"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "Подписаться"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "профили"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Оценка звездами"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Рейтинг в виде звезд с шагом в пол-звезды."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "Избранное"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "оценка"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "Оценка"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Шаги"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Пронумерованные шаги процесса по порядку, сверху вниз или рядом друг с другом."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "Обработать"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "как сделать"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "Хронология"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "пронумерованный"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Вкладка"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Одна вкладка блока «Вкладки»: её заголовок и панель."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Оглавление"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Автоматически создаваемый список заголовков на странице со ссылками на каждый из них."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Содержание"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "Содержимое"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "Заголовки"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Вкладки"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Содержимое во вкладках: посетители переключаются между панелями с помощью мыши или клавиатуры."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "Вкладки"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "вкладками"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "панели"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Отзыв"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Цитата клиента с указанием его имени, должности, фотографии и опциональным рейтингом в виде звезд."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "Проверить"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "Котировка"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "клиент"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Обратная связь"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Подсказка"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Слово или фраза, отображающие краткое пояснение при наведении указателя мыши и фокусе с клавиатуры."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "подсказка"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Подсказка"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "определение"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Профиль автора"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Фотография, имя, биография и ссылки автора или выбранного пользователя."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "описание"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "Профиль"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "О программе"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Кнопка чата WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Плавающая кнопка в углу страницы, которая открывает чат WhatsApp с вами."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "Чат"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "плавающий"
 
 #: blocks/widget/block.json
 msgctxt "block title"

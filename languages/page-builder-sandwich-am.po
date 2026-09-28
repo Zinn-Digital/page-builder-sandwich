@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "እንደ እንደገና ጥቅም ላይ ሊውል የሚችል ንድፍ አስቀምጥ"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "የተደራሽነት ማረጋገጫ"
 
@@ -990,6 +994,7 @@ msgstr "← ሌላ አቅራቢ ይምረጡ"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "አድራሻ"
 
@@ -1043,6 +1048,8 @@ msgstr "ሞክር"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "አስወግድ"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "ከአቅራቢዎቹ የሞዴል ዝርዝሮችን ያድሱ"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "ምስሎች"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "ጠፍቷል"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "ክፈት"
 
@@ -1448,6 +1457,7 @@ msgstr "እስካሁን ምንም የAI ጥያቄዎች አልቀረቡም።"
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "ተጠናቋል"
 
@@ -1515,7 +1525,11 @@ msgstr "ከመጠን በላይ ሙከራዎች ተደርገዋል። እባክ�
 msgid "Something went wrong. Please contact the admin."
 msgstr "ተሳስቷል። እባክዎን አስተዳዳሪውን ያግኙ።"
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "ካርታ አሳይ"
 
@@ -1538,52 +1552,385 @@ msgstr "Democracy ቤተሰቡ አልተቀመጠም።"
 msgid "Removed."
 msgstr "ተወግዷል።"
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "ይህ ትክክለኛ የፊደል ቅርጽ (font family) ስም አይደለም።"
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google fonts ያንን የቅርጸ-ቁምፊ ቤተሰብ አልመለሰም። እባክዎ ስሙን አረጋግጠው እንደገና ይሞክሩ።"
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "የቅርጸ-ቁምፊ ፋይሎቹ ሊወርዱ ወይም ሊቀመጡ አልቻሉም። የሰቀላዎች ማህደር መጻፍ የሚችል መሆኑን ያረጋግጡ።"
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "የቅርጸ-ቁምፊ (font) የቅጥ ሉህ (stylesheet) ማስቀመጥ አልተቻለም። የሰቀላዎች (uploads) ማህደር መጻፍ የሚችል መሆኑን ያረጋግጡ።"
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "ይህን ማስታወሻ አስወግድ"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(በአዲስ ትር ይከፈታል)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "ተጠናቋል፦"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "የሚደረጉ:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "የቃላት መፍቻ ማውጫ"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "ከ %2$s ውስጥ %1$s ተሰጥቶታል"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "ዕድገት"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "ኮድ ቅዳ"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "ኮፒ ተደርጓል"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "ይህ መግብር በዚህድ ጣቢያ ላይ አይገኝም።"
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "ኢሜይል"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "ስልክ"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "የአርኤስኤስ ፌድ"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "ድረ ገጽ"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "አገናኝ"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (በአዲስ  ትር ይከፈታል)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "ከ 5 %d ተሰጥቶታል"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(የሚመከር)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "የተካተተ"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "ያልተካተተ"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "የንጽጽር ሰንጠረዥ"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "ይደውሉ %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "ኢሜይል %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "ጽሑፍ %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "በዋትስአፕ (WhatsApp) ያወሩ"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "እኛን ያግኙን"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "በWhatsApp ያነጋገሩን"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "ይህ ፎርም አሁን አይገኝም።"
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s ንቁ ስዳልሆነ ይህ ፎርም ሊታይ አይችልም።"
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "ካርታ፡ %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "ካርታውን ማሳየት ከ OpenStreetMap ይጭነዋል።"
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "ካርታውን አሳይ"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "ካርታውን በOpenStreetMap ላይ ክፈት"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "የቦታ ማስያዣ ካንደር ከ %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "የቦኪንግ ካላንደር ማሳየት ከ %s ይጭነዋል።"
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "የቦታ ማስያዣ ካንቴናውን አሳይ"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "በ%s ላይ ያስይዙ"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "ለ%s የQR ኮድ"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "ንድፍ"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "ይዘት"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "ሚዲያ"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "ማርኬቲንግ"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "ድህረ ገጽ"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "መረጃ"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "ተዛማጅ ጽሑፎች"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "የልጥፍ ዝርዝሮች"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "በ"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "ታትሟል"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "የተዘመነ"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "ውስጥ"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "መለያ የተሰጠው"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d ደቂቃ ንባብ"
+msgstr[1] "%d ደቂቃ ንባብ"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "እስካሁን ምንም አስተያየቶች የሉም"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d አስተያየት"
+msgstr[1] "%d አስተያየቶች"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "የድር ጣቢያ ካርታ"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(ርዕስ የለም)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "ሁሉም ልጥፎች በ%s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "ይህ ይዘት የተጠበቀ ነው። ለማየት የይለፍ ቃል ያስገቡ።"
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "የለወጡት የይለፍ ቃል ትክክል አይደለም። እንደገና ይሞክሩ።"
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "የሚስጥር ቃል"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "ይዘቱን አሳይ"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "ያቺ ገጽ ሊከፈት አልቻለም።"
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "ብዙ ሙከራዎች ተደርገዋል። ጥቂት ደቂቃዎች ጠብቀው እንደገና ይሞክሩ።"
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "የይለፍ ቃሉ ከ 4 እስከ 200 ፊደላት/ቁጥሮች ርዝመት ሊኖረው ይገባል።"
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "ተጨማሪ"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "ዝጋ"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "ትርኢት %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "ይዘቶች"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "በSandwich Studio አርም"
 msgid "Blank canvas"
 msgstr "ባዶ ሸራ"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "ወደ ይዘቱ ዝለል"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "የጡባዊ ተኮው ስፋት ከ480 እስከ 2560 ሙሉ የፒክሰል ቁጥር መሆን አለበት።"
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "የተጫኑ አዶዎች"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "አዶ"
 
@@ -2553,6 +2908,8 @@ msgstr "%s የደንበኛዬ የኢሜይል አድራሻ ነው"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "ኮድ"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "አስተካክል"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "ኢሜይል"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "የኢሜይል አድራሻ"
 
@@ -3103,6 +3456,10 @@ msgstr "ነጮችን የማስወገድ ሁነታን በማንቃት ላይ"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "አዲሱን የኢሜይል አድራሻ ያስገቡ"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "ስህተት"
 
@@ -3723,6 +4081,7 @@ msgstr "%2$s የእነዚህ ጣቢያዎች ትክክለኛ ቅጂ መሆኑን
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "ይህ ፕለጊን አዲስ የ PHP ስሪት ይፈልጋል።"
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "አይደለም"
 
@@ -4811,6 +5171,13 @@ msgstr "ማህበራዊ ሚዲያ (ፌስቡክ፣ ትዊተር፣ ወዘተ)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "የሰዓት ማህተም"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "ርዕስ"
 
@@ -5171,6 +5541,8 @@ msgstr "እስካሁን %1$s እንዴት ይወዱታል? ሁሉንም የ%2$s 
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "ዓይነት"
@@ -5286,6 +5658,7 @@ msgstr "ተጠቃሚዎች"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "እሴት"
@@ -5340,6 +5713,7 @@ msgstr "የክፍያ ባህሪያትን ይመልከቱ"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "ማስጠንቀቂያ"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "ግዴታ ያልሆነ"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "ዕቅድ"
 
@@ -5988,18 +6363,26 @@ msgstr "እጅግ በጣም ትንሽ"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "ትንሽ"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "መካከለኛ"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "ትልቅ"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "እጅግ በጣም ትልቅ"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "ሙከራውን መጀመር አልተቻለም።"
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "ባህሪ"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "የተካተተ"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "ያልተካተተ"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "የግባ አድራሻ"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "የተጠቃሚ ስም"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "የሚስጥር ቃል"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7089,15 +7463,62 @@ msgstr "እንዳይሆን መደረጉ ተጀምሯል። ከጀርባ እየ�
 msgid "Undo all conversions"
 msgstr "tሁሉምቀየርዎችንይቀልብሱ"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "ንጥብ"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "ገጹ ሲጫን ክፈት"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "ርዕስ ርዕስ ነው"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "ዕቃዎቹ የገጹ ክፍሎች ሲሆኑ ርዕሱን ራስጌ ያድርጉት፣ በዚህም ጎብኚዎች በእነሱ መካከል መዘለል ይችላሉ።"
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "ርዕስ %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "ጥያቄ ወይም የክፍል ርዕስ"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "አኮርዲዮን"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "በአንድ ጊዜ አንድ ንጥል ብቻ ክፍት ነው።"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "ለፍለጋ ሞተሮች እንደ FAQ ምልክት አድርግበት"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "ከ አርዕስቶች (ጥያቄዎች) እና ከይዘታቸው (መልሶች) የተገነባ ተደጋጋሚ ጥያቄዎች (FAQ) የተዋቀረ መረጃን ይጨምራል።"
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "ማስጠንቀቂያ"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "መረጃ"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "ተሳክቷል"
 
@@ -7106,6 +7527,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "ማስጠንቀቂያዎች እና ስህተቶች ለስክሪን አንባቢ ተጠቃሚዎች ወዲያውኑ ይገለፃሉ፤ የመረጃ እና የስኬት ማስታወቂያዎች ደግሞ የሚያደርጉትን ነገር ሲጨርሱ ይነበባሉ።"
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "አዶ አሳይ"
 
@@ -7121,64 +7543,702 @@ msgstr "ርዕስ (አማራጭ)"
 msgid "Write the message…"
 msgstr "መልዕክት ጻፍ..."
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "ክፍል - ፖለቲካዊ ያልሆነ ክፍል"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "መሃል"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — ምንም ትርጉም የለውም"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "መለያ ምልክት"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "ርዕሰ አንቀጽ - መግቢያ ይዘት"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "ቀለም"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "ግርጌ — መዝጊያ ይዘት"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "የጭብጥ ማድመቂያ"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "ጽሑፍ — ራሱን የቻለ ይዘት"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "ገለለተኛ አይደለም"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "ጎን — ተዛማጅ ይዘት"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "ቦታ"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "ዋና — ዋናው ይዘት (በእያንዳንዱ ገጽ አንድ ጊዜ)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "መለያ"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "ዳሰሳ — የዳሰሳ አገናኞች"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "የቦታ ማስያዣ መቁጠሪያ"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "ቁልል (ፍሌክስቦክስ፣ ዓምድ)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "አገልግሎት"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "ረድፍ (ፍሌክስቦክስ)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "የመያዣ ገጽ አድራሻ"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "ፍርግርግ"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "ለምሳሌ %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "የካሌንደሩ ዓላማ ምን እንደሆነ፣ በስክሪን አንባቢዎች የሚነበብ እና ከሱ በታች የሚታይ።"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "ይህ የ %s የቦታ ማስያዣ ገጽ አድራሻ አይደለም፣ ስለዚህ በገጹ ላይ ምንም ነገር አይታይም።"
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "የቀን መቁጠሪያውን አስቀድመው ይመልከቱ"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "የአገናኝ አድራሻ"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "አዝራሩ መለያ እና አድራሻ ሲኖረው ይታያል።"
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "በአዲስ ትር ውስጥ ክፈት"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "እርምጃ የሚወስድ ጥሪ"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "አቀማመጥ"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "ከዚህ በታች ያሉት አዝራሮች"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "ከጽሑፉ አጠገብ ያሉ አዝራሮች"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "አሰላለፍ"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "ዋና አዝራር"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "ሁለተኛው አዝራር"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "ርዕስ…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "ለየትኛው… አንድ አረፍተ ነገር"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "ሁለተኛ አዝራር ( አማራጭ )"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "የክትትል ዝርዝር"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "የምልክት ቀለም"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "መስመሮች"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "መስመር %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "ተግባር…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "መስመር ጨምር"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "ቋንቋ"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "በራስ-ሰር ፈልግ"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "ምንም ማጉላት የለም"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "የፋይል ስም"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "ከኮዱ በላይ ይታያል፣ ለምሳሌ functions.php።"
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "የመስመር ቁጥሮች"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "የቅጂ አዝራር"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "ረጅም መስመሮችን ጠቅልል"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "ኮድ ጻፉ ወይም ለጥፉ…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "ጽሑፍ"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "አምዶች"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "አምድ %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "%s ን አጉልቶ አሳይ"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "አምድ ጨምር"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "ረዎች"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "ረድፍ %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "ረድፍ ጨምር"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "መግለጫ ጽሑፍ (ምን እየተወዳደረ እንደሆነ)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "የሕዋስ ዓይነት፡ %s። ቀይር"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "የስልክ ጥሪ"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "የጽሁፍ መልእክት"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ቁልፎች"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "የስልክ ቁጥር፣ ከአገር መለያ ኮድ ጋር"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "የቁልፍ ጽሑፍ"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "ይህን ቁልፍ አስወግድ"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "ቁልፍ ጨምር"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "ለመጀመር የዋትስአፕ መልእክት (አማራጭ)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "የዕውቂያ አዝራሮች"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "የስልክ ቁጥር፣ የኢሜይል አድራሻ ወይም የዋትስአፕ (WhatsApp) ቁጥር በጎን አሞሌው ላይ ያክሉ።"
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "ድርብ ርዕስ"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "የራስጌ ደረጃ"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "H1ን በገጽ አንድ ጊዜ፣ ለዋና ርዕሱ ይጠቀሙ።"
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "ሁለተኛው ክፍል እይታ"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "የአጽንዖት ቀለም"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "ግራዲየንት"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "ዝርዝር መግለጫ"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "መስመር አስምር"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "ሁለተኛው ክፍል በራሱ መስመር ላይ"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "መጀመሪያው ክፍል"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "ሁለተኛው ክፍል"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "ማርከ ምልክት ሰሪ እስክሪብቶ"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "ወፍራም የሰመር መስመር"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "መደብ ቀለም"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "አጉላ"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "ማጉላቱን አስወግድ"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "የመጀመሪያ ፊደል ማጉላት"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "ትልቅ የመጀመሪያ ፊደል"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "ለሣጥን ውስጥ የመጀመሪያው ፊደል፣ \"Drop cap in a box\" ዘይቤን ይምረጡ።"
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "በሳጥን ውስጥ የተጣለ ፊደል"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "የአጽንዖት መስመር"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "የተገለጸ ጥቅስ (የአጽንዖት አሞሌ)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "ትኩረት ለመሳብ ከቀለም አሞሌ ጎን በትልቅ ፊደላት የተጻፈ የጽሁፍ ጥቅስ።"
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "ጥቀስ"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "የባህሪያት ዝርዝር"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "በስልኮች ላይ ባህሪያቱ ሁልጊዜ ይደረደራሉ።"
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "ባህሪያት"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "ባህሪ %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "የራስ አዶ"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "ባህሪ…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "ገለጻው…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "ባህሪ አክል"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7፣ WPForms፣ Gravity Forms ወይም Fluent Forms ጫኑና ያግብሩ፣ ከዚያም ከእነዚህ ውስጥ አንዱን ፎርም እዚህ ይምረጡ።"
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "የቅጽ ተሰኪ"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "ይምረጡ…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "ቅጽ"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "ቅጽ ይምረጡ…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s እስካሁን ምንም ፎርሞች የሉትም"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s በዚህ ጣቢያ ላይ ንቁ አይደለም፣ ስለዚህ ይህ ፎርም ሊታይ አይችልም።"
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "የቅጹ ዝርዝር ሊጫን አልቻለም።"
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "የቅጽ ዘይቤ"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "መስኮች"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "የተዘረዘረ"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "የሞላ"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "የተሰመረበት"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "የቁልፍ ስፋት"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "ጽሑፉን አጣጥን"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "ሙሉ ስፋት"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "ቀለሞች፣  ቅርደቦች፣ ክፍተቶች እና ማዕዘኖች ከእርስዎ የጣቢያ ዲዛይን እና ከዚህ ማገጃ የዲዛይን ቅንብሮች ይመጣሉ።"
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "ከጣቢያዎ ጋር እንዲመሳሰል የተስተካከለ ከእርስዎ የቅጽ ተሰኪ (plugin) ቅጽ አሳይ።"
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "የቅጽ ተሰኪ (ፕለጊን) ይፈልጋሉ? Contact Form 7 ነጻ ነው።"
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "ቃላት ፈቺ መዝገብ"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "ከ ጀመሪያ እስከ ፊደል ቅደም ተከተልድርደር"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "ገጹ ቃላቱን በፊደል ቅደም ተከተል ያሳያል፤ እዚህ ግን ባስቀመጧቸው ቅደም ተከተል ይቆያሉ።"
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "ከ A እስከ Z መዝገብ አሳይ"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "በዚህ ገጽ ላይ በሌሎች ቦታዎች ጥቅም ላይ የዋሉ አገናኝ ቃላት"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "በገጹ ጽሑፍ ውስጥ እያንዳንዱ ቃል ለመጀመሪያ ጊዜ ሲታዩ ከትርጉሙ ጋር ይገናኛል። ርዕሶች፣ አዝራሮች፣ ኮድ እና ነባር አገናኞች ሳይነኩ ይቀራሉ።"
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "ደንቦች"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "ቃል %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "ጊዜው የሚያበቃበት ቀን"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "ትርጉሙ..."
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "ቃል አክል"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "የአዶዎች ዝርዝር"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "ከዚህ በታች ያለው ከሌላው በታች"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "ጎንና ጎን"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "የዝርዝር ንጥል…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "የመረጃ ሳጥን"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "ከቤተ-መጽሐፍት ውስጥ ማንኛውንም አዶ ይምረጡ፦"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "የአገናኝ ጽሑፍ"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "ሊንኩ ወዴት እንደሚወስድ ይግለጹ (\"ዋጋዎቻችንን ይመልከቱ\") እንጂ \"ተጨማሪ ያንብቡ\" አሉ።"
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "አንድ ወይም ሁለት ዓረፍተ ነገሮች…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "ክፍል - ፖለቲካዊ ያልሆነ ክፍል"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — ምንም ትርጉም የለውም"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "ርዕሰ አንቀጽ - መግቢያ ይዘት"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "ግርጌ — መዝጊያ ይዘት"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "ጽሑፍ — ራሱን የቻለ ይዘት"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "ጎን — ተዛማጅ ይዘት"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "ዋና — ዋናው ይዘት (በእያንዳንዱ ገጽ አንድ ጊዜ)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "ዳሰሳ — የዳሰሳ አገናኞች"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "ቁልል (ፍሌክስቦክስ፣ ዓምድ)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "ረድፍ (ፍሌክስቦክስ)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "ፍርግርግ"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "በማስተካከል ላይ: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "የልጅ መዋቅር እንደ"
 
@@ -7186,7 +8246,7 @@ msgstr "የልጅ መዋቅር እንደ"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7194,70 +8254,50 @@ msgstr "የልጅ መዋቅር እንደ"
 msgid "Inherited (%s)"
 msgstr "የተወረሰ (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "ፍሌክስቦክስ"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "የተደራረቡ ብሎኮች"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "አምዶች"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "በሸራው ውስጥ ይጎትቱ፣ ወይም ይተይቡ"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "የይዞታ ስፋት"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "ሣጥን (የጭብጡ የይዘት ስፋት)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "ሙሉ ስፋት"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "ዝቅተኛ ቁመት"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "የኤችቲኤምኤል መለያ"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "አገናኝ"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "መላውን ብሎክ ወደ አገናኝ ቀይር"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "ለስክሪን አንባቢዎች የሚሆን የአገናኝ ጽሁፍ"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "ብሎኩን ማየት የማይችሉ ጎብኚዎች ሊንኩ ምን እንደሚሰራ።"
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "በአዲስ ትር ውስጥ ክፈት"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "አገናኝ ባለው ብሎክ ውስጥ አገናኞችን ወይም አዝራሮችን አያስቀምጡ፡ በአገናኝ ውስጥ ያለ አገናኝ በብራውዘሮች ውስጥ አይሠራም።"
 
@@ -7289,14 +8329,143 @@ msgstr "+ ረድፍ"
 msgid "− Row"
 msgstr "− ረድፍ"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "ቦታ"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "የመጋጠሚያ ነጥቦችን (ኮርዲኔቶችን) ወይም የክፍት ስትሪት ማፕ (OpenStreetMap) አገናኝ ይለጥፉ"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org ላይ የሚገኙትን ቦታ ይፈልጉ፣ ከዚያ አድራሻውን ከአሳሹ (browser bar) አሞሌ ላይ ይቅዱ፣ ወይም ካርታው ላይ በቀኝ ጠቅ አድርገው \"አድራሻ አሳይ\" የሚለውን ይምረጡ።"
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "ላቲቲዩድ"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "ኬክሮስ"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "አጉላ"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "የቦታው ስም"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "ካርታው ስር ይታያል እንዲሁም በስክሪን አንባቢዎች ይነበባል።"
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "የመጋጠሚያ ነጥቦችን (ለምሳሌ 51.5074, -0.1278) ወይም የOpenStreetMap ሊንክ ይለጥፉ።"
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "መጋጠሚያዎች ወይም ሊንክ"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "የካርታውን ቅድመ እይታ ይመልከቱ"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "%1$sን እና %2$sን በኦፕን ስትሪት ማፕ (OpenStreetMap) ላይ ያረጋግጡ"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "አዘጋጅ"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "የታተመበት ቀን"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "የተሻሻለበት ቀን (ሲለይ)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "ምደባዎች"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "መለያዎች"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "የንባብ ጊዜ"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "የአስተያየቶች ብዛት"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "የሚታዩ ዝርዝሮች"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "ለማሳየት ቢያንስ አንድ ዝርዝር ይምረጡ።"
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "የዕድገት ባር"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "ከፍተኛው"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "ለመቶኛ 100፤ ለቁጥር ደግሞ ሌላ ማንኛውም ቁጥር፣ እንደ 10 ከ 8።"
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "መቶኛውን አሳይ"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "የይለፍ ቃል ተዘጋጅቷል። ጎብኚዎች ይህን ይዘት ከማየታቸው በፊት የይለፍ ቃል እንዲያስገቡ ይጠየቃሉ።"
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "እስካሁን ምንም የይለፍ ቃል አልተዘጋጀም፣ ስለዚህ ጎብኚዎች እዚህ ምንም አያዩም።"
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "አዲስ የይለፍ ቃል"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "የይለፍ ቃል ያዘጋጁ"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "የይለፍ ቃል ተዘጋጅቷል። እሱን ተግባራዊ ለማድረግ ገጹን ያስቀምጡ፤ የከፈቱት ጎብኚዎች አዲሱን መጠቀም ይጠበቅባቸዋል።"
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Page Builder Sandwich ከጥፋ ከነበረ፣ ይህ ይዘት ለሁሉም ሰው ይታያል።"
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "ከሚስጥር ሐረግ (ፓስዎርድ) ቅጽ በላይ የሚታይ መልእክት (አማራጭ)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "ቀይር"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "መለያ"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7306,30 +8475,698 @@ msgstr "በስክሪን አንባቢዎች ይነበባል፣ እና “መለ�
 msgid "Show label"
 msgstr "መለያ አሳይ"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "የድር አድራሻ ወይም ጽሑፍ"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR ኮድ"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "ለስክሪን አንባቢዎች መግለጫ"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"ለ\"QR code for\"\" እና ጽሑፉን ለመጠቀም ባዶ ይተውት።"
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "የድር አድራሻ፣ የስልክ አገናኝ (tel:) ወይም ማንኛውንም ጽሁፍ ይተብቁ።"
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "ይህ ለQR ኮድ በጣም ረጅም ነው። አሳጥሩት።"
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "መግለጫ አክል"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "የንባብ ሂደት አሞሌ"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "የመስኮቱ ጠርዝ"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "ከፍተኛ"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "ታችኛው ክፍል"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "ጎብኚዎች ወደ ታች ሲያሸብልሉ በመስኮቱ ግርጌ ይታያል።"
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "ጎብኚዎች ሲያሸብልሉ በመስኮቱ አናት ላይ ይታያል።"
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "ስንት"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "በዚህ የተያያዘው"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "ምደቦች ወይም መለያዎች"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "ምንም ነገር ሳይዛመድ ሲቀር፣ ይልቁንም አዲስ የሆነውን አሳይ"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "ርዕስ"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "ለ\"ተዛማጅ ልጥፎች\" ባዶውን ይተውት።"
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "የተመረጠውን ምስል አሳይ"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "ቀኑን አሳይ"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "ማጠቃለያ አሳይ"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "ገና ምንም ልጥፎች የዚህን ልጥፍ ምድቦች ወይም መለያዎች አይጋሩም። የተወሰኑት ሲጋሩ፣ እዚህ ይታያሉ።"
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "ሞዳል"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "ከካንቫስ ውጭ ያለ ፓነል"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "መጠን"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "ከዚህ ይንሸራተታል"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "ማስጀመሪያ ንባብ የሚጀምርበት ጎን ነው፡ በእንግሊዝኛ ግራው፣ በአረብኛ ቀኙ።"
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "ከኋላ ያለው ገጽ ላይ ሲጫን ዝጋ"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "የመስኮቱ ርዕስ"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "የምልክት ምልክት"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "ክበብ"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "ይለፉ"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "ነጥብ"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "ቀስት"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "ኮከብ"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "የአዶ ቀለም"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "ከጽሑፉ ጋር ተመሳሳይ"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "ዋና ጭብጥ"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "ሁለተኛ ጭብጥ"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "የጭብጥ ንፅፅር"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "ርዕሶችን በገጹ ላይ በቅደም ተከተል ያስቀምጡ፡ ከሚገኙበት ክፍል አንድ ደረጃ በታች ያለ ርዕስ።"
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "አዶ ይምረጡ"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "ነባሪውን አዶ ይጠቀሙ"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "አዶ ይምረጡ"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "ወደ ላይ አንቀሳቅስ"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "ወረድ በል"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "ለእያንዳንዱ ዓይነት ርዕስ አሳይ"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "በመረጧቸው አይነቶች ውስጥ እስካሁን የታተመ ነገር የለም።"
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "አገናኞች"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "ሊንክ %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "አውታረ መረብ"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "የመገለጫ አድራሻ፣ mailto:you@example.com ወይም tel:+441234567890።"
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "ለስክሪን አንባቢዎች የሚነበብ ስም"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "ሌላ አዶ"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "አገናኝ አክል"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "ይመልከቱ"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "ቅጥ"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "አዶ ብቻ"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "ቅርጽ"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "የክብ ማዕዘን ካሬ"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "ካሬ"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "መገለጫዎችን በአዲስ ትር ክፈት"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "የኮከብ ደረጃ ሰጪ"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "ደረጃ መስጠት"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "የከዋክብት ብዛት"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "ቁጥር አሳይ"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "እርምጃዎች"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "ከገጹ በታች"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "ጎን ለጎን (በስልኮች ላይ የተደረደሩ)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "የቁጥር ቀለም"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "የእርምጃዎች ቅደም ተከተል"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "ደረጃ %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "እርምጃ…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "ምን ማድረግ እንዳለብዎት..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "እርምጃ ጨምር"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "ታብ"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "በርእሶች ወደ ገጹ ያክሉ፣ እና እዚህ ጋር ዝርዝራቸው ይታያል።"
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "የርዕሶች ማውጫ"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "ከርዕስ ደረጃ"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "ወደ ርዕስ ደረጃ"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "ቁጥር የተሰጠው"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "ሊወድቅ ይችላል"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "ተሰብስቦ ይጀምር"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "የሚነበበውን ክፍል ያደምቁ"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "ትሮች"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "ለማያ ገጽ አንባቢዎች ስም"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "አማራጭ። ትርሶቹ ምን ላይ እንደሆኑ ይገልጻል፣ ለምሳሌ \"ዕቅዶች\"።"
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "ገጹ ሲጫን ክፈት"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "ታቦች በጎን በኩል"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "ታብ ጨምር"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "ምስክርነት"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "ፎቶውን ይተኩ"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "ፎቶ ይምረጡ"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "ፎቶ አስወግድ"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "የፎቶ መግለጫ"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "ፎቶው ከጎኑ የተጠቀሰውን ሰው ብቻ የሚያሳይ ከሆነ ባዶ ይተውት።"
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "የኮከብ ደረጃ (0 = የለም)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "ከጥቅሱ ስር ያለው ስም"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "ከጥቀሱ አጠገብ ያለ ፎቶ"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "ደንበኛው የተናገረው…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "ሚና ወይም ኩባንያ"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "የመሣሪያ ጥቆማ"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "የመሣሪያ ጥቆማ ጽሑፍ"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "አጭር ይሁን፡ አንድ ወይም ሁለት ዓረፍተ ነገሮች። የስክሪን አንባቢዎች ከሚያብራራው ቃል ጋር አብረው ያነቡታል።"
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "አሳይው"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "ከዚህ በላይ"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "ከዚህ በታች"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "ቃል ወይም ሐረግ"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "ይግብሩ"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "መገለጫ"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "የማን መገለጫ"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "የልጥፉ ደራሲ"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "የመገለጫ ምስሉን አሳይ"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "የህይወት ታሪክ አሳይ"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "የልጥፎች እና የድር ጣቢያ አገናኞችን አሳይ"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "የደራሲ መገለጫ"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "የትኛውን መገለጫ ማሳየት እንዳለብዎ ይምረጡ።"
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "የዋትስአፕ ቁጥር፣ ከአገር መለያ ኮድ ጋር"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "ለምሳሌ +44 7700 900123።"
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "የሚጀመርበት መልእክት (አማራጭ)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "ጽሑፉን ከአዶው ቀጥሎ አሳይ"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "ማዕዘን"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "ታችኛው ጫፍ (በእንግሊዝኛ በቀኝ በኩል)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "ከታች መጀመሪያ (በእንግሊዝኛ ግራ)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "የWhatsApp ቁጥርዎን በጎን አሞሌ ላይ ያክሉ። እስከዚያው ድረስ አዝራሩ በገጹ ላይ አይታይም።"
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "በገጹ ላይ ይህ ቁልፍ በማያ ገጹ ታችኛው ጥግ ላይ ይንሳፈፋል።"
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "የአቋራጭ መለያ (Shortcode) መለያ"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "ፊደላትን፣ ቁጥሮችን፣ ሰያፍ መስመሮችን እና የግርጌ ማሰመሪያዎችን ብቻ ይጠቀሙ።"
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "የባህሪ ስም"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "ባህሪ አክል"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "አጭር ኮድ"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "ሌሎች መለያ ባህሪያት"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "በብሎክ ቅንብሮች ውስጥ አጭር ኮድ መለያ ይምረጡ።"
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "ጋለሪ"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "የምስል መጠን"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "ጥቃቅን ምስል"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "ሙሉ መጠን"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "የሚከተለው ጋር አገናኝ"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "የፋይል ማያያዣ ገጽ"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "የሚዲያ ፋይል"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "ኦዲዮ"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "ቪዲዮ"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "የፋይል አድራሻ"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "ሉፕ"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "በአውቶማቲክ አጫውት"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "የፖስተር ምስል"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "የመጫወቻ ዝርዝር"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "የሚዲያ መታወቂያዎች (IDs)፣ በኮማ የተለዩ"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "የትራክ ዝርዝሩን አሳይ"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "ከተት"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "ለመክተት አድራሻ"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "ከፍተኛው ስፋት"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "መግለጫ ጽሑፍ"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "የምስል እና መግለጫ ጽሑፍ HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "ስፋት"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "ጠቃሚ ምክር፡ የቅጹ ማገጃ (Form block) ይህ ቅጽ ከእርስዎ ድረ-ገጽ ጋር እንዲጣጣም ተደርጎ መዘጋጀቱን ያሳያል።"
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "የቅጹን ርዕስ አሳይ"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "የፎርሙን መግለጫ አሳይ"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "ገጽ ሳያድሱ አስገባ"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7350,123 +9187,108 @@ msgstr "ፋይል ምረጥ"
 msgid "— Default —"
 msgstr "— ነባሪ —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "የላቀ ስታይሊንግ"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "ቀጥተኛ ሲኤስኤስ"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "የሲኤስኤስ መግለጫዎች፣ ለምሳሌ፡ min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "ተፅዕኖዎች (የቀድሞ መደቦች)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "ከአሮጌ ስሪቶች የተዘዋወሩ በክፍተት የተለዩ የውጤት ስሞች፣ ለምሳሌ፡ hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "ረድፍ"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "ስፋት"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "ሙሉ ስፋት፣ ይዘቱ በመሃል የተያዘ"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "የአገናኝ አድራሻ"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "የአገናኝ ዝምድና"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "አሰላለፍ"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "ግራኝ"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "መሃል"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "ቀኝ"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "የቁልፍ ጽሑፍ"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "ጽሑፍ አክል..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "ማስቀመጫ"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "በራሱ መስመር ላይ"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "በመስመሩ ውስጥ፣ ከሌሎች ይዘቶች ጎን"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "አውቶማቲክ (በገጹ ከፍተኛ ደረጃ ላይ ባለው የራሱ መስመር ላይ)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "የሚደረስበት መለያ"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "ለጌጣጌጥ አዶ ባዶ ይተውት።"
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "በብሎክ መቼቶች ውስጥ አዶ ይምረጡ።"
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "አዲስ የማስተካከያ ስም"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "ለምሳሌ፡ ርዕስ ወይም ጽሑፍ"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "ቅንብር አክል"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "ዊጅት"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "ዊጅት ይምረጡ"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "የግብዓት ቦታ"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "የመግብር ቦታ ይምረጡ"
 
@@ -7489,6 +9311,142 @@ msgstr "ይህ ተለጣፊ ይዘት (embed) ከተጫነ በኋላ መጠኑ�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "የአቀማመጥ መፈናቀል"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "ይህ መግብር መቼቶቹን አይገልጽም፣ ስለዚህ እንደ ስም እና ዋጋ ጥንዶች ይታረማሉ።"
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "ችግር"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "ፈትሽ"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "ብሎክ አሳይ"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "ለማንበብ ቀላል የሆነ የገጽታ ቀለም ይጠቀሙ"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "H%d አድርግው"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "የተለጭ ጽሑፍ"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Alt ጽሑፍ አስቀምጥ"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "ይህ ምስል ያጌጠ ነው"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "በማጣራት ላይ…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "በዚህ ገጽ ላይ ምንም የተደራሽነት ችግሮች አልተገኙም።"
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s፣ %2$s።"
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d ችግር"
+msgstr[1] "%d ችግሮች"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "ሊረጋገጥ የሚገባ %d ነገር"
+msgstr[1] "%d የሚመረመሩ ነገሮች"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "እንደገና ያረጋግጡ"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "አውቶማቲክ ምርመራ ብዙ ችግሮችን ያገኛል፣ ነገር ግን ሁሉንም አይደለም። እንዲሁም ገጹን በቁልፍ ሰሌዳ ብቻ እና በስክሪን አንባቢ ሞክረው።"
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "የጽሑፍ ንፅፅር %1$s:1 ነው፤ ለማንበብ ቢያንስ %2$s:1 ያስፈልገዋል።"
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "እዚህ ይጫኑ,እዚህ,ተጨማሪ ያንብቡ,ተጨማሪ,ሊንክ,ይህ ሊንክ,ተጨማሪ ይወቁ,ሂድ"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "አገናኝ ጽሑፍ የለውም፣ ስለዚህ ስክሪን አንባቢ “አገናኝ” የሚለውን ብቻ ይናገራል። ጽሑፍ ወይም መለያ ያክሉ።"
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "የአገናኝ ጽሑፍ “%s” ወዴት እንደሚወስድ አይናገርም። በምትኩ መድረሻውን ይግለጹ።"
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "አንድ አካል አዎንታዊ የ tabindex አለው፣ ይህም የቁልፍ ሰሌዳውን ቅደም ተከተል ከንባብ ቅደም ተከተል ያስወጣል። 0 ይጠቀሙ ወይም ያስወግዱት።"
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "ሊ ጠመም የሚችል ነገር በቁልፍ ሰሌዳ ሊደረስበት አይችልም። ትክክለኛ አዝራር ወይም አገናኝ ይጠቀሙ።"
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "የተከተተ ፍሬም ርዕስ የለውም፣ ስለዚህ ስክሪን አንባቢ ምን እንደሆነ ሊናገር አይችልም።"
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "የቅጽ መስክ መለያ (ሌብል) የለውም፣ ስለዚህ ዓላማው አልተገለጸም።"
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "ይህ ርዕስ ባዶ ነው። የስክሪን አንባቢ ተጠቃሚዎች በሰነድ ርዕሶች ይጓዛሉ፤ እባክዎ ያስወግዱት ወይም ጽሑፍ ያክሉ።"
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "የገጹ ርዕስ አስቀድሞ H1 ነው፤ ለይዘቱ ከፍተኛው ደረጃ H2 ይጠቀሙ።"
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "ይህ H%1$d ደረጃ ይዘለላል; ከእሱ በፊት ያለው H%2$d ነው። H%3$d ያድርጉት።"
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "ይህ ምስል ምንም አማራጭ ጽሑፍ የለውም። እባክዎ ይግለጹት፣ ወይም ምንም ፋይዳ ከሌለው እንደ ጌጣጌጥ ምልክት ያድርጉበት።"
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "ፓነል ዝጋ"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7563,18 +9521,6 @@ msgstr "ብጁ"
 msgid "Width / height"
 msgstr "ስፋት / ቁመት"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "ከፍተኛ"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "ታችኛው ክፍል"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7587,20 +9533,6 @@ msgstr "የወረሰ ምስል — ይቀይሩ"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "ምስል አስወግድ"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "ቦታ"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "መጠን"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7666,22 +9598,6 @@ msgstr "እያንዳንዳቸው በለየ ሁኔታ"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "ጎን"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "ቅጥ"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "ቀለም"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7931,14 +9847,6 @@ msgstr "%1$s (%2$d ስብስብ)"
 msgid "Replace icon"
 msgstr "አዶን ይተኩ"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "አዶ ይምረጡ"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "አዶ ይምረጡ"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "ምንም አዶዎች አልተዛመዱም።"
@@ -7950,10 +9858,6 @@ msgstr "መደበኛ"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "ብራንዶች"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "የተዘረዘረ"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8082,21 +9986,9 @@ msgstr "የጽሑፍ ቀለም"
 msgid "Cursor"
 msgstr "ከርሰር"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "ቀስት"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "ጠቋሚ"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "ጽሑፍ"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8254,10 +10146,6 @@ msgstr "የአካባቢ ስም"
 msgid "Named areas"
 msgstr "ስም የተሰጣቸው ቦታዎች"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "ረዎች"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "ቁመት"
@@ -8375,10 +10263,6 @@ msgstr "አግባብ አስምር"
 msgid "Decoration"
 msgstr "ጌጥ"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "መስመር አስምር"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "ኦቨርላይን"
@@ -8461,19 +10345,9 @@ msgstr "ኮኒክ"
 msgid "Angle (degrees)"
 msgstr "ማዕዘን (በዲግሪ)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "ቅርጽ"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "ኤሊፕስ"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "ክበብ"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8509,10 +10383,6 @@ msgstr "የመጠገብ መጠን ከጀርባ (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "ቀለም (ግልጽ የሆነ ቀለም ይጠቀሙ)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "የክብ ማዕዘን ካሬ"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "ብሎብ"
@@ -8529,10 +10399,6 @@ msgstr "ሦስት ማዕዘን"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "ዳይመንድ"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "ኮከብ"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9410,11 +11276,6 @@ msgstr "አጽዳ"
 msgid "The change could not be saved."
 msgstr "ለውጡ ሊቀመጥ አልቻለም።"
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "ፓነል ዝጋ"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "የጭብጥ ነባሪ"
@@ -9471,9 +11332,49 @@ msgstr "ክፍሎች፣ ቶከኖች፣ የጨለማ ሁነታ፣ የምርት �
 msgid "Open the Site Editor’s styles"
 msgstr "የጣቢያ አርትዖት ዘይቤዎችን ይክፈቱ"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "ርዕስ"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "በስታይል ትር (Style tab) የተስተካከለ፣ ጠበቅ ያለ የመስመር ቁመት ያለው ርዕስ።"
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "በስታይል (Style) ትር የተስተካከለ የጽሁፍ አንቀጽ።"
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "ምስል"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "በቅጥ (Style)  ትር የተስተካከለ፣ ክብ ማዕዘኖች ያሉት ምስል።"
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "ከሚዲያ ቤተ-መጽሐፍት የተገኘ ቪዲዮ፣ በስታይል (Style) ትር የተስተካከለ።"
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "ክፍተት"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "በብሎኮች መካከል ያለ ክፍት ቦታ፤ በስታይል (Style) ታብ ውስጥ ለእያንዳንዱ የስክሪን መጠን የተለያየ ቁመት ይወስኑ።"
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "መከለያው"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "በቅጥ (Style)  ትር የተስተካከለ በክፍሎች መካከል ያለ አግድም መስመር።"
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "የሌላ ሳይት ይዘት (ቪዲዮ፣ ልጥፍ፣ ካርታ) አድራሻውን በመለጠፍ።"
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "በስታይል (Style) ትር የተስተካከሉ በርካታ ምስሎች በግሪድ (grid) መልክ።"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9507,10 +11408,6 @@ msgstr "ዘርዝር"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "እንክብሎች"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "ቁልፎች"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9555,10 +11452,6 @@ msgstr "ይህ ገጽ ያልተተረጎመባቸውን ቋንቋዎች ደብ�
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "በቁመት ሰልፍ አድርግ"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "መደብ ቀለም"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9617,11 +11510,6 @@ msgstr "የብሎክ ቅንብሮች"
 #, js-format
 msgid "Add block: %s"
 msgstr "ብሎክ ጨምር፡ %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(ርዕስ የለም)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9697,10 +11585,6 @@ msgstr "ደህንነቱ የተጠበቀ ሁነታን አጥፋ"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "ደህንነቱ የተጠበቀ ሁነታን አብራ (ሌሎች ተሰኪዎች ጠፍተዋል፣ ለእርስዎ፣ በስቱዲዮ ውስጥ ብቻ)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "ታትሟል"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10040,11 +11924,6 @@ msgstr "የገንቢ ስም"
 msgid "Visual editor name"
 msgstr "የቪጁዋል አርታኢ ስም"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "አዘጋጅ"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10118,10 +11997,6 @@ msgstr[1] "ያልተደረገ፡ %d ገጾች ተመልሰዋል።"
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "ተካ"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "አገናኞች"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10231,10 +12106,6 @@ msgstr "ደንበኞች በዚህ ገጽ ላይ አስተያየት እንዲሰ�
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "አገናኙ ያለው ማንኛውም ሰው ይህ ሳይታተምም እንኳ ይህን ገጽ ማየት እና አስተያየት መስጠት ይችላል። መለያ (አካውንት) አያስፈልግም።"
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "ኮፒ ተደርጓል"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10477,6 +12348,52 @@ msgstr "ምስሎቹን ወደዚህ ድረ-ገጽ የሚዲያ ማዕከለ-ስ
 msgid "Show what will happen"
 msgstr "ምን እንደሚሆን አሳይ"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "የአኮርዲዮን ንጥል"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "የአኮርዲዮን አንዱ ክፍል፡ ይዘቱን የሚከፍት ርዕስ።"
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "አኮርዲዮን"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "የሚከፈቱ እና የሚዘጉ ጥያቄዎች ወይም ክፍሎች። በአማራጭ በቅደም ተከተል አንድ በአንድ፣ እና በአማራጭ ለፍለጋ ሞተሮች እንደ FAQ ምልክት የተደረገባቸው።"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "አኮርዲዮን"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "ተደጋጋሚ የሚጠየቁ ጥያቄዎች"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "ቀይር"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "ሰብስብ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "ዝርዝሮች"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10493,6 +12410,7 @@ msgid "notice"
 msgstr "ማስታወሻ"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "መልዕክት"
@@ -10507,6 +12425,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "ማስጠንቀቂያ"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "መለያ ምልክት"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "እንደ አዲስ፣ ሽያጭ ወይም የተሻለ ዋጋ ያለ አጭር መለያ።"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "መለያ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "መለያ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "ክኒን"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "አዲስ"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "የቦታ ማስያዣ መቁጠሪያ"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "ጎብኚው ሲጠይቅ ብቻ የሚጫን የ Calendly ወይም Cal.com የቀጠሮ መያዣ ካሌንደር።"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "ቦታ ማስያዝ"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "ካሌንድሊ"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "ቀጠሮ"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "መርሐግብር አውጣ"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10518,6 +12501,7 @@ msgid "A link styled as a button."
 msgstr "እንደ ቁልፍ የተቀረጸ አገናኝ።"
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "አዝራር"
@@ -10531,6 +12515,98 @@ msgstr "አገናኝ"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "የድርጊት ጥሪ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "እርምጃ የሚወስድ ጥሪ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "አርዕስት፣ አንድ ዓረፍተ ነገር እና ጎብኚው እንዲንቀሳቀስ የሚጠይቁ አንድ ወይም ሁለት አዝራሮች።"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "ድርጊት ጥሪ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "ባነር"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "ይመዝገቡ"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "የተከናወኑ ነገሮች ዝርዝር"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "የተጠናቀቁ ወይም አሁንም መሠራት ያለባቸውን ተግባራት ዝርዝር የሚያሳይ፣ ለስክሪን አንባቢዎች በቃላት እንዲሁም በምልክት የተገለጸ።"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "የሚከናወን"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "ተግባሮች"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "ምልክቶች"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "ዘርዝር"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "ኮድ"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Syntax highlighting፣ የመስመር ቁጥሮች እና የቅጂ ቁልፍ ያለው የኮድ ዝርዝር። ተሰኪው (ፕለጊኑ) ቢጠፋም ሊነበብ የሚችል ሆኖ ይቆያል።"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "ኮድ"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "ሲንታክስ"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "አጉላ"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "ቁራጭ"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "ፕሮግራሚንግ"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10554,6 +12630,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "አቀማመጥ"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "የንጽጽር ሰንጠረዥ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "እቅዶች ወይም ምርቶች ጎን ለጎን፣ የስክሪን አንባቢዎች እንደ ቃላት የሚያነቧቸው የአዎ እና የአይደለም ምልክቶች አሉት።"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "አወዳድር"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "ዋጋ ማውጣት"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "እቅዶች"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "ሠንጠረዥ"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "ባህሪዎች"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "የግንኙነት አዝራሮች"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "እርስዎን በስልክ፣ በኢሜል፣ በጽሁፍ መልእክት ወይም በዋትስአፕ (WhatsApp) ለማግኘት የሚረዱ አዝራሮች።"
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "ግንኙነት"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "ይደውሉ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "ስልክ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "ኢሜይል"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "ኤስኤምኤስ"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10571,11 +12725,13 @@ msgid "container"
 msgstr "ኮንቴነር"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "ሳጥን"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10592,6 +12748,52 @@ msgstr "ፍሌክስቦክስ"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "አምዶች"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "ሁለት አቅጣጫዊ ርዕስ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "በሁለት ክፍሎች የተከፈለ ርዕስ፣ ሁለተኛው ክፍል በቀለም፣ በግራዲየንት፣ በንድፍ ወይም በስር መስመር ጎልቶ ይታያል።"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "ርዕስ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "ርዕስ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "ግራዲየንት"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "የባህሪያት ዝርዝር"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "በፍርግርግ ውስጥ ያሉ ገጽታዎች፣ እያንዳንዳቸው አዶ፣ ርዕስ እና አጭር መግለጫ አላቸው።"
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "ጥቅሞች"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "አገልግሎቶች"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10635,6 +12837,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "ጽሑፍ"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "ቅጽ"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "ከ Contact Form 7፣ WPForms፣ Gravity Forms ወይም Fluent Forms የተወሰደ ቅጽ ከጣቢያዎ ጋር እንዲጣጣም ተደርጎ የተስተካከለ ያሳያል።"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "ቅጽ"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "የእውቂያ ቅጽ 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "ግራቪቲ ፎርምስ"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "ቃላት መፍቻ"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "ቃላት እና ትርጓሜዎቻቸው፣ ከሀ እስከ ፐ በቅደም ተከተል የተደረደሩ፣ እያንዳንዳቸው የየራሳቸው ሊንክ አላቸው። በገጹ ላይ የእያንዳንዱን ቃል የመጀመሪያ መጥቀሻ ወደ ትርጓሜው ማገናኘት ይችላል።"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "ውሎች"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "ፍቺዎች"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "መዝገበ ቃላት"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "የአዶዎች ዝርዝር"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "እያንዳንዱ መስመር በአዶ የሚጀምርበት ዝርዝር፡ የማረጋገጫ ምልክት፣ ቀስት፣ ወይም ከቤተ-መጽሐፍት ያለ ማንኛውም አዶ።"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "ነጥቦች"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "አዶዎች"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10655,6 +12937,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "የመረጃ ሳጥን"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "ምልክት፣ አጭር ርዕስ፣ አንድ ወይም ሁለት ዓረፍተ ነገሮች እና አማራጭ አገናኝ፡ ለአገልግሎቶች፣ ለጥቅማጥቅሞች ወይም የእውቂያ ዝርዝሮች።"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "ባህሪ"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "አገልግሎት"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "ካርድ"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10674,6 +12981,204 @@ msgstr "ትርጉም"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "ባለብዙ ቋንቋዎች"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "ካርታ አሳይ"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "ከOpenStreetMap የተገኘ የአንድ ቦታ ካርታ፡ ምንም ቁልፍ የለም፣ እናም ጎብኚው ካርታውን እስኪጠይቅ ድረስ ከOpenStreetMap የሚጫን ምንም ነገር የለም።"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "ካርታ አሳይ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "አካባቢ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "አድራሻ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "ሞዳል"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "በገጹ ላይ መስኮት የሚከፍት አዝራር፣ በውስጡ ማንኛቸውም ብሎኮች ያሉት።"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "ሞዳል"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "ፖፕአፕ"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "ላይትቦክስ"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "ዲሎግ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "ከካንቫስ ውጭ ያለ ፓነል"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "ማንኛውንም ብሎኮች በውስጡ ይዞ፣ ከስክሪኑ ጎን ፓነልን ወደ ውስጥ የሚያንሸራትት አዝራር።"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "ከካንቫስ ውጭ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "መሳቢያ"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "የጎን ማሰሻ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "ፓነል"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "ማውጫ"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "የልጥፍ ዝርዝሮች"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "የልጥፉ ደራሲ፣ ቀኖች፣ ምድቦች፣ መለያዎች፣ የማንበብ ጊዜ እና የአስተያየት ብዛት።"
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "ደራሲ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "ቀን"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "የንባብ ጊዜ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "ሜታ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "በደራሲው"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "የእድገት አሞሌ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "እንደ ክህሎት ወይም ግብ ያሉ ነገሮች ምን ያህል እንደተሻሻሉ የሚያሳይ ባለመለያ አሞሌ።"
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "ሂደት"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "አሞሌ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "ክህሎት"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "ግብ"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "በይለፍ ቃል የተጠበቀ ይዘት"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "የይለፍ ቃሉ ያላቸው ጎብኚዎች ብቻ ሊያዩዋቸው የሚችሏቸው ብሎኮች። እሱን እስከሚያስገቡ ድረስ፣ ይዘቱ ገጹ ውስጥ ጭራሽ አይኖርም።"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "የይለፍ ቃል"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "የተጠበቀ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "የግል"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "ቆልፍ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "አባላት"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10699,6 +13204,86 @@ msgstr "ቀላል"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "የቀለም ንድፍ"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR ኮድ"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "ለድረ-ገጽ አድራሻ ወይም ለየትኛውም ጽሑፍ የQR ኮድ፣ በእራስዎ ድር ጣቢያ ላይ የተሳለ (ምንም የQR አገልግሎት ጥቅም ላይ አይውልም)።"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR ኮድ"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "ባርኮድ"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "ቅኝት"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "የንባብ እድገት አሞሌ"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "ጎብኚዎች ገጹን ወደ ታች ሲያሸብልሉ የሚሞላ በመስኮቱ ጠርዝ ላይ ያለ ቀጭን አሞሌ።"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "በማንበብ ላይ"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "ማሸብለል"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "ተዛማጅ ጽሑፎች"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "የዚህን ፖስት ምድቦች ወይም መለያዎች የሚጋሩ ፖስቶች፣ ከምስሎቻቸው፣ ከቀኖቻቸው እና ከአጭር መግለጫዎቻቸው ጋር።"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "ተዛማጅ"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "ልጥፎች"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "ተመሳሳይ"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "ተጨማሪ"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10762,13 +13347,284 @@ msgstr "የ ጭብጡ መግብር አካባቢዎች ውስጥ አንዱ ውስ
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "የጎን ማሰሻ"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "የዊጅት ቦታ"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "የጣቢያ ካርታ"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "የገጽ ዛፉ ተጠብቆ፣ የታተሙትን ገጾች እና ልጥፎች (s and other public content) ሁሉ የሚዘርዝር ገጽ።"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "የጣቢያ ካርታ"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "የጣቢያ ካርታ"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "ማውጫ"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "ሁሉም ገጾች"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "የሶሻል ሚዲያ ምልክቶች"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "የመገለጫዎችዎ አገናኞች፣ በራሳቸው የኔትወርክ አዶዎች የተሳሉ።"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "ማህበራዊ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "አገናኞች"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "ተከተል"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "መገለጫዎች"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "የኮከብ ደረጃ ሰጪ"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "በግማሽ ከዋክብት ጭማሪዎች በከዋክብት መልክ የሚታይ ደረጃ አሰጣጥ።"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "ኮከቦች"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "ደረጃ መስጠት"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "ውጤት"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "እርምጃዎች"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "በቅደም ተከተል በገጹ ላይ ወደ ታች ወይም ጎን ለጎን የተቀመጡ የአንድ ሂደት ባለቁጥር ደረጃዎች።"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "ሂደት"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "እንዴት እንደሚደረግ"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "የጊዜ ሰሌዳ"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "ቁጥር የተሰጠው"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "ትርጉም"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "የታብች ብሎክ አንድ ታብ፡ ርዕሱ እና ፓነሉ።"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "የይዘት ማውጫ"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "በገጹ ላይ ያሉ እና ወደ እያንዳንዱ የሚያገናኙ ራሳቸውን የቻሉ ርዕሶች ዝርዝር።"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "ማውጫ"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "ይዘቶች"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "ርዕሶች"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "ትርሮች"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "በታቦች ውስጥ ያሉ ይዘቶች፡ ጎብኝዎች በ አይጥ ወይም በቁልፍ ሰሌዳ በፓነሎች መካከል ይቀያየራሉ።"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "ትርዎች"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "በታብ የተከፈለ"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "ፓነሎች"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "ምስክርነት"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "የደንበኛ ጥቅስ ከስማቸው፣ ከኃላፊነታቸው፣ ከፎቶአቸው እና አማራጭ ከሆነ የኮከብ ደረጃ አሰጣጥ ጋር።"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "ገመግም"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "ጥቀስ"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "ደንበኛ"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "አስተያየት"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "የመሳሪያ ጥቆማ"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "በመዳፊት ሲያንዣብቡ እና የቁልፍ ሰሌዳ ትኩረት ሲያደርጉ አጭር ማብራሪያ የሚያሳይ ቃል ወይም ሀረግ።"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "የመሣሪያ ጥቆማ"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "ጥቆማ"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "ትርጉም"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "የጸሐፊ መገለጫ"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "የደራሲው ምስል፣ ስም፣ የህይወት ታሪክ እና አገናኞች፣ ወይም የተመረጠ ተጠቃሚ።"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "የሕይወት ታሪክ"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "መገለጫ"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "ስለ"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "የWhatsApp ውይይት አዝራር"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "ከእርስዎ ጋር የዋትስአፕ (WhatsApp) ውይይት የሚከፍት በገጹ ጥግ ላይ ያለ ተንሳፋፊ አዝራር።"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "ውይይት"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "ተንሳፋፊ"
 
 #: blocks/widget/block.json
 msgctxt "block title"

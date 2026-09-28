@@ -1,0 +1,57 @@
+/*
+ * pbs/related-posts. Zero-specificity defaults (:where) so the design panel wins. Logical properties only.
+ */
+:where(.__PREFIX__-related-posts) {
+	margin-block: 2em;
+}
+
+:where(.__PREFIX__-related-posts__title) {
+	margin-block: 0 1em;
+}
+
+:where(.__PREFIX__-related-posts__list) {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 14em), 1fr));
+	gap: 1.5em;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+:where(.__PREFIX__-related-posts__item) {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4em;
+}
+
+:where(.__PREFIX__-related-posts__link) {
+	display: flex;
+	flex-direction: column;
+	gap: 0.6em;
+	color: inherit;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+:where(.__PREFIX__-related-posts__link:hover .__PREFIX__-related-posts__name, .__PREFIX__-related-posts__link:focus-visible .__PREFIX__-related-posts__name) {
+	text-decoration: underline;
+}
+
+:where(.__PREFIX__-related-posts__image) {
+	display: block;
+	inline-size: 100%;
+	block-size: auto;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	border-radius: 4px;
+}
+
+:where(.__PREFIX__-related-posts__date) {
+	font-size: 0.875em;
+	opacity: 0.8;
+}
+
+:where(.__PREFIX__-related-posts__excerpt) {
+	margin: 0;
+	font-size: 0.9375em;
+}

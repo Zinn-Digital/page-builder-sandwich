@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Ajiye azaman tsari mai sake amfani"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Manazarar samun dama"
 
@@ -990,6 +994,7 @@ msgstr "← Zabi wani mai ba da sabis daban"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Adireshin"
 
@@ -1043,6 +1048,8 @@ msgstr "Gwaji"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Cire"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Sabunta jerin samfuran daga masu samarwa"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Hotuna"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "an kashe"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Buɗe"
 
@@ -1448,6 +1457,7 @@ msgstr "Ba a yi roƙon AI ko ɗaya ba tuƙuna."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "An gama"
 
@@ -1515,7 +1525,11 @@ msgstr "Kokarin da yawa. Da fatan za a sake gwadawa bayan 'yan mintoci kaɗan."
 msgid "Something went wrong. Please contact the admin."
 msgstr "Wani abu ya lalace. Da fatan za a tuntuɓi mai gudanarwa."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Taswira"
 
@@ -1538,52 +1552,385 @@ msgstr "Ba a adana wannan iyalin ba."
 msgid "Removed."
 msgstr "An cire."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Wannan ba ingantaccen sunan iyalin rubutu ba ne."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts bai dawo da wannan iyalin ba. Duba sunan sannan a sake gwadawa."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Ba a iya sauke ko adana fayilolin rubutun ba. Tabbatar cewa foldar loda tana da ikon rubutawa."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Ba a iya adana takardar salon haruffa (font stylesheet) ba. Duba ko babban fayil din loda abubuwa (uploads folder) yana da ikon karɓar rubutu."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Kora da wannan sanarwa"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(yana buɗe a sabon shafin)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "An gama:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Abin yi:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Manunin ƙamus"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "An kiyasta %1$s cikin %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Ci gaba"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Kwafi lambar"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "An kwafi"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Wancan widget din ba ya samuwa a wannan rukunin yanar gizon."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Imel"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Waya"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Tashar RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Shafin yanar gizo"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Haɗi"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (yana buɗe a sabon shafin)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "An kima da %d daga cikin 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(an ba da shawarar)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "An haɗa"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Ba a haɗa ba"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Tabbatar kwatanta"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Kira %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Imel %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Rubutu %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Yi hira a WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Tuntuɓe mu"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Yi hira da mu a WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Ba a samun wannan fom a yanzu."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Ba za a iya nuna wannan fom ba domin %s ba ya aiki."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Taswira: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Nuna taswirar na loda ta ne daga OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Nuna taswirar"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Bude taswirar a kan OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Kalandar ajiyar wuri daga %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Nunna kalandar ajiyar wuri yana lodi daga %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Nuna kalandar ajiyar wuri"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Yi Littafi a kan %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Lambar QR don %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Tsara Design"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Abun ciki"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Watsa labarai"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Tallace-tallace"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Shafi'i"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Bayanan"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Rubututtuka masu alaƙa"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Bayanan sako"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Ta hanyar"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "An buga"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "An sabunta"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Ciki"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "An saka alama"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "minti %d karatu"
+msgstr[1] "Mintuna %d na karatu"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Babu Sharhi tukuna"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "Sharhi %d"
+msgstr[1] "ra'ayoyi %d"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Taswirar rukunin yanar gizo"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(babu lakabi)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Duk rubutun da %s ya yi"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Wannan abun ciki yana da kariya. Shigar da kalmar sirri don ganin shi."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Waccan kalmar sirri ba daidai ba ce. Sake gwadawa."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Kalmar sirri"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Nuna abinda ke ciki"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Ba za a iya buɗe wannan shafin ba."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Ƙoƙari da yawa. Jira ƴan mintuna kaɗan sannan ka sake gwadawa."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Dole ne kalmar sirrin ta kasance tsakanin haruffa 4 zuwa 200."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Ƙari"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Rufe"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Shafi %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Abubuwan da ke ciki"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Gyara tare da Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Fanko mara komai"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Tsallake zuwa abun ciki"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Dole fadin kwamfutar hannu ya zama lambar pixel duka daga 480 zuwa 2560."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Hotunan da aka loda"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Alama"
 
@@ -2553,6 +2908,8 @@ msgstr "%s shine adireshin imel na abokin ciniki na"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Lambar sirri"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Gyara"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Imel"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Adireshin imel"
 
@@ -3103,6 +3456,10 @@ msgstr "Kunna yanayin lakabi na musamman"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "Shigar da sabon adireshin imel"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Kuskure"
 
@@ -3723,6 +4081,7 @@ msgstr "An sanya kayayyakin da ke ƙasa a yanayin aminci saboda mun lura cewa %2
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "Wannan ɗan hanzarin yana buƙatar sabon salo na PHP."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "A'a"
 
@@ -4811,6 +5171,13 @@ msgstr "Kafofin sada zumunta (Facebook, Twitter, da dai sauransu)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "Lokacin fitowa"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Taken taken"
 
@@ -5171,6 +5541,8 @@ msgstr "Yaya kake son %1$s zuwa yanzu? Gwada duk abubuwan alatu na %2$s tare da 
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Nau'i"
@@ -5286,6 +5658,7 @@ msgstr "Masu amfani"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Ƙima"
@@ -5340,6 +5713,7 @@ msgstr "Duba abubuwan da ake biya"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Gargaɗi"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "Na Zabi"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Tsari"
 
@@ -5988,18 +6363,26 @@ msgstr "Madaidaici sosai"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Karami"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Matsakaici"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Babba"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "Mai girma"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "Ba a iya fara gwajin ba."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Fasali"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "An haɗa"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Ba a haɗa ba"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "Adreshin shiga"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Sunan mai amfani"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Kalmar sirri"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7088,15 +7462,62 @@ msgstr "An fara sauyawa. Yana ci gaba a bango; zaku iya barin wannan shafin."
 msgid "Undo all conversions"
 msgstr "Soke duk juyawar"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Abubuwa"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Buɗe lokacin da shafin ya loda"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Takeken taken heading ne"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Sanya taken ya zama kanun labari idan abubuwan sassan shafin ne, ta yadda baƙi za su iya tsallaka tsakaninsu."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Take %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Tambaya ko taken sashin"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Fadakarwa"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Abu ɗaya kawai a buɗe a lokaci ɗaya"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Yiwa alama a matsayin FAQ don injunan bincike"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Yana ƙara bayanan tsarin FAQ da aka gina daga taken (tambayoyi) da rubutun su (amsoshi)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Sanarwa"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Bayani"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Nasara"
 
@@ -7106,6 +7527,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Ana sanar da gargaɗi da kurakurai ga masu amfani da mai karanta allo nan take; ana karanta sanarwar bayani da nasara idan sun gama abin da suke yi."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Nuna alamar icon"
 
@@ -7121,64 +7543,702 @@ msgstr "Take (zaɓi)"
 msgid "Write the message…"
 msgstr "Rubuta sako..."
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "sashe — sashe mai jigo daya"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Tsakiya"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — babu ma'ana"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Lakabi"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "kan gaba — abubuwan gabatarwa"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Launi"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "karshen shafi — abubuwan da ke rufe shafi"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Launin jigo"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "labari — abubuwan da ke kunshe a ciki kawai"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Tsaka-tsaki"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "gefe — abubuwan da suka shafi batun"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Matsayi"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — babban abun ciki (sau ɗaya a kowane shafi)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Alamar"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — hanyoyin zirga-zirga"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Kalandar ajiyar wuri"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Tarin (flexbox, shafi)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Ayyuka"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Layuka (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Adireshin shafin ajiyar wuri"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Tarho"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Misali kamar %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Abin da kalanda yake don, mai karanta allo yana karantawa kuma ana nuna shi a ƙarƙashinsa."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Wannan ba adireshin shafin ajiyar %s ba ne, don haka babu abin da zai bayyana a shafin."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Yi duban kalandar kafin bugawa"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Adireshin mahada"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Maɓallin yana bayyana lokacin da yake da lakabi da adireshi duka biyu."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Buɗe a cikin sabon shafin yanar gizo"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Kirki ga aiki"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Tsari"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Maɓallai a ƙasa"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Maɓallan da ke kusa da rubutun"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Daidaita shafi"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Babban maballi"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Maɓallin na biyu"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Taken..."
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Sentensi guda daya kan dalilin da ya sa..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Maɓall na biyu (ba dole ba ne)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Jerin abubuwan dubawa"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Launi na alamar dubawa"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Layi"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Layi %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Aiki..."
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Ƙara layin"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Harshe"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Gano da kansa"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Babu haske"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Sunan fayil"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "An nuna sama da lamba, misali functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Lambar layi"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Kwafin maɓalli"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Rufe dogayen layuka"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Rubuta ko liƙe lamba…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Rubutu"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Ginshiƙai"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Shafi %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Haske %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Ƙara shafi"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Layuka"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Layla %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Ƙara jere"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Taken (abin da ake kwatantawa)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Nau'in tantani: %s. Canza"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Kiran waya"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Sakon rubutu"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Maɓallai"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Lambar waya, tare da lambar ƙasa"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Rubutun maɓalli"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Cire wannan maballin"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Ƙara maɓalli"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Sako na WhatsApp don farawa (na zaɓi)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Maɓallان tuntuɓa"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Ƙara lamba ta waya, adireshin imel ko lambar WhatsApp a gefen shafi."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Biyu shugaba"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Matakin taken rubutu"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Yi amfani da H1 sau ɗaya a kowace shafi, don babban taken ta."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Kashi na biyu dubi"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Launin jaddadawa"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Mai launi biyu"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Tsari"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Ƙara layin ƙasa"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Bangare na biyu a kan nasa layin"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Sashe na farko"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "bangare na biyu"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Alamar alama"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Kewaye mai kauri"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Bayan Fage"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Hau da"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Cire hasken"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Harafi mai girma"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Babban harafi na farko"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Don harafi na farko a cikin akwati, zaɓi salon \"Drop cap in a box\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Babban harafi a cikin akwati"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Sandar launi"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Sanarwa (mashigar launi)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Wani zance daga cikin rubutun, an sa shi da girma kusa da wani mashaya mai launi don jawo hankali."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "magana"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Jerin abubuwa masu muhimmanci"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "A kan wayoyi, siffofin suna lodi a koda ya kasance."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Abubuwan da ke ciki"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Siffa %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Mallakar alama"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Fasali..."
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Bayyana shi..."
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Ƙara fasali"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Sanya kuma a kunna Contact Form 7, WPForms, Gravity Forms ko kuma Fluent Forms, sannan ka zabi daya daga cikin fom din a nan."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Fatar plugin"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Zaɓa..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Firamare"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Zaɓi fom..."
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s ba ta da fom ko daya yanzu"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s ba ya aiki a wannan shafin, saboda haka ba za a iya nuna wannan fom ba."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Ba a iya loda jerin fom ɗin ba."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Salon tsari"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Filaye"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Wanda aka zana"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "An cika"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "A ƙarƙashin layin"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Nisa mai maɓalli"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Daidaita rubutun"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Cikakken faɗi"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Launi, da rubutu, da tazara, da kusurwoyi sun fito ne daga tsarin shafinka da kuma saitunan tsarin wannan bulon."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Nuna fom daga plugin ɗinka na fom, wanda aka tsara ya dace da shafinka."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Kuna buƙatar plugin din fom? Contact Form 7 kyauta ne."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Glossari"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Tsara daga A zuwa Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Shafin yana nuna sharuddan ne a jere bisa haruffan turanci; a nan suna kasancewa a jerin da kuka rubuta su."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Nuna fihirisa ta A–Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Haɗin sharuddan da aka yi amfani da su a wasu wurare a wannan shafin"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Karon farko da kowace kalma ta bayyana a cikin shafin tana da alaƙa da ma'anarta. Ana barin kan gaba, maballɓai, lambar lamba da hanyoyin haɗi da ke akwai yadda suke."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Sharuɗɗa"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Lokaci na %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Lokaci"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Abin da hakan ke nufī…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Ƙara kalma"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Jerin alamomi"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Ɗaya a ƙasan ɗaya"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "A gefe da gefe"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Abun da ke cikin jerin…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Akwatin bayani"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Ko zaɓi kowace alama daga ɗakin karatu:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Rubutun haɗi"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Faɗi inda mahaɗin ke zuwa (\"Dubi farashin mu\"), ba \"Karanta ƙari\" ba."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Jimla guda ko biyu…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "sashe — sashe mai jigo daya"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — babu ma'ana"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "kan gaba — abubuwan gabatarwa"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "karshen shafi — abubuwan da ke rufe shafi"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "labari — abubuwan da ke kunshe a ciki kawai"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "gefe — abubuwan da suka shafi batun"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — babban abun ciki (sau ɗaya a kowane shafi)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — hanyoyin zirga-zirga"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Tarin (flexbox, shafi)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Layuka (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Tarho"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Gyara: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Yi tsara 'ya'yan a matsayin"
 
@@ -7186,7 +8246,7 @@ msgstr "Yi tsara 'ya'yan a matsayin"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7194,70 +8254,50 @@ msgstr "Yi tsara 'ya'yan a matsayin"
 msgid "Inherited (%s)"
 msgstr "Wanda aka gado (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Blolin da aka ɗora a kan juna"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Ginshiƙai"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Jawo a cikin zanen, ko buga"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Fadin abubuwa"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Boxed (nisa da faɗin abubuwan da ke cikin jigon)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Cikakken faɗi"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Mafi ƙarancin tsayi"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Alamar HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Haɗi"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Sanya gabaɗayan tubalin ya zama mahaɗi zuwa"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Rubutun hanyar haɗi don masu karatun allo"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Abin da hanyar sadarwa ke yi, ga baƙi waɗanda ba za su iya ganin shingen ba."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Buɗe a cikin sabon shafin yanar gizo"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Kada ku sanya hanyoyin yanar gizo ko maɓalli a cikin toshe mai alaƙa: hanyar yanar gizo a cikin hanyar yanar gizo ba ta aiki a cikin bincike."
 
@@ -7289,14 +8329,143 @@ msgstr "+ Layla"
 msgid "− Row"
 msgstr "− Layla"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Wuri"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Liyaƙi ko kuma hanyar haɗi ta OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "A openstreetmap.org, nemo wuridin, sannan ka kwafi adireshin daga mashigar burusa, ko kuma danna-dama a kan taswirar sannan ka zaɓi \"Nuna adireshin\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Latitude"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Tsawon wuri"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Girman Zaidewa"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Sunan wuri"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Ana nuna shi a ƙarƙashin taswira kuma masu karanta allo suna karanta shi."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Mana kawo ma'ana (misali 51.5074, -0.1278) ko kuma hanyar haɗi ta OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Hada-haɗa ko mahada"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Duba taswirar a gaba"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Bincika %1$s, %2$s akan OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Marubuci"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Ranar da aka wallafa"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Ranar da aka sabunta (lokacin da ta bambanta)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Nau'uka"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Alamomi"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Lokacin karatu"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Adadin sharhi"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Bayanan da za a nuna"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Zaɓi aƙalla bayani ɗaya da za a nuna."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Mashayar ci gaba"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Mafi yawa"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 don kashi; kowane lamba don ƙidaya, kamar 8 daga cikin 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Nuna kashi dari"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "An sa kalmar sirri. Masu ziyara za su ga fam kin kalmar sirri maimakon wannan abun ciki har sai sun shigar da ita."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Ba a saita kalmar sirri ba tukuna, don haka baƙi ba sa ganin komai a nan."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Sabon kalmar sirri"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Saita kalmar sirri"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "An saita kalmar sirri. A ajiyဲ shafin don amfani da ita; baƙi da suka buɗe shi za su buƙaci sabuwa."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Idan an kashe Page Builder Sandwich, ana nuna wannan abun ciki ga kowa."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Sako a sama da fom ɗin kalmar sirri (na zaɓi)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Canzawa"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Alamar"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7306,30 +8475,698 @@ msgstr "Masu karanta allon kwamfuta suna karanta shi, kuma ana nuna shi lokacin 
 msgid "Show label"
 msgstr "Nuna lakabi"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Adireshin yanar gizo ko rubutu"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Lambar QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Bayani don masu karanta allo"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Bar a bansa don amfani da \"QR code for\" da rubutun."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Rubuta adireshi na yanar gizo, hanyar sadarwa ta waya (tel:) ko duk wani rubutu."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Wannan ya yi tsawo sosai don lambar QR. Taka shi."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Ƙara bayani"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Mashaya ta ci gaban karatu"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Gaban taga"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Na sama"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Ƙasa"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Ana nuna shi a saman ƙasan taga yayin da baƙi ke gungurawa."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Ana nuna su a saman taga yayin da baƙi ke gungurawa."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Yawan nawa"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Daga zuwa ga"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Nau'uka ko alamomi"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Lokacin da babu abin da ke da alaƙa, nuna sababbi maimakon haka"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Taken kai"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Bar shi a banza don \"Labarai masu alaƙa\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Nuna hoton da aka fi nuna"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Nuna kwanan wata"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Nuna taƙaitaccen bayani"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Babu wasu wallafe-wallafen da suka raba rukuni ko alamomin wannan wallafar tukuna. Idan wasu sun yi hakan, za su nuna a nan."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Hotuna mai tashi"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Allon gefe mai fitowa"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Girma"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Ya zo daga gefe daga"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Farko shine gefen da karatun ke farawa: hagu a Turanci, dama a Larabci."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Rufe lokacin da aka danna shafin da ke baya"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Sunan taga"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Alamar bincike"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Da'ira"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Tsallaka"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Digi"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Kibiya"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Tauraro"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Launin gunkin"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Kamar da rubutun"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Jigon jigo"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Jigon na biyu"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Bambancin jigo"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Ajiye taken magana a cikin tsari a kan shafin: taken da ke mataki daya a kasa da sashin da yake ciki."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Zaɓi gunkin"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Yi amfani da gunkin tsoho"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Zaɓi gunkin"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Matsar sama"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Matsar da kasa"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Nuna taken kowane nau'i"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Babu abin da aka buga a cikin nau'ikan da ka zaɓa."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Hanyoyin haɗi"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Mahada %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Sadarwa"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Adireshin bayanan martaba, mailto:you@example.com ko tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Sunan da aka karanta ga masu amfani da na'urar karanta allo"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Wani hoton alama"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Ƙara mahada"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Duba"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Salo"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Hoton kadai"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Siffanta"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Filayen kusurwa zagaye"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Murabba'i"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Buɗe bayanan martaba a cikin sabon shafin yanar gizo"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Matsayin taurari"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Matsayi"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Adadin taurari"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Nuna lambar"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Matakai"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Ƙasa da shafi"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Gefe da gefe (suna lodi a kan wayoyi)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Launi na lamba"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Tsarin matakan"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Mataki na %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Mataki…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Abin da za a yi…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Ƙara mataki"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Shafi"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Ƙara manyan batutuwa a shafin kuma za a lissafa su anan."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Kundin abubuwa"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Daga matakin take"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Zuwa matakin shugabanci"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Mai lamba"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Ana iya taƙaitawa"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Fara a lumshe"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Sanya haske a kan sashin da ake karantawa"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Shafyuka"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Suna ga masu karanta allon kwamfuta"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Na zaɓi. Yana bayyana abin da shafukan suka ƙunshi, alal misali \"Tsare-tsare\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Bude lokacin da shafi ya ɗora"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Shafuka a gefe"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Ƙara shafinuku"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Shaida"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Maye gurbin hoto"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Zaɓi hoto"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Cire hoto"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Bayanin hoto"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Bar shi a bude idan hoton ya nuna mutumin da aka ambata a kusa da shi kawai."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Matsayin taurari (0 = babu)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Sunan da ke ƙarƙashin zance"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Hoto a kusa da ambato"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Abin da abokin ciniki ya ce…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Matsayi ko kamfani"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Bayanin taimako"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Rubutun bayani"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Ka ajiye shi a taƙaice: sentensi ɗaya ko biyu. Masu karatun allo suna karanta shi tare da kalmar da yake bayani akanta."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Nuna shi"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Sama"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "A ƙasa"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Kalma ko jumlõka"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Afa"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Bayanin mai amfani"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Wane ne bayanin martaba"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Marubucin labarin"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Nuna hoton bayanin martaba"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Nuna tarihin rayuwa"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Nuna hanyoyin haɗi zuwa wallafe-wallafe da gidan yanar gizo"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Bayanin marubuci"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Zabi wane bayanin martaba za a nuna."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Lambar WhatsApp, tare da lambar ƙasa"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Misali +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Sako don farawa (na zaɓi)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Nuna rubutun kusa da gunkin"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Kona"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Ƙarshen ƙasa (dama a Turanci)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Kasan hagu (hagu a Turanci)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Ƙara lamba ta WhatsApp a gefen shafi. Har zuwa lokacin ba a nuna maɓallin a shafin ba."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "A kan shafin, wannan maballin yana shawagi a kusurwar ƙasa ta allo."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Lambar gajeren lokaci"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Yi amfani da haruffa, lamba, da alamomin gajeren layi da na karkashin layi kawai."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Sunan sifa"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Ƙara siffa"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Gajeriyar lamba"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Sauran siffofi"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Zaɓi alamar gajeren lamba (shortcode) a cikin saitunan bazuwar."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Gidan hotuna"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Girman hoto"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Hoton ƙarami"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Cikakken girma"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Haɗa zuwa"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Shafin abin da aka makala"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Fayil na kafofin watsa labarai"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Sauti"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Bidiyo"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Adireshin fayil"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Madauka"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Yi wasa ta atomatik"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Hoton bango"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Jerin waƙoƙi"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "An ID din kafofin watsa labarai, waɗanda aka raba su da alamun comma"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Nuna jerin waƙoƙi"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Shiga da shi"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Adireshin da za a saka"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Mafi girman fadi"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Takeƙe"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "Hoton HTML da taken sa"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Fadi"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Shawara: Sashin Form yana nuna wannan fom ɗin an yi masa ado ya yi daidai da shafin ku."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Nuna sunan fom din"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Nuna bayanin fom din"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Mika ba tare da sake loda shafin ba"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7350,123 +9187,108 @@ msgstr "Zaɓi fayil"
 msgid "— Default —"
 msgstr "— Na asali —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Tsara salo na gaba"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Inline CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Sanarwar CSS, alal misali: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Tasiri (tsofaffin aji)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Sunayen tasiri masu rarrabuwa da sarari da aka kawo daga tsofaffin sigogi, alal misali: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Jergi"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Fadi"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Cikakken faɗi, an ajiye abubuwa a tsakiya"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Adireshin mahada"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Alakar mahada"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Daidaita shafi"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Hagu"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Tsakiya"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Dama"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Rubutun maɓalli"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Ƙara rubutu…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Matsayi"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "A kan nasa layin"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "A cikin layin, kusa da sauran abun ciki"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Atomatik (kan layi na kansa a babban matakin shafin)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Alamar samuwa"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Bar a banza domin gunkin ado."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Zabi wani gunkin a cikin saitunan shingen."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Sabon sunan saitin"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Misali: taken ko rubutu"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Ƙara saitin"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Widget"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Zaɓi widget"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Yankin widget"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Zabi yankin widget"
 
@@ -7489,6 +9311,142 @@ msgstr "Wannan shigarwar tana sake girman kanta bayan ta loda, wanda ke motsa ab
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Sauye-sauyen tsari"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Wannan widget ɗin baya bayyana saitunansa ba, don haka ana gyara su a matsayin nau'ikan suna da ƙima."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Matsala"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Bincika"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Nuna shafi"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Yi amfani da launin jigo mai sauƙin karatu"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Sanya shi ya zama H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Rubutun madadin"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Ajiye rubutun alt"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Wannan hoton na ado ne"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Ana dubawa..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Ba a sami matsalar samun dama a kan wannan shafi ba."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "matsala %d"
+msgstr[1] "Matsala %d"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "abun da za a duba %d"
+msgstr[1] "Abubuwa %d da za a duba"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Sake dubawa"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Wani bincike mai zuwa da kansa yana samun matsala da yawa amma ba duka ba. Har ila yau, gwada shafin tare da madannin kwamfuta kawai da kuma mai karatun allo."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Bambancin launi na rubutu shine %1$s:1; yana buƙatar aƙalla %2$s:1 don ya zama mai karantawa."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "danna nan,anan,kara karantawa,ƙari,mahada,wannan mahadar,ƙara koyo,tafi"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Haɗin ba shi da rubutu, don haka mai karanta allo zai faɗi kawai \"haɗin\". Ƙara rubutu ko alama."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Rubutun da ke kan hanyar sadarwa “%s” bai nuna inda zai kai ba. Maimakon haka, bayyana inda zai je."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Wani abu yana da tabindex mai kyau, wanda ke canza tsarin madannai daga tsarin karatu. Yi amfani da 0 ko cire shi."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Ba a iya isa ga abin da ake danna wa ta amfani da madannin kwamfuta. Yi amfani da ainihin maballin ko mahaɗi."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Ba a ba wa wani ingantaccen tsarin da aka saka take ba, don haka mai karanta allo ba zai iya fadin abin da yake ba."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Wani fili a cikin fom ba shi da lakabi, don haka ba a bayyana manufarsa ba."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Wannan kan gaba ba komai a ciki. Masu amfani da mai karanta allo suna zirga-zirga ta hanyar kan gaba; cire shi ko ƙara rubutu."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Sunan shafin riga shine H1; yi amfani da H2 don matakin sama na abubuwan da ke ciki."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Wannan H%1$d yana tsallake mataki ɗaya; wanda ke gabaninsa shine H%2$d. Sanya shi ya zama H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Wannan hoton bazuwa da rubutun alt ba. Bayyana shi, ko kuma ka sanya shi a matsayin mai ƙawata idan bai ƙara komai ba."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Rufe kwamitin"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7563,18 +9521,6 @@ msgstr "Na Musamman"
 msgid "Width / height"
 msgstr "Faɗin ƙasa / tsayi"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Na sama"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Ƙasa"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7587,20 +9533,6 @@ msgstr "Hoto da aka gada — maye gurbi"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Cire hoton"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Matsayi"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Girma"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7667,22 +9599,6 @@ msgstr "Kowane gefe daban-daban"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Gefe"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Salo"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Launi"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7932,14 +9848,6 @@ msgstr "%1$s (%2$d saiti)"
 msgid "Replace icon"
 msgstr "Canza gunkin"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Zaɓi gunkin"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Zaɓi gunkin"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Babu alamomin da suka dace."
@@ -7951,10 +9859,6 @@ msgstr "Na yau da kullum"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Kayayyaki"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Wanda aka zana"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8083,21 +9987,9 @@ msgstr "Launin rubutu"
 msgid "Cursor"
 msgstr "Mai nuna alama"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Kibiya"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Mai nuna fadin hanya"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Rubutu"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8255,10 +10147,6 @@ msgstr "Sunan yankin"
 msgid "Named areas"
 msgstr "Wurare masu suna"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Layuka"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Tsawon"
@@ -8376,10 +10264,6 @@ msgstr "Daidaita"
 msgid "Decoration"
 msgstr "Zane"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Ƙara layin ƙasa"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Layi a sama"
@@ -8462,19 +10346,9 @@ msgstr "Conic"
 msgid "Angle (degrees)"
 msgstr "Kona (digiri)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Siffanta"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Madaidaicin Da'ira"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Da'ira"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8510,10 +10384,6 @@ msgstr "Cikewa a baya (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Waiwayi (yi amfani da launi mai haske)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Filayen kusurwa zagaye"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8530,10 +10400,6 @@ msgstr "Triangle"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamond"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Tauraro"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9411,11 +11277,6 @@ msgstr "Sharege"
 msgid "The change could not be saved."
 msgstr "Ba a iya adana sauyi ba."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Rufe kwamitin"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "An tsoffin jigo"
@@ -9472,9 +11333,49 @@ msgstr "Aji, alamomi, yanayin duhu, kayan aikin alama da rubutun hannu na musamm
 msgid "Open the Site Editor’s styles"
 msgstr "Buɗe salon Editan Shafin"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Taken kai"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Wani kan gaba mai takaitaccen tsayin layi, wanda aka tsara da shafin Salo."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Wani sakin layi na rubutu, wanda aka tsara tare da shafin Salo."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Hoto"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Wani hoto mai karkatattun kusurwoyi, wanda aka tsara tare da shafin Salo."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Wani bidiyo daga Laburaren Kafofin Watsa Labarai, wanda aka tsara da shafin Salo."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Wuri"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Bakin sarari tsakanin tubalan; saita tsayin da ya bambanta a kowane girman allo a shafin Salo."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Masu rarrabewa"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Wani layi a kwance tsakanin sassa, wanda aka tsara da shafin Style."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Abubuwa daga wani shafi (bidiyo, sakon, taswira) ta hanyar liƙa adireshinsa."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Hotuna da yawa a cikin wani gajeren layi, an tsara su da shafin Style."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9508,10 +11409,6 @@ msgstr "Jereni"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Kwayoyi"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Maɓallai"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9556,10 +11453,6 @@ msgstr "Boye da harsunan da ba a fassara wannan shafin zuwa gare su ba"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Ajiye a tsaye"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Bayan Fage"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9618,11 +11511,6 @@ msgstr "Saitunan katange"
 #, js-format
 msgid "Add block: %s"
 msgstr "Ƙara tubali: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(babu lakabi)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9698,10 +11586,6 @@ msgstr "Kashe yanayin aminci"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Kunna yanayin aminci (sauran ɗorawa a kashe, a gare ka, a Studio kaɗai)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "An buga"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10041,11 +11925,6 @@ msgstr "Sunan mai ginawa"
 msgid "Visual editor name"
 msgstr "Sunan editan gani"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Marubuci"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10119,10 +11998,6 @@ msgstr[1] "Ba a yi ba: An dawo da shafuka %d."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Maye gurbi"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Hanyoyin haɗi"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10232,10 +12107,6 @@ msgstr "Bari abokin ciniki ya yi tsokaci a kan wannan shafi"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Duk wani wanda ke da hanyar haɗi (link) zai iya ganin wannan shafin, koda kafin a buga shi, kuma ya bar sharhi. Ba a buƙatar asusu ba."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "An kwafi"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10478,6 +12349,52 @@ msgstr "Kwafi hotunan zuwa cikin ɗakin karatu na kafofin watsa labarai na wanna
 msgid "Show what will happen"
 msgstr "Nuna abin da zai faru"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Abu na madanni mai fadadawa"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Wani sashi na akodiyon: take wanda ke buɗe abubuwan da ke ciki."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Fadama"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Tambayoyi ko sassan da suke budewa da rufewa. Da zabi a bude daya bayan daya, kuma da zabi a sanya musu alama a matsayin FAQ na injunan bincike."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "tagwaye"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Tambayoyi da Amsoshi"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "canja"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "ruguzhe"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "bayani"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10494,6 +12411,7 @@ msgid "notice"
 msgstr "sanarwa"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "sako"
@@ -10508,6 +12426,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "gargaɗi"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Gano"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Takaitaccen lakabi kamar Sabo, Siyarwa ko Mafi kyawun ƙima."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "lakabi"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "alama"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "kwaya"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "sabon"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Kalandar ajiyewa"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Kalandar ajiyar wuri ta Calendly ko Cal.com, wacce ake loda ta ne kawai idan baƙon ya nema."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "ajiyewa"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "alƙawari"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "tsara lokaci"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10519,6 +12502,7 @@ msgid "A link styled as a button."
 msgstr "Hanyar haɗi mai salo kamar maɓalli."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "mabuɗi"
@@ -10532,6 +12516,98 @@ msgstr "mahada"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "kira zuwa ga aiki"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Kira zuwa ga aiki"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Wani kan goge, wani jumla da maɓalli ɗaya ko biyu da ke roƙon baƙo ya ɗauki mataki."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "Aiki"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "taken tarayya"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Yi rajista"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Jeridiyar Abubuwan Dubawa"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Jerin ayyuka, kowanne a bayyane yake ko an kammala ko har yanzu ana kan yi, a cikin kalmomi don masu karanta allo da kuma alamar duba."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "abubuwan yi"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "ayyuka"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "alamuna"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "lissafi"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Lambar sirri"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Wani lissafin lamba tare da haskaka tsari, lambobin layoyi da maɓallin kwafi. Yana kasancewa mai karantawa idan har aka kashe na'urar haɗin."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "lambar sirri"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "tsarin sarrafa harshe"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "haska"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "sasska"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "shirye-shiryen kwamfuta"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10555,6 +12631,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "tsari"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Teburin kwatanta"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Shirye-shirye ko samfurori gefe da gefe, tare da alamomin eh da a'a waɗanda masu karanta allo ke karantawa azaman kalmomi."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "kwatanta"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "farashi"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "shirye-shirye"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "tebur"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "siffofi"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Maɓallan tuntuɓa"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Maɓallan kira, imel, saƙon rubutu ko saƙon WhatsApp zuwa gare ku."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Tuntube mu"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "kira"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "lambar tarho"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "imel"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "whatsapp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "sms"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10572,11 +12726,13 @@ msgid "container"
 msgstr "kontena"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "akwati"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10593,6 +12749,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "shafiuka"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Biyu masu taken kai"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Wani taken da aka raba kashi biyu, inda aka yi wa sashin biyu ado da launi, da launuka masu hadewa, da zane a waje, ko kuma da layi a karkashinsa."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "taken kaiwa"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "Taken"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "mai launi"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Jerin fasali"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Fasaloli a cikin grid, kowanne yana da alama (icon), taken da ɗan taƙaitaccen bayani."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Amfani"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "Ayyuka"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10636,6 +12838,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "rubutu"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Fom"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Yana nuna fom daga Contact Form 7, WPForms, Gravity Forms ko Fluent Forms, wanda aka tsara shi ya yi daidai da shafin yanar gizon ku."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "fomudi"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Jerin kalmomi"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Sharudduka da ma'anarsu, an tsara su daga A zuwa Z, kowanne da nasa hanyar haɗi. Za a iya haɗa ambaton farko na kowane sharuddan da ke shafin da ma'anarsa."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "sharuɗɗa"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "Ma'anoni"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "kamus"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Jerin gumaka"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Jerin da kowace layiya take farawa da gunkin hoto: alamar dubawa, kibiya, ko kowane gunkin hoto daga ɗakin karatu."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "abubuwa masu nuni"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "gumaka"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10656,6 +12938,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Akwatin bayani"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Alama, gajeren taken, hukunci daya ko biyu da zaɓaɓɓen mahada: don sabis, fa'idodi ko cikakkun bayanai na tuntuɓar juna."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "Fasali"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "sabis"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "katin banki"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10675,6 +12982,204 @@ msgstr "fassarar"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "mai harsuna da yawa"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Taswira"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Taswirar wani wuri daga OpenStreetMap: babu maɓalli, kuma babu abin da yake lodawa daga OpenStreetMap har sai baƙon ya nemi taswirar."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "taswira"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "Wuri"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "adireshin"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Hotuna mai tashi"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Maɓallin da ke buɗe taga a saman shafin, tare da kowane tubali a ciki."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "tagwaye"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "pop-up"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "lightbox"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "taron tattaunawa"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Panel mai fita daga gefe"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Maɓallin da ke zamar da wani panel daga gefen taga, tare da duk wani blocks a ciki."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "waje-ba-waje"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "maajiyar zane"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "ashar gefe"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "allo"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "menu"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Bayanan rubutu"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Marubucin post din, kwanan wata, rukunoni, alamomi, lokacin karatu da adadin sharhi."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "marubuci"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "ranar wata"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "lokacin karatu"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "maagashi"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Mudin ci gaba"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Wani alamar da ke nuna nisan da wani abu ya yi, kamar fasaha ko manufa."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "ci gaba"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "mashaya"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "kwarewa"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "manufa"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Abubuwan da aka kiyaye da kalmar sirri"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Ana toshe masu ziyara waɗanda ke da kalmar sirri kaɗai za su iya gani. Har sai sun shigar da ita, abun da ke ciki ba ya cikin shafin kwata-kwata."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "kalmar sirri"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Mai kariya"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "mai zaman kansa"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "kulle"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "mambobi"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10700,6 +13205,86 @@ msgstr "haske"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "launin tsari"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Lambar QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Lambar QR don wani adreshin yanar gizo ko kowane rubutu, wanda aka zana a kan shafin ku (ba a amfani da sabis na QR)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "lambar QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "tambarin lamba"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "bincika"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Mashayar ci gaban karatu"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Wani siririn sarari a gefen taga wanda ke cika yayin da baƙi ke jujjuya shafi."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "karatu"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "gungura"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Rubututtuka masu alaƙa"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Rubutun da ke raba nau'ikan ko alamomin wannan rubutu, tare da hotunansu, kwanan watanni da taƙaitacce."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "mai alaƙa"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "Walluna"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "mai kama da haka"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "ƙari"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10763,13 +13348,284 @@ msgstr "Yana nuna widgets a cikin ɗayan wuraren widget na jigon."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "ashar gefe"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "yankin widget"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Taswirar shafin"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Wani shafi da ke lissafa kowane buga da aka wallafa da kuma sakonni (da sauran abubuwan da ke cikin jama'a), tare da kiyaye bishiyar shafin."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "taswirar shafin"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "taswirar shafin"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "shafi na farko"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "duk shafuka"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Hotunan sada zumunta"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Hanyoyin haɗi zuwa bayanan martabarka, waɗanda aka zana da alamun cibiyoyin sadarwar kansu."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "na zamantakewa"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "mahada"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "bi bi"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "bayanan martaba"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Matsayin taurari"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Matsayin taurari da aka nuna, a matakan rabi-rabi."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "Taurari"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "kimtacci"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "maki"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Matakai"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Matakai masu lamba na wani tsari, a cikin oda, kasa shafin ko gefe da gefe."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "sarƙaƙiya"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "yadda ake"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "lokacin aiki"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "mai lamba"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Shafi"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Shafi ɗaya na sashin Shafi: taken sa da kuma bangarensa."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Littafin abubuwan ciki"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Jerofinstagram shafuka a shafin, wanda aka gina ta atomatik, wanda ke da alaƙa da kowanne ɗayansu."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Abubuwan da ke ciki"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "abubuwan ciki"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "kanun rubutu"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Shafuka"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Abubuwa a cikin shafuka: baƙi suna canzawa tsakanin fuskoki ta amfani da linzamin kwamfuta ko madannai."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "shafiukan da ke saman"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "mai shafi"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "alluna"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Shaida"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Faɗar abokin ciniki tare da sunansa, matsayinsa, hotonsa da ƙimar tauraro ta zaɓi."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "bita"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "kabbara"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "abokin ciniki"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "ra'ayi"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Bayanin Taimako"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Kalma ko jimla da ke nuna gajeren bayani idan an sanya linzami a kai kuma aka mayar da hankali kan madannai."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "bayanin kayan aiki"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Talla"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "Ma'ana"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Bayanin marubuci"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Hoton marubucin, suna, tarihin rayuwa da hanyoyin haɗi, ko na wani mai amfani da aka zaɓa."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "tarihin rayuwa"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "bayanin mai amfani"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "game game game"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Maɓallin tattaunawa na WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Wani maɓalli mai shawira a wani kusurwa na shafin da ke buɗe tattaunawar WhatsApp tare da ku."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "tattaunawa"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "mai iyo"
 
 #: blocks/widget/block.json
 msgctxt "block title"

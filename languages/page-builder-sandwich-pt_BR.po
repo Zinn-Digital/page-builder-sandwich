@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Salvar como padrão reutilizável"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Verificador de acessibilidade"
 
@@ -990,6 +994,7 @@ msgstr "← Escolher um provedor diferente"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Endereço"
 
@@ -1043,6 +1048,8 @@ msgstr "Teste"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Remover"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Atualizar as listas de modelos dos provedores"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Imagens"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "desativado"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Abrir"
 
@@ -1448,6 +1457,7 @@ msgstr "Nenhuma solicitação de IA foi feita ainda."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Concluído"
 
@@ -1515,7 +1525,11 @@ msgstr "Muitas tentativas. Tente novamente em alguns minutos."
 msgid "Something went wrong. Please contact the admin."
 msgstr "Algo deu errado. Entre em contato com o administrador."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Mapear"
 
@@ -1538,52 +1552,387 @@ msgstr "Essa família não está armazenada."
 msgid "Removed."
 msgstr "Removido."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Esse não é um nome de família de fontes válido."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "O Google Fonts não retornou essa família. Verifique o nome e tente novamente."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Não foi possível baixar ou salvar os arquivos de fonte. Verifique se a pasta de uploads tem permissão de gravação."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Não foi possível salvar a folha de estilos da fonte. Verifique se a pasta de uploads tem permissão de escrita."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Dispensar este aviso"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(abre em uma nova aba)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Concluído:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "A fazer:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Índice do glossário"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Classificado como %1$s de %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Progresso"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Copiar código"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Copiado"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Esse widget não está disponível neste site."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "E-mail"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Telefone"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Feed RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Site"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Vincular"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (abre em uma nova aba)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Avaliado com nota %d de 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(recomendado)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Incluído"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Não incluído"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Tabela comparativa"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Ligar para %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "E-mail %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Texto %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Conversar no WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Fale conosco"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Converse conosco no WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Este formulário não está disponível no momento."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Este formulário não pode ser exibido porque %s não está ativo."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Mapear: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Exibir o mapa o carrega do OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Mostrar o mapa"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Abrir o mapa no OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Calendário de reservas de %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Exibir o calendário de reservas o carrega de %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Exibir o calendário de reservas"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Reservar em %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Código QR para %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Design"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Conteúdo"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Mídia"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Marketing"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Site"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Dados"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Posts relacionados"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Detalhes da postagem"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Por"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Publicado"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Atualizado"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Em"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Marcado"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d minuto de leitura"
+msgstr[1] "%d minutos de leitura"
+msgstr[2] "%d minutos de leitura"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Nenhum comentário ainda"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d comentário"
+msgstr[1] "%d comentários"
+msgstr[2] "%d comentários"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Mapa do site"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(sem título)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Todas as publicações de %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Este conteúdo é protegido. Digite a senha para visualizá-lo."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Essa senha está incorreta. Tente novamente."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Senha"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Mostrar o conteúdo"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Essa página não pode ser desbloqueada."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Muitas tentativas. Aguarde alguns minutos e tente novamente."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "A senha deve ter entre 4 e 200 caracteres."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Mais"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Fechar"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Aba %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Conteúdo"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2035,10 @@ msgstr "Editar com o Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Tela em branco"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Pular para o conteúdo"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "A largura do tablet deve ser um número inteiro de pixels entre 480 e 2560."
@@ -1760,7 +2113,11 @@ msgid "Uploaded icons"
 msgstr "Ícones enviados"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Ícone"
 
@@ -2553,6 +2910,8 @@ msgstr "%s é o endereço de e-mail do meu cliente"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Código"
 
@@ -3047,13 +3406,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Editar"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "E-mail"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Endereço de e-mail"
 
@@ -3103,6 +3458,10 @@ msgstr "Ativando o modo white-label"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3484,7 @@ msgstr "Insira o novo endereço de e-mail"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Erro"
 
@@ -3723,6 +4083,7 @@ msgstr "Os produtos abaixo foram colocados em modo de segurança porque notamos 
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4187,7 @@ msgstr "Este plug-in requer uma versão mais recente do PHP."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Não"
 
@@ -4811,6 +5173,13 @@ msgstr "Redes sociais (Facebook, Twitter, etc.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5465,9 @@ msgstr "Carimbo de data/hora"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Título"
 
@@ -5171,6 +5543,8 @@ msgstr "O que você está achando de %1$s até agora? Teste todos os nossos recu
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Tipo"
@@ -5286,6 +5660,7 @@ msgstr "Usuários"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Valor"
@@ -5340,6 +5715,7 @@ msgstr "Ver recursos pagos"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Aviso"
 
@@ -5666,6 +6042,7 @@ msgid "Optional"
 msgstr "Opcional"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Plano"
 
@@ -5988,18 +6365,26 @@ msgstr "Extra pequeno"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Pequeno"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Médio"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Grande"
 
@@ -6012,7 +6397,9 @@ msgid "Huge"
 msgstr "Muito grande"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6328,16 +6715,9 @@ msgid "The trial could not be started."
 msgstr "Não foi possível iniciar o período de teste."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Recurso"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Incluído"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Não incluído"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6693,10 +7073,6 @@ msgstr "Endereço de login"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Nome de usuário"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Senha"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7095,15 +7471,62 @@ msgstr "Desfazimento iniciado. Ele continua em segundo plano; você pode sair de
 msgid "Undo all conversions"
 msgstr "Desfazer todas as conversões"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Item"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Abrir quando a página for carregada"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "O título é um cabeçalho"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Torne o título um cabeçalho quando os itens forem seções da página, para que os visitantes possam alternar entre eles."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Cabeçalho %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Título da pergunta ou seção"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Acordeão"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Apenas um item aberto por vez"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Marcar como FAQ para mecanismos de busca"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Adiciona dados estruturados de FAQ criados a partir dos títulos (perguntas) e de seus textos (respostas)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Alerta"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Informações"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Sucesso"
 
@@ -7112,6 +7535,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Avisos e erros são anunciados aos usuários de leitores de tela imediatamente; informações e avisos de sucesso são lidos quando eles terminam o que estão fazendo."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Exibir ícone"
 
@@ -7127,64 +7551,702 @@ msgstr "Título (opcional)"
 msgid "Write the message…"
 msgstr "Escreva a mensagem…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "seção — uma seção temática"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Centro"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — sem significado"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Selo"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "cabeçalho — conteúdo introdutório"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Cor"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "rodapé — conteúdo final"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Cor do tema"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "artigo — conteúdo independente"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Neutro"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "conteúdo relacionado"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Posição"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — o conteúdo principal (uma vez por página)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Rótulo"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "navegação — links de navegação"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Calendário de reservas"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Pilha (flexbox, coluna)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Serviço"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Linha (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Endereço da página de agendamento"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Grade"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Por exemplo %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Para que serve o calendário, lido por leitores de tela e exibido abaixo dele."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Este não é um endereço de página de agendamento %s, portanto, nada será exibido na página."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Visualizar a agenda"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Endereço do link"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "O botão é exibido quando possui um rótulo e um endereço."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Abrir em uma nova aba"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Chamada para ação"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Layout"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Botões abaixo"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Botões ao lado do texto"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Alinhamento"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Botão principal"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Segundo botão"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Cabeçalho…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Uma frase sobre o porquê…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Segundo botão (opcional)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Lista de verificação"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Cor da marcação"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Linhas"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Linha %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Tarefa..."
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Adicionar linha"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Idioma"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Detectar automaticamente"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Sem destaque"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Nome do arquivo"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Exibido acima do código, por exemplo, functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Números de linha"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Botão de cópia"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Quebrar linhas longas"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Escreva ou cole o código…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Texto"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Colunas"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Coluna %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Destacar %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Adicionar coluna"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Linhas"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Linha %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Adicionar linha"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Legenda (o que está sendo comparado)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Tipo de célula: %s. Alterar"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Ligação telefônica"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Mensagem de texto"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Botões"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Número de telefone, com código do país"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Texto do botão"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Remover este botão"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Adicionar um botão"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Mensagem do WhatsApp para começar (opcional)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Botões de contato"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Adicione um número de telefone, um endereço de e-mail ou um número do WhatsApp na barra lateral."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Título duplo"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Nível do cabeçalho"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Use o H1 uma vez por página, para o título principal."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Segunda parte da consulta"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Cor de destaque"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Gradiente"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Esboço"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Sublinhado"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Segunda parte em sua própria linha"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Primeira parte"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "segunda parte"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Caneta hidrográfica"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Sublinhado grosso"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Plano de fundo"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Destacar"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Remover marcação"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Letra capitular"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Letra inicial grande"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Para a primeira letra em uma caixa, escolha o estilo \"Letra capitular em caixa\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Letra capitular em uma caixa"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Barra de destaque"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Citação em destaque (barra de destaque)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Uma citação do texto, exibida em destaque ao lado de uma barra colorida para atrair o olhar."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "cotação"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Lista de recursos"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Em celulares, os recursos sempre são empilhados."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Recursos"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Recurso %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Próprio ícone"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Recurso…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Descrever…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Adicionar recurso"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Instale e ative o Contact Form 7, WPForms, Gravity Forms ou Fluent Forms e, em seguida, escolha um de seus formulários aqui."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Plugin de formulário"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Escolher…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Formulário"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Escolha um formulário..."
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s ainda não tem formulários"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s não está ativo neste site, portanto este formulário não pode ser exibido."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Não foi possível carregar a lista de formulários."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Estilo do formulário"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Campos"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Contornado"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Preenchido"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Sublinhado"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Largura do botão"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Ajustar o texto"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Largura total"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Cores, fontes, espaçamento e cantos vêm do design do seu site e das configurações de design deste bloco."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Exiba um formulário do seu plugin de formulários, estilizado para combinar com o seu site."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Precisa de um plugin de formulário? O Contact Form 7 é gratuito."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Glossário"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Ordenar de A a Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "A página mostra os termos em ordem alfabética; aqui eles permanecem na ordem em que você os escreveu."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Mostrar um índice de A a Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Termos de link usados em outros lugares nesta página"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "A primeira vez que cada termo aparece no texto da página, ele cria um link para sua definição. Títulos, botões, código e links existentes permanecem inalterados."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Termos"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Termo %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Prazo"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "O que isso significa…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Adicionar termo"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Lista de ícones"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Um abaixo do outro"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Lado a lado"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Item da lista…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Caixa de informações"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Ou escolha qualquer ícone da biblioteca:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Texto do link"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Diga para onde o link vai (\"Veja nossos preços\"), em vez de \"Leia mais\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Uma ou duas frases…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "seção — uma seção temática"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — sem significado"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "cabeçalho — conteúdo introdutório"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "rodapé — conteúdo final"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "artigo — conteúdo independente"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "conteúdo relacionado"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — o conteúdo principal (uma vez por página)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "navegação — links de navegação"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Pilha (flexbox, coluna)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Linha (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Grade"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Editando: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Dispor elementos filhos como"
 
@@ -7192,7 +8254,7 @@ msgstr "Dispor elementos filhos como"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7200,70 +8262,50 @@ msgstr "Dispor elementos filhos como"
 msgid "Inherited (%s)"
 msgstr "Herdado (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Blocos empilhados"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Colunas"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Arraste para a tela ou digite"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Largura do conteúdo"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Boxed (a largura de conteúdo do tema)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Largura total"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Altura mínima"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Tag HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Vincular"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Tornar o bloco inteiro um link para"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Texto do link para leitores de tela"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "O que o link faz, para visitantes que não conseguem ver o bloco."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Abrir em uma nova aba"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Não coloque links ou botões dentro de um bloco com link: um link dentro de um link não funciona nos navegadores."
 
@@ -7295,14 +8337,143 @@ msgstr "+ Linha"
 msgid "− Row"
 msgstr "− Linha"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Localizar"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Cole as coordenadas ou um link do OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "No site openstreetmap.org, localize o local, copie o endereço na barra do navegador ou clique com o botão direito no mapa e escolha \"Mostrar endereço\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Latitude"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Longitude"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Nome do local"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Exibido abaixo do mapa e lido por leitores de tela."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Cole as coordenadas (por exemplo, 51.5074, -0.1278) ou um link do OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Coordenadas ou link"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Visualizar o mapa"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Verifique %1$s, %2$s no OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Autor"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Data de publicação"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Data de atualização (quando for diferente)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Categorias"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Marcas"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Tempo de leitura"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Contagem de comentários"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Detalhes para exibir"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Escolha pelo menos um detalhe para exibir."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Barra de progresso"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Máximo"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 para uma porcentagem; qualquer outro número para uma contagem, como 8 de 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Exibir a porcentagem"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Uma senha está definida. Os visitantes verão um formulário de senha em vez deste conteúdo até que a informem."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Nenhuma senha foi definida ainda, portanto os visitantes não verão nada aqui."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Nova senha"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Definir a senha"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Senha definida. Salve a página para aplicá-la; os visitantes que a tinham desbloqueado precisarão da nova."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Se o Page Builder Sandwich for desativado, este conteúdo será exibido para todos."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Mensagem acima do formulário de senha (opcional)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Alternar"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Rótulo"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7312,30 +8483,698 @@ msgstr "Lido por leitores de tela e exibido quando “Mostrar rótulo” está a
 msgid "Show label"
 msgstr "Exibir rótulo"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Endereço web ou texto"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Código QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Descrição para leitores de tela"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Deixe em branco para usar \"QR code para\" e o texto."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Digite um endereço web, um link de telefone (tel:) ou qualquer texto."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Isso é longo demais para um código QR. Encurte-o."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Adicionar uma legenda"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Barra de progresso de leitura"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Borda da janela"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Superior"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Inferior"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Exibido na parte inferior da janela conforme os visitantes rolam a página."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Exibido na parte superior da janela conforme os visitantes rolam a página."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Quantos"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Relacionado por"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Categorias ou tags"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Quando nada estiver relacionado, mostre o mais recente em vez disso"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Cabeçalho"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Deixe em branco para \"Posts relacionados\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Exibir a imagem em destaque"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Mostrar a data"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Exibir um resumo"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Ainda não há publicações que compartilhem as categorias ou tags desta publicação. Quando houver, elas aparecerão aqui."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Modal"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Painel lateral"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Tamanho"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Desliza a partir de"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Início é o lado onde a leitura começa: a esquerda em inglês, a direita em árabe."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Fechar quando a página de trás for clicada"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Título da janela"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Marca de seleção"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Círculo"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Cruz"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Ponto"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Seta"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Favorito"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Cor do ícone"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Igual ao texto"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Tema principal"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Tema secundário"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Contraste do tema"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Mantenha os títulos em ordem na página: um título um nível abaixo da seção em que está inserido."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Escolher ícone"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Usar o ícone padrão"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Escolha um ícone"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Mover para cima"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Mover para baixo"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Exibir um cabeçalho para cada tipo"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Nada publicado ainda nos tipos que você escolheu."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Links"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Link %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Rede"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Um endereço de perfil, mailto:you@example.com ou tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Nome lido para leitores de tela"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Outro ícone"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Adicionar link"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Visualizar"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Estilo"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Somente ícone"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Formato"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Quadrado arredondado"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Square"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Abrir perfis em uma nova aba"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Avaliação por estrelas"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Avaliação"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Número de estrelas"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Mostrar o número"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Etapas"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Para baixo na página"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Lado a lado (empilhado em celulares)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Cor do número"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Ordem das etapas"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Passo %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Etapa…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "O que fazer…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Adicionar etapa"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Aba"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Adicione títulos à página e eles serão listados aqui."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Índice"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "A partir do nível de cabeçalho"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Para o nível de cabeçalho"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Numerado"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Pode ser recolhido"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Iniciar recolhido"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Destacar a seção que está sendo lida"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Abas"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Nome para leitores de tela"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Opcional. Informa o conteúdo das abas, por exemplo, \"Planos\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Abrir ao carregar a página"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Abas na lateral"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Adicionar uma aba"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Depoimento"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Substituir foto"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Escolher foto"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Remover foto"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Descrição da foto"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Deixe em branco quando a foto mostrar apenas a pessoa nomeada ao lado."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Classificação por estrelas (0 = nenhuma)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Nome sob a citação"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Foto ao lado da citação"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "O que o cliente disse..."
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Função ou empresa"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Dica de ferramenta"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Texto de ajuda"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Seja conciso: uma ou duas frases. Os leitores de tela leem o texto junto com a palavra explicada."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Exibir"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Acima"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Abaixo"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Palavra ou frase"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Aplicar"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Perfil"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "De quem é o perfil"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Autor do post"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Exibir a foto de perfil"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Exibir a biografia"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Exibir links para postagens e site"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Perfil do autor"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Escolha de qual perfil exibir o perfil."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Número do WhatsApp, com código do país"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Por exemplo, +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Mensagem para começar (opcional)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Mostrar o texto ao lado do ícone"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Canto"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Extremidade inferior (direita em inglês)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Início inferior (esquerda em inglês)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Adicione seu número do WhatsApp na barra lateral. Até lá, o botão não será exibido na página."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Na página, este botão flutua em um canto inferior da tela."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Tag de shortcode"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Use apenas letras, números, hífens e sublinhados."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Nome do atributo"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Adicionar atributo"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Outros atributos"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Escolha uma tag de shortcode nas configurações do bloco."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Galeria"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Tamanho da imagem"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Miniatura"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Tamanho real"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Vincular a"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Página de anexo"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Arquivo de mídia"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Áudio"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Vídeo"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Endereço do arquivo"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Loop"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Reproduzir automaticamente"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Imagem de pôster"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Lista de reprodução"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "IDs de mídia, separados por vírgulas"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Exibir a lista de faixas"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Incorporar"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Endereço para incorporar"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Largura máxima"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Legenda"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML de imagem e legenda"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Largura"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Dica: o bloco Formulário exibe este formulário com o estilo correspondente ao do seu site."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Mostrar o título do formulário"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Exibir a descrição do formulário"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Enviar sem recarregar a página"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7356,123 +9195,108 @@ msgstr "Escolher arquivo"
 msgid "— Default —"
 msgstr "— Padrão —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Estilização avançada"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS Embutido"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Declarações CSS, por exemplo: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Efeitos (classes legadas)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Nomes de efeitos separados por espaços herdados de versões anteriores, por exemplo: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Linha"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Largura"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Largura total, conteúdo mantido no centro"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Endereço do link"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Relação do link"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Alinhamento"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Esquerda"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Centro"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Direito"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Texto do botão"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Adicionar texto…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Posicionamento"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Na sua própria linha"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Na linha, ao lado de outro conteúdo"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Automático (na própria linha no nível superior da página)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Rótulo acessível"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Deixe em branco para um ícone decorativo."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Escolha um ícone nas configurações do bloco."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Novo nome da configuração"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Por exemplo: título ou texto"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Adicionar configuração"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Widget"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Escolher um widget"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Área de widget"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Escolha uma área de widget"
 
@@ -7495,6 +9319,144 @@ msgstr "Esta incorporação se redimensiona após ser carregada, o que move o co
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Mudança de layout"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Este widget não descreve suas configurações, portanto elas são editadas como pares de nome e valor."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Problema"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Verificar"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Mostrar bloco"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Use uma cor de tema legível"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Tornar H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Texto alternativo"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Salvar texto alternativo"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Esta imagem é decorativa"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Verificando..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Nenhum problema de acessibilidade encontrado nesta página."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d problema"
+msgstr[1] "%d problemas"
+msgstr[2] "%d problemas"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d item para verificar"
+msgstr[1] "%d itens para verificar"
+msgstr[2] "%d itens para verificar"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Verificar novamente"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Uma verificação automática encontra muitos problemas, mas não todos. Tente também acessar a página usando apenas o teclado e com um leitor de tela."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "O contraste do texto é de %1$s:1; é necessário pelo menos %2$s:1 para que seja legível."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "clique aqui,aqui,leia mais,mais,link,este link,saiba mais,ir"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Um link não tem texto, portanto um leitor de tela anuncia apenas \"link\". Adicione texto ou um rótulo."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "O texto do link \"%s\" não indica para onde ele vai. Descreva o destino em vez disso."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Um elemento possui um tabindex positivo, o que altera a ordem do teclado em relação à ordem de leitura. Use 0 ou remova-o."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Não é possível acessar um elemento clicável usando o teclado. Use um botão ou link real."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Um quadro embutido não tem título, portanto, um leitor de tela não pode dizer o que ele é."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Um campo de formulário não tem rótulo, portanto, sua finalidade não é anunciada."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Este cabeçalho está vazio. Os usuários de leitores de tela navegam por cabeçalhos; remova-o ou adicione texto."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "O título da página já é o H1; use H2 para o nível superior do conteúdo."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Este H%1$d pula um nível; o anterior é H%2$d. Torne-o um H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Esta imagem não tem texto alternativo. Descreva-a ou marque-a como decorativa se não acrescentar nada."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Fechar painel"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7569,18 +9531,6 @@ msgstr "Personalizado"
 msgid "Width / height"
 msgstr "Largura / altura"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Superior"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Inferior"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7593,20 +9543,6 @@ msgstr "Imagem herdada — substituir"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Remover imagem"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Posição"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Tamanho"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7672,22 +9608,6 @@ msgstr "Cada lado separadamente"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Lateral"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Estilo"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Cor"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7937,14 +9857,6 @@ msgstr "%1$s (%2$d definido)"
 msgid "Replace icon"
 msgstr "Substituir ícone"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Escolher ícone"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Escolha um ícone"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Nenhum ícone corresponde."
@@ -7956,10 +9868,6 @@ msgstr "Regular"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Marcas"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Contornado"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8088,21 +9996,9 @@ msgstr "Cor do texto"
 msgid "Cursor"
 msgstr "Cursor"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Seta"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Apontador"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Texto"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8260,10 +10156,6 @@ msgstr "Nome da área"
 msgid "Named areas"
 msgstr "Áreas nomeadas"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Linhas"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Altura"
@@ -8381,10 +10273,6 @@ msgstr "Justificar"
 msgid "Decoration"
 msgstr "Decoração"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Sublinhado"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Sobrelinha"
@@ -8467,19 +10355,9 @@ msgstr "Cônico"
 msgid "Angle (degrees)"
 msgstr "Ângulo (graus)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Formato"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Elipse"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Círculo"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8515,10 +10393,6 @@ msgstr "Saturação em segundo plano (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Tom (use uma cor translúcida)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Quadrado arredondado"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8535,10 +10409,6 @@ msgstr "Triângulo"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamond"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Favorito"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9416,11 +11286,6 @@ msgstr "Limpar"
 msgid "The change could not be saved."
 msgstr "Não foi possível salvar a alteração."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Fechar painel"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Tema padrão"
@@ -9477,9 +11342,49 @@ msgstr "Classes, tokens, modo escuro, kit de marca e fontes personalizadas estã
 msgid "Open the Site Editor’s styles"
 msgstr "Abra os estilos do Editor do Site"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Cabeçalho"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Um título com uma altura de linha menor, estilizado com a aba Estilo."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Um parágrafo de texto, estilizado com a aba Estilo."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Imagem"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Uma imagem com cantos arredondados, estilizada com a aba Estilo."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Um vídeo da Biblioteca de Mídia, estilizado com a aba Estilo."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Espaçador"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Espaço vazio entre blocos; defina uma altura diferente por tamanho de tela na guia Estilo."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Divisor"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Uma linha horizontal entre as seções, estilizada com a guia Estilo."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Conteúdo de outro site (um vídeo, uma postagem, um mapa) colando o endereço dele."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Várias imagens em uma grade, estilizadas com a guia Estilo."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9513,10 +11418,6 @@ msgstr "Lista"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Pílulas"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Botões"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9561,10 +11462,6 @@ msgstr "Ocultar os idiomas para os quais esta página não está traduzida"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Empilhar verticalmente"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Plano de fundo"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9623,11 +11520,6 @@ msgstr "Configurações de bloqueio"
 #, js-format
 msgid "Add block: %s"
 msgstr "Adicionar bloco: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(sem título)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9703,10 +11595,6 @@ msgstr "Desativar o modo de segurança"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Ativar o modo de segurança (outros plugins desativados, para você, apenas no Studio)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Publicado"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10049,11 +11937,6 @@ msgstr "Nome do criador"
 msgid "Visual editor name"
 msgstr "Nome do editor visual"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Autor"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10130,10 +12013,6 @@ msgstr[2] "Desfeito: %d páginas restauradas."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Substituir"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Links"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10244,10 +12123,6 @@ msgstr "Permitir que um cliente comente nesta página"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Qualquer pessoa com o link pode ver esta página, mesmo antes de ser publicada, e deixar comentários. Não é necessária uma conta."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Copiado"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10497,6 +12372,52 @@ msgstr "Copie as imagens para a biblioteca de mídia deste site"
 msgid "Show what will happen"
 msgstr "Mostrar o que vai acontecer"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Item do acordeão"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Uma seção de um acordeão: um título que abre o seu conteúdo."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Acordeão"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Perguntas ou seções que abrem e fecham. Opcionalmente uma de cada vez, e opcionalmente marcadas como FAQ para mecanismos de busca."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "acordeão"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "FAQ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "alternar"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "recolher"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "detalhes"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10513,6 +12434,7 @@ msgid "notice"
 msgstr "aviso"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "mensagem"
@@ -10527,6 +12449,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "aviso"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Selo"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Um rótulo curto como Novo, Promoção ou Melhor valor."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "rótulo"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "etiqueta"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "selo"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "novo"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Calendário de reservas"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Um calendário de agendamento do Calendly ou Cal.com, carregado apenas quando o visitante o solicita."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "reserva"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "compromisso"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "Agendar"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10538,6 +12525,7 @@ msgid "A link styled as a button."
 msgstr "Um link estilizado como botão."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "botão"
@@ -10551,6 +12539,98 @@ msgstr "vínculo"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "chamada para ação"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Chamada para ação"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Um cabeçalho, uma frase e um ou dois botões que pedem ao visitante que aja."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "cta"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "banner"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "cadastre-se"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Lista de verificação"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Uma lista de tarefas, cada uma marcada como concluída ou pendente, em palavras para leitores de tela, além de um ícone de seleção."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "a fazer"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "tarefas"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "marcas de escala"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "lista"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Código"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Uma listagem de código com destaque de sintaxe, números de linha e um botão de cópia. Permanece legível caso o plugin seja desativado."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "código"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "sintaxe"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "destacar"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "trecho"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "programação"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10574,6 +12654,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "layout"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Tabela comparativa"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Planos ou produtos lado a lado, com marcas de sim e não que leitores de tela leem como palavras."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "comparar"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Preços"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "planos"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "tabela"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "recursos"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Botões de contato"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Botões para ligar, enviar e-mail, SMS ou mensagem para você no WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "contato"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "Ligar"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "telefone"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "e-mail"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10591,11 +12749,13 @@ msgid "container"
 msgstr "container"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "Caixa"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10612,6 +12772,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "colunas"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Cabeçalho duplo"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Um cabeçalho em duas partes, sendo a segunda destacada com uma cor, um gradiente, um contorno ou um sublinhado."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "cabeçalho"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "título"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "degradê"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Lista de recursos"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Recursos em uma grade, cada um com um ícone, um título e uma breve descrição."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "benefícios"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "serviços"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10655,6 +12861,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "texto"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Formulário"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Exibe um formulário do Contact Form 7, WPForms, Gravity Forms ou Fluent Forms, com o estilo ajustado ao do seu site."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "formulário"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Glossário"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Termos e suas definições, ordenados de A a Z, cada um com seu próprio link. É possível vincular a primeira menção de cada termo na página à sua definição."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "termos"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "definições"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "dicionário"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Lista de ícones"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Uma lista onde cada linha começa com um ícone: uma marca de seleção, uma seta ou qualquer ícone da biblioteca."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "itens com marcadores"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "ícones"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10675,6 +12961,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Caixa de informações"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Um ícone, um título curto, uma ou duas frases e um link opcional: para serviços, benefícios ou detalhes de contato."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "recurso"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "serviço"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "cartão"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10694,6 +13005,204 @@ msgstr "tradução"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "multilíngue"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Mapear"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Um mapa de um local do OpenStreetMap: sem chave e nada é carregado do OpenStreetMap até que o visitante solicite o mapa."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "mapear"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "localização"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "Endereço"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Modal"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Um botão que abre uma janela sobre a página, com quaisquer blocos dentro."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "modal"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "pop-up"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "lightbox"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "diálogo"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Painel deslizante"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Um botão que desliza um painel a partir da lateral da janela, com quaisquer blocos dentro."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "fora da tela"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "gaveta"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "barra lateral"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "painel"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "menu"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Detalhes da postagem"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "O autor do post, datas, categorias, tags, tempo de leitura e contagem de comentários."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "autor"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "data"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "tempo de leitura"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "por"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Barra de progresso"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Uma barra rotulada que mostra o progresso de algo, como uma habilidade ou uma meta."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "andamento"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "barra"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "habilidade"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "meta"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Conteúdo protegido por senha"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Bloqueia apenas blocos que visitantes com a senha podem ver. Até que a insiram, o conteúdo não está na página."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "senha"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "protegido"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "privado"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "bloquear"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "membros"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10719,6 +13228,86 @@ msgstr "claro"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "esquema de cores"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Código QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Um código QR para um endereço de site ou qualquer texto, desenhado no seu próprio site (nenhum serviço de QR é usado)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "código QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "código de barras"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "escanear"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Barra de progresso de leitura"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Uma barra fina na borda da janela que é preenchida conforme os visitantes rolam a página."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "lendo"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "rolagem"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Posts relacionados"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Postagens que compartilham as categorias ou tags desta postagem, com suas respectivas imagens, datas e resumos."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "relacionados"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "posts"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "semelhante"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "mais"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10782,13 +13371,284 @@ msgstr "Exibe os widgets em uma das áreas de widgets do tema."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "barra lateral"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "área do widget"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Mapa do site"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Uma página que lista todas as páginas e posts publicados (e outro conteúdo público), mantendo a árvore de páginas."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "sitemap"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "mapa do site"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "índice"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "todas as páginas"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Ícones de redes sociais"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Links para os seus perfis, exibidos com os ícones das próprias redes."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "social"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "links"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "seguir"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "perfis"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Avaliação por estrelas"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Uma avaliação exibida em estrelas, em incrementos de meia estrela."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "favoritos"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "avaliação"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "pontuação"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Etapas"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "As etapas numeradas de um processo, em ordem, para baixo na página ou lado a lado."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "processar"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "como fazer"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "histórico"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "numerado"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Guia"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Uma aba de um bloco de Abas: seu título e seu painel."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Sumário"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Uma lista de cabeçalhos da página, criada automaticamente, que direciona para cada um deles."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Sumário"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "conteúdo"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "títulos"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Abas"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Conteúdo nas abas: os visitantes alternam entre os painéis com o mouse ou o teclado."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "guias"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "com abas"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "painéis"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Depoimento"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Uma citação de um cliente com seu nome, cargo, foto e uma avaliação opcional por estrelas."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "revisar"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "cotação"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "cliente"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "feedback"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Dica de ferramenta"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Uma palavra ou frase que exibe uma breve explicação ao passar o cursor e com foco no teclado."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "dica de ferramenta"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "dica"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "definição"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Perfil do autor"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "A foto, o nome, a biografia e os links do autor, ou os de um usuário escolhido."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "Biografia"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "perfil"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "sobre"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Botão de chat do WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Um botão flutuante em um canto da página que abre um chat do WhatsApp com você."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "Chat"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "flutuante"
 
 #: blocks/widget/block.json
 msgctxt "block title"

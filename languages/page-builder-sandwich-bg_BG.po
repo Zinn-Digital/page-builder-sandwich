@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Запази като повтарящ се шаблон"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Проверка за достъпност"
 
@@ -990,6 +994,7 @@ msgstr "← Изберете друг доставчик"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Адрес"
 
@@ -1043,6 +1048,8 @@ msgstr "Тест"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Премахване"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Обновяване на списъците с модели от доставчиците"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Изображения"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "изключено"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Отваряне"
 
@@ -1448,6 +1457,7 @@ msgstr "Все още не са направени заявки към AI."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Готово"
 
@@ -1515,7 +1525,11 @@ msgstr "Твърде много опити. Моля, опитайте отно�
 msgid "Something went wrong. Please contact the admin."
 msgstr "Нещо се обърка. Моля, свържете се с администратора."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Съпоставяне"
 
@@ -1538,52 +1552,385 @@ msgstr "Тази фамилия не е запазена."
 msgid "Removed."
 msgstr "Премахнато."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Това не е валидно име на шрифтово семейство."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts не върна това семейство. Проверете името и опитайте отново."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Фонт файловете не можаха да бъдат изтеглени или запазени. Уверете се, че папката за качване има права за запис."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Таблицата със стилове на шрифта не можа да бъде запазена. Проверете дали папката за качване има права за запис."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Отхвърлете това известие"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(отваря се в нов раздел)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Готово:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "За изпълнение:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Речник на термините"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Оценка %1$s от %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Прогрес"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Копиране на кода"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Копирано"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Този уиджет не е наличен в този сайт."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Имейл"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Телефон"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS емисия"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Уебсайт"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Връзка"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (отваря се в нов раздел)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Оценка %d от 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(препоръчително)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Включени"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Не е включено"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Сравнителна таблица"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Обадете се на %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Имейл %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Текст %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Чат в WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Свържете се с нас"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Чат с нас в WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Този формуляр в момента не е достъпен."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Тази форма не може да бъде показана, тъй като %s не е активен."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Карта: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Показването на картата я зарежда от OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Покажи картата"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Отворете картата в OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Календар за резервации от %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Показването на календара за резервации го зарежда от %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Показване на календара за резервации"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Резервирайте в %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "QR код за %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Дизайн"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Съдържание"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Медия"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Маркетинг"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Сайт"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Данни"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Свързани публикации"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Детайли на публикацията"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "От"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Публикувано"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Обновено"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "В"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Маркирани с таг"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d минута четене"
+msgstr[1] "%d минути четене"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Все още няма коментари"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d коментар"
+msgstr[1] "%d коментара"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Карта на сайта"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(без заглавие)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Всички публикации от %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Това съдържание е защитено. Въведете паролата, за да го видите."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Грешна парола. Опитайте отново."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Парола"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Показване на съдържанието"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Тази страница не може да бъде отключена."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Твърде много опити. Изчакайте няколко минути и опитайте отново."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Паролата трябва да е с дължина между 4 и 200 символа."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Още"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Затвори"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Таб %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Съдържание"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Редактиране със Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Празно платно"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Премини към съдържанието"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Широчината на таблета трябва да бъде цяло число в пиксели от 480 до 2560."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Качени икони"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Икона"
 
@@ -2554,6 +2909,8 @@ msgstr "%s е имейл адресът на моя клиент"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Код"
 
@@ -3048,13 +3405,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Редактиране"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Имейл"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Имейл адрес"
 
@@ -3104,6 +3457,10 @@ msgstr "Активиране на режим „white-label“"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3126,6 +3483,7 @@ msgstr "Въведете новия имейл адрес"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Грешка"
 
@@ -3724,6 +4082,7 @@ msgstr "Продуктите по-долу бяха поставени в без
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3827,6 +4186,7 @@ msgstr "Този плъгин изисква по-нова версия на PHP
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Не"
 
@@ -4812,6 +5172,13 @@ msgstr "Социални медии (Facebook, Twitter и др.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5097,6 +5464,9 @@ msgstr "Времеви щамт"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Заглавие"
 
@@ -5172,6 +5542,8 @@ msgstr "Как ви харесва %1$s досега? Тествайте вси�
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Тип"
@@ -5287,6 +5659,7 @@ msgstr "Потребители"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Стойност"
@@ -5341,6 +5714,7 @@ msgstr "Преглед на платените функции"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Предупреждение"
 
@@ -5667,6 +6041,7 @@ msgid "Optional"
 msgstr "По избор"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "План"
 
@@ -5989,18 +6364,26 @@ msgstr "Много малък"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Малкo"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Среден"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Голям"
 
@@ -6013,7 +6396,9 @@ msgid "Huge"
 msgstr "Голям"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6327,16 +6712,9 @@ msgid "The trial could not be started."
 msgstr "Пробният период не можа да бъде стартиран."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Функционалност"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Включени"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Не е включено"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6691,10 +7069,6 @@ msgstr "Адрес за влизане"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Потребителско име"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Парола"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7090,15 +7464,62 @@ msgstr "Отмяната е стартирана. Тя продължава въ
 msgid "Undo all conversions"
 msgstr "Отмени всички преобразувания"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Елемент"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Отваряне при зареждане на страницата"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Заглавието е заглавка"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Направете заглавието заглавна част, когато елементите са секции от страницата, така че посетителите да могат да прескачат между тях."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Заглавие %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Въпрос или заглавие на раздел"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Акордеон"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Само един елемент е отворен едновременно"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Маркиране като ЧЗВ за търсачки"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Добавя структурирани данни за Често задавани въпроси (FAQ), създадени от заглавията (въпросите) и техния текст (отговорите)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Сигнал"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Информация"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Успех"
 
@@ -7107,6 +7528,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Предупрежденията и грешките се съобщават на потребителите на екранни четци веднага; информационните съобщения и тези за успех се протат, когато завършат това, което правят."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Показване на икона"
 
@@ -7122,64 +7544,702 @@ msgstr "Заглавие (по избор)"
 msgid "Write the message…"
 msgstr "Напишете съобщението…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "секция — тематична секция"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Център"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — без значение"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Значка"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "глава — въвеждащо съдържание"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Цвят"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "долен колонтитул — съдържание за затваряне"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Цветови акцент на тема"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "статия — съдържание в отделен модул"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Неутрален"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "странично съдържание – свързани материали"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Позиция"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — основното съдържание (по веднъж на страница)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Етикет"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "навигация — навигационни връзки"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Календар за резервации"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Подредба (flexbox, колона)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Услуга"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Ред (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Адрес на страницата за резервации"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Таблица"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Например %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "За какво е календарът, изчетено от екранни четци и показано под него."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Това не е адрес на страница за резервации %s, така че нищо няма да се покаже на страницата."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Вижте преглед на календара"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Адрес на връзката"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Бутонът се показва, когато има етикет и адрес."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Отваряне в нов раздел"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Призив за действие"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Оформление"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Бутони по-долу"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Бутони до текста"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Подравняване"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Основен бутон"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Втори бутон"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Заглавие…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Едно изречение защо..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Втори бутон (по избор)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Контролен списък"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Цвят на отметката"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Редове"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Ред %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Задача…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Добавяне на ред"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Език"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Автоматично разпознаване"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Без маркиране"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Име на файл"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Показано над кода, например functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Номера на редове"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Бутон за копиране"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Пренасяне на дълги редове"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Пишете или поставяйте код…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Текст"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Колони"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Колонa %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Маркиране %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Добавяне на колона"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Редове"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Ред %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Добавяне на ред"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Надпис (какво се сравнява)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Тип клетка: %s. Промяна"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Телефонно обаждане"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Текстово съобщение"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Бутони"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Телефонен номер, с код на държавата"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Текст на бутона"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Премахни този бутон"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Добавяне на бутон"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "WhatsApp съобщение за започване (по избор)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Бутони за контакт"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Добавете телефонен номер, имейл адрес или номер в WhatsApp в страничната лента."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Двойно заглавие"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Ниво на заглавие"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Използвайте H1 веднъж на страница за основното ѝ заглавие."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Преглед на втората част"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Акцентен цвят"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Градіент"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Контур"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Подчертаване"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Втората част на отделен ред"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Първа част"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "втора част"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Маркер"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Дебела линия под текст"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Фон"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Акцентиране"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Премахни маркирането"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Начална буква с отстъп"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Голяма първа буква"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "За първата буква в кутия изберете стила „Падащ инициал в кутия“."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Буквица в кутия"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Акцентна лента"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Цитат с акцент (лента)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Цитат от текста, изведен с едър шрифт до цветна лента за привличане на погледа."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "цитат"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Списък с функции"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "На телефоните функциите винаги се подреждат една под друга."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Функционалности"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Функция %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Собствена икона"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Функционалност…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Опишете го…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Добавяне на функция"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Инсталирайте и активирайте Contact Form 7, WPForms, Gravity Forms или Fluent Forms, след което изберете една от формите тук."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Плъгин за формуляри"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Изберете…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Формуляр"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Изберете формуляр…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s все още няма формуляри"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s не е активен в този сайт, така че тази форма не може да бъде показана."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Списъкът с формуляри не можа да бъде зареден."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Стил на формуляр"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Полета"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "С контур"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Запълнено"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Подчертано"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Ширина на бутона"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Вмөnване на текста"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Пълна ширина"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Цветовете, шрифтовете, разстоянието и ъглите идват от дизайна на вашия сайт и настройките за дизайн на този блок."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Покажете форма от вашия плъгин за форми, оформена така, че да отговаря на вашия сайт."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Ну̀ждите се от плъгин за форми? Contact Form 7 е безплатен."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Речник"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Сортиране от А до Я"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Страницата показва термините по азбучен ред; тук те остават в реда, в който сте ги написали."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Показване на азбучен указател"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Връзки с термини, използвани другаде на тази страница"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Първият път, когато всеки термин се появи в текста на страницата, той води към своето определение. Заглавията, бутоните, кодът и съществуващите връзки остават непроменени."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Условия"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Срок %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Срок"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Какво означава това…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Добавяне на термин"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Списък с икони"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Един под друг"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Една до друга"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Елемент от списък…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Информационно поле"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Или изберете която и да е икона от библиотеката:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Текст на връзката"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Кажете къде води връзката (\"Вижте нашите цени\"), а не \"Прочетете повече\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Изречение или две…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "секция — тематична секция"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — без значение"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "глава — въвеждащо съдържание"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "долен колонтитул — съдържание за затваряне"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "статия — съдържание в отделен модул"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "странично съдържание – свързани материали"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — основното съдържание (по веднъж на страница)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "навигация — навигационни връзки"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Подредба (flexbox, колона)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Ред (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Таблица"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Редактиране: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Подредба на елементите като"
 
@@ -7187,7 +8247,7 @@ msgstr "Подредба на елементите като"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7195,70 +8255,50 @@ msgstr "Подредба на елементите като"
 msgid "Inherited (%s)"
 msgstr "Наследено (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Натрупани блокове"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Колони"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Плъзнете в платното или въведете"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Ширина на съдържанието"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "В кутия (ширина на съдържанието на темата)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Пълна ширина"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Минимална височина"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML таг"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Връзка"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Направете целия блок връзка към"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Текст на връзката за екранни четци"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Какво прави връзката за посетители, които не могат да видят блока."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Отваряне в нов раздел"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Не поставяйте връзки или бутони вътре в свързан блок: връзка вътре във връзка не работи в браузърите."
 
@@ -7290,14 +8330,143 @@ msgstr "+ Ред"
 msgid "− Row"
 msgstr "− Ред"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Място"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Поставете координати или връзка към OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "В openstreetmap.org намерете мястото, след което копирайте адреса от лентата на браузъра или щракнете с десния бутон върху картата и изберете „Показване на адреса“."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Географска ширина"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Географска дължина"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Мащабиране"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Име на мястото"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Показва се под картата и се чете от екранните четци."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Поставете координати (например 51.5074, -0.1278) или връзка към OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Координати или връзка"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Преглед на картата"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Проверете %1$s, %2$s в OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Автор"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Дата на публикуване"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Дата на актуализация (когато е различна)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Категории"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Етикети"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Време за четене"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Брой коментари"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Показвани детайли"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Изберете поне един детайл за показване."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Лента за напредък"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Максимум"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 за процент; всяко друго число за брой, например 8 от 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Показване на процента"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Зададена е парола. Посетителите виждат формуляр за парола вместо това съдържание, докато не я въведат."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Все още няма зададена парола, така че посетителите не виждат нищо тук."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Нова парола"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Задаване на парола"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Паролата е зададена. Запазете страницата, за да я приложите; посетителите, които са я отключили, ще трябва да използват новата."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Ако Page Builder Sandwich бъде изключен, това съдържание се показва на всички."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Съобщение над формуляра за парола (по избор)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Превключване"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Етикет"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7307,30 +8476,698 @@ msgstr "Прочита се от екранни четци и се показв�
 msgid "Show label"
 msgstr "Покажи етикет"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Уеб адрес или текст"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR код"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Описание за екранни четци"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Оставете празно, за да използвате „QR код за“ и текста."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Въведете уеб адрес, телефонна връзка (tel:) или какъвто и да е текст."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Това е твърде дълго за QR код. Съкратете го."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Добавяне на надпис"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Индикатор за напредък при четене"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Край на прозореца"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Най-горе"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Долу"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Показва се в долната част на прозореца, докато посетителите превъртат."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Показва се в горната част на прозореца, докато посетителите превъртат."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Колко"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Свързан от"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Категории или етикети"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Когато нищо не е свързано, покажи най-новото вместо това"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Заглавие"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Оставете празно за „Свързани публикации“."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Показване на избраното изображение"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Показване на датата"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Показване на обобщение"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Все още няма публикации, които да споделят категориите или етикетите на тази публикация. Когато се появят такива, те ще се покажат тук."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Модален прозорец"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Панел извън платното"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Размер"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Плъзга се от"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Началото е страната, от която започва четенето: лявата на английски, дясната на арабски."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Затваряне при щракване върху страницата отзад"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Заглавие на прозореца"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Отметка"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Кръг"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Кръст"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Точка"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Стрелка"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Маркирай със звезда"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Цвят на иконата"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Същото като текста"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Основна тема"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Второстепенна тема"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Контраст на темата"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Запазвайте заглавията в правилен ред надолу по страницата: заглавие с едно ниво надолу спрямо секцията, в която се намира."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Изберете икона"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Използване на иконата по подразбиране"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Изберете икона"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Премести нагоре"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Премести надолу"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Показване на заглавие за всеки тип"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Все още няма публикувани материали от избраните от вас типове."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Връзки"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Връзка %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Мрежа"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Профилен адрес, mailto:you@example.com или tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Име, прочитано от екранни четци"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Друга икона"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Добавяне на връзка"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Преглед"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Стил"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Само икона"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Форма"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Закръглен квадрат"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Квадрат"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Отваряне на профилите в нов раздел"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Оценка със звезди"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Оценка"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Брой звезди"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Покажи броя"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Стъпки"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Надолу по страницата"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Един до друг (струпване на телефони)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Цвят на номера"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Поредност на стъпките"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Стъпка %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Стъпка…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Какво да се прави…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Добавяне на стъпка"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Таб"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Добавете заглавия към страницата и те ще бъдат изброени тук."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Съдържание"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "От заглавие ниво"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Към ниво на заглавие"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Номерирани"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Може да се свива"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Започни свито"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Маркиране на секцията, която се чете"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Табове"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Име за екранни четци"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "По избор. Показва за какво се отнасят табовете, например „Планове“."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Отваряне при зареждане на страницата"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Разделители отстрани"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Добавяне на раздел"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Отзиви"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Смяна на снимка"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Изберете снимка"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Премахване на снимка"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Описание на снимката"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Оставете празно, когато снимката показва само лицето, посочено до нея."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Оценка със звезди (0 = няма)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Име под цената"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Снимка до цитата"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Какво каза клиентът…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Роля или компания"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Подсказка"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Текст на пояснение"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Съберете го на кратко: едно или две изречения. Екранните четци го четат заедно с думата, която обяснява."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Покажи го"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Над"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "По-долу"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Дума или фраза"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Приложи"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Профил"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Чий профил"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Автор на публикацията"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Показване на профилната снимка"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Показване на биографията"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Показване на връзки към публикации и уебсайт"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Профил на автора"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Изберете чий профил да се покаже."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "WhatsApp номер, с код на държавата"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Например +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Първоначално съобщение (незадължително)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Показване на текста до иконата"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Ъгъл"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Долен край (вдясно на английски)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Долу в начало (ляво на английски)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Добавете вашия WhatsApp номер в страничния панел. Дотогава бутонът не се показва на страницата."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "На страницата този бутон плава в долния ъгъл на екрана."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Таг за кратки код"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Използвайте само букви, цифри, тирета и долни черти."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Име на атрибут"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Добавяне на атрибут"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Шорткът"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Други атрибути"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Изберете таг за шорткът в настройките на блока."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Галерия"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Размер на изображението"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Миiatюpa"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Пълен размер"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Връзка към"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Страница на прикачения файл"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Медиен файл"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Аудио"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Видео"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Адрес на файл"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Цикъл"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Пускане автоматично"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Плакатно изображение"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Плейлист"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "ИД на медии, разделени със запетаи"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Показване на списъка с песни"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Вграждане"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Адрес за вграждане"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Максимална ширина"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Надпис"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML на изображение и надпис"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Ширина"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Съвет: Блокът „Формуляр“ показва този формуляр със стилове, съответстващи на вашия сайт."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Показване на заглавието на формуляра"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Показване на описанието на формуляра"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Изпращане без презареждане на страницата"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7351,123 +9188,108 @@ msgstr "Изберете файл"
 msgid "— Default —"
 msgstr "— По подразбиране —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Разширено стилизиране"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Вграден CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS декларации, например: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Ефекти (стари класове)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Разделени с интервал имена на ефекти, пренесени от по-стари версии, например: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Ред"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Ширина"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Пълна ширина, съдържанието е запазено в средата"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Адрес на връзката"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Връзка към връзката"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Подравняване"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Ляво"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Център"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Вдясно"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Текст на бутона"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Добавете текст…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Разположение"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "На отделен ред"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "На реда, наред с друго съдържание"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Автоматично (на собствен ред на най-високо ниво на страницата)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Достъпен етикет"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Оставете празно за декоративна икона."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Изберете икона в настройките на блока."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Ново име на настройка"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Например: заглавие или текст"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Добавяне на настройка"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Уиджет"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Изберете уиджет"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Зона на уиджетите"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Изберете област за уиджет"
 
@@ -7490,6 +9312,142 @@ msgstr "Този обект за вграждане преоразмерява �
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Преместване на оформлението"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Тази джаджа не описва своите настройки, затова те се редактират като двойки име и стойност."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Проблем"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Проверка"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Показване на блок"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Използвайте лесен за четене цвят на темата"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Направи го H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Алтернативен текст"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Запазване на алтернативния текст"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Това изображение е декоративно"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Проверява се…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Няма намерени проблеми с достъпността на тази страница."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d проблем"
+msgstr[1] "%d проблема"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d елемент за проверка"
+msgstr[1] "%d елемента за проверка"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Проверете отново"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Автоматичната проверка открива много проблеми, но не всички от тях. Изпробвайте страницата и само с клавиатура, и с екранен четец."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Контрастът на текста е %1$s:1; нужен е поне %2$s:1, за да бъде четим."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "щракнете тук,тук,прочетете повече,повече,връзка,тази връзка,Научете повече,отидете"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Връзката няма текст, затова екранният четец обявява само „връзка“. Добавете текст или етикет."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Текстът на връзката „%s“ не показва къде води тя. Вместо това описа дестинацията."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Елементът има положителен tabindex, което променя реда на клавиатурата спрямо реда на четене. Използвайте 0 или го премахнете."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Нещо, което може да се кликва, не може да бъде достигнато с клавиатурата. Използвайте истински бутон или връзка."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Вграденият фрейм няма заглавие, така че екранният четец не може да каже какъв е той."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Формулярното поле няма етикет, така че предназначението му не се обявява."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Това заглавие е празно. Потребителите на екранни четци навигират по заглавия; премахнете го или добавете текст."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Заглавието на страницата вече е H1; използвайте H2 за най-високото ниво на съдържанието."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Този H%1$d проскача ниво; този преди него е H%2$d. Направете го H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Това изображение няма алтернативен текст. Опишете го или го отбележете като декоративно, ако не добавя нищо."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Затвори панела"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7564,18 +9522,6 @@ msgstr "Потребителски"
 msgid "Width / height"
 msgstr "Ширина / височина"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Най-горе"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Долу"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7588,20 +9534,6 @@ msgstr "Наследено изображение — замяна"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Премахване на изображението"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Позиция"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Размер"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7667,22 +9599,6 @@ msgstr "Всяка страна поотделно"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Страна"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Стил"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Цвят"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7932,14 +9848,6 @@ msgstr "%1$s (%2$d комплект)"
 msgid "Replace icon"
 msgstr "Замяна на икона"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Изберете икона"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Изберете икона"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Няма съвпадащи икони."
@@ -7951,10 +9859,6 @@ msgstr "Редовен"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Брандове"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "С контур"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8083,21 +9987,9 @@ msgstr "Цвят на текста"
 msgid "Cursor"
 msgstr "Курсор"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Стрелка"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Показалец"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Текст"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8255,10 +10147,6 @@ msgstr "Име на зоната"
 msgid "Named areas"
 msgstr "Именовани зони"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Редове"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Височина"
@@ -8376,10 +10264,6 @@ msgstr "Подравняване двустранно"
 msgid "Decoration"
 msgstr "Декорация"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Подчертаване"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Надчертаване"
@@ -8462,19 +10346,9 @@ msgstr "Конична"
 msgid "Angle (degrees)"
 msgstr "Ъгъл (градуси)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Форма"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Елипса"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Кръг"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8510,10 +10384,6 @@ msgstr "Насищане зад (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Оттенък (използвайте прозрачен цвят)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Закръглен квадрат"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Блоб"
@@ -8530,10 +10400,6 @@ msgstr "Триъгълник"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Диамант"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Маркирай със звезда"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9411,11 +11277,6 @@ msgstr "Изчисти"
 msgid "The change could not be saved."
 msgstr "Промяната не можа да бъде запазена."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Затвори панела"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "По подразбиране тема"
@@ -9472,9 +11333,49 @@ msgstr "Класове, токени, тъмен режим, бранд кит �
 msgid "Open the Site Editor’s styles"
 msgstr "Отворете стиловете на Редактора на сайтове"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Заглавие"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Заглавие с по-тясна височина на реда, стилизирано чрез раздела „Стил“."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Абзац текст, стилизиран с раздела Стилове."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Изображение"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Изображение със закръглени ъгли, стилизирано чрез раздела Стил."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Видеоклип от Медийната библиотека, оформен с помощта на раздела „Стил“."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Отстъп"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Празна зона между блоковете; задайте различна височина за отделните размери на екрана в раздела „Стил“."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Разделител"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Хоризонтална линия между секциите, стилизирана чрез раздела „Стил“."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Съдържание от друг сайт (видео, публикация, карта) чрез поставяне на неговия адрес."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Няколко изображения в мрежа, оформени с раздела Стил."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9508,10 +11409,6 @@ msgstr "Списък"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Етикети"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Бутони"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9556,10 +11453,6 @@ msgstr "Скриване на езиците, на които тази стра�
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Подреди вертикално"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Фон"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9618,11 +11511,6 @@ msgstr "Настройки на блокирането"
 #, js-format
 msgid "Add block: %s"
 msgstr "Добавяне на блок: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(без заглавие)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9698,10 +11586,6 @@ msgstr "Изключване на безопасния режим"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Включете безопасния режим (другите плъзгачи са изключени, само за вас, в Studio)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Публикувано"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10041,11 +11925,6 @@ msgstr "Име на конструктора"
 msgid "Visual editor name"
 msgstr "Име на визуалния редактор"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Автор"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10119,10 +11998,6 @@ msgstr[1] "Отменено: възстановени са %d страници."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Замени"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Връзки"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10232,10 +12107,6 @@ msgstr "Позволете на клиент да коментира тази с
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Всеки с линка може да види тази страница, дори преди тя да бъде публикувана, и да оставя коментари. Не е необходим акаунт."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Копирано"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10478,6 +12349,52 @@ msgstr "Копирайте изображенията в медийната би
 msgid "Show what will happen"
 msgstr "Покажи какво ще се случи"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Елемент на акордеон"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Една секция на акордеон: заглавие, което отваря съдържанието му."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Акордеон"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Въпроси или секции, които се отварят и затварят. По избор по един в даден момент и по избор маркирани като ЧЗВ за търсачките."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "акордеон"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "ЧЕЗ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "превключване"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "свий"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "детайли"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10494,6 +12411,7 @@ msgid "notice"
 msgstr "Бележка"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "съобщение"
@@ -10508,6 +12426,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "предупреждение"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Значка"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Кратък етикет като „Ново“, „Продажба“ или „Най-добра стойност“."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "етикет"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "етикет"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "етикет"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "нов"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Календар за резервации"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Календар за резервации Calendly или Cal.com, който се зарежда само когато посетителят го поиска."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "резервация"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "среща"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "насрочване"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10519,6 +12502,7 @@ msgid "A link styled as a button."
 msgstr "Връзка, стилизирана като бутон."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "бутон"
@@ -10532,6 +12516,98 @@ msgstr "връзка"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "призив за действие"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Призив за действие"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Заглавие, изречение и един или два бутона, които приканват посетителя към действие."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "CTA"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "банер"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Регистриране"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Контролен списък"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Списък с задачи, всяка от които е отбелязана като изпълнена или предстои да бъде изпълнена, представена с думи за екранни четци, както и с отметка."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "За изпълнение"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "задачи"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "тикчета"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "списък"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Списък с код с осветяване на синтаксиса, номера на редовете и бутон за копиране. Запазва четимостта си, ако плъгинът някога бъде изключен."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "код"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "синтаксис"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "акцент"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "код с откъс"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "програмиране"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10555,6 +12631,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "оформление"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Сравнителна таблица"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Планът или продуктите един до друг, с отметки за да и не, които екранните четци прочитат като думи."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "Сравняване"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Ценообразуване"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "планове"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "таблица"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "функции"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Бутони за контакт"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Бутони за обаждане, имейл, текстово съобщение или съобщение в WhatsApp до вас."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "контакт"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "обаждане"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "телефон"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "имейл"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10572,11 +12726,13 @@ msgid "container"
 msgstr "контейнер"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "кутия"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10593,6 +12749,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "колони"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Двойно заглавие"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Заглавие от две части, като втората е акцентирана с цвят, градиент, контур или подчертаване."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "заглавие"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "заглавие"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "градиент"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Списък с функции"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Функции в мрежа, всяка с икона, заглавие и кратко описание."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Предимства"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "услуги"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10636,6 +12838,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "текст"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Формуляр"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Показва формуляр от Contact Form 7, WPForms, Gravity Forms или Fluent Forms, стилизиран така, че да съответства на вашия сайт."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "формуляр"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Речник"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Термините и техните дефиниции, сортирани от А до Я, всяка със собствена връзка. Може да свързва първото споменаване на всеки термин на страницата с неговата дефиниция."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "условия"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "дефиниции"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "речник"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Списък с икони"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Списък, в който всеки ред започва с икона: отметка, стрелка или която и да е икона от библиотеката."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "точки"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "икони"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10656,6 +12938,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Информационно поле"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Икона, кратко заглавие, изречение или две и опционална връзка: за услуги, ползи или данни за контакт."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "функция"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "услуга"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "карта"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10675,6 +12982,204 @@ msgstr "превод"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "многоезичен"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Задаване на връзка"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Карта на място от OpenStreetMap: без ключ и нищо не се зарежда от OpenStreetMap, докато посетителят не поиска картата."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "насочване"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "Местоположение"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "адрес"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Модален прозорец"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Бутон, който отваря прозорец над страницата с всякакви блокове вътре."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "модаллен прозорец"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "изскачащ прозорец"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "лајтбокс"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "диалог"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Изскачащ панел"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Бутон, който плъзга панел от страната на прозореца, с всички блокове вътре."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "извън екрана"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "чекмедже"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "странична лента"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "панел"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "меню"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Детайли на публикацията"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Авторът на публикацията, датите, категориите, етикетите, времето за четене и броят на коментарите."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "автор"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "дата"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "време за четене"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "мета"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "автор"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Лента за напредък"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Етикетирана лента, която показва докъде е стигнало нещо, например умение или цел."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "Прогрес"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "лента"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "умение"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "цел"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Съдържание, защитено с парола"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Блокира съдържанието, така че само посетители с парола да могат да го виждат. Докато не я въведат, съдържанието изобщо не присъства в страницата."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "парола"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "защитени"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "частно"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "Заключи"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "членове"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10700,6 +13205,86 @@ msgstr "светла"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "цветова схема"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR код"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "QR код за уеб адрес или какъвто и да е текст, генериран директно на вашия сайт (не се използва външна услуга за QR кодове)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR код"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR код"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "баркод"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "сканиране"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Индикатор за напредък при четене"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Тънък панел в края на прозореца, който се запълва, докато посетителите превъртат страницата."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "чете се"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "превъртане"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Свързани публикации"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Публикации, които споделят категориите или етикетите на тази публикация, заедно с техните снимки, дати и резюмета."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "свързани"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "публикации"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "подобни"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "още"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10763,13 +13348,284 @@ msgstr "Показва джаджите в една от зоните за дж�
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "странична лента"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "област за джаджи"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Карта на сайта"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Страница, която показва списък с всички публикувани страници и публикации (и друго публично съдържание), като същевременно запазва структурата на страниците."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "карта на сайта"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "карта на сайта"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "индекс"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "всички страници"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Социални икони"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Връзки към вашите профили, изрисувани със собствените икони на мрежите."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "социални"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "връзки"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "последвай"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "профили"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Оценка със звезди"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Оценка, показана като звезди, на стъпки от половин звезда."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "звезди"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "Оценка"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "резултат"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Стъпки"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Номерираните стъпки на даден процес, подредени последователно надолу по страницата или една до друга."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "процес"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "как да"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "Хронология"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "номерирани"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Таб"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Един раздел от блок с раздели: неговото заглавие и неговият панел."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Съдържание"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Автоматично създаден списък със заглавията на страницата, който води към всяко от тях."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "съдържание"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "съдържание"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "заглавия"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Табове"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Съдържание в раздели: посетителите превключват между панели с мишка или клавиатура."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "табове"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "с табулации"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "панели"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Препоръка"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Цитат от клиент с неговото име, длъжност, снимка и незадължителен рейтинг със звезди."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "преглед"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "оферта"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "клиент"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Обратна връзка"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Подсказка"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Дума или фраза, която показва кратко обяснение при задържане на мишката и фокус от клавиатурата."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "подсказка"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "подсказка"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "дефиниция"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Профил на автора"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Снимката, името, биографията и връзките на автора или тези на избран потребител."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "био"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "профил"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "относно"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Бутон за чат в WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Плаващ бутон в ъгъла на страницата, който отваря чат в WhatsApp с вас."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "чат"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "плаващ"
 
 #: blocks/widget/block.json
 msgctxt "block title"

@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Mentés újrahasználható mintaként"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Akadálymentesség-ellenőrző"
 
@@ -990,6 +994,7 @@ msgstr "← Másik szolgáltató választása"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Cím"
 
@@ -1043,6 +1048,8 @@ msgstr "Teszt"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Eltávolítás"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Modelllisták frissítése a szolgáltatóktól"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Képek"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "kikapcsolva"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Megnyitás"
 
@@ -1448,6 +1457,7 @@ msgstr "Még nem történtek MI-kérések."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Kész"
 
@@ -1515,7 +1525,11 @@ msgstr "Túl көп próbálkozás. Kérjük, próbálja újra néhány perc mú
 msgid "Something went wrong. Please contact the admin."
 msgstr "Valami hiba történt. Kérjük, lépjen kapcsolatba a rendszergazdával."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Csatolás"
 
@@ -1539,52 +1553,385 @@ msgstr "Az a család nincs tárolva."
 msgid "Removed."
 msgstr "Eltávolítva."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Az nem érvényes betűcsaládnév."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "A Google betűtípuscsalád nem található. Ellenőrizze a nevet, és próbálja újra."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "A betűtípusfájlokat nem sikerült letölteni vagy menteni. Ellenőrizze, hogy a feltöltési mappa írható-e."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "A betűtípus-stíluslapot nem sikerült menteni. Ellenőrizze, hogy a feltöltési mappa írható-e."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Értesítés elvetése"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(új lapon nyílik meg)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Kész:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Teendő:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Szójegyzék index"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%1$s / %2$s csillag"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Folyamatban"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Kód másolása"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Másolva"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Az a widget nem érhető el ezen a webhelyen."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "E-mail"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Telefon"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS-hírfolyam"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Webhely"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Hivatkozás"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (új lapon nyílik meg)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "15-ből %d értékelve"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(ajánlott)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Tartalmazza"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Nem szerepel benne"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Összehasonlító táblázat"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Hívás: %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "E-mail: %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Szöveg %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Csevegés a WhatsAppon"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Kapcsolatfelvétel"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Csevegjen velünk a WhatsAppon"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Ez az űrlap jelenleg nem érhető el."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Ez az űrlap nem jeleníthető meg, mert a(z) %s nem aktív."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Létrehozás: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "A térkép megjelenítése betölti azt az OpenStreetMapről."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Térkép megjelenítése"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Nyissa meg a térképet az OpenStreetMapen"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Foglalási naptár ettől: %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "A foglalási naptár megjelenítése betölti azt innen: %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Foglalási naptár megjelenítése"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Foglalás ekkor: %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "QR-kód ehhez: %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Dizájn"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Tartalom"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Média"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Marketing"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Webhely"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Adatok"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Kapcsolódó bejegyzések"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Bejegyzés adatai"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Által"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Közzétéve"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Frissítve"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Ebben:"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Címkézve"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d perc olvasás"
+msgstr[1] "%d perc olvasási idő"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Még nincsenek megjegyzések"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d hozzászólás"
+msgstr[1] "%d hozzászólás"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Webhelytérkép"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(nincs cím)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Minden bejegyzés tőle: %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Ez a tartalom védett. Írja be a jelszót a megtekintéséhez."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "A jelszó nem megfelelő. Próbálja újra."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Jelszó"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Tartalom megjelenítése"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Az az oldal nem oldható fel."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Túl sok próbálkozás. Várjon néhány percet, majd próbálja újra."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "A jelszó hosszának 4 és 200 karakter között kell lennie."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Több"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Bezárás"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "%d. fül"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Tartalom"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1687,6 +2034,10 @@ msgstr "Szerkesztés a Sandwich Studio használatával"
 msgid "Blank canvas"
 msgstr "Üres vászon"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Ugrás a tartalomra"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "A táblagép szélességének 480 és 2560 közötti egész pixelértéknek kell lennie."
@@ -1761,7 +2112,11 @@ msgid "Uploaded icons"
 msgstr "Feltöltött ikonok"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Ikon"
 
@@ -2554,6 +2909,8 @@ msgstr "%s az ügyfelem e-mail címe"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Kód"
 
@@ -3048,13 +3405,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "E-mail"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "E-mail cím"
 
@@ -3104,6 +3457,10 @@ msgstr "White-label mód engedélyezése"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3126,6 +3483,7 @@ msgstr "Adja meg az új e-mail címet"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Hiba"
 
@@ -3724,6 +4082,7 @@ msgstr "Az alábbi termékek csökkentett módba lettek helyezve, mert észlelt�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3827,6 +4186,7 @@ msgstr "Ez a bővítmény a PHP egy újabb verzióját igényli."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Nem"
 
@@ -4813,6 +5173,13 @@ msgstr "Közösségi média (Facebook, Twitter stb.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5098,6 +5465,9 @@ msgstr "Időbélyeg"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Cím"
 
@@ -5173,6 +5543,8 @@ msgstr "Hogy tetszik eddig a(z) %1$s? Tesztelje az összes prémium %2$s funkci�
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Típus"
@@ -5288,6 +5660,7 @@ msgstr "Felhasználók"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Érték"
@@ -5342,6 +5715,7 @@ msgstr "Fizetős funkciók megtekintése"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Figyelem"
 
@@ -5668,6 +6042,7 @@ msgid "Optional"
 msgstr "Opcionális"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Csomag"
 
@@ -5990,18 +6365,26 @@ msgstr "Extra kicsi"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Kicsi"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Közepes"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Nagy"
 
@@ -6014,7 +6397,9 @@ msgid "Huge"
 msgstr "Óriási"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6328,16 +6713,9 @@ msgid "The trial could not be started."
 msgstr "A próbaidőszakot nem sikerült elindítani."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Funkció"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Tartalmazza"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Nem szerepel benne"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6692,10 +7070,6 @@ msgstr "Bejelentkezési cím"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Felhasználónév"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Jelszó"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7091,15 +7465,62 @@ msgstr "A visszavonás elindult. A folyamat a háttérben fut tovább, így elha
 msgid "Undo all conversions"
 msgstr "Minden átalakítás visszavonása"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Elem"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Megnyitás az oldal betöltésekor"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "A cím egy fejléc"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Formázza a címet fejlécnek, amikor az elemek az oldal szakaszai, így a látogatók tudnak ugrálni közöttük."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "%d. fejléc"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Kérdés vagy szakaszcím"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Harmonika"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Egyszerre csak egy elem lehet nyitva"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Jelölje meg GYIK-ként a keresőmotorok számára"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Hozzáadja a címekből (kérdések) és a szövegükből (válaszok) felépített GYIK strukturált adatokat."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Figyelmeztetés"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Információ"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Sikeres"
 
@@ -7108,6 +7529,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "A figyelmeztetések és hibák azonnal bejelentésre kerülnek a képernyőolvasó felhasználói számára; az információk és a sikeres műveletekről szóló értesítések akkor olvashatók fel, amikor befejezik az aktuális feladatukat."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Ikon megjelenítése"
 
@@ -7123,64 +7545,702 @@ msgstr "Cím (opcionális)"
 msgid "Write the message…"
 msgstr "Üzenet írása…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "szakasz — tematikus szakasz"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Közép"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div – nincs jelentősége"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Jelvény"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "fejléc – bevezető tartalom"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Szín"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "lábléc – lezáró tartalom"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Téma kiemelés"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "cikk – önálló tartalom"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Semleges"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "oldalsáv – kapcsolódó tartalom"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Pozíció"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — a fő tartalom (oldalanként egyszer)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Címke"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav – navigációs hivatkozások"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Foglalási naptár"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Verem (flexbox, oszlop)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Szolgáltatás"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Sor (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Foglalási oldal címe"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Rács"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Például %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "A naptár funkciója, amelyet a képernyőolvasók felolvasnak és a naptár alatt jelenik meg."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Ez nem egy %s foglalási oldal címe, így semmi sem fog megjelenni az oldalon."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Naptár előnézete"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Hivatkozás címe"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "A gomb akkor jelenik meg, ha van címkéje és címe is."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Megnyitás új lapon"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Cselekvésre ösztönzés"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Elrendezés"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Alábbi gombok"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Gombok a szöveg mellett"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Igazítás"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Fő gomb"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Második gomb"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Fejléc…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Egy mondat arról, hogy miért…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Második gomb (opcionális)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Teendőlista"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Pipaszín"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Sorok"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "%d. sor"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Feladat…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Sor hozzáadása"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Nyelv"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Automatikus felismerés"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Nincs kiemelés"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Fájlnév"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "A kód fölött jelenik meg, például functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Sorok számai"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Másolás gomb"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Hosszú sorok tördelése"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Írjon vagy illesszen be kódot…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Szöveg"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Oszlopok"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "%d. oszlop"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Kiemelés: %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Oszlop hozzáadása"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Sorok"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "%d. sor"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Sor hozzáadása"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Felirat (ami összehasonlításra kerül)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Cella típusa: %s. Módosítás"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Telefonos hívás"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Szöveges üzenet"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Gombok"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Telefonszám országkóddal"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Gomb szövege"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Gomb eltávolítása"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Gomb hozzáadása"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Kezdő WhatsApp-üzenet (opcionális)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Kapcsolatgombok"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Adjon hozzá telefonszámot, e-mail címet vagy WhatsApp-számot az oldalsávhoz."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Kettős fejléc"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Fejlécszint"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Használjon H1-es címszöveget oldbanként egyszer, a fő címhez."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Második rész megtekintése"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Kiemelt szín"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Gradiens"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Vázlat"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Aláhúzás"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Második rész külön sorban"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Első rész"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "második rész"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Filctoll"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Vastag aláhúzás"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Háttér"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Kiemelés"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Kiemelés eltávolítása"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Kezdőbetű"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Nagy kezdőbetű"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "A dobozban lévő első betűhöz válassza a „Kiemelt kezdőbetű dobozban” stílust."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Kiemelt kezdőbetű dobozban"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Kiemelt sáv"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Idézetblokk (kiemelt sáv)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "A szövegből származó idézet nagy méretben, egy színes sáv mellett megjelenítve, hogy magára vonzza a tekintetet."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "árajánlat"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Funkciólista"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Telefonokon a funkciók mindig egymás alatt helyezkednek el."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Funkciók"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "%d. funkció"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Saját ikon"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Funkció…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Leírás…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Funkció hozzáadása"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Telepítse és aktiválja a Contact Form 7, WPForms, Gravity Forms vagy Fluent Forms bővítményt, majd válasszon ki egyet az űrlapjai közül itt."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Űrlap bővítmény"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Válasszon…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Űrlap"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Válasszon űrlapot…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "A %s még nem tartalmaz űrlapokat"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "A(z) %s nem aktív ezen a webhelyen, ezért ez az űrlap nem jeleníthető meg."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Az űrlaplista betöltése nem sikerült."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Űrlapstílus"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Mezők"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Körvonalas"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Kitöltve"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Aláhúzott"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Gomb szélessége"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Szöveg igazítása"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Teljes szélességű"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "A színek, a betűtípusok, a térközök és a sarkok a webhely kialakításából és ezen blokk tervezési beállításaiból származnak."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Jelenítsen meg egy űrlapot az űrlapbővítményéből, a webhelyéhez illeszkedő stílusban."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Form bővítményre van szüksége? A Contact Form 7 ingyenes."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Szójegyzék"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Rendezés A-tól Z-ig"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Az oldal a kifejezéseket ábécérendben mutatja; itt a megadás sorrendjében maradnak."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "A–Z index megjelenítése"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Az ezen az oldalon máshol használt hivatkozási feltételek"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Az oldal szövegében minden egyes kifejezés első előfordulásakor a definíciójára mutat. A címkék, gombok, a kód és a meglévő hivatkozások változatlanul maradnak."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Feltételek"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "%d. időszak"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Időtartam"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Mit jelent ez…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Kifejezés hozzáadása"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Ikonlista"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Egymás alatt"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Egymás mellett"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Elem listázása…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Információs doboz"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Vagy válasszon ki egy ikont a könyvtárból:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Hivatkozás szövege"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Írja le, hogy hová vezet a hivatkozás („Tekintse meg árainkat”), ne azt, hogy „További információk”."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Egy-két mondat…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "szakasz — tematikus szakasz"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div – nincs jelentősége"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "fejléc – bevezető tartalom"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "lábléc – lezáró tartalom"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "cikk – önálló tartalom"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "oldalsáv – kapcsolódó tartalom"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — a fő tartalom (oldalanként egyszer)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav – navigációs hivatkozások"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Verem (flexbox, oszlop)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Sor (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Rács"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Szerkesztés alatt: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Elemek elrendezése mint"
 
@@ -7188,7 +8248,7 @@ msgstr "Elemek elrendezése mint"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7196,70 +8256,50 @@ msgstr "Elemek elrendezése mint"
 msgid "Inherited (%s)"
 msgstr "Örökölt (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Egymásra rakott blokkok"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Oszlopok"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Húzza be a vászonra, vagy gépeljen"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Tartalomszélesség"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Dobozos (a téma tartalomszélessége)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Teljes szélességű"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Minimális magasság"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML-címke"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Hivatkozás"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Legyen az egész blokk egy hivatkozás erre:"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Hivatkozásszöveg képernyőolvasók számára"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Amit a hivatkozás csinál, azoknak a látogatóknak, akik nem látják a blokkot."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Megnyitás új lapon"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Ne helyezzen linkeket vagy gombokat egy hivatkozott blokkon belül: a linken belüli link nem működik a böngészőkben."
 
@@ -7291,14 +8331,143 @@ msgstr "+ Sor"
 msgid "− Row"
 msgstr "− Sor"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Hely"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Illessze be a koordinátákat vagy egy OpenStreetMap hivatkozást"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Az openstreetmap.org oldalon keresse meg a helyet, majd másolja ki a címet a böngésző címsorából, vagy kattintson a jobb gombbal a térképre, és válassza a „Cím megjelenítése” lehetőséget."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Földrajzi szélesség"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Hosszúság"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Nagyítás"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Hely neve"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "A térkép alatt jelenik meg, és a képernyőolvasók olvassák fel."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Illesszen be koordinátákat (például 51.5074, -0.1278) vagy egy OpenStreetMap-hivatkozást."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Koordináták vagy hivatkozás"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Térkép előnézete"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Ellenőrizze a(z) %1$s, %2$s elemet az OpenStreetMapen"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Szerző"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Közzététel dátuma"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Frissítési dátum (ha eltér)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Kategóriák"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Címkék"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Olvasási idő"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Hozzászólások száma"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Megjelenítendő adatok"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Válasszon ki legalább egy megjelenítendő részletet."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Folyamatjelző"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Maximum"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 százalékhoz; bármilyen más szám darabszámhoz, például 10-ből 8."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Százalék megjelenítése"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Jelszó van beállítva. A látogatók a tartalom helyett egy jelszóbekérő uralt látnak, amíg meg nem adják azt."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Még nincs beállítva jelszó, így a látogatók semmit sem látnak itt."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Új jelszó"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Jelszó beállítása"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Jelszó beállítva. A alkalmazáshoz mentse az oldalt; a feloldott látogatóknak az újra szükségük lesz."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Ha a Page Builder Sandwich ki van kapcsolva, ez a tartalom mindenki számára látható lesz."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Üzenet a jelszómező felett (opcionális)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Váltás"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Címke"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7308,30 +8477,698 @@ msgstr "Képernyőolvasók olvassák fel, és akkor jelenik meg, amikor a „Cí
 msgid "Show label"
 msgstr "Címke megjelenítése"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Webcím vagy szöveg"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR-kód"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Képernyőolvasók leírása"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Hagyja üresen a „QR-kód ehhez:” és a szöveg használatához."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Írjon be egy webcímet, egy telefonszámra mutató hivatkozást (tel:) vagy tetszőleges szöveget."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Ez túl hosszú egy QR-kódhoz. Rövidítse le."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Felirat hozzáadása"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Olvasási folyamatjelző"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "A ablak széle"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Legfelső"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Alul"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Az ablak alján jelenik meg, ahogy a látogatók görgetnek."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Az ablak tetején jelenik meg, ahogy a látogatók görgetnek."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Mennyi"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Kapcsolódik ehhez:"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Kategóriák vagy címkék"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Ha nincs kapcsolódó tartalom, helyette a legújabbak megjelenítése"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Fejléc"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Hagyja üresen a \"Kapcsolódó bejegyzések\" mezőt."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Kiemelt kép megjelenítése"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Dátum megjelenítése"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Összegzés megjelenítése"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Egyik bejegyzés sem osztozik még ennek a bejegyzésnek a kategóriáiban vagy címkéiben. Amikor lesznek milyenek, itt fognak megjelenni."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Modálablak"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Kifejthető panel"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Méret"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Becsúszás innen:"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "A kezdet az az oldal, ahol az olvasás kezdődik: angolban a bal, arabban a jobb."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Bezárás a mögöttes oldalra kattintva"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "A ablak címe"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Pipás szimbólum"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Kör"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Törlés"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Pont"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Nyíl"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Csillagozás"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Ikon színe"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Ugyanaz, mint a szöveg"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Elsődleges téma"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Másodlagos téma"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Téma kontrasztja"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Tartsa a címsorokat sorrendben az oldalon: egy címsor egy szinttel lejjebb legyen, mint az a szakasz, amelyben szerepel."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Ikon kiválasztása"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Alapértelmezett ikon használata"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Válasszon ki egy ikont"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Feljebb"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Mozgatás lefelé"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Fejléc megjelenítése minden típushoz"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Még nincs közzétéve semmi a kiválasztott típusokban."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Hivatkozások"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "%d. hivatkozás"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Hálózat"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Egy profilcím, mailto:you@example.com vagy tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Képernyőolvasók által felolvasott név"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Egyéb ikon"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Hivatkozás hozzáadása"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Megtekintés"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Stílus"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Csak ikon"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Alakzat"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Lekerekített négyzet"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Négyzet"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Profilok megnyitása új lapon"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Csillagértékelés"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Értékelés"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Csillagok száma"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Szám megjelenítése"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Lépések"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Oldal aljára"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Egymás mellett (telefonon egymás alatt)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Számszín"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Lépések sorrendje"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "%d. lépés"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Lépés…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Teendők…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Lépés hozzáadása"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Fül"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Adj hozzá címeket az oldalhoz, és azok itt fognak megjelenni."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Tartalomjegyzék"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Címsószinttől"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Címszintig"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Számozott"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Összecsukható"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Összecsukva indítás"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Emelje ki az olvasott részt"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Fülek"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Név képernyőolvasók számára"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Opcionális. Megadja, hogy miről szólnak a fülek, például „Csomagok”."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Megnyitás oldalbetöltéskor"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Fülek oldalt"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Lap hozzáadása"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Ajánlás"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Fotó cseréje"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Fotó kiválasztása"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Fotó eltávolítása"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Fotó leírása"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Hagyja üresen, ha a fotón csak az a személy látható, akinek a neve mellette szerepel."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Csillagértékelés (0 = nincs)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Név a idézőjel alatt"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Fotó az idézet mellett"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Mit mondott az ügyfél…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Szerepkör vagy cég"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Segítségbuborék"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Eszköztipp szövege"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Tartsa röviden: egy vagy két mondat. A képernyőolvasók a magyarázott szóval együtt olvassák."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Mutatás"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Fent"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Alul"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Szó vagy kifejezés"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Alkalmazás"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Profil"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Kié a profil"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "A bejegyzés szerzője"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Profilkép megjelenítése"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Életrajz megjelenítése"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Mutassa a bejegyzésekre és a webhelyre mutató hivatkozásokat"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Szerzői profil"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Válassza ki, hogy kinek a profilját szeretné megjeleníteni."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "WhatsApp-szám országkóddal"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Például +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Kezdő üzenet (opcionális)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Szöveg megjelenítése az ikon mellett"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Sarok"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Alsó vég (angolul jobb)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Alsó kezdet (angolul balra)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Add hozza a WhatsApp-számát az oldalsávban. Addig a gomb nem jelenik meg az oldalon."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Az oldalon ez a gomb a képernyő egyik alsó sarkában lebeg."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Shortkód címke"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Csak betűket, számokat, kötőjeleket és aláhúzásokat használjon."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Attribútum neve"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Attribútum hozzáadása"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Rövidkód"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Egyéb attribútumok"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Válasszon ki egy shortcode címkét a blokkbeállításokban."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Galéria"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Képméret"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Bélyegkép"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Teljes méret"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Hivatkozás erre:"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Melléklet oldal"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Médiafájl"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Hang"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Videó"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Fájlcím"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Ciklus"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Automatikus lejátszás"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Plakátkép"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Lejátszási lista"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Médiaazonosítók vesszővel elválasztva"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Számlista megjelenítése"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Beágyazás"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Beágyazási cím"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Maximális szélesség"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Képaláírás"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "Kép és aláírás HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Szélesség"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Tipp: Az Űrlap blokk az Ön oldalának stílusához igazítva jeleníti meg ezt az űrlapot."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Űrlap címének megjelenítése"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Űrlap leírásának megjelenítése"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Küldje el az oldal újratöltése nélkül"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7352,123 +9189,108 @@ msgstr "Fájl kiválasztása"
 msgid "— Default —"
 msgstr "— Alapértelmezett —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Speciális stílusok"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Beágyazott CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS-deklarációk, például: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Effektek (örökölt osztályok)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Régebbi verziókból átvett, szóközzel elválasztott effektusnevek, például: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Sor"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Szélesség"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Teljes szélességű, a tartalom középre igazítva"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Hivatkozás címe"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Link kapcsolata"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Igazítás"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Bal"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Közép"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Jobb"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Gomb szövege"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Szöveg hozzáadása…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Elhelyezés"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Külön sorban"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "A sorban, más tartalom mellett"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Automatikus (saját sor az oldal legfelső szintjén)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Akadálymentes címke"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Hagyja üresen egy dekoratív ikonhoz."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Válasszon ki egy ikont a blokkbeállításokban."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Új beállítás neve"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Például: cím vagy szöveg"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Beállítás hozzáadása"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Widget"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Válasszon ki egy widgetet"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Widgetterület"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Válasszon ki egy widget-területet"
 
@@ -7491,6 +9313,142 @@ msgstr "Ez a beágyazás betöltődés után átméretezi magát, ami elmozdítj
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Elrendezés eltolódása"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Ez a widget nem írja le a beállításait, ezért név-érték párokként szerkeszthetők."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Probléma"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Ellenőrzés"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Blokk megjelenítése"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Használjon jól olvasható témaszínt"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "H%d-vé tétele"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Alternatív szöveg"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Alternatív szöveg mentése"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Ez a kép dekoratív"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Ellenőrzés…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Nem találtunk akadálymentesítési problémát ezen az oldalon."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d probléma"
+msgstr[1] "%d probléma"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d elem ellenőrzése"
+msgstr[1] "%d elem ellenőrzése"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Újraellenőrzés"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Egy automatikus ellenőrzés sok problémát talál, de nem az összeset. Próbálja ki az oldalt kizárólag billentyűzettel és képernyőolvasóval is."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "A szöveg kontrasztja %1$s:1; a olvashatósághoz legalább %2$s:1 szükséges."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "kattintson ide,ide,tovább olvasás,tovább,hivatkozás,ez a hivatkozás,további információ,tovább"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Egy hivatkozásnak nincs szövege, így a képernyőolvasó csak a „hivatkozás” szót olvassa be. Adjon hozzá szöveget vagy címkét."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "A(z) „%s” hivatkozásszöveg nem jelzi, hogy hová mutat. Ehelyett írja le a célt."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Egy elemnek pozitív a tabindex attribútuma, ami megváltoztatja a billentyűzetes sorrendet az olvasási sorrendhez képest. Használjon 0-t, vagy távolítsa el."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Egy kattintható elem nem érhető el billentyűzettel. Használjon valódi gombot vagy hivatkozást."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "A beágyazott keretnek nincs címe, ezért a képernyőolvasó nem tudja megmondani, hogy mi az."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Egy űrlapmezőnek nincs címkéje, így a funkciója nem hallható a képernyőolvasó számára."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Ez a cím üres. A képernyőolvasókat használók címek alapján navigálnak; távolítsa el, vagy adjon hozzá szöveget."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Az oldal címe már H1, a tartalom legfelső szintjéhez használjon H2-t."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Ez a H%1$d kihagy egy szintet; az előző H%2$d. Legyen belőle H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Ennek a képnek nincs alternatív szövege. Írja le, vagy jelölje meg dekoratívként, ha semmit sem tesz hozzá."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Panel bezárása"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7565,18 +9523,6 @@ msgstr "Egyéni"
 msgid "Width / height"
 msgstr "Szélesség / magasság"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Legfelső"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Alul"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7589,20 +9535,6 @@ msgstr "Örökölt kép – cserélés"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Kép eltávolítása"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Pozíció"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Méret"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7668,22 +9600,6 @@ msgstr "Mindkét oldal külön-külön"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Oldal"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Stílus"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Szín"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7933,14 +9849,6 @@ msgstr "%1$s (%2$d beállítás)"
 msgid "Replace icon"
 msgstr "Ikon cseréje"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Ikon kiválasztása"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Válasszon ki egy ikont"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Nincs egyező ikon."
@@ -7952,10 +9860,6 @@ msgstr "Normál"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Márkák"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Körvonalas"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8084,21 +9988,9 @@ msgstr "Szövegszín"
 msgid "Cursor"
 msgstr "Kurzor"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Nyíl"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Mutató"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Szöveg"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8256,10 +10148,6 @@ msgstr "Terület neve"
 msgid "Named areas"
 msgstr "Elnevezett területek"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Sorok"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Magasság"
@@ -8377,10 +10265,6 @@ msgstr "Sorkizárás"
 msgid "Decoration"
 msgstr "Dekoráció"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Aláhúzás"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Felülvonás"
@@ -8463,19 +10347,9 @@ msgstr "Conic"
 msgid "Angle (degrees)"
 msgstr "Szög (fok)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Alakzat"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Elipszis"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Kör"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8511,10 +10385,6 @@ msgstr "Telítettség mögött (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Áttetsző (használjon átlátszó színt)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Lekerekített négyzet"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8531,10 +10401,6 @@ msgstr "Háromszög"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Gyémánt"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Csillagozás"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9412,11 +11278,6 @@ msgstr "Törlés"
 msgid "The change could not be saved."
 msgstr "A módosítást nem sikerült menteni."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Panel bezárása"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Téma alapértelmezett"
@@ -9473,9 +11334,49 @@ msgstr "Az osztályok, tokenek, sötét mód, márkakészlet és az egyéni bet�
 msgid "Open the Site Editor’s styles"
 msgstr "Nyissa meg a Webhelyszerkesztő stílusait"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Fejléc"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Egy cím alacsonyabb sorközzel, a Stílus füllel stílozva."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Egy szövegbekezdés, amely a Stílus füllel lett formázva."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Kép"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Egy lekerekített sarkú, a Stílus fülön formázott kép."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Egy videó a Médiatárból, a Stílus füllel formázva."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Elválasztó"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Üres hely a blokkok között; állítson be eltérő magasságot képernyőméretenként a Stílus lapon."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Elválasztó"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Vízszintes elválasztóvonal a szakaszok között, amely a Stílus fülön formázható."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Tartalom beillesztése egy másik webhelyről (videó, bejegyzés, térkép) a címének megadásával."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Számos kép rácsban elrendezve, a Stílus füllel formázva."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9509,10 +11410,6 @@ msgstr "Lista"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Címkék"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Gombok"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9557,10 +11454,6 @@ msgstr "Rejtsd el azokat a nyelveket, amelyekre ez az oldal nincs lefordítva"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Egymás felett elhelyezés"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Háttér"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9619,11 +11512,6 @@ msgstr "Blokkon beállítások"
 #, js-format
 msgid "Add block: %s"
 msgstr "Blokk hozzáadása: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(nincs cím)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9699,10 +11587,6 @@ msgstr "Biztonságos mód kikapcsolása"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Biztonságos mód bekapcsolása (más bővítmények ki, önnek, csak a Stúdióban)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Közzétéve"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10042,11 +11926,6 @@ msgstr "Szerkesztő neve"
 msgid "Visual editor name"
 msgstr "Vizuális szerkesztő neve"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Szerző"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10120,10 +11999,6 @@ msgstr[1] "Visszavonva: %d oldal helyreállítva."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Csere"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Hivatkozások"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10233,10 +12108,6 @@ msgstr "Engedje meg, hogy egy ügyfél hozzászóljon ehhez az oldalhoz"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Bárki, akinek megvan a linkje, láthatja ezt az oldalt még a közzététel előtt, és megjegyzéseket hagyhat. Nincs szükség fiókra."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Másolva"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10479,6 +12350,52 @@ msgstr "Másolja át a képeket ezen webhely médiagalériájába"
 msgid "Show what will happen"
 msgstr "Megjelenítés, hogy mi fog történni"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Harmonikaelem"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Egy harmonika egy szakasza: egy cím, amely megnyitja a tartalmát."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Harmonika"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Megnyíló és bezáródó kérdések vagy szakaszok. Opcionálisan egyszerre csak egy, és opcionálisan GYIK-ként jelölve a keresőmotorok számára."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "harmonika"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "GYIK"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "váltás"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "összecsukás"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "részletek"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10495,6 +12412,7 @@ msgid "notice"
 msgstr "figyelem"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "üzenet"
@@ -10509,6 +12427,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "figyelmeztetés"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Jelvény"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Egy rövid címke, például Új, Akció vagy Legjobb ár-érték arány."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "címke"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "Címke"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "tabletta"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "új"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Foglalási naptár"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Egy Calendly vagy Cal.com foglalási naptár, amely csak akkor töltődik be, amikor a látogató kéri."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "foglalás"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "időpont"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "Időzítés"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10520,6 +12503,7 @@ msgid "A link styled as a button."
 msgstr "Gombként formázott hivatkozás."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "Gomb"
@@ -10533,6 +12517,98 @@ msgstr "hivatkozás"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "cselekvésre ösztönzés"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Felhívás cselekvésre"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Egy cím, egy mondat és egy-két gomb, amelyek cselekvésre ösztönzik a látogatót."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "Felhívás"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "szalaghirdetés"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "regisztráció"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Teendőlista"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Feladatok listája, amelyek közül mindegyik meg van jelölve készként vagy még függőben lévőként, képernyőolvasók számára is olvasható szöveggel, valamint pipával."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Teendők"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "feladatok"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "jelölések"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "Lista"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Kód"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Egy kódrészlet szintaxiskiemeléssel, sorszámokkal és másolás gombbal. Olvasható marad, ha a bővítményt kikapcsolják."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "kód"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "szintaxis"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "Kiemelés"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "részlet"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "programozás"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10556,6 +12632,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "elrendezés"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Összehasonlító táblázat"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Csomagok vagy termékek egymás mellett, igen és nem jelölésekkel, amelyeket a képernyőolvasók szavakként olvasnak fel."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "Összehasonlítás"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Árazás"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "csomagok"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "táblázat"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "Funkciók"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Kapcsolatgombok"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Gombok, amelyekkel felhívhatnak, e-th-t írhatnak, SMS-t küldhetnek vagy üzenetet küldhetnek Önnek a WhatsAppon."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Kapcsolat"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "hívás"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "Telefon"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "E-mail"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10573,11 +12727,13 @@ msgid "container"
 msgstr "tároló"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "doboz"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10594,6 +12750,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "oszlopok"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Kettős címsor"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Egy fejléc két részből, amelyek közül a második színnel, színátmenettel, körvonallal vagy aláhúzással van kiemelve."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "Fejléc"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "Cím"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "színátmenet"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Funkciólista"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Funkciók rácsban elhelyezve, mindegyik egy ikonnal, egy címmel és egy rövid leírással."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Előnyök"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "szolgáltatások"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10637,6 +12839,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "szöveg"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Űrlap"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Egy Contact Form 7, WPForms, Gravity Forms vagy Fluent Forms űrlapot jelenít meg, a webhelyéhez illeszkedő stílusban."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "űrlap"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Szójegyzék"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "A fogalmak és azok definíciói A-tól Z-ig rendezve, mindegyik saját hivatkozással. Az oldalon minden egyes fogalom első említése a definíciójára hivatkozhat."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "feltételek"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "meghatározások"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "szótár"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Ikonlista"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Egy lista, ahol minden sor egy ikonnal kezdődik: egy pipával, egy nyíllal vagy a könyvtárból származó bármilyen ikonnal."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "pontok"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "ikonok"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10657,6 +12939,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Információs mező"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Egy ikon, egy rövid címsor, egy-két mondat és egy opcionális hivatkozás: szolgáltatásokhoz, előnyökhöz vagy elérhetőségekhez."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "funkció"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "szolgáltatás"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "kártya"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10676,6 +12983,204 @@ msgstr "fordítás"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "többnyelvű"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Csatolás"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Egy hely térképe az OpenStreetMapről: nincs kulcs, és semmi sem töltődik be az OpenStreetMapről, amíg a látogató nem kéri a térképet."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "képezés"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "Helyszín"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "cím"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Modális"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Egy gomb, amely egy ablakot nyit meg az oldal felett, benne tetszőleges blokkokkal."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "modál"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "felugró ablak"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "lightbox"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "párbeszédablak"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Oldalsó panel"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Egy gomb, amely oldalról becsúsztat egy panelt a benne lévő blokkokkal."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "oldalsó panel"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "fiók"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "oldalsáv"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "vezérlőpult"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "menü"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Bejegyzés adatai"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "A bejegyzés szerzője, dátumai, kategóriái, címkéi, olvasási ideje és a hozzászólások száma."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "szerző"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "Dátum"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "olvasási idő"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "szerzői név"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Állapotsáv"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Egy felirattal ellátott sáv, amely azt mutatja, hogy valami – például egy készség vagy cél – milyen messzire jutott."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "Folyamatban"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "sáv"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "készség"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "cél"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Jelszóval védett tartalom"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Csak a jelszóval rendelkező látogatók számára látható blokkok. Amíg meg nem adják a jelszót, a tartalom egyáltalán nincs jelen az oldalon."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "jelszó"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Védett"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "bizalmas"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "zárolás"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "tagok"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10701,6 +13206,86 @@ msgstr "Világos"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "színséma"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR-kód"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Egy QR-kód egy webcímhez vagy bármilyen szöveghez, a saját oldaladon rajzolva (nincs QR-szolgáltatás használatban)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR-kód"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "vonalkód"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "vizsgálat"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Olvasási folyamatjelző"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Egy vékony sáv az ablak szélén, amely megtelik, ahogy a látogatók végiggörgetnek az oldalon."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "Olvasás"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "görgetés"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Kapcsolódó bejegyzések"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Bejegyzések, amelyek osztoznak ennek a bejegyzésnek a kategóriáin vagy címkéin, a képeikkel, dátumaikkal és összefoglalóikkal együtt."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "kapcsolódó"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "bejegyzések"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "hasonló"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "továbbiak"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10764,13 +13349,284 @@ msgstr "Megjeleníti a widgeteket a téma valamelyik widgetterületén."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "oldalsáv"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "widget terület"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Webhelytérkép"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Egy oldal, amely felsorol minden közzétett oldalt és bejegyzést (valamint egyéb nyilvános tartalmat), megőrizve az oldalfa struktúráját."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "webhelytérkép"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "webhelytérkép"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "index"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "összes oldal"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Közösségi ikonok"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Hivatkozások a profiljaidra, a hálózatok saját ikonjaival megjelenítve."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "Közösségi média"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "hivatkozások"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "követés"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "profilok"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Csillagértékelés"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Csillagokban, félcsillagos lépésekben megjelenített értékelés."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "csillagok"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "Értékelés"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "pontszám"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Lépések"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Egy folyamat számozott lépései, sorban, az oldalon lefelé vagy egymás mellett."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "folyamat"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "Hogyan kell"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "Idővonal"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "számozott"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Fül"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "A Lapok blokk egyik lapja: a címe és a panelje."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Tartalomjegyzék"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Az oldalon szereplő címek automatikusan összeállított listája, amely mindegyikre hivatkozik."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Tartalomjegyzék"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "tartalomjegyzék"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "fejlécek"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Fülek"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Tartalom a füleken: a látogatók egérrel vagy billentyűzettel válthatnak a panelek között."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "fülek"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "lapokra osztott"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "panelek"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Ajánlás"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Ügyfélidézet a nevével, beosztásával, fényképével és egy opcionális csillagbesorolással."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "ellenőrzés"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "idézet"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "Ügyfél"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Visszajelzés"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Buboréksúgó"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Egy szó vagy kifejezés, amely rövid magyarázatot jelenít meg egérrel rámutatáskor és billentyűzetes fókuszkor."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "eszköztipp"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "tipp"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "definíció"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Szerzői profil"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "A szerző képe, neve, életrajza és hivatkozásai, vagy egy kiválasztott felhasználóéi."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "Bemutatkozás"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "Profil"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "Névjegy"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp chat gomb"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Egy lebegő gomb az oldal egyik sarkában, amely megnyit egy WhatsApp-beszélgetést Önnel."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "Csevegés"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "lebegő"
 
 #: blocks/widget/block.json
 msgctxt "block title"

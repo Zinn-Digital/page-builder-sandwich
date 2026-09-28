@@ -1,0 +1,61 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/icon-list",
+	"title": "Icon list",
+	"category": "pbs-content",
+	"icon": "editor-ul",
+	"description": "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library.",
+	"keywords": [
+		"list",
+		"bullets",
+		"icons",
+		"benefits"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			},
+			"role": "content"
+		},
+		"icon": {
+			"type": "string",
+			"enum": [
+				"check",
+				"dot",
+				"arrow",
+				"star",
+				"circle"
+			],
+			"default": "check"
+		},
+		"layout": {
+			"type": "string",
+			"enum": [
+				"stacked",
+				"inline"
+			],
+			"default": "stacked"
+		},
+		"accent": {
+			"type": "string",
+			"enum": [
+				"text",
+				"primary",
+				"secondary",
+				"contrast"
+			],
+			"default": "primary"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

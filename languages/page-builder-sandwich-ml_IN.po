@@ -343,6 +343,10 @@ msgid "Save as reusable pattern"
 msgstr "പുനരുപയോഗിക്കാവുന്ന പാറ്റേണായി സംരക്ഷിക്കുക"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "പ്രവേശനക്ഷമതാ പരിശോധകൻ"
 
@@ -991,6 +995,7 @@ msgstr "← മറ്റൊരു ദാതാവിനെ തിരഞ്ഞെ
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "വിലാസം"
 
@@ -1044,6 +1049,8 @@ msgstr "പരീക്ഷിക്കുക"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "നീക്കം ചെയ്യുക"
@@ -1097,6 +1104,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "പ്രൊവൈഡർമാരിൽ നിന്നുള്ള മോഡൽ ലിസ്റ്റുകൾ പുതുക്കുക"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "ചിത്രങ്ങൾ"
 
@@ -1189,6 +1197,7 @@ msgid "turned off"
 msgstr "ഓഫ് ചെയ്തു"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "തുറക്കുക"
 
@@ -1449,6 +1458,7 @@ msgstr "ഇതുവരെ AI അഭ്യർത്ഥനകളൊന്നു�
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "പൂർത്തിയായി"
 
@@ -1516,7 +1526,11 @@ msgstr "അധികം ശ്രമങ്ങൾ നടന്നു. ദയവ�
 msgid "Something went wrong. Please contact the admin."
 msgstr "എന്തോ കുഴപ്പം സംഭവിച്ചു. ദയവായി അഡ്മിനുമായി ബന്ധപ്പെടുക."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "മാപ്പ് ചെയ്യുക"
 
@@ -1539,52 +1553,385 @@ msgstr "ആ കുടുംബം സൂക്ഷിച്ചിട്ടില�
 msgid "Removed."
 msgstr "നീക്കം ചെയ്തു."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "അത് ഒരു സാധുവായ ഫോണ്ട് ഫാമിലി പേരല്ല."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts ആ ഫാമിലി നൽകിയില്ല. പേര് പരിശോധിച്ചു വീണ്ടും ശ്രമിക്കുക."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "ഫോണ്ട് ഫയലുകൾ ഡൗൺലോഡ് ചെയ്യാനോ സംരക്ഷിക്കാനോ കഴിഞ്ഞില്ല. അപ്‌ലോഡ് ഫോൾഡറിലേക്ക് എഴുതാൻ കഴിയുമെന്ന് (writable) ഉറപ്പാക്കുക."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "ഫോണ്ട് സ്റ്റൈൽഷീറ്റ് സേവ് ചെയ്യാൻ കഴിഞ്ഞില്ല. അപ്‌ലോഡ്സ് ഫോൾഡറിൽ റൈറ്റ് പെർമിഷൻ ഉണ്ടെന്ന് ഉറപ്പാക്കുക."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "ഈ അറിയിപ്പ് ഒഴിവാക്കുക"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(ഒരു പുതിയ ടാബിൽ തുറക്കുന്നു)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "ചെയ്‌തു:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "ചെയ്യേണ്ടവ:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "ഗ്ലോസറി സൂചിക"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s-ൽ %1$s റേറ്റ് ചെയ്തു"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "പുരോഗതി"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "കോഡ് പകർത്തുക"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "പകർത്തിക്കഴിഞ്ഞു"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "ആ വിജറ്റ് ഈ സൈറ്റിൽ ലഭ്യമല്ല."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "ഇമെയിൽ"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "ഫോൺ"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS ഫീഡ്"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "വെബ്സൈറ്റ്"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "ലിങ്ക്"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (പുതിയ ടാബിൽ തുറക്കുന്നു)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "5-ൽ %d റേറ്റ് ചെയ്തു"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(ശുപാർശ ചെയ്യുന്നത്)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "ഉൾപ്പെടുത്തിയിരിക്കുന്നു"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "ഉൾപ്പെടുത്തിയിട്ടില്ല"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "താരതമ്യ പട്ടിക"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "%s-നെ വിളിക്കുക"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "ഇമെയിൽ %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "ടെക്സ്റ്റ് %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "വാട്‌സാപ്പിൽ ചാറ്റ് ചെയ്യൂ"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "ഞങ്ങളെ ബന്ധപ്പെടുക"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "വാട്‌സാപ്പിൽ ഞങ്ങളുമായി ചാറ്റ് ചെയ്യൂ"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "ഈ ഫോം ഇപ്പോൾ ലഭ്യമല്ല."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s സജീവമല്ലാത്തതിനാൽ ഈ ഫോം കാണിക്കാൻ കഴിയില്ല."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "മാപ്പ്: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "മാപ്പ് കാണിക്കുന്നത് അത് OpenStreetMap-ൽ നിന്ന് ലോഡ് ചെയ്യുന്നു."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "മാപ്പ് കാണിക്കുക"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMap-ൽ മാപ്പ് തുറക്കുക"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s-ൽ നിന്നുള്ള ബുക്കിംഗ് കലണ്ടർ"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "ബുക്കിംഗ് കലണ്ടർ കാണിക്കുന്നത് %s-ൽ നിന്ന് അത് ലോഡ് ചെയ്യുന്നു."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "ബുക്കിംഗ് കലണ്ടർ കാണിക്കുക"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%s-ൽ ബുക്ക് ചെയ്യുക"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s-നുള്ള QR കോഡ്"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "ഡിസൈൻ"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "ഉള്ളടക്കം"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "മീഡിയ"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "മാർക്കറ്റിംഗ്"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "സൈറ്റ്"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "ഡാറ്റ"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "ബന്ധപ്പെട്ട പോസ്റ്റുകൾ"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "പോസ്റ്റ് വിശദാംശങ്ങൾ"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "ആയിൽ"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "പ്രസിദ്ധീകരിച്ചത്"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "അപ്ഡേറ്റ് ചെയ്തു"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "ഉള്ളിൽ"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "ടാഗ് ചെയ്തത്"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d മിനിറ്റ് വായന"
+msgstr[1] "%d മിനിറ്റ് വായന"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "ഇതുവരെ കമന്റുകളൊന്നുമില്ല"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d അഭിപ്രായം"
+msgstr[1] "%d അഭിപ്രായങ്ങൾ"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "സൈറ്റ്‌മാപ്പ്"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(ശീർഷകമില്ല)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s ന്റെ എല്ലാ പോസ്റ്റുകളും"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "ഈ ഉള്ളടക്കം പരിരക്ഷിതമാണ്. ഇത് കാണാൻ പാസ്‌വേഡ് നൽകുക."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "ആ പാസ്‌വേഡ് തെറ്റാണ്. വീണ്ടും ശ്രമിക്കുക."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "പാസ്‌വേഡ്"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "ഉള്ളടക്കം കാണിക്കുക"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "ആ പേജ് അൺലോക്ക് ചെയ്യാൻ കഴിയില്ല."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "വളരെധികം തവണ ശ്രമിച്ചു. കുറച്ച് മിനിറ്റുകൾ കാത്തിരുന്ന ശേഷം വീണ്ടും ശ്രമിക്കുക."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "പാസ്‌വേർഡിന് 4 മുതൽ 200 വരെ പ്രതീകങ്ങൾ ഉണ്ടായിരിക്കണം."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "കൂടുതൽ"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "അടയ്ക്കുക"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "ടാബ് %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "ഉള്ളടക്കം"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1687,6 +2034,10 @@ msgstr "സാൻഡ്‌വിച്ച് സ്റ്റുഡിയോ ഉ�
 msgid "Blank canvas"
 msgstr "ശൂന്യമായ ക്യാൻവാസ്"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "ഉള്ളടക്കത്തിലേക്ക് പോകുക"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "ടാബ്‌ലെറ്റ് വീതി 480 മുതൽ 2560 വരെയുള്ള പൂർണ്ണസംഖ്യ പിക്സലുകൾ ആയിരിക്കണം."
@@ -1761,7 +2112,11 @@ msgid "Uploaded icons"
 msgstr "അപ്‌ലോഡ് ചെയ്‌ത ഐക്കണുകൾ"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "ഐക്കൺ"
 
@@ -2554,6 +2909,8 @@ msgstr "%s എന്നത് എന്റെ ക്ലയന്റിന്റ�
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "കോഡ്"
 
@@ -3048,13 +3405,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "തിരുത്തുക"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "ഇമെയിൽ"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "ഇമെയിൽ വിലാസം"
 
@@ -3104,6 +3457,10 @@ msgstr "വൈറ്റ്-ലബൽ മോഡ് പ്രവർത്തനക
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3126,6 +3483,7 @@ msgstr "പുതിയ ഇമെയിൽ വിലാസം നൽകുക"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "പിഴവ്"
 
@@ -3724,6 +4082,7 @@ msgstr "%2$s ഈ സൈറ്റുകളുടെ കൃത്യമായ പ�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3827,6 +4186,7 @@ msgstr "ഈ പ്ലഗിൻ പ്രവർത്തിക്കാൻ PHP-�
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "ഇല്ല"
 
@@ -4812,6 +5172,13 @@ msgstr "സോഷ്യൽ മീഡിയ (ഫേസ്ബുക്ക്, ട�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5097,6 +5464,9 @@ msgstr "ടൈംസ്റ്റാമ്പ്"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "ശീർഷകം"
 
@@ -5172,6 +5542,8 @@ msgstr "ഇതുവരെയുള്ള %1$s നിങ്ങൾക്ക് �
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "തരം"
@@ -5287,6 +5659,7 @@ msgstr "ഉപയോക്താക്കൾ"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "വില"
@@ -5341,6 +5714,7 @@ msgstr "പണമടച്ച ഫീച്ചറുകൾ കാണുക"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "മുന്നറിയിപ്പ്"
 
@@ -5667,6 +6041,7 @@ msgid "Optional"
 msgstr "ഓപ്ഷണൽ"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "പ്ലാൻ"
 
@@ -5989,18 +6364,26 @@ msgstr "ഏറ്റവും ചെറുത്"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "ചെറുത്"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "ഇടത്തരം"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "വലുത്"
 
@@ -6013,7 +6396,9 @@ msgid "Huge"
 msgstr "വലുത്"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6327,16 +6712,9 @@ msgid "The trial could not be started."
 msgstr "ട്രയൽ ആരംഭിക്കാനായില്ല."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "ഫീച്ചർ"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "ഉൾപ്പെടുത്തിയിരിക്കുന്നു"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "ഉൾപ്പെടുത്തിയിട്ടില്ല"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6691,10 +7069,6 @@ msgstr "ലോഗിൻ വിലാസം"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "ഉപയോക്തൃനാമം"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "പാസ്‌വേഡ്"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7091,15 +7465,62 @@ msgstr "പഴയപടിയാക്കൽ ആരംഭിച്ചു. ഇത
 msgid "Undo all conversions"
 msgstr "എല്ലാ മാറ്റങ്ങളും മാറ്റിവെക്കുക"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "ഇനം"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "പേജ് ലോഡ് ചെയ്യുമ്പോൾ തുറക്കുക"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "ശീർഷകം ഒരു തലക്കെട്ടാണ്"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "ഇനങ്ങൾ പേജിന്റെ വിഭാഗങ്ങളായിരിക്കുമ്പോൾ സന്ദർശകർക്ക് അവയ്ക്കിടയിലൂടെ നാവിഗേറ്റ് ചെയ്യാൻ കഴിയുന്ന തരത്തിൽ ശീർഷകം ഒരു ഹെഡിംഗ് ആക്കുക."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "ഹെഡിങ് %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "ചോദ്യം അല്ലെങ്കിൽ വിഭാഗം ശീർഷകം"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "അക്കോഡിയൻ"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "ഒരു സമയം ഒരു ഐറ്റം മാത്രം തുറക്കുക"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "സെർച്ച് എഞ്ചിനുകൾക്കായി FAQ ആയി അടയാളപ്പെടുത്തുക"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "തലക്കെട്ടുകളിൽ നിന്നും (ചോദ്യങ്ങൾ) അവയുടെ ഉള്ളടക്കത്തിൽ നിന്നും (ഉത്തരങ്ങൾ) നിർമ്മിച്ച FAQ സ്ട്രക്ചർ ചെയ്ത ഡാറ്റ ചേർക്കുന്നു."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "അറിയിപ്പ്"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "വിവരങ്ങൾ"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "വിജയം"
 
@@ -7108,6 +7529,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "മുന്നറിയിപ്പുകളും പിഴവുകളും സ്ക്രീൻ റീഡർ ഉപയോക്താക്കളെ ഉടൻതന്നെ അറിയിക്കുന്നു; വിവരങ്ങളും വിജയ അറിയിപ്പുകളും അവർ ചെയ്യുന്ന കാര്യം പൂർത്തിയാക്കുമ്പോഴാണ് വായിക്കുന്നത്."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "ഐക്കൺ കാണിക്കുക"
 
@@ -7123,64 +7545,702 @@ msgstr "ശീർഷകം (ഓപ്ഷണൽ)"
 msgid "Write the message…"
 msgstr "സന്ദേശം എഴുതുക..."
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "വിഭാഗം — ഒരു തീമാറ്റിക് വിഭാഗം"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "സെന്റർ"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — അർത്ഥമില്ലാത്തത്"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "ബാഡ്ജ്"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "ഹെഡർ - ആമുഖ ഉള്ളടക്കം"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "നിറം"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "ഫൂട്ടർ — അവസാനിക്കുന്ന ഉള്ളടക്കം"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "തീം ആക്സന്റ്"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "ലേഖനം — സ്വയം അടങ്ങിയിരിക്കുന്ന ഉള്ളടക്കം"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "നിഷ്പക്ഷമായ"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "അനുബന്ധ ഉള്ളടക്കം"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "സ്ഥാനം"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — പ്രധാന ഉള്ളടക്കം (ഒരു പേജിൽ ഒരിക്കൽ)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "ലേബൽ"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "നാവ് — നാവിഗേഷൻ ലിങ്കുകൾ"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "ബുക്കിംഗ് കലണ്ടർ"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "സ്റ്റാക്ക് (ഫ്ലെക്സ്ബോക്സ്, കോളം)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "സേവനം"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "റോ (ഫ്ലെക്സ്ബോക്സ്)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "ബുക്കിംഗ് പേജ് വിലാസം"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "ഗ്രിഡ്"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "ഉദാഹരണത്തിന് %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "കാൽണ്ടർ എന്തിനുള്ളതാണ് എന്നത് സ്ക്രീൻ റീഡറുകൾ വായിക്കുകയും അതിന് കീഴിൽ കാണിക്കുകയും ചെയ്യുന്നു."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "ഇത് ഒരു %s ബുക്കിംഗ് പേജ് വിലാസമല്ലാത്തതിനാൽ, പേജിൽ ഒന്നും കാണിക്കില്ല."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "കലണ്ടർ പ്രിവ്യൂ ചെയ്യുക"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "ലിങ്ക് വിലാസം"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "ലേബലും വിലാസവും ഉള്ളപ്പോൾ മാത്രമേ ബട്ടൺ കാണിക്കൂ."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "പുതിയ ടാബിൽ തുറക്കുക"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "പ്രവർത്തനത്തിനുള്ള ആഹ്വാനം"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "ല ഔട്ട്"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "കീഴിലുള്ള ബട്ടണുകൾ"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "ഉടസ്ഥനത്തിനടുത്തുള്ള ബട്ടണുകൾ"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "അലൈന്‍മെന്റ്"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "പ്രധാന ബട്ടൺ"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "രണ്ടാമത്തെ ബട്ടൺ"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "തലക്കെട്ട്..."
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "കാരണം വ്യക്തമാക്കുന്ന ഒരു വാചകം…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "രണ്ടാമത്തെ ബട്ടൺ (ഓപ്ഷണൽ)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "ചെക്ക്‌ലിസ്റ്റ്"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "ടിക്കിന്റെ നിറം"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "വരകൾ"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "വരി %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "ടാസ്ക്…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "വരി ചേർക്കുക"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "ഭാഷ"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "സ്വയം കണ്ടെത്തുക"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "ഹൈലൈറ്റിംഗ് ഇല്ല"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "ഫയൽ നാമം"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "കോഡിന് മുകളിൽ കാണിച്ചിരിക്കുന്നു, ഉദാഹരണത്തിന് functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "വരികളുടെ നമ്പറുകൾ"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "കോപ്പി ബട്ടൺ"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "നീളമുള്ള വരികൾ മടക്കുക"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "കോഡ് എഴുതുക അല്ലെങ്കിൽ പേസ്റ്റ് ചെയ്യുക..."
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "ടെക്സ്റ്റ്"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "നിരകൾ"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "കോളം %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "%s ഹൈലൈറ്റ് ചെയ്യുക"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "കോളം ചേർക്കുക"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "നിരകൾ"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "നിര %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "വരി ചേർക്കുക"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "തലക്കെട്ട് (എന്താണ് താരതമ്യം ചെയ്യുന്നത്)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "സെൽ തരം: %s. മാറ്റുക"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "ഫോൺ കോൾ"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "ടെക്സ്റ്റ് സന്ദേശം"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "വാട്സാപ്പ്"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ബട്ടണുകൾ"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "രാജ്യത്തിന്റെ കോഡ് സഹിതം ഫോൺ നമ്പർ"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "ബട്ടൺ വാചകം"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "ഈ ബട്ടൺ നീക്കം ചെയ്യുക"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "ഒരു ബട്ടൺ ചേർക്കുക"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "തുടക്കത്തിൽ അയക്കേണ്ട വാട്സാപ്പ് സന്ദേശം (ഓപ്ഷണൽ)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "ബന്ധപ്പെടാനുള്ള ബട്ടണുകൾ"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "സൈഡ്‌ബാറിൽ ഒരു ഫോൺ നമ്പർ, ഇമെയിൽ വിലാസം അല്ലെങ്കിൽ വാട്ട്‌സാപ്പ് നമ്പർ ചേർക്കുക."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "ഇരട്ട തലക്കെട്ട്"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "ശീർഷക നില"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "ഓരോ പേജിലും പ്രധാന തലക്കെട്ടിനായി H1 ഒരിക്കൽ മാത്രം ഉപയോഗിക്കുക."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "രണ്ടാം ഭാഗം നോക്കൂ"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "ആസന്റ് നിറം"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "ഗ്രേഡിയന്റ്"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "ഔട്ട്‌ലൈൻ"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "അടിവരയിടുക"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "രണ്ടാം ഭാഗം സ്വന്തം വരിയിൽ"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "ആദ്യ ഭാഗം"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "രണ്ടാം ഭാഗം"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "മാർക്കർ പെൻ"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "കട്ടിയുള്ള അടിവര"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "പശ്ചാത്തലം"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "ഹൈലൈറ്റ് ചെയ്യുക"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "ഹൈലൈറ്റ് നീക്കം ചെയ്യുക"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "ഡ്രോപ്പ് ക്യാപ്"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "വലിയ ആദ്യത്തെ അക്ഷരം"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "ഒരു ബോക്സിലെ ആദ്യത്തെ അക്ഷരത്തിന്, \"Drop cap in a box\" ശൈലി തിരഞ്ഞെടുക്കുക."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "ഒരു ബോക്സിൽ ഡ്രോപ്പ് ക്യാപ്"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "ആസന്റ് ബാർ"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "പുൾ ഉദ്ധരണി (ആക്‌സന്റ് ബാർ)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "ശ്രദ്ധ ആകർഷിക്കുന്നതിനായി ഒരു വർണ്ണാഭമായ ബാറിന് അരികിലായി വലുതായി സജ്ജീകരിച്ചിരിക്കുന്ന വാചകത്തിൽ നിന്നുള്ള ഒരു ഉദ്ധരണി."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "ഉദ്ധരണി"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "ഫീച്ചർ ലിസ്റ്റ്"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "ഫോണുകളിൽ ഫീച്ചറുകൾ എപ്പോഴും ഒന്നിന് മുകളിൽ ഒന്നായി അടുക്കിവെക്കപ്പെടും."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "സവിശേഷതകൾ"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "ഫീച്ചർ %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "സ്വന്തം ഐക്കൺ"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "ഫീച്ചർ..."
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "വിവരണം നൽകുക..."
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "സവിശേഷത ചേർക്കുക"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms അല്ലെങ്കിൽ Fluent Forms ഇൻസ്റ്റാൾ ചെയ്ത് സജീവമാക്കുക, തുടർന്ന് ഇവിടെയുള്ള ഫോമുകളിൽ ഒന്ന് തിരഞ്ഞെടുക്കുക."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "ഫോം പ്ലഗിൻ"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "തിരഞ്ഞെടുക്കുക..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "ഫോം"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "ഒരു ഫാറം തിരഞ്ഞെടുക്കുക..."
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s-ൽ ഇതുവരെ ഫോമുകളൊന്നുമില്ല"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "ഈ സൈറ്റിൽ %s സജീവമല്ല, അതിനാൽ ഈ ഫോം കാണിക്കാൻ കഴിയില്ല."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "ഫോം ലിസ്റ്റ് ലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "ഫോം ശൈലി"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "ഫീൽഡുകൾ"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "രേഖപ്പെടുത്തിയത്"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "നിറഞ്ഞു"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "അടിവരയിട്ടത്"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "ബട്ടൺ വീതി"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "ടെക്സ്റ്റ് പാകമാക്കുക"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "പൂർണ്ണ വീതി"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "നിങ്ങളുടെ സൈറ്റ് ഡിസൈനിൽ നിന്നും ഈ ബ്ലോക്കിന്റെ ഡിസൈൻ ക്രമീകരണങ്ങളിൽ നിന്നുമാണ് നിറങ്ങളും ഫോണ്ടുകളും സ്പേസിംഗും കോർണറുകളും വരുന്നത്."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "നിങ്ങളുടെ സൈറ്റുമായി പൊരുത്തപ്പെടുന്ന രീതിയിൽ ശൈലി ക്രീകരിച്ചിട്ടുള്ള, നിങ്ങളുടെ ഫോം പ്ലഗിന്നിൽ നിന്നുള്ള ഒരു ഫോം കാണിക്കുക."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "ഒരു ഫോം പ്ലഗ്ഇൻ ആവശ്യമുണ്ടോ? കോൺടാക്റ്റ് ഫോം 7 സൗജന്യമാണ്."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "പദസൂചിക"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "A മുതൽ Z വരെ ക്രമീകരിക്കുക"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "പേജ് നിബന്ധനകൾ അക്ഷരമാലാക്രമത്തിൽ കാണിക്കുന്നു; ഇവിടെ അവ നിങ്ങൾ എഴുതിയ ക്രമത്തിൽ തന്നെ തുടരുന്നു."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "ഒരു A–Z സൂചിക കാണിക്കുക"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "ഈ പേട S-ൽ മറ്റെവിടെയെങ്കിലും ഉപയോഗിച്ചിരിക്കുന്ന ലിങ്ക് നിബന്ധനകൾ"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "പേജ് ടെക്സ്റ്റിൽ ഓരോ പദവും ആദ്യമായി ദൃശ്യമാകുമ്പോൾ അത് അതിന്റെ നിർവചനത്തിലേക്ക് ലിങ്ക് ചെയ്യപ്പെടുന്നു. തലക്കെട്ടുകൾ, ബട്ടണുകൾ, കോഡ്, നിലവിലുള്ള ലിങ്കുകൾ എന്നിവ മാറ്റമില്ലാതെ നിലനിർത്തുന്നു."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "നിബന്ധനകൾ"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "കാലാവധി %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "കാലാവധി"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "ഇതിൻ്റെ അർത്ഥം..."
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "പദം ചേർക്കുക"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "ഐക്കൺ പട്ടിക"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "ഒന്നിന് താഴെ ഒന്നായി"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "വശം വശമായി"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "ലിസ്റ്റ് ഇനം..."
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "വിവര ബോക്സ്"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "ലൈബ്രറിയിൽ നിന്ന് ഏതെങ്കിലും ഐക്കൺ തിരഞ്ഞെടുക്കുക:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "ലിങ്ക് വാചകം"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "ലിങ്ക് എവിടേക്കാണ് പോകുന്നതെന്ന് വ്യക്തമാക്കുക (\"ഞങ്ങളുടെ വിലകൾ കാണുക\"), \"കൂടുതൽ വായിക്കുക\" എന്നല്ല."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "ഒന്നോ രണ്ടോ വാക്യങ്ങൾ..."
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "വിഭാഗം — ഒരു തീമാറ്റിക് വിഭാഗം"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — അർത്ഥമില്ലാത്തത്"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "ഹെഡർ - ആമുഖ ഉള്ളടക്കം"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "ഫൂട്ടർ — അവസാനിക്കുന്ന ഉള്ളടക്കം"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "ലേഖനം — സ്വയം അടങ്ങിയിരിക്കുന്ന ഉള്ളടക്കം"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "അനുബന്ധ ഉള്ളടക്കം"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — പ്രധാന ഉള്ളടക്കം (ഒരു പേജിൽ ഒരിക്കൽ)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "നാവ് — നാവിഗേഷൻ ലിങ്കുകൾ"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "സ്റ്റാക്ക് (ഫ്ലെക്സ്ബോക്സ്, കോളം)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "റോ (ഫ്ലെക്സ്ബോക്സ്)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "ഗ്രിഡ്"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "എഡിറ്റുചെയ്യുന്നു: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "കുട്ടികളെ ഇങ്ങനെ ക്രമീകരിക്കുക"
 
@@ -7188,7 +8248,7 @@ msgstr "കുട്ടികളെ ഇങ്ങനെ ക്രമീകരി�
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7196,70 +8256,50 @@ msgstr "കുട്ടികളെ ഇങ്ങനെ ക്രമീകരി�
 msgid "Inherited (%s)"
 msgstr "പരമ്പരാഗതമായി ലഭിച്ചത് (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "ഫ്ലെക്സ്ബോക്സ്"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "സ്റ്റാക്ക് ചെയ്ത ബ്ലോക്കുകൾ"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "നിരകൾ"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "കാൻവാസിലേക്ക് ഡ്രാഗ് ചെയ്യുക, അല്ലെങ്കിൽ ടൈപ്പ് ചെയ്യുക"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "ഉള്ളടക്ക വീതി"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "ബോക്സ്ഡ് (തീമിന്റെ ഉള്ളടക്ക വീതി)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "പൂർണ്ണ വീതി"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "കുറഞ്ഞ ഉയരം"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "എച്ച്.ടി.എം.എൽ ടാഗ്"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "ലിങ്ക്"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "മുഴുവൻ ബ്ലോക്കും ഒരു ലിങ്ക് ആക്കുക"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "സ്ക്രീൻ റീഡറുകൾക്കായുള്ള ലിങ്ക് ടെക്സ്റ്റ്"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "ബ്ലോക്ക് കാണാൻ കഴിയാത്ത സന്ദർശകർക്കായി ലിങ്ക് എന്ത് ചെയ്യുന്നു എന്ന് വ്യക്തമാക്കുക."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "പുതിയ ടാബിൽ തുറക്കുക"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "ലിങ്ക് ചെയ്ത ബ്ലോക്കിനുള്ളിൽ ലിങ്കുകളോ ബട്ടണുകളോ നൽകരുത്: ലിങ്കിനുള്ളിലെ ലിങ്ക് ബ്രൗസറുകളിൽ പ്രവർത്തിക്കില്ല."
 
@@ -7291,14 +8331,143 @@ msgstr "+ നിര"
 msgid "− Row"
 msgstr "− വരി"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "സ്ഥലം"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "കോർഡിനേറ്റുകളോ ഓപ്പൺസ്ട്രീറ്റ്‌മാപ്പ് ലിങ്കോ ഒട്ടിക്കുക"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org-ൽ സ്ഥലം കണ്ടെത്തുക, തുടർന്ന് ബ്രൗസർ ബാറിൽ നിന്ന് വിലാസം പകർത്തുക, അല്ലെങ്കിൽ മാപ്പിൽ റൈറ്റ് ക്ലിക്ക് ചെയ്ത് \"വിലാസം കാണിക്കുക\" തിരഞ്ഞെടുക്കുക."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "അക്ഷാംശം"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "രേഖാംശം"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "സൂം ചെയ്യുക"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "സ്ഥലത്തിന്റെ പേര്"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "മാപ്പിന് കീഴില്‍ കാണിക്കുകയും സ്ക്രീൻ റീഡറുകൾ വായിച്ചു കേൾപ്പിക്കുകയും ചെയ്യും."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "നിർദ്ദേശാങ്കങ്ങൾ (ഉദാഹരണത്തിന് 51.5074, -0.1278) അല്ലെങ്കിൽ ഒരു ഓപ്പൺസ്ട്രീറ്റ്‌മാപ്പ് ലിങ്ക് ഒട്ടിക്കുക."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "കോർഡിനേറ്റുകൾ അല്ലെങ്കിൽ ലിങ്ക്"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "മാപ്പ് പ്രിവ്യൂ ചെയ്യുക"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMap-ൽ %1$s, %2$s പരിശോധിക്കുക"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "രചയിതാവ്"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "പ്രസിദ്ധീകരിച്ച തീയതി"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "അപ്‌ഡേറ്റ് ചെയ്ത തീയതി (വ്യത്യാസമുള്ളപ്പോൾ)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "വിഭാഗങ്ങൾ"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "ടാഗുകൾ"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "വായനാ സമയം"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "കമന്റ് കണക്ക്"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "ക്കാണിക്കേണ്ട വിശദാംശങ്ങൾ"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "കാണിക്കാനായി കുറഞ്ഞത് ഒരു വിശദാംശമെങ്കിലും തിരഞ്ഞെടുക്കുക."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "പ്രോഗ്രസ് ബാർ"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "പരമാവധി"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "ശതമാനത്തിന് 100; 10-ൽ 8 പോലുള്ള കണക്കിന് മറ്റേതെങ്കിലും സംഖ്യ."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "ശതമാനം കാണിക്കുക"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "ഒരു പാസ്‌വേർഡ് സജ്ജീകരിച്ചിരിക്കുന്നു. സന്ദർശകർ ഈ ഉള്ളടക്കം കാണുന്നതിന് പകരം, അത് നൽകുന്നത് വരെ ഒരു പാസ്‌വേർഡ് ഫോം കാണും."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "പാസ്‌വേഡ് ഇതുവരെ സജ്ജീകരിച്ചിട്ടില്ല, അതിനാൽ സന്ദർശകർ ഇവിടെ ഒന്നും കാണില്ല."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "പുതിയ പാസ്‌വേഡ്"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "പാസ്‌വേഡ് സജ്ജീകരിക്കുക"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "പാസ്‌വേഡ് സജ്ജീകരിച്ചിരിക്കുന്നു. ഇത് ബാധകമാക്കാൻ പേജ് സംരക്ഷിക്കുക; ലോക്ക് അൺലോക്ക് ചെയ്‌തിരുന്ന സന്ദർശകർക്ക് പുതിയത് ആവശ്യമാണ്."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Page Builder Sandwich എപ്പോഴെങ്കിലും ഓഫ് ചെയ്യുകയാണെങ്കിൽ, ഈ ഉള്ളടക്കം എല്ലാവർക്കും ദൃശ്യമാകും."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "പാസ്‌വേഡ് ഫോമിന് മുകളിലുള്ള സന്ദേശം (ഓപ്ഷണൽ)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "സ്വിച്ച് ചെയ്യുക"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "ലേബൽ"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7308,30 +8477,698 @@ msgstr "സ്ക്രീൻ റീഡറുകൾ വായിക്കുക�
 msgid "Show label"
 msgstr "ലേബൽ കാണിക്കുക"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "വെബ് വിലാസം അല്ലെങ്കിൽ വാചകം"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR കോഡ്"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "സ്ക്രീൻ റീഡറുകൾക്കായുള്ള വിവരണം"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"QR കോഡ്\" എന്നതും എഴുത്തും ഉപയോഗിക്കുന്നതിനായി ഇത് ശൂന്യമായി വിടുക."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "ഒരു വെബ് വിലാസമോ ഫോൺ ലിങ്കോ (tel:) അല്ലെങ്കിൽ ഏതെങ്കിലും ടെക്സ്റ്റോ ടൈപ്പ് ചെയ്യുക."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "ഇത് ഒരു QR കോഡിന് വളരെ വലുതാണ്. ഇത് ചെറുതാക്കുക."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "ഒരു അടിക്കുറിപ്പ് ചേർക്കുക"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "വായിക്കുന്നതിന്റെ പുരോഗതി ബാർ"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "വിൻഡോയുടെ അരികിൽ"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "മുകളിൽ"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "അടിഭാഗം"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "സന്ദർശകർ സ്ക്രോൾ ചെയ്യുമ്പോൾ ജാലകത്തിന്റെ അടിഭാഗത്തായി കാണിക്കുന്നു."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "സന്ദർശകർ സ്ക്രോൾ ചെയ്യുമ്പോൾ ജാലകത്തിന്റെ മുകളിൽ കാണിക്കുന്നു."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "എത്ര"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "ബന്ധപ്പെട്ടത്"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "വിഭാഗങ്ങൾ അല്ലെങ്കിൽ ടാഗുകൾ"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "ബന്ധപ്പെട്ടതൊന്നുമില്ലെങ്കിൽ, പകരം ഏറ്റവും പുതിയത് കാണിക്കുക"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "ശീർഷകം"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "\"ബന്ധപ്പെട്ട പോസ്റ്റുകൾ\" എന്നതിനായി ശൂന്യമായിടുക."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "പ്രധാന ചിത്രം കാണിക്കുക"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "തീയതി കാണിക്കുക"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "ഒരു സംഗ്രഹം കാണിക്കുക"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "ഈ പോസ്റ്റിന്റെ വിഭാഗങ്ങളോ ടാഗുകളോ പങ്കിടുന്ന മറ്റ് പോസ്റ്റുകളൊന്നും ഇതുവരെയില്ല. വരുമ്പോൾ, അവ ഇവിടെ കാണിക്കും."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "മോഡൽ"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "ഓഫ്-കാൻവാസ് പാനൽ"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "വ്യാപ്തി"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "ഇതിൽ നിന്ന് സ്ലൈഡ് ചെയ്യുക"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "വായന ആരംഭിക്കുന്ന വശമാണ് സ്റ്റാർട്ട്: ഇംഗ്ലീഷിൽ ഇടത്തോട്ടോ, അറബിയിൽ വലത്തോട്ടോ."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "പിന്നിലെ പേജിൽ ക്ലിക്ക് ചെയ്യുമ്പോൾ അടയ്ക്കുക"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "ജാലകത്തിന്റെ തലക്കെട്ട്"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "ചെക്ക് മാർക്ക്"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "സർക്കിൾ"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "ക്രോസ്സ്"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "ഡോട്ട്"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "അമ്പ്"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "സ്റ്റാർ"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "ഐക്കൺ നിറം"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "ടെക്സ്റ്റിന് സമം"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "തീം പ്രൈമറി"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "തീം സെക്കൻഡറി"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "തീം വൈരുദ്ധ്യം"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "പേജിലുടനീളം തലക്കെട്ടുകൾ ക്രമത്തിൽ സൂക്ഷിക്കുക: അത് സ്ഥിതി ചെയ്യുന്ന വിഭാഗത്തിന് താഴെയുള്ള ഒരു ലെവൽ തലക്കെട്ട്."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "ഐക്കൺ തിരഞ്ഞെടുക്കുക"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "സ്വതമാ യുള്ള ഐക്കൺ ഉപയോഗിക്കുക"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "ഒരു ഐക്കൺ തിരഞ്ഞെടുക്കുക"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "മുകളിലേക്ക് നീക്കുക"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "താഴേക്ക് നീക്കുക"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "ഓരോ തരം തിരിവിനും ഒരു തലക്കെട്ട് കാണിക്കുക"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "നിങ്ങൾ തിരഞ്ഞെടുത്ത തരങ്ങളിൽ ഇതുവരെ ഒന്നും പ്രസിദ്ധീകരിച്ചിട്ടില്ല."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "ലിങ്കുകൾ"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "ലിങ്ക് %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "നെറ്റ്‌വർക്ക്"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "ഒരു പ്രൊഫൈൽ വിലാസം, mailto:you@example.com അല്ലെങ്കിൽ tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "സ്ക്രീൻ റീഡറുകൾക്കായി പേര് വായിക്കുന്നു"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "മറ്റു ഐക്കൺ"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "ലിങ്ക് ചേർക്കുക"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "നോക്കൂ"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "ശൈലി"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "ഐക്കൺ മാത്രം"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "രൂപം"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "വൃത്താകൃതിയിലുള്ള ചതുരം"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "ചതുരം"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "പ്രൊഫൈലുകൾ പുതിയ ടാബിൽ തുറക്കുക"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "നക്ഷത്ര റേറ്റിംഗ്"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "റേറ്റിംഗ്"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "നക്ഷത്രങ്ങളുടെ എണ്ണം"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "എണ്ണം കാണിക്കുക"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "പടികൾ"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "പേജിന് താഴേക്ക്"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "വശം വശമായി (ഫോണുകളിൽ അടുക്കി വെച്ചിരിക്കുന്നു)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "നമ്പർ നിറം"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "പടികളുടെ ക്രമം"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "ഘട്ടം %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "ഘട്ടം…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "എന്തുചെയ്യണം..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "ഘട്ടം ചേർക്കുക"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "ടാബ്"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "പേജിലേക്ക് തലക്കെട്ടുകൾ ചേർക്കുക, അവ ഇവിടെ ലിസ്റ്റ് ചെയ്യപ്പെടും."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "ഉള്ളടക്കം"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "ശീർഷക ലെവലിൽ നിന്ന്"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "തലക്കെട്ട് ലെവലിലേക്ക്"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "നമ്പർ നൽകിയ"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "ചുരുക്കാൻ കഴിയുന്നത്"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "ചുരുക്കിക്കൊണ്ട് ആരംഭിക്കുക"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "വായിക്കുന്ന ഭാഗം ഹൈലൈറ്റ് ചെയ്യുക"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "ടാബുകൾ"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "സ്ക്രീൻ റീഡറുകൾക്കായുള്ള പേര്"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "ആപ്ഷണൽ. ടാബുകൾ എന്തെപ്പറ്റിയുള്ളതാണെന്ന് വ്യക്തമാക്കുന്നു, ഉദാഹരണത്തിന് \"Plans\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "പേജ് ലോഡ് ചെയ്യുമ്പോൾ തുറക്കുക"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "വശത്ത് ടാബുകൾ"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "ഒരു ടാബ് ചേർക്കുക"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "സാക്ഷ്യപത്രം"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "ഫോട്ടോ മാറ്റിസ്ഥാപിക്കുക"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "ഫോട്ടോ തിരഞ്ഞെടുക്കുക"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "ഫോട്ടോ നീക്കം ചെയ്യുക"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "ചിത്രത്തിന്റെ വിവരണം"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "ഫോട്ടോയിൽ പേര് നൽകിയിരിക്കുന്ന വ്യക്തിയെ മാത്രമാണ് കാണിക്കുന്നതെങ്കിൽ ഇത് ശൂന്യമായിടുക."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "നക്ഷത്ര റേറ്റിംഗ് (0 = ഒന്നുമില്ല)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "കൊട്ടിനു കീഴിലുള്ള പേര്"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "ഉദ്ധരണിക്ക് സമീപമുള്ള ഫോട്ടോ"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "ഉപഭോക്താവ് പറഞ്ഞത്…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "റോൾ അല്ലെങ്കിൽ കമ്പനി"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "ടൂൾടിപ്പ്"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "ടൂൾടിപ്പ് വാചകം"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "ചുരുക്കി സൂക്ഷിക്കുക: ഒന്നോ രണ്ടോ വാക്യങ്ങൾ. ഇത് വിശദീകരിക്കുന്ന വാക്കിനൊപ്പമാണ് സ്ക്രീൻ റീഡറുകൾ ഇത് വായിക്കുന്നത്."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "കാണിക്കുക"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "മുകളിൽ"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "താഴെ"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "പദം അല്ലെങ്കിൽ വാചകം"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "ബാധകമാക്കുക"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "പ്രൊഫൈൽ"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "ആരുടെ പ്രൊഫൈൽ"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "പോസ്റ്റിന്റെ രചയിതാവ്"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "പ്രൊഫൈൽ ചിത്രം കാണിക്കുക"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "ജീവചരിത്രം കാണിക്കുക"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "പോസ്റ്റുകളിലേക്കും വെബ്‌സൈറ്റിലേക്കും ഉള്ള ലിങ്കുകൾ കാണിക്കുക"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "ലേഖകന്റെ പ്രൊഫൈൽ"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "ഏത് പ്രൊഫൈലാണ് കാണിക്കേണ്ടതെന്ന് തിരഞ്ഞെടുക്കുക."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "രാജ്യ കോഡുള്‍പ്പെടെയുള്ള വാട്സാപ്പ് നമ്പര്‍"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "ഉദാഹരണത്തിന് +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "തുടക്കത്തിൽ ചെയ്യേണ്ട സന്ദേശം (ഓപ്ഷണൽ)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "ഐക്കണിന് അടുത്തായി വാചകം കാണിക്കുക"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "മൂല"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "താഴ്ഭാഗം (ഇംഗ്ലീഷില്‍ വലത്)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "അടിഭാഗം ആരംഭം (ഇംഗ്ലീഷിൽ ഇടത്ത്)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "സൈഡ്‌ബാറിൽ നിങ്ങളുടെ വാട്‌സാപ്പ് നമ്പർ ചേർക്കുക. അതുവരെ പേജിൽ ആ ബട്ടൺ കാണിക്കില്ല."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "പേജിൽ, ഈ ബട്ടൺ സ്ക്രീന്റെ താഴത്തെ മൂലയിൽ ഒഴുകിനടക്കുന്നു."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "ഷോർട്ട്കോഡ് ടാഗ്"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "അക്ഷരങ്ങളും സംഖ്യകളും ഡാഷുകളും അണ്ടർസ്കോറുകളും മാത്രം ഉപയോഗിക്കുക."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "ആട്രിബ്യൂട്ട് പേര്"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "ആട്രിബ്യൂട്ട് ചേർക്കുക"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "ഷോർട്ട്കോഡ്"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "മറ്റ് ആട്രിബ്യൂട്ടുകൾ"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "ബ്ലോക്ക് ക്രമീകരണങ്ങളിൽ ഒരു ഷോർട്ട്കോഡ് ടാഗ് തിരഞ്ഞെടുക്കുക."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "ഗാലറി"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "ചിത്രത്തിൻ്റെ വലിപ്പം"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "ലഘുചിത്രം"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "പൂർണ്ണ വലുപ്പം"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "ഇതുമായി ലിങ്ക് ചെയ്യുക"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "അറ്റാച്ച്മെന്റ് പേജ്"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "മീഡിയ ഫയൽ"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "ഓഡിയോ"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "വീഡിയോ"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "ഫയൽ വിലാസം"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "ലൂപ്പ്"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "സ്വയമേവ പ്ലേ ചെയ്യുക"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "പോസ്റ്റർ ചിത്രം"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "പ്ലേലിസ്റ്റ്"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "കോമകളാൽ തിരിച്ച മീഡിയ ഐഡികൾ"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "ട്രാക്ക് ലിസ്റ്റ് കാണിക്കുക"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "എംബെഡ് ചെയ്യുക"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "എംബെഡ് ചെയ്യാനുള്ള വിലാസം"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "പരമാവധി വീതി"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "ശീർഷകം"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "ചിത്രവും അടിക്കുറിപ്പും ഉള്ള എച്ച്.ടി.എം.എൽ"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "വീതി"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "നുറുങ്ങ്: നിങ്ങളുടെ സൈറ്റുമായി ഇണങ്ങുന്ന രീതിയില്‍ രൂപകൽപ്പന ചെയ്ത ഈ ഫോം, ഫോം ബ്ലോക്ക് കാണിക്കുന്നു."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "ഫോം തലക്കെട്ട് കാണിക്കുക"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "ഫോം വിവരണം കാണിക്കുക"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "പേജ് റീലോഡ് ചെയ്യാതെ സമർപ്പിക്കുക"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7352,123 +9189,108 @@ msgstr "ഫയൽ തിരഞ്ഞെടുക്കുക"
 msgid "— Default —"
 msgstr "— സ്വതവേ —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "വിപുലമായ സ്റ്റൈലിംഗ്"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "ഇൻലൈൻ സി.എസ്.എസ്"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "സിഎസ്എസ് ഡിക്ലറേഷനുകൾ, ഉദാഹരണത്തിന്: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "ഫലങ്ങൾ (പഴയ ക്ലാസുകൾ)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "പഴയ പതിപ്പുകളിൽ നിന്നുള്ള, സ്പേസ് ഉപയോഗിച്ച് വേർതിരിച്ച എഫക്റ്റ് പേരുകൾ, ഉദാഹരണത്തിന്: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "നിര"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "വീതി"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "പൂർണ്ണ വീതി, ഉള്ളടക്കം മധ്യഭാഗത്ത് നിലനിർത്തിയിരിക്കുന്നു"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "ലിങ്ക് വിലാസം"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "ലിങ്ക് ബന്ധം"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "അലൈന്‍മെന്റ്"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "ഇടത്"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "സെന്റർ"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "വലത്"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "ബട്ടൺ വാചകം"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "ടെക്സ്റ്റ് ചേർക്കുക…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "പ്ലേസ്മെന്റ്"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "സ്വന്തം വരിയിൽ"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "വരിയിൽ, മറ്റ് ഉള്ളടക്കത്തിനൊപ്പം"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "ഓട്ടോമാറ്റിക് (പേജിന്റെ ഉയർന്ന തലത്തിൽ സ്വന്തം വരിയിൽ)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "പ്രാപ്യമായ ലേബൽ"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "ഒരു അലങ്കാര ഐക്കണിനായി ഇത് ശൂന്യമായി വിടുക."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "ബ്ലോക്ക് ക്രമീകരണങ്ങളിൽ ഒരു ഐക്കൺ തിരഞ്ഞെടുക്കുക."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "പുതിയ ക്രമീകരണത്തിന്റെ പേര്"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "ഉദാഹരണത്തിന്: ശീർഷകമോ പാഠമോ"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "ക്രമീകരണം ചേർക്കുക"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "വിജറ്റ്"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "ഒരു വിജറ്റ് തിരഞ്ഞെടുക്കുക"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "വിജറ്റ് ഏരിയ"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "ഒരു വിഡ്ജറ്റ് ഏരിയ തിരഞ്ഞെടുക്കുക"
 
@@ -7491,6 +9313,142 @@ msgstr "ഈ എംബെഡ് ലോഡ് ആയതിന് ശേഷം അ�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "ലayout shift"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "ഈ വിജറ്റ് അതിൻ്റെ ക്രമീകരണങ്ങൾ വിവരിക്കുന്നില്ല, അതിനാൽ അവ പേരും മൂല്യ ജോഡികളായി എഡിറ്റ് ചെയ്യപ്പെടുന്നു."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "പ്രശ്നം"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "പരിശോധിക്കുക"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "ബ്ലോക്ക് കാണിക്കുക"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "വ Pസൂചകമായ ഒരു തീം നിറം ഉപയോഗിക്കുക"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "ഇതിനെ H%d ആക്കുക"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "ആൾട്ട് ടെക്സ്റ്റ്"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "ആൾട്ട് ടെക്സ്റ്റ് സേവ് ചെയ്യുക"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "ഈ ചിത്രം അലങ്കാരത്തിനുള്ളതാണ്"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "പരിശോധിക്കുന്നു..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "ഈ പേജിൽ പ്രവേശനക്ഷമതയുമായി ബന്ധപ്പെട്ട പ്രശ്നങ്ങളൊന്നും കണ്ടെത്തിയില്ല."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d പ്രശ്നം"
+msgstr[1] "%d പ്രശ്നങ്ങൾ"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "പരിശോധിക്കേണ്ട കാര്യം %d-ണ്ണം"
+msgstr[1] "പരിശോധിക്കേണ്ട %d കാര്യങ്ങൾ"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "വീണ്ടും പരിശോധിക്കുക"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "ഒരു സ്വയംകൃത പരിശോധനയിൽ നിരവധി പ്രശ്നങ്ങൾ കണ്ടെത്താനാകും, എന്നാൽ അവയെല്ലാം കണ്ടെത്തണമെന്നില്ല. കൂടാതെ കീബോർഡ് ഉപയോഗിച്ചും സ്ക്രീൻ റീഡർ ഉപയോഗിച്ചും ആ പേജ് പരിശോധിക്കുക."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "ടെക്സ്റ്റ് കോൺട്രാസ്റ്റ് %1$s:1 ആണ്; വായിക്കാവുന്ന തരത്തിലാകാൻ ഇതിന് കുറഞ്ഞത് %2$s:1 ആവശ്യമാണ്."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "ഇവിടെ ക്ലിക്ക് ചെയ്യുക,ഇവിടെ,കൂടുതൽ വായിക്കുക,കൂടുതൽ,ലിങ്ക്,ഈ ലിങ്ക്,കൂടുതൽ അറിയുക,പോവുക"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "ഒരു ലിങ്കിന് ടെക്സ്റ്റ് ഇല്ല, അതിനാൽ ഒരു സ്ക്രീൻ റീഡർ \"ലിങ്ക്\" എന്ന് മാത്രമാണ് അറിയിക്കുന്നത്. ടെക്സ്റ്റോ ലേബലോ ചേർക്കുക."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "“%s” എന്ന ലിങ്ക് ടെക്സ്റ്റ് അത് എവിടേക്കാണ് പോകുന്നതെന്ന് വ്യക്തമാക്കുന്നില്ല. പകരം ലക്ഷ്യസ്ഥാനം വിവരിക്കുക."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "ഒരു ഘടകത്തിന് പോസിറ്റീവ് ടാബ്‌ഇൻഡെക്സ് ഉണ്ട്, ഇത് കീബോർഡ് ക്രമത്തെ വായനാ ക്രമത്തിൽ നിന്ന് മാറ്റുന്നു. 0 ഉപയോഗിക്കുക അല്ലെങ്കിൽ അത് നീക്കം ചെയ്യുക."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "ക്ലിക്ക് ചെയ്യാവുന്ന ഒരു ഘടകത്തിൽ കീബോർഡ് ഉപയോഗിച്ച് എത്തിച്ചേരാനാകില്ല. യഥാർത്ഥ ബട്ടണോ ലിങ്കോ ഉപയോഗിക്കുക."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "എംബെഡ് ചെയ്‌ത ഫ്രെയിമിന് ശീർഷകമില്ല, അതിനാൽ സ്‌ക്രീൻ റീഡറിന് അത് എന്താണെന്ന് പറയാൻ കഴിയില്ല."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "ഒരു ഫോം ഫീൽഡിന് ലേബൽ ഇല്ല, അതിനാൽ അതിന്റെ ഉദ്ദേശ്യം പ്രഖ്യാപിക്കപ്പെടുന്നില്ല."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "ഈ ഹെഡിംഗ് ശൂന്യമാണ്. സ്ക്രീൻ റീഡർ ഉപയോഗിക്കുന്നവർ ഹെഡിംഗുകൾ വഴിയാണ് നാവിഗേറ്റ് ചെയ്യുന്നത്; ഇത് നീക്കം ചെയ്യുക അല്ലെങ്കിൽ ടെക്സ്റ്റ് ചേർക്കുക."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "പേജ് ശീർഷകം ഇതിനകം തന്നെ H1 ആണ്; ഉള്ളടക്കത്തിന്റെ മുകളിലെ ലെവലിനായി H2 ഉപയോഗിക്കുക."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "ഈ H%1$d ഒരു ലെവൽ ഒഴിവാക്കുന്നു; ഇതിനു മുൻപുള്ളത് H%2$d ആണ്. ഇത് H%3$d ആക്കുക."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "ഈ ചിത്രത്തിന് ആൾട്ട് ടെക്സ്റ്റ് ഇല്ല. ഇത് വിവരിക്കുക, അല്ലെങ്കിൽ യാതൊരു പ്രയോജനവുമില്ലെങ്കിൽ ഇത് അലങ്കാരമായി അടയാളപ്പെടുത്തുക."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "പാനൽ അടയ്ക്കുക"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7565,18 +9523,6 @@ msgstr "കസ്റ്റം"
 msgid "Width / height"
 msgstr "വീതി / ഉയരം"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "മുകളിൽ"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "അടിഭാഗം"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7589,20 +9535,6 @@ msgstr "പാരമ്പര്യമായി ലഭിച്ച ചിത്�
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "ചിത്രം നീക്കം ചെയ്യുക"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "സ്ഥാനം"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "വ്യാപ്തി"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7668,22 +9600,6 @@ msgstr "ഓരോ വശവും വെവ്വേറെ"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "വശം"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "ശൈലി"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "നിറം"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7933,14 +9849,6 @@ msgstr "%1$s (%2$d സെറ്റ്)"
 msgid "Replace icon"
 msgstr "ഐക്കൺ മാറ്റിസ്ഥാപിക്കുക"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "ഐക്കൺ തിരഞ്ഞെടുക്കുക"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "ഒരു ഐക്കൺ തിരഞ്ഞെടുക്കുക"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "ഐക്കണുകളൊന്നും പൊരുത്തപ്പെടുന്നില്ല."
@@ -7952,10 +9860,6 @@ msgstr "സാധാരണ"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "ബ്രാൻഡുകൾ"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "രേഖപ്പെടുത്തിയത്"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8084,21 +9988,9 @@ msgstr "ടെക്സ്റ്റ് നിറം"
 msgid "Cursor"
 msgstr "കർസർ"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "അമ്പ്"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "പോയിന്റർ"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "ടെക്സ്റ്റ്"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8256,10 +10148,6 @@ msgstr "ഏരിയയുടെ പേര്"
 msgid "Named areas"
 msgstr "നാമകരണം ചെയ്ത സ്ഥലങ്ങൾ"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "നിരകൾ"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "ഉയരം"
@@ -8377,10 +10265,6 @@ msgstr "ജസ്റ്റിഫൈ ചെയ്യുക"
 msgid "Decoration"
 msgstr "അലങ്കാരം"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "അടിവരയിടുക"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "മേൽവര് വര"
@@ -8463,19 +10347,9 @@ msgstr "കോണിക്"
 msgid "Angle (degrees)"
 msgstr "കോൺ (ഡിഗ്രിയിൽ)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "രൂപം"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "ദീർഘവൃത്തം"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "സർക്കിൾ"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8511,10 +10385,6 @@ msgstr "സാച്ചുറേഷൻ ബാക്ക്ഗ്രൗണ്ട�
 msgid "Tint (use a see-through colour)"
 msgstr "ടൈന്റ് (ഒരു സീ-ത്രൂ നിറം ഉപയോഗിക്കുക)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "വൃത്താകൃതിയിലുള്ള ചതുരം"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "ബ്ലോബ്"
@@ -8531,10 +10401,6 @@ msgstr "ത്രികോണം"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "ഡയമണ്ട്"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "സ്റ്റാർ"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9412,11 +11278,6 @@ msgstr "മായ്‌ കളയുക"
 msgid "The change could not be saved."
 msgstr "മാറ്റം സംരക്ഷിക്കാനായില്ല."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "പാനൽ അടയ്ക്കുക"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "തീം സ്ഥിരസ്ഥിതി"
@@ -9473,9 +11334,49 @@ msgstr "ക്ലാസുകൾ, ടോക്കണുകൾ, ഡാർക്�
 msgid "Open the Site Editor’s styles"
 msgstr "സൈറ്റ് എഡിറ്ററുടെ സ്റ്റൈലുകൾ തുറക്കുക"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "ശീർഷകം"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "ശൈലി ടാബ് ഉപയോഗിച്ച് സ്റ്റൈൽ ചെയ്ത, കുറഞ്ഞ വരി അകലമുള്ള ഒരു ഹെഡിംഗ്."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "ശൈലി ടാബ് ഉപയോഗിച്ച് സ്റ്റൈൽ ചെയ്ത ഒരു ഖണ്ഡിക."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "ചിത്രം"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "സ്റ്റൈൽ ടാബ് ഉപയോഗിച്ച് സ്റ്റൈൽ ചെയ്ത, വൃത്താകൃതിയിലുള്ള കോർണറുകളുള്ള ഒരു ചിത്രം."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "മീഡിയ ലൈബ്രറിയിൽ നിന്നുള്ള ഒരു വീഡിയോ, സ്റ്റൈൽ ടാബ് ഉപയോഗിച്ച് ശൈലി ക്രമീകരിച്ചിരിക്കുന്നു."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "സ്പേസർ"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "ബ്ലോക്കുകൾക്കിടയിലെ ശൂന്യമായ സ്ഥലം; സ്റ്റൈൽ ടാബിൽ സ്ക്രീൻ സൈസ് അനുസരിച്ച് വ്യത്യസ്തമായ ഉയരം സജ്ജമാക്കുക."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "ഡിവൈഡർ"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "സ്റ്റൈൽ ടാബ് ഉപയോഗിച്ച് രൂപകൽപ്പന ചെയ്ത, വിഭാഗങ്ങൾക്കിടയിലുള്ള ഒരു തിരശ്ചീന രേഖ."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "മറ്റൊരു സൈറ്റില്‍ നിന്നുള്ള ഉള്ളടക്കം (വീഡിയോ, പോസ്റ്റ്, മാപ്പ്) അതിന്‍റെ വിലാസം ഒട്ടിച്ചുകൊണ്ട് ചേര്‍ക്കുക."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "സ്റ്റൈൽ ടാബ് ഉപയോഗിച്ച് ശൈലി നൽകിയ, ഗ്രിഡിലുള്ള നിരവധി ചിത്രങ്ങൾ."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9509,10 +11410,6 @@ msgstr "ലിസ്റ്റ് ചെയ്യുക"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "ഗുളികകൾ"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "ബട്ടണുകൾ"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9557,10 +11454,6 @@ msgstr "ഈ പേജ് വിവർത്തനം ചെയ്തിട്ട
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "ലംബമായി അടുക്കുക"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "പശ്ചാത്തലം"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9619,11 +11512,6 @@ msgstr "ബ്ലോക്ക് ക്രമീകരണങ്ങൾ"
 #, js-format
 msgid "Add block: %s"
 msgstr "ബ്ലോക്ക് ചേർക്കുക: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(ശീർഷകമില്ല)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9699,10 +11587,6 @@ msgstr "സേഫ് മോഡ് ഓഫ് ചെയ്യുക"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "സേഫ് മോഡ് ഓൺ ചെയ്യുക (മറ്റ് പ്ലഗിന്നുകൾ ഓഫ്, നിങ്ങൾക്ക് മാത്രം, സ്റ്റുഡിയോയിൽ മാത്രം)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "പ്രസിദ്ധീകരിച്ചത്"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10042,11 +11926,6 @@ msgstr "ബിൽഡറുടെ പേര്"
 msgid "Visual editor name"
 msgstr "വിഷ്വൽ എഡിറ്റർ പേര്"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "രചയിതാവ്"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10120,10 +11999,6 @@ msgstr[1] "ചെയ്തുതീർത്തു: %d പേജുകൾ പു
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "മാറ്റുക"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "ലിങ്കുകൾ"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10233,10 +12108,6 @@ msgstr "ഈ പേജിൽ ഒരു ക്ലയന്റിനെ കമന�
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "ലിങ്ക് ഉള്ള ആർക്കും ഇത് പ്രസിദ്ധീകരിക്കുന്നതിന് മുമ്പ് പോലും ഈ പേജ് കാണാനും അഭിപ്രായങ്ങൾ രേഖപ്പെടുത്താനും കഴിയും. അക്കൗണ്ട് ആവശ്യമില്ല."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "പകർത്തിക്കഴിഞ്ഞു"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10479,6 +12350,52 @@ msgstr "ചിത്രങ്ങൾ ഈ സൈറ്റിന്റെ മീഡ
 msgid "Show what will happen"
 msgstr "എന്ത് സംഭവിക്കുമെന്ന് കാണിക്കുക"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "അക്കോഡിയൻ ഇനം"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "അക്കോഡിയന്റെ ഒരു വിഭാഗം: അതിന്റെ ഉള്ളടക്കം തുറക്കുന്ന ഒരു തലക്കെട്ട്."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "അക്കോർഡിയൻ"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "തുറക്കുകയും അടയ്ക്കുകയും ചെയ്യുന്ന ചോദ്യങ്ങളോ വിഭാഗങ്ങളോ. ഓപ്ഷണലായി ഒരെണ്ണം വീതം, സെർച്ച് എഞ്ചിനുകൾക്കായി ഒരു FAQ ആയി ഓപ്ഷണലായി മാർക്ക് ചെയ്യാം."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "അക്കോഡിയൻ"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "പതിവായി ചോദിക്കുന്ന ചോദ്യങ്ങൾ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "ടോഗിൾ ചെയ്യുക"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "ചുരുക്കുക"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "വിശദാംശങ്ങൾ"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10495,6 +12412,7 @@ msgid "notice"
 msgstr "അറിയിപ്പ്"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "സന്ദേശം"
@@ -10509,6 +12427,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "മുന്നറിയിപ്പ്"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "ബാഡ്ജ്"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "New, Sale അല്ലെങ്കിൽ Best value പോലെയുള്ള ഒരു ചെറിയ ലേബൽ."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "ലേബൽ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "ടാഗ്"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "പിൽ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "പുതിയത്"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "ബുക്കിംഗ് കലണ്ടർ"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "സന്ദർശകൻ ആവശ്യപ്പെടുമ്പോൾ മാത്രം ലോഡ് ചെയ്യപ്പെടുന്ന ഒരു Calendly അല്ലെങ്കിൽ Cal.com ബുക്കിംഗ് കലണ്ടർ."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "ബുക്കിംഗ്"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "അപ്പോയിന്റ്മെന്റ്"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "ഷെഡ്യൂൾ ചെയ്യുക"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10520,6 +12503,7 @@ msgid "A link styled as a button."
 msgstr "ഒരു ബട്ടൺ പോലെ രൂപകൽപ്പന ചെയ്‌തിരിക്കുന്ന ലിങ്ക്."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "ബട്ടൺ"
@@ -10533,6 +12517,98 @@ msgstr "ലിങ്ക്"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "പ്രവർത്തനത്തിനുള്ള ആഹ്വാനം"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "പ്രവർത്തനത്തിനുള്ള ആഹ്വാനം"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "ഒരു തലക്കെട്ട്, ഒരു വാചകം, സന്ദർശകനോട് പ്രവർത്തിക്കാൻ ആവശ്യപ്പെടുന്ന ഒന്നോ രണ്ടോ ബട്ടണുകൾ."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "CTA (സിടിഎ)"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "ബാനർ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "അക്കൗണ്ട് തുറക്കുക"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "ചെക്ക്‌ലിസ്റ്റ്"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "സ്ക്രീൻ റീഡറുകൾക്കായി വാക്കുകളിലും ഒപ്പം ടിക്ക് മാർക്കിലും ഓരോ ജോലിയും പൂർത്തിയായതാണോ അതോ ബാക്കിയുണ്ടോ എന്ന് അടയാളപ്പെടുത്തിയിരിക്കുന്ന ഒരു പട്ടിക."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "ചെയ്യേണ്ടവ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "ജോലികൾ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "ടിപ്പുകൾ"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "പട്ടികപ്പെടുത്തുക"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "കോഡ്"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "സിന്റാക്സ് ഹൈലൈറ്റിംഗ്, വരികളുടെ നക്കങ്ങള്‍, കോപ്പി ബട്ടൺ എന്നിവയോടുകൂടിയ ഒരു കോഡ് ലിസ്റ്റിംഗ്. പ്ലഗ്‌ഇൻ എപ്പോഴെങ്കിലും ഓഫ് ചെയ്താൽ പോലും ഇത് വായിക്കാവുന്ന രീതിയിൽ തുടരും."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "കോഡ്"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "സിന്റാക്സ്"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "ഹൈലൈറ്റ് ചെയ്യുക"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "സ്നിപ്പറ്റ്"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "പ്രോഗ്രാമിംഗ്"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10556,6 +12632,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "ലേയൗട്ട്"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "താരതമ്യ പട്ടിക"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "പ്ലാനുകളോ ഉൽപ്പന്നങ്ങളോ അടുത്തടുത്തായി, സ്ക്രീൻ റീഡറുകൾ വാക്കുകളായി വായിക്കുന്ന അതെ, ഇല്ല അടയാളങ്ങളോടെ."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "താരതമ്യം ചെയ്യുക"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "വിലവിവരങ്ങൾ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "പ്ലാനുകൾ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "ടേബിൾ"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "ഫീച്ചറുകൾ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "ബന്ധപ്പെടാനുള്ള ബട്ടണുകൾ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "നിങ്ങളെ വിളിക്കാനും ഇമെയിൽ ചെയ്യാനും ടെക്സ്റ്റ് ചെയ്യാനും അല്ലെങ്കിൽ വാട്ട്‌സ്ആപ്പിൽ സന്ദേശം അയക്കാനുമുള്ള ബട്ടണുകൾ."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "ബന്ധപ്പെടുക"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "കോൾ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "ഫോൺ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "ഇമെയിൽ"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "വാട്സ്ആപ്പ്"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "എസ്.എം.എസ്"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10573,11 +12727,13 @@ msgid "container"
 msgstr "കണ്ടെയ്നർ"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "ബോക്സ്"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10594,6 +12750,52 @@ msgstr "ഫ്ലെക്സ്ബോക്സ്"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "പംക്തികൾ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "ഡ്യുൽ ഹെഡിങ്"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "രണ്ട് ഭാഗങ്ങളുള്ള ഒരു ശീർഷകം, രണ്ടാമത്തേത് നിറം, ഗ്രേഡിയൻ്റ്, ഔട്ട്‌ലൈൻ അല്ലെങ്കിൽ അടിവര എന്നിവയാൽ ഹൈലൈറ്റ് ചെയ്തിരിക്കുന്നു."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "ശീർഷകം"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "ശീർഷകം"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "ഗ്രേഡിയന്റ്"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "സവിശേഷതകളുടെ പട്ടിക"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "ഒരു ഐക്കൺ, ഒരു തലക്കെട്ട്, ഒരു ചെറിയ വിവരണം എന്നിവ ഉൾപ്പെടുത്തി ഗ്രിഡിലെ സവിശേഷതകൾ."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "ആനുകൂല്യങ്ങൾ"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "സേവനങ്ങള്‍"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10637,6 +12839,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "വാചകം"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "ഫോം"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "നിങ്ങളുടെ സൈറ്റുമായി പൊരുത്തപ്പെടുന്ന രീതിയിൽ ശൈലി ക്രീകരിച്ച Contact Form 7, WPForms, Gravity Forms അല്ലെങ്കിൽ Fluent Forms എന്നിവയിൽ നിന്നുള്ള ഒരു ഫോം കാണിക്കുന്നു."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "ഫോം"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "കോൺടാക്റ്റ് ഫോം 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "ഗ്രാവിറ്റി ഫോംസ്"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "ഫ്ലൂവന്റ് ഫോംസ്"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "പദസഞ്ചയം"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "നിബന്ധനകളും അവയുടെ നിർവചനങ്ങൾ, A മുതൽ Z വരെ ക്രമീകരിച്ചിരിക്കുന്നു, ഓരോന്നിനും അതിന്റേതായ ലിങ്കുമുണ്ട്. പേജിലെ ഓരോ പദത്തിന്റെയും ആദ്യ പരാമർശം അതിന്റെ നിർവചത്തിലേക്ക് ലിങ്ക് ചെയ്യാൻ കഴിയും."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "നിബന്ധനകൾ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "നിർവചനങ്ങൾ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "നിഘണ്ടു"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "ഐക്കൺ പട്ടിക"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "ഓരോ വരിയും ഒരു ഐക്കണിൽ (ഒരു ചെക്ക്മാർക്ക്, ഒരു അമ്പ്, അല്ലെങ്കിൽ ലൈബ്രറിയിലെ ഏതെങ്കിലും ഐക്കൺ) ആരംഭിക്കുന്ന ഒരു ലിസ്റ്റ്."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "ബുള്ളറ്റുകൾ"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "ഐക്കണുകൾ"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10657,6 +12939,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "എസ്.വി.ജി"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "വിവര ബോക്സ്"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "ഒരു ഐക്കൺ, ഒരു ചെറിയ തലക്കെട്ട്, ഒന്നോ രണ്ടോ വാക്യങ്ങൾ, ഒപ്പം ഒരു ഓപ്ഷണൽ ലിങ്ക്: സേവനങ്ങൾക്കോ, ആനുകൂല്യങ്ങൾക്കോ അല്ലെങ്കിൽ ബന്ധപ്പെടാനുള്ള വിവരങ്ങൾക്കോ വേണ്ടി."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "സവിശേഷത"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "സേവനം"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "കാർഡ്"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10676,6 +12983,204 @@ msgstr "വിവർത്തനം ചെയ്യുക"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "ബഹുഭാഷാ"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "മാപ്പ് ചെയ്യുക"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap-ൽ നിന്നുള്ള ഒരു സ്ഥലത്തിന്റെ മാപ്പ്: കീ ഇല്ല, സന്ദർശകൻ മാപ്പ് ആവശ്യപ്പെടുന്നതുവരെ OpenStreetMap-ൽ നിന്ന് ഒന്നും ലോഡ് ആകില്ല."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "മാപ്പ് ചെയ്യുക"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "ലൊക്കേഷൻ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "വിലാസം"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "മോഡൽ"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "ഏതെങ്കിലും ബ്ലോക്കുകൾ ഉള്ളിൽ ഉള്ളതും പേജിന് മുകളിൽ ഒരു ജാലകം തുറക്കുന്നതുമായ ഒരു ബട്ടൺ."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "മോഡൽ"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "പോപ്‌അപ്പ്"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "ലൈറ്റ്ബോക്സ്"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "ഡയലോഗ്"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "ഓഫ്-കാൻവാസ് പാനൽ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "ജാലകത്തിന്റെ വശത്തുനിന്ന് ഒരു പാനൽ സ്ലൈഡ് ചെയ്ത് കൊണ്ടുവരുന്ന, ഉള്ളിൽ ഏതെങ്കിലും ബ്ലോക്കുകൾ ഉള്ള ഒരു ബട്ടൺ."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "ഓഫ്-ക്യാൻവാസ്"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "ഡ്രോയർ"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "സൈഡ്ബാർ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "പാനൽ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "മെനു"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "പോസ്റ്റ് വിശദാംശങ്ങൾ"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "പോസ്റ്റിന്റെ രചയിതാവ്, തീയതികൾ, വിഭാഗങ്ങൾ, ടാഗുകൾ, വായനാ സമയം, അഭിപ്രായങ്ങളുടെ എണ്ണം."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "രചയിതാവ്"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "തീയതി"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "വായനാ സമയം"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "മെറ്റാ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "ബൈലൈൻ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "പ്രോഗ്രസ് ബാർ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "ഒരു കഴിവോ ലക്ഷ്യമോ പോലുള്ളവ എത്രത്തോളം പുരോഗമിച്ചുവെന്ന് കാണിക്കുന്ന ലേബൽ ചെയ്ത ബാർ."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "പുരോഗതി"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "ബാർ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "കഴിവ്"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "ലക്ഷ്യം"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "പാസ്‌വേഡ് പരിരക്ഷിച്ചിരിക്കുന്ന ഉള്ളടക്കം"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "പാസ്‌വേഡ് ഉള്ള സന്ദർശകരെ മാത്രം ബ്ലോക്ക് ചെയ്യുന്നു. അവർ അത് നൽകുന്നത് വരെ, ഉള്ളടക്കം പേജിൽ ഉണ്ടാകില്ല."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "രഹസ്യവാക്ക്"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "സംരക്ഷിതം"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "സ്വകാര്യ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "ലോക്ക് ചെയ്യുക"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "അംഗങ്ങൾ"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10701,6 +13206,86 @@ msgstr "ലൈറ്റ്"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "വർണ്ണ സ്കീം"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR കോഡ്"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "നിങ്ങളുടെ സ്വന്തം സൈറ്റിൽ വരച്ച, ഒരു വെബ് വിലാസത്തിനായോ ഏതെങ്കിലും ടെക്സ്റ്റിനായോ ഉള്ള ഒരു QR കോഡ് (QR സേവനമൊന്നും ഉപയോഗിക്കുന്നില്ല)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "ക്യൂ.ആർ."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "ക്യുആർ കോഡ്"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "ബാർകോഡ്"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "സ്കാൻ ചെയ്യുക"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "റീഡിങ് പ്രോഗ്രസ് ബാർ"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "സന്ദർശകർ പേജിലൂടെ താഴേക്ക് സ്ക്രോൾ ചെയ്യുമ്പോൾ നിറയുന്ന, ജാലകത്തിന്റെ അരികിലുള്ള ഒരു നേർത്ത ബാർ."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "വായിക്കുന്നു"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "സ്ക്രോൾ ചെയ്യുക"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "ബന്ധപ്പെട്ട പോസ്റ്റുകൾ"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "ഈ പോസ്റ്റിന്റെ വിഭാഗങ്ങളോ ടാഗുകളോ പങ്കിടുന്ന പോസ്റ്റുകൾ, അവയുടെ ചിത്രങ്ങൾ, തീയതികൾ, സംഗ്രഹങ്ങൾ എന്നിവ സഹിതം."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "ബന്ധപ്പെട്ടത്"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "പോസ്റ്റുകൾ"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "സമാനമായ"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "കൂടുതൽ"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10764,13 +13349,284 @@ msgstr "തീം വിക്കറ്റ് ഏരിയകളിൽ ഒന്
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "സൈഡ്ബാർ"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "വിഡ്ജറ്റ് ഏരിയ"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "സൈറ്റ്‌മാപ്പ്"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "പേജ് ട്രീ സൂക്ഷിച്ചുകൊണ്ട്, പ്രസിദ്ധീകരിച്ച എല്ലാ പേജുകളും പോസ്റ്റുകളും (മറ്റ് പൊതു ഉള്ളടക്കങ്ങളും) ലിസ്റ്റ് ചെയ്യുന്ന ഒരു പേജ്."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "സൈറ്റ്മാപ്പ്"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "സൈറ്റ് മാപ്പ്"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "സൂചിക"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "എല്ലാ പേജുകളും"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "സോഷ്യൽ ഐക്കണുകൾ"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "നെറ്റ്‌വർക്കുകളുടെ സ്വന്തം ഐക്കണുകൾ ഉപയോഗിച്ച് വരച്ച നിങ്ങളുടെ പ്രൊഫൈലുകളിലേക്കുള്ള ലിങ്കുകൾ."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "സോഷ്യൽ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "ലിങ്കുകൾ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "ഫോളോ ചെയ്യുക"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "പ്രൊഫൈലുകൾ"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "നക്ഷത്ര റേറ്റിംഗ്"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "അര-നക്ഷത്ര ഘട്ടങ്ങളിൽ നക്ഷത്രങ്ങളായി കാണിക്കുന്ന ഒരു റേറ്റിംഗ്."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "സ്റ്റാറുകൾ"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "റേറ്റിംഗ്"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "സ്കോർ"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "പടികൾ"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "ഒരു പ്രക്രിയയുടെ നമ്പർ നൽകിയ ഘട്ടങ്ങൾ, ക്രമത്തിൽ, പേജിൽ താഴേക്കോ വശങ്ങളിലോ ആയി."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "പ്രോസസ്സ് ചെയ്യുക"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "എങ്ങനെ ചെയ്യണം"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "സമയക്രമം"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "നമ്പർ നൽകിയ"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "ടാബ്"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "ഒരു ടാബ്‌സ് ബ്ലോക്കിന്റെ ഒരു ടാബ്: അതിന്റെ ശീർഷകവും പാനലും."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "ഉള്ളടക്ക പട്ടിക"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "ഓരോ ഒന്നിലേക്കും ലിങ്ക് ചെയ്യുന്ന, പേജിലെ തലക്കെട്ടുകളുടെ യാന്ത്രികമായി നിർമ്മിച്ച ഒരു ലിസ്റ്റ്."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "ഉള്ളടക്കം"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "ഉള്ളടക്കം"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "തലക്കെട്ടുകൾ"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "ടാബുകൾ"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "ടാബുകളിലെ ഉള്ളടക്കം: മൗസ് വഴിയോ കീബോർഡ് വഴിയോ സന്ദർശകർ പാനലുകൾക്കിടയിൽ മാറുന്നു."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "ട്രാബുകൾ"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "ടാബുകളുള്ള"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "പാനലുകൾ"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "സാക്ഷ്യപത്രം"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "ഉപഭോക്താവിന്റെ പേര്, ജോലി, ഫോട്ടോ, കൂടാതെ ഒരു ഓപ്ഷണൽ സ്റ്റാർ റേറ്റിംഗ് എന്നിവയോടുകൂടിയ ഒരു ഉപഭോക്തൃ അഭിപ്രായം."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "പരിശോധിക്കുക"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "ഉദ്ധരണി"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "ഉപഭോക്താവ്"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "അഭിപ്രായങ്ങൾ"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "ടൂൾടിപ്പ്"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "ഹോവർ ചെയ്യുമ്പോഴും കീബോർഡ് ഫോക്കസിലും ഒരു ചെറിയ വിവരണം കാണിക്കുന്ന വാക്കോ പദപ്രയോഗമോ."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "ടൂൾടിപ്പ്"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "സൂചന"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "നിർവ്വചനം"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "രചയിതാവിന്റെ പ്രൊഫൈൽ"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "ലേഖകന്റെ ചിത്രവും പേരും ജീവചരിത്രവും ലിങ്കുകളും അല്ലെങ്കിൽ തിരഞ്ഞെടുത്ത ഒരു ഉപയോക്താവിന്റേത്."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "ജീവചരിത്രം"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "പ്രൊഫൈൽ"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "കുറിച്ച്"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "വാട്സാപ്പ് ചാറ്റ് ബട്ടൺ"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "നിങ്ങളുമായി ഒരു വാട്‌സ്ആപ്പ് ചാറ്റ് തുറക്കുന്നതിനായി പേജിന്റെ ഒരു മൂലയിലുള്ള ഫ്ലോട്ടിംഗ് ബട്ടൺ."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "ചാറ്റ്"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "ഫ്ലോട്ടിംഗ്"
 
 #: blocks/widget/block.json
 msgctxt "block title"

@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "შენახვა როგორც ხელახლა გამოსაყენებელი შაბლონი"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "ხელმისაწვდომობის შემოწმება"
 
@@ -990,6 +994,7 @@ msgstr "← სხვა პროვაიდერის არჩევა"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "მისამართი"
 
@@ -1043,6 +1048,8 @@ msgstr "ტესტი"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "წაშლა"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "განაახლეთ მოდელების სიები პროვაიდერებისგან"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "სურათები"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "გამორთულია"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "გახსნა"
 
@@ -1448,6 +1457,7 @@ msgstr "AI მოთხოვნები ჯერ არ გაკეთებ
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "დასრულებულია"
 
@@ -1515,7 +1525,11 @@ msgstr "მცდელობების ზედმეტად დიდი 
 msgid "Something went wrong. Please contact the admin."
 msgstr "რაღაცა არასწორად წავიდა. გთხოვთ, დაუკავშირდეთ ადმინისტრატორს."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "მისადაგება"
 
@@ -1538,52 +1552,385 @@ msgstr "ეს ოჯახი შენახული არ არის."
 msgid "Removed."
 msgstr "წაშლილია."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "ეს არ არის შრიფტის ოჯახის სწორი სახელი."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google შრიფტებმა ეს ოჯახი არ დააბრუნა. შეამოწმეთ სახელი და სცადეთ თავიდან."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "შრიფტის ფაილების ჩამოტვირთვა ან შენახვა ვერ მოხერხდა. შეამოწმეთ, არის თუ არა ატვირთვების ფოლდერი ჩაწერადი."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "შრიფტის სტილისტების ფაილის შენახვა ვერ მოხერხდა. შეამოწმეთ, არის თუ არა ატვირთვების საქაღალდე ჩაწერადი."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "ამ შეტყობინების დახურვა"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(იხსნება ახალ ჩანართში)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "დასრულებულია:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "შესასრულებელი:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "გლოსარის ინდექსი"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "შეფასებულია %1$s %2$s-დან"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "მიმდინარეობა"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "კოდის კოპირება"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "კოპირებულია"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "ეს ვიჯეტი ამ საიტზე არ არის ხელმისაწვდომი."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "ელფოსტა"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "ტელეფონი"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS არხი"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "ვებსაიტი"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "ბმული"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (იხსნება ახალ ჩანართში)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "შეფასებულია %d 5-დან"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(რეკომენდებული)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "ჩართულია"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "არ შედის"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "შედარების ცხრილი"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "დარეკეთ %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "ელ. ფოსტა %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "ტექსტი %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "WhatsApp-ით ჩatი"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "დაგვიკავშირდით"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "მოგვწერეთ WhatsApp-ში"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "ეს ფორმა ამჟამად მიუწვდომელია."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "ეს ფორმა ვერ აფიშირდება, რადგან %s არ არის აქტიური."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "რუკა: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "რუკის ჩვენება ტვირთავს მას OpenStreetMap-დან."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "რუკის ჩვენება"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "გააღეთ რუკა OpenStreetMap-ზე"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "დაჯავშნის კალენდარი მომხმარებლისგან %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "დაჯავშნის კალენდრის ჩვენება იტვირთება %s-დან."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "დაჯავშნის კალენდრის ჩვენება"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "დაჯავშნეთ %s-ზე"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "QR კოდი პროექტისთვის %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "დიზაინი"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "შიგთავსი"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "მედია"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "მარკეტინგი"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "საიტი"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "მონაცემები"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "დაკავშირებული პოსტები"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "პოსტის დეტალები"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "ავტორის მიხედვით"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "გამოქვეყნებული"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "განახლებულია"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "შიგნით"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "მონიშნულია"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d წუთიანი საკითხავი"
+msgstr[1] "%d წუთის საკითხავი"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "კომენტარები ჯერ არ არის"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d კომენტარი"
+msgstr[1] "%d კომენტარი"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "საიტის რუკა"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(სათაურის გარეშე)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s-ის ყველა პოსტი"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "ეს კონტენტი დაცულია. მის სანახავად შეიყვანეთ პაროლი."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "ეს პაროლი არასწორია. სცადეთ თავიდან."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "პაროლი"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "შინაარსის ჩვენება"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "ამ გვერდის განბლოკვა შეუძლებელია."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "მცდელობების ლიმიტი ამოწურულია. დაიცადეთ რამდენიმე წუთი და სცადეთ თავიდან."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "პაროლი უნდა იყოს 4-დან 200 სიმბოლომდე სიგრძის."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "მეტი"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "დახურვა"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "ჩანართი %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "შიგთავსი"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "რედაქტირება Sandwich Studio-ით"
 msgid "Blank canvas"
 msgstr "ცარიელი ტილო"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "შინაარსზე გადასვლა"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "პლანშეტის სიგანე უნდა იყოს პიქსელების მთელი რიცხვი 480-დან 2560-მდე."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "ატვირთული ხატულები"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "ხატულა"
 
@@ -2553,6 +2908,8 @@ msgstr "%s არის ჩesი კლიენტის ელფოსტი�
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "კოდი"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "რედაქტირება"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "ელფოსტა"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "ელფოსტის მისამართი"
 
@@ -3103,6 +3456,10 @@ msgstr "თეთრი ეტიკეტის რეჟიმის ჩარ
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "შეიყვანეთ ახალი ელფოსტის მ
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "შეცდომა"
 
@@ -3723,6 +4081,7 @@ msgstr "ქვემოთ მოცემული პროდუქტებ�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "ამ პლაგინს სჭირდება PHP-ის უფ�
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "არა"
 
@@ -4811,6 +5171,13 @@ msgstr "სოციალური ქსელები (Facebook, Twitter დ
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "დროის ნიშნული"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "სათაური"
 
@@ -5172,6 +5542,8 @@ msgstr "როგორ მოგწონთ %1$s აქამდე? გამ
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "ტიპი"
@@ -5287,6 +5659,7 @@ msgstr "მომხმარებლები"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "მნიშვნელობა"
@@ -5341,6 +5714,7 @@ msgstr "paid ფუნქციების ნახვა"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "გაფრთხილება"
 
@@ -5667,6 +6041,7 @@ msgid "Optional"
 msgstr "სურვილისამებრ"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "გეგმა"
 
@@ -5989,18 +6364,26 @@ msgstr "ძალიან პატარა"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "პატარა"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "საშუალო"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "დიდი"
 
@@ -6013,7 +6396,9 @@ msgid "Huge"
 msgstr "უზარმაზარი"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6327,16 +6712,9 @@ msgid "The trial could not be started."
 msgstr "საცდელი პერიოდის დაწყება ვერ მოხერხდა."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "ფუნქცია"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "ჩართულია"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "არ შედის"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6691,10 +7069,6 @@ msgstr "შესვლის მისამართი"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "მომხმარებლის სახელი"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "პაროლი"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7090,15 +7464,62 @@ msgstr "გაუქმება დაიწყო. ის ფონურ რ�
 msgid "Undo all conversions"
 msgstr "ყველა გადაყვანის გაუქმება"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "ელემენტი"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "გაიხსნას გვერდის ჩატვირთვისას"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "სათაური არის სათაური"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "სათაური სათაურად აქციეთ, როდესაც ელემენტები გვერდის სექციებია, რათა ვიზიტორებმა შეძლებენ მათ შორის გადასვლა."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "სათაური %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "შეკითხვა ან სექციის სათაური"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "აკორდეონი"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "ერთდროულად მხოლოდ ერთი ელემენტია ღია"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "მონიშნეთ როგორც ხშირად დასმული კითხვები საძიებო სისტემებისთვის"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "უზრუნველყოფს სათაურებისგან (შეკითხვებისგან) და მათი ტექსტისგან (პასუხებისგან) აგებული FAQ სტრუქტურირებული მონაცემების დამატებას."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "გაფრთხილება"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "ინფორმაცია"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "წარმატება"
 
@@ -7107,6 +7528,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "გაფრთხილებები და შეცდომები ეკრანის მკითხველის მომხმარებლებს მაშინვე ეცნობებათ, ხოლო ინფორმაცია და წარმატების შეტყობინებები იკითხება მათი მიმდინარე საქმის დასრულებისას."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "იხ. ხატულა"
 
@@ -7122,64 +7544,702 @@ msgstr "სათაური (არასავალდებულო)"
 msgid "Write the message…"
 msgstr "დაწერეთ შეტყობინება…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "სექცია — თემატური სექცია"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "ცენტრი"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — მნიშვნელობა არ აქვს"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "საბეჭდი ნიშანი"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "სათაური — შესავალი შინაარსი"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "ფერი"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "სატალო — დასკვნითი კონტენტი"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "თემის აქცენტი"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "სტატია — დამოუკიდებელი კონტენტი"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "ნეიტრალური"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "დაკავშირებული შიგთავსი"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "პოზიცია"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — მთავარი კონტენტი (თითო გვერდზე ერთხელ)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "იარლიყი"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "ნავიგაცია — ნავიგაციის ბმულები"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "დაჯავშნის კალენდარი"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "სტეკი (flexbox, სვეტი)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "სერვისი"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "მწკრივი (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "დაჯავშნის გვერდის მისამართი"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "ბადე"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "მაგალითად %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "რისთვის არის კალენდარი, წაკითხული ეკრანის წამკითხველების მიერ და ნაჩვენები მის ქვეშ."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "ეს არ არის %s ჯავშნის გვერდის მისამართი, ამიტომ გვერდზე არაფერი გამოჩნდება."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "კალენდრის გადახედვა"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "ბმულის მისამართი"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "ღილაკი გამოჩნდება მაშინ, როდესაც მას აქვს როგორც ეტიკეტი, ისე მისამართი."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "ახალ ჩანართში გახსნა"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "მოქმედებისკენ მოწოდება"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "განლაგება"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "ქვემოთ მოცემული ღილაკები"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "ტექსტის გვერდით მდებარე ღილაკები"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "სწორება"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "მთავარი ღილაკი"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "მეორე ღილაკი"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "სათაური..."
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "ერთი წინადადება იმის შესახებ, თუ რატომ..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "მეორე ღილაკი (არასავალდებულო)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "საკონტროლო სია"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "მონიშვნის ფერი"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "ხაზები"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "სტრიქონი %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "დავალება..."
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "სტრიქონის დამატება"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "ენა"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "ავტომატურად გამოვლენა"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "მონიშვნის გარეშე"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "ფაილის სახელი"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "ნაჩვენებია კოდის ზემოთ, მაგალითად functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "სტრიქონების ნომრები"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "ასლის ღილაკი"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "გრძელი ხაზების გადატანა"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "დაწერეთ ან ჩასვით კოდი…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "ტექსტი"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "სვეტები"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "სვეტი %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "გამორჩეული %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "სვეტის დამატება"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "მწკრივები"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "მწკრივი %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "სტრიქონის დამატება"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "წარწერა (რაც შედარებულია)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "უჯრედის ტიპი: %s. შეცვლა"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "სატელეფონო ზარი"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "ტექსტური შეტყობინება"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ღილაკები"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "ტელეფონის ნომერი ქვეყნის კოდით"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "ღილაკის ტექსტი"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "ამ ღილაკის წაშლა"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "ღილაკის დამატება"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "დასაწყები WhatsApp შეტყობინება (სურვილისამებრ)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "კონტაქტის ღილაკები"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "დაამატეთ ტელეფონის ნომერი, ელფოსტის მისამართი ან WhatsApp-ის ნომერი გვერდით პანელში."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "ორმაგი სათაური"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "სათაურის დონე"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "გამოიყენეთ H1 თითო გვერდზე ერთხელ, მისი მთავარი სათაურისთვის."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "მეორე ნაწილის ნახვა"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "აქცენტის ფერი"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "გრადიენტი"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "კონტური"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "ხაზგასმა"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "მეორე ნაწილი ცალკე ხაზზე"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "პირველი ნაწილი"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "მეორე ნაწილი"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "მარკერი"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "სქელი ხაზგასმა"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "ფონური"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "გამორჩევა"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "მონიშვნის მოხსნა"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "დიდი საწყისი ასო"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "დიდი პირველი ასო"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "ჩარჩოში პირველი ასოსთვის აირჩიეთ „ჩარჩოში ჩასმული ბუტაფორული ასოს“ სტილი."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "ჩარჩოში ჩასმული ბუტაფორული ასო"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "აქცენტის ზოლი"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "ციტატა (აქცენტის ზოლი)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "ტექსტიდან აღებული ციტატა, რომელიც დიდი შრიფტით არის წარმოდგენილი ფერადი ზოლის გვერდით ყურადღების მისაქცევად."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "ციტატა"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "ფუნქციების სია"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "ტელეფონებში ფუნქციები ყოველთვის ერთმანეთის მიყოლებით ლაგდება."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "ფუნქციები"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "ფუნქცია %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "საკუთარი ხატულა"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "ფუნქცია..."
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "აღწერეთ…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "ფუნქციის დამატება"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "დააინსტალირეთ და გააქტიურეთ Contact Form 7, WPForms, Gravity Forms ან Fluent Forms, შემდეგ კი აირჩიეთ მისი ერთ-ერთი ფორმა აქ."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "ფორმის პლაგინი"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "არჩევა…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "ფორმა"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "აირჩიეთ ფორმა…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s-ს ჯერ არ აქვს ფორმები"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s ამ საიტზე არ არის აქტიური, ამიტომ ეს ფორმა ვერ აიხსნება."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "ფორმების სიის ჩატვირთვა ვერ მოხერხდა."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "ფორმის სტილი"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "ველები"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "კონტურული"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "შევსებული"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "ხაზგასმული"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "ღილაკის სიგანე"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "ტექსტის მორგება"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "მთლიანი სიგანე"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "ფერის, შრიფტის, დაშორებისა და კუთხეების პარამეტრები თქვენი საიტისა და ამ ბლოკის დიზაინის პარამეტრებიდან განისაზღვრება."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "აჩვენეთ ფორმა თქვენი ფორმების მოდულიდან, რომელიც მორგებულია თქვენი საიტის დიზაინზე."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "გჭირდებათ ფორმის პლაგინი? Contact Form 7 უფასოა."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "გლოსარი"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "დახარისხება ა-დან ჰ-მდე"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "გვერდზე ტერმინები ანბანური თანმიმდევრობით არის წარმოდგენილი; აქ ისინი ზუსტად იმ თანმიმდევრობით რჩება, როგორითაც თავად ჩაწერეთ."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "აჩვენეთ A–Z ინდექსი"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "ამ გვერდზე სხვაგან გამოყენებული ბმულის ტერმინები"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "ტერმინის პირველად გამოჩენისას გვერდის ტექსტში იგი აბულებს მის განმარტებას. სათაურები, ღილაკები, კოდი და არსებული ბმულები უცვლელი რჩება."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "პირობები"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "ვადა %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "ვადა"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "რას ნიშნავს ეს…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "ტერმინის დამატება"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "ხატულების სია"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "ერთი მეორის მიყოლებით"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "გვერდი-გვერდ"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "სიას ელემენტი…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "საინფორმაციო ველი"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "ან აირჩიეთ ნებისმიერი ხატულა ბიბლიოთეკიდან:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "ბმულის ტექსტი"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "მიუთითეთ სად მიდის ბმული („იხილეთ ჩვენი ფასები“) და არა „მეტის წაკითხვა“."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "წინადადება ან ორი…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "სექცია — თემატური სექცია"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — მნიშვნელობა არ აქვს"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "სათაური — შესავალი შინაარსი"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "სატალო — დასკვნითი კონტენტი"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "სტატია — დამოუკიდებელი კონტენტი"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "დაკავშირებული შიგთავსი"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — მთავარი კონტენტი (თითო გვერდზე ერთხელ)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "ნავიგაცია — ნავიგაციის ბმულები"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "სტეკი (flexbox, სვეტი)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "მწკრივი (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "ბადე"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "რედაქტირება: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "შვილეული ელემენტების განლაგება როგორც"
 
@@ -7187,7 +8247,7 @@ msgstr "შვილეული ელემენტების განლ�
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7195,70 +8255,50 @@ msgstr "შვილეული ელემენტების განლ�
 msgid "Inherited (%s)"
 msgstr "მემკვიდრეობითი (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "შემდარებული ბლოკები"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "სვეტები"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "გადაიტანეთ ტილოში ან აკრიფეთ"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "შეთავსების სიგანე"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "ჩარჩოში მოქცეული (თემის შიგთავსის სიგანე)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "მთლიანი სიგანე"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "მინიმალური სიმაღლე"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML ტეგი"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "ბმული"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "მთლიანი ბლოკი აქციეთ ბმულად:"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "ბმულის ტექსტი ეკრანის წაკითხვის პროგრამებისთვის"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "რას აკეთებს ბმული იმ ვიზიტორებისთვის, რომლებსაც ბლოკის დანახვა არ შეუძლიათ."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "ახალ ჩანართში გახსნა"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "არ ჩასვათ ბმულები ან ღილაკები ბმულით განსაზღვrულ ბლოკში: ბმული ბმულში ბრაუზერებში არ მუშაობს."
 
@@ -7290,14 +8330,143 @@ msgstr "+ რიგი"
 msgid "− Row"
 msgstr "− რიგი"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "ადგილი"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "ჩასვით კოორდინატები ან OpenStreetMap-ის ბმული"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org-ზე იenიქეთ მდებარეობა, შემდეგ დააკოპირეთ მისამართი ბრაუზერის ზოლიდან, ან დააწკაპუნეთ რუკაზე მარჯვენა ღილაკით და აირჩიეთ „მისამართის ჩვენება“."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "განედი"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "გრძედი"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "გადიდება"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "ადგილის სახელი"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "რუკის ქვეშ ნაჩვენები და ეკრანის წაკითხვის პროგრამების მიერ წაკითხული."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "ჩakarეთ კოორდინატები (მაგალითად 51.5074, -0.1278) ან OpenStreetMap-ის ბმული."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "კოორდინატები ან ბმული"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "რუკის გადახედვა"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "შეამოწმეთ %1$s, %2$s OpenStreetMap-ზე"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "ავტორი"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "გამოქვეყნების თარიღი"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "განახლების თარიღი (როდესაც ის განსხვავებულია)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "კატეგორიები"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "ტეგები"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "კითხვის დრო"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "კომენტარების რაოდენობა"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "ჩვენსებელი დეტალები"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "აირჩიეთ მინიმუმ ერთი დეტალი საჩვენებლად."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "პროგრესის ზოლი"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "მაქსიმუმი"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 პროცენტისთვის; ნებისმიერი სხვა რიცხვი რაოდენობისთვის, მაგალითად 8 10-დან."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "პროცენტის ჩვენება"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "პაროლი დაყენებულია. ვიზიტორები ამ შიგთავსის ნაცვლად პაროლის ფორმას ხედავენ, სანამ მას არ შეიყვანენ."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "პაროლი ჯერ არ არის დაყენებული, ამიტომ ვიზიტორები აქ ვერაფერს ხედავენ."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "ახალი პაროლი"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "პაროლის დაყენება"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "პაროლი დაყენებულია. მის გასააქტიურებლად შეინახეთ გვერდი; ვიზიტორებს, რომლებმაც ის განბლოკეს, ახალი პაროლი დასჭირდებათ."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "თუ Page Builder Sandwich ოდესმე გამოირთვება, ეს შიგთავსი ყველასთვის გამოჩნდება."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "შეტყობინება პაროლის ფორმის თავზე (არასავალდებულო)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "გადართვა"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "იარლიყი"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7307,30 +8476,698 @@ msgstr "იკითხება ეკრანის წაკითხვი�
 msgid "Show label"
 msgstr "მტიკეტის ჩვენება"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "ვებ მისამართი ან ტექსტი"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR კოდი"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "აღწერა ეკრანის წითხველებისთვის"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "დატოვეთ ცარიელი \"QR code for\" და ტექსტის გამოსაყენებლად."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "ჩაწერეთ ვებ-მისამართი, ტელეფონის ბმული (tel:) ან ნებისმიერი ტექსტი."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "ეს ძალიან გრძელია QR კოდისთვის. შეკვეცეთ ის."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "წარწერის დამატება"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "წაკითხვის პროგრესის ზოლი"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "ფანჯრის კიდე"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "ზედა"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "ქვედა"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "ნაჩვენებია ფანჯრის ბოლოში, როდესაც ვიზიტორები ათვალიერებენ გვერდს."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "ნაჩვენებია ფანჯრის ზედა ნაწილში, როდესაც ვიზიტორები ათვალიერებენ გვერდს."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "რამდენი"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "დაკავშირებულია ავტორის მიერ"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "კატეგორიები ან ეტიკეტები"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "არაფრის დაკავშირების შემთხვევაში, მაინც აჩვენეთ უახლესი"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "სათაური"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "დატოვეთ ცარიელი \"მსგავსი პოსტებისთვის\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "რჩეული სურათის ჩვენება"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "თარიღის ჩვენება"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "შეჯამების ჩვენება"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "ამ პოსტის კატეგორიებს ან თეგებს ჯერ არცერთი სხვა პოსტი არ იზიარებს. როდესაც გამოჩნდება, ისინი აქტუალურად გამოჩნდება."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "მოდალი"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "გარე პანელი"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "ზომა"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "გადაადგილება მარჯვნიდან"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "დასაწყისი არის ის მხარე, სადაც კითხვა იწყება: ინგლისურში — მარცხენა, არაბულში — მარჯვენა."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "დახურეთ, როდესაც უკანა ფონის გვერდს დააკლიკებთ"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "ფანჯრის სათაური"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "ნიშნული"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "წრე"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "გადაკვეთა"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "წერტილი"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "სარი"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "რჩეული"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "ხატულას ფერი"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "ტექსტის მსგავსი"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "თემის მთავარი"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "მეორადი თემა"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "თემის კონტრასტი"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "სათაურები გვერდზე თანმიმდევრულად შეინარჩუნეთ: სათაური უნდა იყოს იმ განყოფილებაზე ერთი დონით დაბალი, რომელშიც მდებარეობს."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "ხატულას არჩევა"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "ნაგულისხმები ხატულას გამოყენება"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "აირჩიეთ ხატულა"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "ზემოთ გადაადგილება"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "ქვემოთ გადატანა"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "თითოეული ტიპისთვის სათაურის ჩვენება"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "არაფერია გამოქვეყნებული თქვენ მიერ არჩეულ ტიპებში."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "ბმულები"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "ბმული %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "ქსელი"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "პროფილის მისამართი, mailto:you@example.com ან tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "ეკრანის წამკითხველებისთვის წასაკითხი სახელი"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "სხვა ხატულა"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "ბმულის დამატება"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "ნახვა"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "სტილი"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "მხოლოდ ხატულა"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "ფორმა"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "მრგვალი კვადრატი"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "კვადრატი"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "პროფილების ახალ ჩანართში გახსნა"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "ვარსკვლავის რეიტინგი"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "შეფასება"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "ვარსკვლავების რაოდენობა"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "რაოდენობის ჩვენება"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "ნაბიჯები"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "გვერდის ქვემოთ"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "გვერდიგვერდ (მობილურებზე ერთმანეთის ზემოთ)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "ნომრის ფერი"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "ნაბიჯების თანმიმდევრობა"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "ნაბიჯი %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "ნაბიჯი…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "რა უნდა გააკეთოთ…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "ნაბიჯის დამატება"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "ჩანიშნება"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "დაამატეთ სათაურები გვერდზე და ისინი აქ გამოჩნდება."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "სარჩევი"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "სათაურის დონიდან"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "სათაურის დონემდე"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "დანომრილი"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "შეიძლება დაიკეცოს"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "დაწყება შეკუმშული"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "წაკითხული სექციის გამოკვეთა"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "ჩანართები"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "ეკრანის წამკითხველების სახელი"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "არავალდებულო. მიუთითებს, თუ რას ეხება ჩანართები, მაგალითად „გეგმები“."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "გაიხსნას გვერდის ჩატვირთვისას"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "ჩანართები გვერდით"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "ჩანართის დამატება"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "შეფასება"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "ფოტოს შეცვლა"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "ფოტოს არჩევა"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "ფოტოს წაშლა"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "ფოტოს აღწერა"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "დატოვეთ ცარიელი, როდესაც ფოტოზე მხოლოდ მის გვერდით მითითებული პირია გამოსახული."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "ვარსკვლავური შეფასება (0 = არცერთი)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "სახელი ციტატის ქვეშ"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "ფოტო ციტატის გვერდით"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "რა თქვა მომხმარებელმა…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "როლი ან კომპანია"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "მინიშნება"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "მინიშნების ტექსტი"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "მოკლედ შეინარჩუნეთ: ერთი ან ორი წინადადება. ეკრანის მკითხველები მას იმ სიტყვასთან ერთად კითხულობენ, რომელსაც ხსნის."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "ჩვენება"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "ზემოთ"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "ქვემოთ"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "სიტყვა ან ფრაზა"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "გამოყენება"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "პროფილი"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "ვისი პროფილი"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "პოსტის ავტორი"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "პროფილის სურათის ჩვენება"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "ბიოგრაფიის ჩვენება"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "პოსტებისა და ვებსაიტის ბმულების ჩვენება"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "ავტორის პროფილი"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "აირჩიეთ, ვისი პროფილი გამოჩნდეს."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "WhatsApp-ის ნომერი, ქვეყნის კოდით"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "მაგალითად, +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "დასაწყები შეტყობინება (არასავალდებულო)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "ტექსტის ჩვენება ხატულასთან ახლოს"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "კუთხე"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "ბოლო (ინგლისურად მარჯვნივ)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "ქვედა დასაწყისი (მარცხნივ ინგლისურად)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "დაამატეთ თქვენი WhatsApp-ის ნომერი გვერდით პანელში. მანამდე ღილაკი გვერდზე არ გამოჩნდება."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "გვერდზე ეს ღილაკი ეკრანის ქვედა კუთხეში მოტივტივებს."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "შორტკოდის თეგი"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "გამოიყენეთ მხოლოდ ასოები, ციფრები, ტირეები და ქვედა ტირეები."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "ატრიბუტის სახელი"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "ატრიბუტის დამატება"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "მოკლე კოდი"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "სხვა ატრიბუტები"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "აირჩიეთ მოკლე კოდის ჭდე ბლოკის პარამეტრებში."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "გალერეა"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "სურათის ზომა"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "მინიატურა"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "სრული ზომა"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "ბმული..."
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "დანართის გვერდი"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "მედიაფაილი"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "აუდიო"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "ვიდეო"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "ფაილის მისამართი"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "მარყუჟი"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "ავტომატურად დაკვრა"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "პოსტერის სურათი"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "პლეილისტი"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "მედია ID-ები, გამოყოფილი მძიმეებით"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "ტრეკების სიის ჩვენება"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "ჩასმა"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "ჩასასმელი მისამართი"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "მაქსიმალური სიგანე"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "წარწერის სათაური"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "სურათისა და წარწერის HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "სიგანე"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "მინიშნება: ფორმის ბლოკი აჩვენებს ამ ფორმას თქვენი საიტის დიზაინზე მორგებული სტილით."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "ფორმის სათაურის ჩვენება"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "ფორმის აღწერის ჩვენება"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "გააგზავნეთ გვერდის გადატვირთვის გარეშე"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7351,123 +9188,108 @@ msgstr "ფაილის არჩევა"
 msgid "— Default —"
 msgstr "— ნაგულისხმევი —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "დამატებითი სტილიზაცია"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "ჩაშენებული CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS დეკლარაციები, მაგალითად: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "ეფექტები (ძველი კლასები)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "ძველი ვერსიებიდან გადმოტანილი ეფექტების სახელები, გამოყოფილი ჰარით, მაგალითად: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "მწკრივი"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "სიგანე"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "სრული სიგანე, შიგთავსი შუაშია შენარჩუნებული"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "ბმულის მისამართი"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "ბმულის ურთიერთმიმართება"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "სწორება"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "მარცხნივ"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "ცენტრი"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "მარჯვენა"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "ღილაკის ტექსტი"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "ტექსტის დამატება…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "განთავსება"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "საკუთარ ხაზზე"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "სტრიქონში, სხვა შიგთავსის გვერდით"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "ავტომატური (საკუთარი ხაზი გვერდის ზედა დონეზე)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "ხელმისაწვდომი ეტიკეტი"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "დატოვეთ ცარიელი დეკორატიული ხატულისთვის."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "აირჩიეთ ხატულა ბლოკის პარამეტრებში."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "ახალი პარამეტრის სახელი"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "მაგალითად: სათაური ან ტექსტი"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "პარამეტრის დამატება"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "ვიჯეტი"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "აირჩიეთ ვიჯეტი"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "ვიჯეტის არეალი"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "აირჩიეთ ვიჯეტის არეალი"
 
@@ -7490,6 +9312,142 @@ msgstr "ეს ჩასართავი ელემენტი ჩატვ
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "გადაადგილება ელემენტების განლაგებაში"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "ეს ვიჯეტი არ აღწერს თავის პარამეტრებს, ამიტომ ისინი რედაქტირდება როგორც სახელისა და მნიშვნელობის წყვილები."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "პრობლემა"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "შემოწმება"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "ბლოკის ჩვენება"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "გამოიყენეთ ადვილად წაკითხვადი თემის ფერი"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "გადააკეთეთ H%d-მდე"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "ალტერნატიული ტექსტი"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "ალტერნატიული ტექსტის შენახვა"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "ეს გამოსახულება დეკორატიულია"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "შემოწმება…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "ამ გვერდზე ხელმისაწვდომობის პრობლემები ვერ მოიძებნა."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d პრობლემა"
+msgstr[1] "%d პრობლემა"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d შესამოწმებელი საკითხი"
+msgstr[1] "შესამოწმებელია %d პუნქტი"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "თავიდან შემოწმება"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "ავტომატური შემოწმება ბევრ პრობლემას ავლენს, თუმცა არა ყველას. ასევე სცადეთ გვერდის გამოყენება მხოლოდ კლავიატურით და ეკრანის წამკითხველით."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "ტექსტის კონტრასტი არის %1$s:1; წაკითხვადობისთვის საჭიროა მინიმუმ %2$s:1."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "დააკლიკეთ აქ,აქ,წაიკითხეთ მეტი,მეტი,ბმული,ეს ბმული,შეიტყვეთ მეტი,გადასვლა"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "ბმულს ტექსტი არ აქვს, ამიტომ ეკრანის მკითხველი მხოლოდ „ბმულს“ აცხადებს. დაამატეთ ტექსტი ან ეტიკეტი."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "ბმულის ტექსტი „%s“ არ აზუსტებს, სად მიდის იგი. ამის ნაცვლად, აღწერეთ დანიშნულების ადგილი."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "ელემენტს აქვს დადებითი tabindex, რაც ცვლის კლავიატურის თანმიმდევრობას კითხვის თანმიმდევრობისგან განსხვავებით. გამოიყენეთ 0 ან წაშალეთ იგი."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "დაწკაპუნებად ელემენტთან კლავიატურით მიწვდომა შეუძლებელია. გამოიყენეთ რეალური ღილაკი ან ბმული."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "ჩEmbedded ჩარჩოს სათაური არ აქვს, ამიტომ ეკრანის მკითხველმა არ იცის, რა არის ის."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "ფორმის ველს არ აქვს ეტიკეტი, ამიტომ მისი დანიშნულება არ არის გამოცხადებული."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "ეს სათაური ცარიელია. ეკრანის მკითხველის მომხმარებლები სათაურებით ნავიგაციობენ; წაშალეთ იგი ან დაამატეთ ტექსტი."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "გვერდის სათაური უკვე არის H1; გამოიყენეთ H2 შიგთავსის უმაღლესი დონისთვის."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "ეს H%1$d გამოტოვებს დონეს; წინა არის H%2$d. გახადეთ ის H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "ამ სურათს არ აქვს ალტ ტექსტი. აღწერეთ იგი ან მონიშნეთ როგორც დეკორატიული, თუ ის არაფერს მატებს."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "პანელის დახურვა"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7564,18 +9522,6 @@ msgstr "მორგებული"
 msgid "Width / height"
 msgstr "სიგანე / სიმაღლე"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "ზედა"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "ქვედა"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7588,20 +9534,6 @@ msgstr "მემკვიდრეობით მიღებული სუ�
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "სურათის წაშლა"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "პოზიცია"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "ზომა"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7667,22 +9599,6 @@ msgstr "თითოეული მხარე ცალ-ცალკე"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "მხარე"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "სტილი"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "ფერი"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7932,14 +9848,6 @@ msgstr "%1$s (%2$d ნაკრები)"
 msgid "Replace icon"
 msgstr "ხატულას შეცვლა"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "ხატულას არჩევა"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "აირჩიეთ ხატულა"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "ხატულები არ ემთხვევა."
@@ -7951,10 +9859,6 @@ msgstr "რეგულარული"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "ბრენდები"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "კონტურული"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8083,21 +9987,9 @@ msgstr "ტექსტის ფერი"
 msgid "Cursor"
 msgstr "კურსორი"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "სარი"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "მაჩვენებელი"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "ტექსტი"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8255,10 +10147,6 @@ msgstr "არეს სახელი"
 msgid "Named areas"
 msgstr "დასახელებული არეები"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "მწკრივები"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "სიმაღლე"
@@ -8376,10 +10264,6 @@ msgstr "გასწორება"
 msgid "Decoration"
 msgstr "დეკორაცია"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "ხაზგასმა"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "ზედა ხაზი"
@@ -8462,19 +10346,9 @@ msgstr "კონიკური"
 msgid "Angle (degrees)"
 msgstr "კუთხე (გრადუსებში)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "ფორმა"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "ელიფსი"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "წრე"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8510,10 +10384,6 @@ msgstr "გაჯერება (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "ელფერი (გამოიყენეთ გამჭვირვალე ფერი)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "მრგვალი კვადრატი"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "ბლობი"
@@ -8530,10 +10400,6 @@ msgstr "სამკუთხედი"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "დამლმატი"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "რჩეული"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9411,11 +11277,6 @@ msgstr "გასუფთავება"
 msgid "The change could not be saved."
 msgstr "ცვლილების შენახვა ვერ მოხერხდა."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "პანელის დახურვა"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "თემის ნაგულისხმევი"
@@ -9472,9 +11333,49 @@ msgstr "Pro გეგმას მოჰყვება კლასები, �
 msgid "Open the Site Editor’s styles"
 msgstr "გააღეთ საიტის რედაქტორის სტილები"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "სათაური"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "სათაური უფრო მკვრივი ხაზის სიმაღლით, გაფორმებული სტილების ჩანართით."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "ტექსტის აბზაცი, რომელიც გაფორმებულია სტილის (Style) ჩანართით."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "სურათი"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "სტილის ჩანართის გამოყენებით სტილიზებული, მომრგვალებული კუთხეების მქონე სურათი."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "ვიდეო მედია ბიბლიოთეკიდან, გაფორმებული სტილების ჩანართით."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "დაშორება"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "ბლოკებს შორის ცარიელი ადგილი; დააყენეთ განსხვავებული სიმაღლე თითოეული ეკრანის ზომისთვის „სტილის“ ჩანართში."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "გამყოფი"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "სექციებს შორის ჰორიზონტალური ხაზი, გაფორმებული სტილის ჩანართით."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "ჩasdეთ სხვა საიტის კონტენტი (ვიდეო, პოსტი, რუკა) მისი მისამართის ჩასმით."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "რამდენიმე სურათი ბადეში, სტილიზებული სტილების ჩანართით."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9508,10 +11409,6 @@ msgstr "სია"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "აბები"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "ღილაკები"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9556,10 +11453,6 @@ msgstr "იმ ენების დამალვა, რომლებზ�
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "ვერტიკალურად განლაგება"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "ფონური"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9618,11 +11511,6 @@ msgstr "ბლოკის პარამეტრები"
 #, js-format
 msgid "Add block: %s"
 msgstr "ბლოკის დამატება: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(სათაურის გარეშე)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9698,10 +11586,6 @@ msgstr "უსაფრთხო რეჟიმის გამორთვა"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "უსაფრთხო რეჟიმის ჩართვა (სხვა დანამატები გამორთულია, თქვენთვის, მხოლოდ სტუდიაში)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "გამოქვეყნებული"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10041,11 +11925,6 @@ msgstr "კონსტრუქტორის სახელი"
 msgid "Visual editor name"
 msgstr "ვიზუალური რედაქტორის სახელი"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "ავტორი"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10119,10 +11998,6 @@ msgstr[1] "გაუქმებულია: აღდგენილია %d 
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "ჩანაცვლება"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "ბმულები"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10232,10 +12107,6 @@ msgstr "მიეცით კლიენტს ამ გვერდზე �
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "ბმულის მქონე ნებისმიერ პირს შეუძლია იხილოს ეს გვერდი მის გამოქვეყნებამდეც კი და დატოვოს კომენტარები. ანგარიში საჭირო არ არის."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "კოპირებულია"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10478,6 +12349,52 @@ msgstr "სურათების ამ საიტის მედიაბ
 msgid "Show what will happen"
 msgstr "აჩვენე, რა მოხდება"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "აკორდეონის ელემენტი"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "აკორდეონის ერთი სექცია: სათაური, რომელიც ხსნის მის შიგთავსს."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "აკორდეონი"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "კითხვები ან სექციები, რომლებიც იხსნება და იხურება. სურვილისამებრ, თითო-თითოდ და სურვილისამებრ მონიშნული როგორც ხშირად დასმული კითხვები (FAQ) საძიებო სისტემებისთვის."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "აკორდეონი"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "ხშირად დასმული კითხვები"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "გადართვა"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "ჩაკეცვა"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "დეტალები"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10494,6 +12411,7 @@ msgid "notice"
 msgstr "შეტყობინება"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "შეტიობინება"
@@ -10508,6 +12426,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "გაფრთხილება"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "საბაზისო სამკერდე ნიშანი"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "მოკლე ეტიკეტი, როგორიცაა „ახალი“, „ფასდაკლება“ ან „საუკეთესო ფასი“."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "წარწერა"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "ჭდე"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "აბაზანა"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "ახალი"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "დაჯავშნის კალენდარი"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Calendly-ს ან Cal.com-ის ჯავშნის კალენდარი, რომელიც იტვირთება მხოლოდ მაშინ, როცა ვიზიტორი მოითხოვს."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "დაჯავშნა"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "კალენდი"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "ჩნიშვნა"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "განრიგი"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10519,6 +12502,7 @@ msgid "A link styled as a button."
 msgstr "ღილაკის სტილის მქონე ბმული."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "ღილაკი"
@@ -10532,6 +12516,98 @@ msgstr "ბმა"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "მოქმედებისკენ მოწოდება"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "მოწოდება მოქმედებისკენ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "სათაური, წინადადება და ერთი ან ორი ღილაკი, რომლებიც ვიზიტორს მოქმედებისკენ მოუწოდებს."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "მოქმედება"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "ბანერი"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "რეგისტრაცია"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "საკონტროლო სია"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "ამოცანების სია, სადაც თითოეული მონიშნულია, როგორც შესრულებული ან გასაკეთებელი, როგორც ეკრანის წამკითხველებისთვის განკუთვნილი ტექსტით, ისე ნიშნით."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "გასაკეთებელი"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "დავალებები"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "ტიკები"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "სია"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "კოდი"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "სინტაქსის გამოკვეთის, ხაზების ნომრებისა და ასლის ღილაკის მქონე კოდის სია. რჩება წაკითხვადი, თუ პლაგინი ოდესმე გამოირთვება."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "კოდი"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "სინტაქსი"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "გამორჩევა"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "ფრაგმენტი"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "პროგრამირება"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10555,6 +12631,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "განლაგება"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "შედარების ცხრილი"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "გეგმები ან პროდუქტები გვერდიგვერდ, დიახ და არა ნიშნებით, რომლებსაც ეკრანის წამკითხველები სიტყვებად კითხულობენ."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "შედარება"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "ფასები"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "გეგმები"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "ცხრილი"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "ფუნქციები"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "საკონტაქტო ღილაკები"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "ღილაკები WhatsApp-ით ზარის, ელფოსტის, მესიჯის ან შეტყობინების გასაგზავნად."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "კონტაქტი"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "ზარი"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "ტელეფონი"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "ელფოსტა"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "sms"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10572,11 +12726,13 @@ msgid "container"
 msgstr "კონტეინერი"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "ყუთი"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10593,6 +12749,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "სვეტები"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "ორმაგი სათაური"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "სათაური ორ ნაწილად, რომელთაგან მეორე გამოკვეთილია ფერით, გრადიენტით, კონტურით ან ხაზგასმით."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "სათაური"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "სათაური"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "გრადიენტი"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "ფუნქციების სია"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "ფუნქციები ბადეში, თითოეული ხატულით, სათაურით და მოკლე აღწერით."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "უპირატესობები"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "სერვისები"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10636,6 +12838,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "ტექსტი"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "ფორმა"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Contact Form 7, WPForms, Gravity Forms ან Fluent Forms ფორმის ჩვენება თქვენი საიტის დიზაინზე მორგებული სტილით."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "ფორმა"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "გლოსარი"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "ტერმინები და მათ განმარტებები, დალაგებული A-დან Z-მდე, თითოეული თავისი ბმულით. შესაძლებელია გვერდზე თითოეული ტერმინის პირველი ხსენების დაკავშირება მის განმარტებასთან."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "პირობები"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "განმარტებები"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "ლექსიკონი"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "ხატულების სია"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "სია, სადაც თითოეული ხაზი იწყება ხატულით: ნიშნით, ისრით ან ბიბლიოთეკიდან აღებული რომელიმე ხატულით."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "ბულეტები"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "ხატულები"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10656,6 +12938,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "საინფორმაციო ველი"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "ხატულა, მოკლე სათაური, ერთი ან ორი წინადადება და არასავალდებულო ბმული: სერვისების, უპირატესობების ან საკონტაქტო მონაცემებისთვის."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "ფუნქცია"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "სერვისი"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "ბარათი"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10675,6 +12982,204 @@ msgstr "თარგმანი"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "მრავალენოვანი"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "გაბმა"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap-ის მდებობის რუკა: გასაღების გარეშე და OpenStreetMap-იდან არაფერი იტვირთება, სანამ ვიზიტორი რუკას არ მოითხოვს."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "რუკა"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "მდებარეობა"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "მისამართი"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "მოდალი"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "ღილაკი, რომელიც ხსნის ფანჯარს გვერდის თავზე, შიგნით ნებისმიერი ბლოკით."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "მოდალური"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "ამოხტავი ფანჯარა"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "ლაიტბოქსი"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "დიალოგი"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "გარე პანელი"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "ღილაკი, რომელიც ფანჯრის გვერდიდან აცურებს პანელს შიგნით არსებული ნებისმიერი ბლოკით."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "ეკრანს მიღმა"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "უჯრა"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "გვერდითი პანელი"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "პანელი"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "მენიუ"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "პოსტის დეტალები"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "პოსტის ავტორი, თარიღები, კატეგორიები, ტეგები, წაკითხვის დრო და კომენტარების რაოდენობა."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "ავტორი"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "თარიღი"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "kითხვის დრო"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "მეტა"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "ავტორი"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "პროგრესის ზოლი"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "დატეგილი ზოლი, რომელიც აჩვენებს, თუ რამდენად წაიწია წინ რაღაცამ, მაგალითად, უნარმა ან მიზანმა."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "მიმდინარეობა"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "ზოლი"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "უნარი"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "მიზანი"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "პაროლით დაცული კონტენტი"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "მხოლოდ იმ ვიზიტორებისთვის ბლოკავს, რომლებსაც პაროლი აქვთ. სანამ ისინი მას შეიყვანენ, შიგთავსი გვერდზე საერთოდ არ არის."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "პაროლი"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "დაცული"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "კერძო"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "დაბლოკვა"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "წევრები"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10700,6 +13205,86 @@ msgstr "ღია ფერი"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "ფერის სქემა"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR კოდი"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "QR კოდი ვებ-მისამართისთვის ან ნებისმიერი ტექსტისთვის, რომელიც დახატულია თქვენს საკუთar საიტზე (QR სერვისი არ გამოიყენება)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR კოდი"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "შტრიხკოდი"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "სკანირება"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "წაკითხვის პროგრესის ზოლი"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "ფანჯრის კიდეზე არსებული თხელი ზოლი, რომელიც ივსება, როდესაც ვიზიტორები გვერდს ათვალიერებენ."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "იკითხება"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "გადახვევა"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "დაკავშირებული პოსტები"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "პოსტები, რომლებიც იზიარებენ ამ პოსტის კატეგორიებს ან თეგებს, თავიანთ სურათებთან, თარიღებთან და შეჯამებებთან ერთად."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "დაკავშირებული"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "პოსტები"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "მსგავსი"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "მეტი"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10763,13 +13348,284 @@ msgstr "აჩვენებს ვიჯეტებს თემის ერ
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "გვერდითი პანელი"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "ვიჯეტის არეალი"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "საიტების რუკა"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "გვერდი, რომელიც ჩამოთვლის ყველა გამოქვეყნებულ გვერდსა და პოსტს (და სხვა საჯარო შიგთავსს), შენარჩუნებული გვერდების ხით."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "საიტების რუკა"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "საიტის რუკა"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "ინდექსი"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "ყველა გვერდი"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "სოციალური აიქონები"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "თქვენი პროფილების ბმულები, რომლებიც სოციალური ქსელების საკუთარი ხატულებით არის გამოსახული."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "სოციალური"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "ბმულები"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "მიყოლება"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "პროფილები"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "ვარსკვლავის რეიტინგი"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "ვარსკვლავების სახით ნაჩვენები შეფასება, ნახევარვარსკვლავიანი ბიჯებით."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "ვარსკვლავები"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "შეფასება"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "ქულა"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "ნაბიჯები"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "პროცესის დანომრილი ნაბიჯები, თანმიმდევრობით, გვერდზე ქვემოთ ან გვერდიგვერდ."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "პროცესი"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "როგორ მივმართოთ"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "ქრონოლოგია"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "დანომრილი"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "ჩანიშნება"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Tabs ბლოკის ერთი ჩანართი: მისი სათაური და პანელი."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "სარჩევი"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "გვერდის სათაურების სია, რომელიც ავტომატურად იქმნება და თითოეულ მათგანთან აკავშირებს."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "სარჩევი"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "შინაარსი"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "სათაურები"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "ჩანართები"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "ჩანართებში არსებული შიგთავსი: ვიზიტორები პანელებს შორის მაუსით ან კლავიატურით გადადიან."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "ჩსართები"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "ჩანართიანი"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "პანელები"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "შეფასება"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "მომხმარებლის ციტატა მისი სახელით, თანამდებობით, ფოტოთი და არასავალდებულო ვარსკვლავური შეფასებით."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "გადახედვა"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "ციტატა"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "მომხმარებელი"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "უკუკავშირი"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "მინიშნება"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "სიტყვა ან ფრაზა, რომელიც კურსორის მიტანისა და კლავიატურის ფოკუსის დროს აჩვენებს მოკლე ახსნას."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "მინიშნება"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "მინიშნება"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "განმარტება"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "ავტორის პროფილი"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "ავტორის სურათი, სახელი, ბიოგრაფია და ბმულები, ან არჩეული მომხმარებლის."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "ბიოგრაფია"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "პროფილი"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "შესახებ"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp ჩეთის ღილაკი"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "გვერდის კუთხეში მდებარე მცურავი ღილაკი, რომელიც ხსნის WhatsApp-ის ჩატს თქვენთან."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "ჩატი"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "მოტივტივე"
 
 #: blocks/widget/block.json
 msgctxt "block title"

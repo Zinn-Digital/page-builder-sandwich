@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.9.0
+Stable tag: 6.10.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -68,6 +68,28 @@ Background videos from YouTube or Vimeo (Pro). Only when an author chooses a You
 * Vimeo terms: https://vimeo.com/terms
 * Vimeo privacy policy: https://vimeo.com/privacy
 
+Map block. The map comes from OpenStreetMap and needs no key or account. A page with a map shows only a notice, a "Show the map" button and a link; nothing is loaded from OpenStreetMap until a visitor presses the button. The visitor's browser then loads `https://www.openstreetmap.org/export/embed.html` with the coordinates the author chose, which sends what any embedded map sends (the visitor's IP address and browser details).
+
+* Service: https://www.openstreetmap.org
+* Terms: https://osmfoundation.org/wiki/Terms_of_Use
+* Privacy policy: https://osmfoundation.org/wiki/Privacy_Policy
+
+Booking calendar block (Calendly or Cal.com). A page with a booking calendar shows only a notice, a button and a link to the booking page; nothing is loaded from the booking service until a visitor presses the button. The visitor's browser then loads the author's booking page from `https://calendly.com` or `https://cal.com`, and the visitor books directly with that service.
+
+* Calendly terms: https://calendly.com/legal/customer-terms-of-use
+* Calendly privacy policy: https://calendly.com/legal/privacy-notice
+* Cal.com terms: https://cal.com/terms
+* Cal.com privacy policy: https://cal.com/privacy
+
+WhatsApp chat button and contact buttons. These are plain links to `https://wa.me/` with the number the author entered (and an optional message). Nothing is loaded from WhatsApp until a visitor presses one; WhatsApp then opens in the visitor's app or browser.
+
+* WhatsApp terms: https://www.whatsapp.com/legal/terms-of-service
+* WhatsApp privacy policy: https://www.whatsapp.com/legal/privacy-policy
+
+Code block. Syntax highlighting uses highlight.js 11.12.0 (BSD-3-Clause), bundled with the plugin and served from your own site; no external service is used.
+
+QR code block. QR codes are drawn in the editor by qrcode-generator 2.0.4 (MIT), bundled with the plugin; no QR service is used.
+
 AI features use the AI provider you choose, with your own API key. Nothing is sent to any AI provider until you add a key under Settings → AI providers and use an AI feature. When you do, the text the feature needs (for example, the content being written or translated) and your key are sent to that one provider, and to no one else. Keys are stored encrypted in your database and are never sent to Zinn Digital®. The "Save and test" button sends one short test request to the provider.
 
 * OpenAI: https://api.openai.com/v1 (terms: https://openai.com/policies/services-agreement/, privacy policy: https://openai.com/policies/privacy-policy/)
@@ -115,6 +137,13 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.10.0 =
+* New: 35 free blocks for content, media, marketing, site and data, each with a design panel, accessible markup and right-to-left layouts.
+* New: an accessibility checker in the editor and Sandwich Studio.
+* New: a Form block that shows a form from Contact Form 7, WPForms or Fluent Forms, styled to match your site.
+* Improved: widgets and shortcodes placed in pages get real settings panels.
+* Translation-ready lists: every list block keeps its icons, links and network names out of translation, so only the words are translated.
 
 = 6.9.0 =
 * Admin screens: the colour-scheme menu shows a tick next to the option that is in use.

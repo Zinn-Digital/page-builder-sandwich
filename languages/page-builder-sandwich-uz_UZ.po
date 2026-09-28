@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Qayta foydalaniladigan naqsh sifatida saqlash"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Maxsus imkoniyatlar tekshirgichi"
 
@@ -990,6 +994,7 @@ msgstr "← Boshqa provayderni tanlash"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Manzil"
 
@@ -1043,6 +1048,8 @@ msgstr "Sinov"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Olib tashlash"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Ta'minotchilardan model ro'yxatlarini yangilash"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Rasmlar"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "o'chirilgan"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Ochish"
 
@@ -1448,6 +1457,7 @@ msgstr "Hali hech qanday sun'iy intellekt so'rovlari yuborilmagan."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Bajarildi"
 
@@ -1515,7 +1525,11 @@ msgstr "Urinishlar soni juda ko'p. Iltimos, bir necha daqiqadan so'ng yana urini
 msgid "Something went wrong. Please contact the admin."
 msgstr "Nimadir xato ketdi. Iltimos, administrator bilan bog'laning."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Bog‘lash"
 
@@ -1538,52 +1552,385 @@ msgstr "Bu oila saqlanmagan."
 msgid "Removed."
 msgstr "O'chirilgan."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Bu yaroqli shrift oilasi nomi emas."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts bu shriftlar oilasini qaytarmadi. Nomini tekshiring va qaytadan urinib ko'ring."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Shrift fayllarini yuklab oling yoki saqlab bo'lmadi. Yuklashlar papkasiga yozib bo'lishini tekshiring."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Shrift uslublar jadvalini saqlab bo‘lmadi. Yuklashlar papkasiga yozish mumkinligini tekshiring."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Ushbu xabarnomani yopish"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(yangi oynada ochiladi)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Bajarildi:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Bajarilishi kerak:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Lug‘at ko‘rsatkichi"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s tadan %1$s baholandi"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Jarayon"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Kodni nusxalash"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Nusxa olindi"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Bu vidjet ushbu saytda mavjud emas."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Elektron pochta"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Telefon"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS-lenta"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Veb-sayt"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Havola"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (yangi tabda ochiladi)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "5 dan %d ta baholandi"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(tavsiya etiladi)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Kiritilgan"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Kiritilmagan"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Taqqoslash jadvali"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "%s ga qo'ng'iroq qilish"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Elektron pochta %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Matn %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "WhatsApp'da chat qilish"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Biz bilan bog‘laning"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "WhatsApp orqali biz bilan chat qiling"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Bu forma hozirda mavjud emas."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s faol bo'lmagani sababli ushbu formani ko'rsatib bo'lmaydi."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Bog'lanish: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Xaritani ko‘rsatish uni OpenStreetMap'dan yuklaydi."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Xaritani koʻrsatish"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMap'da xaritani ochish"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s dan bron qilish taqvimi"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Band qilish taqvimini ko'rsatish uni %s dan yuklaydi."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Band qilish taqvimini ko‘rsatish"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%s da band qilish"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s uchun QR-kod"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Dizayn"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Kontent"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Media"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Marketing"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Sayt"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Maʼlumotlar"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Tegishli xabarlar"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Xabar tafsilotlari"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Muallif:"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Nashr etilgan"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Yangilangan"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Ichida"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Teg qo'yilgan"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d daqiqalik o'qish"
+msgstr[1] "%d daqiqalik o'qish"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Hozircha izohlar yo‘q"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d ta izoh"
+msgstr[1] "%d ta izoh"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Sayt xaritasi"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(sarlavhasiz)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s ga tegishli barcha xabarlar"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Bu kontent himoyalangan. Uni ko'rish uchun parolni kiriting."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Ushbu parol noto‘g‘ri. Qaytadan urinib ko‘ring."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Parol"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Kontentni ko'rsatish"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Bu sahifani qulfdan chiqarib bo‘lmaydi."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Urinishlar soni juda ko'p. Bir necha daqiqa kutib, qayta urinib ko'ring."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Parol 4 tadan 200 tagacha belgidan iborat bo‘lishi kerak."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Ko'proq"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Yopish"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Varaqa %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Mundarija"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Sandwich Studio bilan tahrirlash"
 msgid "Blank canvas"
 msgstr "Bo'sh sahifa"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Asosiy qismga o'tish"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Planshet kengligi 480 dan 2560 gacha bo'lgan butun piksellar sonidan iborat bo'lishi kerak."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Yuklangan nishonchalar"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Nishon"
 
@@ -2553,6 +2908,8 @@ msgstr "%s – mijozimning elektron pochta manzili"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Kod"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Tahrirlash"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Elektron pochta"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Elektron pochta manzili"
 
@@ -3103,6 +3456,10 @@ msgstr "Oq yorliqli rejimni faollashtirish"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "Yangi elektron pochta manzilini kiriting"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Xato"
 
@@ -3723,6 +4081,7 @@ msgstr "Quyidagi mahsulotlar xavfsiz rejimga o‘tkazildi, chunki %2$s ushbu say
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "Bu plagin PHP'ning yangiroq versiyasini talab qiladi."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Yo'q"
 
@@ -4811,6 +5171,13 @@ msgstr "Ijtimoiy tarmoqlar (Facebook, Twitter va boshqalar)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "Vaqt belgisi"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Sarlavha"
 
@@ -5171,6 +5541,8 @@ msgstr "%1$s shu paytgacha qanday yoqmoqda? Barcha %2$s premium funksiyalarini %
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Turi"
@@ -5286,6 +5658,7 @@ msgstr "Foydalanuvchilar"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Qiymat"
@@ -5340,6 +5713,7 @@ msgstr "Pullik funksiyalarni koʻrish"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Ogohlantirish"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "Ixtiyoriy"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Tarif rejasasi"
 
@@ -5988,18 +6363,26 @@ msgstr "Juda kichik"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Kichik"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "O'rta"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Katta"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "Juda katta"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "Sinov muddatini boshlab bo‘lmadi."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Funksiya"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Kiritilgan"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Kiritilmagan"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "Kirish manzili"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Foydalanuvchi nomi"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Parol"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7088,15 +7462,62 @@ msgstr "Bekor qilish boshlandi. U fonda davom etmoqda; bu sahifadan chiqib ketis
 msgid "Undo all conversions"
 msgstr "Barcha o'zgarishlarni bekor qilish"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Element"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Sahifa yuklanganda ochish"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Sarlavha sarlavha hisoblanadi"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Elementlar sahifa bo‘limlari bo‘lganda sarlavhani sarlavha (heading) qilib qo‘ying, shunda tashrif buyuruvchilar ular orasida o‘tishlari mumkin bo‘ladi."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Sarlavha %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Savol yoki bo'lim sarlavhasi"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Akordeon"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Bir vaqtning o'zida faqat bitta element ochiq bo'ladi"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Qidiruv tizimlari uchun FAQ sifatida belgilang"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Sarlavhalar (savollar) va ularning matnidan (javoblaridan) tuzilgan FAQ, ya'ni tez-tez beriladigan savollar uchun tuzilgan ma'lumotlarni qo'shadi."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Ogohlantirish"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Ma'lumot"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Muvaffaqiyat"
 
@@ -7105,6 +7526,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Ogohlantirishlar va xatolar ekran oʻquvchi foydalanuvchilariga darhol yetkaziladi; maʼlumot va muvaffaqiyat xabarlari esa ular oʻz ishini tugatgach oʻqib eshittiriladi."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Belgini ko'rsatish"
 
@@ -7120,64 +7542,702 @@ msgstr "Sarlavha (ixtiyoriy)"
 msgid "Write the message…"
 msgstr "Xabarni yozing…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "boʻlim — tematik boʻlim"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Markaz"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — ma'nosiz"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Nishon"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "sarlavha — kirish mazmuni"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Rang"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "pastki qism — yakunlovchi kontent"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Mavzu urgʻusi"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "maqola — mustaqil tarkib"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Neytral"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "chetda — tegishli tarkib"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Pozitsiya"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "asosiy — asosiy kontent (sahifasiga bir marta)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Etiket"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — navigatsiya havolalari"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Band qilish taqvimi"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Stek (flexbox, ustun)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Xizmat"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Qator (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Band qilish sahifasi manzili"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Setka"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Masalan: %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Ekran o'quvchilari tomonidan o'qib beriladigan va uning ostida ko'rsatiladigan taqvim nima uchun mo'ljallangani."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Bu %s bron qilish sahifasining manzili emas, shuning uchun sahifada hech narsa ko'rsatilmaydi."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Kalendarni oldindan ko‘rish"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Havola manzili"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Tugmada yorliq ham, manzil ham mavjud boʻlganda u koʻrsatiladi."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Yangi oynada ochish"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Harakatga chaqiruv"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Maket"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Quyidagi tugmalar"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Matn yonidagi tugmalar"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Tekislash"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Asosiy tugma"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Ikkinchi tugma"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Sarlavha…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Nima uchunligi haqida bir gap…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Ikkinchi tugma (ixtiyoriy)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Tekshiruv ro'yxati"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Belgi rangi"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Qatorlar"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "%d-qator"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Vazifa…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Qator qo'shish"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Til"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Avtomatik aniqlash"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Ajratib ko‘rsatish yo‘q"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Fayl nomi"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Kod ustida ko'rsatilgan, masalan, functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Satirlar raqamlari"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Nusxalash tugmasi"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Uzun qatorlarni o‘rash"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Kod yozing yoki qo'ying…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Matn"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Ustunlar"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Ustun %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "%s ni ajratib ko'rsatish"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Ustun qo'shish"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Qatorlar"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "%d-qator"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Qator qo‘shish"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Izoh (nima taqqoslanmoqda)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Kletka turi: %s. Oʻzgartirish"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Telefon qo'ng'irog'i"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Matnli xabar"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Tugmalar"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Telefon raqami, mamlakat kodi bilan"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Tugma matni"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Ushbu tugmani olib tashlash"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Tugma qo'shish"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Boshlash uchun WhatsApp xabari (ixtiyoriy)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Aloqa tugmalari"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Yon panelga telefon raqam, elektron pochta manzili yoki WhatsApp raqamini qo'shing."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Ikki qavatli sarlavha"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Sarlavha darajasi"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Har bir sahifada asosiy sarlavha uchun H1 tegidan faqat bir marta foydalaning."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Ikkinchi qismni ko'rish"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Aksent rangi"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Gradent"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Kontur"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Tagiga chiziq tortish"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Ikkinchi qism alohida qatorda"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Birinchi qism"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "ikkinchi qism"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Marker qalam"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Qalin tagchiziq"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Fon"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Ajratib koʻrsatish"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Ajratishni olib tashlash"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Bosh harf"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Katta bosh harf"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Kutadagi birinchi harf uchun \"Qutvdagi bosh harf\" uslubini tanlang."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Kutadagi bosh harf"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Aksent paneli"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Iqtibos bloki (aksent chizig'i)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Diqqatni tortish uchun rangli chiziq yonida katta qilib qoʻyilgan matndan iqtibos."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "taklif"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Funksiyalar ro'yxati"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Telefonlarda funksiyalar har doim ustma-ust joylashadi."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Imkoniyatlar"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Xususiyat %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Maxsus belgi"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Funksiya…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Uni tavsiflang…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Funksiya qo'shish"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms yoki Fluent Forms-ni o'rnating va faollashtiring, so'ngra uning shakllaridan birini bu yerdan tanlang."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Form plagini"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Tanlang…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Shakl"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Shakl tanlang…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s da hali formalar mavjud emas"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s ushbu saytda faol emas, shuning uchun bu fɔrma koʻrsatilishi mumkin emas."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Formalar roʻyxatini yuklab boʻlmadi."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Forma uslubi"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Maydonlar"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Konturli"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "To'ldirilgan"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Tag ostiga chizilgan"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Tugma kengligi"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Matnga moslashtirish"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "To'liq kenglik"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Ranglar, shriftlar, oraliq masofalar va burchaklar saytingiz dizaynidan hamda ushbu blokning dizayn sozlamalaridan kelib chiqadi."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Saytingizga moslab bezatilgan, forma plaginidan formani ko'rsating."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Form plaginiga ehtiyojingiz bormi? Contact Form 7 bepul."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Lug'at"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "A dan Z gacha saralash"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Sahifa shartlarni alifbo tartibida ko'rsatadi; bu yerda ular siz yozgan tartibda qoladi."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "A–Z indeksini ko'rsatish"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Ushbu sahifaning boshqa qismlarida ishlatilgan havola atamalari"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Sahifa matnida har bir atama birinchi marta paydo bo'lganda uning ta'rifiga ulanadi. Sarlavhalar, tugmalar, kodlar va mavjud havolalar o'z holicha qoldiriladi."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Shartlar"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Muddat %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Muddat"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Buning ma'nosi…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Atamkani qo‘shish"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Belgikalar ro‘yxati"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Birining ostida biri"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Yonma-yon"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Roʻyxat elementi..."
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Ma'lumotlar oynasi"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Yoki kutubxonadan istalgan ikonkani tanlang:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Havola matni"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Havola qayerga olib borishini ayting (\"Narxlarimizni ko‘ring\"), \"Batafsil\" emas."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Bir yoki ikkita jumla…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "boʻlim — tematik boʻlim"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — ma'nosiz"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "sarlavha — kirish mazmuni"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "pastki qism — yakunlovchi kontent"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "maqola — mustaqil tarkib"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "chetda — tegishli tarkib"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "asosiy — asosiy kontent (sahifasiga bir marta)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — navigatsiya havolalari"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Stek (flexbox, ustun)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Qator (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Setka"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Tahrirlanmoqda: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Quyi darajadagilarni tartibga solish"
 
@@ -7185,7 +8245,7 @@ msgstr "Quyi darajadagilarni tartibga solish"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7193,70 +8253,50 @@ msgstr "Quyi darajadagilarni tartibga solish"
 msgid "Inherited (%s)"
 msgstr "Meros qilib olingan (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Ustma-ust qoʻyilgan bloklar"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Ustunlar"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Kanvasga sudrab olib keling yoki yozing"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Kontent kengligi"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Qutiga olingan (mavzuning kontent kengligi)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "To'liq kenglik"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Minimal balandlik"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML tegi"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Havola"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Butun blokni havolaga aylantirish"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Ekran o'quvchilari uchun havola matni"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Blokni ko‘ra olmaydigan tashrif buyuruvchilar uchun havola nima qilishi."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Yangi oynada ochish"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Bog'langan blok ichiga havolalar yoki tugmalarni qo'ymang: havola ichidagi havola brauzerlarda ishlamaydi."
 
@@ -7288,14 +8328,143 @@ msgstr "+ Qator"
 msgid "− Row"
 msgstr "− Qator"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Joylashuv"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Koordinatalarni yoki OpenStreetMap havolasini kiriting"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org saytidan joyni toping, so‘ngra brauzer satridan manzilni nusxalab oling yoki xaritani sichqonchaning o‘ng tugmasi bilan bosib, \"Manzilni ko‘rsatish\"ni tanlang."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Kenglik"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Uzunlik"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Masshtabni oʻzgartirish"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Joylashuv nomi"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Xarita ostida ko'rsatiladi va ekran o'quvchilari tomonidan o'qib beriladi."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Koordinatalarni (masalan, 51.5074, -0.1278) yoki OpenStreetMap havolasini qo‘ying."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Koordinatalar yoki havola"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Xaritani oldindan koʻrish"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMap'da %1$s, %2$s ni tekshiring"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Muallif"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Nashr qilingan sana"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Yangilangan sana (farq qilganda)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Teglar"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Oʻqish vaqti"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Sharhlar soni"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Ko'rsatiladigan tafsilotlar"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Ko'rsatish uchun kamida bitta tafsilotni tanlang."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Jarayon paneli"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Maksimal"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "Foiz uchun 100; istalgan boshqa raqam miqdor uchun, masalan, 10 tadan 8 tasi."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Foizni ko'rsatish"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Parol o'rnatilgan. Tashrif buyuruvchilar uni kiritmagunicha ushbu kontent o'rniga parol formasini ko'rishadi."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Hali parol o'rnatilmagan, shuning uchun tashrif buyuruvchilar bu yerda hech narsa ko'rishmaydi."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Yangi parol"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Parolni o'rnatish"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Parol o'rnatildi. Uni qo'llash uchun sahifani saqlang; uni ochgan tashrif buyuruvchilarga yangisi kerak bo'ladi."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Agar Page Builder Sandwich o'chirilsa, bu kontent barchaga ko'rsatiladi."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Parol shakri ustidagi xabar (ixtiyoriy)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "O‘tish"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Etiket"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7305,30 +8474,698 @@ msgstr "Ekran o‘qigichlari tomonidan o‘qib beriladi va “Yorliqni ko‘rsat
 msgid "Show label"
 msgstr "Yorliqni ko'rsatish"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Veb-manzil yoki matn"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR kod"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Ekran o'quvchilar uchun tavsif"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"QR code for\" va matndan foydalanish uchun bo'sh qoldiring."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Veb-manzil, telefon havolasi (tel:) yoki istalgan matnni kiriting."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Bu QR kod uchun juda uzun. Uni qisqartiring."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Izoh qoʻshish"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "O'qish jarayoni paneli"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Oyna cheti"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Eng yuqori"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Pastki"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Tashrif buyuruvchilar pastga aylantirganda oyna ostida ko'rsatiladi."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Tashrif buyuruvchilar pastga aylantirganda oyna yuqorisida ko'rsatiladi."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Qancha"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Muallifi"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Kategoriyalar yoki teglar"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Hech narsa bog'liq bo'lmaganda, uning o'rniga eng yangisini ko'rsatish"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Sarlavha"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "\"O'xshash xabarlar\" uchun bo'sh qoldiring."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Taqdim etilgan rasmni ko'rsatish"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Sanani ko'rsatish"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Xulosani ko'rsatish"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Hozircha bu postning toifalari yoki teglarini boʻlishadigan boshqa postlar yoʻq. Ular paydo boʻlganda, shu yerda koʻrsatiladi."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Modal oynasi"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Yondan ochiladigan panel"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Hajmi"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Dan surilib keladi"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Boshlanish – bu o'qish boshlanadigan tomon: ingliz tilida chap tomon, arab tilida o'ng tomon."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Orqa tarafdagi sahifa bosilganda yopish"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Oyna sarlavhasi"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Belgi"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Doira"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Kesib o'tish"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Nuqtacha"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Ko'rsatkich"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Saralash"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Belgi rangi"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Matn bilan bir xil"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Asosiy mavzu"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Ikkilamchi mavzu"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Mavzu kontrasti"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Sarlavhalarni sahifa boʻylab tartibda saqlang: sarlavha oʻzi joylashgan boʻlimdan bir daraja past boʻlishi kerak."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Nishonchani tanlash"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Standart belgidan foydalanish"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Nishoncha tanlang"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Yuqoriga ko'chirish"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Pastga koʻchirish"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Har bir tur uchun sarlavha ko'rsatish"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Tanlangan turlar bo'yicha hali hech qanday maqola chop etilmagan."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Havolalar"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Havola %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Tarmoq"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Profil manzili, mailto:you@example.com yoki tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Ekran o'quvchilar uchun o'qiladigan nom"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Boshqa belgi"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Havola qo'shish"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Koʻrish"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Uslub"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Faqat belgi"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Shakllantirish"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Dumaloq kvadrat"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Kvadrat"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Yangi tabda profillarni ochish"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Yulduzli reyting"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Baho"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Yulduzlar soni"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Soni ko'rsatish"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Qadamlar"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Sahifa bo‘ylab pastga"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Yonma-yon (telefonlarda ustma-ust)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Raqam rangi"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Qadamlar ketma-ketligi"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Bosqich %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Qadam…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Nima qilish kerak…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Qadam qo'shish"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Varaq"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Sahifaga sarlavhalar qo'shing va ular shu yerda ro'yxatga olinadi."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Mundarija"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Sarlavha darajasidan"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Sarlavha darajasiga"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Raqamlangan"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Yig‘ish mumkin"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Yig'ilgan holda boshlash"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "O‘qilayotgan bo‘limni belgilash"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Varoqlar"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Ekran o'qicilari uchun nom"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Ixtiyoriy. Masalan, \"Rejalar\" kabi teblar nima haqidaligini bildiradi."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Sahifa yuklanganda ochish"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Yon tomondagi vkladkalar"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Yorliq qoʻshish"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Tavsiya"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Rasmni almashtirish"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Fotoni tanlash"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Rasmni o'chirish"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Surat tavsifi"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Agar fotosuratda faqat yonida ismi koʻrsatilgan shaxs tasvirlangan boʻlsa, uni boʻsh qoldiring."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Yulduzli reyting (0 = yo'q)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Iqtibos ostidagi nom"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Iqtibos yonidagi rasm"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Mijoz nima dedi…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Rol yoki kompaniya"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Maslahat oynasi"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Maslahat matni"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Uni qisqa tuting: bir yoki ikki jumla. Ekran o‘quvchilari uni tushuntirayotgan so‘z bilan birga o‘qiydi."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Koʻrsatish"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Yuqori"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Quyida"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "So'z yoki ibora"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Qo'llash"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Profil"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Kimning profili"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Maqola muallifi"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Profil rasmini ko‘rsatish"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Tarjimai holni ko'rsatish"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Xabarlar va veb-sayt havolalarini ko'rsatish"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Muallif profili"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Qaysi profil koʻrsatilishini tanlang."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "WhatsApp raqami, mamlakat kodi bilan"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Masalan, +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Boshlash uchun xabar (ixtiyoriy)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Belgini yonida matnni ko'rsatish"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Burchak"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Pastgi qism (ingliz tilida o‘ngda)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Pastki qism boshlanishi (ingliz tilida chapda)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Yon panelga WhatsApp raqamingizni qo‘shing. Ungacha tugma sahifada ko‘rsatilmaydi."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Sahifada bu tugma ekranning pastki burchagida suzib yuradi."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Qisqa kod tegi"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Faqat harflar, raqamlar, defis va pastki chiziqlardan foydalaning."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Atribut nomi"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Atribut qo'shish"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Qisqa kod"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Boshqa atributlar"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Blok sozlamalarida shortkod tegini tanlang."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Galereya"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Rasm hajmi"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Miniatyura"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Asl hajm"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Ushbu manzilga havola"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Ilova sahifasi"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Media fayli"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Audio"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Video"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Fayl manzili"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Takrorlash"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Avtomatik ijro etish"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Poster tasviri"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Pleylist"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Media ID'lari, vergul bilan ajratilgan"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Treklar roʻyxatini koʻrsatish"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Joylashtirish"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Joylashtirish manzili"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Maksimal kenglik"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Sarlavha"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "Rasm va sarlavha HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Eni"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Maslahat: Forma bloki ushbu formani saytingizga mos ravishda bezatilgan holda ko'rsatadi."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Form sarlavhasini ko'rsatish"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Form tavsifini ko'rsatish"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Sahifani qayta yuklamasdan yuborish"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7349,123 +9186,108 @@ msgstr "Faylni tanlash"
 msgid "— Default —"
 msgstr "— Standart —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Kengaytirilgan uslublar"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Ichki CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS deklaratsiyalari, masalan: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Effektlar (eskirgan sinflar)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Eski versiyalardan saqlanib qolgan bo‘sh joy bilan ajratilgan effekt nomlari, masalan: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Qator"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Eni"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "To‘liq kenglik, kontent o‘rtada saqlanadi"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Havola manzili"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Havola munosabati"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Tekislash"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Chap"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Markaz"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "O‘ng"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Tugma matni"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Matn qo'shish..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Joylashuv"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Alohida qatorda"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Qatorda, boshqa tarkib yonida"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Avtomatik (sahifaning yuqori darajasida o'z qatorida)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Ochiq yorliq"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Dekorativ ikonka uchun bo'sh qoldiring."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Blok sozlamalaridan ikonkani tanlang."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Yangi sozlama nomi"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Masalan: sarlavha yoki matn"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Sozlamani qo‘shish"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Vidjet"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Vidjetni tanlang"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Vidjet maydoni"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Vidjet maydonini tanlang"
 
@@ -7488,6 +9310,142 @@ msgstr "Ushbu vidjet yuklangandan keyin oʻlchamini oʻzgartiradi va uning ostid
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Maket siljishi"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Bu vidjet o'z sozlamalarini tavsiflamaydi, shuning uchun ular nom va qiymat juftliklari sifatida tahrirlanadi."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Muammo"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Tekshirish"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Blokni ko'rsatish"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "O‘qishga qulay mavzu rangidan foydalaning"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "H%d ga aylantirish"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Muqobil matn"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Muqobil matnni saqlash"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Bu rasm bezak uchun"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Tekshirilmoqda…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Ushbu sahifada hech qanday foydalanish imkoniyati muammolari topilmadi."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d ta muammo"
+msgstr[1] "%d ta muammo"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "Tekshirilishi kerak bo'lgan narsa: %d"
+msgstr[1] "Tekshirish kerak bo'lgan %d ta narsa"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Qayta tekshirish"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Avtomatik tekshiruv ko'plab muammolarni topadi, ammo ularning barchasini emas. Shuningdek, sahifani faqat klaviatura yordamida va ekran o'quvchi yordamida sinab ko'ring."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Matn kontrasti %1$s:1; o‘qilishi uchun kamida %2$s:1 talab qilinadi."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "bu yerga bosing,bu yerda,batafsil o'qish,ko'proq,havola,ushbu havola,ko'proq bilib olish,o'tish"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Havolada matn yo‘q, shuning uchun ekrandan o‘qituvchi dastur faqat “link” deb o‘qiydi. Matn yoki yorliq qo‘shing."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "\"%s\" havolasi matni uning qayerga olib borishini ko‘rsatmaydi. Buning o‘rniga manzilni tavsiflang."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Element musbat tabindex'ga ega, bu esa klaviatura tartibini o'qish tartibidan o'zgartiradi. 0 dan foydalaning yoki uni olib tashlang."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Bosish mumkin bo'lgan elementga klaviatura yordamida kirib bo'lmaydi. Haqiqiy tugma yoki havoladan foydalaning."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Oʻrnatilgan freymda sarlavha yoʻq, shuning uchun ekran oʻquvchi uning nima ekanligini ayta olmaydi."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Forma maydonida yorliq yo‘q, shuning uchun uning vazifasi e’lon qilinmagan."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Bu sarlavha boʻsh. Ekran oʻquvchi dastur foydalanuvchilari sarlavhalar boʻyicha harakatlanishadi; uni olib tashlang yoki matn qoʻshing."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Sahifa sarlavhasi allaqachon H1 hisoblanadi; kontentning eng yuqori darajasi uchun H2 dan foydalaning."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Bu H%1$d darajani o'tkazib yuboradi; undan oldingisi esa H%2$d. Uni H%3$d ga o'zgartiring."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Bu rasmda alt-matn mavjud emas. Uni tavsiflang yoki qo'shimcha qiymat bermasa, dekorativ sifatida belgilang."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Panelni yopish"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7562,18 +9520,6 @@ msgstr "Maxsus"
 msgid "Width / height"
 msgstr "Eni / balandligi"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Eng yuqori"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Pastki"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7586,20 +9532,6 @@ msgstr "Meros qilib olingan tasvir — almashtirish"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Rasmni oʻchirish"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Pozitsiya"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Hajmi"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7665,22 +9597,6 @@ msgstr "Har bir tomon alohida"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Yon"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Uslub"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Rang"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7930,14 +9846,6 @@ msgstr "%1$s (%2$d ta to'plam)"
 msgid "Replace icon"
 msgstr "Belgini almashtirish"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Nishonchani tanlash"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Nishoncha tanlang"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Hech qanday belgi mos kelmadi."
@@ -7949,10 +9857,6 @@ msgstr "Oddiy"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Brendlar"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Konturli"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8081,21 +9985,9 @@ msgstr "Matn rangi"
 msgid "Cursor"
 msgstr "Kursor"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Ko'rsatkich"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Ko‘rsatkich"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Matn"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8253,10 +10145,6 @@ msgstr "Hudud nomi"
 msgid "Named areas"
 msgstr "Nomlangan hududlar"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Qatorlar"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Balandlik"
@@ -8374,10 +10262,6 @@ msgstr "Tekislash"
 msgid "Decoration"
 msgstr "Bezak"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Tagiga chiziq tortish"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Ust chiziq"
@@ -8460,19 +10344,9 @@ msgstr "Conic"
 msgid "Angle (degrees)"
 msgstr "Burchak (gradus)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Shakllantirish"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Ellips"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Doira"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8508,10 +10382,6 @@ msgstr "To'yingish orqasida (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Tus (shaffof rangdan foydalanish)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Dumaloq kvadrat"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8528,10 +10398,6 @@ msgstr "Uchburchak"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Olмос"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Saralash"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9409,11 +11275,6 @@ msgstr "Tozalash"
 msgid "The change could not be saved."
 msgstr "Oʻzgarishni saqlab boʻlmadi."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Panelni yopish"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Mavzu standart holda"
@@ -9470,9 +11331,49 @@ msgstr "Klasslar, tokenlar, qorong‘i rejim, brend to‘plami va maxsus shriftl
 msgid "Open the Site Editor’s styles"
 msgstr "Sayt muharririning uslublarini ochish"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Sarlavha"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Stil oynasi yordamida uslublangan, qatorlararo balandligi qisqaroq sarlavha."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Style yorlig'i bilan bezatilgan matn qismi."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Rasm"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Style yorlig‘i yordamida bezatilgan, chetlari yumaloqlangan rasm."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Media kutubxonasidan olingan va Style (Uslub) tabida bezatilgan video."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Ajratuvchi"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Bloklar orasidagi bo‘sh joy; Style (Stil) oynasida har bir ekran o‘lchami uchun alohida balandlikni o‘rnating."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Ajratuvchi chiziq"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Bo'limlar orasidagi gorizontal chiziq, Style (Uslub) oynasi yordamida bezatilgan."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Manzilini kiritish orqali boshqa saytdagi kontentni (video, post, xarita) qo'shing."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Style yorlig‘i yordamida bezatilgan to‘r shaklidagi bir nechta rasmlar."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9506,10 +11407,6 @@ msgstr "Ro'yxat"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Kapsulalar"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Tugmalar"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9554,10 +11451,6 @@ msgstr "Ushbu sahifa tarjima qilinmagan tillarni yashirish"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Vertikal ravishda joylashtirish"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Fon"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9616,11 +11509,6 @@ msgstr "Blok sozlamalari"
 #, js-format
 msgid "Add block: %s"
 msgstr "Blok qo'shish: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(sarlavhasiz)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9696,10 +11584,6 @@ msgstr "Xavfsiz rejimni o'chirish"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Xavfsiz rejimni yoqish (boshqa plaginlar o'chirilgan, siz uchun, faqat Studio'da)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Nashr etilgan"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10039,11 +11923,6 @@ msgstr "Konstruktor nomi"
 msgid "Visual editor name"
 msgstr "Vizual muharrir nomi"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Muallif"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10117,10 +11996,6 @@ msgstr[1] "Bajarildi: %d ta sahifa tiklandi."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Almashtirish"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Havolalar"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10230,10 +12105,6 @@ msgstr "Mijozga bu sahifaga izoh qoldirishga ruxsat berish"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Havolaga ega bo'lgan har bir kishi ushbu sahifani, hatto u e'lon qilinishidan oldin ham ko'rishi va izoh qoldirishi mumkin. Hisob qaydnomasi talab qilinmaydi."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Nusxa olindi"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10476,6 +12347,52 @@ msgstr "Rasmlarni ushbu saytning media kutubxonasiga nusxalang"
 msgid "Show what will happen"
 msgstr "Nima sodir bo'lishini ko'rsatish"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Akkordeon elementi"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Akkordeonning bitta bo‘limi: uning tarkibini ochadigan sarlavha."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Akkordeon"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Ochilib-yopiladigan savollar yoki bo‘limlar. Ixtiyoriy ravishda bir vaqtning o‘zida bittadan va qidiruv tizimlari uchun FAQ sifatida belgilanishi mumkin."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "akkordeon"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "FAQ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "almashtirish"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "yig'ish"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "Tafsilotlar"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10492,6 +12409,7 @@ msgid "notice"
 msgstr "Bildirishnoma"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "xabar"
@@ -10506,6 +12424,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "ogohlantirish"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Nishon"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Yangi, Chegirma yoki Eng yaxshi qiymat kabi qisqa yorliq."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "yorliq"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "teg"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "nishab"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "yangi"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Band qilish taqvimi"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Foydalanuvchi so'ragandagina yuklanadigan Calendly yoki Cal.com bron qilish taqvimi."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "band qilish"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "uchrashuv"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "rejalashtirish"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10517,6 +12500,7 @@ msgid "A link styled as a button."
 msgstr "Tugma ko'rinishidagi havola."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "tugma"
@@ -10530,6 +12514,98 @@ msgstr "havola"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "Harakatga chaqiruv"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Harakatga chaqiruv"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Sarlavha, gap va tashrif buyuruvchini harakatga undaydigan bir yoki ikkita tugma."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "cta"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "banner"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "ro‘yxatdan o‘tish"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Tekshiruv roʻyxati"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Ekran o'quvchilari uchun so'zlarda, shuningdek belgi bilan bajarilgan yoki bajarilishi kerakligi belgilangan vazifalar ro'yxati."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Bajarilishi kerak"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "Vazifalar"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "tik-taklar"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "Ro'yxat"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Kod"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Sintaksisni ajratib ko'rsatish, qator raqamlari va nusxalash tugmasi mavjud kod ro'yxati. Plagin o'chirilgan taqdirda ham o'qishga yaroqli bo'lib qoladi."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "kod"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "sintaksis"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "ajratib ko'rsatish"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "parcha"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "dasturlash"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10553,6 +12629,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "tartib"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Taqqoslash jadvali"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Reja yoki mahsulotlar yonma-yon, ekran o‘quvchilari so‘z sifatida o‘qiydigan ha va yo‘q belgilari bilan."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "taqqoslash"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Narxlar"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "rejalar"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "jadval"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "Funksiyalar"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Aloqa tugmalari"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "WhatsApp orqali sizga qo'ng'iroq qilish, elektron pochta yuborish, SMS yozish yoki xabar yuborish uchun tugmalar."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Bog'lanish"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "qo'ng'iroq qilish"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "telefon"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "elektron pochta"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "sms"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10570,11 +12724,13 @@ msgid "container"
 msgstr "konteyner"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "quti"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10591,6 +12747,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "ustunлар"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Ikkilik sarlavha"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Ikki qismdan iborat sarlavha, uning ikkinchi qismi rang, gradient, kontur yoki tagiga chizish bilan ajratib ko'rsatilgan."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "sarlavha"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "Sarlavha"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "gradient"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Funksiyalar ro'yxati"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Tarmoqdagi funksiyalar, ularning har biri belgi, sarlavha va qisqacha tavsifga ega."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Afzalliklar"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "Xizmatlar"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10634,6 +12836,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "matn"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Shakl"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Saytingiz uslubiga moslashtirilgan Contact Form 7, WPForms, Gravity Forms yoki Fluent Forms shaklini ko'rsatadi."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "shakl"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Lugʻat"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Atodan Z gacha tartiblangan atamalar va ularning taʼriflari, ularning har biri oʻz havolasiga ega. Sahifadagi har bir atamaning birinchi eslatilishini uning taʼrifiga bogʻlashi mumkin."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Shartlar"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "ta'riflar"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "lug‘at"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Belgikalar ro‘yxati"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Har bir qator ikonka bilan boshlanadigan ro'yxat: belgi, strelka yoki kutubxonadagi istalgan ikonka."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "markerlar"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "ikonkalar"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10654,6 +12936,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Ma'lumotlar oynasi"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Belgi, qisqa sarlavha, bir yoki ikki gap va ixtiyoriy havola: xizmatlar, afzalliklar yoki aloqa maʼlumotlari uchun."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "funksiya"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "xizmat"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "karta"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10673,6 +12980,204 @@ msgstr "tarjima"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "ko'p tilli"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Bog‘lash"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap'dagi joy xaritasi: kalit yo'q va tashrif buyuruvchi xaritani so'ramaguncha OpenStreetMap'dan hech narsa yuklanmaydi."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "xaritaga bog'lash"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "joylashuv"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "manzil"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Modal oynasi"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Sahifa ustida oynani ochadigan tugmalar, ichida har qanday bloklar bilan."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "oyna"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "qalqib chiquvchi oyna"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "laytboks"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "muloqot oynasi"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Oyna paneli"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Oyna chetidan istalgan bloklar bilan birga panelni surib chiqaruvchi tugma."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "off-canvas"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "tortma"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "yon panel"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "boshqaruv paneli"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "menyu"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Xabar tafsilotlari"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Maqola muallifi, sanalar, toifalar, teglar, o‘qish vaqti va izohlar soni."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "muallif"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "sana"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "o‘qish vaqti"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "Metama’lumotlar"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "muallif"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Jarayon paneli"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Ko‘nikma yoki maqsad kabi biror narsa qanchalik rivojlanganini ko‘rsatib turuvchi belgilangan panel."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "jarayon"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "panel"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "ko'nikma"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "maqsad"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Parol bilan himoyalangan tarkib"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Faqat parolga ega tashrif buyuruvchilar ko‘ra oladigan bloklar. Ular parolni kiritmaguncha, kontent sahifada umuman bo‘lmaydi."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "parol"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Himoyalangan"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "shaxsiy"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "qulflash"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "a'zolar"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10698,6 +13203,86 @@ msgstr "Yorqin"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "rang sxemasi"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR-kod"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Veb-manzil yoki istalgan matn uchun QR-kod, o‘z saytingizda chiziladi (hech qanday QR xizmatidan foydalanilmaydi)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR kod"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "shtrix-kod"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "skanerlash"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "O'qish jarayoni paneli"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Tashrif buyuruvchilar sahifa bo'ylab aylanganda to'lib boradigan, oynaning chetidagi yupqa panel."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "O'qilmoqda"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "aylantirish"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "O‘xshash xabarlar"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Ushbu postning toifalari yoki teglarini oʻz ichiga olgan, suratlari, sanalari va qisqacha mazmuni bilan birga boʻlgan postlar."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "tegishli"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "maqolalar"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "o'xshash"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "ko'proq"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10761,13 +13346,284 @@ msgstr "Mavzuning vidjet hududlaridan biridagi vidjetlarni ko'rsatadi."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "yon panel"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "vidjet maydoni"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Sayt xaritasi"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Sahifa daraxti saqlangan holda, barcha chop etilgan sahifalar, postlar (va boshqa ommaviy kontent) ro‘yxatini ko‘rsatadigan sahifa."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "sayt xaritasi"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "sayt xaritasi"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "ko‘rsatkich"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "barcha sahifalar"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Ijtimoiy tarmoq nishonchalari"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Tarmoqlarning o'z ikonkalari bilan chizilgan profillaringizga havolalar."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "ijtimoiy"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "havolalar"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "kuzatish"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "Profillar"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Yulduzcha reytingi"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Yarim yulduzli qadamlar bilan yulduzlar ko'rinishida ko'rsatilgan baho."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "yulduzchalar"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "reyting"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "ball"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Qadamlar"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Jarayonning raqamlangan qadamlari, tartib bilan, sahifa bo'ylab pastga yoki yonma-yon."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "jarayonni bajarish"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "qanday qilib"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "vaqt jadvali"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "raqamlangan"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Vaqtinchalik fayl"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Tabs blokining bitta tabi: uning sarlavhasi va paneli."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Mundarija"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Sahifadagi sarlavhalarning avtomatik ravishda tuzilgan va ularning har biriga havola qiluvchi roʻyxati."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Mundarija"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "tarkib"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "Sarlavhalar"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Вкладки"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Varoqqa bo'lingan kontent: tashrif buyuruvchilar sichqoncha yoki klaviatura yordamida panellar orasida almashadilar."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "varaqalar"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "varaqlarga bo'lingan"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "panellar"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Tavsiya"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Mijozning ismi, lavozimi, surati va ixtiyoriy yulduzli reytingi ko‘rsatilgan mijoz sharhi."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "ko'rib chiqish"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "taklif qilish"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "mijoz"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Fikr-mulohaza"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Qo‘llanma belgisi"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Kursor olib borilganda va klaviatura fokusida qisqa tushuntirishni ko'rsatadigan so'z yoki ibora."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "maslahatchi-koʻrsatma"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "maslahat"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "ta'rif"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Muallif profili"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Muallifning rasmi, ismi, tarjimai holi va havolalari yoki tanlangan foydalanuvchining ma'lumotlari."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "Biografiya"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "profil"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "haqida"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp chat tugmasi"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Sahifaning burchagida siz bilan WhatsApp chatini ochadigan suzuvchi tugma."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "chat"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "suzib yuruvchi"
 
 #: blocks/widget/block.json
 msgctxt "block title"

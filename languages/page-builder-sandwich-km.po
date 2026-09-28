@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "រក្សាទុកជាគំរូប្រើឡើងវិញ"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "កម្មវិធីពិនិត្យភាពងាយស្រួលប្រើ"
 
@@ -990,6 +994,7 @@ msgstr "← ជ្រើសរើសអ្នកផ្តល់សេវាផ�
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "អាសយដ្ឋាន"
 
@@ -1043,6 +1048,8 @@ msgstr "សាកល្បង"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "លុបចេញ"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "ធ្វើបច្ចុប្បន្នភាពបញ្ជីម៉ូដែលពីអ្នកផ្តល់សេវា"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "រូបភាព"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "បានបិទ"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "បើក"
 
@@ -1448,6 +1457,7 @@ msgstr "មិនទាន់មានសំណើ AI ណាមួយត្រ�
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "រួចរាល់"
 
@@ -1515,7 +1525,11 @@ msgstr "មានការព្យាយាមច្រើនពេកហើយ
 msgid "Something went wrong. Please contact the admin."
 msgstr "មាន​បញ្ហា​អ្វី​មួយ​បាន​កើតឡើង។ សូម​ទាក់ទង​អ្នក​គ្រប់គ្រង។"
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "ព្រាងផែនទី"
 
@@ -1538,52 +1552,383 @@ msgstr "គ្រួសារនោះមិនត្រូវបានរក្
 msgid "Removed."
 msgstr "បានយកចេញ។"
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "នោះមិនមែនជាឈ្មោះគ្រួសារពុម្ពអក្សរត្រឹមត្រូវទេ។"
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts មិនបានត្រឡប់គ្រួសារនោះទេ។ សូមពិនិត្យមើលឈ្មោះ ហើយព្យាយាមម្តងទៀត។"
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "មិនអាចទាញយក ឬរក្សាទុកឯកសារពុម្ពអក្សរបានទេ។ សូមពិនិត្យមើលថាតើថត uploads អាចសរសេរបានដែរឬទេ។"
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "សន្លឹកកិច្ចការពុម្ពអក្សរមិនអាចរក្សាទុកបានទេ។ សូមពិនិត្យមើលថាតើថតឯកសារ uploads អាចសរសេរបានដែរឬទេ។"
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "បដិសេធ​ការជូនដំណឹង​នេះ"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(បើកក្នុងផ្ទាំងថ្មីមួយទៀត)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "រួចរាល់៖"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "ត្រូវធ្វើ៖"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "លិបិក្រមវចនានុក្រម"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "បានវាយតម្លៃ %1$s ក្នុងចំណោម %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "ដំណើរការ"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "ចម្លងកូដ"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "បានចម្លង"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "ធាតុក្រាហ្វិកនោះមិនមាននៅលើគេហទំព័រនេះទេ។"
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "អ៊ីមែល"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "ទូរស័ព្ទ"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "បណ្តាញព័ត៌មាន RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "គេហទំព័រ"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "តំណភ្ជាប់"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (បើកក្នុងផ្ទាំងថ្មី)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "ទទួលបានពិន្ទុ %d ក្នុងចំណោម ៥"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(បានណែនាំ)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "បានរួមបញ្ចូល"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "មិនរួមបញ្ចូល"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "តារាងប្រៀបធៀប"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "ហៅទូរសព្ទទៅ %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "អ៊ីមែល %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "អត្ថបទ %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "ជជែកគ្នាតាម WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "ទាក់ទងមកយើងខ្ញុំ"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "ជជែកជាមួយយើងនៅលើ WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "ទម្រង់នេះមិនអាចប្រើប្រាស់បាននៅពេលនេះទេ។"
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "ទម្រង់នេះមិនអាចបង្ហាញបានទេ ព្រោះ %s មិនសកម្ម។"
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "ផែនទី៖ %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "ការបង្ហាញផែនទីធ្វើការទាញយកវាពី OpenStreetMap។"
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "បង្ហាញផែនទី"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "បើកផែនទីនៅលើ OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "ប្រតិទិនកក់ទុកពី %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "ការបង្ហាញប្រតិទិនការកក់គឺផ្ទុកវាពី %s។"
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "បង្ហាញប្រតិទិនកក់ទុក"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "កក់នៅលើ %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "កូដ QR សម្រាប់ %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "រចនា"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "មាតិកា"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "មេឌៀ"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "ទីផ្សារ"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "គេហទំព័រ"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "ទិន្នន័យ"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "អត្ថបទពាក់ព័ន្ធ"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "ព័ត៌មានលម្អិតអំពីប្រកាស"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "ដោយ"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "បានផ្សាយ"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "បានអាប់ដេត"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "ក្នុង"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "បានស្លាក"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "អានរយៈពេល %d នាទី"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "គ្មានមតិយោបល់នៅឡើយទេ"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "មតិយោបល់ %d"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "ផែនទីគេហទំព័រ"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(គ្មានចំណងជើង)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "អត្ថបទទាំងអស់ដោយ %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "ខ្លឹមសារនេះត្រូវបានការពារ។ សូមបញ្ចូលពាក្យសម្ងាត់ដើម្បីមើលវា។"
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "ពាក្យសម្ងាត់នោះមិនត្រឹមត្រូវទេ។ សូមព្យាយាមម្ដងទៀត។"
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "ពាក្យសម្ងាត់"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "បង្ហាញមាតិកា"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "ទំព័រនោះមិនអាចដោះសោបានទេ។"
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "ព្យាយាមច្រើនដងពេក។ សូមរង់ចាំបន្តិចសិន ហើយព្យាយាមម្តងទៀត។"
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "លេខសម្ងាត់ត្រូវមានប្រវែងពី ៤ ដល់ ២០០ តួអក្សរ។"
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "បន្ថែម"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "បិទ"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "ថេប %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "មាតិកា"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2031,10 @@ msgstr "កែសម្រួលជាមួយ Sandwich Studio"
 msgid "Blank canvas"
 msgstr "ផ្ទាំងទទេ"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "រំលងទៅមាតិកា"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "ទទងថេប្លេតត្រូវតែជាចំនួនគត់នៃភីកសែលពី ៤៨០ ដល់ ២៥៦០។"
@@ -1760,7 +2109,11 @@ msgid "Uploaded icons"
 msgstr "រូបតំណាងដែលបានផ្ទុកឡើង"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "រូបតំណាង"
 
@@ -2553,6 +2906,8 @@ msgstr "%s គឺជាអាសយដ្ឋានអ៊ីមែលរបស់
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "កូដ"
 
@@ -3047,13 +3402,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "កែសម្រួល"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "អ៊ីមែល"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "អាសយដ្ឋានអ៊ីមែល"
 
@@ -3103,6 +3454,10 @@ msgstr "កំពុងបើកដំណើរការមុខងារស្
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3480,7 @@ msgstr "បញ្ចូលអាសយដ្ឋានអ៊ីមែលថ្ម
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "កំហុស"
 
@@ -3723,6 +4079,7 @@ msgstr "ផលិតផលខាងក្រោមត្រូវបានដា
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4183,7 @@ msgstr "កម្មវិធីបន្ថែមនេះតម្រូវឱ
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "ទេ"
 
@@ -4811,6 +5169,13 @@ msgstr "បណ្តាញសង្គម (ហ្វេសប៊ុក, ធ្�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5461,9 @@ msgstr "ស្លាកពេលវេលា"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "ចំណងជើង"
 
@@ -5171,6 +5539,8 @@ msgstr "តើអ្នកយល់យ៉ាងណាចំពោះ %1$s រហ
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "ប្រភេទ"
@@ -5286,6 +5656,7 @@ msgstr "អ្នកប្រើប្រាស់"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "តម្លៃ"
@@ -5340,6 +5711,7 @@ msgstr "មើលមុខងារដែលបានបង់ប្រាក់
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "ការព្រមាន"
 
@@ -5666,6 +6038,7 @@ msgid "Optional"
 msgstr "ជាជម្រើស"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "ផែនការ"
 
@@ -5988,18 +6361,26 @@ msgstr "តូចណាស់"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "តូច"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "មធ្យម"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "ធំ"
 
@@ -6012,7 +6393,9 @@ msgid "Huge"
 msgstr "ធំធេង"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6324,16 +6707,9 @@ msgid "The trial could not be started."
 msgstr "មិនអាចចាប់ផ្តើមការសាកល្បងបានទេ។"
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "មុខងារ"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "បានរួមបញ្ចូល"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "មិនរួមបញ្ចូល"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6688,10 +7064,6 @@ msgstr "អាសយដ្ឋានចូលប្រើ"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "ឈ្មោះអ្នកប្រើប្រាស់"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "ពាក្យសម្ងាត់"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7082,15 +7454,62 @@ msgstr "ការមិនធ្វើវិញត្រូវបានចាប
 msgid "Undo all conversions"
 msgstr "មិនធ្វើការបំលែងទាំងអស់វិញ"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "ធាតុ"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "បើកនៅពេលទំព័រត្រូវបានផ្ទុក"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "ចំណងជើងគឺជាចំណងជើងផ្នែក"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "ធ្វើឱ្យចំណងជើងជាក្បាលទំព័រ នៅពេលដែលធាតុគឺជាផ្នែកផ្សេងៗនៃទំព័រ ដើម្បីឱ្យអ្នកទស្សនាអាចរំលងទៅមករវាងពួកវាបាន។"
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "ចំណងជើង %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "សំណួរ ឬចំណងជើងផ្នែក"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "អាដត្យូដេអុង"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "បើកបានតែមួយមុខប៉ុណ្ណោះក្នុងពេលតែមួយ"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "សម្គាល់ជាសំណួរញឹកញាប់សម្រាប់ម៉ាស៊ីនស្វែងរក"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "បន្ថែមទិន្នន័យមានរចនាសម្ព័ន្ធសំណួរដែលសួរញឹកញាប់ (FAQ) ដែលបានបង្កើតពីចំណងជើង (សំណួរ) និងអត្ថបទរបស់វា (ចម្លើយ)។"
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "ការជូនដំណឹង"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "ព័ត៌មាន"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "ជោគជ័យ"
 
@@ -7099,6 +7518,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "ការព្រមាន និងកំហុសត្រូវបានប្រកាសដល់អ្នកប្រើប្រាស់កម្មវិធីអានអេក្រង់ភ្លាមៗ ចំណែកឯព័ត៌មាន និងសេចក្តីជូនដំណឹងជោគជ័យត្រូវបានអាននៅពេលពួកគេបញ្ចប់អ្វីដែលពួកគេកំពុងធ្វើ។"
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "បង្ហាញរូបតំណាង"
 
@@ -7114,64 +7534,702 @@ msgstr "ចំណងជើង (ជាជម្រើស)"
 msgid "Write the message…"
 msgstr "សរសេរសារ..."
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "ផ្នែក — ផ្នែកតាមប្រធានបទ"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "កណ្តាល"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — គ្មានអត្ថន័យ"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "ផ្លាកសញ្ញា"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "បឋមកថា — ខ្លឹមសារណែនាំ"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "ពណ៌"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "ជើងកាត — មាតិកាបញ្ចប់"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "ពណ៌សង្កត់សំឡេងរបស់ស្បែក"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "អត្ថបទ – មាតិកាដែលមានលក្ខណៈឯករាជ្យ"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "អព្យាក្រឹត"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "ផ្នែកចំហៀង - មាតិកាដែលទាក់ទង"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "ទីតាំង"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — មាតិកាចម្បង (ម្តងក្នុងមួយទំព័រ)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "ស្លាក"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "ចង្កោមតំណរភ្ជាប់រុករក"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "ប្រតិទិនសម្រាប់កក់"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "ជង់ (flexbox, ជួរឈរ)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "សេវាកម្ម"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "ជួរដេក (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "អាសយដ្ឋានទំព័រការកក់"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "ក្រឡាចត្រង្គ"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "ឧទាហរណ៍ដូចជា %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "អ្វីដែលប្រតិទិនមានសម្រាប់ ត្រូវអានដោយកម្មវិធីអានអេក្រង់ និងបង្ហាញនៅក្រោមវា។"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "នេះមិនមែនជាអាសយដ្ឋានទំព័រការកក់ %s ទេ ដូច្នេះគ្មានអ្វីនឹងបង្ហាញនៅលើទំព័រឡើយ។"
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "មើលការមើលជាមុននៃប្រតិទិន"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "អាសយដ្ឋានតំណ"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "ប៊ូតុងនេះបង្ហាញនៅពេលដែលវាមានទាំងស្លាកនិងអាសយដ្ឋាន។"
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "បើកក្នុងផ្ទាំងថ្មី"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "ការអំពាវនាវឱ្យធ្វើសកម្មភាព"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "ប្លង់"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "ប៊ូតុងខាងក្រោម"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "ប៊ូតុងដែលនៅជាប់នឹងអត្ថបទ"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "តម្រឹម"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "ប៊ូតុងមេ"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "ប៊ូតុងទីពីរ"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "ចំណងជើង..."
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "មូលហេតុមួយប្រយោគដែលថា..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "ប៊ូតុងទីពីរ (ជាជម្រើស)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "បញ្ជីការងារត្រូវធ្វើ"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "ពណ៌សញ្ញាធីក"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "បន្ទាត់"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "បន្ទាត់ %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "ភារកិច្ច..."
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "បន្ថែមបន្ទាត់"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "ភាសា"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "រកឃើញដោយស្វ័យប្រវត្តិ"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "គ្មានការបន្លិចពណ៌"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "ឈ្មោះឯកសារ"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "បង្ហាញនៅខាងលើកូដ ឧទាហរណ៍ functions.php ។"
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "លេខបន្ទាត់"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "ប៊ូតុងចម្លង"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "រុំបន្ទាត់វែងៗ"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "សរសេរ ឬបិទភ្ជាប់កូដ…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "អត្ថបទ"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "ជួរឈរ"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "ជួរឈរ %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "សម្គាល់ %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "បន្ថែមជួរឈរ"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "ជួរដេក"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "ជួរ %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "បន្ថែមជួរ"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "ចំណងជើង (អ្វីដែលកំពុងត្រូវបានប្រៀបធៀប)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "ប្រភេទក្រឡា៖ %s។ ប្តូរ"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "ការខលទូរសព្ទ"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "សារអត្ថបទ"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ប៊ូតុង"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "លេខទូរសព្ទ រួមទាំងលេខកូដប្រទេស"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "អត្ថបទប៊ូតុង"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "លុបប៊ូតុងនេះចេញ"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "បន្ថែមប៊ូតុងមួយ"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "សារ WhatsApp ដើម្បីចាប់ផ្តើម (ស្រេចចិត្ត)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "ប៊ូតុងទំនាក់ទំនង"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "បន្ថែមលេខទូរសព្ទ អាសយដ្ឋានអ៊ីមែល ឬលេខ WhatsApp នៅរបារចំហៀង។"
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "ចំណងជើងទ្វេ"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "កម្រិតចំណងជើង"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "សូមប្រើប្រាស់ H1 តែមួយដងក្នុងមួយទំព័រ សម្រាប់ចំណងជើងចម្បងរបស់វា។"
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "ផ្នែកទីពីរមើល"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "ពណ៌សំឡេងរង"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "ជម្រាលពណ៌"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "គ្រោងរចនាសម្ព័ន្ធ"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "ខ្សែកាត់ពីក្រោម"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "ផ្នែកទីពីរនៅលើបន្ទាត់ផ្ទាល់ខ្លួន"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "ផ្នែកទីមួយ"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "ផ្នែកទីពីរ"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "ម៉ាក្រឺប៉ែន"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "បន្ទាត់ក្រោមក្រាស់"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "ផ្ទៃខាងក្រោយ"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "បន្លិច"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "លុបការសម្គាល់"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "អក្សរធំដើមវគ្គ"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "អក្សរធំដំបូង"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "សម្រាប់អក្សរដំបូងក្នុងប្រអប់ សូមជ្រើសរើសស្ទីល \"អក្សរធំទម្លាក់ក្នុងប្រអប់\"។"
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "អក្សរធំទម្លាក់ក្នុងប្រអប់"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "របារពណ៌សង្កត់"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "សម្រង់ទាញយក (របារសំឡេង)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "សម្រង់សម្តីពីអត្ថបទ ដែលកំណត់ឱ្យមានទំហំធំនៅក្បែរបារពណ៌ដើម្បីទាក់ទាញភ្នែក។"
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "សម្រង់"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "បញ្ជីមុខងារ"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "នៅលើទូរសព្ទ មុខងារនានាតែងតែរៀបជង់លើគ្នាជានិច្ច។"
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "មុខងារ"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "មុខងារ %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "រូបតំណាងផ្ទាល់ខ្លួន"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "លក្ខណៈពិសេស..."
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "ពិពណ៌នាវា…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "បន្ថែមមុខងារ"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "ដំឡើង និងបើកដំណើរការ Contact Form 7, WPForms, Gravity Forms ឬ Fluent Forms បន្ទាប់មកជ្រើសរើសទម្រង់ណាមួយរបស់វាទីនេះ។"
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "កម្មវិធីជំនួយទម្រង់"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "ជ្រើសរើស..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "ទម្រង់"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "ជ្រើសរើសទម្រង់មួយ..."
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s មិនទាន់មានទម្រង់ណាមួយនៅឡើយទេ"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s មិនសកម្មនៅលើគេហទំព័រនេះទេ ដូច្នេះទម្រង់នេះមិនអាចបង្ហាញបានទេ។"
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "មិនអាចផ្ទុកបញ្ជីទម្រង់បានទេ។"
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "រចនាប័ទ្មទម្រង់"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "វាល"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "មានគូសបន្ទាត់ក្រៅ"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "បានបំពេញ"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "មានបន្ទាត់ក្រោម"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "ទទឹងប៊ូតុង"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "សម្របអត្ថបទ"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "ទទឹងពេញ"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "ពណ៌ ពុម្ពអក្សរ គម្លាត និងជ្រុង មកពីការរចនាគេហទំព័ររបស់អ្នក និងការកំណត់រចនាសម្ព័ន្ធប្លុកនេះ។"
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "បង្ហាញទម្រង់បែបបទពីកម្មវិធីជំនួយទម្រង់របស់អ្នក ដែលត្រូវបានរចនាប័ទ្មឱ្យត្រូវនឹងគេហទំព័ររបស់អ្នក។"
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "តម្រូវការបន្ថែមកម្មវិធីជំនួយទម្រង់មែនទេ? Contact Form 7 គឺឥតគិតថ្លៃ។"
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "វាក្យសព្ទ"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "តម្រៀបពី A ដល់ Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "ទំព័រនេះបង្ហាញលក្ខខណ្ឌតាមលំដាប់អក្ខរក្រម ប៉ុន្តែនៅទីនេះពួកវានៅដដែលតាមលំដាប់ដែលអ្នកបានសរសេរ។"
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "បង្ហាញលិបិក្រម A–Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "តំណភ្ជាប់ពាក្យដែលបានប្រើនៅកន្លែងផ្សេងទៀតនៅលើទំព័រនេះ"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "រាល់ពេលដែលពាក្យនីមួយៗលេចឡើងជាលើកដំបូងនៅក្នុងអត្ថបទនៅលើទំព័រ វាភ្ជាប់ទៅកាន់និយមន័យរបស់វា។ ចំណងជើង ប៊ូតុង កូដ និងតំណភ្ជាប់ដែលមានស្រាប់គឺត្រូវទុកនៅដដែល។"
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "លក្ខខណ្ឌ"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "អាណត្តិ %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "កាលបរិច្ឆេទផុតកំណត់"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "អត្ថន័យរបស់វា..."
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "បន្ថែមពាក្យខណ្ឌ"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "បញ្ជីរូបតំណាង"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "តម្រៀបពីលើចុះក្រោម"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "ក្បែរគ្នា"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "ធាតុបញ្ជី..."
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "ប្រអប់ព័ត៌មាន"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "ឬជ្រើសរើសរូបតំណាងណាមួយពីបណ្ណាល័យ៖"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "អត្ថបទតំណភ្ជាប់"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "បញ្ជាក់ពីកន្លែងដែលតំណភ្ជាប់ទៅ (ឧទាហរណ៍៖ \"មើលតម្លៃរបស់យើង\") ជំនួសឱ្យការប្រើពាក្យ \"អានបន្ថែម\"។"
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "ប្រយោគមួយ ឬពីរ…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "ផ្នែក — ផ្នែកតាមប្រធានបទ"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — គ្មានអត្ថន័យ"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "បឋមកថា — ខ្លឹមសារណែនាំ"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "ជើងកាត — មាតិកាបញ្ចប់"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "អត្ថបទ – មាតិកាដែលមានលក្ខណៈឯករាជ្យ"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "ផ្នែកចំហៀង - មាតិកាដែលទាក់ទង"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — មាតិកាចម្បង (ម្តងក្នុងមួយទំព័រ)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "ចង្កោមតំណរភ្ជាប់រុករក"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "ជង់ (flexbox, ជួរឈរ)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "ជួរដេក (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "ក្រឡាចត្រង្គ"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "កំពុងកែសម្រួល៖ %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "រៀបចំកូនជា"
 
@@ -7179,7 +8237,7 @@ msgstr "រៀបចំកូនជា"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7187,70 +8245,50 @@ msgstr "រៀបចំកូនជា"
 msgid "Inherited (%s)"
 msgstr "បានស្នងមរតក (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "ប្លុកតូស"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "ជួរឈរ"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "អូសចូលក្នុងកាណ្វា ឬវាយបញ្ចូល"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "ទំហំមាតិកា"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "ប្រអប់ (ទទឹងមាតិកានៅក្នុងស្បែក)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "ទទឹងពេញ"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "កម្ពស់អប្បបរមា"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "ស្លាក HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "តំណភ្ជាប់"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "ធ្វើឱ្យប្លុកទាំងមូលក្លាយជាតំណភ្ជាប់ទៅកាន់"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "អត្ថបទតំណសម្រាប់កម្មវិធីអានអេក្រង់"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "មុខងារនៃតំណភ្ជាប់នេះ សម្រាប់អ្នកចូលមើលដែលមិនអាចមើលឃើញប្លុកនេះ។"
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "បើកក្នុងផ្ទាំងថ្មី"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "កុំដាក់តំណភ្ជាប់ ឬប៊ូតុងនៅខាងក្នុងប្លុកដែលមានតំណភ្ជាប់៖ តំណភ្ជាប់ដែលស្ថិតនៅខាងក្នុងតំណភ្ជាប់មួយទៀតមិនដំណើរការនៅក្នុងកម្មវិធីរុករកទេ។"
 
@@ -7282,14 +8320,143 @@ msgstr "+ ជួរ"
 msgid "− Row"
 msgstr "− បន្ទាត់"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "ទីតាំង"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "បិទភ្ជាប់កូអរដោនេ ឬតំណ OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "នៅលើ openstreetmap.org សូមស្វែងរកទីតាំងនោះ រួចចម្លងអាសយដ្ឋានពីរបារកម្មវិធីរុករក ឬចុចកណ្ដុរស្ដាំលើផែនទី ហើយជ្រើសរើស \"បង្ហាញអាសយដ្ឋាន\"។"
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "រយៈទទឹង"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "បណ្តោយអង្សា"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "ពង្រីក"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "ឈ្មោះទីកន្លែង"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "បង្ហាញនៅក្រោមផែនទី និងអានដោយកម្មវិធីអានអេក្រង់។"
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "បិទភ្ជាប់កូអរដោនេ (ឧទាហរណ៍ 51.5074, -0.1278) ឬតំណ OpenStreetMap។"
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "កូអរដោនេ ឬ តំណ"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "មើលជាមុននូវផែនទី"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "ពិនិត្យមើល %1$s, %2$s នៅលើ OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "អ្នកនិពន្ធ"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "កាលបរិច្ឆេទបានផ្សាយ"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "កាលបរិច្ឆេទធ្វើបច្ចុប្បន្នភាព (នៅពេលវាខុសគ្នា)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "ចំណាត់ថ្នាក់ក្រុម"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "ស្លាក"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "ពេលអាន"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "ចំនួនមតិយោបល់"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "ព័ត៌មានលម្អិតដែលត្រូវបង្ហាញ"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "សូមជ្រើសរើសព័ត៌មានលម្អិតយ៉ាងហោចណាស់មួយដើម្បីបង្ហាញ។"
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "របារវឌ្ឍនភាព"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "អតិបរមា"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "១០០ សម្រាប់ភាគរយ; លេខផ្សេងទៀតសម្រាប់ចំនួនសរុប ដូចជា ៨ ក្នុងចំណោម ១០។"
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "បង្ហាញភាគរយ"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "ពាក្យសម្ងាត់ត្រូវបានកំណត់។ អ្នកទស្សនាឃើញទម្រង់ពាក្យសម្ងាត់ជំនួសឱ្យខ្លឹមសារនេះរហូតដល់ពួកគេបញ្ចូលវា។"
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "មិនទាន់បានកំណត់ពាក្យសម្ងាត់ទេ ដូច្នេះអ្នកទស្សនាគ្មានឃើញអ្វីនៅទីនេះទេ។"
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "ពាក្យសម្ងាត់ថ្មី"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "កំណត់ពាក្យសម្ងាត់"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "ពាក្យសម្ងាត់ត្រូវបានកំណត់។ សូមរក្សាទំព័រនេះដើម្បីអនុវត្ត។ អ្នកចូលមើលដែលបានដោះសោទំព័រនេះពីមុន នឹងត្រូវការពាក្យសម្ងាត់ថ្មី។"
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "ប្រសិនបើ Page Builder Sandwich ត្រូវបានបិទ ខ្លឹមសារនេះនឹងត្រូវបង្ហាញដល់អ្នករាល់គ្នា។"
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "សារនៅពីលើទម្រង់ពាក្យសម្ងាត់ (ស្រេចចិត្ត)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "ប្តូរ"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "ស្លាក"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7299,30 +8466,698 @@ msgstr "អានដោយកម្មវិធីអានអេក្រង់
 msgid "Show label"
 msgstr "បង្ហាញស្លាក"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "អាសយដ្ឋានបណ្តាញ ឬអត្ថបទ"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "កូដ QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "ការពន្យល់សម្រាប់កម្មវិធីអានអេក្រង់"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "ទុកទទេដើម្បីប្រើ \"កូដ QR សម្រាប់\" និងអត្ថបទ។"
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "វាយបញ្ចូលអាសយដ្ឋានវេបសាយ តំណភ្ជាប់លេខទូរសព្ទ (tel:) ឬអត្ថបទណាមួយ។"
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "នេះវែងពេកសម្រាប់កូដ QR ហើយ។ សូមកាត់វាឱ្យខ្លី។"
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "បន្ថែមចំណងជើងរង"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "របារវឌ្ឍនភាពនៃការអាន"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "គែមបង្អួច"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "កំពូល"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "បាត"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "បង្ហាញនៅតាមបាតផ្នែកខាងក្រោមនៃបង្អួច នៅពេលដែលអ្នកចូលមើលរំកិលចុះឡើង។"
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "បង្ហាញនៅផ្នែកខាងលើនៃបង្អgetWindow ពេលដែលអ្នកទស្សនារមូរចុះក្រោម។"
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "តើចំនួនប៉ុន្មាន"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "ទាក់ទង​ដោយ"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "ប្រភេទ ឬស្លាក"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "នៅពេលដែលគ្មានអ្វីទាក់ទងគ្នា សូមបង្ហាញអ្វីដែលថ្មីបំផុតជំនួសវិញ"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "ចំណងជើង"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "ទុកទទេសម្រាប់ \"អត្ថបទពាក់ព័ន្ធ\"។"
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "បង្ហាញរូបភាពពិសេស"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "បង្ហាញកាលបរិច្ឆេទ"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "បង្ហាញសេចក្តីសង្ខេប"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "មិនទាន់មានអត្ថបទណាមួយដែលប្រើប្រាស់ប្រភេទ ឬស្លាកដូចគ្នានឹងអត្ថបទនេះទេ។ នៅពេលដែលមាន ពួកវានឹងបង្ហាញនៅទីនេះ។"
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "ប្រអប់លោត"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "បន្ទះទម្លាក់ក្រៅបណ្តាញ"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "ទំហំ"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "រុញចូលពី"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "ការចាប់ផ្តើមគឺជាផ្នែកដែលការអានចាប់ផ្តើម៖ ខាងឆ្វេងជាភាសាអង់គ្លេស និងខាងស្តាំជាភាសាអារ៉ាប់។"
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "បិទនៅពេលដែលទំព័រខាងក្រោយត្រូវបានចុច"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "ចំណងជើងបង្អួច"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "សញ្ញាធីក"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "រង្វង់"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "ឈើឆ្កាង"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "ចុច"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "ព្រួញ"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "ចំណាំទុកផ្កាយ"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "ពណ៌រូបតំណាង"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "ដូចអត្ថបទដើម"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "ពណ៌ចម្បងនៃស្បែកមុខ"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "ពណ៌បន្ទាប់បន្សំ"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "កម្រិតពណ៌ស្បែក"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "រក្សាក្បាលអត្ថបទតាមលំដាប់ចុះក្រោម៖ ក្បាលអត្ថបទមួយកម្រិតទាបជាងផ្នែកដែលវាស្ថិតនៅ។"
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "ជ្រើសរើសរូបតំណាង"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "ប្រើរូបតំណាងលំនាំដើម"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "ជ្រើសរើសរូបតំណាង"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "ផ្លាស់ទីឡើងលើ"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "ផ្លាស់ទីចុះក្រោម"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "បង្ហាញចំណងជើងសម្រាប់ប្រភេទនីមួយៗ"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "គ្មានអ្វីដែលបានបោះពុម្ពផ្សាយនៅឡើយទេក្នុងប្រភេទដែលអ្នកបានជ្រើសរើស។"
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "តំណភ្ជាប់"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "តំណភ្ជាប់ %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "បណ្តាញ"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "អាសយដ្ឋានប្រវត្តិរូប, mailto:you@example.com ឬ tel:+441234567890។"
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "ឈ្មោះដែលបានអានសម្រាប់កម្មវិធីអានអេក្រង់"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "រូបតំណាងផ្សេងទៀត"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "បន្ថែមតំណ"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "មើល"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "រចនាប័ទ្ម"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "រូបតំណាងតែប៉ុណ្ណោះ"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "ទម្រង់"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "ការreវ៉ាដមូល"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "ការេ"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "បើកប្រវត្តិរូបក្នុងផ្ទាំងថ្មីមួយ"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "ចំណាត់ថ្នាក់ផ្កាយ"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "ចំណាត់ថ្នាក់"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "ចំនួនផ្កាយ"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "បង្ហាញលេខ"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "ជំហាន"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "ចុះក្រោមទំព័រ"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "ទន្ទឹមគ្នា (ដាក់ជង់គ្នាលើទូរសព្ទ)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "ពណ៌លេខ"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "លំដាប់នៃជំហាន"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "ជំហានទី %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "ជំហាន…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "ត្រូវធ្វើអ្វីខ្លះ…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "បន្ថែមជំហាន"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "ផ្ទាំងជីប"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "បន្ថែមចំណងជើងទៅកាន់ទំព័រ ហើយពួកវានឹងត្រូវដាក់បញ្ជីនៅទីនេះ។"
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "តារាងមាតិកា"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "ចាប់ពីកម្រិតចំណងជើង"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "ដល់កម្រិតចំណងជើង"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "បានដាក់លេខរៀង"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "អាចពង្រួមបាន"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "ចាប់ផ្តើមដោយបង្រួម"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "គូសបញ្ជាក់ផ្នែកដែលកំពុងអាន"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "ថែប"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "ឈ្មោះសម្រាប់កម្មវិធីអានអេក្រង់"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "ជម្រើសផ្សេងៗ។ រៀបរាប់អំពីខ្លឹមសារនៃផ្ទាំងទាំងនោះ ឧទាហរណ៍ \"គម្រោង\"។"
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "បើកនៅពេលផ្ទុកទំព័រ"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "ផ្ទាំងនៅផ្នែកខាងឆ្វេង"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "បន្ថែមស្លាកថត"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "មតិស្ទង់ការពេញចិត្ត"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "ជំនួសរូបថត"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "ជ្រើសរើសរូបថត"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "លុប​រូបថត"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "ពិពណ៌នារូបថត"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "ទុកទទេ នៅពេលដែលរូបថតបង្ហាញតែបុគ្គលដែលមានឈ្មោះនៅជាប់វាប៉ុណ្ណោះ។"
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "ចំណាត់ថ្នាក់ផ្កាយ (0 = គ្មាន)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "ឈ្មោះក្រោមសម្រង់ពាក្យ"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "រូបភាពនៅជាប់សម្រង់សម្តី"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "អ្វីដែលអតិថិជនបាននិយាយ..."
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "តួនាទី ឬ ក្រុមហ៊ុន"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "ជំនួយការឧបករណ៍"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "អត្ថបទព័ត៌មានជំនួយ"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "រក្សាវាឱ្យខ្លី៖ មួយ ឬពីរប្រយោជន៍។ កម្មវិធីអានអេក្រង់អានវាជាមួយនឹងពាក្យដែលវាពន្យល់។"
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "បង្ហាញវា"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "ខាងលើ"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "ខាងក្រោម"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "ពាក្យ ឬឃ្លា"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "អនុវត្ត"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "ប្រវត្តិរូប"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "ប្រវត្តិរូបរបស់អ្នកណា"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "អ្នកនិពន្ធអត្ថបទ"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "បង្ហាញរូបថតប្រវត្តិរូប"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "បង្ហាញជីវប្រវត្តិ"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "បង្ហាញតំណទៅកាន់ការបង្ហោះនិងគេហទំព័រ"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "ប្រវត្តិរូបអ្នកនិពន្ធ"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "សូមជ្រើសរើសប្រវត្តិរូបដែលត្រូវបង្ហាញ។"
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "លេខ WhatsApp រួមទាំងលេខកូដប្រទេស"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "ជាឧទាហរណ៍ +44 7700 900123។"
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "សារសម្រាប់ចាប់ផ្តើម (ស្រេចចិត្ត)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "បង្ហាញអត្ថបទនៅជាប់រូបតំណាង"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "ជ្រុង"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "ចុងខាងក្រោម (ស្តាំជាភាសាអង់គ្លេស)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "ផ្នែកខាងក្រោមចាប់ផ្តើម (នៅខាងឆ្វេងជាភាសាអង់គ្លេស)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "បន្ថែមលេខ WhatsApp របស់អ្នកនៅក្នុងរបារចំហៀង។ រហូតទាល់តែពេលនោះ ប៊ូតុងមិនត្រូវបានបង្ហាញនៅលើទំព័រឡើយ។"
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "នៅលើទំព័រ ប៊ូតុងនេះអណ្តែតនៅជ្រុងខាងក្រោមនៃអេក្រង់។"
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "ស្លាកកូដខ្លី"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "សូមប្រើតែអក្សរ លេខ សញ្ញាខណ្ឌ និងបន្ទាត់ក្រោមប៉ុណ្ណោះ។"
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "ឈ្មោះគុណលក្ខណៈ"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "បន្ថែមគុណសម្បត្តិ"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "កូដខ្លី"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "លក្ខណៈសម្បត្តិផ្សេងទៀត"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "សូមជ្រើសរើសស្លាកកូដខ្លីនៅក្នុងការកំណត់ប្លុក។"
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "វិចិត្រសាល"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "ទំហំរូបភាព"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "រូបភាពតូច"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "ទំហំ​ពេញ"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "តភ្ជាប់ទៅ"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "ទំព័រឯកសារភ្ជាប់"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "ឯកសារមេឌៀ"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "អូឌីយ៉ូ"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "វីដេអូ"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "អាសយដ្ឋានឯកសារ"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "រង្វិលជុំ"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "លេងដោយស្វ័យប្រវត្តិ"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "រូបភាពបង្ហាញកាតព្វកិច្ច"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "បញ្ជីចម្រៀង"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "លេខសម្គាល់មេឌៀ ដោយខ័ណ្ឌដោយសញ្ញាក្បៀស"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "បង្ហាញបញ្ជីបទចម្រៀង"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "បង្កប់"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "អាសយដ្ឋានសម្រាប់បង្កប់"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "ទទឹងអតិបរមា"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "ចំណងជើងរង"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML រូបភាព និងចំណងជើង"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "ទទឹង"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "យោបល់៖ ប្លុកទម្រង់បង្ហាញទម្រង់នេះដែលបានរចនាឱ្យត្រូវគ្នាជាមួយគេហទំព័ររបស់អ្នក។"
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "បង្ហាញចំណងជើងទម្រង់"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "បង្ហាញការពិពណ៌នាទម្រង់"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "ដាក់ស្នើដោយមិនចាំបាច់ផ្ទុកទំព័រឡើងវិញទេ"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7343,123 +9178,108 @@ msgstr "ជ្រើសរើសឯកសារ"
 msgid "— Default —"
 msgstr "— ដើម —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "រចនាប័ទ្ម​កម្រិតខ្ពស់"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS បញ្ចូលក្នុងបន្ទាត់"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "ការប្រកាស CSS ជាឧទាហរណ៍៖ min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "បែបផែន (ថ្នាក់ចាស់)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "ឈ្មោះបែបផែនដែលខណ្ឌដោយដកឃ្លាដែលត្រូវបានលើកយកមកពីជំនាន់មុនៗ ឧទាហរណ៍៖ hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "ជួរដេក"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "ទទឹង"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "ទទឹងពេញ, មាតិកាត្រូវបានរក្សាទុកនៅកណ្តាល"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "អាសយដ្ឋានតំណ"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "ទំនាក់ទំនងតំណ"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "តម្រឹម"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "ឆ្វេង"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "កណ្តាល"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "ស្តាំ"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "អត្ថបទប៊ូតុង"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "បន្ថែមអត្ថបទ..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "ទីតាំង"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "នៅលើបន្ទាត់ផ្ទាល់ខ្លួន"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "ស្ថិតក្នុងបន្ទាត់ ក្រៅពីមាតិកាផ្សេងទៀត"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "ស្វ័យប្រវត្តិ (បន្ទាត់ផ្ទាល់ខ្លួននៅកម្រិតកំពូលនៃទំព័រ)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "ស្លាកដែលអាចចូលប្រើបាន"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "ទុកឱ្យទំនេរសម្រាប់រូបតំណាងលម្អ។"
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "សូមជ្រើសរើសរូបតំណាងមួយនៅក្នុងការកំណត់ប្លុក។"
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "ឈ្មោះការកំណត់ថ្មី"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "ឧទាហរណ៍៖ ចំណងជើង ឬអត្ថបទ"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "បន្ថែមការកំណត់"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "វីដឌីែត"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "ជ្រើសរើសធាតុក្រាហ្វិកមួយ"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "តំបន់ធាតុក្រាហ្វិក"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "ជ្រើសរើសតំបន់ធាតុក្រាហ្វិក"
 
@@ -7482,6 +9302,140 @@ msgstr "ការបង្កប់នេះកែសម្រស់ទំហំ
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "ការផ្លាស់ប្តូរប្លង់"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "ធាតុក្រាហ្វិកនេះមិនពិពណ៌នាអំពីការកំណត់របស់វាទេ ដូច្នេះពួកវាត្រូវបានកែសម្រួលជាគូឈ្មោះ និងតម្លៃ។"
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "បញ្ហា"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "ពិនិត្យមើល"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "បង្ហាញប្លុក"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "ប្រើប្រាស់ពណ៌ស្បែកដែលងាយអាន"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "ធ្វើវាជា H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "អត្ថបទជំនួស"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "រក្សាទុកអត្ថបទជំនួស"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "រូបភាពនេះគឺសម្រាប់តុបតែង"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "កំពុងពិនិត្យ..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "រកមិនឃើញបញ្ហាភាពងាយស្រួលប្រើនៅលើទំព័រនេះទេ។"
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "បញ្ហា %d"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "ធាតុ %d ដែលត្រូវពិនិត្យ"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "ពិនិត្យម្ដងទៀត"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "ការពិនិត្យស្វ័យប្រវត្តិនេះរកឃើញបញ្ហាជាច្រើន ប៉ុន្តែមិនមែនទាំងអស់នោះទេ។ សូមព្យាយាមប្រើទំព័រនេះដោយប្រើក្តារចុចតែមួយមុខ និងកម្មវិធីអានអេក្រង់ផងដែរ។"
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "កម្រិតពណ៌អត្ថបទគឺ %1$s:1; វាត្រូវការយ៉ាងហោចណាស់ %2$s:1 ទើបអាចអានបាន។"
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "ចុចទីនេះ,ទីនេះ,អានបន្ត,បន្ថែម,តំណ,តំណនេះ,ស្វែងយល់បន្ថែម,ទៅ"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "តំណភ្ជាប់មួយមិនមានអត្ថបទទេ ដូច្នេះកម្មវិធីអានអេក្រង់នឹងប្រកាសត្រឹមតែ «តំណភ្ជាប់» ប៉ុណ្ណោះ។ សូមបន្ថែមអត្ថបទ ឬស្លាកមួយ។"
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "អត្ថបទតំណភ្ជាប់ “%s” មិនបានបញ្ជាក់ថាវាទៅទីណាទេ។ សូមពិពណ៌នាអំពីគោលដៅជំនួសវិញ។"
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "ធាតុមួយមានតម្លៃ tabindex វិជ្ជមាន ដែលផ្លាស់ប្តូរលំដាប់ក្តារចុចចេញពីលំដាប់អាន។ សូមប្រើប្រាស់ 0 ឬលុបវាចេញ។"
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "ធាតុដែលអាចចុចបានមិនអាចចូលប្រើបានដោយប្រើក្តារចុចទេ។ សូមប្រើប៊ូតុង ឬតំណពូជពិតប្រាកដ។"
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "ស៊ុមដែលបានបង្កប់គ្មានចំណងជើងទេ ដូច្នេះកម្មវិធីអានអេក្រង់មិនអាចប្រាប់ថាវាជាអ្វីបានឡើយ។"
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "វាលសំណុំបែបបទមួយមិនមានស្លាកទេ ដូច្នេះគោលបំណងរបស់វាត្រូវបានគេប្រកាសមិនឮ។"
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "ចំណងជើងនេះគឺទទេ។ អ្នកប្រើកម្មវិធីអានអេក្រង់ធ្វើនាវាចរណ៍តាមចំណងជើង សូមលុបវាចេញ ឬបន្ថែមអត្ថបទ។"
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "ចំណងជើងទំព័រគឺជា H1 រួចហើយ។ សូមប្រើ H2 សម្រាប់កម្រិតកំពូលនៃមាតិកា។"
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "H%1$d នេះបានរំលងមួយកម្រិត។ កម្រិតមុនវាគឺ H%2$d។ សូមប្តូរវាទៅជា H%3$d។"
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "រូបភាពនេះមិនមានអត្ថបទជំនួសទេ។ សូមពិពណ៌នាវា ឬសម្គាល់វាថាជារូបភាពតុបតែង ប្រសិនបើវាគ្មានតម្លៃបន្ថែម។"
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "បិទបន្ទះ"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7556,18 +9510,6 @@ msgstr "ផ្ទាល់ខ្លួន"
 msgid "Width / height"
 msgstr "ទទឹង / កម្ពស់"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "កំពូល"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "បាត"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7580,20 +9522,6 @@ msgstr "រូបភាពតំណពូជ — ជំនួស"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "យកចេញរូបភាព"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "ទីតាំង"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "ទំហំ"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7659,22 +9587,6 @@ msgstr "ម្ខាងៗដោយឡែកពីគ្នា"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "ផ្នែក"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "រចនាប័ទ្ម"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "ពណ៌"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7924,14 +9836,6 @@ msgstr "%1$s (%2$d ឈុត)"
 msgid "Replace icon"
 msgstr "ជំនួសរូបតំណាង"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "ជ្រើសរើសរូបតំណាង"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "ជ្រើសរើសរូបតំណាង"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "គ្មានរូបតំណាងណាដែលត្រូវគ្នាទេ។"
@@ -7943,10 +9847,6 @@ msgstr "ធម្មតា"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "ម៉ាក"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "មានគូសបន្ទាត់ក្រៅ"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8075,21 +9975,9 @@ msgstr "ពណ៌អត្ថបទ"
 msgid "Cursor"
 msgstr "ទស្សន៍ទ្រនិច"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "ព្រួញ"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "កទនិច្ច័យ"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "អត្ថបទ"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8247,10 +10135,6 @@ msgstr "ឈ្មោះតំបន់"
 msgid "Named areas"
 msgstr "តំបន់ដែលមានឈ្មោះ"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "ជួរដេក"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "កម្ពស់"
@@ -8368,10 +10252,6 @@ msgstr "តម្រឹមសងខាង"
 msgid "Decoration"
 msgstr "ការតុបតែង"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "ខ្សែកាត់ពីក្រោម"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "លើសពីបន្ទាត់"
@@ -8454,19 +10334,9 @@ msgstr "ខូនិក"
 msgid "Angle (degrees)"
 msgstr "មុំ (ដឺក្រេ)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "ទម្រង់"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "រង្វង់មូលវែង"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "រង្វង់"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8502,10 +10372,6 @@ msgstr "ការឆ្អែតនៅពីក្រោយ (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "ពណ៌ក្រឡា (ប្រើពណ៌ថ្លា)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "ការreវ៉ាដមូល"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "ប្លុក"
@@ -8522,10 +10388,6 @@ msgstr "ត្រីកោណ"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "ឌុយអូមង់"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "ចំណាំទុកផ្កាយ"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9403,11 +11265,6 @@ msgstr "សម្អាត"
 msgid "The change could not be saved."
 msgstr "មិនអាចរក្សាទុកការផ្លាស់ប្តូរនេះបានទេ។"
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "បិទបន្ទះ"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "ស្បែកជើងគំរូដើម"
@@ -9464,9 +11321,49 @@ msgstr "ថ្នាក់ (classes) តូកិន (tokens) របៀបងង
 msgid "Open the Site Editor’s styles"
 msgstr "បើកម៉ឺនុយរចនាប័ទ្មរបស់កម្មវិធីកែសម្រួលគេហទំព័រ"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "ចំណងជើង"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "ចំណងជើងដែលមានកម្ពស់បន្ទាត់តឹងជាងមុន រចនាប័ទ្មដោយផ្ទាំងរចនាប័ទ្ម។"
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "កថាខណ្ឌអត្ថបទ ដែលបានរចនាម៉ូដដោយផ្ទាំងរចនាប័ទ្ម។"
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "រូបភាព"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "រូបភាពដែលមានជ្រុងមូល រចនាប័ទ្មជាមួយថាត រចនាប័ទ្ម (Style tab)។"
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "វីដេអូចេញពីបណ្ណាល័យមេឌៀ ដែលបានរចនាម៉ូដជាមួយផ្ទាំង \"ម៉ូដ\"។"
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "ចន្លោះតﬃ"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "ចន្លោះទទេរវាងប្លុក៖ កំណត់កម្ពស់ផ្សេងគ្នាសម្រាប់ទំហំអេក្រង់នីមួយៗនៅក្នុងផ្ទាំងរចនាប័ទ្ម។"
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "បន្ទាត់កំណត់"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "បន្ទាត់ផ្តេកខណ្ឌចែករវាងផ្នែក ដែលបានរចនាជាមួយថេប រចនាប័ទ្ម។"
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "មាតិកាពីគេហទំព័រផ្សេងទៀត (វីដេអូ ការបង្ហោះ ផែនទី) ដោយការបិទភ្ជាប់អាសយដ្ឋានរបស់វា។"
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "រូបភាពជាច្រើននៅក្នុងក្រឡាចត្រង្គ ដែលរចនាឡើងជាមួយថប រចនាប័ទ្ម។"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9500,10 +11397,6 @@ msgstr "បញ្ជី"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "គ្រាប់ថ្នាំ"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "ប៊ូតុង"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9548,10 +11441,6 @@ msgstr "លាក់ភាសាដែលទំព័រនេះមិនត្
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "ពង្រៀបបញ្ឈរ"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "ផ្ទៃខាងក្រោយ"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9610,11 +11499,6 @@ msgstr "ការកំណត់ការបិទបាំង"
 #, js-format
 msgid "Add block: %s"
 msgstr "បន្ថែមប្លុក៖ %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(គ្មានចំណងជើង)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9690,10 +11574,6 @@ msgstr "បិទរបៀបមានសុវត្ថិភាព"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "បើកដំណើរការមុខងារសុវត្ថិភាព (បិទកម្មវិធីជំនួយផ្សេងទៀត សម្រាប់អ្នក ក្នុង Studio តែប៉ុណ្ណោះ)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "បានផ្សាយ"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10030,11 +11910,6 @@ msgstr "ឈ្មោះអ្នកបង្កើត"
 msgid "Visual editor name"
 msgstr "ឈ្មោះកម្មវិធីកែសម្រួលរូបភាព"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "អ្នកនិពន្ធ"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10105,10 +11980,6 @@ msgstr[0] "មិនធ្វើវិញ៖ បានស្តារទំព�
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "ជំនួស"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "តំណភ្ជាប់"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10217,10 +12088,6 @@ msgstr "អនុញ្ញាតឱ្យអតិថិជនបញ្ចេញ
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "អ្នកដែលមានតំណភ្ជាប់នេះអាចមើលឃើញទំព័រនេះបាន ទោះបីជាមិនទាន់បានបោះផ្សាយក៏ដោយ ហើយអាចទុកមតិយោបល់បាន។ មិនចាំបាច់មានគណនីនោះទេ។"
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "បានចម្លង"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10456,6 +12323,52 @@ msgstr "ចម្លងរូបភាពទៅក្នុងបណ្ណាល
 msgid "Show what will happen"
 msgstr "បង្ហាញពីអ្វីដែលនឹងកើតឡើង"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "ធាតុបញ្ជីបត់បដិសន្ធិ"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "ផ្នែកមួយនៃអាខ័រដេអុង៖ ចំណងជើងដែលបើកបង្ហាញមាតិការបស់វា។"
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "អាឌីអុង"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "សំណួរ ឬផ្នែកដែលបើក និងបិទ។ ស្រេចចិត្តម្ដងមួយ និងស្រេចចិត្តសម្គាល់ជាសំណួរញឹកញាប់ (FAQ) សម្រាប់ម៉ាស៊ីនស្វែងរក។"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "សន្នីធិ"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "សំណួរដែលសួរញឹកញាប់"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "ប្តូរស្ថានភាព"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "បង្រួម"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "ព័ត៌មានលម្អិត"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10472,6 +12385,7 @@ msgid "notice"
 msgstr "សេចក្តីជូនដំណឹង"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "សារ"
@@ -10486,6 +12400,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "ការព្រមាន"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "ផ្លាកសញ្ញា"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "ស្លាកខ្លីដូចជា ថ្មី, បញ្ចុះតម្លៃ ឬ តម្លៃល្អបំផុត។"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "ស្លាក"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "ស្លាក"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "គ្រាប់ឡាប៊ែរ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "ថ្មី"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "ប្រតិទិនការកក់"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "ប្រតិទិនកក់កន្លែង Calendly ឬ Cal.com ដែលផ្ទុកតែនៅពេលដែលអ្នកទស្សនាស្នើសុំវាប៉ុណ្ណោះ។"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "ការកក់"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "កាលិនលី"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "ការណាត់ជួប"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "កំណត់ពេល"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10497,6 +12476,7 @@ msgid "A link styled as a button."
 msgstr "តំណដែលត្រូវបានរចនាម៉ូដជាប៊ូតុង។"
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "ប៊ូតុង"
@@ -10510,6 +12490,98 @@ msgstr "តំណភ្ជាប់"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "ការអំពាវនាវឱ្យធ្វើសកម្មភាព"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "ការជំរុញឱ្យមានសកម្មភាព"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "ចំណងជើងមួយ ប្រយោគមួយ និងប៊ូតុងមួយ ឬពីរដែលស្នើសុំឱ្យអ្នកទស្សនាធ្វើសកម្មភាព។"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "ស្នើសុំសកម្មភាព"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "បដា"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "ចុះឈ្មោះ"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "បញ្ជីការងារត្រូវធ្វើ"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "បញ្ជីភារកិច្ច ដែលនីមួយៗត្រូវបានសម្គាល់ថាបានរួចរាល់ ឬនៅត្រូវធ្វើ សម្រាប់កម្មវិធីអានអេក្រង់ និងជាមួយសញ្ញាធីកផងដែរ។"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "ត្រូវធ្វើ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "កិច្ចការ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "សញ្ញាធីក"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "បញ្ជី"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "កូដ"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "បញ្ជីកូដដែលមានការរំលេចវាក្យសម្ព័ន្ធ លេខបន្ទាត់ និងប៊ូតុងចម្លង។ នៅតែអាចអានបាន ប្រសិនបើកម្មវិធីជំនួយត្រូវបានបិទ។"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "កូដ"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "ពាក្យសម្ពន្ធ"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "បញ្ជាក់ពណ៌អត្ថបទ"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "កំណាត់កូដ"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "កម្មវិធីស្វែងរកលេខកូដ"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10533,6 +12605,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "ប្លង់"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "តារាងប្រៀបធៀប"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "ផែនការ ឬផលិតផលនៅក្បែរគ្នា ជាមួយនឹងសញ្ញាគ្រុះ និងសញ្ញាខ្វែង ដែលកម្មវិធីអានអេក្រង់អានជាពាក្យ។"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "ប្រៀបធៀប"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "តម្លៃ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "គម្រោង"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "តារាង"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "មុខងារ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "ប៊ូតុងទំនាក់ទំនង"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "ប៊ូតុងសម្រាប់ទូរសព្ទមក ផ្ញើអ៊ីមែល ផ្ញើសារ ឬផ្ញើសារមកកាន់អ្នកនៅលើ WhatsApp។"
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "ទំនាក់ទំនង"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "ការខល"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "ទូរសព្ទ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "អ៊ីមែល"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "សារខ្លី (SMS)"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10550,11 +12700,13 @@ msgid "container"
 msgstr "កុងតឺន័រ"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "ប្រអប់"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10571,6 +12723,52 @@ msgstr "ហ្វ្លិចបុក (Flexbox)"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "ជួរឈរ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "ចំណងជើងទ្វេ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "ចំណងជើងជាពីរផ្នែក ដែលផ្នែកទីពីរត្រូវបានដាក់ពណ៌ ជម្រាល គ្រោង ឬបន្ទាត់ក្រោម។"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "ចំណងជើង"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "ចំណងជើង"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "ជម្រាល"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "បញ្ជីមុខងារ"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "មុខងារជាក្រឡាចត្រង្គ ដែលនីមួយៗមានរូបតំណាង ចំណងជើង និងការពិពណ៌នាខ្លី។"
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "អត្ថប្រយោជន៍"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "សេវាកម្ម"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10614,6 +12812,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "អត្ថបទ"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "ទម្រង់"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "បង្ហាញទម្រង់ពី Contact Form 7, WPForms, Gravity Forms ឬ Fluent Forms ដែលបានរចនាប័ទ្មឱ្យត្រូវនឹងគេហទំព័ររបស់អ្នក។"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "ទម្រង់"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "ទំនាក់ទំនងទម្រង់ ៧"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "គ្រាវិធី ហ្វម (Gravity Forms)"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "វាក្យសព្ទ"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "លក្ខខណ្ឌ និងនិយមន័យរបស់វា រៀបចំពី A ដល់ Z ដែលនីមួយៗមានតំណផ្ទាល់ខ្លួន។ អាចភ្ជាប់ការរៀបរាប់ដំបូងនៃពាក្យនីមួយៗនៅលើទំព័រទៅកាន់និយមន័យរបស់វា។"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "លក្ខខណ្ឌ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "និយមន័យ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "វចនានុក្រម"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "បញ្ជីរូបតំណាង"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "បញ្ជីមួយដែលរaliបន្ទាត់នីមួយៗចាប់ផ្តើមដោយរូបតំណាង៖ សញ្ញាធីក ព្រួញ ឬរូបតំណាងណាមួយពីបណ្ណាល័យ។"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "ចំណុចសំខាន់ៗ"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "រូបតំណាង"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10634,6 +12912,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "ប្រអប់ព័ត៌មាន"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "រូបតំណាងមួយ ចំណងជើងខ្លី ប្រយោគមួយឬពីរ និងតំណភ្ជាប់ជាជម្រើស៖ សម្រាប់សេវាកម្ម អត្ថប្រយោជន៍ ឬព័ត៌មានលម្អិតទំនាក់ទំនង។"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "មុខងារ"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "សេវាកម្ម"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "កាត"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10653,6 +12956,204 @@ msgstr "ការបកប្រែ"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "ពហុភាសា"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "តភ្ជាប់ដែន"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "ផែនទីនៃទីកន្លែងមួយពី OpenStreetMap៖ គ្មានគ្រាប់ចុច ហើយគ្មានអ្វីផ្ទុកពី OpenStreetMap ទេ រហូតទាល់តែអ្នកទស្សនាស្នើសុំផែនទីនោះ។"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "គូសផែនទី"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "ទីតាំង"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "អាសយដ្ឋាន"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "ម៉ូដាល់"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "ប៊ូតុងដែលបើកបង្អួចលើទំព័រ ជាមួយប្លុកណាមួយនៅខាងក្នុង។"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "ប្រអប់លោត"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "ប៉ុស្តុបអាប់"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "ឡៃត៍បុក"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "ប្រអប់សារ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "បន្ទះក្រៅផ្ទាំងកាសវ៉ាស"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "ប៊ូតុងមួយដែលរំកិលបន្ទះចូលមកពីគែមនៃបង្អួច ព្រមទាំងមានប្លុកណាមួយនៅខាងក្នុង។"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "បិទផ្ទាំងកម្រិតក្រៅ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "ថតឯកសារ"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "របារចំហៀង"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "បន្ទះបញ្ជា"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "ម៉ឺនុយ"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "ព័ត៌មានលម្អិតអំពីអត្ថបទ"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "អ្នកនិពន្ធអត្ថបទ កាលបរិច្ឆេទ ប្រភេទស្លាក ស្លាក រយៈពេលអាន និងចំនួនមតិយោបល់។"
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "អ្នកនិពន្ធ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "កាលបរិច្ឆេទ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "ពេលអាន"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "ទិន្នន័យមេ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "អត្ថបទអម"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "របារវឌ្ឍនភាព"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "របារដែលមានស្លាកបង្ហាញពីវឌ្ឍនភាពនៃអ្វីមួយ ដូចជាជំនាញ ឬគោលដៅ។"
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "ដំណើរការ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "របារ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "ជំនាញ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "គោលដៅ"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "មាតិកាដែលបានការពារដោយពាក្យសម្ងាត់"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "រារាំងមិនឱ្យអ្នកទស្សនាដែលគ្មានពាក្យសម្ងាត់អាចមើលឃើញឡើយ។ រហូតទាល់តែពួកគេបញ្ចូលវា ខ្លឹមសារមិនមាននៅលើទំព័រនោះទាល់តែសោះ។"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "ពាក្យសម្ងាត់"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "បានការពារ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "ឯកជន"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "ចាក់សោ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "សមាជិក"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10678,6 +13179,86 @@ msgstr "ពន្លឺ"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "ពណ៌ចម្រុះ"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "កូដ QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "កូដ QR សម្រាប់អាសយដ្ឋានគេហទំព័រ ឬអត្ថបទណាមួយ ដែលបានបង្កើតនៅលើគេហទំព័រផ្ទាល់ខ្លួនរបស់អ្នក (មិនប្រើសេវាកម្ម QR ទេ។)"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "កូដ QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "កូដ QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "បារកូដ"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "ស្កេន"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "របារវឌ្ឍនភាពនៃការអាន"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "របារស្តើងនៅគែមបង្អួចដែលបំពេញនៅពេលអ្នកទស្សនារមូរមើលទំព័រនេះ។"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "កំពុងអាន"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "អូស"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "អត្ថបទ​ដែល​ទាក់ទង"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "អត្ថបទដែលចែករំលែកប្រភេទ ឬស្លាករបស់អត្ថបទនេះ ព្រមទាំងរូបភាព ថ្ងៃខែ និងសេចក្តីសង្ខេបរបស់វា។"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "ដែលទាក់ទង"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "អត្ថបទ"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "ស្រដៀងគ្នា"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "បន្ថែម"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10741,13 +13322,284 @@ msgstr "បង្ហាញធាតុក្រាហ្វិកនៅក្ន
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "របារចំហៀង"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "តំបន់វីដជេត"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "ផែនទីគេហទំព័រ"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "ទំព័រមួយដែលរាយបញ្ជីទំព័រ និងការផ្សាយដែលបានបោះពុម្ពផ្សាយទាំងអស់ (ព្រមទាំងមាតិកាសាធារណៈផ្សេងទៀត) ដោយរក្សាទុកមែកធាងទំព័រ។"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "ផែនទីគេហទំព័រ"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "ផែនទីគេហទំព័រ"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "លិបិក្រម"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "ទំព័រទាំងអស់"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "រូបតំណាងបណ្តាញសង្គម"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "តំណភ្ជាប់ទៅកាន់ប្រវត្តិរូបរបស់អ្នក ដែលគូសបញ្ជាក់ដោយរូបតំណាងរបស់បណ្តាញផ្ទាល់។"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "សង្គម"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "តំណភ្ជាប់"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "តាមដាន"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "ប្រវត្តិរូប"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "ចំណាត់ថ្នាក់ផ្កាយ"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "ការវាយតម្លៃដែលបង្ហាញជាផ្កាយ ដោយបោះជំហានម្តងកន្លះផ្កាយ។"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "ាយ៉ាដា"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "ចំណាត់ថ្នាក់"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "ពិន្ទុ"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "ជំហាន"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "ជំហាននៃដំណើរការដែលមានលេខរៀង តាមលំដាប់ចុះក្រោម ឬតម្រៀបពីមុខទៅក្រោយ។"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "ដំណើរការ"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "របៀប"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "ខ្សែពេលវេលា"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "បានដាក់លេខរៀង"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "ផ្ទាំង"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "ផ្ទាំងមួយនៃប្លុកផ្ទាំង៖ ចំណងជើង និងបន្ទះរបស់វា។"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "តារាងមាតិកា"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "បញ្ជីចំណងជើងនៅលើទំព័រ ដែលត្រូវបានបង្កើតឡើងដោយស្វ័យប្រវត្តិ តភ្ជាប់ទៅកាន់ចំណងជើងនីមួយៗ។"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "មាតិកា"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "មាតិកា"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "ចំណងជើងរង"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "ថេប"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "មាតិកាក្នុងថេប៖ អ្នកទស្សនាប្តូររវាងបន្ទះដោយប្រើកណ្តុរ ឬក្តារចុច។"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "ផ្ទាំង"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "មានថ្នាក់ផ្ទាំង"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "បន្ទះវត្ថុបញ្ជា"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "សaksអក្សរទីបន្ទាល់"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "សម្រង់សម្ដីពីអតិថិជនម្នាក់ ជាមួយឈ្មោះ តួនាទី រូបថត និងការវាយតម្លៃជាផ្កាយជាជម្រើស។"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "ពិនិត្យមើល"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "សម្រង់"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "អតិថិជន"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "មតិយោបល់"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "បង្អួចជំនួយរំលេច"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "ពាក្យ ឬឃ្លាដែលបង្ហាញការពន្យល់ខ្លីនៅពេលចង្អុលម៉ូស និងផ្តោតលើក្ដារចុច។"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "ប្រអប់ព័ត៌មានជំនួយ"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "ជំនួយ"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "និយមន័យ"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "ប្រវត្តិរូបអ្នកនិពន្ធ"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "រូបថត ឈ្មោះ ជីវប្រវត្តិ និងតំណភ្ជាប់របស់អ្នកនិពន្ធ ឬរបស់អ្នកប្រើប្រាស់ដែលបានជ្រើសរើស។"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "ប្រវត្តិរូបសង្ខេប"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "ប្រវត្តិរូប"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "អំពីយើង"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "ប៊ូតុងជជែក WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "ប៊ូតុងអណ្តែតនៅជ្រុងមួយនៃទំព័រ ដែលបើកការជជែក WhatsApp ជាមួយអ្នក។"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "ឆាត"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "អណ្តែត"
 
 #: blocks/widget/block.json
 msgctxt "block title"

@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/booking",
+	"title": "Booking calendar",
+	"category": "pbs-media",
+	"icon": "calendar-alt",
+	"description": "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it.",
+	"keywords": [
+		"booking",
+		"calendly",
+		"cal.com",
+		"appointment",
+		"schedule"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"provider": {
+			"type": "string",
+			"enum": [
+				"calendly",
+				"cal"
+			],
+			"default": "calendly"
+		},
+		"url": {
+			"type": "string",
+			"default": ""
+		},
+		"label": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false,
+		"interactivity": true
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

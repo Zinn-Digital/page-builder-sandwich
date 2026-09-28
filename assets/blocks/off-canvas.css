@@ -1,0 +1,149 @@
+/*
+ * Front-end styles for pbs/off-canvas (a native <dialog> opened as a modal). `__PREFIX__` is the neutral
+ * class prefix; logical properties only. Loaded only where this block renders. The block editor
+ * shows the window inline, open (.__PREFIX__-off-canvas__preview), so its content can be edited.
+ */
+.__PREFIX__-off-canvas__trigger {
+	display: inline-block;
+	padding-block: 0.6em;
+	padding-inline: 1.2em;
+	border: 0;
+	border-radius: 4px;
+	background-color: var(--__PREFIX__-off-canvas-accent, #1d4ed8);
+	color: #fff;
+	font: inherit;
+	cursor: pointer;
+}
+
+.__PREFIX__-off-canvas__trigger:focus-visible,
+.__PREFIX__-off-canvas__close:focus-visible {
+	outline: 2px solid currentcolor;
+	outline-offset: 2px;
+}
+
+.__PREFIX__-off-canvas__dialog {
+	box-sizing: border-box;
+	padding: 0;
+	border: 0;
+	background-color: var(--wp--preset--color--base, #fff);
+	color: var(--wp--preset--color--contrast, #1b1b1b);
+	box-shadow: 0 10px 40px rgb(0 0 0 / 25%);
+}
+
+.__PREFIX__-off-canvas__dialog::backdrop {
+	background-color: rgb(0 0 0 / 50%);
+}
+
+.__PREFIX__-off-canvas__inner {
+	padding-block: 1.25em;
+	padding-inline: 1.5em;
+}
+
+.__PREFIX__-off-canvas__header {
+	display: flex;
+	gap: 1em;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-block-end: 0.75em;
+}
+
+.__PREFIX__-off-canvas__title {
+	margin: 0;
+	font-size: 1.25em;
+	line-height: 1.3;
+}
+
+.__PREFIX__-off-canvas__close-form {
+	margin: 0;
+}
+
+.__PREFIX__-off-canvas__close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	inline-size: 2rem;
+	block-size: 2rem;
+	margin-block-start: -0.25em;
+	margin-inline-end: -0.5em;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+}
+
+.__PREFIX__-off-canvas__close:hover {
+	background-color: rgb(0 0 0 / 8%);
+}
+
+.__PREFIX__-off-canvas__body > :first-child {
+	margin-block-start: 0;
+}
+
+.__PREFIX__-off-canvas__body > :last-child {
+	margin-block-end: 0;
+}
+
+.__PREFIX__-off-canvas__preview {
+	position: static;
+	display: block;
+	margin-block-start: 1em;
+	border: 1px dashed rgb(0 0 0 / 30%);
+	box-shadow: none;
+}
+
+.__PREFIX__-off-canvas__dialog:not(.__PREFIX__-off-canvas__preview) {
+	position: fixed;
+	inset-block: 0;
+	inline-size: min(24rem, 90vw);
+	max-inline-size: none;
+	block-size: 100%;
+	max-block-size: none;
+	margin: 0;
+	overflow-y: auto;
+}
+
+.__PREFIX__-off-canvas__dialog--start:not(.__PREFIX__-off-canvas__preview) {
+	inset-inline-start: 0;
+	inset-inline-end: auto;
+}
+
+.__PREFIX__-off-canvas__dialog--end:not(.__PREFIX__-off-canvas__preview) {
+	inset-inline-start: auto;
+	inset-inline-end: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+	.__PREFIX__-off-canvas__dialog--start[open] {
+		animation: __PREFIX__-off-canvas-from-start 0.25s ease-out;
+	}
+
+	.__PREFIX__-off-canvas__dialog--end[open] {
+		animation: __PREFIX__-off-canvas-from-end 0.25s ease-out;
+	}
+
+	@keyframes __PREFIX__-off-canvas-from-start {
+
+		from {
+			translate: -100% 0;
+		}
+	}
+
+	@keyframes __PREFIX__-off-canvas-from-end {
+
+		from {
+			translate: 100% 0;
+		}
+	}
+
+	/* In right-to-left the reading start is the right-hand edge: the slides swap. */
+	.__PREFIX__-off-canvas__dialog--start[open]:dir(rtl) {
+		animation-name: __PREFIX__-off-canvas-from-end;
+	}
+
+	.__PREFIX__-off-canvas__dialog--end[open]:dir(rtl) {
+		animation-name: __PREFIX__-off-canvas-from-start;
+	}
+}

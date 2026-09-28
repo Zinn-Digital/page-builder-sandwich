@@ -343,6 +343,10 @@ msgid "Save as reusable pattern"
 msgstr "మళ్లీ ఉపయోగించగల ప్యాటర్న్‌గా సేవ్ చేయండి"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "యాక్సెసిబిలిటీ చెకర్"
 
@@ -991,6 +995,7 @@ msgstr "← వే an ఇతర ప్రొవైడర్‌ని ఎంచ�
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "చిరునామా"
 
@@ -1044,6 +1049,8 @@ msgstr "టెస్ట్"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "తీసివేయి"
@@ -1097,6 +1104,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "ప్రొవైడర్ల నుండి మోడల్ జాబితాలను రిఫ్రెష్ చేయండి"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "చిత్రాలు"
 
@@ -1189,6 +1197,7 @@ msgid "turned off"
 msgstr "ఆపివేయబడింది"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "తెరువు"
 
@@ -1449,6 +1458,7 @@ msgstr "ఇంకా ఎలాంటి AI అభ్యర్థనలు చే
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "పూర్తయింది"
 
@@ -1516,7 +1526,11 @@ msgstr "చాలా ప్రయత్నాలు జరిగాయి. ద�
 msgid "Something went wrong. Please contact the admin."
 msgstr "సమస్య ఏర్పడింది. దయచేసి నిర్వాహకులను సంప్రదించండి."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "మ్యాప్ చేయి"
 
@@ -1539,52 +1553,385 @@ msgstr "ఆ కుటుంబం నిల్వ చేయబడలేదు."
 msgid "Removed."
 msgstr "తొలగించబడింది."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "అది చెల్లుబాటు అయ్యే ఫాంట్ కుటుంబ పేరు కాదు."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google ఫాంట్‌లు ఆ ఫ్యామిలీని అందించలేదు. పేరును తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "ఫాంట్ ఫైల్‌లను డౌన్‌లోడ్ చేయడం లేదా సేవ్ చేయడం సాధ్యపడలేదు. అప్‌లోడ్స్ ఫోల్డర్ వ్రాయదగినదిగా (రైటబుల్) ఉందో లేదో తనిఖీ చేయండి."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "ఫాంట్ స్టైల్‌షీట్‌ను సేవ్ చేయడం సాధ్యపడలేదు. అప్‌లోడ్స్ ఫోల్డర్ వ్రాయదగినదిగా (రైటబుల్) ఉందో లేదో తనిఖీ చేయండి."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "ఈ నోటీసును తీసివేయండి"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(కొన్ని ట్యాబ్‌లో తెరుచుకుంటుంది)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "పూర్తయింది:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "చేయవలసినవి:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "గ్లాసరీ సూచిక"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s లో %1$s రేట్ చేయబడింది"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "పురోగతి"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "కోడ్ కాపీ చేయండి"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "కాపీ చేయబడింది"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "ఆ విడ్జెట్ ఈ సైట్‌లో అందుబాటులో లేదు."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "ఇమెయిల్"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "ఫోన్"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS ఫీడ్"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "వెబ్‌సైట్"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "లింక్"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (కొత్త ట్యాబ్‌లో తెరవబడుతుంది)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "5లో %d రేట్ చేయబడింది"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(సిఫార్సు చేయబడినది)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "చేర్చబడ్డాయి"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "చేర్చబడలేదు"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "పోలిక పట్టిక"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "%s కి కాల్ చేయండి"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "ఇమెయిల్ %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "టెక్స్ట్ %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "వాట్సాప్‌లో చాట్ చేయండి"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "మమ్మల్ని సంప్రదించండి"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "వాట్సాప్‌లో మాతో చాట్ చేయండి"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "ఈ ఫారమ్ ప్రస్తుతం అందుబాటులో లేదు."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s సక్రియంగా లేదు కాబట్టి ఈ ఫారమ్‌ను చూపించడం సాధ్యం కాదు."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "మ్యాప్: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "మ్యాప్‌ను చూపించడం వల్ల ఇది OpenStreetMap నుండి లోడ్ అవుతుంది."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "మ్యాప్‌ను చూపుము"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMapలో మ్యాప్‌ని తెరవండి"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s నుండి బుకింగ్ క్యాలెండర్"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "బుకింగ్ క్యాలెండర్‌ను చూపించడం ద్వారా అది %s నుండి లోడ్ అవుతుంది."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "బుకింగ్ కేలండర్‌ను చూపుము"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%sలో బుక్ చేయండి"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s కోసం QR కోడ్"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "డిజైన్"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "కంటెంట్"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "మీడియా"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "మార్కెటింగ్"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "సైట్"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "డేటా"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "సంబంధిత పోస్ట్‌లు"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "పోస్ట్ వివరాలు"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "ద్వారా"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "ప్రచురించబడింది"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "నవీకరించబడింది"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "లో"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "ట్యాగ్ చేయబడింది"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d నిమిషాల పఠనం"
+msgstr[1] "%d నిమిషాల పఠనం"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "ఇలాంటి వ్యాఖ్యలు ఇంకా లేవు"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d వ్యాఖ్య"
+msgstr[1] "%d వ్యాఖ్యలు"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "సైట్‌మాప్"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(శీర్షిక లేదు)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s ద్వారా అన్ని పోస్ట్‌లు"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "ఈ కంటెంట్ సురక్షితమైనది. దీన్ని వీక్షించడానికి పాస్‌వర్డ్‌ను నమోదు చేయండి."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "ఆ పాస్‌వర్డ్ సరైనది కాదు. మళ్లీ ప్రయత్నించండి."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "పాస్‌వర్డ్"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "కంటెంట్‌ని చూపించు"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "ఆ పేజీని అన్‌లాక్ చేయడం సాధ్యం కాదు."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "చాలా ప్రయత్నాలు జరిగాయి. కొన్ని నిమిషాలు వేచి ఉండి మళ్లీ ప్రయత్నించండి."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "పాస్‌వర్డ్ 4 నుండి 200 వర్ణాల పొడవు ఉండాలి."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "మరిన్ని"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "మూసివేయి"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "ట్యాబ్ %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "విషయాలు"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1687,6 +2034,10 @@ msgstr "శాండ్‌విచ్ స్టూడియోతో సవర�
 msgid "Blank canvas"
 msgstr "ఖాళీ కాన్వాస్"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "సొల్యూషన్‌కు వెళ్లండి"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "టాబ్లెట్ వెడల్పు 480 నుండి 2560 వరకు పూర్ణాంక పిక్సెల్‌లలో ఉండాలి."
@@ -1761,7 +2112,11 @@ msgid "Uploaded icons"
 msgstr "అప్‌లోడ్ చేసిన ఐకాన్‌లు"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "ఐకాన్"
 
@@ -2554,6 +2909,8 @@ msgstr "%s నా క్లయింట్ యొక్క ఈమెయిల్
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "కోడ్"
 
@@ -3048,13 +3405,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "సవరించు"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "ఇమెయిల్"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "ఈమెయిల్ చిరునామా"
 
@@ -3104,6 +3457,10 @@ msgstr "వైట్-లేబుల్ మోడ్‌ని ప్రారం
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3126,6 +3483,7 @@ msgstr "కొత్త ఇమెయిల్ చిరునామాను న
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "లోపం"
 
@@ -3724,6 +4082,7 @@ msgstr "%2$s ఈ సైట్‌ల యొక్క ఖచ్చితమైన 
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3827,6 +4186,7 @@ msgstr "ఈ ప్లగిన్‌కు PHP యొక్క కొత్త �
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "కాదు"
 
@@ -4812,6 +5172,13 @@ msgstr "సోషల్ మీడియా (ఫేస్‌బుక్, ట్�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5097,6 +5464,9 @@ msgstr "సమయ ముద్రిక"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "శీర్షిక"
 
@@ -5172,6 +5542,8 @@ msgstr "ఇంతవరకు మీకు %1$s ఎలా నచ్చింద�
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "రకం"
@@ -5287,6 +5659,7 @@ msgstr "యూజర్లు"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "విలువ"
@@ -5341,6 +5714,7 @@ msgstr "చెల్లించిన ఫీచర్‌లను వీక్�
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "హెచ్చరిక"
 
@@ -5667,6 +6041,7 @@ msgid "Optional"
 msgstr "ఐచ్ఛికం"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "ప్లాన్"
 
@@ -5989,18 +6364,26 @@ msgstr "అత్యంత చిన్నది"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "చిన్నది"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "మధ్యస్థం"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "పెద్దది"
 
@@ -6013,7 +6396,9 @@ msgid "Huge"
 msgstr "అతిపెద్దది"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6327,16 +6712,9 @@ msgid "The trial could not be started."
 msgstr "ట్రయల్‌ను ప్రారంభించడం సాధ్యం కాలేదు."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "ఫీచర్"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "చేర్చబడ్డాయి"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "చేర్చబడలేదు"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6691,10 +7069,6 @@ msgstr "లాగిన్ చిరునామా"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "యూజర్‌నేమ్"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "పాస్‌వర్డ్"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7091,15 +7465,62 @@ msgstr "రద్దు చేయడం ప్రారంభమైంది. �
 msgid "Undo all conversions"
 msgstr "అన్ని మార్పిరతులను రద్దు చేయి"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "అంశం"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "పేజీ లోడ్ అయినప్పుడు తెరువుము"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "శీర్షిక అనేది ఒక శీర్షిక"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "అంశాలు పేజీలోని విభాగాలుగా ఉన్నప్పుడు శీర్షికను హెడ్డింగ్‌గా చేయండి, తద్వారా సందర్శకులు వాటి మధ్య నావిగేట్ చేయగలరు."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "శీర్షిక %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "ప్రశ్న లేదా విభాగం శీర్షిక"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "అకార్డియన్"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "ఒకే సమయంలో ఒక అంశం మాత్రమే తెరిచి ఉంటుంది"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "సెర్చ్ ఇంజిన్‌ల కోసం FAQగా మార్క్ చేయండి"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "శీర్షికలు (ప్రశ్నలు) మరియు వాటి పాఠం (సమాధానాలు) నుండి రూపొందించబడిన FAQ స్ట్రక్చర్డ్ డేటాను జోడిస్తుంది."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "హెచ్చరిక"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "సమాచారం"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "విజయం"
 
@@ -7108,6 +7529,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "హెచ్చరికలు మరియు లోపాలు స్క్రీన్ రీడర్ వినియోగదారులకు వెంటనే తెలియజేయబడతాయి; సమాచారం మరియు విజయవంతమైన సూచనలు వారు చేస్తున్న పని పూర్తి చేసినప్పుడు చదవబడతాయి."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "ఐకాన్‌ని చూపించు"
 
@@ -7123,64 +7545,702 @@ msgstr "శీర్షిక (ఐచ్ఛికం)"
 msgid "Write the message…"
 msgstr "సందేశాన్ని రాయండి…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "విభాగం — ఒక నేపథ్య విభాగం"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "కేంద్రం"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — అర్థం లేదు"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "బా్డ్జ్"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "హెడర్ — పరిచయ కంటెంట్"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "రంగు"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "ఫుటర్ — ముగింపు కంటెంట్"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "థీమ్ యాసెంట్"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "వ్యాసం — స్వయంప్రతిపత్తి గల కంటెంట్"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "తటస్థం"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "ప్రక్కన — సంబంధిత కంటెంట్"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "స్థానం"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — ప్రధాన కంటెంట్ (పేజీకి ఒకసారి)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "లేబుల్"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "నావిగేషన్ లింక్‌లు"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "బుకింగ్ క్యాలెండర్"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "స్టాక్ (ఫ్లెక్స్‌బాక్స్, నిలువు వరుస)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "సేవ"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "అడ్డు వరుస (ఫ్లెక్స్‌బాక్స్)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "బుకింగ్ పేజీ చిరునామా"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "గ్రిడ్"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "ఉదాహరణకు %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "క్యాలెండర్ దేనికోసం అనేది స్క్రీన్ రీడర్‌లు చదివి వినిపిస్తాయి మరియు దాని క్రింద చూపబడుతుంది."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "ఇది %s బుకింగ్ పేజ్ చిరునామా కాదు, కాబట్టి పేజీలో ఏదీ కనిపించదు."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "క్యాలెండర్‌ని ప్రివ్యూ చేయండి"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "లింక్ చిరునామా"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "బటన్ లేబుల్ మరియు అడ్రస్ రెండూ ఉన్నప్పుడు మాత్రమే కనిపిస్తుంది."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "క్రొత్త ట్యాబ్‌లో తెరువుము"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "చర్యకు పిలుపు"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "లేఅవుట్"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "దిగువన ఉన్న బటన్‌లు"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "టెక్స్ట్ పక్కన ఉన్న బటన్లు"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "అమరిక"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "ప్రధాన బటన్"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "రెండవ బటన్"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "శీర్షిక…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "దీని గురించి ఒక వాక్యం..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "రెండవ బటన్ (ఐచ్ఛికం)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "చెక్‌లిస్ట్"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "టిక్ రంగు"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "లైన్‌లు"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "లైన్ %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "పని…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "లైన్‌ని జోడించు"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "భాష"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "స్వయంచాలకంగా గుర్తించండి"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "హైలైటింగ్ లేదు"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "ఫైల్ పేరు"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "కోడ్ పైన చూపబడింది, ఉదాహరణకు functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "లైన్ సంఖ్యలు"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "కాపీ బటన్"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "పొడవైన పంక్తులను చుట్టుముట్టండి"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "కోడ్ రాయండి లేదా అతికించండి…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "పాఠ్యం"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "నిలువు వరుసలు"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "నిలువు వరుస %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "%sని హైలైట్ చేయండి"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "కాలమ్‌ను జోడించు"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "అడ్డు వరుసలు"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "అడ్డు వరుస %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "వరుసను జోడించు"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "శీర్షిక (దేన్ని పోలుస్తున్నారు)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "కణ రకం: %s. మార్చు"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "ఫోన్ కాల్"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "టెక్స్ట్ సందేశం"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "వాట్సాప్"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "బటన్లు"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "దేశ కోడ్‌తో కూడిన ఫోన్ నంబర్"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "బటన్ టెక్స్ట్"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "ఈ బటన్‌ను తొలగించు"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "బటన్‌ను జోడించు"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "ప్రారంభించడానికి వాట్సాప్ సందేశం (ఐచ్ఛికం)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "సంప్రదింపు బటన్‌లు"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "సైడ్‌బార్‌లో ఫోన్ నంబర్, ఇమెయిల్ చిరునామా లేదా వాట్సాప్ నంబర్‌ను జోడించండి."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "ద్వంద్వ శీర్షిక"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "శీర్షిక స్థాయి"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "ప్రతి పేజీలో దాని ప్రధాన శీర్షిక కోసం H1ని ఒకసారి ఉపయోగించండి."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "రెండవ భాగం రూపురేఖలు"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "యాస రంగు"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "గ్రేడియంట్"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "రూపలరేఖ"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "అండర్‌లైన్ చేయి"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "తొలి భాగం దాని స్వంత లైన్‌లో ఉంది"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "మొదటి భాగం"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "రెండవ భాగం"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "మార్కర్ పెన్"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "మందపాటి కింద గీత"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "నేపథ్యం"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "హైలైట్ చేయండి"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "హైలైట్‌ని తొలగించు"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "డ్రాప్ క్యాప్"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "పెద్ద మొదటి అక్షరం"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "పెట్టెలోని మొదటి అక్షరం కోసం, \"డ్రాప్ క్యాప్ ఇన్ ఎ బాక్స్\" శైలిని ఎంచుకోండి."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "పెట్టెలో డ్రాప్ క్యాప్"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "యాసెంట్ బార్"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "పుల్ కోట్ (యాసెంట్ బార్)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "దృష్టిని ఆకర్షించడానికి రంగు బార్ పక్కన పెద్దదిగా అమర్చబడిన పాఠం నుండి ఒక కోట్."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "కోట్ చేయండి"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "ఫీచర్ జాబితా"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "ఫోన్‌లలో ఫీచర్లు ఎల్లప్పుడూ ఒకదానిపై ఒకటి అమర్చబడి ఉంటాయి."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "ఫీచర్లు"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "ఫీచర్ %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "సొంత ఐకాన్"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "ఫీచర్…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "దీన్ని వివరించండి…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "ఫీచర్‌ను జోడించు"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms లేదా Fluent Forms ని ఇన్‌స్టాల్ చేసి యాక్టివేట్ చేయండి, ఆ తర్వాత ఇక్కడ వాటి ఫారమ్‌లలో ఒకదానిని ఎంచుకోండి."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "ఫారం ప్లగ్ఇన్"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "ఎంచుకోండి…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "ఫారమ్"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "ఒక ఫారమ్‌ను ఎంచుకోండి…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s కి ఇంకా ఎలాంటి ఫారమ్‌లు లేవు"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "ఈ సైట్‌లో %s సక్రియంగా లేదు, కాబట్టి ఈ ఫారమ్‌ను చూపించలేము."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "ఫారమ్ జాబితాను లోడ్ చేయడం సాధ్యపడలేదు."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "ఫారమ్ శైలి"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "క్షేత్రాలు"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "రూపురేఖలు గీసిన"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "నింపబడింది"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "కింద గీత గీసిన"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "బటన్ వెడల్పు"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "పాఠాన్ని అమర్చండి"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "పూర్తి వెడల్పు"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "రంగులు, ఫాంట్‌లు, స్పేసింగ్ మరియు మూలలు మీ సైట్ డిజైన్ మరియు ఈ బ్లాక్ డిజైన్ సెట్టింగ్‌ల నుండి వస్తాయి."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "మీ సైట్‌కు సరిపోయేలా స్టైల్ చేయబడిన మీ ఫారమ్ ప్లగిన్ నుండి ఫారమ్‌ను చూపించు."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "ఫారమ్ప్లగిన్కావాలా? కాంటాక్ట్ఫారమ్ 7 ఉచితం."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "పరిగణనల పట్టిక"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "A నుండి Z వరకు క్రమబద్ధీకరించు"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "ఈ పేజీ నిబంధనలను అక్షరాల క్రమంలో చూపుతుంది; ఇక్కడ అవి మీరు వ్రాసిన క్రమంలోనే ఉంటాయి."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "A–Z సూచికను చూపించు"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "ఈ పేజీలో ఇతర చోట్ల ఉపయోగించిన నిబంధనలను లింక్ చేయండి"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "పేజీ పాఠ్యంలో ప్రతి పదం మొదటిసారి కనిపించినప్పుడు దాని నిర్వచన్‌కి లింక్ చేయబడుతుంది. శీర్షికలు, బటన్‌లు, కోడ్ మరియు ఇప్పటికే ఉన్న లింక్‌లు అలాగే ఉంచబడతాయి."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "నిబంధనలు"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "నిబంధన %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "కాల వ్యవధి"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "దీని అర్థం ఏమిటంటే…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "పదాన్ని జోడించు"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "ఐకాన్ జాబితా"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "ఒకదాని కింద ఒకటి"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "పక్కపక్కనే"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "జాబితా అంశం…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "సమాచార పెట్టె"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "లేదా లైబ్రరీ నుండి ఏదైనా ఐకాన్‌ని ఎంచుకోండి:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "లింక్ టెక్స్ట్"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "లింక్ ఎక్కడికి వెళ్తుందో చెప్పండి (\"మా ధరలను చూడండి\"), \"మరింత చదవండి\" అని కాదు."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "ఒకటి లేదా రెండు వాక్యాలు…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "విభాగం — ఒక నేపథ్య విభాగం"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — అర్థం లేదు"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "హెడర్ — పరిచయ కంటెంట్"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "ఫుటర్ — ముగింపు కంటెంట్"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "వ్యాసం — స్వయంప్రతిపత్తి గల కంటెంట్"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "ప్రక్కన — సంబంధిత కంటెంట్"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — ప్రధాన కంటెంట్ (పేజీకి ఒకసారి)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "నావిగేషన్ లింక్‌లు"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "స్టాక్ (ఫ్లెక్స్‌బాక్స్, నిలువు వరుస)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "అడ్డు వరుస (ఫ్లెక్స్‌బాక్స్)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "గ్రిడ్"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "సవరించబడుతోంది: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "పిల్లలను ఇలా అమర్చండి"
 
@@ -7188,7 +8248,7 @@ msgstr "పిల్లలను ఇలా అమర్చండి"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7196,70 +8256,50 @@ msgstr "పిల్లలను ఇలా అమర్చండి"
 msgid "Inherited (%s)"
 msgstr "వారసత్వంగా వచ్చింది (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "ఫ్లెక్స్‌బాక్స్"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "స్టాక్డ్ బ్లాక్స్"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "నిలువు వరుసలు"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "కాన్‌వాస్‌లో లాగండి లేదా టైప్ చేయండి"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "కంటెంట్ వెడల్పు"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "బాక్సెడ్ (థీమ్ యొక్క కంటెంట్ వెడల్పు)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "పూర్తి వెడల్పు"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "కనిష్ట ఎత్తు"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML ట్యాగ్"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "లింక్"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "మొత్తం బ్లాక్‌ను దీనికి లింక్‌గా మార్చండి"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "స్క్రీన్ రీడర్‌ల కోసం లింక్ టెక్స్ట్"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "బ్లాక్‌ను చూడలేని సందర్శకుల కోసం లింక్ ఏం చేస్తుందో అది."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "క్రొత్త ట్యాబ్‌లో తెరువుము"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "లింక్ చేసిన బ్లాక్ లోపల లింక్‌లు లేదా బటన్‌లను ఉంచవద్దు: లింక్ లోపలి లింక్ బ్రౌజర్‌లలో పనిచేయదు."
 
@@ -7291,14 +8331,143 @@ msgstr "+ అడ్డు వరుస"
 msgid "− Row"
 msgstr "− అడ్డు వరుస"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "స్థానం"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "కోఆర్డినేట్‌లను లేదా ఓపెన్‌స్ట్రీట్‌మ్యాప్ లింక్‌ను పేస్ట్ చేయండి"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org లో ఆ ప్రదేశాన్ని కనుగొనండి, ఆ తర్వాత బ్రౌజర్ బార్ నుండి చిరునామాను కాపీ చేయండి లేదా మ్యాప్‌పై రైట్-క్లిక్ చేసి \"చిరునామాను చూపు\" ఎంచుకోండి."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "అక్షాంశం"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "రేఖాంశం"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "జూమ్ చేయండి"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "ప్రదేశం పేరు"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "మ్యాప్ కింద చూపబడుతుంది మరియు స్క్రీన్ రీడర్‌ల ద్వారా చదవబడుతుంది."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "కోఆర్డినేట్‌లను అతికించండి (ఉదాహరణకు 51.5074, -0.1278) లేదా OpenStreetMap లింక్‌ను అతికించండి."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "సమానత్వాలు లేదా లింక్"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "మ్యాప్‌ను ప్రివ్యూ చేయండి"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMapలో %1$s, %2$sని తనిఖీ చేయండి"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "రచయిత"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "ప్రచురించిన తేదీ"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "నవీకరించిన తేదీ (తేడా ఉన్నప్పుడు)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "వర్గాలు"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "ట్యాగ్‌లు"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "చదివే సమయం"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "కామెంట్ల సంఖ్య"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "చూపవలసిన వివరాలు"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "చూపించడానికి కనీసం ఒక వివరమైన అంశాన్ని ఎంచుకోండి."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "ప్రోగ్రెస్ బార్"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "గరిష్ట"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "శాతం కోసం 100; 10లో 8 వంటి గణన కోసం ఏదైనా ఇతర సంఖ్య."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "శాతాన్ని చూపించు"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "పాస్‌వర్డ్ సెట్ చేయబడింది. సందర్శకులు దీన్ని నమోదు చేసే వరకు ఈ కంటెంట్‌కి బదులుగా పాస్‌వర్డ్ ఫారమ్‌ను చూస్తారు."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "ఇంకా పాస్‌వర్డ్ సెట్ చేయలేదు, కాబట్టి సందర్శకులకు ఇక్కడ ఏమీ కనిపించదు."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "కొత్త పాస్‌వర్డ్"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "పాస్‌వర్డ్‌ను సెట్ చేయండి"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "పాస్‌వర్డ్ సెట్ చేయబడింది. దాన్ని వర్తింపజేయడానికి పేజీని సేవ్ చేయండి; దాన్ని అన్‌లాక్ చేసిన సందర్శకులకు కొత్తది అవసరం అవుతుంది."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Page Builder Sandwich ఎప్పుడైనా ఆఫ్‌లో ఉంటే, ఈ కంటెంట్ అందరికీ కనిపిస్తుంది."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "పాస్‌వర్డ్ ఫారమ్‌కు పైన ఉండే సందేశం (ఐచ్ఛికం)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "స్విచ్ చేయి"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "లేబుల్"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7308,30 +8477,698 @@ msgstr "స్క్రీన్ రీడర్‌ల ద్వారా చద
 msgid "Show label"
 msgstr "లేబుల్‌ని చూపుము"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "వెబ్ చిరునామా లేదా టెక్స్ట్"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR కోడ్"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "స్క్రీన్ రీడర్‌ల కోసం వివరణ"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"QR కోడ్ కోసం\" మరియు టెక్స్ట్‌ని ఉపయోగించడానికి ఖాళీగా వదలండి."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "వెబ్ చిరునామా, ఫోన్ లింక్ (tel:) లేదా ఏదైనా టెక్స్ట్ టైప్ చేయండి."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "ఇది QR కోడ్ కోసం చాలా పొడవుగా ఉంది. దీన్ని కుదించండి."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "శీర్షికను జోడించండి"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "రీడింగ్ ప్రోగ్రెస్ బార్"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "విండో అంచు"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "ఎగువన"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "దిగువన"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "సందర్శకులు స్క్రోల్ చేస్తున్నప్పుడు విండో దిగువన చూపబడుతుంది."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "సందర్శకులు స్క్రోల్ చేస్తున్నప్పుడు విండో పైభాగంలో చూపబడుతుంది."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "ఎన్ని"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "దీనికి సంబంధించినది"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "వర్గాలు లేదా ట్యాగ్‌లు"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "ఏదీ సంబంధితంగా లేనప్పుడు, దానికి బదులుగా సరికొత్త వాటిని చూపించు"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "శీర్షిక"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "\"సంబంధిత పోస్ట్‌లు\" కోసం ఖాళీగా వదలండి."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "ఫీచర్ చేయబడిన చిత్రాన్ని చూపించు"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "తేదీని చూపుము"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "సారాంశాన్ని చూపించు"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "ఈ పోస్ట్ వర్గాలను లేదా ట్యాగ్‌లను పంచుకునే పోస్ట్‌లు ఇంకా ఏవీ లేవు. కొన్ని ఉన్నప్పుడు, అవి ఇక్కడ కనిపిస్తాయి."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "మోడల్"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "ఆఫ్-కన్వాస్ ప్యానెల్"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "పరిమాణం"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "దీని నుండి స్లైడ్ అవుతుంది"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "ప్రారంభం అనేది చదవడం ఎక్కడ ప్రారంభమవుతుందో ఆ వైపు: ఇంగ్లీష్‌లో ఎడమ వైపు, అరబిక్‌లో కుడి వైపు."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "వెనుక ఉన్న పేజీని క్లిక్ చేసినప్పుడు మూసివేయండి"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "విండో యొక్క శీర్షిక"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "చెక్‌ మార్క్‌"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "సర్కిల్"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "క్రాస్"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "డాట్"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "బాణం"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "స్టార్"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "ఐకాన్ రంగు"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "text వలెనే"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "థీమ్ ప్రైమరీ"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "థీమ్ సెకండరీ"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "థీమ్ కాంట్రాస్ట్"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "పేజీలో హెడ్డింగ్‌లను సరైన క్రమంలో ఉంచండి: అది ఉన్న సెక్షన్‌ కంటే ఒక స్థాయి తక్కువగా ఉండే హెడ్డింగ్."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "చిన్న చిహ్నాన్ని ఎంచుకోండి"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "డిఫాల్ట్ ఐకాన్‌ను ఉపయోగించండి"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "ఒక చిహ్నాన్ని ఎంచుకోండి"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "పైకి కదుపు"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "కిందకు మార్చు"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "ప్రతి రకానికి ఒక శీర్షికను చూపించు"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "మీరు ఎంచుకున్న రకాల్లో ఇంకా ఏవీ ప్రచురించబడలేదు."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "లింకులు"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "లింక్ %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "నెట్‌వర్క్"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "ఒక ప్రొఫైల్ చిరునామా, mailto:you@example.com లేదా tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "స్క్రీన్ రీడర్‌ల కోసం చదవాల్సిన పేరు"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "ఇతర చిహ్నం"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "లింక్‌ను జోడించు"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "చూడండి"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "శైలి"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "ఐకాన్ మాత్రమే"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "రూపం"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "గుండ్రని చతురస్రం"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "చతురస్రం"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "ప్రొఫైల్‌లను కొత్త ట్యాబ్‌లో తెరిచండి"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "స్టార్ రేటింగ్"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "రేటింగ్"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "నక్షత్రాల సంఖ్య"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "సంఖ్యను చూపుము"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "అడుగులు"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "పేజీ క్రిందికి"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "పక్కపక్కనే (ఫోన్‌లలో నిలువు వరుసలో ఉంటాయి)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "సంఖ్య రంగు"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "దశల క్రమం"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "దశ %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "దశ…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "ఏమి చేయాలి..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "దశను జోడించు"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "ట్యాబ్"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "పేజీకి శీర్షికలను జోడించండి మరియు అవి ఇక్కడ జాబితా చేయబడతాయి."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "విషయసూచిక"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "హెడ్డింగ్ స్థాయి నుండి"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "శీర్షిక స్థాయికి"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "సంఖ్య ఇవ్వబడినది"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "కుంచించుకోవచ్చు"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "కుంచించుకుని ప్రారంభించు"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "చదువుతున్న భాగాన్ని హైలైట్ చేయండి"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "ట్యాబ్‌లు"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "స్క్రీన్ రీడర్ల కోసం పేరు"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "ఐచ్ఛికం. ట్యాబ్‌లుే దేని గురించి చెబుతాయి, ఉదాహరణకు \"ప్లాన్స్\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "పేజీ లోడ్ అయినప్పుడు తెరవండి"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "సైడ్ వారీగా ట్యాబ్‌లు"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "మరొక ట్యాబ్‌ని జోడించు"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "ప్రశంసల పత్రం"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "ఫోటోను భర్తీ చేయండి"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "ఫోటోను ఎంచుకోండి"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "ఫోటోను తీసివేయి"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "ఫోటో వివరణ"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "ఫోటోలో దాని పక్కన పేరు ఉన్న వ్యక్తి మాత్రమే కనిపిస్తున్నప్పుడు ఖాళీగా ఉంచండి."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "నక్షత్ర రేటింగ్ (0 = ఏదీ లేదు)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "కోట్ కింద పేరు"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "కోటేషన్ పక్కన ఫోటో"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "కస్టమర్ ఏమన్నారంటే…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "పాత్ర లేదా కంపెనీ"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "టూల్‌టిప్"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "టూల్ టిప్ టెక్స్ట్"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "దీన్ని సంక్షిప్తంగా ఉంచండి: ఒకటి లేదా రెండు వాక్యాలు. స్క్రీన్ రీడర్‌లు ఇది వివరించే పదంతో కలిపి దీన్ని చదువుతాయి."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "దీన్ని చూపించు"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "పైన"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "కింద"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "పదం లేదా పదబంధం"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "వర్తింపజేయి"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "ప్రొఫైల్"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "ఎవరి ప్రొఫైల్"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "పోస్ట్ యొక్క రచయిత"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "ప్రొఫైల్ చిత్రాన్ని చూపించు"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "జీవిత చరిత్రను చూపించు"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "పోస్ట్‌లు మరియు వెబ్‌సైట్‌కి లింక్‌లను చూపించు"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "రచయిత ప్రొఫైల్"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "ఎవరి ప్రొఫైల్ చూపించాలో ఎంచుకోండి."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "దేశ కోడ్‌తో కూడిన వాట్సాప్ నంబర్"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "ఉదాహరణకు +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "ప్రారంభించడానికి సందేశం (ఐచ్ఛికం)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "చిహ్నం పక్కన టెక్స్ట్‌ని చూపించు"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "మూల (Corner)"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "దిగువ ముగింపు (ఆంగ్లంలో కుడి వైపు)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "దిగువ ప్రారంభం (ఇంగ్లీష్‌లో ఎడమ వైపు)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "సైడ్‌బార్‌లో మీ వాట్సాప్ నంబర్‌ను జోడించండి. అప్పటి వరకు పేజీలో బటన్ కనిపించదు."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "పేజీలో, ఈ బటన్ స్క్రీన్ దిగువ మూలలో తేలుతుంది."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "షార్ట్‌కోడ్ ట్యాగ్"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "అక్షరాలు, సంఖ్యలు, హైఫన్‌లు మరియు అండర్‌స్కోర్‌లను మాత్రమే ఉపయోగించండి."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "గుణలక్షణం పేరు"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "గుణధర్మాన్ని జోడించు"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "షార్ట్‌కోడ్"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "ఇTర లక్షణాలు"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "బ్లాక్ సెట్టింగ్‌లలో షార్ట్‌కోడ్ ట్యాగ్‌ను ఎంచుకోండి."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "గ్యాలరీ"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "చిత్రం పరిమాణం"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "థంబ్నెయిల్"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "పూర్తి పరిమాణం"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "దీనికి లింక్ చేయి"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "అటాచ్‌మెంట్ పేజీ"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "మీడియా ఫైల్"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "ఆడియో"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "వీడియో"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "ఫైల్ చిరునామా"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "లూప్"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "స్వయంచాలకంగా ప్లే చేయి"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "పోస్టర్ చిత్రం"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "ప్లేజాబితా"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "కామలతో వేరు చేయబడిన మీడియా IDలు"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "ట్రాక్ జాబితాను చూపించు"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "ఎంబెడ్ చేయండి"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "పొందుపరచాల్సిన చిరునామా"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "గరిష్ట వెడల్పు"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "శీర్షిక"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "చిత్రం మరియు శీర్షిక HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "వెడల్పు"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "చిట్కా: మీ సైట్‌కి సరిపోయేలా ఈ ఫారమ్ స్టైల్ చేయబడి ఫారమ్ బ్లాక్‌లో కనిపిస్తుంది."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "ఫారమ్ శీర్షికను చూపించు"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "ఫారమ్ వివరణను చూపించు"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "పేజీని రీలోడ్ చేయకుండా సమర్పించండి"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7352,123 +9189,108 @@ msgstr "ఫైల్‌ని ఎంచుకోండి"
 msgid "— Default —"
 msgstr "— డిఫాల్ట్ —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "అధునాతన స్టైలింగ్"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "ఇన్‌లైన్ CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS డిక్లరేషన్‌లు, ఉదాహరణకు: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "ప్రభావాలు (లెగసీ తరగతులు)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "పాత వెర్షన్‌ల నుండి తీసుకువచ్చిన స్పేస్-వేరు చేయబడిన ఎఫెక్ట్ పేర్లు, ఉదాహరణకు: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "అడ్డు వరుస"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "వెడల్పు"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "పూర్తి వెడల్పు, కంటెంట్ మధ్యలో ఉంచబడుతుంది"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "లింక్ చిరునామా"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "లింక్ సంబంధం"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "అమరిక"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "ఎడమ"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "కేంద్రం"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "కుడివైపు"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "బటన్ టెక్స్ట్"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "వచనాన్ని జోడించండి…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "ప్లేస్‌మెంట్"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "దాని స్వంత లైన్ లో"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "లైన్‌లో, ఇతర కంటెంట్ పక్కన"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "ఆటోమేటిక్ (పేజీ ప్రధాన స్థాయిలో స్వంత లైన్)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "అందుబాటులో ఉండే లేబుల్"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "అలంకారిక ఐకాన్ కోసం ఖాళీగా వదలండి."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "బ్లాక్ సెట్టింగ్‌లలో ఒక ఐకాన్‌ను ఎంచుకోండి."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "కొత్త సెట్టింగ్ పేరు"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "ఉదాహరణకు: శీర్షిక లేదా పాఠ్యం"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "అమరికను జోడించు"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "విడ్జెట్"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "ఒక విడ్జెట్‌ను ఎంచుకోండి"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "విడ్జెట్ ప్రాంతం"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "ఒక విడ్జెట్ ప్రాంతాన్ని ఎంచుకోండి"
 
@@ -7491,6 +9313,142 @@ msgstr "ఈ ఎంబెడ్ లోడ్ అయిన తర్వాత ద�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "లేఅవుట్ షిఫ్ట్"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "ఈ విడ్జెట్ దాని సెట్టింగ్‌లను వివరించదు, కాబట్టి అవి పేరు మరియు విలువ జంటలుగా సవరించబడతాయి."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "సమస్య"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "తనిఖీ చేయి"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "బ్లాక్‌ని చూపించు"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "చదవడానికి సులభంగా ఉండే థీమ్ రంగును ఉపయోగించండి"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "దీన్ని H%d చేయండి"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "ప్రత్యామ్నాయ పాఠ్యం"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "alt టెక్స్ట్ సేవ్ చేయి"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "ఈ చిత్రం అలంకరణ కోసం ఉపయోగించబడింది"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "తనిఖీ చేస్తోంది..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "ఈ పేజీలో ఎలాంటి యాక్సెసిబిలిటీ సమస్యలు కనుగొనబడలేదు."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d సమస్య"
+msgstr[1] "%d సమస్యలు"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "పరిశీలించడానికి %d అంశం"
+msgstr[1] "%d విషయాలను తనిఖీ చేయాలి"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "మళ్ళీ తనిఖీ చేయండి"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "స్వయంచాలక తనిఖీ అనేక సమస్యలను గుర్తిస్తుంది కానీ అన్నీ కాదు. కీబోర్డ్ ద్వారా మాత్రమే మరియు స్క్రీన్ రీడర్‌తో కూడా పేజీని ఒకసారి ప్రయత్నించండి."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "టెక్స్ట్ కాంట్రాస్ట్ %1$s:1 ఉంది; ఇది చదవడానికి కనీసం %2$s:1 అవసరం."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "ఇక్కడ క్లిక్ చేయండి,ఇక్కడ,మరింత చదవండి,మరిన్ని,లింక్,ఈ లింక్,మరింత తెలుసుకోండి,వెళ్లండి"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "ఒక లింక్‌లో టెక్స్ట్ లేదు, కాబట్టి స్క్రీన్ రీడర్ కేవలం \"లింక్\" అని మాత్రమే ప్రకటిస్తుంది. టెక్స్ట్ లేదా లేబుల్‌ని జోడించండి."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "\"%s\" లింక్ టెక్స్ట్ అది ఎక్కడికి వెళ్తుందో చెప్పడం లేదు. దానికి బదులుగా గమ్యస్థానాన్ని వివరించండి."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "ఒక మూలకం ధనాత్మక ట్యాబ్‌ఇండెక్స్‌ను కలిగి ఉంది, ఇది రీడింగ్ ఆర్డర్ నుండి కీబోర్డ్ ఆర్డర్‌ను మారుస్తుంది. 0 ని ఉపయోగించండి లేదా దానిని తీసివేయండి."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "క్లిక్ చేయదగిన వస్తువు కీబోర్డ్ ద్వారా చేరుకోలేము. అసలు బటన్ లేదా లింక్‌ని ఉపయోగించండి."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "ఎంబెడ్ చేసిన ఫ్రేమ్‌కు శీర్షిక లేదు, కాబట్టి స్క్రీన్ రీడర్ అది ఏమిటో చెప్పలేదు."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "ఫారమ్ ఫీల్డ్‌కి లేబుల్ లేదు, కాబట్టి దాని ఉద్దేశం ప్రకటించబడలేదు."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "ఈ శీర్షిక ఖాళీగా ఉంది. స్క్రీన్ రీడర్ వినియోగదారులు శీర్షికల ద్వారా నావిగేట్ చేస్తారు; దాన్ని తీసివేయండి లేదా వచనాన్ని జోడించండి."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "పేజీ శీర్షిక ఇప్పటికే H1; కంటెంట్ యొక్క అగ్ర స్థాయి కోసం H2ని ఉపయోగించండి."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "ఈ H%1$d ఒక స్థాయిని దాటవేస్తుంది; దీనికి మునుపటిది H%2$d. దీన్ని H%3$d గా మార్చండి."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "ఈ చిత్రానికి ఆల్ట్ టెక్స్ట్ లేదు. దాన్ని వివరించండి లేదా అది ఎలాంటి విలువను జోడించకపోతే అలంకరణగా గుర్తించండి."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "ప్యానెల్‌ను మూసివేయి"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7565,18 +9523,6 @@ msgstr "అనుకూలమైనది"
 msgid "Width / height"
 msgstr "వెడల్పు / ఎత్తు"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "ఎగువన"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "దిగువన"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7589,20 +9535,6 @@ msgstr "వారసత్వ చిత్ర — భర్తీ చేయి"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "చిత్రాన్ని తొలగించు"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "స్థానం"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "పరిమాణం"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7668,22 +9600,6 @@ msgstr "ప్రతి వైపు విడివిడిగా"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "వైపు"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "శైలి"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "రంగు"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7933,14 +9849,6 @@ msgstr "%1$s (%2$d సెట్)"
 msgid "Replace icon"
 msgstr "ఐకాన్‌ను మార్చండి"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "చిన్న చిహ్నాన్ని ఎంచుకోండి"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "ఒక చిహ్నాన్ని ఎంచుకోండి"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "ఏ ఐకాన్‌లూ సరిపోలలేదు."
@@ -7952,10 +9860,6 @@ msgstr "సాధారణమైన"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "బ్రాండ్‌లు"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "రూపురేఖలు గీసిన"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8084,21 +9988,9 @@ msgstr "పాఠ్యం రంగు"
 msgid "Cursor"
 msgstr "కర్సర్"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "బాణం"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "పాయింటర్"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "పాఠ్యం"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8256,10 +10148,6 @@ msgstr "ప్రాంతం పేరు"
 msgid "Named areas"
 msgstr "పేరున్న ప్రాంతాలు"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "అడ్డు వరుసలు"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "ఎత్తు"
@@ -8377,10 +10265,6 @@ msgstr "సమలేఖనం చేయి"
 msgid "Decoration"
 msgstr "అలంకరణ"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "అండర్‌లైన్ చేయి"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "పై గీత"
@@ -8463,19 +10347,9 @@ msgstr "కోనిక్"
 msgid "Angle (degrees)"
 msgstr "కోణం (డిగ్రీలు)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "రూపం"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "దీర్ఘవృత్తం"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "సర్కిల్"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8511,10 +10385,6 @@ msgstr "సంతృప్తత (% లో)"
 msgid "Tint (use a see-through colour)"
 msgstr "టింట్ (పారదర్శక రంగును ఉపయోగించండి)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "గుండ్రని చతురస్రం"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "బ్లాబ్"
@@ -8531,10 +10401,6 @@ msgstr "త్రికోణం"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "డైమండ్"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "స్టార్"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9412,11 +11278,6 @@ msgstr "ఖాళీ చేయి"
 msgid "The change could not be saved."
 msgstr "మార్పును సేవ్ చేయడం సాధ్యం కాలేదు."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "ప్యానెల్‌ను మూసివేయి"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "థీమ్ డిఫాల్ట్"
@@ -9473,9 +11334,49 @@ msgstr "తరగతులు, టోకెన్‌లు, డార్క్ �
 msgid "Open the Site Editor’s styles"
 msgstr "సైట్ ఎడిటర్ యొక్క శైలులను తెరవండి"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "శీర్షిక"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "శైలి ట్యాబ్‌తో స్టైల్ చేయబడిన, మరింత దగ్గరి లైన్ ఎత్తుతో ఉన్న శీర్షిక."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "శైలి ట్యాబ్‌తో శైలీకృతం చేయబడిన ఒక పేరాగ్రాఫ్ టెక్స్ట్."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "చిత్రం"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "స్టైల్ ట్యాబ్‌తో శైలీకరించబడిన, గుండ్రని మూలలు ఉన్న చిత్రం."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "మీడియా లైబ్రరీ నుండి ఒక వీడియో, స్టైల్ ట్యాబ్‌తో శైలీకృతం చేయబడింది."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "స్పేసర్"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "బ్లాక్‌ల మధ్య ఖాళీ స్థలం; శైలి (Style) ట్యాబ్‌లో స్క్రీన్ సైజు ప్రకారం వేర్ సెట్ చేయండి."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "విభజన రేఖ"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "శైలి ట్యాబ్‌తో శైలీకరించబడిన, విభాగాల మధ్య అడ్డు గీత."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "దాని అడ్రస్‌ను పేస్ట్ చేయడం ద్వారా మరొక సైట్ నుండి కంటెంట్ (వీడియో, పోస్ట్, మ్యాప్) జోడించండి."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "శైలి టాబ్‌తో శైలీకరించబడిన గ్రిడ్‌లోని అనేక చిత్రాలు."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9509,10 +11410,6 @@ msgstr "జాబితా"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "మాత్రలు"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "బటన్లు"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9557,10 +11454,6 @@ msgstr "ఈ పేజీ అనువదించబడిన భాషలను
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "నిలువుగా అమర్చండి"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "నేపథ్యం"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9619,11 +11512,6 @@ msgstr "బ్లాక్ సెట్టింగ్‌లు"
 #, js-format
 msgid "Add block: %s"
 msgstr "బ్లాక్‌ని జోడించండి: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(శీర్షిక లేదు)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9699,10 +11587,6 @@ msgstr "సేఫ్ మోడ్‌ను ఆపివేయి"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "సేఫ్ మోడ్ ఆన్ చేయండి (ఇతరప్లగిన్‌లు ఆఫ్‌లో ఉంటాయి, మీకోసం, స్టూడియోలో మాత్రమే)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "ప్రచురించబడింది"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10042,11 +11926,6 @@ msgstr "బిల్డర్ పేరు"
 msgid "Visual editor name"
 msgstr "విజువల్ ఎడిటర్ పేరు"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "రచయిత"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10120,10 +11999,6 @@ msgstr[1] "రద్దు చేయబడింది: %d పేజీలు �
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "ప్రతిక్షేపించు"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "లింకులు"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10233,10 +12108,6 @@ msgstr "ఈ పేజీలో క్లయింట్ వ్యాఖ్యా
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "ఈ పేజీ ప్రచురించబడకముందు కూడా, లింక్ ఉన్న ఎవరైనా ఈ పేజీని చూడగలరు మరియు వ్యాఖ్యలను ఇవ్వగలరు. దీనికి ఎలాంటి ఖాతా అవసరం లేదు."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "కాపీ చేయబడింది"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10479,6 +12350,52 @@ msgstr "ఈ సైట్ యొక్క మీడియా లైబ్రర�
 msgid "Show what will happen"
 msgstr "ఏం జరుగుతుందో చూపించు"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "అకార్డియన్ అంశం"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "అకార్డియన్ యొక్క ఒక విభాగం: దాని కంటెంట్‌ను తెరిచే శీర్షిక."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "అకార్డియన్"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "తెరిచే మరియు మూసుకునే ప్రశ్నలు లేదా విభాగాలు. ఐచ్ఛికంగా ఒక్కొక్కటిగా, మరియు శోధన ఇంజిన్‌ల కోసం FAQ వలె ఐచ్ఛికంగా మార్కప్ చేయబడతాయి."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "అకార్డియన్"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "తరచుగా అడిగే ప్రశ్నలు"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "టెగుడుమార్చు"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "ముడుచు"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "వివరాలు"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10495,6 +12412,7 @@ msgid "notice"
 msgstr "నోటీసు"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "సందేశం"
@@ -10509,6 +12427,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "హెచ్చరిక"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "బా్డ్జ్"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "కొత్తది, సేల్ లేదా అత్యుత్తమ విలువ వంటి చిన్న లేబుల్."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "లేబుల్"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "ట్యాగ్"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "పిల్"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "కొత్తది"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "బుకింగ్ క్యాలెండర్"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "సందర్శకుడు కోరినప్పుడు మాత్రమే లోడ్ అయ్యే Calendly లేదా Cal.com బుకింగ్ క్యాలెండర్."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "బుకింగ్"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "కలెంట్లీ"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "అపాయింట్‌మెంట్"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "షెడ్యూల్ చేయండి"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10520,6 +12503,7 @@ msgid "A link styled as a button."
 msgstr "బటన్ వలె శైలి చేయబడిన లింక్."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "బటన్"
@@ -10533,6 +12517,98 @@ msgstr "లింక్"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "చర్యకు పిలుపు"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "చర్యకు పిలుపు"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "ఒక శీర్షిక, ఒక వాక్యం మరియు సందర్శకుడిని చర్య తీసుకోవాల్సిందిగా కోరే ఒకటి లేదా రెండు బటన్‌లు."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "కాల్ టు యాక్షన్"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "బ్యానర్"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "నమోదు చేసుకోండి"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "చెక్‌లిస్ట్"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "స్క్రీన్ రీడర్ల కోసం పదాలలో అలాగే టిక్‌తో కూడిన, పూర్తయినవి లేదా ఇంకా చేయవలసినవిగా గుర్తించబడిన పనుల జాబితా."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "చేయవలసిన పనులు"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "పనులు"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "టిక్స్"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "జాబితా"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "కోడ్"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "సింటాక్స్ హైలైటింగ్, లైన్ నంబర్‌లు మరియు కాపీ బటన్‌తో కూడిన కోడ్ లిస్టింగ్. ప్లగిన్ ఎప్పుడైనా డిసేబుల్ చేయబడితే కూడా ఇది చదవడానికి వీలుగా ఉంటుంది."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "కోడ్"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "సింటాక్స్"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "హైలైట్ చేయి"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "స్నిప్పెట్"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "ప్రోగ్రామింగ్"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10556,6 +12632,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "లేఅవుట్"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "పోలిక పట్టిక"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "ప్లాన్‌లు లేదా ఉత్పత్తులు పక్కపక్కనే ఉంటాయి, స్క్రీన్ రీడర్‌లు పదాలుగా చదివే అవును మరియు లేదు గుర్తులతో."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "పోల్చండి"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "ధరలు"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "ప్లాన్‌లు"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "పట్టిక"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "ఫీచర్‌లు"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "కాంటాక్ట్ బటన్‌లు"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "మిమ్మల్ని కాల్ చేయడానికి, ఇమెయిల్ చేయడానికి, టెక్స్ట్ చేయడానికి లేదా వాట్సాప్‌లో సందేశం పంపడానికి బటన్‌లు."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "సంప్రదించండి"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "కాల్ చేయండి"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "ఫోన్"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "ఇమెయిల్"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "వాట్సాప్"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "ఎస్ఎంఎస్"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10573,11 +12727,13 @@ msgid "container"
 msgstr "కంటైనర్"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "బాక్స్"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10594,6 +12750,52 @@ msgstr "ఫ్లెక్స్‌బాక్స్"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "నిలువు వరుసలు"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "డ్యూయల్ హెడ్డింగ్"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "రెండు భాగాలుగా ఉన్న శీర్షిక, రెండవ భాగం రంగు, గ్రేడియంట్, అవుట్‌లైన్ లేదా అండర్‌లైన్‌తో హైలైట్ చేయబడింది."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "శీర్షిక"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "శీర్షిక"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "గ్రేడియంట్"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "ఫీచర్ జాబితా"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "గ్రిడ్‌లో ఫీచర్లు, ప్రతిదానిలో ఒక ఐకాన్, హెడ్డింగ్ మరియు చిన్న వివరణ ఉంటాయి."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "ప్రయోజనాలు"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "సేవలు"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10637,6 +12839,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "టెక్స్ట్"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "ఫారమ్"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "మీ సైట్‌కి సరిపోయేలా స్టైల్ చేయబడిన కాంటాక్ట్ ఫామ్ 7, డబ్ల్యుపిఫార్మ్స్, గ్రావిటీ ఫార్మ్స్ లేదా ఫ్లూయంట్ ఫార్మ్స్ నుండి ఒక ఫారమ్‌ను చూపుతుంది."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "ఫారం"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "కాంటాక్ట్ ఫారం 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "గ్రావిటీ ఫారమ్‌లు"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "ఫ్లూయెంట్ ఫార్మ్స్"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "పారిభాషిక పదాల సూచి"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "నిబంధనలు మరియు వాటి నిర్వచనాలు, A నుండి Z వరకు క్రమబద్ధీకరించబడ్డాయి, ప్రతి ఒక్కటి దాని స్వంత లింక్‌ను కలిగి ఉంటుంది. పేజీలో ప్రతి పదం యొక్క మొదటి ప్రస్తావనను దాని నిర్వచనానికి లింక్ చేయవచ్చు."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "నిబంధనలు"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "నిర్వచనాలు"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "నిఘంటువు"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "చిహ్నాల జాబితా"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "ప్రతి పంక్తి ఒక ఐకాన్‌తో ప్రారంభమయ్యే జాబితా: ఒక చెక్ మార్క్, ఒక బాణం లేదా లైబ్రరీ నుండి ఏదైనా ఐకాన్."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "బుల్లెట్లు"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "చిహ్నాలు"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10657,6 +12939,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "సమాచార పెట్టె"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "ఒక చిహ్నం, ఒక చిన్న శీర్షిక, ఒకటి లేదా రెండు వాక్యాలు మరియు ఐచ్ఛిక లింక్: సేవలు, ప్రయోజనాలు లేదా సంప్రదింపు వివరాల కోసం."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "ఫీచర్"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "సేవ"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "కార్డ్"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10676,6 +12983,204 @@ msgstr "అనువాదం"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "బహుభాషా"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "మ్యాప్ చేయి"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap నుండి ఒక ప్రదేశం యొక్క మ్యాప్: కీ లేదు, మరియు సందర్శకుడు మ్యాప్‌ను అభ్యర్థించే వరకు OpenStreetMap నుండి ఏదీ లోడ్ కాదు."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "మ్యాప్ చేయి"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "స్థానం"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "చిరునామా"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "మాడల్"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "పేజీపై ఒక విండోను తెరిచే బటన్, లోపల ఏ బ్లాక్‌లు అయినా ఉంటాయి."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "మోడల్"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "పాప్‌అప్"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "లైట్‌బాక్స్"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "డైలాగ్"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "ఆఫ్-కాన్వాస్ ప్యానెల్"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "విండో పక్క నుండి ఒక ప్యానెల్‌ను, లోపలి ఏ బ్లాక్‌లతోనైనా స్లైడ్ చేసే బటన్."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "ఆఫ్-కాన్వాస్"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "డ్రాయర్"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "సైడ్‌బార్"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "ప్యానెల్"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "మెను"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "పోస్ట్ వివరాలు"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "పోస్ట్ రచయిత, తేదీలు, వర్గాలు, ట్యాగ్‌లు, చదివే సమయం మరియు వ్యాఖ్యల గణన."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "రచయిత"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "తేదీ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "చదవడానికి పట్టే సమయం"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "మెటా"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "రచయిత పేరు"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "ప్రోగ్రెస్ బార్"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "నైపుణ్యం లేదా లక్ష్యం వంటి ఏదైనా ఎంత దూరం పురోగమించిందో చూపించే లేబుల్ చేసిన బార్."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "పురోగతి"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "బార్"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "నైపుణ్యం"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "లక్ష్యం"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "పాస్‌వర్డ్-రక్షిత కంటెంట్"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "పాస్‌వర్డ్ ఉన్న సందర్శకులు మాత్రమే చూడగల బ్లాక్‌లు. వారు దానిని నమోదు చేసే వరకు, కంటెంట్ పేజీలో అసలు ఉండదు."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "పాస్‌వర్డ్"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "రక్షించబడింది"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "ప్రైవేట్"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "లాక్ చేయి"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "సభ్యులు"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10701,6 +13206,86 @@ msgstr "లైట్"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "రంగుల స్కీమ్"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR కోడ్"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "వెబ్ చిరునామా లేదా ఏదైనా టెక్స్ట్ కోసం QR కోడ్, మీ స్వంత సైట్‌లో గీయబడుతుంది (QR సేవ ఏదీ ఉపయోగించబడదు)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "క్యూఆర్"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "క్యూఆర్ కోడ్"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "బార్‌కోడ్"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "స్కాన్ చేయి"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "చదవడం పురోగతి బార్"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "విజిటర్లు పేజీలో స్క్రోల్ చేస్తున్నప్పుడు నిండే విండో అంచున ఉండే సన్నని బార్."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "చదువుతోంది"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "స్క్రోల్ చేయి"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "సంబంధిత పోస్ట్‌లు"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "ఈ పోస్ట్ యొక్క వర్గాలు లేదా ట్యాగ్‌లను పంచుకునే పోస్ట్‌లు, వాటి చిత్రాలు, తేదీలు మరియు సారాంశాలతో."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "సంబంధిత"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "పోస్ట్‌లు"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "సారూప్యత గల"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "మరిన్ని"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10764,13 +13349,284 @@ msgstr "థీమ్ యొక్క విడ్జెట్ ప్రాంత
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "సైడ్‌బార్"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "విడ్జెట్ ప్రాంతం"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "సైట్‌మ్యాప్"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "పేజీ ట్రీ ఉంచబడి, ప్రచురించబడిన ప్రతి పేజీ మరియు పోస్ట్ (మరియు ఇతర పబ్లిక్ కంటెంట్) జాబితాను అందించే పేజీ."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "సైట్‌మ్యాప్"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "సైట్ మ్యాప్"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "ఇండెక్స్"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "అన్ని పేజీలు"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "సోషల్ ఐకాన్‌లు"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "మీ ప్రొఫైల్‌ల లింక్‌లు, నెట్‌వర్క్‌ల స్వంత ఐకాన్‌లతో ప్రదర్శించబడతాయి."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "సోషల్"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "లింకులు"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "అనుసరించు"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "ప్రొఫైల్‌లు"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "నక్షత్ర రేటింగ్"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "నక్షత్రాల రూపంలో, అర్ధ-నక్షత్రం చొప్పున చూపబడే రేటింగ్."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "నక్షత్రాలు"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "రేటింగ్"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "స్కోర్"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "అడుగులు"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "ఒక ప్రక్రియ యొక్క సంఖ్యల వారీగా క్రమపద్ధతిలో ఉన్న దశలు, పేజీలో కిందకి లేదా పక్కపక్కనే."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "ప్రక్రియ"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "ఎలా చేయాలో"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "కాలరేఖ"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "సంఖ్యల కూడిన"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "ట్యాబ్"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "టాబ్స్ బ్లాక్ యొక్క ఒక టాబ్: దాని శీర్షిక మరియు దాని ప్యానెల్."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "విషయసూచిక"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "పేజీలోని హెడ్డింగ్‌ల జాబితా, ఇది స్వయంచాలకంగా రూపొందించబడుతుంది మరియు ప్రతిదానికీ లింక్ చేస్తుంది."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "విషయ సూచిక"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "విషయాలు"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "శీర్షికలు"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "టాబ్‌లు"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "ట్యాబ్‌లలో కంటెంట్: సందర్శకులు మౌస్ లేదా కీబోర్డ్ ద్వారా ప్యానెల్‌ల మధ్య మారుతారు."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "ట్యాబ్‌లు"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "టాబ్డ్"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "ప్యానెల్స్"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "ప్రశంసాపత్రం"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "ఒక కస్టమర్ యొక్క పేరు, హోదా, ఫోటో మరియు ఐచ్ఛిక నక్షత్ర రేటింగ్‌తో కూడిన కోట్."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "సమీక్షించండి"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "కోట్"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "కస్టమర్"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "అభిప్రాయం"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "టూల్‌టిప్"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "హోవర్ చేసినప్పుడు మరియు కీబోర్డ్ ఫోకస్‌లో ఉన్నప్పుడు చిన్న వివరణను చూపించే పదం లేదా పదబంధం."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "టూల్‌టిప్"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "సూచన"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "నిర్వచనం"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "రచయిత ప్రొఫైల్"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "రచయిత యొక్క చిత్రం, పేరు, బయో మరియు లింక్‌లు లేదా ఎంచుకున్న వినియోగదారునివి."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "బైయో"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "ప్రొఫైల్"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "గురించి"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "వాట్సాప్ చాట్ బటన్"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "పేజీ యొక్క మూలలో ఉండే ఫ్లోటింగ్ బటన్, మీతో వాట్సాప్ చాట్‌ను తెరుస్తుంది."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "చాట్"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "ఫ్లోటింగ్"
 
 #: blocks/widget/block.json
 msgctxt "block title"

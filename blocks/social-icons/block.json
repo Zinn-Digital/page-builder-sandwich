@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/social-icons",
+	"title": "Social icons",
+	"category": "pbs-marketing",
+	"icon": "share",
+	"description": "Links to your profiles, drawn with the networks' own icons.",
+	"keywords": [
+		"social",
+		"links",
+		"follow",
+		"profiles"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			},
+			"role": "content"
+		},
+		"look": {
+			"type": "string",
+			"enum": [
+				"plain",
+				"filled",
+				"outline"
+			],
+			"default": "filled"
+		},
+		"shape": {
+			"type": "string",
+			"enum": [
+				"circle",
+				"rounded",
+				"square"
+			],
+			"default": "circle"
+		},
+		"size": {
+			"type": "string",
+			"enum": [
+				"small",
+				"medium",
+				"large"
+			],
+			"default": "medium"
+		},
+		"justify": {
+			"type": "string",
+			"enum": [
+				"start",
+				"center",
+				"end"
+			],
+			"default": "start"
+		},
+		"newTab": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

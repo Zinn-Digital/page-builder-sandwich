@@ -1,0 +1,139 @@
+/*
+ * pbs/code, and its highlight theme (neutral `__PREFIX__-hl-*` classes set by highlight.js).
+ * Colours meet 4.5:1 on the #f6f8fa background. Zero-specificity defaults (:where) so the design
+ * panel wins. Logical properties only; code is always left-to-right, even in an RTL page.
+ */
+:where(.__PREFIX__-code) {
+	margin-inline: 0;
+	margin-block: 0 1.5em;
+	border: 1px solid #d0d7de;
+	border-radius: 6px;
+	background: #f6f8fa;
+	color: #1f2328;
+	overflow: hidden;
+}
+
+:where(.__PREFIX__-code__bar) {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1em;
+	padding-block: 0.4em;
+	padding-inline: 1em;
+	border-block-end: 1px solid #d0d7de;
+	font-size: 0.8125em;
+	color: #57606a;
+}
+
+:where(.__PREFIX__-code__copy) {
+	margin-inline-start: auto;
+	padding-block: 0.25em;
+	padding-inline: 0.75em;
+	border: 1px solid #d0d7de;
+	border-radius: 4px;
+	background: #fff;
+	color: #1f2328;
+	font: inherit;
+	cursor: pointer;
+}
+
+:where(.__PREFIX__-code__copy:focus-visible, .__PREFIX__-code__pre:focus-visible) {
+	outline: 2px solid #0969da;
+	outline-offset: -2px;
+}
+
+:where(.__PREFIX__-code__body) {
+	display: flex;
+	direction: ltr;
+}
+
+:where(.__PREFIX__-code__lines) {
+	flex: none;
+	padding-block: 1em;
+	padding-inline: 1em 0.75em;
+	border-inline-end: 1px solid #d0d7de;
+	color: #57606a;
+	text-align: end;
+	white-space: pre;
+	user-select: none;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.875em;
+	line-height: 1.6;
+}
+
+:where(.__PREFIX__-code__pre) {
+	flex: 1;
+	min-inline-size: 0;
+	margin: 0;
+	padding: 1em;
+	overflow: auto;
+	background: none;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	font-size: 0.875em;
+	line-height: 1.6;
+	text-align: start;
+	tab-size: 4;
+}
+
+:where(.__PREFIX__-code--wrap .__PREFIX__-code__pre) {
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+:where(.__PREFIX__-code__code) {
+	font: inherit;
+	background: none;
+	padding: 0;
+}
+
+:where(.__PREFIX__-hl-keyword, .__PREFIX__-hl-doctag, .__PREFIX__-hl-template-tag, .__PREFIX__-hl-template-variable, .__PREFIX__-hl-type, .__PREFIX__-hl-variable.language_) {
+	color: #cf222e;
+}
+
+:where(.__PREFIX__-hl-title, .__PREFIX__-hl-title.class_, .__PREFIX__-hl-title.function_) {
+	color: #8250df;
+}
+
+:where(.__PREFIX__-hl-attr, .__PREFIX__-hl-attribute, .__PREFIX__-hl-literal, .__PREFIX__-hl-meta, .__PREFIX__-hl-number, .__PREFIX__-hl-operator, .__PREFIX__-hl-selector-attr, .__PREFIX__-hl-selector-class, .__PREFIX__-hl-selector-id, .__PREFIX__-hl-variable) {
+	color: #0550ae;
+}
+
+:where(.__PREFIX__-hl-regexp, .__PREFIX__-hl-string, .__PREFIX__-hl-meta .__PREFIX__-hl-string) {
+	color: #0a3069;
+}
+
+:where(.__PREFIX__-hl-built_in, .__PREFIX__-hl-symbol, .__PREFIX__-hl-params) {
+	color: #953800;
+}
+
+:where(.__PREFIX__-hl-comment, .__PREFIX__-hl-code, .__PREFIX__-hl-formula) {
+	color: #57606a;
+	font-style: italic;
+}
+
+:where(.__PREFIX__-hl-name, .__PREFIX__-hl-quote, .__PREFIX__-hl-selector-tag, .__PREFIX__-hl-selector-pseudo) {
+	color: #116329;
+}
+
+:where(.__PREFIX__-hl-section) {
+	color: #0550ae;
+	font-weight: 700;
+}
+
+:where(.__PREFIX__-hl-addition) {
+	color: #116329;
+	background-color: #dafbe1;
+}
+
+:where(.__PREFIX__-hl-deletion) {
+	color: #82071e;
+	background-color: #ffebe9;
+}
+
+:where(.__PREFIX__-hl-emphasis) {
+	font-style: italic;
+}
+
+:where(.__PREFIX__-hl-strong) {
+	font-weight: 700;
+}

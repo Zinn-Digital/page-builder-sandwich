@@ -50,8 +50,15 @@ export function walk( blocks, fn ) {
 export function dedupe( blocks, owners, random = Math.random ) {
 	const byId = new Map();
 	const taken = new Set();
+	const missing = [];
 	walk( blocks, ( b ) => {
-		const id = b.attributes?.pbs?.id;
+		const pbs = b.attributes?.pbs;
+		const id = pbs?.id;
+		// Styled but no id yet: a block inserted from a variation or a pattern that carries preset
+		// design values (the compiler ignores a block without an id).
+		if ( ! id && pbs && ( pbs.s || pbs.hide || pbs.cls || pbs.css ) ) {
+			missing.push( b.clientId );
+		}
 		if ( typeof id === 'string' && id ) {
 			taken.add( id );
 			if ( ! byId.has( id ) ) {
@@ -74,6 +81,12 @@ export function dedupe( blocks, owners, random = Math.random ) {
 				out.push( { clientId, id: fresh } );
 			}
 		}
+	}
+	for ( const clientId of missing ) {
+		const fresh = newId( taken, random );
+		taken.add( fresh );
+		owners.set( fresh, clientId );
+		out.push( { clientId, id: fresh } );
 	}
 	for ( const id of [ ...owners.keys() ] ) {
 		if ( ! byId.has( id ) && ! out.some( ( r ) => r.id === id ) ) {

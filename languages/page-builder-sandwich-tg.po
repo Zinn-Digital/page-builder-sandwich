@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Захира кардан ҳамчун намунаи такрорӣ истифодашаванда"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Санҷиши дастрасӣ"
 
@@ -991,6 +995,7 @@ msgstr "← Интихоби провайдери дигар"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Суроға"
 
@@ -1044,6 +1049,8 @@ msgstr "Санҷиш"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Нобуд кардан"
@@ -1097,6 +1104,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Рӯйхати моделҳоро аз провайдерҳо навсозӣ кунед"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Тасвирҳо"
 
@@ -1189,6 +1197,7 @@ msgid "turned off"
 msgstr "хомӯш карда шудааст"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Кушодан"
 
@@ -1450,6 +1459,7 @@ msgstr "То ҳанӯз ягон дархости AI иҷро нашудааст
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Иҷро шуд"
 
@@ -1517,7 +1527,11 @@ msgstr "Кӯшишҳои зиёд. Лутфан пас аз чанд дақиқ�
 msgid "Something went wrong. Please contact the admin."
 msgstr "Xatoе ruy dod. Luftan, ba ma’mur (admin) murojiat kuned."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Харитаи пайвандҳо"
 
@@ -1540,52 +1554,383 @@ msgstr "Он оила захира нашудааст."
 msgid "Removed."
 msgstr "Хориҷ карда шуд."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Ин номи оилаи ҳарфи эътиборнок нест."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Шрифти Google ин оиларо барнагардонд. Номро санҷида, бори дигар кӯшиш кунед."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Файлҳои шрифтро боргирӣ ё захира кардан ғайриимкон аст. Муайян кунед, ки оё ҷузвдони боргузорӣ (uploads) барои навиштан дастрас аст."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Таabишҳои шрифт захира карда нашуданд. Санҷед, ки папкаи uploadҳо барои навиштан дастрас аст."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Рад кардани ин огоҳинома"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(дар ҷадвали нав кушода мешавад)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Иҷро шуд:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Барои иҷро:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Феҳристи истилоҳот"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Аз %2$s баҳои %1$s дода шуд"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Рафти корҳо"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Нусха бардоштани код"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Нусхабардорӣ шуд"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Ин виҷет дар ин сайт дастнорас аст."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Почтаи электронӣ"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Телефон"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Фиди RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Вебсайт"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Пайванд"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (дар варақаи нав кушода мешавад)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Аз 5 баҳои %d дода шуд"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(тавсия мешавад)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Дохил карда шудааст"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Дохил нашудааст"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Ҷадвали муқоисавӣ"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Занг задан ба %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Почтаи электронии %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Матни %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Дар WhatsApp сӯҳбат кардан"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Бо мо тамос гиред"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Бо мо дар WhatsApp сӯҳбат кунед"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Ин шакли муроҷиат дар айни замон дастнорас аст."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Ин шакли дархостӣ нишон дода намешавад, зеро %s фаъол нест."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Харита: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Намоиши харита онро аз OpenStreetMap бор мекунад."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Намоиши харита"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Харитаро дар OpenStreetMap кушоед"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Тақвими фармоиш аз %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Намоиш додани тақвими фармоиш онро аз %s бор мекунад."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Намоиш додани тақвими фармоишҳо"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Китоб дар бораи %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Рамзи QR барои %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Дизайн"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Мундариҷа"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Медиа"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Маркетинг"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Сайт"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Маълумот"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Нашrҳои марбут"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Тафсилоти нашрия"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Аз тарафи"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Нашришуда"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Навсозӣ шудааст"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Дар"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Барчаспшуда"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d дақиқа хондан"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Ҳанӯз ягон шарҳ нест"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d шарҳ"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Харитаи сайт"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(бе унвон)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Ҳамаи мақолаҳои %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Ин муҳофизат шудааст. Барои дидани он паролро ворид кунед."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Ин гузарвожа нодуруст аст. Бори дигар кӯшиш кунед."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Парол"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Намоиши мундариҷа"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Он саҳифаро кушода намешавад."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Кӯшишҳои зиёд. Чанд дақиқа интизор шавед ва дубора кӯшиш кунед."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Рамз бояд аз 4 то 200 аломат иборат бошад."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Бештар"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Пӯшидан"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Ҷадвали %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Мундариҷа"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1688,6 +2033,10 @@ msgstr "Бо Sandwich Studio таҳрир кардан"
 msgid "Blank canvas"
 msgstr "Лавҳаи холӣ"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Гузариш ба мундариҷа"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Barisи планшет бояд адади мутлақи пикселҳо аз 480 то 2560 бошад."
@@ -1762,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Иконкаҳои боршуда"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Нишона"
 
@@ -2555,6 +2908,8 @@ msgstr "%s суроғаи электронии мизоҷи ман аст"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Код"
 
@@ -3049,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Вироиш"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Почтаи электронӣ"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Суроғаи электронӣ"
 
@@ -3105,6 +3456,10 @@ msgstr "Фъолсозии ҳолати тамғаи сафед"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3127,6 +3482,7 @@ msgstr "Суроғаи электронии нави худро ворид ку�
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Хаato"
 
@@ -3725,6 +4081,7 @@ msgstr "Маҳсулоти зерин ба ҳолати бехатар гузо�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3828,6 +4185,7 @@ msgstr "Барои ин плагин версияи нави PHP лозим ас
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Не"
 
@@ -4813,6 +5171,13 @@ msgstr "Шабакаҳои иҷтимоӣ (Facebook, Twitter ва ғ.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5100,6 +5465,9 @@ msgstr "Мӯҳри вақт"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Унвон"
 
@@ -5175,6 +5543,8 @@ msgstr "То ба ҳол %1$s ба шумо чӣ гуна маъқул аст? �
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Намуд"
@@ -5290,6 +5660,7 @@ msgstr "Корбарон"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Арзиш"
@@ -5344,6 +5715,7 @@ msgstr "Мушоҳидаи имкониятҳои пулакӣ"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Огоҳӣ"
 
@@ -5670,6 +6042,7 @@ msgid "Optional"
 msgstr "Иhtiyorӣ"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Нақша"
 
@@ -5992,18 +6365,26 @@ msgstr "Хурдтарини иловагӣ"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Хурд"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Мёёна"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Калон"
 
@@ -6016,7 +6397,9 @@ msgid "Huge"
 msgstr "Бузург"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6328,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "Даври озмоишӣ оғоз карда нашуд."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Хусусият"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Дохил карда шудааст"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Дохил нашудааст"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6691,10 +7067,6 @@ msgstr "Суроғаи вуруд"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Номи корбарӣ"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Парол"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7086,15 +7458,62 @@ msgstr "Бекоркунӣ оғоз шуд. Он дар замина идома 
 msgid "Undo all conversions"
 msgstr "Бекор кардани ҳамаи табдилдиҳиҳо"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Модда"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Ҳангоми бор шудани саҳифа кушода шавад"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Сарлавҳа сарлавҳа аст"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Вақте ки бандҳо қисмҳои саҳифа мебошанд, унвонро сарлавҳа созед, то меҳмонон тавонанд байни онҳо гузаранд."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Сарлавҳаи %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Савол ё унвони бахш"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Акордеон"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Дар як вақт танҳо як элемент кушода аст"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Хунрезӣ ҳамчун саволу ҷавоб барои муҳаррикони ҷустуҷӯ"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Маъlumotҳои сохтории FAQ-ро, ки аз сарлавҳаҳо (саволҳо) ва матни онҳо (ҷавобҳо) сохта шудаанд, илова мекунад."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Ҳушдор"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Маълумот"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Мувафқият"
 
@@ -7103,6 +7522,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Огоҳӣ ва хатоҳо ба корбарони хонандаи экран фавран эълон карда мешаванд; иттилоот ва огоҳиҳои муваффақият ҳангоми ба охир расидани кори онҳо хонда мешаванд."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Намоиш додани нишонакунак"
 
@@ -7118,64 +7538,702 @@ msgstr "Унвон (ихтиёрӣ)"
 msgid "Write the message…"
 msgstr "Паёмро нависед…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "бўлим — бахши мавзӯӣ"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Марказ"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — маъно надорад"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Нишон"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "сарлавҳа — мундариҷаи муқаддимавӣ"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Ранг"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "футер — мундариҷаи поёнӣ"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Ранги мавзӯъ"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "мақола — мундариҷаи худмухтор"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Негативӣ"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "дар каori — мундариҷаи марбут"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Мавқеъ"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — мундариҷаи асосӣ (дар як саҳифа як маротиба)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Нишон"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "нав — истинодҳои паймоиш"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Тақвими фармоишҳо"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Стек (flexbox, сутун)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Хизматрасонӣ"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Сатр (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Суроғаи саҳифаи фармоиш"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Шабакаи ҷадвалӣ"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Масалан %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Он чизе, ки тақвим барои он аст, ки аз ҷониби хонандагони экран хонда мешавад ва дар зери он нишон дода мешавад."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Ин суроғаи саҳифаи бронкунии %s нест, аз ин рӯ чизе дар саҳифа намоиш дода намешавад."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Пешнамоиши тақвим"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Суроғаи истинод"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Тугма ҳангоме намоиш дода мешавад, ки ҳам лавҳа ва ҳам суроға дошта бошад."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Дар варақаи нав кушодан"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Даъват ба амал"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Тарҳрезӣ"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Тугмаҳои зерин"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Тугмаҳо дар паҳлӯи матн"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Аслбандӣ"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Тугмаи асосӣ"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Тугмаи дуюм"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Сарлавҳа…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Як ҷумла дар бораи чаро…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Тугмаи дуюм (ихтиёрӣ)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Рӯйхати санҷишӣ"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Ранги аломатгузорӣ"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Сatrҳо"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Сатри %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Вазифа…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Илова кардани сатр"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Забон"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Муайян кардани худкор"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Ҳеҷ гуна равшансозӣ"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Номи файл"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Дар болои код, масалан functions.php нишон дода шудааст."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Рақамҳои сатрҳо"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Тугмаи нусхабардорӣ"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Печонидани сатрҳои дароз"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Код нависед ё часпонед…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Матн"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Сутунҳо"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Сутуни %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Равшан кардани %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Илова кардани сутун"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Сatrҳо"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Сатри %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Илова кардани сатр"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Сарлавҳа (он чизе ки муқоиса мешавад)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Намуди ячейка: %s. Иваз кардан"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Занги телефонӣ"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Паёми матнӣ"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Тугмаҳо"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Рақами телефон бо коди кишвар"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Matni тугма"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Ин тугмаро нест кунед"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Илова кардани тугмача"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Паёми WhatsApp барои оғоз (ихтиёрӣ)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Тугмаҳои тамос"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Рақами телефон, суроғаи почтаи электронӣ ё рақами WhatsApp-ро дар панели паҳлӯӣ илова кунед."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "сарлавҳаи дугона"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Сатҳи унвон"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Барои ҳар як саҳифа Tagi H1-ро танҳо як маротиба, барои унвони асосии он истифода баред."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Қисми дуюмро бинед"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Ранги аксентӣ"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Градиент"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Нақшаи умумӣ"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Зерхати кардан"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Қисми дуюм дар сатри алоҳида"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Қисми аввал"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "қисми дуюм"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Маркерҳо"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Хатти ғафси зерини сатр"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Замина"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Фарз кардан"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Хориҷ кардани барҷастагӣ"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Ҳарфи бузурги ибтидоӣ"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Ҳарфи аввали калон"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Барои ҳарфи аввал дар қуттича, услуби «Ҳарфи калони ибтидоӣ дар қуттича»-ро интихоб кунед."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Ҳарфи бузурги аввал дар қуттӣ"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Лавҳаи аксентӣ"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Иқтибоси калон (бо лавҳаи таъкидӣ)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Iqtibose аз матн, ки дар паҳлӯи рахи ранга калон ҷойгир шудааст то диққатро ҷалб кунад."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "иқтибос"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Рӯйхати хусусиятҳо"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Дар телефонҳо хусусиятҳо ҳамеша болои ҳам ҷойгир мешаванд."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Хусусиятҳо"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Хусусияти %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Нишони фардӣ"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Хусусият…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Тавсиф кунед…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Илова кардани хусусият"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms ё Fluent Forms-ро насб ва фаъол созед, сипас яке аз формаҳои онро дар ин ҷо интихоб кунед."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Плагини форма"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Интихоб…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Шакл"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Як шаклро интихоб кунед…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s ҳанӯз ягон шакл надорад"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s дар ин сомона фаъол нест, аз ин рӯ ин шакли муроҷиат нишон дода намешавад."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Рӯйхати варақаҳо бор карда нашуд."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Услуби форма"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Майдонҳо"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Муайяншуда"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Пурра карда шудааст"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Зеркашӣшуда"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Паҳноии тугма"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Мутобиқ кардани матн"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Ба таври пурра паҳн карда шуд"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Рангҳо, ҳуруфот, фосила ва кунҷҳо аз тарҳи сомонаи шумо ва танзимоти тарҳи ин блок гирифта мешаванд."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Шаклро аз плагини шаклҳои худ нишон диҳед, ки барои мувофиқат бо сайти шумо тарҳрезӣ шудааст."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Плагини форма лозим аст? Contact Form 7 ройгон аст."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Луғат"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Мурратабсозӣ аз А то Я"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Саҳифа шартҳоро бо тартиби алифбо нишон медиҳад; дар ин ҷо онҳо бо ҳамон тартибе мемонанд, ки шумо навиштаед."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Нишон додани феҳристи А–З"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Истилоҳот ба истинодҳои дар ҷойҳои дигари ин саҳифа истифодашуда"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Бори аввал пайдо шудани ҳар як истилоҳ дар матни саҳифа ба таърифи он пайванд медиҳад. Сарлавҳаҳо, тугмаҳо, рамзҳо (код) ва пайвандҳои мавҷуда дастнорас мемонанд."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Шартҳо"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Муҳлати %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Мӯҳлат"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Маънои ин чист…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Илова кардани истилоҳ"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Рӯйхати нишонаҳо"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Якӣ паси дигарӣ"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Паҳлӯ ба паҳлӯ"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Элементи рӯйхат…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Лавҳаи иттилоотӣ"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Ё ягон нишонаро аз китобхона интихоб кунед:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Matni пайванд"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Ба ҷои \"Бештар хондан\" бигӯед, ки истинод ба куҷо меравад (\"Нархҳои моро бинед\")."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Як ё ду ҷумла…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "бўлим — бахши мавзӯӣ"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — маъно надорад"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "сарлавҳа — мундариҷаи муқаддимавӣ"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "футер — мундариҷаи поёнӣ"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "мақола — мундариҷаи худмухтор"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "дар каori — мундариҷаи марбут"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — мундариҷаи асосӣ (дар як саҳифа як маротиба)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "нав — истинодҳои паймоиш"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Стек (flexbox, сутун)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Сатр (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Шабакаи ҷадвалӣ"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Вироиш: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Ҷойгир кардани элементҳои фаръӣ ҳамчун"
 
@@ -7183,7 +8241,7 @@ msgstr "Ҷойгир кардани элементҳои фаръӣ ҳамчун
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7191,70 +8249,50 @@ msgstr "Ҷойгир кардани элементҳои фаръӣ ҳамчун
 msgid "Inherited (%s)"
 msgstr "Меросӣ (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Флексбокс"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Блокҳои мустақилонаи ҷойгиршаванда"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Сутунҳо"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Дар холигоҳ кашед ё ворид кунед"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Паҳнои мундариҷа"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Қуттишуда (барни мундариҷаи мавзӯъ)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Ба таври пурра паҳн карда шуд"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Баландии ҳадди ақал"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Теги HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Пайванд"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Тамоми блокро ба истинод табдил диҳед ба"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Матни пайванд барои хонандагони экран"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Он чӣ ки истинод кор мекунад, барои меҳмононе, ки блок наметавонанд бубинанд."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Дар варақаи нав кушодан"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Дар дохили блоки пайванддор истинодҳо ё тугмаҳоро ҷойгир накунед: истинод дар дохили истинод дар браузерҳо кор намекунад."
 
@@ -7286,14 +8324,143 @@ msgstr "+ Сатр"
 msgid "− Row"
 msgstr "− Сатр"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Ҷойгир кардан"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Мухториятҳо ё истиноди OpenStreetMap-ро часбонед"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Дар openstreetmap.org ҷойро пайдо кунед, сипас суроғаро аз сатри браузер нусхабардорӣ кунед ё ба харита бо тугмаи рости муш клик карда, \"Намоиш додани суроға\"-ро интихоб кунед."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Арзӣ"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Тӯлӣ ҷуғрофӣ"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Калон кардан"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Номи ҷой"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Дар зери харита нишон дода шуда ва аз ҷониби барномаҳои хониши экран хонда мешавад."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Координатаҳоро (масалан, 51.5074, -0.1278) ё истиноди OpenStreetMap-ро часпонед."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Координатаҳо ё пайванд"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Пешнамоиши харита"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Санҷидани %1$s, %2$s дар OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Муаллиф"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Таърихи нашр"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Таърихи навсозӣ (дар сурати фарқ кардан)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Категорияҳо"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Тегҳо"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Вақти хониш"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Шумораи шарҳҳо"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Тафсилот барои намоиш"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Барои намоиш додан ҳадди ақал як ҷузъиётро интихоб кунед."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Лавҳаи пешрафт"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Максимум"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 барои фоиз; дигар рақамҳо барои миқдор, монанди 8 аз 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Нишон додани фоиз"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Парол гузошта шудааст. То ворид кардани он, меҳмонон ба ҷои ин мундариҷа формаи паролро мебинанд."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Ҳанӯз ягон гузарвожа гузошта нашудааст, аз ин рӯ боздидкунандагон дар ин ҷо ҳеҷ чизро намебинанд."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Гузарвожаи нав"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Танзими парол"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Парол гузошта шуд. Барои татбиқи он саҳифаро захира кунед; боздидкунандагоне, ки онро кушода буданд, ба пароли нав ниёз хоҳанд дошт."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Агар Page Builder Sandwich хомӯш карда шавад, ин мундариҷа ба ҳама намоиш дода мешавад."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Паём дар болои шакли парол (ихтиёрӣ)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Гузариш"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Нишон"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7303,30 +8470,698 @@ msgstr "Бо барномаҳои хониши экран хонда мешав�
 msgid "Show label"
 msgstr "Намоиш додани барчасп"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Суроғаи веб ё матн"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Рамзи QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Тавсиф барои хонандагони экран"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Барои истифодаи \"QR code for\" ва матн онро холӣ гузоред."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Суроғаи веб, истиноди телефон (tel:) ё ягон матнро ворид кунед."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Ин барои рамзи QR хеле дароз аст. Онро кӯтоҳ кунед."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Илова кардани сарлавҳа"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Лавҳаи пешрафти хониш"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Канори тиреза"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Болоӣ"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Поён"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Ҳангоми ҳаракати боздидкунандагон дар саҳифа дар поёни равзана намоиш дода мешавад."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Ҳангоми ҳаракати боздидкунандагон ба боло ва поён дар болои равзана намоиш дода мешавад."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Чандто"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Аз рӯи тааллуқ"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Категорияҳо ё барчаспҳо"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Вақте ки ягон чиз алоқаманд нест, ба ҷои он навтаринро нишон диҳед"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Сарлавҳа"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Барои \"Навиштаҳои марбут\" холии онро гузоред."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Тасвири барҷастаро нишон диҳед"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Намоиш додани сана"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Нишон додани хулоса"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Ҳанӯз ягон паём категорияҳо ё барчаспҳои ин паёмро мубодила намекунад. Вақте ки баъзеҳо ин корро мекунанд, онҳо дар ин ҷо пайдо мешаванд."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Модалӣ"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Панели берунӣ аз экран"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Андоза"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Аз паҳлӯ лағжида меояд"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Оғоз тарафест, ки хониш аз он ҷо оғоз мешавад: чап дар забони англисӣ, рост дар забони арабӣ."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Ҳангоми пахш кардани саҳифаи паси он пӯшида шавад"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Сарлавҳаи равзана"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Аломати қайд"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Доира"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Қатъ кардан"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Нуқта"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Тирча"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Муниси дурахшон"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Ранги нишонакунак"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Монанди матн"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Ранги асосии мавзӯъ"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Мавзӯи дуюмчӣ"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Таносуби мавзӯъ"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Сарлавҳаҳоро дар саҳифа бо тартиб нигоҳ доред: сарлавҳа бояд як сатҳ поёнтар аз бахше бошад, ки он дар он ҷойгир аст."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Интихоби тасвирча"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Истифода бурдани нишонаи пешфарз"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Иконкаро интихоб кунед"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Ба боло бурдан"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Ба поён бурдан"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Барои ҳар як намуд сарлавҳа нишон диҳед"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Дар намудҳои интихобкардаи шумо ҳанӯз чизе нашр нашудааст."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Истинодҳо"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Истиноди %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Шабака"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Суроғаи профил, mailto:you@example.com ё tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Ном барои хонандагони экран хонда шуд"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Нишони дигар"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Илова кардани пайванд"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Нигоҳ кардан"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Услуб"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Танҳо иконка"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Шакл"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Мураббаи кунҷаш гардшуда"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Квадрат"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Профилҳоро дар варақаи нав кушоед"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Баҳогузорӣ бо ситораҳо"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Райгузорӣ"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Шумораи ситораҳо"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Намоиш додани шумора"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Қadamҳо"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Поини саҳифа"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Паҳлӯ ба паҳлӯ (дар телефонҳо қарор мегиранд)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Ранги рақамҳо"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Тартиби қадамҳо"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Қадами %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Қадам..."
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Чи бояд кард..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Илова кардани қадам"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Ваraқ"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Ба саҳифа сарлавҳаҳо илова кунед ва онҳо дар ин ҷо номбар карда мешаванд."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Мундариҷа"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Аз сатҳи сарлавҳа"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Ба савои сарлавҳа"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Рақамгузоришуда"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Имкони пӯшидан дорад"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Оғоз ба таври пӯшида"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Қисмати хондашавандаро қайд кунед"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Варақҳо"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Ном барои хонандагони экран"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Иxtiyorӣ. Дар бораи он, ки ҷадвалҳо дар чӣ бораанд, хабар медиҳад, масалан \"Нақшаҳо\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Ҳангоми боркунии саҳифа кушода шавад"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Варақҳо дар паҳлӯ"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Илова кардани варахқа"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Шаҳодатнома"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Иваз кардани акс"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Интихоби акс"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Тоза кардани акс"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Тавсифи акс"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Вақте ки акс танҳо шахси дар паҳлӯи он номбаршударо нишон медиҳад, холӣ гузоред."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Рейтинги ситораӣ (0 = нест)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Ном дар зери иқтибос"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Акс дар паҳлӯи иқтибос"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Он чизе, ки муштарӣ гуфт…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Нақш ё ширкат"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Маслиҳатҳои олӣ"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Matni кӯмакпурӣ"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Онро мухтасар нигоҳ доред: як ё ду ҷумла. Барномаҳои хониши экран онро бо калимае, ки шарҳ медиҳанд, мехонанд."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Намоиш додан"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Боло"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Поён"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Калима ё ибора"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Татбиқ кардан"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Профил"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Проfили кӣ"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Муаллифи мақола"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Намоиш додани акси профил"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Намоиш додани тарҷумаи ҳол"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Намоиши истинодҳо ба навиштаҳо ва вебсайт"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Профили муаллиф"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Профили кадом шахсро нишон доданро интихоб кунед."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Рақами WhatsApp бо рамзи кишвар"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Масалан +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Паём барои оғоз (ихтиёрӣ)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Matnро дар паҳлӯи нишона нишон диҳед"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Гӯша"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Қисми поёнӣ (дар забони англисӣ рост)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Оғози поён (чап дар забони англисӣ)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Рақами WhatsApp-и худро дар лавҳаи паҳлӯӣ илова кунед. То он вақт тугма дар саҳифа намоиш дода намешавад."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Дар саҳифа ин тугма дар як гӯшаи поёнии экран шино мекунад."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Тег кутоҳи фармон"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Фақат ҳарфҳо, рақамҳо, тиреҳо ва зерхатҳоро истифода баред."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Номи атрибут"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Илова кардани атрибут"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Кӯтоҳкаманда"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Дигар атрибутҳо"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Дар танзимоти блок теги кӯтоҳкод (shortcode)-ро интихоб кунед."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Галерея"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Андозаи тасвир"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Миниатюра"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Андозаи пурра"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Истинод ба"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Саҳифаи замимаҳо"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Файли медиавӣ"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Аудио"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Видео"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Суроғаи файл"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Давr"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Ба таври худкор пахш кардан"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Тасвири плакат"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Феҳристи навохт"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Идентификаторҳои медиа, ки бо вергул ҷудо шудаанд"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Намоиши рӯйхати сурудҳо"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Ҷойгир кардан"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Суроғаи ҷойгиркунӣ"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Баррасии ҳадди аксар"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Сарлавҳа"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML-и тасвир ва тавзеҳ"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Паҳноӣ"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Маслиҳат: Блоки \"Форма\" ин формаро бо услуби мувофиқ ба сомонаи шумо намоиш медиҳад."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Намоиш додани унвони форма"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Намоиши тавсифи форма"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Бидуни боркунии дубораи саҳифа ирсол кунед"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7347,123 +9182,108 @@ msgstr "Интихоби файл"
 msgid "— Default —"
 msgstr "— Пешфарз —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Нармафзори пешрафтаи услубҳо"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS-и дохилӣ"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Эълонҳои CSS, масалан: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Таъсирҳо (синфҳои пешина)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Номҳои эффектҳо, ки бо фосила ҷудо шудаанд ва аз версияҳои кӯҳна гузаронида шудаанд, масалан: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Сатр"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Паҳноӣ"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Баҳри пурра, мундариҷа дар марказ нигоҳ дошта мешавад"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Суроғаи истинод"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Муносибати истинод"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Аслбандӣ"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Чаpп"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Марказ"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Рост"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Matni тугма"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Илова кардани матн…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Ҷойгиркунӣ"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Дар сатри алоҳида"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Дар қатор, дар паҳлӯи муҳтавои дигар"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Автоматикӣ (сатри худ дар сатҳи болоии саҳифа)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Матни дастрас"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Барои нишонаи ороишӣ холӣ гузоред."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Аз танзимоти блок нишонаеро интихоб кунед."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Номи танзимоти нав"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Масалан: сарлавҳа ё матн"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Танзимотро илова кунед"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Виҷет"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Виҷетро интихоб кунед"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Ноҳияи виджетҳо"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Минтақаи виҷетро интихоб кунед"
 
@@ -7486,6 +9306,140 @@ msgstr "Ин пайванд пас аз бор шудан андозаи худ�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Тағйири тарҳбандии макет"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Ин виджет танзимоти худро тавсиф намекунад, бинобар ин онҳо ҳамчун ҷуфтҳои ном ва қимат таҳрир карда мешаванд."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Мушкилот"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Санҷидан"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Намоиш додани блок"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Ранги мавзӯи хонданиро истифода баред"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Онро H%d созед"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Матни алтернативӣ"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Захираи матни алтернативӣ"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Ин тасвир ороишӣ аст"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Санҷида истодааст…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Дар ин саҳифа ягон мушкилоти дастрасӣ ёфт нашуд."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d мушкилот"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d чиз барои санҷиш"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Бознигорӣ кунед"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Санҷиши худкор бисёр мушкилотро муайян мекунад, аммо на ҳамаашро. Инчунин, саҳифаро танҳо бо клавиатура ва бо экранхон (screen reader) санҷед."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Контрасти матн %1$s:1 аст; барои хоно будан он камаш %2$s:1 лозим аст."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "инҷоро клик кунед, инҷо, мутолиаи бештар, бештар, истинод, ин истинод, маълумоти бештар, гузаред"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Як истинод матн надорад, аз ин рӯ корхонаи экрани хабардор танҳо “истинод”-ро эълон мекунад. Матн ё барчасп илова кунед."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Matni истиноди «%s» намегӯяд, ки он ба куҷо мебарад. Ба ҷои ин, таъинотро тавсиф кунед."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Як элемент tabindex-и мусбат дорад, ки тартиби клавиатураро аз тартиби хониш тағйир медиҳад. 0-ро истифода баред ё онро нест кунед."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Чизе, ки кликшаванда аст, бо клавиатура дастрас нест. Тугма ё истиноди воқеӣ истифода баред."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Чаҳорчӯбаи дарунсохт сарлавҳа надорад, аз ин рӯ хонандаи экран наметавонад бигӯяд, ки он чист."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Як майдони форма ягон барчасп надорад, аз ин рӯ мақсади он эълон карда намешавад."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Ин сарлавҳа холӣ аст. Истифодабарандагони экранхонон бо сарлавҳаҳо паймоиш мекунанд; онро хориҷ кунед ё матн илова кунед."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Sarlavҳаи саҳифа аллакай H1 аст; барои сатҳи болоии мундариҷа аз H2 истифода баред."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Ин H%1$d сатҳро мепартояд; сатҳи пеш аз он H%2$d аст. Онро ба H%3$d табдил диҳед."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Ин тасвир матни муқобил (alt text) надорад. Онро тавсиф кунед ё агар ҳеҷ мафҳуме илова накунад, онро ҳамчун ороишӣ қайд кунед."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Бастани панел"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7560,18 +9514,6 @@ msgstr "Фармоишӣ"
 msgid "Width / height"
 msgstr "Бар ва баландӣ"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Болоӣ"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Поён"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7584,20 +9526,6 @@ msgstr "Тасвири меросӣ — иваз кардан"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Тоза кардани тасвир"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Мавқеъ"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Андоза"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7663,22 +9591,6 @@ msgstr "Ҳар як тараф алоҳида"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Ҷониб"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Услуб"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Ранг"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7928,14 +9840,6 @@ msgstr "%1$s (%2$d маҷмӯа)"
 msgid "Replace icon"
 msgstr "Ҷойгир кардани нишона"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Интихоби тасвирча"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Иконкаро интихоб кунед"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Ҳеҷ нишонае мувофиқат намекунад."
@@ -7947,10 +9851,6 @@ msgstr "Одӣ"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Брендҳо"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Муайяншуда"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8079,21 +9979,9 @@ msgstr "Ранги матн"
 msgid "Cursor"
 msgstr "Нишонгузор"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Тирча"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Нишонгар"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Матн"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8251,10 +10139,6 @@ msgstr "Номи минтақа"
 msgid "Named areas"
 msgstr "Ноҳияҳои номдор"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Сatrҳо"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Баландӣ"
@@ -8372,10 +10256,6 @@ msgstr "Тӯғрикунӣ"
 msgid "Decoration"
 msgstr "Ороиш"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Зерхати кардан"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Хатти болоӣ"
@@ -8458,19 +10338,9 @@ msgstr "Коник"
 msgid "Angle (degrees)"
 msgstr "Кунҷ (дараҷаҳо)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Шакл"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Эллипс"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Доира"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8506,10 +10376,6 @@ msgstr "Тоқии пушти сар (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Ранг (истифодаи ранги шаффоф)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Мураббаи кунҷаш гардшуда"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Блоб"
@@ -8526,10 +10392,6 @@ msgstr "Секунҷа"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Алмос"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Муниси дурахшон"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9407,11 +11269,6 @@ msgstr "Тоза кардан"
 msgid "The change could not be saved."
 msgstr "Тағйирот захира карда нашуд."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Бастани панел"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Мавзӯи пешфарз"
@@ -9468,9 +11325,49 @@ msgstr "Классҳо, токенҳо, ҳолати торик, маҷмӯи б
 msgid "Open the Site Editor’s styles"
 msgstr "Услубҳои Муҳarriri Сомонаро кушоед"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Сарлавҳа"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Сарлавҳае бо баландии хати тангтар, ки тавассути ҷадвали Стиль сохта шудааст."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Як абзоли матнӣ, ки бо варақаи услубҳо ороиш ёфтааст."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Тасвир"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Тасвире бо кунҷҳои мудаввар, ки тавассути ҷадвали «Сабк» тарҳрезӣ шудааст."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Видео аз Китобхонаи медиа, ки бо ҷадвали Стил тарроҳӣ шудааст."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Фосилакунӣ"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Фосилаи холӣ байни блокҳо; баландии гуногунро барои ҳар як андозаи экран дар варақаи Стил танзим кунед."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Ҷудокунанда"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Як хати уфуқӣ байни бахшҳо, ки бо ҷадвали Style тарҳрезӣ шудааст."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Бо часпонидани суроғаи он мундариҷаро аз сомонаи дигар (видео, нашрия, нақша) илова кунед."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Якчанд тасвир дар шабака, ки бо ҷадвали Style ороиш ёфтаанд."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9504,10 +11401,6 @@ msgstr "Феҳрист"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Ҳабҳо"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Тугмаҳо"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9552,10 +11445,6 @@ msgstr "Пинҳон кардани забонҳое, ки ин саҳифа б�
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Амудӣ ҷойгир кардан"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Замина"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9614,11 +11503,6 @@ msgstr "Танзимоти блок"
 #, js-format
 msgid "Add block: %s"
 msgstr "Илова кардани блок: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(бе унвон)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9694,10 +11578,6 @@ msgstr "Хомӯш кардани ҳолати бехатар"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Ҳолати бехатарро фаъол созед (дигар плагинҳо хомӯш, барои шумо, танҳо дар Studio)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Нашришуда"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10034,11 +11914,6 @@ msgstr "Номи созанда"
 msgid "Visual editor name"
 msgstr "Номи муҳаррири визуалӣ"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Муаллиф"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10109,10 +11984,6 @@ msgstr[0] "Бекор карда шуд: %d саҳифа барқарор кар
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Иваз кардан"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Истинодҳо"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10221,10 +12092,6 @@ msgstr "Ба мизоҷ иҷозат диҳед, ки дар ин саҳифа �
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Ҳар касе, ки истинод дорад, метавонад ин саҳифаро ҳатто пеш аз нашр шуданаш бубинад ва шарҳ гузорад. Ягон ҳисоб талаб карда намешавад."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Нусхабардорӣ шуд"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10460,6 +12327,52 @@ msgstr "Тасвирҳоро ба китобхонаи медиаи ин сом�
 msgid "Show what will happen"
 msgstr "Нишон додани он чӣ рӯй медиҳад"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Элементи аккордеон"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Як қисми аккордеон: унвоне, ки мундариҷаи онро мекушояд."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Акордеон"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Саволҳо ё қисмҳое, ки кушода ва пӯшида мешаванд. Ихтиёрӣ яктогӣ дар як вақт ва ихтиёрӣ ҳамчун Саволҳои зуд-зуд додашаванда (FAQ) барои системаҳои ҷустуҷӯӣ қайд карда мешаванд."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "аккордеон"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Саволҳои зуд-зуд додашаванда"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "гузаронидан"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "пӯшидан"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "тафсилот"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10476,6 +12389,7 @@ msgid "notice"
 msgstr "огоҳинома"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "паём"
@@ -10490,6 +12404,72 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "огоҳӣ"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Нишон"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Барчаспи Кӯтоҳ, ба монанди Нав, Фурӯш ё Беҳтарин арзиш."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "Метка"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "тег"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "лавҳача"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "нав"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Тақвими бронкунӣ"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Тақвими фармоиши Calendly ё Cal.com, ки танҳо вақте бор мешавад, ки меҳмон онро талаб мекунад."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "фармоиш"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "тақвим"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "таъиншуда"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "ҷадвалбарнома сохтан"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10501,6 +12481,7 @@ msgid "A link styled as a button."
 msgstr "Як истиноди ҳамчун тугма тарроҳишуда."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "тугма"
@@ -10514,6 +12495,98 @@ msgstr "пайванд"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "даъват ба амал"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Даъват ба амал"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Сарлавҳа, ҷумла ва як ё ду тугмае, ки аз меҳмон даъват мекунанд, ки амал кунад."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "Амал кардан"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "баннер"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "сабти ном кунед"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Рӯйхати санҷишӣ"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Феҳристи вазифаҳо, ки ҳар кадоми онҳо иҷрошуда ё ҳанӯз иҷронашуда қайд шудаанд, бо калимаҳо барои хонандагони экран ва инчунин бо аломати қайд."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Иҷро нашудааст"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "Вазифаҳо"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "тиркҳо"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "феҳрист"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Рӯйхати рамзҳо бо равшании синтаксис, рақамҳои сатр ва тугмаи нусхабардорӣ. Агар плагин ягон бор хомӯш карда шавад ҳам, хондашаванда боқӣ мемонад."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "рамз"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "синтаксис"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "Барҷаста кардан"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "порача"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "барномасозӣ"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10537,6 +12610,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "тарҳбандӣ"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Ҷадвали муқоисавӣ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Нақшаҳо ё маҳсулот дар паҳлӯи ҳамдигар, бо аломатҳои «ҳа» ва «не» ки барномаҳои хониши экран онҳоро ҳамчун калима мехонанд."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "муқоиса кардан"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Нархгузорӣ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "нақшаҳо"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "ҷадвал"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "хусусиятҳо"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Тугмаҳои тамос"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Тугмаҳо барои занг задан, фиристодани почтаи электронӣ, паём ё муошират бо шумо дар WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Тамос"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "Занг задан"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "Телефон"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "почтаи электронӣ"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "Ватсап"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "смс"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10554,11 +12705,13 @@ msgid "container"
 msgstr "контейнер"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "қуттӣ"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10575,6 +12728,52 @@ msgstr "флексбокс"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "сутунҳо"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Сарлавҳаи дугона"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Сарлавҳа аз ду қисм иборат аст, ки қисми дуюм бо ранги муайян, градиент, контур ё зерихат қайд шудааст."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "сарлавҳа"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "сарлавҳа"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "градиент"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Рӯйхати хусусиятҳо"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Хусусиятҳо дар шабака, ки ҳар кадоме дорои нишона, сарлавҳа ва тавсифи мухтасар мебошанд."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Имтиёзҳо"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "хизматрасониҳо"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10618,6 +12817,89 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "матн"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Шакл"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Формаро аз Contact Form 7, WPForms, Gravity Forms ё Fluent Forms бо услуби мувофиқ ба сомонаи шумо намоиш медиҳад."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "форма"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Form 7-и тамос"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "шаклҳо"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "шакли тамос"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "шакли онлайн"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Луғат"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Шартҳо ва таърифҳои онҳо, ки аз А то Я тартиб дода шудаанд, ҳар кадоме бо истиноди худ. Шумо метавонед зикри аввалини ҳар як истилоҳро дар саҳифа ба таърифи он пайваст кунед."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Шартҳо"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "таърифҳо"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "Луғат"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Феҳристи нишонаҳо"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Феҳrисте, ки дар он ҳар як сатр бо нишонае оғоз мешавад: нишони қайд, тирча ё ягон нишона аз китобхона."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "банлар"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "нишончаҳо"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10638,6 +12920,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "SVG"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Қуттии маълумот"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Нишона, сарлавҳаи кӯтоҳ, як ё ду ҷумла ва истиноди ихтиёрӣ: барои хидматҳо, манфиатҳо ё маълумот барои тамос."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "Хусусият"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "хизматрасонӣ"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "карта"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10657,6 +12964,204 @@ msgstr "тарҷума"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "серҷавоба"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Харита"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Харитаи маҳал аз OpenStreetMap: калид надорад ва то замоне ки боздидкунанда харитаро талаб накунад, аз OpenStreetMap чизе бор карда намешавад."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "харита сохтан"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "ҷойгиршавӣ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "суроға"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "OpenStreetMap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Маodалӣ"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Тугмае, ки равзанаеро дар болои саҳифа бо ягон блокҳои дохили он мекушояд."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "равзанаи муколама"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "равзанаи пайдошаванда"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "қуттии рӯшноӣ"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "диалог"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Панели берунӣ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Тугмае, ки панелиро аз паҳлӯи равзана бо ягон блокҳои дарунӣ ба дарун меғелонад."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "беруни аз экран"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "дарвозача"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "лавҳаи канорӣ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "панел"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "феҳрист"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Тафсилоти паём"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Муаллифи мақола, санаҳо, категорияҳо, барчаспҳо, вақти хониш ва шумораи шарҳҳо."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "муаллиф"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "сана"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "вақти хониш"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "мета"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "муаллиф"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Лавҳаи пешрафт"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Навори нишонагузорӣшудае, ки нишон медиҳад чизе, монанди маҳорат ё ҳадаф, то куҷо пеш рафтааст."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "пешрафт"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "панҷараи уфуқӣ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "Маҳорат"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "ҳадаф"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Муҳтавои бо парол муҳофизатшуда"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Блокҳое, ки танҳо бо гузарвожа барои меҳмонон намоён мешаванд. То даме ки онҳо онро ворид накунанд, мундариҷа умуман дар саҳифа вуҷуд надорад."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "гузарвожа"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "ҳимояшуда"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "хусусӣ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "қулф кардан"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "аъзоён"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10682,6 +13187,86 @@ msgstr "равшан"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "нақши рангҳо"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Рамзи QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Коди QR барои суроғаи веб ё ягон матни дигар, ки бевосита дар сомонаи шумо кашида шудааст (хидмати QR истифода намешавад)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "рамзи QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "штрихкод"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "скан"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Лавҳаи пешрафти хониш"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Як рахи борик дар канори равзана, ки ҳангоми ба саҳифа ворид шудани боздидкунандагон пур мешавад."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "Хондан"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "паймоиш"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Паёмҳои алоқаманд"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Постҳое, ки бо категорияҳо ё барчаспҳои ин пост муштараканд, бо ҳамроҳии суратҳо, санаҳо ва хулосаҳои онҳо."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "марбут"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "Нашрияҳо"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "монанд"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "бештар"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10745,13 +13330,284 @@ msgstr "Виҷетҳоро дар яке аз минтақаҳои виҷети 
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "лавҳаи канорӣ"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "минтақаи виҷетҳо"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Харитаи сомона"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Саҳифае, ки ҳамаи саҳифаҳо ва паёмҳои нашршударо (ва дигар мундариҷаи оммавиро) бо нигоҳ доштани дарахти саҳифаҳо номбар мекунад."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "Харитаи сайт"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "Харитаи сомона"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "индекс"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "ҳамаи саҳифаҳо"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Нишонҳои иҷтимоӣ"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Истиномадҳо ба профилҳои шумо, ки бо нишонаҳои худи шабакаҳо тасвир шудаанд."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "иҷтимоӣ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "Истинодҳо"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "паigirӣ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "профилҳо"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Рейтинги ситорадор"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Рейтинге, ки дар намуди ситораҳо бо қадамҳои ними ситора нишон дода шудааст."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "Ситораҳо"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "баҳодиҳӣ"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "холёр"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Қadamҳо"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Қadamҳои рақамгузоришудаи як раванд, ба тартиб, дар сафҳа поён ё дар паҳлӯи ҳамдигар."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "ра̀вандсозӣ"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "чӣ тавр"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "Хатти замон"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "рақамгузорӣ шудааст"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Ваraqa"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Як ҷадвали блоки Ҷадвалҳо: унвон ва панели он."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Мундариҷа"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Феҳrисти сарлавҳаҳои саҳифа, ки ба таври худкор сохта шуда, ба ҳар яки онҳо пайванд медиҳад."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Мундариҷа"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "мундариҷа"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "сарлавҳаҳо"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Варақаҳо"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Мундариҷа дар варақаҳо: боздидкунандагон байни панелҳо бо муш ё клавиатура мегузаранд."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "варақаҳо"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "варақадор"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "панелҳо"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Шаҳодатнома"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Иқтибос аз муштарӣ бо ном, вазифа, акс ва баҳодиҳии иловагӣ бо ситораҳо."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "баррасӣ"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "иқтибос"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "мизоҷ"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "фикру мулоҳизаҳо"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Маслиҳатҳои олӣ"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Kalima yo iborae, ki ҳангоми гузаронидани курсор ва тамаркузи клавиатура тавзеҳи кӯтоҳеро нишон медиҳад."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "пуфакчаи маслиҳатӣ"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Маслиҳат"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "таъриф"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Профили муаллиф"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Сурат, ном, тарҷумаи ҳол ва истинодҳои муаллиф ё корбари интихобшуда."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "био"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "профил"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "дар бораи"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Тугмаи чати WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Тугмаи шиновар дар кунҷи саҳифа, ки бо шумо чати WhatsApp-ро мекушояд."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "чағ"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "шинокунанда"
 
 #: blocks/widget/block.json
 msgctxt "block title"

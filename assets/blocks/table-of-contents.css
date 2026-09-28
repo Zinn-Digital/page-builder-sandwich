@@ -1,0 +1,60 @@
+/*
+ * Front-end styles for pbs/table-of-contents. `__PREFIX__` is the neutral class prefix; logical
+ * properties only. Loaded only where this block renders.
+ */
+.__PREFIX__-table-of-contents {
+	--__PREFIX__-toc-accent: #1d4ed8;
+	margin-block: 1.5em;
+	padding-block: 1em;
+	padding-inline: 1.25em;
+	border: 1px solid rgb(0 0 0 / 15%);
+	border-radius: 6px;
+}
+
+.__PREFIX__-table-of-contents__title {
+	margin-block: 0 0.5em;
+	font-weight: 700;
+}
+
+summary.__PREFIX__-table-of-contents__title {
+	cursor: pointer;
+}
+
+.__PREFIX__-table-of-contents__details:not([open]) > .__PREFIX__-table-of-contents__title {
+	margin-block-end: 0;
+}
+
+.__PREFIX__-table-of-contents__list {
+	margin: 0;
+	padding-inline-start: 1.25em;
+}
+
+.__PREFIX__-table-of-contents__list .__PREFIX__-table-of-contents__list {
+	margin-block-start: 0.25em;
+}
+
+.__PREFIX__-table-of-contents__item {
+	margin-block: 0.25em;
+}
+
+.__PREFIX__-table-of-contents__link {
+	color: inherit;
+	text-decoration: underline;
+	text-decoration-color: rgb(0 0 0 / 30%);
+	text-underline-offset: 0.15em;
+}
+
+.__PREFIX__-table-of-contents__link:hover,
+.__PREFIX__-table-of-contents__link[aria-current="true"] {
+	color: var(--__PREFIX__-toc-accent);
+	text-decoration-color: currentcolor;
+}
+
+.__PREFIX__-table-of-contents__link[aria-current="true"] {
+	font-weight: 600;
+}
+
+.__PREFIX__-table-of-contents__empty {
+	margin: 0;
+	opacity: 0.7;
+}

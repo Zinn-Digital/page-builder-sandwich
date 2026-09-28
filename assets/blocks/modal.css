@@ -1,0 +1,123 @@
+/*
+ * Front-end styles for pbs/modal (a native <dialog> opened as a modal). `__PREFIX__` is the neutral
+ * class prefix; logical properties only. Loaded only where this block renders. The block editor
+ * shows the window inline, open (.__PREFIX__-modal__preview), so its content can be edited.
+ */
+.__PREFIX__-modal__trigger {
+	display: inline-block;
+	padding-block: 0.6em;
+	padding-inline: 1.2em;
+	border: 0;
+	border-radius: 4px;
+	background-color: var(--__PREFIX__-modal-accent, #1d4ed8);
+	color: #fff;
+	font: inherit;
+	cursor: pointer;
+}
+
+.__PREFIX__-modal__trigger:focus-visible,
+.__PREFIX__-modal__close:focus-visible {
+	outline: 2px solid currentcolor;
+	outline-offset: 2px;
+}
+
+.__PREFIX__-modal__dialog {
+	box-sizing: border-box;
+	padding: 0;
+	border: 0;
+	background-color: var(--wp--preset--color--base, #fff);
+	color: var(--wp--preset--color--contrast, #1b1b1b);
+	box-shadow: 0 10px 40px rgb(0 0 0 / 25%);
+}
+
+.__PREFIX__-modal__dialog::backdrop {
+	background-color: rgb(0 0 0 / 50%);
+}
+
+.__PREFIX__-modal__inner {
+	padding-block: 1.25em;
+	padding-inline: 1.5em;
+}
+
+.__PREFIX__-modal__header {
+	display: flex;
+	gap: 1em;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-block-end: 0.75em;
+}
+
+.__PREFIX__-modal__title {
+	margin: 0;
+	font-size: 1.25em;
+	line-height: 1.3;
+}
+
+.__PREFIX__-modal__close-form {
+	margin: 0;
+}
+
+.__PREFIX__-modal__close {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	inline-size: 2rem;
+	block-size: 2rem;
+	margin-block-start: -0.25em;
+	margin-inline-end: -0.5em;
+	padding: 0;
+	border: 0;
+	border-radius: 4px;
+	background: transparent;
+	color: inherit;
+	cursor: pointer;
+}
+
+.__PREFIX__-modal__close:hover {
+	background-color: rgb(0 0 0 / 8%);
+}
+
+.__PREFIX__-modal__body > :first-child {
+	margin-block-start: 0;
+}
+
+.__PREFIX__-modal__body > :last-child {
+	margin-block-end: 0;
+}
+
+.__PREFIX__-modal__preview {
+	position: static;
+	display: block;
+	margin-block-start: 1em;
+	border: 1px dashed rgb(0 0 0 / 30%);
+	box-shadow: none;
+}
+
+.__PREFIX__-modal__dialog {
+	inline-size: min(40rem, calc(100vw - 2rem));
+	max-block-size: calc(100vh - 2rem);
+	border-radius: 8px;
+}
+
+.__PREFIX__-modal__dialog--small {
+	inline-size: min(26rem, calc(100vw - 2rem));
+}
+
+.__PREFIX__-modal__dialog--large {
+	inline-size: min(64rem, calc(100vw - 2rem));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+	.__PREFIX__-modal__dialog[open] {
+		animation: __PREFIX__-modal-in 0.2s ease-out;
+	}
+
+	@keyframes __PREFIX__-modal-in {
+
+		from {
+			opacity: 0;
+			transform: translateY(0.75rem);
+		}
+	}
+}

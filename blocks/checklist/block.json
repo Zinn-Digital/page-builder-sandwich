@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/checklist",
+	"title": "Checklist",
+	"category": "pbs-content",
+	"icon": "yes-alt",
+	"description": "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick.",
+	"keywords": [
+		"todo",
+		"tasks",
+		"ticks",
+		"list"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			},
+			"role": "content"
+		},
+		"accent": {
+			"type": "string",
+			"enum": [
+				"text",
+				"primary",
+				"secondary",
+				"contrast"
+			],
+			"default": "primary"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

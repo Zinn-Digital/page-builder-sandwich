@@ -1,0 +1,132 @@
+/*
+ * Front-end styles for pbs/social-icons. `__PREFIX__` is the neutral class prefix; logical
+ * properties only (wp/bin/pbs-logical-css.php). Loaded only where this block renders.
+ * Monochrome on purpose: the theme's contrast/base pair keeps every icon visible (brand colours
+ * would fail contrast on half the backgrounds a theme can have). Targets are at least 44px.
+ */
+.__PREFIX__-social-icons {
+	--__PREFIX__-social-size: 2.75rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	justify-content: flex-start;
+	margin-block: 1em;
+	margin-inline: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.__PREFIX__-social-icons--center {
+	justify-content: center;
+}
+
+.__PREFIX__-social-icons--end {
+	justify-content: flex-end;
+}
+
+.__PREFIX__-social-icons--small {
+	--__PREFIX__-social-size: 2.75rem;
+	font-size: 0.875em;
+}
+
+.__PREFIX__-social-icons--large {
+	--__PREFIX__-social-size: 3.5rem;
+	font-size: 1.375em;
+}
+
+.__PREFIX__-social-icons__item {
+	margin: 0;
+}
+
+.__PREFIX__-social-icons__link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	inline-size: var(--__PREFIX__-social-size);
+	block-size: var(--__PREFIX__-social-size);
+	border: 2px solid transparent;
+	border-radius: 50%;
+	color: var(--wp--preset--color--contrast, #111);
+	font-size: 1.25em;
+	line-height: 0;
+	text-decoration: none;
+	transition: transform 0.15s ease;
+}
+
+.__PREFIX__-social-icons--rounded .__PREFIX__-social-icons__link {
+	border-radius: 8px;
+}
+
+.__PREFIX__-social-icons--square .__PREFIX__-social-icons__link {
+	border-radius: 0;
+}
+
+.__PREFIX__-social-icons--filled .__PREFIX__-social-icons__link {
+	background-color: var(--wp--preset--color--contrast, #111);
+	color: var(--wp--preset--color--base, #fff);
+}
+
+.__PREFIX__-social-icons--outline .__PREFIX__-social-icons__link {
+	border-color: currentcolor;
+}
+
+.__PREFIX__-social-icons__link:hover {
+	transform: translateY(-2px);
+}
+
+.__PREFIX__-social-icons__link:focus-visible {
+	outline: 3px solid var(--wp--preset--color--contrast, #111);
+	outline-offset: 2px;
+}
+
+.__PREFIX__-social-icons__link svg {
+	inline-size: 1em;
+	block-size: 1em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.__PREFIX__-social-icons__link {
+		transition: none;
+	}
+
+	.__PREFIX__-social-icons__link:hover {
+		transform: none;
+	}
+}
+
+/* Shared by the G-B blocks. Each block file carries its own copy, because a page loads only the
+   stylesheets of the blocks it uses. */
+.__PREFIX__-accent--primary {
+	--__PREFIX__-accent: var(--wp--preset--color--primary, var(--wp--preset--color--accent-3, #5b21b6));
+}
+
+.__PREFIX__-accent--secondary {
+	--__PREFIX__-accent: var(--wp--preset--color--secondary, var(--wp--preset--color--accent-4, #3f3f46));
+}
+
+.__PREFIX__-accent--contrast {
+	--__PREFIX__-accent: var(--wp--preset--color--contrast, currentcolor);
+}
+
+.__PREFIX__-accent--text {
+	--__PREFIX__-accent: currentcolor;
+}
+
+.__PREFIX__-kit-icon,
+.__PREFIX__-kit-icon svg {
+	display: inline-block;
+	line-height: 0;
+}
+
+.__PREFIX__-sr {
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}

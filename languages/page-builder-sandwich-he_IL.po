@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "שמור כתבנית לשימוש חוזר"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "בודק נגישות"
 
@@ -990,6 +994,7 @@ msgstr "← בחר ספק אחר"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "כתובת"
 
@@ -1043,6 +1048,8 @@ msgstr "בדיקה"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "הסר"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "רענן את רשימות המודלים מהספקים"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "תמונות"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "כבוי"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "פתח"
 
@@ -1448,6 +1457,7 @@ msgstr "טרם בוצעו בקשות בינה מלאכותית."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "בוצע"
 
@@ -1515,7 +1525,11 @@ msgstr "יותר מדי ניסיונות. נסה שוב בעוד מספר דקו
 msgid "Something went wrong. Please contact the admin."
 msgstr "משהו השתבש. נא ליצור קשר עם מנהל המערכת."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "מיפוי"
 
@@ -1538,52 +1552,387 @@ msgstr "אותה משפחה אינה מאוחסנת."
 msgid "Removed."
 msgstr "הוסר."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "שם משפחה של גופן זה אינו חוקי."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts לא החזיק משפחה זו. בדקו את השם ונסו שוב."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "לא ניתן היה להוריד או לשמור את קבצי הגופן. יש לוודא שתיקיית ההעלאות ניתנת לכתיבה."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "לא ניתן היה לשמור את גיליון סגנונות הגופנים. יש לוודא שתיקיית ההעלאות ניתנת לכתיבה."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "התעלם מהודעה זו"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(נפתח בכרטיסייה חדשה)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "בוצע:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "לביצוע:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "מפתח מונחים"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "דורג %1$s מתוך %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "התקדמות"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "העתק קוד"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "הועתק"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "היישומון הזה אינו זמין באתר זה."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "דוא\"ל"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "טלפון"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "עדכון RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "אתר אינטרנט"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "קישור"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (נפתח בלשונית חדשה)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "דורג כ-%d מתוך 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(מומלץ)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "כלול"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "לא כלול"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "טבלת השוואה"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "התקשר אל %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "דוא\"ל %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "טקסט %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "שוחח בווטסאפ"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "צור קשר"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "שוחחו איתנו בוואטסאפ"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "טופס זה אינו זמין כרגע."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "לא ניתן להציג טופס זה מכיוון ש-%s אינו פעיל."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "מיפוי: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "הצגת המפה טוענת אותה מ-OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "הצג את המפה"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "פתח את המפה ב-OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "יומן הזמנות מתוך %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "הצגת יומן ההזמנות טוענת אותו מ-%s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "הצג את יומן ההזמנות"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "הזמן ב-%s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "קוד QR עבור %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "עיצוב"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "תוכן"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "מדיה"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "שיווק"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "אתר"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "נתונים"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "פוסטים קשורים"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "פרטי פוסט"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "מאת"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "פורסם"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "עודכן"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "בתוך"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "מתויג"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "קריאה של %d דקות"
+msgstr[1] "%d דקות קריאה"
+msgstr[2] "%d דקות קריאה"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "אין תגובות עדיין"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d תגובה"
+msgstr[1] "%d תגובות"
+msgstr[2] "%d תגובות"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "מפת אתר"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(ללא כותרת)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "כל הפוסטים מאת %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "תוכן זה מוגן. הזינו את הסיסמה כדי לצפות בו."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "הסיסמה הזו שגויה. נסה שוב."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "סיסמה"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "הצג את התוכן"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "לא ניתן לבטל את נעילת העמוד הזה."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "יתר ניסיונות. המתן מספר דקות ונסה שוב."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "אורכו של הסיסמה חייב להיות בין 4 ל-200 תווים."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "עוד"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "סגירה"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "לשונית %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "תוכן"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2035,10 @@ msgstr "ערוך באמצעות Sandwich Studio"
 msgid "Blank canvas"
 msgstr "קנבס ריק"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "עבור לתוכן"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "רוחב הטאבלט חייב להיות מספר שלם של פיקסלים מ-480 ועד 2560."
@@ -1760,7 +2113,11 @@ msgid "Uploaded icons"
 msgstr "אייקונים שהועלו"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "סמל"
 
@@ -2553,6 +2910,8 @@ msgstr "%s היא כתובת הדוא\"ל של הלקוח שלי"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "קוד"
 
@@ -3047,13 +3406,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "עריכה"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "דוא\"ל"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "כתובת אימייל"
 
@@ -3103,6 +3458,10 @@ msgstr "הפעלת מצב מותאם אישית"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3484,7 @@ msgstr "הזן את כתובת הדוא\"ל החדשה"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "שגיאה"
 
@@ -3723,6 +4083,7 @@ msgstr "המוצרים להלן הועברו למצב בטוח מכיוון שש
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4187,7 @@ msgstr "תוסף זה דורש גרסת PHP חדשה יותר."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "לא"
 
@@ -4811,6 +5173,13 @@ msgstr "רשתות חברתיות (פייסבוק, טוויטר וכו')"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5465,9 @@ msgstr "חותמת זמן"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "כותרת"
 
@@ -5171,6 +5543,8 @@ msgstr "מה דעתך על %1$s בינתיים? בדוק את כל תכונות 
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "סוג"
@@ -5286,6 +5660,7 @@ msgstr "משתמשים"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "ערך"
@@ -5340,6 +5715,7 @@ msgstr "הצג פיצ'רים בתשלום"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "אזהרה"
 
@@ -5666,6 +6042,7 @@ msgid "Optional"
 msgstr "אופציונלי"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "תוכנית"
 
@@ -5988,18 +6365,26 @@ msgstr "קטן במיוחד"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "קטן"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "בינוני"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "גדול"
 
@@ -6012,7 +6397,9 @@ msgid "Huge"
 msgstr "ענק"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6328,16 +6715,9 @@ msgid "The trial could not be started."
 msgstr "לא ניתן היה להפעיל את תקופת הניסיון."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "תכונה"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "כלול"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "לא כלול"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6693,10 +7073,6 @@ msgstr "כתובת התחברות"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "שם משתמש"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "סיסמה"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7096,15 +7472,62 @@ msgstr "הפעולה בוטלה. היא נמשכת ברקע; באפשרותך ל
 msgid "Undo all conversions"
 msgstr "בטל את כל ההמרות"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "פריט"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "פתח בטעינת העמוד"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "הכותרת היא כותרת"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "הפוך את הכותרת לכותרת עמוד כאשר הפריטים הם מקטעים בדף, כך שמבקרים יוכלו לדלג ביניהם."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "כותרת %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "כותרת שאלה או סעיף"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "אקורדיון"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "רק פריט אחד פתוח בכל פעם"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "סמן כשאלות נפוצות עבור מנועי חיפוש"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "מוסיף נתונים מובנים של שאלות נפוצות (FAQ) הבנויים מהכותרות (השאלות) והטקסט שלהן (התשובות)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "התרעה"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "מידע"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "הצלחה"
 
@@ -7113,6 +7536,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "אזהרות ושגיאות מדווחות למשתמשי קוראי מסך מיד; הודעות מידע והצלחה נקראות כשהם מסייימים את מה שהם עושים."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "הצג סמל"
 
@@ -7128,64 +7552,702 @@ msgstr "כותרת (אופציונלי)"
 msgid "Write the message…"
 msgstr "כתוב הודעה..."
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "קטע — קטע נושאי"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "מרכז"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — ללא משמעות"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "תגית"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "כותרת עליונה — תוכן מבוא"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "צבע"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "כותרת תחתונה — תוכן סיום"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "הדגשת ערכת נושא"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "מאמר — תוכן עצמאי"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "ניטרלי"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "בצד — תוכן קשור"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "מיקום"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — התוכן הראשי (פעם אחת בעמוד)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "תווית"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "ניווט — קישורי ניווט"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "יומן הזמנות"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "מחסנית (flexbox, טור)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "שירות"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "שורה (פלקסבוקס)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "כתובת עמוד ההזמנות"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "רשת"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "לדוגמה %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "מטרת לוח השנה, כפי שהיא מוקראת על ידי קוראי מסך ומוצגת מתחתיו."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "זוהי אינה כתובת עמוד הזמנות מסוג %s, ולכן שום דבר לא יוצג בעמוד."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "הצג תצוגה מקדימה של היומן"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "כתובת קישור"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "הכפתור מוצג כאשר יש לו גם תווית וגם כתובת."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "פתח בכרטיסייה חדשה"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "קריאה לפעולה"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "פריסה"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "לחצנים למטה"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "לחצנים לצד הטקסט"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "יישור"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "כפתור ראשי"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "כפתור שני"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "כותרת…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "משפט אחד על הסיבה ש..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "לחצן שני (אופציונלי)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "רשימת בדיקה"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "צבע סימון"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "שורות"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "שורה %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "משימה…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "הוסף שורה"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "שפה"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "זיהוי אוטומטי"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "ללא הדגשה"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "שם קובץ"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "מוצג מעל הקוד, לדוגמה functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "מספרי שורות"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "לחפת העתקה"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "גלישת שורות ארוכות"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "כתוב או הדבק קוד…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "טקסט"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "עמודות"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "עמודה %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "הדגש %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "הוסף עמודה"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "שורות"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "שורה %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "הוסף שורה"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "כותרת (מה שמושוות)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "סוג תא: %s. שינוי"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "שיחת טלפון"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "הודעת טקסט"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "וואטסאפ"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "כפתורים"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "מספר טלפון, כולל קידומת בינלאומית"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "טקסט כפתור"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "הסר כפתור זה"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "הוסף כפתור"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "הודעת וואטסאפ להתחלה (אופציונלי)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "לחשוב על כפתורי יצירת קשר"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "הוסף מספר טלפון, כתובת אימייל או מספר WhatsApp בסרגל הצדדי."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "כותרת כפולה"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "רמת כותרת"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "השתמש ב-H1 פעם אחת בלבד בכל עמוד, עבור כותרתו הראשית."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "מבט חלק שני"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "צבע הדגשה"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "מעבר הדרגתי"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "ראשי פרקים"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "קו תחתון"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "החלק השני בשורה נפרדת"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "חלק ראשון"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "חלק שני"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "מרקר"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "קו תחתי עבה"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "רקע"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "הדגש"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "הסר הדגשה"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "אות רבתי מעוצבת"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "אות ראשונה גדולה"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "עבור האות הראשונה בתיבה, בחר בסגנון \"אות פתיחה מוגדלת בתיבה\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "אות ראשונה מוגדלת בתיבה"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "פס הדגשה"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "ציטוט נשלף (פס הדגשה)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "ציטוט מתוך הטקסט, מוצג בגדול לצד פס צבעוני כדי למשוך את העין."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "הצעת מחיר"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "רשימת מאפיינים"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "בטלפונים, התכונות תמיד מסודרות זו מעל זו."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "מאפיינים"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "תכונה %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "אייקון מותאם אישית"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "תכונה…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "תאר זאת…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "הוסף תכונה"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "התקן והפעל את Contact Form 7, WPForms, Gravity Forms או Fluent Forms, ולאחר מכן בחר כאן באחד מהטפסים שלהם."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "תוסף טופס"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "בחר…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "טופס"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "בחר טופס…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "ל-%s אין טפסים עדיין"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s אינו פעיל באתר זה, ולכן לא ניתן להציג טופס זה."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "לא ניתן לטעון את רשימת הטפסים."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "סגנון טופס"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "שדות"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "מרושת"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "מלא"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "קו תחתון"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "רוחב כפתור"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "התאם את הטקסט"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "רוחב מלא"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "צבעים, גופנים, מרווחים ופינות מגיעים מעיצוב האתר שלך ומאפייני העיצוב של בלוק זה."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "הצג טופס מתוסף הטפסים שלך, מעוצב כך שיתאים לאתר שלך."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "צריך תוסף טפסים? Contact Form 7 הוא חינמי."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "מילון מונחים"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "מיין א' עד ת'"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "העמוד מציג את המונחים בסדר אלפבית; כאן הם נשארים בסדר שבו כתבת אותם."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "הצג אינדקס A–Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "קישורי מונחים שנעשה בהם שימוש במקומות אחרים בעמוד זה"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "הפעם הראשונה שבה כל מונח מופיע בטקסט של העמוד, הוא מקושר להגדרתו. כותרות, כפתורים, קוד וקישורים קיימים נשארים ללא שינוי."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "תנאים"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "תקופה %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "תקופת כהונה"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "מה משמעות הדבר…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "הוסף מונח"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "רשימת סמלים"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "זה מעל זה"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "זה לצד זה"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "פריט ברשימה..."
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "תיבת מידע"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "או בחר כל סמל מתוך הספרייה:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "טקסט קישור"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "ציינו לאן הקישור מוביל (\"ראו את המחירים שלנו\"), במקום \"קראו עוד\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "משפט אחד או שניים…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "קטע — קטע נושאי"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — ללא משמעות"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "כותרת עליונה — תוכן מבוא"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "כותרת תחתונה — תוכן סיום"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "מאמר — תוכן עצמאי"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "בצד — תוכן קשור"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — התוכן הראשי (פעם אחת בעמוד)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "ניווט — קישורי ניווט"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "מחסנית (flexbox, טור)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "שורה (פלקסבוקס)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "רשת"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "עורך: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "פריסת צאצאים כגון"
 
@@ -7193,7 +8255,7 @@ msgstr "פריסת צאצאים כגון"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7201,70 +8263,50 @@ msgstr "פריסת צאצאים כגון"
 msgid "Inherited (%s)"
 msgstr "מוורש (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "פלקסבוקס"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "בלוקים מותאמים זה מעל זה"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "עמודות"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "גרור אל הבד, או הקלד"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "רוחב תוכן"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "בתיבה (רוחב התוכן של ערכת הנושא)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "רוחב מלא"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "גובה מינימלי"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "תג HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "קישור"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "הפוך את כל הבלוק לקישור אל"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "טקסט קישור לקוראי מסך"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "מה שהקישור עושה, עבור מבקרים שאינם יכולים לראות את הבלוק."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "פתח בכרטיסייה חדשה"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "אין לשים קישורים או כפתורים בתוך בלוק מקושר: קישור בתוך קישור אינו פועל בדפדפן."
 
@@ -7296,14 +8338,143 @@ msgstr "הוסף שורה"
 msgid "− Row"
 msgstr "שורה −"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "מקום"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "הדבק קואורדינטות או קישור ל-OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "באתר openstreetmap.org, מצאו את המקום, ולאחר מכן העתיקו את הכתובת משורת הכתובות בדפדפן, או לחצו לחיצה ימנית על המפה ובחרו \"הצג כתובת\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "קו רוחב"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "קו אורך"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "תצוגה מקרוב"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "שם המקום"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "מוצג מתחת למפה ונקרא על ידי קוראי מסך."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "הדבק קואורדינטות (לדוגמה 51.5074, -0.1278) או קישור ל-OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "קואורדינטות או קישור"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "הצג תצוגה מקדימה של המפה"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "בדוק את %1$s, %2$s ב-OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "מחבר"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "תאריך פרסום"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "תאריך מעודכן (כאשר הוא שונה)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "קטגוריות"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "תגיות"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "זמן קריאה"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "מספר תגובות"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "פרטים להצגה"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "בחר פרט אחד לפחות להצגה."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "סרגל התקדמות"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "מקסימום"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 עבור אחוז; כל מספר אחר עבור ספירה, כגון 8 מתוך 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "הצג את האחוז"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "סיסמה הוגדרה. מבקרים יראו טופס סיסמה במקום תוכן זה עד שיוזינו אותה."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "טרם הוגדרה סיסמה, ולכן מבקרים אינם רואים דבר כאן."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "סיסמה חדשה"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "הגדר את הסיסמה"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "הסיסמה הוגדרה. שמור את העמוד כדי להחיל אותה; מבקרים שפתחו אותו יצטרכו את הסיסמה החדשה."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "אם Page Builder Sandwich יושבית אי פעם, תוכן זה יוצג לכולם."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "הודעה מעל טופס הסיסמה (אופציונלי)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "החלף"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "תווית"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7313,30 +8484,698 @@ msgstr "נקרא על ידי קוראי מסך, ומוצג כאשר האפשרו
 msgid "Show label"
 msgstr "הצג תוית"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "כתובת אינטרנט או טקסט"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "קוד QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "תיאור עבור קוראי מסך"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "השאר ריק כדי להשתמש ב-\"QR code for\" ובטקסט."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "הקלד כתובת אתר, קישור טלפון (tel:) או כל טקסט."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "זה ארוך מדי עבור קוד QR. קצר זאת."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "הוספת כיתוב"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "סרגל התקדמות קריאה"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "קצה החלון"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "עליון"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "תחתון"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "מוצג לאורך תחתית החלון בזמן שהמבקרים גוללים."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "מוצג לאורך חלקו העליון של החלון בזמן שהמבקרים גוללים."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "כמה"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "קשור על ידי"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "קטגוריות או תגיות"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "כאשר שום דבר אינו קשור, הצג את החדשים ביותר במקום זאת"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "כותרת"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "השאר ריק עבור \"פוסטים קשורים\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "הצג את התמונה הראשית"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "הצג את התאריך"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "הצג סיכום"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "עדיין אין פוסטים שמשתפים את הקטגוריות או התגיות של פוסט זה. כאשר יהיו כאלה, הם יוצגו כאן."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "מודאל"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "לוח מחוץ למסך"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "גודל"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "מחליק מימין אל"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "ההתחלה היא הצד שבו מתחילה הקריאה: שמאל באנגלית, ימין בערבית."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "סגירה בלחיצה על העמוד שמאחור"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "כותרת החלון"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "סימן וי"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "מעגל"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "הצלבה"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "נקודה"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "חץ"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "סמן בכוכב"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "צבע אייקון"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "כמו הטקסט"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "ערכת נושא ראשית"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "ערכת נושא משנית"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "ניגודיות ערכות נושא"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "שמור על סדר כותרות תקין בדף: כותרת צריכה להיות רמה אחת מתחת למקטע שבו היא נמצאת."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "בחר סמל"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "השתמש בסמל ברירת המחדל"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "בחר סמל"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "הזז למעלה"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "העבר למטה"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "הצג כותרת לכל סוג"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "טרם פורסם דבר בסוגים שבחרת."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "קישורים"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "קישור %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "רשת"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "כתובת פרופיל, mailto:you@example.com או tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "שם שמוקרא לקוראי מסך"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "סמל אחר"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "הוסף קישור"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "הצג"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "סגנון"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "סמל בלבד"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "צורה"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "ריבוע מעוגל"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "ריבוע"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "פתיחת פרופילים בכרטיסייה חדשה"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "דירוג כוכבים"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "דירוג"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "מספר הכוכבים"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "הצג את המספר"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "שלבים"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "מורד העמוד"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "זה לצד זה (נערמים בטלפונים)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "צבע מספר"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "סדר השלבים"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "שלב %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "שלב…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "מה לעשות…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "הוסף שלב"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "כרטיסייה"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "הוסף כותרות לעמוד והן יופיעו כאן."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "תוכן עניינים"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "מכותרת ברמה"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "לרמת כותרת"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "ממוספר"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "ניתן לכיווץ"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "התחל במצב מכווץ"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "הדגש את הקטע הנקרא"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "לשוניות"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "שם עבור קוראי מסך"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "אופציונלי. מציין את נושא הטאבים, לדוגמה \"תוכניות\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "פתיחה בטעינת העמוד"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "לשוניות לאורך הצד"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "הוסף לשונית"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "המלצה"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "החלף תמונה"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "בחר תמונה"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "הסרת תמונה"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "תיאור תמונה"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "יש להשאיר ריק כאשר התמונה מציגה רק את האדם המצוין לצידה."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "דירוג בכוכבים (0 = ללא)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "שם תחת הציטוט"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "תמונה לצד הציטוט"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "מה שהלקוח אמר…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "תפקיד או חברה"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "רמז צץ"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "טקסט חלונית מידע"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "שמור על קצרים: משפט אחד או שניים. קוראי מסך קוראים זאת יחד עם המילה שהיא מסבירה."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "הצג זאת"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "מעל"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "למטה"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "מילה או ביטוי"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "החל"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "פרופיל"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "הפרופיל של מי"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "מחבר הפוסט"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "הצג את תמונת הפרופיל"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "הצג את הביוגרפיה"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "הצג קישורים לפוסטים ולאתר"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "פרופיל מחבר"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "בחר איזה פרופיל להציג."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "מספר וואטסאפ, כולל קידומת בינלאומית"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "לדוגמה +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "הודעה להתחיל איתה (אופציונלי)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "הצג את הטקסט לצד הסמל"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "פינה"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "קצה תחתון (מימין באנגלית)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "תחתית התחלה (שמאל באנגלית)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "הוסף את מספר הוואטסאפ שלך בסרגל הצד. עד אז הכפתור אינו מוצג בעמוד."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "בעמוד, לחצן זה צף בפינה התחתונה של המסך."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "תגית שורטקוד"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "השתמש באותיות, מספרים, מקפים וקווים תחתונים בלבד."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "שם תכונה"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "הוסף מאפיין"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "קודון מקצר"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "מאפיינים אחרים"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "בחר תגית קוד קצר בהגדרות הבלוק."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "גלריה"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "גודל תמונה"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "תמונה מוקטנת"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "גודל מלא"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "קישור אל"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "דף קובץ מצורף"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "קובץ מדיה"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "אודיו"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "וידאו"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "כתובת קובץ"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "לולאה"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "הפעל אוטומטית"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "תמונת פוסטר"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "פלייליסט"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "מזהי מדיה, מופרדים בפסיקים"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "הצג את רשימת הרצועות"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "הטמעה"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "כתובת להטמעה"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "רוחב מרבי"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "כותרת תצלום"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML של תמונה וקפטיון"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "רוחב"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "טיפ: בלוק הטופס מציג טופס זה בעיצוב התואם לאתר שלך."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "הצג את כותרת הטופס"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "הצג את תיאור הטופס"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "שלח מבלי לטען מחדש את הדף"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7357,123 +9196,108 @@ msgstr "בחר קובץ"
 msgid "— Default —"
 msgstr "— ברירת מחדל —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "עיצוב מתקדם"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS פנימי"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "הצהרות CSS, לדוגמה: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "אפקטים (מחלקות ישנות)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "שמות אפקטים מופרדים ברווחים שהועברו מגרסאות ישנות, לדוגמה: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "שורה"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "רוחב"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "רוחב מלא, התוכן נשמר באמצע"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "כתובת קישור"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "קשר קישור"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "יישור"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "שמאל"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "מרכז"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "ימין"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "טקסט כפתור"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "הוסף טקסט…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "מיקום"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "בשורה נפרדת"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "בשורה, לצד תוכן אחר"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "אוטומטי (בשורה נפרדת ברמה העליונה של הדף)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "תווית נגישה"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "השאר ריק עבור סמל דקורטיבי."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "בחר סמל בהגדרות הבלוק."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "שם הגדרה חדשה"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "לדוגמה: כותרת או טקסט"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "הוסף הגדרה"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "ווידג'ט"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "בחר יישומון"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "אזור ווידג'טים"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "בחר אזור ווידג'טים"
 
@@ -7496,6 +9320,144 @@ msgstr "רכיב מוטמע זה משנה את גודלו לאחר הטעינה,
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "הסטת פריסה"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "ווידג'ט זה אינו מתאר את ההגדרות שלו, ולכן הן נערכות כצמדים של שם וערך."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "בעיה"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "בדיקה"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "הצג בלוק"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "השתמש בצבע ערכת נושא קריא"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "הפוך ל-H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "טקסט חלופי"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "שמור טקסט חלופי"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "תמונה זו דקורטיבית"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "בודק…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "לא נמצאו בעיות נגישות עמוד זה."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "בעיה %d"
+msgstr[1] "%d בעיות"
+msgstr[2] "%d בעיות"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d פריט לבדיקה"
+msgstr[1] "%d פריטים לבדיקה"
+msgstr[2] "%d פריטים לבדיקה"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "בדוק שוב"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "בדיקה אוטומטית מוצאת בעיות רבות אך לא את כולן. נסה את העמוד גם באמצעות המקלדת בלבד וגם עם קורא מסך."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "ניגודיות הטקסט היא %1$s:1; נדרשת רמה של לפחות %2$s:1 כדי שיהיה קריא."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "לחץ כאן,כאן,קרא עוד,עוד,קישור,קישור זה,למד עוד,עבור"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "לקישור אין טקסט, ולכן קורא מסך מכריז רק על \"קישור\". הוסיפו טקסט או תווית."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "טקסט הקישור \"%s\" אינו מציין לאן הוא מוביל. במקום זאת, תאר את היעד."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "לאלמנט יש ערך tabindex חיובי, המשנה את סדר המקלדת מחוץ לסדר הקריאה. השתמש ב-0 או הסר אותו."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "לא ניתן להגיע לפריט הניתן ללחיצה באמצעות המקלדת. השתמש בלחצן או בקישור אמיתיים."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "למסגרת מוטמעת אין כותרת, ולכן קורא מסך אינו יכול לומר מה היא."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "לשדה טופס אין תווית, ולכן מטרתו אינה מוכרזת."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "כותרת זו ריקה. משתמשי קוראי מסך מנווטים לפי כותרות; יש להסיר אותה או להוסיף טקסט."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "כותרת העמוד היא כבר H1; השתמש ב-H2 עבור הרמה העליונה של התוכן."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "כותרת H%1$d זו מדלגת על רמה; זו שלפניה היא H%2$d. הפוך אותה לכותרת H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "לתמונה זו אין טקסט חלופי. תאר אותה, או לסמן אותה כדקורטיבית אם היא אינה מוסיפה דבר."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "סגור לוח בקרה"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7570,18 +9532,6 @@ msgstr "מותאם אישית"
 msgid "Width / height"
 msgstr "רוחב / גובה"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "עליון"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "תחתון"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7594,20 +9544,6 @@ msgstr "תמונה בירושה — החלפה"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "הסר תמונה"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "מיקום"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "גודל"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7673,22 +9609,6 @@ msgstr "כל צד בנפרד"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "צד"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "סגנון"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "צבע"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7938,14 +9858,6 @@ msgstr "%1$s (נקבע %2$d)"
 msgid "Replace icon"
 msgstr "החלף סמל"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "בחר סמל"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "בחר סמל"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "אין סמלים תואמים."
@@ -7957,10 +9869,6 @@ msgstr "רגיל"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "מותגים"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "מרושת"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8089,21 +9997,9 @@ msgstr "צבע טקסט"
 msgid "Cursor"
 msgstr "סמן"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "חץ"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "מצביע"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "טקסט"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8261,10 +10157,6 @@ msgstr "שם האזור"
 msgid "Named areas"
 msgstr "אזורים בעלי שם"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "שורות"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "גובה"
@@ -8382,10 +10274,6 @@ msgstr "יישר"
 msgid "Decoration"
 msgstr "עיצוב"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "קו תחתון"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "קו עליון"
@@ -8468,19 +10356,9 @@ msgstr "קוניק"
 msgid "Angle (degrees)"
 msgstr "זווית (מעלות)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "צורה"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "אליפסה"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "מעגל"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8516,10 +10394,6 @@ msgstr "רוויה מאחורי (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "גוון (השתמש בצבע שקוף)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "ריבוע מעוגל"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "בלוב"
@@ -8536,10 +10410,6 @@ msgstr "משולש"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "דיהמונד"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "סמן בכוכב"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9417,11 +11287,6 @@ msgstr "נקה"
 msgid "The change could not be saved."
 msgstr "לא ניתן היה לשמור את השינוי."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "סגור לוח בקרה"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "ברירת מחדל של ערכת הנושא"
@@ -9478,9 +11343,49 @@ msgstr "מחלקות, אסימונים, מצב כהה, ערכת מותג וגו�
 msgid "Open the Site Editor’s styles"
 msgstr "פתח את סגנונות עורך האתר"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "כותרת"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "כותרת עם מרווח שורות צפוף יותר, המעוצבת באמצעות לשונית העיצוב."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "פסקת טקסט, מעוצבת באמצעות כרטיסיית העיצוב."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "תמונה"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "תמונה בעלת פינות מעוגלות, המעוצבת באמצעות לשונית העיצוב."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "סרטון מספריית המדיה, בעיצוב הכרטיסייה \"עיצוב\"."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "מרווח"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "שטח ריק בין בלוקים; ניתן להגדיר גובה שונה לכל גודל מסך בלשונית העיצוב."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "מפריד"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "קו אופקי בין מקטעים, מעוצב באמצעות כרטיסיית העיצוב."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "הטמע תוכן מאתר אחר (סרטון, פוסט, מפה) על ידי הדבקת הכתובת שלו."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "מספר תמונות ברשת, מעוצבות באמצעות לשונית העיצוב."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9514,10 +11419,6 @@ msgstr "רשימה"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "לחיות"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "כפתורים"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9562,10 +11463,6 @@ msgstr "הסתר שפות שדף זה אינו מתורגם אליהן"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "הצג אנכית"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "רקע"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9624,11 +11521,6 @@ msgstr "הגדרות חסימה"
 #, js-format
 msgid "Add block: %s"
 msgstr "הוסף בלק: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(ללא כותרת)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9704,10 +11596,6 @@ msgstr "כבה את מצב בטוח"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "הפעל את מצב בטוח (תוספים אחרים כבויים, עבורך, ב-Studio בלבד)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "פורסם"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10050,11 +11938,6 @@ msgstr "שם הבונה"
 msgid "Visual editor name"
 msgstr "שם העורך החזותי"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "מחבר"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10131,10 +12014,6 @@ msgstr[2] "בוטל: %d עמודים שוחזרו."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "החלף"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "קישורים"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10245,10 +12124,6 @@ msgstr "אפשר ללקוח להגיב על עמוד זה"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "כל מי שיש לו את הקישור יכול לראות את העמוד הזה, עוד לפני שהוא מפורסם, ולהשאיר תגובות. אין צורך בחשבון."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "הועתק"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10498,6 +12373,52 @@ msgstr "העתק את התמונות לספריית המדיה של אתר זה"
 msgid "Show what will happen"
 msgstr "הצג מה יקרה"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "פריט אקורדיון"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "קטע אחד של אקורדיון: כותרת הפותחת את התוכן שלו."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "אקורדיון"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "שאלות או סעיפים שנפתחים ונסגרים. אופציונלית אחת בכל פעם, ובאופן אופציונלי מסומנים כשאלות נפוצות (FAQ) עבור מנועי חיפוש."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "אקורדיון"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "שאלות נפוצות"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "החלף מצב"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "כיוץ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "פרטים"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10514,6 +12435,7 @@ msgid "notice"
 msgstr "הודעה"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "הודעה"
@@ -10528,6 +12450,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "אזהרה"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "תגית"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "תווית קצרה כגון \"חדש\", \"מבצע\" או \"הערך הטוב ביותר\"."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "תווית"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "תגית"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "תגית"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "חדש"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "יומן הזמנות"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "יומן פגישות של Calendly או Cal.com, הנטען אך ורק כאשר המבקר מבקש זאת."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "הזמנה"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "פגישה"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "תזמון"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10539,6 +12526,7 @@ msgid "A link styled as a button."
 msgstr "קישור מעוצב ככפתור."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "כפתור"
@@ -10552,6 +12540,98 @@ msgstr "קישור"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "הנעה לפעולה"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "הנעה לפעולה"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "כותרת, משפט וכפתור אחד או שניים המבקשים מהמבקר לבצע פעולה."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "CTA"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "באנר"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "הירשם"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "רשימת בדיקה"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "רשימת משימות, שכל אחת מהן מסומנת כבוצעה או שטרם בוצעה, במילים עבור קוראי מסך וגם באמצעות סימון וי."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "לביצוע"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "משימות"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "סימונים"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "רשימה"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "קוד"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "קטע קוד עם הדגשת תחביר, מספרי שורות וכפתור העתקה. נשאר קריא גם אם התוסף יושבת אי פעם."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "קוד"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "תחביר"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "הדגש"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "קטע קוד"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "תכנות"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10575,6 +12655,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "פריסה"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "טבלת השוואה"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "תוכניות או מוצרים זה לצד זה, עם סימני כן ולא שקוראי מסך קוראים כמילים."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "השוואה"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "תמחור"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "תוכניות"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "טבלה"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "מאפיינים"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "כפתורי יצירת קשר"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "לחצנים לשיחה, שליחת אימייל, הודעת טקסט או הודעה אליך בוואטסאפ."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "איש קשר"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "התקשר"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "טלפון"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "דוא״ל"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "וואטסאפ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10592,11 +12750,13 @@ msgid "container"
 msgstr "מיכל"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "תיבה"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10613,6 +12773,52 @@ msgstr "פלפקסבוקס"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "עמודות"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "כותרת כפולה"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "כותרת בשני חלקים, שהחלק השני מודגש בצבע, במעבר צבע, בקו מתאר או בקו תחתי."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "כותרת"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "כותרת"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "מעבר הדרגתי"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "רשימת תכונות"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "מאפיינים ברשת, שלכל אחד מהם אייקון, כותרת ותיאור קצר."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "יתרונות"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "שירותים"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10656,6 +12862,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "טקסט"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "טופס"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "מציג טופס מתוך Contact Form 7, WPForms, Gravity Forms או Fluent Forms, המעוצב כך שיתאים לאתר שלך."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "טופס"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "מילון מושגים"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "מנוחים והגדרות שלהם, ממוינים מא' ועד ת', כל אחד עם קישור משלו. ניתן לקשר את האזכור הראשון של כל מנוח בעמוד להגדרתו."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "תנאים"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "הגדרות"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "מילון"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "רשימת סמלים"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "רשימה שבה כל שורה מתחילה בסמל: סימון וי, חץ, או כל סמל מתוך הספרייה."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "נקודות תבליט"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "אייקונים"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10676,6 +12962,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "תיבת מידע"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "אייקון, כותרת קצרה, משפט או שניים וקישור אופציונלי: עבור שירותים, הטבות או פרטי התקשרות."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "תכונה"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "שירות"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "כרטיס"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10695,6 +13006,204 @@ msgstr "תרגום"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "רב-לשוני"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "מיפוי"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "מפה של מקום מתוך OpenStreetMap: ללא מפתח, ודבר אינו נטען מ-OpenStreetMap עד שהמבקש מבקש את המפה."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "מיפוי"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "מיקום"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "כתובת"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "OpenStreetMap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "חלון מודאלי"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "לחצן הפותח חלון מעל העמוד, עם כל הבלוקים שבתוכו."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "מודל"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "חלון קופץ"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "תיבת לייטבוקס"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "תיחוח"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "פאנל צף"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "כפתור שגורם לפאנל להחליק פנימה מצידי החלון, עם כל בלוק שבתוכו."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "מחוץ לקנבס"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "מגירה"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "סרגל צד"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "פאנל"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "תפריט"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "פרטי פוסט"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "מחבר הפוסט, תאריכים, קטגוריות, תגיות, זמן קריאה ומספר התגובות."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "מחבר"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "תאריך"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "זמן קריאה"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "מטא"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "קרדיט מחבר"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "סרגל התקדמות"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "פס מתווי המציג את מידת ההתקדמות של דבר מה, כגון מיומנות או מטרה."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "התקדמות"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "סרגל"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "מיומנות"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "יעד"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "תוכן מוגנת בסיסמה"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "חוסם רק ביקורים שמשתמשים עם הסיסמה יכולים לראות. עד שהם מזינים אותה, התוכן אינו מופיע כלל בעמוד."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "סיסמה"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "מוגן"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "פרטי"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "נעילה"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "חברים"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10720,6 +13229,86 @@ msgstr "בהיר"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "ערכת צבעים"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "קוד QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "קוד QR לכתובת אינטרנט או לכל טקסט, המנוסח באתר שלך (לא נעשה שימוש בשירות QR)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "קוד QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "קוד QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "ברקוד"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "סרוק"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "סרגל התקדמות קריאה"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "פס דק בקצה החלון שמתמלא ככל שהמבקרים גוללים בעמוד."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "טעינה"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "גלול"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "פוסטים קשורים"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "פוסטים שמשתפים את הקטגוריות או התגיות של פוסט זה, כולל התמונות, התאריכים והסיכומים שלהם."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "קשורים"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "פוסטים"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "דומה"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "עוד"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10783,13 +13372,284 @@ msgstr "מציג את הווידג'טים באחד מאזורי הווידג'ט�
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "סרגל צד"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "אזור יישומון"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "מפת אתר"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "עמוד המציג את כל העמודים והפוסטים שפורסמו (ותוכן ציבורי אחר), תוך שמירה על מבנה עץ העמודים."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "מפת אתר"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "מפת אתר"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "אינדקס"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "כל העמודים"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "סמלי רשתות חברתיות"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "קישורים לפרופיל שלך, המוצגים עם האייקונים של הרשתות עצמן."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "חברתי"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "קישורים"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "מעקב"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "פרופילים"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "דירוג כוכבים"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "דירוג המוצג ככוכבים, במרווחים של חצי כוכב."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "כוכבים"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "דירוג"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "ציון"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "שלבים"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "השלבים הממוספרים של תהליך, לפי הסדר, לאורך הדף או זה לצד זה."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "עיבוד"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "איך לבצע"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "ציר זמן"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "ממוספר"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "לשונית"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "לשונית אחת של בלוק לשוניות: הכותרת שלה והלוח שלה."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "תוכן עניינים"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "רשימה של הכותרות בעמוד, הנבנית באופן אוטומטי, המקשרת לכל אחת מהן."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "תוכן העניינים"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "תוכן"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "כותרות"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "לשוניות"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "תוכן בטאשיות: מבקרים עוברים בין לוחות באמצעות העכבר או המקלדת."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "כרטיסיות"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "מגוash (או מנוהל בלשוניות) / ממופה ללשוניות"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "לוחות בקרה"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "המלצה"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "ציטוט של לקוח הכולל את שמו, תפקידו, תמונתו ודירוג כוכבים אופציונלי."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "סקירה"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "ציטוט"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "לקוח"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "משוב"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "תילולית עזרה"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "מילה או ביטוי המציגים הסבר קצר בעת מעבר עכבר ומיקוד מקלדת."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "הסבר צץ"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "רמז"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "הגדרה"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "פרופיל מחבר"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "התמונה, השם, הביוגרפיה והקישורים של המחבר, או של משתמש נבחר."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "ביוגרפיה"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "פרופיל"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "אודות"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "כפתור צ'אט בוואטסאפ"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "כפתור צף בפינת העמוד הפותח צ'אט וואטסאפ איתך."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "צ'אט"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "צף"
 
 #: blocks/widget/block.json
 msgctxt "block title"

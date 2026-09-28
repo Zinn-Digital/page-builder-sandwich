@@ -1,0 +1,105 @@
+/*
+ * Front-end styles for pbs/dual-heading. `__PREFIX__` is the neutral class prefix; logical
+ * properties only (wp/bin/pbs-logical-css.php). Loaded only where this block renders.
+ * The second part keeps a solid text colour under every look (the gradient and outline fall
+ * back to it), so the heading stays readable where background-clip:text is unsupported.
+ */
+.__PREFIX__-dual-heading {
+	--__PREFIX__-dual-accent: var(--wp--preset--color--primary, var(--wp--preset--color--accent-3, #5b21b6));
+	--__PREFIX__-dual-accent-2: var(--wp--preset--color--secondary, var(--wp--preset--color--accent-4, #3f3f46));
+	text-align: start;
+}
+
+.__PREFIX__-dual-heading--center {
+	text-align: center;
+}
+
+.__PREFIX__-dual-heading--end {
+	text-align: end;
+}
+
+/* Each part is its own bidi run, so the parts follow the page's direction even when their
+   text is in another script (an English heading on an Arabic site keeps its first part first). */
+.__PREFIX__-dual-heading__first,
+.__PREFIX__-dual-heading__second {
+	unicode-bidi: isolate;
+}
+
+.__PREFIX__-dual-heading--stacked .__PREFIX__-dual-heading__second {
+	display: block;
+}
+
+.__PREFIX__-dual-heading--accent .__PREFIX__-dual-heading__second {
+	color: var(--__PREFIX__-dual-accent);
+}
+
+.__PREFIX__-dual-heading--gradient .__PREFIX__-dual-heading__second {
+	color: var(--__PREFIX__-dual-accent);
+}
+
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+	.__PREFIX__-dual-heading--gradient .__PREFIX__-dual-heading__second {
+		background-image: linear-gradient(90deg, var(--__PREFIX__-dual-accent), var(--__PREFIX__-dual-accent-2));
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.__PREFIX__-dual-heading--gradient .__PREFIX__-dual-heading__second:dir(rtl) {
+		background-image: linear-gradient(270deg, var(--__PREFIX__-dual-accent), var(--__PREFIX__-dual-accent-2));
+	}
+}
+
+.__PREFIX__-dual-heading--outline .__PREFIX__-dual-heading__second {
+	color: var(--__PREFIX__-dual-accent);
+}
+
+@supports (-webkit-text-stroke: 1px currentcolor) {
+	.__PREFIX__-dual-heading--outline .__PREFIX__-dual-heading__second {
+		-webkit-text-stroke: 0.035em var(--__PREFIX__-dual-accent);
+		-webkit-text-fill-color: transparent;
+	}
+}
+
+.__PREFIX__-dual-heading--underline .__PREFIX__-dual-heading__second {
+	text-decoration: underline;
+	text-decoration-color: var(--__PREFIX__-dual-accent);
+	text-decoration-thickness: 0.12em;
+	text-underline-offset: 0.12em;
+}
+
+/* Shared by the G-B blocks. Each block file carries its own copy, because a page loads only the
+   stylesheets of the blocks it uses. */
+.__PREFIX__-accent--primary {
+	--__PREFIX__-accent: var(--wp--preset--color--primary, var(--wp--preset--color--accent-3, #5b21b6));
+}
+
+.__PREFIX__-accent--secondary {
+	--__PREFIX__-accent: var(--wp--preset--color--secondary, var(--wp--preset--color--accent-4, #3f3f46));
+}
+
+.__PREFIX__-accent--contrast {
+	--__PREFIX__-accent: var(--wp--preset--color--contrast, currentcolor);
+}
+
+.__PREFIX__-accent--text {
+	--__PREFIX__-accent: currentcolor;
+}
+
+.__PREFIX__-kit-icon,
+.__PREFIX__-kit-icon svg {
+	display: inline-block;
+	line-height: 0;
+}
+
+.__PREFIX__-sr {
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}

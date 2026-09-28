@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/sitemap",
+	"title": "Sitemap",
+	"category": "pbs-site",
+	"icon": "networking",
+	"description": "A page listing every published page and post (and other public content), with the page tree kept.",
+	"keywords": [
+		"sitemap",
+		"site map",
+		"index",
+		"all pages"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"postTypes": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"page",
+				"post"
+			]
+		},
+		"showHeadings": {
+			"type": "boolean",
+			"default": true
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 2
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

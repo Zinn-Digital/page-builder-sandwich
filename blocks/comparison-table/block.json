@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/comparison-table",
+	"title": "Comparison table",
+	"category": "pbs-marketing",
+	"icon": "editor-table",
+	"description": "Plans or products side by side, with yes and no marks that screen readers read as words.",
+	"keywords": [
+		"compare",
+		"pricing",
+		"plans",
+		"table",
+		"features"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"caption": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"columns": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			},
+			"role": "content"
+		},
+		"rows": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			},
+			"role": "content"
+		},
+		"stickyHeader": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

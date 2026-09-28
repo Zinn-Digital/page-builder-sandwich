@@ -1,0 +1,40 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/post-meta",
+	"title": "Post details",
+	"category": "pbs-site",
+	"icon": "info-outline",
+	"description": "The post's author, dates, categories, tags, reading time and comment count.",
+	"keywords": [
+		"author",
+		"date",
+		"reading time",
+		"meta",
+		"byline"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"default": [
+				"author",
+				"date",
+				"readingTime"
+			]
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor",
+	"usesContext": [
+		"postId",
+		"postType"
+	]
+}

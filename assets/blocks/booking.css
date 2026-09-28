@@ -1,0 +1,73 @@
+/*
+ * pbs/booking: a click-to-load frame. Zero-specificity defaults (:where) so the design panel wins.
+ * Logical properties only.
+ */
+:where(.__PREFIX__-booking) {
+	margin-inline: 0;
+	margin-block: 0 1.5em;
+}
+
+:where(.__PREFIX__-booking__frame) {
+	position: relative;
+	inline-size: 100%;
+	min-block-size: 660px;
+	border-radius: 4px;
+	overflow: hidden;
+	background: #eef1f4;
+}
+
+:where(.__PREFIX__-booking__iframe) {
+	position: absolute;
+	inset: 0;
+	inline-size: 100%;
+	block-size: 100%;
+	border: 0;
+}
+
+:where(.__PREFIX__-booking__consent) {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75em;
+	padding: 1.5em;
+	text-align: center;
+	color: #1e1e1e;
+}
+
+:where(.__PREFIX__-booking__consent[hidden], .__PREFIX__-booking__iframe[hidden]) {
+	display: none;
+}
+
+:where(.__PREFIX__-booking__notice) {
+	margin: 0;
+	max-inline-size: 36em;
+}
+
+:where(.__PREFIX__-booking__load) {
+	padding-block: 0.6em;
+	padding-inline: 1.2em;
+	border: 0;
+	border-radius: 4px;
+	background: #1e1e1e;
+	color: #fff;
+	font: inherit;
+	cursor: pointer;
+}
+
+:where(.__PREFIX__-booking__load:focus-visible, .__PREFIX__-booking__link:focus-visible) {
+	outline: 2px solid #1e1e1e;
+	outline-offset: 2px;
+}
+
+:where(.__PREFIX__-booking__link) {
+	color: #1e1e1e;
+	text-decoration: underline;
+}
+
+:where(.__PREFIX__-booking__caption) {
+	margin-block-start: 0.5em;
+	font-size: 0.875em;
+}

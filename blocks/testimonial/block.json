@@ -1,0 +1,72 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/testimonial",
+	"title": "Testimonial",
+	"category": "pbs-marketing",
+	"icon": "format-quote",
+	"description": "A quote from a customer with their name, role, photo and an optional star rating.",
+	"keywords": [
+		"review",
+		"quote",
+		"customer",
+		"feedback"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"quote": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"name": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"role": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"imageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"imageId": {
+			"type": "integer",
+			"default": 0
+		},
+		"imageAlt": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"rating": {
+			"type": "integer",
+			"default": 0
+		},
+		"layout": {
+			"type": "string",
+			"enum": [
+				"stacked",
+				"side"
+			],
+			"default": "stacked"
+		},
+		"align": {
+			"type": "string",
+			"enum": [
+				"start",
+				"center"
+			],
+			"default": "start"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

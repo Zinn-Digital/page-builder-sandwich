@@ -40,6 +40,9 @@ final class Fonts {
 	/** Where font files may come from. */
 	private const FILE_HOST = 'fonts.gstatic.com';
 
+	/** A font file of ours as a stored sheet names it: the bare content-hashed file name. */
+	private const LOCAL_FILE = '/^[a-f0-9]{12}\.woff2$/';
+
 	/** Largest accepted font file. */
 	private const MAX_BYTES = 2097152;
 
@@ -158,7 +161,10 @@ final class Fonts {
 				if ( null !== $local ) {
 					$files[] = $local['path'];
 				}
-				return null === $local ? null : $local['url'];
+				// RELATIVE to the stylesheet, which is written to the same folder: a sheet that names
+				// its files by absolute URL keeps loading them from the old host after a site moves
+				// (the gap Files::current_url() closes for the sheet's own URL).
+				return null === $local ? null : basename( (string) $local['url'] );
 			}
 		);
 		if ( null === $css || array() === $files ) {
@@ -172,14 +178,15 @@ final class Fonts {
 		$all            = self::stored();
 		$previous       = $all[ $family ] ?? null;
 		$entry          = array(
-			'family'  => $family,
-			'weights' => $weights,
-			'italic'  => $italic,
-			'url'     => $sheet['url'],
-			'path'    => $sheet['path'],
-			'hash'    => $sheet['hash'],
-			'files'   => $files,
-			'updated' => time(),
+			'family'   => $family,
+			'weights'  => $weights,
+			'italic'   => $italic,
+			'url'      => $sheet['url'],
+			'path'     => $sheet['path'],
+			'hash'     => $sheet['hash'],
+			'files'    => $files,
+			'updated'  => time(),
+			'relative' => true,
 		);
 		$all[ $family ] = $entry;
 		update_option( self::OPTION, $all, false );
@@ -234,7 +241,10 @@ final class Fonts {
 			if ( null === $local ) {
 				continue;
 			}
-			$face  = (string) preg_replace( '/src\s*:[^;}]*/i', "src:url('" . esc_url_raw( $local ) . "') format('woff2')", $face, 1 );
+			// A file of ours in the same folder is written as its bare name (esc_url_raw() would
+			// turn a bare name into an absolute http address); anything else is an escaped absolute URL.
+			$src   = 1 === preg_match( self::LOCAL_FILE, $local ) ? $local : esc_url_raw( $local );
+			$face  = (string) preg_replace( '/src\s*:[^;}]*/i', "src:url('" . $src . "') format('woff2')", $face, 1 );
 			$face  = preg_match( '/font-display\s*:/i', $face )
 				? (string) preg_replace( '/font-display\s*:[^;}]*/i', 'font-display:swap', $face )
 				: (string) preg_replace( '/\}\s*$/', ';font-display:swap}', $face );
@@ -255,9 +265,57 @@ final class Fonts {
 		if ( ! is_array( $entry ) || ! is_string( $entry['url'] ?? null ) ) {
 			return false;
 		}
+		if ( empty( $entry['relative'] ) ) {
+			$entry = self::upgrade_sheet( $family, $entry );
+		}
 		wp_enqueue_style( Settings::prefix() . '-f' . substr( (string) $entry['hash'], 0, 8 ), Files::current_url( (string) $entry['url'] ), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- the file name is its content hash.
 
 		return true;
+	}
+
+	/**
+	 * The pure half of the upgrade: every font-file URL of ours in a stored sheet, absolute as
+	 * written before 6.2, becomes the bare file name (the sheet sits in the same folder).
+	 *
+	 * @param string $css Stored sheet.
+	 * @return string
+	 */
+	public static function relativise( string $css ): string {
+		return (string) preg_replace( "#url\\(\\s*(['\"]?)[^'\")\\s]*/[a-z][a-z0-9]{0,7}-assets/fonts/([a-f0-9]{12}\\.woff2)\\1\\s*\\)#i", "url('$2')", $css );
+	}
+
+	/**
+	 * A family stored before 6.2 names its font files by absolute URL, so it breaks when the site
+	 * moves. Rewrite its sheet once (a new content-hashed file), record it and drop the old one.
+	 * Anything that cannot be done leaves the entry as it was: the old sheet still loads.
+	 *
+	 * @param string               $family Family.
+	 * @param array<string, mixed> $entry  Stored entry.
+	 * @return array<string, mixed> The entry to use.
+	 */
+	private static function upgrade_sheet( string $family, array $entry ): array {
+		$path = (string) ( $entry['path'] ?? '' );
+		if ( '' === $path || ! Files::is_generated( $path ) || ! is_readable( $path ) ) {
+			return $entry;
+		}
+		$css = (string) file_get_contents( $path ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- a generated file in uploads, never a URL.
+		$new = self::relativise( $css );
+		if ( $new !== $css ) {
+			$sheet = Files::write( $new, 'css', 'fonts' );
+			if ( null === $sheet ) {
+				return $entry;
+			}
+			$entry = array_merge( $entry, $sheet );
+			if ( $sheet['path'] !== $path ) {
+				Files::delete( $path );
+			}
+		}
+		$entry['relative'] = true;
+		$all               = self::stored();
+		$all[ $family ]    = $entry;
+		update_option( self::OPTION, $all, false );
+
+		return $entry;
 	}
 
 	/**

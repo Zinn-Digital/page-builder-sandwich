@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/off-canvas",
+	"title": "Off-canvas panel",
+	"category": "pbs-content",
+	"icon": "align-pull-right",
+	"description": "A button that slides a panel in from the side of the window, with any blocks inside.",
+	"keywords": [
+		"off-canvas",
+		"drawer",
+		"sidebar",
+		"panel",
+		"menu"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"trigger": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"title": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"side": {
+			"type": "string",
+			"enum": [
+				"start",
+				"end"
+			],
+			"default": "end"
+		},
+		"backdropClose": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

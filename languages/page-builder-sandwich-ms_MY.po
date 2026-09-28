@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Simpan sebagai corak boleh guna semula"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Pemeriksa kebolehaksesan"
 
@@ -990,6 +994,7 @@ msgstr "← Pilih pembekal yang lain"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Alamat"
 
@@ -1043,6 +1048,8 @@ msgstr "Uji"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Buang"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Muat semula senarai model daripada pembekal"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Imej"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "dipadamkan"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Buka"
 
@@ -1448,6 +1457,7 @@ msgstr "Tiada permintaan AI telah dibuat lagi."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Selesai"
 
@@ -1515,7 +1525,11 @@ msgstr "Terlalu banyak percubaan. Sila cuba lagi dalam beberapa minit."
 msgid "Something went wrong. Please contact the admin."
 msgstr "Ada yang tidak kena. Sila hubungi pentadbir."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Peta"
 
@@ -1538,52 +1552,383 @@ msgstr "Keluarga tersebut tidak disimpan."
 msgid "Removed."
 msgstr "Telah dialih keluar."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Itu bukan nama keluarga fon yang sah."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts tidak memulihkan fon tersebut. Sila semak nama itu dan cuba lagi."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Fail fon tidak dapat dimuat turun atau disimpan. Semak sama ada folder muat naik boleh ditulis."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Stylesheet fon tidak boleh disimpan. Semak sama ada folder muat naik boleh ditulis."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Tolak pemberitahuan ini"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(buka dalam tab baharu)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Selesai:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Untuk dilakukan:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Indeks glosari"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Dinilai %1$s daripada %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Kemajuan"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Salin kod"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Disalin"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Widget tersebut tidak tersedia di tapak ini."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "E-mel"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Telefon"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Suapan RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Laman web"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Pautkan"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (buka dalam tab baharu)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Dinilaikan %d daripada 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(disyorkan)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Termasuk"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Tidak termasuk"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Jadual perbandingan"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Panggil %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Emel %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Teks %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Sembang di WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Hubungi kami"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Berbual dengan kami di WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Borang ini tidak tersedia buat masa ini."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Borang ini tidak boleh dipaparkan kerana %s tidak aktif."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Peta: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Memaparkan peta memuatkannya dari OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Tunjukkan peta"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Buka peta pada OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Kalendar tempahan dari %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Memaparkan kalendar tempahan memuatkannya dari %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Tunjuk kalendar tempahan"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Tempah pada %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Kod QR untuk %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Reka Bentuk"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Kandungan"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Media"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Pemasaran"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Laman"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Data"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Hantaran berkaitan"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Butiran hantaran"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Oleh"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Diterbitkan"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Dikemas kini"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Dalam"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Tanda"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "bacaan %d minit"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Belum ada komen lagi"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d ulasan"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Peta laman"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(tiada tajuk)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Semua hantaran oleh %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Kandungan ini dilindungi. Masukkan kata laluan untuk melihatnya."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Kata laluan itu tidak betul. Cuba lagi."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Kata laluan"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Paparkan kandungan"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Halaman itu tidak boleh dinyah kunci."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Terlalu banyak percubaan. Tunggu beberapa minit dan cuba lagi."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Kata laluan mesti mengandungi 4 hingga 200 aksara."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Lagi"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Tutup"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Tab %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Kandungan"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2031,10 @@ msgstr "Sunting dengan Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Kanvas kosong"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Langkau ke kandungan"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Lebar tablet mestilah nombor bulat piksel dari 480 hingga 2560."
@@ -1760,7 +2109,11 @@ msgid "Uploaded icons"
 msgstr "Ikon dimuat naik"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Ikon"
 
@@ -2553,6 +2906,8 @@ msgstr "%s ialah alamat e-mel pelanggan saya"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Kod"
 
@@ -3047,13 +3402,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Sunting"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "E-mel"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Alamat e-mel"
 
@@ -3103,6 +3454,10 @@ msgstr "Pendayakan mod label putih"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3480,7 @@ msgstr "Masukkan alamat e-mel baharu"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Ralat"
 
@@ -3723,6 +4079,7 @@ msgstr "Produk di bawah telah diletakkan dalam mod selamat kerana kami mendapati
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4183,7 @@ msgstr "Plugin ini memerlukan versi PHP yang lebih baharu."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Tidak"
 
@@ -4811,6 +5169,13 @@ msgstr "Media sosial (Facebook, Twitter, dll.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5461,9 @@ msgstr "Tarikh Masa"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Tajuk"
 
@@ -5171,6 +5539,8 @@ msgstr "Bagaimana pendapat anda tentang %1$s setakat ini? Uji semua ciri premium
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Jenis"
@@ -5286,6 +5656,7 @@ msgstr "Pengguna"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Nilai"
@@ -5340,6 +5711,7 @@ msgstr "Lihat ciri berbayar"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Amaran"
 
@@ -5666,6 +6038,7 @@ msgid "Optional"
 msgstr "Pilihan"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Pelan"
 
@@ -5988,18 +6361,26 @@ msgstr "Sangat kecil"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Kecil"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Sederhana"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Besar"
 
@@ -6012,7 +6393,9 @@ msgid "Huge"
 msgstr "Besar"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6324,16 +6707,9 @@ msgid "The trial could not be started."
 msgstr "Percubaan tersebut tidak dapat dimulakan."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Ciri"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Termasuk"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Tidak termasuk"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6687,10 +7063,6 @@ msgstr "Alamat log masuk"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Nama Pengguna"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Kata laluan"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7081,15 +7453,62 @@ msgstr "Pembatalan dimulakan. Ia diteruskan di latar belakang; anda boleh mening
 msgid "Undo all conversions"
 msgstr "Batalkan semua penukaran"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Item"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Buka apabila halaman dimuatkan"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Tajuk ialah tajuk utama"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Jadikan tajuk sebagai tajuk utama apabila item tersebut adalah seksyen halaman, supaya pelawat boleh melompat antaranya."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Tajuk %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Soalan atau tajuk seksyen"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Akordion"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Hanya satu item dibuka pada satu masa"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Tanda sebagai FAQ untuk enjin carian"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Menambahkan data berstruktur FAQ yang dibina daripada tajuk (soalan) dan teksnya (jawapan)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Makluman"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Maklumat"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Berjaya"
 
@@ -7098,6 +7517,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Amaran dan ralat diumumkan kepada pengguna pembaca skrin dengan serta-merta; maklumat dan notis kejayaan dibaca apabila mereka selesai melakukan tugasan mereka."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Tunjukkan ikon"
 
@@ -7113,64 +7533,702 @@ msgstr "Tajuk (pilihan)"
 msgid "Write the message…"
 msgstr "Tulis mesej…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "bahagian — bahagian tematik"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Pusat"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — tiada makna"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Lencana"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "kepala — kandungan pengenalan"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Warna"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "pengaki — kandungan penutup"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Aksen tema"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "artikel — kandungan bersendirian"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Neutral"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "di tepi — kandungan berkaitan"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Kedudukan"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "utama — kandungan utama (sekali setiap halaman)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Label"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — pautan navigasi"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Kalendar tempahan"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Tindanan (flexbox, lajur)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Perkhidmatan"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Baris (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Alamat halaman tempahan"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Grid"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Contohnya %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Fungsi kalendar, dibaca oleh pembaca skrin dan dipaparkan di bawahnya."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Ini bukan alamat halaman tempahan %s, jadi tiada apa-apa yang akan dipaparkan pada halaman tersebut."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Pratonton kalendar"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Alamat pautan"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Butang itu dipaparkan apabila ia mempunyai kedua-dua label dan alamat."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Buka dalam tab baharu"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Seru bertindak"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Susun atur"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Butang di bawah"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Butang di sebelah teks"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Jajaran"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Butang utama"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Butang kedua"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Menuju ke…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Satu ayat tentang sebab…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Butang kedua (pilihan)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Senarai semak"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Warna tanda tik"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Baris"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Baris %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Tugasan…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Tambah baris"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Bahasa"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Kesan secara automatik"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Tiada penyerlahan"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Nama fail"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Dipaparkan di atas kod, contohnya functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Nombor baris"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Butang salin"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Balut baris panjang"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Tulis atau tampal kod…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Teks"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Lajur"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Lajur %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Serlahkan %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Tambah kolum"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Baris"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Baris %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Tambah baris"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Kapsyen (apa yang sedang dibandingkan)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Jenis sel: %s. Tukar"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Panggilan telefon"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Mesej teks"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Butang"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Nombor telefon, berserta kod negara"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Teks butang"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Alih keluar butang ini"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Tambah butang"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Mesej WhatsApp untuk bermula (pilihan)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Butang hubungan"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Tambah nombor telefon, alamat e-mel atau nombor WhatsApp di bar sisi."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Tajuk berkembar"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Tahap tajuk"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Gunakan H1 sekali bagi setiap halaman, untuk tajuk utamanya."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Bahagian kedua nampak"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Warna aksen"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Gradien"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Garis Kasar"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Garis bawah"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Bahagian kedua pada barisnya sendiri"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Bahagian pertama"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "bahagian kedua"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Pen penanda"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Garis bawah tebal"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Latar belakang"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Serlahkan"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Buang sorotan"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Huruf besar lepas"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Huruf permulaan besar"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Untuk huruf pertama dalam kotak, pilih gaya \"Drop cap dalam kotak\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Huruf besar dalam kotak"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Bar aksen"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Petikan tersiar (bar aksen)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Petikan daripada teks itu, diletakkan bersaiz besar di sebelah bar berwarna untuk menarik perhatian."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "sebut harga"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Senarai ciri"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Pada telefon, ciri-ciri sentiasa bertindan."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Ciri"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Ciri %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Ikon sendiri"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Ciri…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Huraikannya…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Tambah ciri"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Pasang dan aktifkan Contact Form 7, WPForms, Gravity Forms atau Fluent Forms, kemudian pilih salah satu borangnya di sini."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Plugin borang"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Pilih…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Borang"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Pilih borang…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s belum mempunyai sebarang borang"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s tidak aktif pada tapak ini, jadi borang ini tidak boleh dipaparkan."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Senarai borang tidak dapat dimuatkan."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Gaya borang"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Medan"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Bergaris luar"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Dipenuhi"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Bergaris bawah"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Lebar butang"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Muatkan teks"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Lebar penuh"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Warna, fon, jarak dan bujur sudut berasal dari reka bentuk tapak anda dan tetapan reka bentuk blok ini."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Paparkan borang daripada plugin borang anda, digayakan agar sepadan dengan tapak anda."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Perlukan palam borang? Contact Form 7 adalah percuma."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Glosari"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Susun A hingga Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Halaman tersebut memaparkan terma mengikut susunan abjad; di sini terma kekal mengikut susunan yang anda tulis."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Tunjukkan indeks A–Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Pautan terma yang digunakan di tempat lain pada halaman ini"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Kali pertama setiap istilah muncul dalam teks halaman, ia akan dipautkan kepada definisinya. Tajuk, butang, kod dan pautan sedia ada dibiarkan seperti asal."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Terma"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Penggal %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Tempoh"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Maksudnya…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Tambah terma"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Senarai ikon"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Satu di bawah yang lain"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Sebelah menyebelah"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Item senarai…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Kotak maklumat"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Atau pilih sebarang ikon dari perpustakaan:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Teks pautan"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Nyatakan ke mana pautan itu pergi (\"Lihat harga kami\"), bukan \"Baca lagi\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Satu atau dua ayat…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "bahagian — bahagian tematik"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — tiada makna"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "kepala — kandungan pengenalan"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "pengaki — kandungan penutup"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "artikel — kandungan bersendirian"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "di tepi — kandungan berkaitan"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "utama — kandungan utama (sekali setiap halaman)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — pautan navigasi"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Tindanan (flexbox, lajur)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Baris (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Grid"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Menyunting: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Susun anak sebagai"
 
@@ -7178,7 +8236,7 @@ msgstr "Susun anak sebagai"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7186,70 +8244,50 @@ msgstr "Susun anak sebagai"
 msgid "Inherited (%s)"
 msgstr "Diwarisi (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Blok bertindan"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Lajur"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Tarik ke dalam kanvas, atau taip"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Lebar kandungan"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Berkotak (lebar kandungan tema)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Lebar penuh"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Ketinggian minimum"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Tag HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Pautkan"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Jadikan seluruh blok sebagai pautan ke"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Teks pautan untuk pembaca skrin"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Perkara yang dilakukan oleh pautan itu, untuk pelawat yang tidak dapat melihat blok tersebut."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Buka dalam tab baharu"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Jangan letakkan pautan atau butang di dalam blok yang terpaut: pautan di dalam pautan tidak berfungsi dalam pelayar."
 
@@ -7281,14 +8319,143 @@ msgstr "+ Baris"
 msgid "− Row"
 msgstr "− Baris"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Tempat"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Tampal koordinat atau pautan OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Di openstreetmap.org, cari tempat tersebut, kemudian salin alamat dari bar pelayar, atau klik kanan pada peta dan pilih \"Tunjukkan alamat\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Latitud"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Garis bujur"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Zum"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Nama tempat"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Dipaparkan di bawah peta dan dibacakan oleh pembaca skrin."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Tampal koordinat (contohnya 51.5074, -0.1278) atau pautan OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Koordinat atau pautan"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Pratonton peta"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Semak %1$s, %2$s pada OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Pengarang"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Tarikh diterbitkan"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Tarikh dikemas kini (apabila berbeza)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Kategori"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Tag"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Masa bacaan"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Bilangan ulasan"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Butiran untuk ditunjukkan"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Pilih sekurang-kurangnya satu butiran untuk dipaparkan."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Bar kemajuan"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Maksimum"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 untuk peratusan; sebarang nombor lain untuk bilangan, seperti 8 daripada 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Tunjukkan peratusan"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Kata laluan telah ditetapkan. Pelawat akan melihat borang kata laluan dan bukannya kandungan ini sehingga mereka memasukkannya."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Tiada kata laluan ditetapkan lagi, jadi pelawat tidak melihat apa-apa di sini."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Kata laluan baharu"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Tetapkan kata laluan"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Kata laluan ditetapkan. Simpan halaman untuk mengenal pasti; pelawat yang telah menyahuncinya memerlukan yang baharu."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Jika Page Builder Sandwich dimatikan, kandungan ini dipaparkan kepada semua orang."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Mesej di atas borang kata laluan (pilihan)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Tukar"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Label"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7298,30 +8465,698 @@ msgstr "Dibaca oleh pembaca skrin, dan dipaparkan apabila “Tunjukkan label” 
 msgid "Show label"
 msgstr "Tunjuk label"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Alamat web atau teks"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Kod QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Penerangan untuk pembaca skrin"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Biarkan kosong untuk menggunakan \"Kod QR untuk\" dan teks tersebut."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Taip alamat web, pautan telefon (tel:) atau sebarang teks."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Ini terlalu panjang untuk kod QR. Sila memendekkannya."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Tambah kapsyen"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Bar kemajuan bacaan"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Tepi tetingkap"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Atas"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Bawah"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Dipaparkan di sepanjang bahagian bawah tetingkap semasa pelawat skrol."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Dipaparkan di bahagian atas tingkap semasa pelawat skrol."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Berapa banyak"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Berkaitan oleh"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Kategori atau tanda"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Apabila tiada yang berkaitan, tunjukkan yang terkini sebagai gantinya"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Tajuk"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Biarkan kosong untuk \"Catatan berkaitan\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Tunjukkan imej pilihan"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Tunjukkan tarikh"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Paparkan ringkasan"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Tiada hantaran yang berkongsi kategori atau tag hantaran ini buat masa ini. Apabila ada, ia akan dipaparkan di sini."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Modal"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Panel luar kanvas"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Saiz"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Masuk dari"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Mula ialah bahagian di mana bacaan bermula: sebelah kiri dalam bahasa Inggeris, sebelah kanan dalam bahasa Arab."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Tutup apabila halaman di belakang diklik"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Tajuk tetingkap"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Tanda semak"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Bulatan"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Silang"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Titik"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Anak panah"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Bintang"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Warna ikon"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Sama seperti teks"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Tema utama"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Tema sekunder"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Kontras tema"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Kekalkan tajuk mengikut urutan ke bawah halaman: tajuk satu tahap di bawah bahagian tempat ia berada."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Pilih ikon"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Gunakan ikon lalai"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Pilih ikon"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Alih ke atas"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Pindah ke bawah"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Tunjukkan tajuk bagi setiap jenis"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Tiada apa yang diterbitkan lagi dalam jenis yang anda pilih."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Pautan"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Pautan %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Rangkaian"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Alamat profil, mailto:you@example.com atau tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Nama dibaca kepada pembaca skrin"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Ikon lain"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Tambah pautan"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Lihat"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Gaya"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Ikon sahaja"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Bentuk"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Segi empat sama bulat"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Segiempat"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Buka profil dalam tab baharu"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Penilaian bintang"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Penilaian"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Bilangan bintang"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Tunjukkan nombor"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Langkah"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Ke bawah halaman"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Bersebelahan (bertindan pada telefon)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Warna nombor"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Urutan langkah"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Langkah %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Langkah…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Apa yang perlu dilakukan…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Tambah langkah"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Tab"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Tambah tajuk pada halaman dan ia akan disenaraikan di sini."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Jadual kandungan"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Daripada tahap tajuk"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Ke tahap tajuk"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Dinomborkan"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Boleh diciutkan"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Mula dikuncupkan"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Serlahkan bahagian yang sedang dibaca"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Tab"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Nama untuk pembaca skrin"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Pilihan. Menyatakan tentang apakah tab tersebut, contohnya \"Pelan\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Buka semasa muat halaman"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Tab di sisi"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Tambah tab"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Testimoni"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Ganti foto"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Pilih foto"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Buang foto"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Keterangan foto"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Biarkan kosong apabila foto hanya menunjukkan individu yang dinamakan di sebelahnya."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Penarafan bintang (0 = tiada)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Nama di bawah sebut harga"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Foto di sebelah petikan"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Apa yang dikatakan pelanggan…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Peranan atau syarikat"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Petua alat"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Teks petua alat"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Pastikannya pendek: satu atau dua ayat. Pembaca skrin membacanya berserta perkataan yang diterangkan."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Tunjukkan ia"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Di atas"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Di bawah"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Perkataan atau frasa"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Gunakan"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Profil"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Profil siapa"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Pengarang siaran"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Tunjukkan gambar profil"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Tunjukkan biografi"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Tunjukkan pautan ke siaran dan laman web"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Profil pengarang"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Pilih profil yang hendak dipaparkan."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Nombor WhatsApp, berserta kod negara"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Sebagai contoh +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Mesej untuk dimulakan (pilihan)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Paparkan teks di sebelah ikon"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Penjuru"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Bawah (kanan dalam Bahasa Inggeris)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Mula bawah (kiri dalam Bahasa Inggeris)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Tambahkan nombor WhatsApp anda di sidebar. Sehingga itu butang tidak ditunjukkan pada halaman."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Pada halaman ini, butang ini terapung di penjuru bawah skrin."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Tag shortkod"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Gunakan huruf, nombor, sempang dan garis bawah sahaja."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Nama atribut"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Tambah atribut"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Kod pendek"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Atribut lain"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Pilih tag kod pendek dalam tetapan blok."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Galeri"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Saiz imej"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Imej kecil"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Saiz penuh"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Pautkan ke"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Halaman lampiran"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Fail media"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Audio"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Video"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Alamat fail"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Gelung"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Mainkan secara automatik"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Imej poster"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Senarai Main"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "ID Media, dipisahkan dengan koma"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Paparkan senarai trek"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Semat"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Alamat untuk dibenamkan"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Lebar maksimum"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Keterangan"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML Imej dan kapsyen"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Lebar"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Petua: Blok Borang menunjukkan borang ini digayakan agar sepadan dengan tapak anda."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Tunjukkan tajuk borang"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Tunjukkan penerangan borang"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Hantar tanpa memuat semula halaman"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7342,123 +9177,108 @@ msgstr "Pilih fail"
 msgid "— Default —"
 msgstr "— Lalai —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Gaya lanjutan"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS Sebaris"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Pengisytiharan CSS, contohnya: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Kesan (kelas warisan)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Nama kesan yang dipisahkan oleh ruang dibawa dari versi lama, contohnya: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Baris"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Lebar"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Lebar penuh, kandungan dikekalkan di tengah"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Alamat pautan"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Hubungan pautan"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Jajaran"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Kiri"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Pusat"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Kanan"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Teks butang"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Tambah teks..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Penempatan"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Pada barisnya sendiri"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Di dalam baris, di sebelah kandungan lain"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Automatik (baris sendiri di peringkat atas halaman)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Label boleh akses"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Biarkan kosong untuk ikon hiasan."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Pilih ikon dalam tetapan blok."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Nama tetapan baharu"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Sebagai contoh: tajuk atau teks"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Tambah tetapan"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Widget"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Pilih widget"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Kawasan widget"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Pilih kawasan widget"
 
@@ -7481,6 +9301,140 @@ msgstr "Benamkan ini mengubah saiz sendiri selepas ia dimuatkan, yang mengalihka
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Perubahan reka letak"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Widget ini tidak menerangkan tetapan nya, jadi ia disunting sebagai pasangan nama dan nilai."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Masalah"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Semak"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Tunjuk blok"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Gunakan warna tema yang boleh dibaca"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Jadikan H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Teks alt"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Simpan teks alt"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Imej ini adalah hiasan"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Sedang menyemak…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Tiada masalah kebolehcapaian ditemui pada halaman ini."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d masalah"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d perkara untuk disemak"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Semak semula"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Semakan automatik mendapati banyak masalah tetapi bukan kesemuanya. Serta cuba halaman tersebut menggunakan papan kekunci sahaja dan dengan pembaca skrin."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Kontras teks ialah %1$s:1; ia memerlukan sekurang-kurangnya %2$s:1 untuk boleh dibaca."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "tekan di sini,di sini,baca lagi,lagi,pautan,pautan ini,ketahui lagi,pergi"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Pautan tidak mempunyai teks, jadi pembaca skrin hanya mengumumkan \"pautan\". Tambahkan teks atau label."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Teks pautan “%s” tidak menyatakan ke mana ia pergi. Terangkan destinasi tersebut sebagai gantinya."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Satu elemen mempunyai tabindex positif, yang mengubah susunan papan kekunci daripada susunan bacaan. Gunakan 0 atau alih keluarnya."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Sesuatu yang boleh diklik tidak boleh dicapai dengan papan kekunci. Gunakan butang atau pautan sebenar."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Bingkai terbenam tidak mempunyai tajuk, jadi pembaca skrin tidak dapat menyatakan kandungannya."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Medan borang tidak mempunyai label, jadi tujuannya tidak diumumkan."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Tajuk ini kosong. Pengguna pembaca skrin menavigasi mengikut tajuk; alih keluar tajuk ini atau tambah teks."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Tajuk halaman sudah pun menjadi H1; gunakan H2 untuk tahap teratas kandungan."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "H%1$d ini melangkau satu aras; yang sebelumnya ialah H%2$d. Jadikan ia H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Imej ini tidak mempunyai teks alt. Sila terangkan imej ini, atau tandakannya sebagai hiasan jika ia tidak menambah apa-apa nilai."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Tutup panel"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7555,18 +9509,6 @@ msgstr "Tersuai"
 msgid "Width / height"
 msgstr "Lebar / ketinggian"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Atas"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Bawah"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7579,20 +9521,6 @@ msgstr "Imej warisan — gantikan"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Alih keluar imej"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Kedudukan"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Saiz"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7658,22 +9586,6 @@ msgstr "Setiap bahagian secara berasingan"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Sisi"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Gaya"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Warna"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7923,14 +9835,6 @@ msgstr "%1$s (%2$d set)"
 msgid "Replace icon"
 msgstr "Ganti ikon"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Pilih ikon"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Pilih ikon"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Tiada ikon yang sepadan."
@@ -7942,10 +9846,6 @@ msgstr "Biasa"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Jenama"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Bergaris luar"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8074,21 +9974,9 @@ msgstr "Warna teks"
 msgid "Cursor"
 msgstr "Kursor"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Anak panah"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Penunjuk"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Teks"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8246,10 +10134,6 @@ msgstr "Nama kawasan"
 msgid "Named areas"
 msgstr "Kawasan dinamakan"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Baris"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Ketinggian"
@@ -8367,10 +10251,6 @@ msgstr "Jajarkan"
 msgid "Decoration"
 msgstr "Hiasan"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Garis bawah"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Garis atas"
@@ -8453,19 +10333,9 @@ msgstr "Konik"
 msgid "Angle (degrees)"
 msgstr "Sudut (darjah)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Bentuk"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Elips"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Bulatan"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8501,10 +10371,6 @@ msgstr "Ketepuan di belakang (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Tona (guna warna lut sinar)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Segi empat sama bulat"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8521,10 +10387,6 @@ msgstr "Segitiga"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamond"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Bintang"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9402,11 +11264,6 @@ msgstr "Kosongkan"
 msgid "The change could not be saved."
 msgstr "Perubahan tersebut tidak dapat disimpan."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Tutup panel"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Tema lalai"
@@ -9463,9 +11320,49 @@ msgstr "Kelas, token, mod gelap, kit jenama dan fon tersuai disertakan dengan Pr
 msgid "Open the Site Editor’s styles"
 msgstr "Buka gaya Editor Laman"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Tajuk"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Tajuk dengan ketinggian baris yang lebih rapat, digayakan menggunakan tab Gaya."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Perenggan teks, digayakan dengan tab Gaya."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Imej"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Imej dengan sudut bulat, digayakan dengan tab Gaya."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Video dari Pustaka Media, digayakan dengan tab Gaya."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Ruang Penjarak"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Ruang kosong antara blok; tetapkan ketinggian yang berbeza mengikut saiz skrin dalam tab Gaya."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Pembahagi"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Satu garis melintang antara bahagian, digayakan dengan tab Gaya."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Kandungan daripada tapak lain (video, hantaran, peta) dengan menampal alamatnya."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Beberapa imej dalam grid, digayakan dengan tab Gaya."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9499,10 +11396,6 @@ msgstr "Senarai"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Pil"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Butang"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9547,10 +11440,6 @@ msgstr "Sembunyikan bahasa yang tidak diterjemahkan ke halaman ini"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Susun menegak"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Latar belakang"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9609,11 +11498,6 @@ msgstr "Tetapan sekatan"
 #, js-format
 msgid "Add block: %s"
 msgstr "Tambah blok: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(tiada tajuk)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9689,10 +11573,6 @@ msgstr "Matikan mod selamat"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Hidupkan mod selamat (palam lain dimatikan, untuk anda, dalam Studio sahaja)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Diterbitkan"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10029,11 +11909,6 @@ msgstr "Nama pembina"
 msgid "Visual editor name"
 msgstr "Nama penyunting visual"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Pengarang"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10104,10 +11979,6 @@ msgstr[0] "Tidak dilakukan: %d halaman dipulihkan."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Ganti"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Pautan"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10216,10 +12087,6 @@ msgstr "Benarkan pelanggan mengulas halaman ini"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Sesiapa sahaja yang mempunyai pautan boleh melihat halaman ini, walaupun sebelum ia diterbitkan, dan meninggalkan komen. Tiada akaun diperlukan."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Disalin"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10455,6 +12322,52 @@ msgstr "Salin imej ke dalam perpustakaan media tapak web ini"
 msgid "Show what will happen"
 msgstr "Tunjuk perkara yang akan berlaku"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Item akordion"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Satu bahagian akordion: tajuk yang membuka kandungannya."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Akordion"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Soalan atau seksyen yang boleh dibuka dan ditutup. Secara pilihan, satu pada satu masa, dan secara pilihan ditandakan sebagai FAQ untuk enjin carian."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "akordion"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "soalan lazim"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "tukar"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "tutup"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "butiran"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10471,6 +12384,7 @@ msgid "notice"
 msgstr "notis"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "mesej"
@@ -10485,6 +12399,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "amaran"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Lencana"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Label pendek seperti Baharu, Jualan atau Nilai terbaik."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "label"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "tag"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "pil"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "baharu"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Kalendar tempahan"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Kalendar tempahan Calendly atau Cal.com, dimuatkan hanya apabila pelawat memintanya."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "pembahagian masa"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "temujanji"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "jadualkan"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10496,6 +12475,7 @@ msgid "A link styled as a button."
 msgstr "Pautan yang digayakan sebagai butang."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "butang"
@@ -10509,6 +12489,98 @@ msgstr "pautan"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "seruan bertindak"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Seruan bertindak"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Tajuk, satu ayat dan satu atau dua butang yang meminta pelawat mengambil tindakan."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "cta"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "banner"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "daftar masuk"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Senarai semak"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Senarai tugasan, setiap satu ditandakan selesai atau belum selesai, dalam bentuk perkataan untuk pembaca skrin serta dengan tanda semak."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "tugasan"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "tugas"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "tanda semak"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "senarai"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Kod"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Senarai kod dengan penyerlahan sintaks, nombor baris dan butang salin. Kekal boleh baca jika palam masuk dimatikan."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "kod"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "sintaks"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "ketara"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "catanan"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "pengaturcaraan"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10532,6 +12604,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "susunan"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Jadual perbandingan"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Pelan atau produk bersebelahan, dengan tanda ya dan tidak yang dibaca oleh pembaca skrin sebagai perkataan."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "bandingkan"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "penetapan harga"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "pelan"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "jadual"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "ciri"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Butang kenalan"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Butang untuk memanggil, menghantar e-mel, SMS atau mesej kepada anda di WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "hubungi"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "panggil"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "telefon"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "e-mel"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "whatsapp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "sms"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10549,11 +12699,13 @@ msgid "container"
 msgstr "bekas"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "kotak"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10570,6 +12722,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "lajur"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Tajuk berkembar"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Tajuk dalam dua bahagian, bahagian kedua ditekankan dengan warna, kecerunan, garis luar atau garis bawah."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "tajuk"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "tajuk"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "kecerunan"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Senarai ciri"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Ciri-ciri dalam bentuk grid, masing-masing dengan ikon, tajuk, dan penerangan ringkas."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "faedah"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "perkhidmatan"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10613,6 +12811,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "teks"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Borang"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Memaparkan borang daripada Contact Form 7, WPForms, Gravity Forms atau Fluent Forms, yang digayakan agar sepadan dengan tapak anda."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "borang"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Glosari"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Terma dan definisi masing-masing, disusun dari A hingga Z, setiap satunya dengan pautan sendiri. Boleh memautkan sebutan pertama bagi setiap terma pada halaman kepada definisinya."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "terma"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "takrifan"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "kamus"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Senarai ikon"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Senarai yang mana setiap baris bermula dengan ikon: tanda semak, anak panah, atau sebarang ikon daripada pustaka."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "butir"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "ikon"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10633,6 +12911,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Kotak maklumat"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Ikon, tajuk ringkas, satu atau dua ayat serta pautan pilihan: untuk perkhidmatan, faedah atau butiran hubungan."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "ciri"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "perkhidmatan"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "kad"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10652,6 +12955,204 @@ msgstr "terjemahan"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "berbilang bahasa"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Peta"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Peta sesuatu tempat daripada OpenStreetMap: tiada kunci, dan tiada apa-apa yang dimuatkan daripada OpenStreetMap sehingga pelawat meminta peta tersebut."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "peta"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "lokasi"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "alamat"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Modal"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Satu butang yang membuka tetingkap di atas halaman, dengan sebarang blok di dalamnya."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "modal"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "pop-up"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "kotak cahaya"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "dialog"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Panel luar kanvas"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Butang yang meluncurkan panel dari sisi tetingkap, berserta sebarang blok di dalamnya."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "luar kanvas"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "laci"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "sisi bar"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "panel"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "menu"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Butiran siaran"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Pengarang, tarikh, kategori, tag, masa bacaan dan bilangan ulasan hantaran tersebut."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "pengarang"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "tarikh"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "masa membaca"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "oleh"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Bar kemajuan"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Bar berlabel yang menunjukkan sejauh mana sesuatu telah dicapai, seperti kemahiran atau matlamat."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "kemajuan"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "bar"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "kemahiran"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "matlamat"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Kandungan dilindungi kata laluan"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Blok hanya boleh dilihat oleh pelawat yang mempunyai kata laluan. Sehingga mereka memasukkannya, kandungan tersebut tidak langsung berada di dalam halaman."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "kata laluan"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "dilindungi"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "persendirian"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "kunci"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "ahli"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10677,6 +13178,86 @@ msgstr "cerah"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "skema warna"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Kod QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Kod QR untuk alamat web atau sebarang teks, dilukis pada tapak web anda sendiri (tiada perkhidmatan QR digunakan)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "kod QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "barkod"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "imbas"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Bar kemajuan bacaan"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Bar nipis di tepi tetingkap yang dipenuhi semasa pelawat menatal halaman."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "membaca"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "tataliti"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Hantaran berkaitan"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Kiriman yang berkongsi kategori atau tanda kiriman ini, berserta gambar, tarikh dan ringkasannya."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "berkaitan"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "hantaran"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "seperti"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "lagi"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10740,13 +13321,284 @@ msgstr "Menunjukkan widget dalam salah satu kawasan widget tema tersebut."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "sisi bar"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "kawasan widget"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Peta Laman"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Halaman yang menyenaraikan setiap halaman dan siaran yang diterbitkan (serta kandungan awam lain), dengan hierarki halaman dikekalkan."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "peta laman"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "peta laman"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "indeks"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "semua halaman"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Ikon sosial"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Pautan ke profil anda, dipaparkan dengan ikon rangkaian itu sendiri."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "sosial"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "pautan"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "ikut"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "profil"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Penarafan bintang"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Penilaian yang ditunjukkan sebagai bintang, dalam langkah separuh bintang."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "bintang"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "penilaian"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "skor"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Langkah"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Langkah-langkah bernombor bagi sesuatu proses, mengikut urutan, ke bawah halaman atau sebelah-menyebelah."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "proses"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "cara untuk"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "garis masa"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "bernombor"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Tab"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Satu tab bagi blok Tab: tajuk dan panelnya."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Jadual kandungan"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Senarai tajuk pada halaman yang dibina secara automatik, yang dipautkan kepada setiap satunya."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "jadual kandungan"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "kandungan"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "tajuk utama"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Tab"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Kandungan dalam tab: pelawat beralih antara panel menggunakan tetikus atau papan kekunci."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "tab"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "bertab"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "panel"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Testimoni"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Petikan daripada pelanggan berserta nama, jawatan, foto dan penarafan bintang pilihan."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "semak"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "sebut harga"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "pelanggan"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "maklum balas"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Petua alat"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Perkataan atau frasa yang menunjukkan penjelasan ringkas apabila tetikus diletakkan di atasnya dan semasa fokus papan kekunci."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "petua alat"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "pembayang"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "takrif"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Profil pengarang"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Gambar, nama, biografi dan pautan pengarang, atau pengguna yang dipilih."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "biodata"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "profil"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "perihal"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Butang chat WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Butang terapung di penjuru halaman yang membuka sembang WhatsApp dengan anda."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "sembang"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "terapung"
 
 #: blocks/widget/block.json
 msgctxt "block title"

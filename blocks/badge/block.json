@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/badge",
+	"title": "Badge",
+	"category": "pbs-content",
+	"icon": "tag",
+	"description": "A short label such as New, Sale or Best value.",
+	"keywords": [
+		"label",
+		"tag",
+		"pill",
+		"new"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"variant": {
+			"type": "string",
+			"enum": [
+				"neutral",
+				"info",
+				"success",
+				"warning",
+				"error",
+				"accent"
+			],
+			"default": "accent"
+		},
+		"justify": {
+			"type": "string",
+			"enum": [
+				"start",
+				"center",
+				"end"
+			],
+			"default": "start"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

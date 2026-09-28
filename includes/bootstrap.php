@@ -32,6 +32,7 @@ require_once __DIR__ . '/design/load.php';
 require_once __DIR__ . '/assets/load.php';
 require_once __DIR__ . '/design/globals/load.php';
 require_once __DIR__ . '/workflow/load.php';
+require_once __DIR__ . '/design/a11y/load.php';
 
 \ZinnDigital\PBS\Plugin::boot();
 

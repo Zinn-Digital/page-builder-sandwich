@@ -1,0 +1,47 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/modal",
+	"title": "Modal",
+	"category": "pbs-content",
+	"icon": "welcome-view-site",
+	"description": "A button that opens a window over the page, with any blocks inside.",
+	"keywords": [
+		"modal",
+		"popup",
+		"lightbox",
+		"dialog"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"trigger": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"title": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"size": {
+			"type": "string",
+			"enum": [
+				"small",
+				"medium",
+				"large"
+			],
+			"default": "medium"
+		},
+		"backdropClose": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

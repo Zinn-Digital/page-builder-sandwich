@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Зберегти як багаторазовий шаблон"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Перевірка доступності"
 
@@ -992,6 +996,7 @@ msgstr "← Вибрати іншого провайдера"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Адреса"
 
@@ -1045,6 +1050,8 @@ msgstr "Тест"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Видалити"
@@ -1098,6 +1105,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Оновити списки моделей від провайдерів"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Зображення"
 
@@ -1190,6 +1198,7 @@ msgid "turned off"
 msgstr "вимкнено"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Відкрити"
 
@@ -1450,6 +1459,7 @@ msgstr "Ще не було жодних запитів до ШІ."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Готово"
 
@@ -1517,7 +1527,11 @@ msgstr "Забагато спроб. Будь ласка, спробуйте з�
 msgid "Something went wrong. Please contact the admin."
 msgstr "Щось пішло не так. Будь ласка, зверніться до адміністратора."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Прив'язати"
 
@@ -1540,52 +1554,387 @@ msgstr "Ця родина не збережена."
 msgid "Removed."
 msgstr "Видалено."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Це неприпустима назва сімейства шрифтів."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Шрифти Google не повернули цю гарнітуру. Перевірте назву та повторіть спробу."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Не вдалося завантажити або зберегти файли шрифтів. Перевірте, чи доступна папка завантажень для запису."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Не вдалося зберегти таблицю стилів шрифту. Перевірте, чи доступна папка завантажень для запису."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Закрити це сповіщення"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(відкривається в новій вкладці)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Готово:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Завдання:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Покажчик глосарію"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Оцінено на %1$s з %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Прогрес"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Скопіювати код"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Скопійовано"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Цей віджет недоступний на цьому сайті."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Ел. пошта"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Телефон"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS-стрічка"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Вебсайт"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Посилання"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (відкривається в новому вкладці)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Оцінено на %d з 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(рекомендовано)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Включено"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Не входить"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Порівняльна таблиця"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Викликати %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Ел. пошта %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Текст %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Написати в WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Зв'язатися з нами"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Поспілкуйтеся з нами у WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Ця форма зараз недоступна."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Цю форму неможливо показати, оскільки %s неактивний."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Прив'язка: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Відображення карти завантажує її з OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Показати карту"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Відкрити карту на OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Календар бронювань від %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Відображення календаря бронювання завантажує його з %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Показати календар бронювань"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Забронювати на %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "QR-код для %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Дизайн"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Вміст"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Медіа"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Маркетинг"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Сайт"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Дані"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Пов'язані публікації"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Деталі допису"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Від"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Опубліковано"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Оновлено"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Вхід"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Позначено"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "читання: %d хв"
+msgstr[1] "%d хв читання"
+msgstr[2] "%d хв читання"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Ще немає коментарів"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d коментар"
+msgstr[1] "%d коментарів"
+msgstr[2] "%d коментарів"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Карта сайту"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(без назви)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Усі дописи від %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Цей вміст захищено. Введіть пароль, щоб переглянути його."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Неправильний пароль. Спробуйте ще раз."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Пароль"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Показати вміст"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Цю сторінку не вдалося розблокувати."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Забагато спроб. Зачекайте кілька хвилин і спробуйте знову."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Пароль повинен містити від 4 до 200 символів."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Більше"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Закрити"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Вкладка %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Зміст"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1688,6 +2037,10 @@ msgstr "Редагувати в Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Чисте полотно"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Перейти до змісту"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Ширина планшета має бути цілим числом пікселів від 480 до 2560."
@@ -1762,7 +2115,11 @@ msgid "Uploaded icons"
 msgstr "Завантажені іконки"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Іконка"
 
@@ -2555,6 +2912,8 @@ msgstr "%s — це адреса електронної пошти мого кл
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Код"
 
@@ -3049,13 +3408,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Редагувати"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Ел. пошта"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Електронна пошта"
 
@@ -3105,6 +3460,10 @@ msgstr "Увімкнення режиму білої етикетки"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3127,6 +3486,7 @@ msgstr "Введіть нову адресу електронної пошти"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Помилка"
 
@@ -3725,6 +4085,7 @@ msgstr "Наведені нижче продукти переведено в б�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3828,6 +4189,7 @@ msgstr "Цей плагін вимагає новішої версії PHP."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Ні"
 
@@ -4813,6 +5175,13 @@ msgstr "Соціальні мережі (Facebook, Twitter тощо)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5099,6 +5468,9 @@ msgstr "Мітка часу"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Назва"
 
@@ -5174,6 +5546,8 @@ msgstr "Як вам %1$s на цей момент? Протестуйте всі
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Тип"
@@ -5289,6 +5663,7 @@ msgstr "Користувачі"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Значення"
@@ -5343,6 +5718,7 @@ msgstr "Переглянути платні функції"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Попередження"
 
@@ -5669,6 +6045,7 @@ msgid "Optional"
 msgstr "Необов'язково"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Тарифний план"
 
@@ -5991,18 +6368,26 @@ msgstr "Дуже маленький"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Малий"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Середній"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Великий"
 
@@ -6015,7 +6400,9 @@ msgid "Huge"
 msgstr "Величезний"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6331,16 +6718,9 @@ msgid "The trial could not be started."
 msgstr "Не вдалося розпочати пробний період."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Функція"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Включено"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Не входить"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6696,10 +7076,6 @@ msgstr "Адреса для входу"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Ім'я користувача"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Пароль"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7099,15 +7475,63 @@ msgstr "Скасування розпочато. Воно триває у фон
 msgid "Undo all conversions"
 msgstr "Скасувати всі конвертації"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Елемент"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Відкривати під час завантаження сторінки"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Заголовок є заголовком"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Зробіть назву заголовком, якщо елементи є розділами сторінки, щоб читачі могли переходити між ними."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Заголовок %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Запитання або назва розділу"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Акордеон"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Одночасно можна відкрити лише один елемент"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Розмітити як FAQ для пошукових систем"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Додає структуровані дані поширених запитань (FAQ), сформовані з заголовків (запитань) та їхнього тексту (відповідей)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Сповіщення"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Інформація"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Успіх"
 
@@ -7116,6 +7540,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Попередження та помилки оголошуються користувачам зчитувачів екрана одразу; інформаційні повідомлення та сповіщення про успіх зачитуються тоді, коли вони закінчують те, що роблять."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Показати піктограму"
 
@@ -7132,64 +7557,702 @@ msgstr "Назва (необов’язково)"
 msgid "Write the message…"
 msgstr "Напишіть повідомлення…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "розділ — тематичний розділ"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Центр"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — без значення"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Значок"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "верхній колонтитул — вступний вміст"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Колір"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "футер — кінцевий вміст"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Акцент теми"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "стаття — самостійний контент"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Нейтральний"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "бокова панель — пов'язаний вміст"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Позиція"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — основний вміст (один раз на сторінку)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Помітка"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "навігація — посилання навігації"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Календар бронювань"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Стек (flexbox, стовпець)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Послуга"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Рядок (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Адреса сторінки бронювання"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Сітка"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Наприклад %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Для чого призначений календар, озвучується екранними читачами та відображається під ним."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Це не адреса сторінки бронювання %s, тому на сторінці нічого не відображатиметься."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Попередній перегляд календаря"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Адреса посилання"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Кнопка відображається, коли вона має і мітку, і адресу."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Відкрити в новій вкладці"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Заклик до дії"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Макет"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Кнопки нижче"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Кнопки поруч із текстом"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Вирівнювання"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Основна кнопка"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Друга кнопка"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Заголовок…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Одна пропозиція про те, чому…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Друга кнопка (необов'язково)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Контрольний список"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Колір позначки"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Рядки"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Рядок %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Завдання…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Додати рядок"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Мова"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Визначати автоматично"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Без підсвічування"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Назва файлу"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Відображається над кодом, наприклад, functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Номери рядків"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Кнопка копіювання"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Переносити довгі рядки"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Напишіть або вставте код…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Текст"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Стовпці"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Стовпець %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Підсвітити %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Додати стовпчик"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Рядки"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Рядок %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Додати рядок"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Підпис (що саме порівнюється)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Тип комірки: %s. Змінити"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Телефонний дзвінок"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Текстове повідомлення"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Кнопки"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Номер телефону з кодом країни"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Текст кнопки"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Видалити цю кнопку"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Додати кнопку"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Повідомлення WhatsApp для початку (необов'язково)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Кнопки зв'язку"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Додайте номер телефону, адресу електронної пошти або номер WhatsApp на бічну панель."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Подвійний заголовок"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Рівень заголовка"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Використовуйте H1 один раз на сторінку для її основного заголовка."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Друга частина виглядає"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Акцентний колір"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Градієнт"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Конспект"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Підкреслення"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Друга частина на окремому рядку"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Перша частина"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "друга частина"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Маркерний пензель"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Товсте підкреслення"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Фон"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Підсвітити"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Видалити виділення"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Буквиця"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Велика перша літера"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Для першої букви в рамці виберіть стиль \"Буквиця в рамці\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Буквіца в рамці"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Смужка акценту"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Цитата (акцентна смуга)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Цитата з тексту, оформлена великим шрифтом поруч із кольоровою смугою для привернення уваги."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "цитата"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Список функцій"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "На телефонах функції завжди розташовуються вертикально одна за одною."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Функції"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Функція %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Власний значок"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Функція…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Опишіть це…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Додати функцію"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Встановіть та активуйте Contact Form 7, WPForms, Gravity Forms або Fluent Forms, а потім виберіть тут одну з її форм."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Плагін форми"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Вибрати…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Форма"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Виберіть форму…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s не має жодних форм"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s не активний на цьому сайті, тому цю форму неможливо показати."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Не вдалося завантажити список форм."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Стиль форми"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Поля"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Контурний"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Заповнено"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Підкреслений"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Ширина кнопки"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Підігнати текст"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "На всю ширину"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Кольори, шрифти, інтервали та заокруглення кутів беруться з дизайну вашого сайту та налаштувань дизайну цього блока."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Відображайте форму з вашого плагіна форм, стилізовану відповідно до дизайну вашого сайту."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Потрібен плагін форми? Contact Form 7 є безкоштовним."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Словник"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Сортувати від А до Я"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Сторінка відображає терміни в алфавітному порядку; тут вони залишаються в тому порядку, в якому ви їх написали."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Показати індекс від А до Я"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Посилатися на терміни, що використовуються в інших місцях цієї сторінки"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Кожен термін при першій появі в тексті сторінки містить посилання на його визначення. Заголовки, кнопки, код та існуючі посилання залишаються без змін."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Умови"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Термін %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Термін"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Що це означає…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Додати термін"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Список іконок"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Одне під іншим"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Порівняти поруч"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Елемент списку…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Інформаційне поле"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Або виберіть будь-яку іконку з бібліотеки:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Текст посилання"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Вказуйте, куди веде посилання («Дивіться наші ціни»), а не «Читати далі»."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Речення або два…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "розділ — тематичний розділ"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — без значення"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "верхній колонтитул — вступний вміст"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "футер — кінцевий вміст"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "стаття — самостійний контент"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "бокова панель — пов'язаний вміст"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — основний вміст (один раз на сторінку)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "навігація — посилання навігації"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Стек (flexbox, стовпець)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Рядок (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Сітка"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Редагування: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Розташовувати дочірні елементи як"
 
@@ -7197,7 +8260,7 @@ msgstr "Розташовувати дочірні елементи як"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7205,71 +8268,51 @@ msgstr "Розташовувати дочірні елементи як"
 msgid "Inherited (%s)"
 msgstr "Успадковано (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Складені блоки"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Стовпці"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Перетягніть у полотно або введіть текст"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Ширина вмісту"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "У коробці (ширина вмісту теми)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "На всю ширину"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Мінімальна висота"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML-тег"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Посилання"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Зробити весь блок посиланням на"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Текст посилання для екранів зчитування"
 
 #. zinn-i18n: human translation — the machine translator refused this string
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Що робить посилання — для відвідувачів, які не бачать блок."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Відкрити в новій вкладці"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Не розміщуйте посилання чи кнопки всередині блоку з посиланням: посилання всередині посилання не працює в браузерах."
 
@@ -7301,14 +8344,146 @@ msgstr "+ Рядок"
 msgid "− Row"
 msgstr "− Рядок"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Розмістити"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Вставте координати або посилання на OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "На openstreetmap.org знайдіть потрібне місце, потім скопіюйте адресу з адресного рядка браузера або клацніть правою кнопкою миші по карті й виберіть «Показати адресу»."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Широта"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Довгота"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Масштаб"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Назва місця"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Відображається під картою та зачитується зчитувачами екрана."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Вставте координати (наприклад, 51.5074, -0.1278) або посилання на OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Координати або посилання"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Попередній перегляд карти"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Перевірте %1$s, %2$s на OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Автор"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Дата публікації"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Дата оновлення (якщо відрізняється)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Категорії"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Теги"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Час читання"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Кількість коментарів"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Відображувані деталі"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Виберіть принаймні одну деталь для відображення."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Індикатор прогресу"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Максимум"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 для відсотка; будь-яке інше число для кількості, наприклад 8 з 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Показати відсоток"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Пароль встановлено. Поки читачі не введуть його, замість цього вмісту вони бачать форму для пароля."
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Пароль ще не встановлено, тому читачі нічого тут не бачать."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Новий пароль"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Встановити пароль"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Пароль встановлено. Збережіть сторінку, щоб застосувати його; тим, хто вже відкрив вміст, знадобиться новий пароль."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Якщо Page Builder Sandwich буде вимкнено, цей вміст відображатиметься для всіх."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Повідомлення над формою введення пароля (необов'язково)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Перемкнути"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Помітка"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7318,30 +8493,700 @@ msgstr "Озвучується програмами читання з екран
 msgid "Show label"
 msgstr "Показати мітку"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Веб-адреса або текст"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR-код"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Опис для екрана зчитування"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Залиште порожнім, щоб використовувати «QR-код для» та текст."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Введіть веб-адресу, посилання на телефон (tel:) або будь-який текст."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Це занадто довго для QR-коду. Скоротіть його."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Додати підпис"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Індикатор прогресу читання"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Край вікна"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Верхній"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Нижній"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Показується внизу вікна, коли читачі прокручують сторінку."
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Показується вгорі вікна, коли читачі прокручують сторінку."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Скільки"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Пов'язано через"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Категорії або теги"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Коли немає зв'язаних матеріалів, показувати найновіші натомість"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Заголовок"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Залишіть порожнім для «Схожих публікацій»."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Показати рекомендоване зображення"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Показати дату"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Показати зведення"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Жодна публікація поки що не має спільних категорій чи тегів із цією. Щойно вони з'являться, їх буде показано тут."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Модальне вікно"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Висувна панель"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Розмір"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Висувається з"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Початок — це бік, з якого починається читання: лівий англійською, правий арабською."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Закривати при кліку на сторінку позаду"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Назва вікна"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Позначка"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Коло"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Видалити"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Крапка"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Стрілка"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Позначити зірочкою"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Колір іконки"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Так само, як текст"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Основна тема"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Вторинна тема"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Контраст теми"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Дотримуйтеся правильного порядку заголовків на сторінці: кожен заголовок має бути на один рівень нижче за розділ, у якому він міститься."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Вибрати іконку"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Використовувати стандартну іконку"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Вибрати іконку"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Перемістити вище"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Перемістити вниз"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Показувати заголовок для кожного типу"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "У вибраних типах ще нічого не опубліковано."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Посилання"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Посилання %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Мережа"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Адреса профілю, mailto:you@example.com або tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Ім'я, яке зачитується для екрана зчитування"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Інша іконка"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Додати посилання"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Переглянути"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Стиль"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Лише значок"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Форма"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Заокруглений квадрат"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Квадрат"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Відкривати профілі в новій вкладці"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Рейтинг зірочками"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Оцінка"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Кількість зірок"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Показати кількість"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Кроки"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Нижче по сторінці"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Пліч-о-пліч (на телефонах розташовані один над одним)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Колір числа"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Порядок кроків"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Крок %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Крок…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Що робити…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Додати крок"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Вкладка"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Додайте заголовки на сторінку, і вони з'являться тут."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Зміст"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "З рівня заголовка"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "До рівня заголовка"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Пронумеровано"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Може бути згорнуто"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Почати згорнутим"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Виділити розділ, який читається"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Вкладки"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Назва для екранозчитувачів"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Необов'язково. Пояснює призначення вкладок, наприклад «Тарифи»."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Відкривати під час завантаження сторінки"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Вкладки збоку"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Додати вкладку"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Відгук"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Замінити фотографію"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Вибрати фото"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Видалити фото"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Опис фотографії"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Залиште порожнім, якщо на фото зображено лише особу, чиє ім'я вказано поруч."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Оцінка в зірочках (0 = немає)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Назва під цитатою"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Фото біля цитати"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Що сказав клієнт…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Роль або компанія"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Підказка"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Текст підказки"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Будьте лаконічні: одне або два речення. Екранні читачі озвучують це разом із пояснюваним словом."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Показати"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Вище"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Нижче"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Слово чи фраза"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Застосувати"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Профіль"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Чий профіль"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Автор допису"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Показати зображення профілю"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Показати біографію"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Показувати посилання на дописи та вебсайт"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Профіль автора"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Виберіть, чий профіль показувати."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Номер WhatsApp із кодом країни"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Наприклад +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Повідомлення для початку (необов'язково)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Показати текст поруч із іконкою"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Кут"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Нижній кінець (праворуч англійською)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Нижній початок (ліворуч англійською)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Додайте свій номер WhatsApp на бічну панель. Доти кнопка не відображатиметься на сторінці."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "На сторінці ця кнопка плаває в одному з нижніх кутів екрана."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Тег шорткоду"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Використовуйте лише літери, цифри, дефіси та підкреслювання."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Назва атрибута"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Додати атрибут"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Шорткод"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Інші атрибути"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Виберіть тег шорткоду в налаштуваннях блоку."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Галерея"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Розмір зображення"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Мініатюра"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Повний розмір"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Посилання на"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Сторінка вкладення"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Медіафайл"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Аудіо"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Відео"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Шлях до файлу"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Цикл"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Відтворювати автоматично"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Зображення заставки"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Плейлист"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Ідентифікатори медіафайлів через кому"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Показати список треків"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Вставити"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Адреса для вбудовування"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Максимальна ширина"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Надпис"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML-код зображення та підпису"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Ширина"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Порада: блок «Форма» відображає цю форму в стилі вашого сайту."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Показати назву форми"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Показати опис форми"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Надіслати без перезавантаження сторінки"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7362,123 +9207,108 @@ msgstr "Вибрати файл"
 msgid "— Default —"
 msgstr "— За замовчуванням —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Розширене стилізування"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Вбудований CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS-оголошення, наприклад: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Ефекти (застарілі класи)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Назви ефектів, розділені пробілами, перенесені зі старіших версій, наприклад: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Рядок"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Ширина"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "На всю ширину, вміст по центру"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Адреса посилання"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Відношення посилання"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Вирівнювання"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Ліворуч"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Центр"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "По правому краю"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Текст кнопки"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Додати текст…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Розташування"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "На окремому рядку"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "У рядку, поруч з іншим контентом"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Автоматично (власний рядок на верхньому рівні сторінки)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Миттєва мітка"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Залиште порожнім для декоративної іконки."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Виберіть іконку в налаштуваннях блоку."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Нова назва параметра"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Наприклад: назва або текст"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Додати налаштування"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Віджет"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Виберіть віджет"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Область віджетів"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Виберіть область віджетів"
 
@@ -7501,6 +9331,144 @@ msgstr "Цей вбудований елемент змінює свій роз�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Зсув макета"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Цей віджет не описує свої налаштування, тому вони редагуються як пари імені та значення."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Проблема"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Перевірити"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Показати блок"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Використовуйте легкочитаний колір теми"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Зробити H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Альтернативний текст"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Зберегти альтернативний текст"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Це зображення є декоративним"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Перевірка…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "На цій сторінці не знайдено проблем із доступністю."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d проблема"
+msgstr[1] "%d проблем"
+msgstr[2] "%d проблем"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d елемент для перевірки"
+msgstr[1] "%d елементів для перевірки"
+msgstr[2] "%d елементів для перевірки"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Перевірити знову"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Автоматична перевірка знаходить багато проблем, але не всі з них. Також спробуйте переглянути сторінку лише за допомогою клавіатури та з програмою читання з екрана."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Контраст тексту становить %1$s:1; для забезпечення читабельності потрібно щонайменше %2$s:1."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "натисніть тут,тут,читати далі,більше,посилання,це посилання,дізнатися більше,перейти"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Посилання не містить тексту, тому програма зчитування з екрана оголошує лише «посилання». Додайте текст або мітку."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Текст посилання «%s» не вказує, куди воно веде. Натомість опишіть призначення."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Елемент має додатне значення tabindex, що змінює порядок обходу клавіатурою порівняно з порядком читання. Використовуйте 0 або видаліть його."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Елемент, на який можна натиснути, недоступний за допомогою клавіатури. Використовуйте справжню кнопку або посилання."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Вбудований фрейм не має заголовка, тому програма читання з екрана не може визначити, що це таке."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Поле форми не має мітки, тому його призначення не оголошується."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Цей заголовок порожній. Користувачі програм читання з екрана навігують за допомогою заголовків; видаліть його або додайте текст."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Заголовок сторінки вже є тегом H1; використовуйте H2 для верхнього рівня вмісту."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Цей тег H%1$d пропускає один рівень; попередній перед ним — H%2$d. Зробіть його тегом H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Цене зображення бракує альтернативного тексту. Опишіть його або позначте як декоративне, якщо воно нічого не додає."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Закрити панель"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7575,18 +9543,6 @@ msgstr "Користувацький"
 msgid "Width / height"
 msgstr "Ширина / висота"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Верхній"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Нижній"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7599,20 +9555,6 @@ msgstr "Успадковане зображення — замінити"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Видалити зображення"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Позиція"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Розмір"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7678,22 +9620,6 @@ msgstr "Кожну сторону окремо"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Сторона"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Стиль"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Колір"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7943,14 +9869,6 @@ msgstr "%1$s (%2$d набір)"
 msgid "Replace icon"
 msgstr "Замінити значок"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Вибрати іконку"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Вибрати іконку"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Немає відповідних іконок."
@@ -7962,10 +9880,6 @@ msgstr "Звичайний"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Бренди"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Контурний"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8094,21 +10008,9 @@ msgstr "Колір тексту"
 msgid "Cursor"
 msgstr "Курсор"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Стрілка"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Вказівник"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Текст"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8266,10 +10168,6 @@ msgstr "Назва зони"
 msgid "Named areas"
 msgstr "Іменовані області"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Рядки"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Висота"
@@ -8387,10 +10285,6 @@ msgstr "По правому краю"
 msgid "Decoration"
 msgstr "Оздоблення"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Підкреслення"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Надлинія"
@@ -8473,19 +10367,9 @@ msgstr "Конусний"
 msgid "Angle (degrees)"
 msgstr "Кут (у градусах)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Форма"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Еліпс"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Коло"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8521,10 +10405,6 @@ msgstr "Насичення бекенду (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Відтінок (використовуйте напівпрозорий колір)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Заокруглений квадрат"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Блоб"
@@ -8541,10 +10421,6 @@ msgstr "Трикутник"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamond"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Позначити зірочкою"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9427,11 +11303,6 @@ msgstr "Очистити"
 msgid "The change could not be saved."
 msgstr "Не вдалося зберегти зміни."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Закрити панель"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Тема за замовчуванням"
@@ -9488,9 +11359,49 @@ msgstr "Класи, токени, темний режим, набір бренд
 msgid "Open the Site Editor’s styles"
 msgstr "Відкрийте стилі Редактора сайту"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Заголовок"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Заголовок із меншою висотою рядка, оформлений за допомогою вкладки «Стиль»."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Абзац тексту, оформлений за допомогою вкладки «Стиль»."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Зображення"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Зображення із заокругленими кутами, оформлене за допомогою вкладки «Стиль»."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Відео з Медіатеки, оформлене за допомогою вкладки «Стиль»."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Відступ"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Порожній простір між блоками; встановіть різну висоту для кожного розміру екрана на вкладці «Стиль»."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Розділювач"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Горизонтальна лінія між розділами, оформлена за допомогою вкладки «Стиль»."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Вміст з іншого сайту (відео, допис, мапу), вставивши його адресу."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Кіл'кох зображень у сітці, оформлених за допомогою вкладки «Стиль»."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9524,10 +11435,6 @@ msgstr "Список"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Вкладки"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Кнопки"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9572,10 +11479,6 @@ msgstr "Приховати мови, на які цю сторінку не пе
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Розмістити вертикально"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Фон"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9634,11 +11537,6 @@ msgstr "Налаштування блоку"
 #, js-format
 msgid "Add block: %s"
 msgstr "Додати блок: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(без назви)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9714,10 +11612,6 @@ msgstr "Вимкнути безпечний режим"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Увімкнути безпечний режим (інші плагіни вимкнено, лише для вас у Studio)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Опубліковано"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10063,11 +11957,6 @@ msgstr "Ім'я конструктора"
 msgid "Visual editor name"
 msgstr "Назва візуального редактора"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Автор"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10144,10 +12033,6 @@ msgstr[2] "Скасовано: відновлено сторінок: %d."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Замінити"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Посилання"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10258,10 +12143,6 @@ msgstr "Дозволити клієнту коментувати цю сторі
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Будь-хто з посиланням може переглядати цю сторінку навіть до її публікації та залишати коментарі. Обліковий запис не потрібен."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Скопійовано"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10511,6 +12392,52 @@ msgstr "Скопіюйте зображення в медіатеку цього
 msgid "Show what will happen"
 msgstr "Показати, що станеться"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Елемент акордеона"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Один розділ акордеону: заголовок, який відкриває його вміст."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Акордеон"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Запитання або розділи, що розгортаються та згортаються. Додатково по одному за раз, і за бажанням розмічені як поширені запитання (FAQ) для пошукових систем."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "акордеон"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "поширені запитання"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "перемкнути"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "згорнути"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "деталі"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10528,6 +12455,7 @@ msgid "notice"
 msgstr "повідомлення"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "повідомлення"
@@ -10542,6 +12470,73 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "Попередження"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Бейдж"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Коротка мітка, наприклад «Новинка», «Розпродаж» або «Найвища вигода»."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "мітка"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "Тег"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "бейджик"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "новий"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Календар бронювання"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Календар бронювання Calendly або Cal.com, що завантажується лише на запит читача."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "бронювання"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "календлі"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "зустріч"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "Запланувати"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10553,6 +12548,7 @@ msgid "A link styled as a button."
 msgstr "Посилання, оформлене як кнопка."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "кнопка"
@@ -10566,6 +12562,99 @@ msgstr "посилання"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "Заклик до дії"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Заклик до дії"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Заголовок, речення та одна чи дві кнопки із закликом до дії."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "Дія"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "Банер"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Зареєструватися"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Чек-лист"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Список завдань, де кожне позначено як виконане або невиконане, у вигляді слів для екранних читачів, а також за допомогою позначки."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Не виконано"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "задачі"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "тіки"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "Список"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Список коду з підсвічуванням синтаксису, номерами рядків і кнопкою копіювання. Залишається читабельним, навіть якщо плагін буде вимкнено."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "синтаксис"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "Підсвітити"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "фрагмент"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "програмування"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10589,6 +12678,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "Макет"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Порівняльна таблиця"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Плани або продукти пліч-о-пліч із позначками «так» і «ні», які зчитувачі екрана озвучують як слова."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "Порівняти"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Ціноутворення"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "плани"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "таблиця"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "Функції"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Кнопки зв'язку"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Кнопки для дзвінків, електронної пошти, SMS або повідомлень у WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Контакт"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "дзвінок"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "Телефон"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "електронна пошта"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "СМС"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10606,11 +12773,13 @@ msgid "container"
 msgstr "контейнер"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "коробка"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10627,6 +12796,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "стовпці"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Подвійний заголовок"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Заголовок із двох частин, причому друга виділена кольором, градієнтом, контуром або підкресленням."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "Заголовок"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "заголовок"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "градієнт"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Список функцій"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Функції у сітці, кожна з яких має значок, заголовок і короткий опис."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Переваги"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "послуги"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10670,6 +12885,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "текст"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Форма"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Відображає форму з Contact Form 7, WPForms, Gravity Forms або Fluent Forms, стилізовану під дизайн вашого сайту."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "форма"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Словник"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Терміни та їхні визначення, відсортовані від А до Я, кожне з власним посиланням. Можна зв'язати першу згадку кожного терміна на сторінці з його визначенням."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Умови"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "визначення"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "словник"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Список значків"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Список, у якому кожен рядок починається з іконки: галочки, стрілки або будь-якої іконки з бібліотеки."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "Маркери"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "іконки"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10689,6 +12984,31 @@ msgstr "іконка"
 msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
+
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Інформаційне поле"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Іконка, короткий заголовок, одне-два речення та необов'язкове посилання: для послуг, переваг або контактних даних."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "функція"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "служба"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "картка"
 
 #: blocks/language-switcher/block.json
 msgctxt "block title"
@@ -10710,6 +13030,206 @@ msgstr "переклад"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "багатомовний"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Прив'язати"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Карта місця з OpenStreetMap: без ключа, і нічого не завантажується з OpenStreetMap, доки читач не попросить показати карту."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "Прив'язати"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "розташування"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "адреса"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Модальне вікно"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Кнопка, яка відкриває вікно поверх сторінки з будь-якими блоками всередині."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "модальне вікно"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "Спливаюче вікно"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "лайтбокс"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "діалогове вікно"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Висувна панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Кнопка, яка висуває панель із боку вікна разом із будь-якими блоками всередині."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "бічна панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "висувна панель"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "бічна панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "меню"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Деталі допису"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Автор публікації, дати, категорії, мітки, час читання та кількість коментарів."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "Автор"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "дата"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "час читання"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "мета"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "автор"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Індикатор виконання"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Маркована смужка, яка показує прогрес виконання чогось, наприклад навички чи цілі."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "прогрес"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "панель"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "навичка"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "ціль"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Захищений паролем контент"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Блоки, які бачать лише ті, хто має пароль. Доки пароль не введено, вмісту на сторінці немає взагалі."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "пароль"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Захищений"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "приватний"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "заблокувати"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "учасники"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10736,6 +13256,87 @@ msgstr "світла"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "колірна схема"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR-код"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "QR-код для веб-адреси або будь-тексту, згенерований прямо на вашому сайті (сторонні сервіси QR-кодів не використовуються)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR-код"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR-код"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "штрихкод"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "сканувати"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Індикатор прогресу читання"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Тонка смуга на краю вікна, що заповнюється під час прокручування сторінки."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "Читання"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "Прокрутити"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Схожі дописи"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Дописи, які мають спільні категорії або теги з цим дописом, разом із їхніми зображеннями, датами та коротким змістом."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "пов'язані"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "дописи"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "подібні"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "більше"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10799,13 +13400,285 @@ msgstr "Відображає віджети в одній з областей в
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "бічна панель"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "область віджетів"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Карта сайту"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Сторінка, на якій перелічено всі опубліковані сторінки та дописи (а також інший публічний вміст) із збереженням ієрархії сторінок."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "карта сайту"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "карта сайту"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "Індекс"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "усі сторінки"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Соціальні іконки"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Посилання на ваші профілі, оформлені у вигляді оригінальних іконок соцмереж."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "соціальні мережі"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "посилання"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "стежити"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "профілі"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Оцінка зі зірками"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Рейтинг у вигляді зірок з кроком у пів зірки."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "зорки"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "оцінка"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "оцінка"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Кроки"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Пронумеровані кроки процесу, послідовно, зверху вниз або пліч-о-пліч."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "процес"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "як виконати"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "Історія подій"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "нумеровані"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Вкладка"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Одна вкладка блоку «Вкладки»: її заголовок і панель."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Зміст"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Автоматично сформований список заголовків на сторінці з посиланнями на кожен із них."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Зміст"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "вміст"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "Заголовки"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Вкладки"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Вміст у вкладках: перемикайтеся між панелями мишею або клавіатурою."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "вкладки"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "З вкладками"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "панелі"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Відгук"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Цитата клієнта з його ім'ям, посадою, фотографією та необов'язковим рейтингом у зірках."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "переглянути"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "цитата"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "клієнт"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Зворотний зв'язок"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Підказка"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Слово або фраза, які показують коротке пояснення при наведенні курсора та фокусуванні з клавіатури."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "підказка"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Підказка"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "визначення"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Профіль автора"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Зображення автора, його ім'я, біографія та посилання або дані обраного користувача."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "Біографія"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "профіль"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "про нас"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Кнопка чату WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Плаваюча кнопка в кутку сторінки, яка відкриває чат WhatsApp із вами."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "Чат"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "плаваючий"
 
 #: blocks/widget/block.json
 msgctxt "block title"

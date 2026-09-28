@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "另存为可重复使用模式"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "无障碍检查工具"
 
@@ -990,6 +994,7 @@ msgstr "← 选择其他提供商"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "地址"
 
@@ -1043,6 +1048,8 @@ msgstr "测试"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "移除"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "从提供商处刷新模型列表"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "图片"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "已关闭"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "打开"
 
@@ -1448,6 +1457,7 @@ msgstr "尚未发出任何 AI 请求。"
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "已完成"
 
@@ -1515,7 +1525,11 @@ msgstr "尝试次数过多。请在几分钟后重试。"
 msgid "Something went wrong. Please contact the admin."
 msgstr "出错了，请联系管理员。"
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "映射"
 
@@ -1538,52 +1552,383 @@ msgstr "该系列未存储。"
 msgid "Removed."
 msgstr "已移除"
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "这不是一个有效的字体系列名称。"
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts 未返回该字体族。请检查名称后重试。"
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "无法下载或保存字体文件。请检查上传文件夹是否具有写入权限。"
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "无法保存字体样式表。请检查上传文件夹是否具有写入权限。"
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "忽略此通知"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "（在新标签页中打开）"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "已完成："
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "待办事项："
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "术语表索引"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "评分 %1$s（满分 %2$s）"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "进度"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "复制代码"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "已复制"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "该小组件在此网站不可用。"
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "电子邮件"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "电话"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS 订阅"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "网站"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "链接"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s（在新标签页中打开）"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "评分为 5 分（共 %d 分）"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "（推荐）"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "已包含"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "未包含"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "对比表"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "致电 %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "电子邮件 %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "文本 %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "在 WhatsApp 上聊天"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "联系我们"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "在 WhatsApp 上与我们聊天"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "此表单目前不可用。"
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "由于 %s 未激活，此表单无法显示。"
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "映射：%s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "显示地图将从 OpenStreetMap 加载它。"
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "显示地图"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "在 OpenStreetMap 上打开地图"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "来自 %s 的预订日历"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "显示预订日历会从 %s 加载它。"
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "显示预订日历"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "在 %s 上预订"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s 的二维码"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "设计"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "内容"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "媒体"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "市场营销"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "站点"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "数据"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "相关文章"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "文章详情"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "由"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "已发布"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "已更新"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "在"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "已标记"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d 分钟阅读"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "暂无评论"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d 条评论"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "网站地图"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(无标题)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s的所有文章"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "此内容受密码保护。请输入密码以查看。"
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "密码不正确。请重试。"
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "密码"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "显示内容"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "无法解锁该页面。"
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "尝试次数过多。请等待几分钟后再试。"
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "密码长度必须在 4 到 200 个字符之间。"
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "更多"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "关闭"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "标签 %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "目录"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2031,10 @@ msgstr "使用 Sandwich Studio 编辑"
 msgid "Blank canvas"
 msgstr "空白画布"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "跳转至内容"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "平板电脑宽度必须是 480 到 2560 之间的一个整数像素。"
@@ -1760,7 +2109,11 @@ msgid "Uploaded icons"
 msgstr "已上传图标"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "图标"
 
@@ -2553,6 +2906,8 @@ msgstr "%s 是我客户的电子邮件地址"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "代码"
 
@@ -3047,13 +3402,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "编辑"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "电子邮件"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "电子邮件地址"
 
@@ -3103,6 +3454,10 @@ msgstr "启用白标模式"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3480,7 @@ msgstr "请输入新的电子邮箱地址"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "错误"
 
@@ -3723,6 +4079,7 @@ msgstr "由于我们发现 %2$s 与这些网站完全相同，因此以下产品
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4183,7 @@ msgstr "此插件需要更新版本的 PHP。"
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "否"
 
@@ -4811,6 +5169,13 @@ msgstr "社交媒体（Facebook、Twitter 等）"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5461,9 @@ msgstr "时间戳"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "标题"
 
@@ -5171,6 +5539,8 @@ msgstr "您对目前的 %1$s 感觉如何？通过 %3$d 天免费试用体验我
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "类型"
@@ -5286,6 +5656,7 @@ msgstr "用户"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "值"
@@ -5340,6 +5711,7 @@ msgstr "查看付费功能"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "警告"
 
@@ -5666,6 +6038,7 @@ msgid "Optional"
 msgstr "可选"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "套餐"
 
@@ -5988,18 +6361,26 @@ msgstr "特小"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "小"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "中等"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "大"
 
@@ -6012,7 +6393,9 @@ msgid "Huge"
 msgstr "巨大"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6324,16 +6707,9 @@ msgid "The trial could not be started."
 msgstr "无法开始试用。"
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "功能"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "已包含"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "未包含"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6687,10 +7063,6 @@ msgstr "登录地址"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "用户名"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "密码"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7081,15 +7453,62 @@ msgstr "撤销已开始。它将继续在后台运行，您可以离开此页面
 msgid "Undo all conversions"
 msgstr "撤销所有转换"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "项目"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "页面加载时打开"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "标题即标题"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "当标题所对应的内容为页面中的各个区块时，请将标题设为标题格式，以便访客在各区块之间跳转。"
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "标题 %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "问题或栏目名称"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "折叠面板"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "每次只能打开一项"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "标记为搜索引擎的常见问题解答"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "添加根据标题（问题）及其文本（答案）构建的常见问题解答结构化数据。"
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "警报"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "信息"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "成功"
 
@@ -7098,6 +7517,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "警告和错误信息会立即向屏幕阅读器用户播报，而信息和成功通知则会在他们完成当前操作后进行朗读。"
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "显示图标"
 
@@ -7113,64 +7533,702 @@ msgstr "标题（可选）"
 msgid "Write the message…"
 msgstr "编写消息…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "部分 — 主题部分"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "居中"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — 无含义"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "徽章"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "页眉 — 引导内容"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "颜色"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "页脚 — 结束内容"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "主题重点色"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "文章 — 独立内容"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "中性"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "相关内容"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "位置"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — 主要内容（每页一次）"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "标签"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — 导航链接"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "预订日历"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "堆栈 (flexbox，纵向)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "服务"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "行 (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "预约页面地址"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "网格"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "例如 %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "屏幕阅读器将朗读此日历的用途，并将其显示在日历下方。"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "这不是一个 %s 预订页面地址，因此页面上不会显示任何内容。"
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "预览日历"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "链接地址"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "按钮在同时包含标签和地址时显示。"
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "在新标签页中打开"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "行动呼吁"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "布局"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "下方按钮"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "文本旁边的按钮"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "对齐方式"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "主按钮"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "第二按钮"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "标题…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "一句话说明原因……"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "第二个按钮（可选）"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "检查清单"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "勾选颜色"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "行"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "第 %d 行"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "任务…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "添加行"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "语言"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "自动检测"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "无高亮显示"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "文件名"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "显示在代码上方，例如 functions.php。"
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "行号"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "复制按钮"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "自动换行长文本"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "编写或粘贴代码…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "文本"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "列"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "第 %d 列"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "高亮 %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "添加列"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "行"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "第 %d 行"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "添加行"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "说明文字（正在比较的内容）"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "单元格类型：%s。更改"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "电话呼叫"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "短信"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "按钮"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "电话号码（含国家/地区代码）"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "按钮文本"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "移除此按钮"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "添加按钮"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "起始的 WhatsApp 消息（可选）"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "联系按钮"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "在侧边栏中添加电话号码、电子邮箱地址或 WhatsApp 号码。"
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "双标题"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "标题级别"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "每个页面只能使用一次 H1 作为其主标题。"
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "第二部分外观"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "强调色"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "渐变"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "大纲"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "下划线"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "第二部分单独成行"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "第一部分"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "第二部分"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "马克笔"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "粗下划线"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "背景"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "高亮显示"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "移除高亮"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "首字下沉"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "首字母大写"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "首字母加框时，请选择“带框首字下沉”样式。"
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "带边框的首字下沉"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "强调条"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "引文（着重条）"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "引自正文的引言，字号放大并紧邻彩色竖条，以吸引眼球。"
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "引用"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "功能列表"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "在手机上，这些功能总是会堆叠排列。"
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "功能特性"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "功能 %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "自定义图标"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "功能…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "描述…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "添加功能"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "安装并激活 Contact Form 7、WPForms、Gravity Forms 或 Fluent Forms，然后在此处选择其中一个表单。"
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "表单插件"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "请选择…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "表单"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "选择表单……"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s 尚无表单"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s在此站点上未激活，因此无法显示此表单。"
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "无法加载表单列表。"
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "表单样式"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "字段"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "轮廓化"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "已填充"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "带下划线"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "按钮宽度"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "调整文本大小"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "全宽"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "颜色、字体、间距和圆角均来自您的网站设计及此区块的设计设置。"
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "显示来自表单插件的表单，并进行样式调整以匹配您的网站。"
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "需要表单插件？Contact Form 7 是免费的。"
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "术语表"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "按字母 A 到 Z 排序"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "页面按字母顺序列出条款；此处它们保持您编写时的顺序。"
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "显示 A–Z 索引"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "链接此页面其他地方使用的术语"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "页面正文中每个术语首次出现时都会链接到其定义。标题、按钮、代码和现有链接保持不变。"
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "服务条款"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "条款 %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "期限"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "这意味着什么…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "添加术语"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "图标列表"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "上下排列"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "并排"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "列表项…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "信息框"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "或从库中选择任意图标："
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "链接文字"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "请说明链接指向何处（例如“查看我们的价格”），而不要写“了解更多”。"
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "一两句话……"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "部分 — 主题部分"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — 无含义"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "页眉 — 引导内容"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "页脚 — 结束内容"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "文章 — 独立内容"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "相关内容"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — 主要内容（每页一次）"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — 导航链接"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "堆栈 (flexbox，纵向)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "行 (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "网格"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "正在编辑：%s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "子元素布局方式为"
 
@@ -7178,7 +8236,7 @@ msgstr "子元素布局方式为"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7186,70 +8244,50 @@ msgstr "子元素布局方式为"
 msgid "Inherited (%s)"
 msgstr "继承自 (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "弹性盒子"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "堆叠块"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "列"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "在画布中拖拽，或直接键入"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "内容宽度"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "盒装（主题的内容宽度）"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "全宽"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "最小高度"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML 标签"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "链接"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "将整个区块设为链接指向"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "屏幕阅读器的链接文本"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "链接的功能，适用于无法看到该区块的访客。"
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "在新标签页中打开"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "请勿在已链接的块中放置链接或按钮：链接内部嵌套链接在浏览器中无法正常工作。"
 
@@ -7281,14 +8319,143 @@ msgstr "+ 行"
 msgid "− Row"
 msgstr "− 行"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "位置"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "粘贴坐标或 OpenStreetMap 链接"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "在 openstreetmap.org 上找到该地点，然后从浏览器地址栏复制网址，或者右键点击地图并选择“显示地址”。"
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "纬度"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "经度"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "缩放"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "地点名称"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "显示在地图下方，并由屏幕阅读器读出。"
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "粘贴坐标（例如 51.5074, -0.1278）或 OpenStreetMap 链接。"
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "坐标或链接"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "预览地图"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "在 OpenStreetMap 上查看 %1$s，%2$s"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "作者"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "发布日期"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "更新日期（如有不同）"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "类别"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "标签"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "阅读时间"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "评论数"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "显示详细信息"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "请至少选择一个要显示的详细信息。"
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "进度条"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "最大值"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 表示百分比；任何其他数字表示计数，例如 10 个中的 8 个。"
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "显示百分比"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "已设置密码。访问者在输入密码前，看到的将是密码表单，而不是此内容。"
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "尚未设置密码，因此访问者在此处看不到任何内容。"
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "新密码"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "设置密码"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "密码已设置。请保存页面以生效；此前已解锁的访客将需要使用新密码。"
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "如果 Page Builder Sandwich 被关闭，此内容将向所有人显示。"
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "密码表单上方的消息（可选）"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "切换"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "标签"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7298,30 +8465,698 @@ msgstr "由屏幕阅读器朗读，并在开启“显示标签”时显示。"
 msgid "Show label"
 msgstr "显示标签"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "网页地址或文本"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "二维码"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "屏幕阅读器描述"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "留空则使用“QR code for”和文本。"
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "请输入网页地址、电话链接 (tel:) 或任意文本。"
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "这段内容太长，无法生成二维码。请将其缩短。"
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "添加说明文字"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "阅读进度条"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "窗口边缘"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "顶部"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "底部"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "当访问者滚动页面时显示在窗口底部。"
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "当访客滚动页面时显示在窗口顶部。"
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "多少数量"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "相关方"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "分类或标签"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "当没有相关内容时，显示最新内容"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "标题"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "留空则显示“相关文章”。"
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "显示特色图片"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "显示日期"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "显示摘要"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "目前还没有其他文章与这篇文章共享相同的分类或标签。当有文章共享时，它们将显示在这里。"
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "模态框"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "离屏画布面板"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "大小"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "从...滑入"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "起点是阅读开始的一侧：英文为左侧，阿拉伯文为右侧。"
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "点击背后页面时关闭"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "窗口标题"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "勾选标记"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "圈子"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "交叉"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "点"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "箭头"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "标星"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "图标颜色"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "同上"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "主题主色调"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "主题副色调"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "主题对比度"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "请按顺序在页面中使用各级标题：标题的级别应比其所在的区块低一级。"
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "选择图标"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "使用默认图标"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "选择图标"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "上移"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "向下移动"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "为每种类型显示标题"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "您所选的类型中尚无发布的内容。"
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "链接"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "链接 %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "网络"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "个人资料地址、mailto:you@example.com 或 tel:+441234567890。"
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "屏幕阅读器读取的名称"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "其他图标"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "添加链接"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "查看"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "样式"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "仅图标"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "形状"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "圆角方形"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "平方"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "在新标签页中打开个人资料"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "星级评定"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "评分"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "星标数"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "显示数量"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "步骤"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "页面下方"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "并排（在手机上堆叠）"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "数字颜色"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "步骤顺序"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "第 %d 步"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "步骤…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "下一步操作…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "添加步骤"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "标签"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "为页面添加标题，它们将在此处列出。"
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "目录"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "起始标题级别"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "到标题级别"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "已编号"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "可折叠"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "默认折叠"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "高亮显示正在朗读的部分"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "标签"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "屏幕阅读器名称"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "可选。说明标签页的内容，例如“方案”。"
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "页面加载时打开"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "侧边标签页"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "添加标签页"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "客户评价"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "更换照片"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "选择照片"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "删除照片"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "照片描述"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "如果照片中仅显示旁边署名的人物，请留空。"
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "星级评分（0 = 无）"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "报价下方名称"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "引文旁的照片"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "客户说……"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "角色或公司"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "工具提示"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "工具提示文本"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "保持简短：一到两句话。屏幕阅读器会将它与所解释的词语一起读出。"
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "显示"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "上方"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "下方"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "词组或短语"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "应用"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "个人资料"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "谁的个人资料"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "文章作者"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "显示头像"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "显示个人简介"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "显示文章和网站链接"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "作者简介"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "选择要显示的个人资料。"
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "WhatsApp 号码（包含国家/地区代码）"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "例如 +44 7700 900123。"
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "起始消息（可选）"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "在图标旁边显示文本"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "角落"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "底部（中文为右侧）"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "底部左侧（英文为左）"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "在侧边栏中添加您的WhatsApp号码。在此之前，该按钮不会显示在页面上。"
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "此按钮在页面上浮动于屏幕的某个底角。"
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "简码标签"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "仅可使用字母、数字、破折号和下划线。"
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "属性名称"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "添加属性"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "短代码"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "其他属性"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "在区块设置中选择一个短代码标签。"
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "相册"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "图片大小"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "缩略图"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "原图尺寸"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "链接至"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "附件页面"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "媒体文件"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "音频"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "视频"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "文件地址"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "循环"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "自动播放"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "海报图片"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "播放列表"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "媒体 ID，以逗号分隔"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "显示曲目列表"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "嵌入"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "嵌入地址"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "最大宽度"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "说明文字"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "图片和说明 HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "宽度"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "提示：“表单”区块显示此表单的样式已调整为与您的站点匹配。"
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "显示表单标题"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "显示表单描述"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "不刷新页面即可提交"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7342,123 +9177,108 @@ msgstr "选择文件"
 msgid "— Default —"
 msgstr "— 默认 —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "高级样式"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "内联 CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS 声明，例如：min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "效果（旧版类名）"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "从旧版本沿用的以空格分隔的效果名称，例如：hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "行"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "宽度"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "全宽，内容居中"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "链接地址"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "链接关系"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "对齐方式"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "左侧"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "居中"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "右"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "按钮文本"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "添加文本……"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "位置"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "单独成行"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "在这一行中，紧邻其他内容"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "自动（位于页面顶层的独立行）"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "辅助功能标签"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "留空则为装饰图标。"
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "请在区块设置中选择一个图标。"
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "新设置名称"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "例如：标题或文本"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "添加设置"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "小组件"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "选择一个小组件"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "小部件区域"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "选择小组件区域"
 
@@ -7481,6 +9301,140 @@ msgstr "此嵌入内容在加载后会自动调整大小，从而移动下方的
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "布局偏移"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "此小部件未描述其设置，因此它们将作为名称和值对进行编辑。"
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "问题"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "检查"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "显示区块"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "使用清晰易读的主题颜色"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "将其设为 H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "替代文本"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "保存替代文本"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "此图片为装饰性图片"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "正在检查…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "此页面未发现无障碍问题。"
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s，%2$s。"
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d 个问题"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "需检查的项目：%d"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "重新检查"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "自动检查只能发现许多问题，而无法发现全部问题。同时也请仅使用键盘以及屏幕阅读器对该页面进行测试。"
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "文本对比度为 %1$s:1；至少需要 %2$s:1 才能保证可读性。"
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "点击此处,此处,阅读更多,更多,链接,此链接,了解更多,前往"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "链接没有文本，因此屏幕阅读器只会播报“链接”。请添加文本或标签。"
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "链接文本“%s”没有说明其指向何处。请改为描述目标位置。"
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "某个元素具有正数的 tabindex 属性，这会改变键盘导航顺序，使其与阅读顺序不一致。请使用 0 或将其移除。"
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "无法使用键盘访问可点击元素。请使用真实的按钮或链接。"
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "嵌入式框架没有标题，因此屏幕阅读器无法说明它是什么。"
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "表单字段缺少标签，因此无法播报其用途。"
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "此标题为空。屏幕阅读器用户通过标题进行导航；请将其删除或添加文本。"
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "页面标题已经是 H1，内容的第一层请使用 H2。"
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "这个 H%1$d 跳过了一个级别；它前面的级别是 H%2$d。请将其更改为 H%3$d。"
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "此图片没有替代文本。请对其进行描述，如果它没有任何实际作用，则将其标记为装饰性图片。"
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "关闭面板"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7555,18 +9509,6 @@ msgstr "自定义"
 msgid "Width / height"
 msgstr "宽度 / 高度"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "顶部"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "底部"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7579,20 +9521,6 @@ msgstr "继承的镜像 — 替换"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "移除图片"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "位置"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "大小"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7658,22 +9586,6 @@ msgstr "两侧分别"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "侧栏"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "样式"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "颜色"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7923,14 +9835,6 @@ msgstr "%1$s（%2$d 组）"
 msgid "Replace icon"
 msgstr "替换图标"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "选择图标"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "选择图标"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "没有找到匹配的图标。"
@@ -7942,10 +9846,6 @@ msgstr "常规"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "品牌"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "轮廓化"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8074,21 +9974,9 @@ msgstr "文字颜色"
 msgid "Cursor"
 msgstr "光标"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "箭头"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "指针"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "文本"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8246,10 +10134,6 @@ msgstr "区域名称"
 msgid "Named areas"
 msgstr "命名区域"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "行"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "高度"
@@ -8367,10 +10251,6 @@ msgstr "两端对齐"
 msgid "Decoration"
 msgstr "装饰"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "下划线"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "上划线"
@@ -8453,19 +10333,9 @@ msgstr "圆锥形"
 msgid "Angle (degrees)"
 msgstr "角度（度）"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "形状"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "椭圆"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "圈子"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8501,10 +10371,6 @@ msgstr "后台饱和度 (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "色调（使用半透明颜色）"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "圆角方形"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "二进制大对象"
@@ -8521,10 +10387,6 @@ msgstr "三角形"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "钻石"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "标星"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9402,11 +11264,6 @@ msgstr "清除"
 msgid "The change could not be saved."
 msgstr "无法保存更改。"
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "关闭面板"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "主题默认值"
@@ -9463,9 +11320,49 @@ msgstr "专业版提供类名、令牌、暗黑模式、品牌工具包和自定
 msgid "Open the Site Editor’s styles"
 msgstr "打开“网站编辑器”的样式"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "标题"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "带有更紧凑行高的标题，使用“样式”标签进行设计。"
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "段落文本，使用“样式”选项卡进行设置。"
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "图像"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "使用“样式”标签页设置圆角样式的图片。"
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "来自媒体库的视频，使用“样式”选项卡进行设置。"
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "间隔符"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "块之间的空白处；请在“样式”选项卡中针对不同的屏幕尺寸设置不同的高度。"
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "分割线"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "使用“样式”选项卡设置样式的区段之间的水平线。"
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "通过粘贴其他网站（视频、帖子、地图）的地址来引入其内容。"
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "网格中的多张图片，使用“样式”选项卡进行样式设计。"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9499,10 +11396,6 @@ msgstr "列表"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "胶囊标签"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "按钮"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9547,10 +11440,6 @@ msgstr "隐藏未翻译此页面的语言"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "垂直堆叠"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "背景"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9609,11 +11498,6 @@ msgstr "阻止设置"
 #, js-format
 msgid "Add block: %s"
 msgstr "添加区块：%s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(无标题)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9689,10 +11573,6 @@ msgstr "关闭安全模式"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "开启安全模式（禁用其他插件，仅对您生效，仅限 Studio）"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "已发布"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10029,11 +11909,6 @@ msgstr "生成器名称"
 msgid "Visual editor name"
 msgstr "可视化编辑器名称"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "作者"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10104,10 +11979,6 @@ msgstr[0] "已撤销：已恢复 %d 个页面。"
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "替换"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "链接"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10216,10 +12087,6 @@ msgstr "允许客户在此页面上发表评论"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "任何拥有链接的人都可以查看此页面（甚至在发布之前）并发表评论。无需注册账号。"
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "已复制"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10455,6 +12322,52 @@ msgstr "将图片复制到此网站的媒体库中"
 msgid "Show what will happen"
 msgstr "预览操作结果"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "折叠面板项"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "手风琴折叠面板的一个小节：用于展开其内容的标题。"
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "折叠面板"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "可折叠展开的问题或部分。可选择一次展开一个，并可选择将其标记为搜索引擎的常见问题解答（FAQ）。"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "折叠面板"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "常见问题"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "切换"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "折叠"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "详细信息"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10471,6 +12384,7 @@ msgid "notice"
 msgstr "通知"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "消息"
@@ -10485,6 +12399,72 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "警告"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "徽章"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "简短的标签，例如“新品”、“特惠”或“超值”。"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "标签"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "标签"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "标签"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "新建"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "预约日历"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "一个 Calendly 或 Cal.com 预订日历，仅在访客请求时加载。"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "预订"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "预约日历"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "预约"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "计划任务"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10496,6 +12476,7 @@ msgid "A link styled as a button."
 msgstr "样式为按钮的链接。"
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "按钮"
@@ -10509,6 +12490,98 @@ msgstr "链接"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "行动号召"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "行动呼吁"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "一个标题、一个句子以及一两个要求访问者采取行动的按钮。"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "行动号召"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "横幅"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "注册"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "检查清单"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "一个任务列表，每项均标注为已完成或未完成，既有文字提示以供屏幕阅读器使用，也有对勾标记。"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "待办事项"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "任务"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "勾选次数"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "列表"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "代码"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "带有语法高亮、行号和复制按钮的代码列表。即使插件被关闭，也能保持可读性。"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "代码"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "语法"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "高亮显示"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "代码片段"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "编程"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10532,6 +12605,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "布局"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "对比表格"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "并排显示计划或产品，带有屏幕阅读器会读作文字的“是”和“否”标记。"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "比较"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "定价"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "套餐"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "表格"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "功能"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "联系按钮"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "添加可在 WhatsApp 上给您打电话、发邮件、发短信或发消息的按钮。"
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "联系人"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "调用"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "电话"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "电子邮件"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "短信"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10549,11 +12700,13 @@ msgid "container"
 msgstr "容器"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "框"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10570,6 +12723,52 @@ msgstr "弹性盒"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "列"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "双标题"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "一个分为两部分的标题，第二部分带有颜色、渐变、轮廓或下划线。"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "标题"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "标题"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "渐变"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "功能列表"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "网格状功能展示，每项均包含图标、标题和简短描述。"
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "优势"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "服务"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10613,6 +12812,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "文本"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "表单"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "显示来自 Contact Form 7、WPForms、Gravity Forms 或 Fluent Forms 的表单，并进行样式调整以匹配您的网站。"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "表单"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "词汇表"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "术语及其定义，按 A 到 Z 排序，每个术语均有专属链接。可将页面中每个术语的首次出现链接至其定义。"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "条款"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "定义"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "词典"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "图标列表"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "一个列表中每行的开头都有一个图标：勾选标记、箭头或来自库中的任何图标。"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "项目符号"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "图标"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10633,6 +12912,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "SVG"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "信息框"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "一个图标、一个简短的标题、一两句话以及一个可选链接：用于服务、优势或联系方式。"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "功能"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "服务"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "银行卡"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10652,6 +12956,204 @@ msgstr "翻译"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "多语言"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "映射"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap 地图：不包含图例，并且在访客请求地图之前，不会从 OpenStreetMap 加载任何内容。"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "映射"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "位置"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "地址"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "OpenStreetMap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "模态框"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "一个在页面上方打开窗口的按钮，其中包含任意区块。"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "模态框"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "弹出窗口"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "灯箱"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "对话框"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "离屏面板"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "一个从窗口侧边滑入面板的按钮，其中包含任意区块。"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "离屏"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "抽屉"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "侧边栏"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "面板"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "菜单"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "文章详情"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "该文章的作者、日期、分类、标签、阅读时间和评论数。"
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "作者"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "日期"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "阅读时间"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "元数据"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "署名"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "进度条"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "一个带有标签的进度条，用于显示某项事物（如技能或目标）的进展程度。"
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "进行中"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "条"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "技能"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "目标"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "密码保护的内容"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "仅允许拥有密码的访客查看。在他们输入密码之前，该内容根本不会出现在页面中。"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "密码"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "受保护"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "私有"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "锁定"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "成员"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10677,6 +13179,86 @@ msgstr "浅色"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "配色方案"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "二维码"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "一个用于网页地址或任何文本的二维码，直接绘制在您自己的网站上（不使用任何二维码服务）。"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "二维码"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "二维码"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "条形码"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "扫描"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "阅读进度条"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "窗口边缘的一条细长进度条，会随着访客在页面上的滚动而逐渐填满。"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "正在读取"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "滚动"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "相关文章"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "分享此文章分类或标签的文章，包含其图片、日期和摘要。"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "相关"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "文章"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "相似"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "更多"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10740,13 +13322,284 @@ msgstr "显示主题某个小部件区域中的小部件。"
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "侧边栏"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "小组件区域"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "站点地图"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "一个列出所有已发布页面和文章（以及其他公共内容）并保留页面层级的页面。"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "站点地图"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "网站地图"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "索引"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "所有页面"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "社交图标"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "指向您个人资料的链接，带有各自社交网络的专属图标。"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "社交"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "链接"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "关注"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "配置文件"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "星级评分"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "以半星为单位显示的星级评定。"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "星标"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "评分"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "评分"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "步骤"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "按顺序排列的流程步骤，可沿页面向下或并排显示。"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "处理"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "如何操作"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "时间线"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "已编号"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "标签"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "选项卡区块中的一个选项卡：其标题和面板。"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "目录"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "自动生成的页面标题列表，可链接至各个标题。"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "目录"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "内容"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "标题"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "标签"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "标签页内容：访客可通过鼠标或键盘在不同面板之间切换。"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "标签"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "标签页式"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "面板"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "客户评价"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "客户引言，包含其姓名、职位、照片以及可选的星级评分。"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "审查"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "引用"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "客户"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "反馈"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "工具提示"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "悬停或键盘聚焦时显示简短解释的词语或短语。"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "工具提示"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "提示"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "定义"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "作者个人资料"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "作者的头像、姓名、简介及链接，或所选用户的相关信息。"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "个人简介"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "个人资料"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "关于"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp 聊天按钮"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "一个浮动在页面角落的按钮，可打开与您的 WhatsApp 聊天。"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "聊天"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "悬浮"
 
 #: blocks/widget/block.json
 msgctxt "block title"

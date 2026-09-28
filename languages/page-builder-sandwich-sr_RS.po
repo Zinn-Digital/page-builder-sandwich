@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Sačuvaj kao višekratni šablon"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Provera pristupačnosti"
 
@@ -990,6 +994,7 @@ msgstr "← Izaberite drugog provajdera"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Adresa"
 
@@ -1043,6 +1048,8 @@ msgstr "Тест"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Ukloni"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Osvežite liste modela od dobavljača"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Slike"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "isključen"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Отвори"
 
@@ -1448,6 +1457,7 @@ msgstr "Još uvek nisu upućeni nikakvi zahtevi ka veštačkoj inteligenciji."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Završeno"
 
@@ -1515,7 +1525,11 @@ msgstr "Previše pokušaja. Molimo pokušajte ponovo za nekoliko minuta."
 msgid "Something went wrong. Please contact the admin."
 msgstr "Došlo je do greške. Molimo vas da kontaktirate administratora."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Мапирај"
 
@@ -1538,52 +1552,387 @@ msgstr "Ta porodica nije sačuvana."
 msgid "Removed."
 msgstr "Uklonjeno."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "To nije važeće ime porodice fontova."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts nije vratio tu familiju. Proverite naziv i pokušajte ponovo."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Datoteke fontova nije bilo moguće preuzeti ili sačuvati. Proverite da li je fascikla za otpremanje (uploads) upisiva."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Stylesheet font-a nije mogao biti sačuvan. Proverite da li je folder za otpremanje (uploads) upisiv."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Zanemari ovo obaveštenje"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(otvara se u novoj kartici)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Završeno:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Zadatak:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Indeks rečnika"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Ocenjeno sa %1$s od %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Napredak"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Кopiraj кȏд"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Кopiran"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Taj vidžet nije dostupan na ovom sajtu."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "E-pošta"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Telefon"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS dovod"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Web lokacija"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Веза"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (otvara se u novoj kartici)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Ocenjeno sa %d od 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(preporučeno)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Uključeno"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Nije uključeno"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Tabela za poređenje"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Pozovite %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "E-adresa %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Tekst %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Разговарајте на WhatsApp-у"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Kontaktirajte nas"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Razgovarajte sa nama na WhatsApp-u"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Ovaj obrazac trenutno nije dostupan."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Ovaj formular se ne može prikazati jer %s nije aktivan."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Мапа: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Prikazivanje mape je učitava sa OpenStreetMap-a."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Prikaži mapu"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Отвори мапу на OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Kalendar rezervacija sa %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Prikazivanje kalendara rezervacija ga učitava sa adrese %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Prikaži kalendar rezervacija"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Rezerviši na %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "QR kod za %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Dizajn"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Садржај"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Медији"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Маркетинг"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Сајт"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Podaci"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Povezani postovi"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Detalji objave"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Autor"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Objavljeno"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Ažurirano"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "U"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Označeno"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d minut čitanja"
+msgstr[1] "%d minuta čitanja"
+msgstr[2] "%d minuta čitanja"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Još uvek nema komentara"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d komentar"
+msgstr[1] "%d komentara"
+msgstr[2] "%d komentara"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Mapa sajta"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(bez naslova)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Sve objave korisnika %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Ovaj sadržaj je zaštićen. Unesite lozinku da biste ga videli."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Ta lozinka nije ispravna. Pokušajte ponovo."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Lozinka"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Прикажи садржај"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Ta stranica ne može biti otključana."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Previše pokušaja. Sačekajte nekoliko minuta pa pokušajte ponovo."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Lozinka mora imati između 4 i 200 znakova."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Još"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Zatvori"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Kartica %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Sadržaj"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2035,10 @@ msgstr "Izmeni u Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Prazno platno"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Пређи на садржај"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Širina tableta mora biti ceo broj u rasponu od 480 do 2560 piksela."
@@ -1760,7 +2113,11 @@ msgid "Uploaded icons"
 msgstr "Otpremljene ikonice"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Ikona"
 
@@ -2553,6 +2910,8 @@ msgstr "%s je adresa e-pošte mog klijenta"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Kod"
 
@@ -3047,13 +3406,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Uredi"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "E-pošta"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Adresa e-pošte"
 
@@ -3103,6 +3458,10 @@ msgstr "Omogućavanje belog režima"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3484,7 @@ msgstr "Unesite novu adresu e-pošte"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Greška"
 
@@ -3723,6 +4083,7 @@ msgstr "Proizvodi u nastavku su prebačeni u bezbedni režim jer smo primetili d
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4187,7 @@ msgstr "Ovaj dodatak zahteva noviju verziju PHP-a."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Ne"
 
@@ -4811,6 +5173,13 @@ msgstr "Društvene mreže (Facebook, Twitter, itd.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5465,9 @@ msgstr "Vremenska oznaka"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Naslov"
 
@@ -5171,6 +5543,8 @@ msgstr "Kako vam se za sada dopada %1$s? Testirajte sve naše %2$s premijum funk
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Tip"
@@ -5286,6 +5660,7 @@ msgstr "Korisnici"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Vrednost"
@@ -5340,6 +5715,7 @@ msgstr "Pogledajte plaćene funkcije"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Upozorenje"
 
@@ -5666,6 +6042,7 @@ msgid "Optional"
 msgstr "Opcionalno"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Paket"
 
@@ -5988,18 +6365,26 @@ msgstr "Ekstra malo"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Мали"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Средње"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Veliki"
 
@@ -6012,7 +6397,9 @@ msgid "Huge"
 msgstr "Ogromno"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6328,16 +6715,9 @@ msgid "The trial could not be started."
 msgstr "Proba nije mogla da počne."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Funkcija"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Uključeno"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Nije uključeno"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6693,10 +7073,6 @@ msgstr "Adresa za prijavu"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Korisničko ime"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Lozinka"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7095,15 +7471,62 @@ msgstr "Poništavanje je počelo. Nastavlja se u pozadini; možete napustiti ovu
 msgid "Undo all conversions"
 msgstr "Poništi sva pretvaranja"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Stavka"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Отвори када се страница учитава"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Naslov je zaglavlje"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Napravite naslov zaglavljem kada su stavke odeljci stranice, kako bi posetioci mogli da prelaze između njih."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Zaglavlje %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Pitanje ili naziv odeljka"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Harmonika"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Samo jedna stavka je otvorena u isto vreme"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Označi kao FAQ za pretraživače"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Додаје структурисане податке за честа питања (FAQ) направљене од наслова (питања) и њиховог текста (одговора)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Upozorenje"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Информације"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Uspešno"
 
@@ -7112,6 +7535,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Upozorenja i greške se odmah saopštavaju korisnicima čitača ekrana; informacije i obaveštenja o uspehu čitaju se kada završe ono što rade."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Prikaži ikonu"
 
@@ -7127,64 +7551,702 @@ msgstr "Naslov (opciono)"
 msgid "Write the message…"
 msgstr "Napišite poruku…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "odeljak — tematski odeljak"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Centriraj"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — bez značenja"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Oznaka"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "zaglavlje — uvodni sadržaj"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Boja"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "podnožje — završni sadržaj"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Boja teme"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "članak — sadržaj koji čini celinu"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Neutralno"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "bočna margina — povezani sadržaj"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Položaj"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — glavni sadržaj (jednom po stranici)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Oznaka"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — navigacioni linkovi"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Kalendar rezervacija"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Стек (flexbox, колона)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Услуга"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Red (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Adresa stranice za rezervacije"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Mreža"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Na primer %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Čemu služi kalendar, a čitaju ga čitači ekrana i prikazuje se ispod njega."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Ovo nije adresa %s stranice za rezervacije, tako da se ništa neće prikazati na stranici."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Pregledajte kalendar"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Адреса везе"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Dugme se prikazuje kada ima i oznaku i adresu."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Otvorite u novoj kartici"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Poziv na akciju"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Raspored"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Дугмад испод"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Dugmad pored teksta"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Poravnanje"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Glavno dugme"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Друgo дугме"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Naslov..."
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Једна реченица о томе зашто…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Drugo dugme (opciono)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Kontrolna lista"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Boja oznake"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Redovi"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Linija %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Zadatak…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Dodaj liniju"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Језик"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Automatski otkrij"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Bez isticanja"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Naziv datoteke"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Prikazano iznad koda, na primer functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Brojevi linija"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Дугме за копирање"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Prelomi duge linije"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Piši ili nalepi kod…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Tekst"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Kolone"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Kolona %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Istakni %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Dodaj kolonu"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Redovi"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Red %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Dodaj red"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Naziv (šta se poredi)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Tip ćelije: %s. Promeni"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Telefonski poziv"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Tekstualna poruka"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Дуgmad"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Broj telefona, sa pozivnim brojem države"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Tekst dugmeta"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Ukloni ovo dugme"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Dodaj dugme"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "WhatsApp poruka za početak (opciono)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Dugmad za kontakt"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Dodajte broj telefona, adresu e-pošte ili WhatsApp broj u bočnu traku."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Dvostruko zaglavlje"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Nivo zaglavlja"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Koristite H1 jednom po stranici, za njen glavni naslov."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Drugi deo izgleda"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Boja akcenta"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Прелив"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Kontura"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Podvučeno"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Drugi deo u posebnom redu"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Prvi deo"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "drugi deo"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Marker olovka"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Debela podvučena linija"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Pozadina"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Istakni"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Ukloni isticanje"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Inicijalno slovo"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Veliko prvo slovo"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Za prvo slovo u okviru izaberite stil „Početno slovo u okviru“."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Početno slovo u okviru"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Traka sa naglaskom"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Istaknuti citat (naglašena linija)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Citat iz teksta, prikazan u krupnom planu pored obojenog stuba radi privlačenja pažnje."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "citat"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Lista funkcija"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Na telefonima se funkcije uvek ređaju jedna preko druge."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Funkcije"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Funkcija %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Sopstvena ikona"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Funkcija…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Опишите га…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Dodaj funkciju"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Instalirajte i aktivirajte Contact Form 7, WPForms, Gravity Forms ili Fluent Forms, a zatim ovde izaberite jedan od njegovih obrazaca."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Dodatak za obrasce"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Izaberite..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Образац"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Izaberite obrazac…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s još uvek nema nijednu formu"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s nije aktivan na ovom sajtu, tako da se ovaj obrazac ne može prikazati."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Lista obrazaca nije mogla biti učitana."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Stil forme"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Polja"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Ocrtano"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Popunjeno"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Podvučeno"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Širina dugmeta"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Prilagodi tekst"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Puna širina"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Boje, fontovi, razmaci i uglovi preuzimaju se iz dizajna vašeg sajta i podešavanja dizajna ovog bloka."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Prikažite obrazac iz svog dodatka za obrasce, stilizovan tako da odgovara vašem sajtu."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Potreban vam je dodatak za formu? Contact Form 7 je besplatan."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Rečnik"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Sortiraj od A do Š"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Stranica prikazuje termine po abecednom redu; ovde ostaju onim redosledom kojim ste ih napisali."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Prikaži A–Z indeks"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Povezani termini koji se koriste na drugim mestima na ovoj stranici"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Prvo pojavljivanje svakog pojma u tekstu stranice vodi do njegove definicije. Zaglavlja, dugmad, kod i postojeći linkovi ostaju netaknuti."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Uslovi"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Mandat %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Trajanje"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Šta to znači…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Dodaj termin"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Lista ikona"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Jedno ispod drugog"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Uporedno"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Stavka liste…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Informativno polje"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Ili izaberite bilo koju ikonu iz biblioteke:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Текст везе"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Наведите куда води линк („Погледајте наше цене“), а не „Прочитајте више“."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Rečenica ili dve…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "odeljak — tematski odeljak"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — bez značenja"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "zaglavlje — uvodni sadržaj"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "podnožje — završni sadržaj"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "članak — sadržaj koji čini celinu"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "bočna margina — povezani sadržaj"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — glavni sadržaj (jednom po stranici)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — navigacioni linkovi"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Стек (flexbox, колона)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Red (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Mreža"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Uređivanje: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Rasporedi podređene elemente kao"
 
@@ -7192,7 +8254,7 @@ msgstr "Rasporedi podređene elemente kao"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7200,70 +8262,50 @@ msgstr "Rasporedi podređene elemente kao"
 msgid "Inherited (%s)"
 msgstr "Nasleđeno (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Флексбокс"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Stacked blokovi"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Kolone"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Prevucite u platno ili otkucajte"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Širina sadržaja"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Uokvireno (širina sadržaja teme)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Puna širina"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Minimalna visina"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML ознака"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Веза"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Učinite ceo blok vezom ka"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Tekst veze za čitače ekrana"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Šta veza radi, za posetioce koji ne mogu da vide blok."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Otvorite u novoj kartici"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Nemojte stavljati linkove ili dugmad unutar povezanog bloka: link unutar linka ne radi u pretraživačima."
 
@@ -7295,14 +8337,143 @@ msgstr "+ Red"
 msgid "− Row"
 msgstr "− Red"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Mesto"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Nalepite koordinate ili OpenStreetMap vezu"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Na sajtu openstreetmap.org pronađite lokaciju, a zatim kopirajte adresu iz trake adresa u pretraživaču ili kliknite desnim tasterom miša na mapu i izaberite „Prikaži adresu“."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Geografska širina"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Географска дужина"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Zumiraj"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Naziv mesta"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Prikazuje se ispod mape i čitaju je čitači ekrana."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Nalepite koordinate (na primer 51.5074, -0.1278) ili OpenStreetMap vezu."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Koordinate ili veza"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Pregledajte mapu"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Proverite %1$s, %2$s na OpenStreetMap-u"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Autor"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Datum objavljivanja"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Datum ažuriranja (kada se razlikuje)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Категорије"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Oznake"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Vreme čitanja"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Broj komentara"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Prikaz detalja"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Izaberite najmanje jedan detalj za prikaz."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Traka napretka"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Maksimum"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 za procenat; bilo koji drugi broj za zbir, kao što je 8 od 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Prikaži procenat"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Lozinka je podešena. Posetioci vide formular za unos lozinke umesto ovog sadržaja dok je ne unesu."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Još uvek nije postavljena lozinka, tako da posetioci ovde ne vide ništa."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Nova lozinka"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Postavi lozinku"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Lozinka je postavljena. Sačuvajte stranicu da biste je primenili; posetioci koji su je otključali morće da unesu novu."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Ako se Page Builder Sandwich ikada isključi, ovaj sadržaj se prikazuje svima."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Poruka iznad obrasca za lozinku (opcionalno)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Prebaci"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Oznaka"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7312,30 +8483,698 @@ msgstr "Čitaju ga čitači ekrana, a prikazuje se kada je uključena opcija „
 msgid "Show label"
 msgstr "Prikaži oznaku"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Veb adresa ili tekst"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR kod"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Opis za čitače ekrana"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Ostavite prazno da biste koristili „QR kod za“ i tekst."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Unesite veb-adresu, telefonsku vezu (tel:) ili bilo koji tekst."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Ovo je predugačko za QR kod. Skratite ga."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Додај опис"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Traka napretka čitanja"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Ivica prozora"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Vrh"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Dno"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Prikazuje se na dnu prozora dok se posetioci pomeraju nadole."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Prikazuje se na vrhu prozora dok se posetioci pomeraju nadole."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Koliko"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Povezano sa"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Kategorije ili oznake"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Kada ništa nije povezano, prikaži najnovije umesto toga"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Naslov"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Ostavite prazno za „Sovezani postovi“."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Прикажи истакнуту слику"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Prikaži datum"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Prikaži rezime"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Nijedna objava još uvek ne deli kategorije ili oznake sa ovom objavom. Kada neke budu delile, prikazaće se ovde."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Modul"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Bočni panel"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Veličina"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Klizi sa"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Početak je strana sa koje počinje čitanje: levo na engleskom, desno na arapskom."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Zatvori kada se klikne stranica iza"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Naslov prozora"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Oznaka potvrde"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Krug"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Pređi"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Tačka"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Strelica"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Ozvezdi"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Boja ikone"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Иsto као текcт"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Primarna tema"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Sekundarna tema"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Kontrast teme"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Držite naslove u nizu nadole na stranici: naslov jedan nivo ispod odeljka u kojem se nalazi."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Izaberite ikonu"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Koristi podrazumevanu ikonu"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Изаберите икону"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Pomeri nagore"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Pomeri nadole"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Prikaži zaglavlje za svaki tip"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Ništa još nije objavljeno u tipovima koje ste izabrali."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Linkovi"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Veza %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Мрежа"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Adresa profila, mailto:you@example.com ili tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Naziv koji čitaoci ekrana čitaju"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Ostale ikonice"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Dodaj vezu"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Pogledaj"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Stil"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Samo ikona"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Oblik"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Zaobljeni kvadrat"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Kvadrat"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Otvori profile u novoj kartici"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Ocena zvezdicama"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Ocena"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Broj zvezdica"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Prikaži broj"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Коoraci"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Nadole po stranici"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Jedno pored drugog (slaganje na telefonima)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Boja broja"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Redosled koraka"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Korak %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Korak…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Šta učiniti…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Додај корак"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Kartica"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Dodajte zaglavlja na stranicu i ona će biti prikazana ovde."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Садржај"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Od nivoa zaglavlja"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Do nivoa zaglavlja"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Numerisano"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Може се сажети"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Počni skupljeno"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Označite odeljak koji se čita"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Kartice"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Naziv za čitače ekrana"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Opciono. Opisuje sadržaj kartica, na primer „Paketi“."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Отвори при учитавању странице"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Kartice sa strane"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Dodaj karticu"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Izjava o preporuci"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Zameni fotografiju"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Izaberi fotografiju"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Ukloni fotografiju"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Opis fotografije"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Ostavite prazno kada fotografija prikazuje samo osobu čije je ime navedeno pored nje."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Ocena zvezdicama (0 = nema)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Naziv pod navodom"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Fotografija pored citata"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Šta je korisnik rekao…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Uloga ili kompanija"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Opis točke"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Текст описивача"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Neka bude kratko: jedna ili dve rečenice. Čitači ekrana ga čitaju zajedno sa rečju koju objašnjava."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Prikaži to"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Iznad"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Ispod"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Reč ili izraz"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Primi primeni"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Profil"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Čiji profil"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Autor objave"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Prikaži profilnu sliku"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Prikaži biografiju"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Прикажи везе ка објавама и веб-сајту"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Profil autora"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Izaberite čiji profil želite da prikažete."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "WhatsApp broj, sa pozivnim brojem države"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Na primer +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Почетna порука (опционо)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Prikaži tekst pored ikone"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Ugao"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Donji kraj (desno na engleskom)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Dole levo (levo na engleskom)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Dodajte svoj WhatsApp broj u bočnu traku. Do tada se dugme ne prikazuje na stranici."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Na stranici, ovo dugme lebdi u donjem uglu ekrana."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Kod kratkog koda"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Koristite samo slova, brojeve, crtice i donje crte."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Naziv atributa"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Dodaj atribut"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Kratki kod"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Ostali atributi"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Izaberite oznaku kratkog koda u podešavanjima bloka."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Galerija"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Veličina slike"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Minijatura"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Puna veličina"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Poveži sa"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Stranica priloga"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Medijska datoteka"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Аудио"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Видео"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Adresa datoteke"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Петља"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Pusti automatski"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Slika postera"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Плејлиста"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "ID-jevi medija, odvojeni zarezima"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Prikaži listu pesama"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Ugradi"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Adresa za ugrađivanje"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Maksimalna širina"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Natpis"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML slike i natpis"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Širina"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Savet: Blok Forma prikazuje ovu formu stilizovanu tako da odgovara vašem sajtu."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Prikaži naslov obrasca"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Prikaži opis obrasca"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Pošaljite bez ponovnog učitavanja stranice"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7356,123 +9195,108 @@ msgstr "Izaberi datoteku"
 msgid "— Default —"
 msgstr "— Podrazumevano —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Napredno stilizovanje"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Inline CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS deklaracije, na primer: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Efekti (zastarele klase)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Imena efekata razdvojena razmakom preneta iz starijih verzija, na primer: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Red"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Širina"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Puna širina, sadržaj centriran"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Адреса везе"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Odnos veze"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Poravnanje"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Levo"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Centriraj"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Десно"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Tekst dugmeta"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Dodajte tekst…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Položaj"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "U sopstvenom redu"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "U redu, pored ostalog sadržaja"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Automatski (sopstveni red na najvišem nivou stranice)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Pristupačna oznaka"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Оставите празно за декоративну икону."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Izaberite ikonu u podešavanjima bloka."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Naziv nove postavke"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Na primer: naslov ili tekst"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Dodaj podešavanje"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Виџет"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Izaberite vidžet"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Oblast vidžeta"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Izaberite oblast vidzeta"
 
@@ -7495,6 +9319,144 @@ msgstr "Ovaj ugrađeni sadržaj se automatski prilagođava po učitavanju, što 
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Pomeranje rasporeda"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Ovaj vidžet ne opisuje svoja podešavanja, pa se ona uređuju kao parovi imena i vrednosti."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Problem"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Proveri"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Prikaži blok"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Koristite boju teme koja se lako čita"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Napravi ga H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Alt tekst"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Sačuvaj alt tekst"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Ova slika je dekorativna"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Proverava se…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Nisu pronađeni problemi sa pristupačnošću na ovoj stranici."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d problem"
+msgstr[1] "%d problem"
+msgstr[2] "%d problem"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d stavka za proveru"
+msgstr[1] "%d stvari za proveru"
+msgstr[2] "%d stvari za proveru"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Proveri ponovo"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Automatska provera pronalazi mnoge probleme, ali ne sve. Takođe isprobajte stranicu koristeći samo tastaturu i čitač ekrana."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Kontrast teksta je %1$s:1; potrebno je najmanje %2$s:1 da bi bio čitak."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "kliknite ovde,ovde,pročitajte više,još,veza,ova veza,saznajte više,idi"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Veza nema tekst, pa čitač ekrana izgovara samo „veza“. Dodajte tekst ili oznaku."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Tekst veze „%s“ ne govori kuda vodi. Umesto toga, opišite odredište."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Element ima pozitivan tabindex, što menja redosled tastature u odnosu na redosled čitanja. Koristite 0 ili ga uklonite."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Nešto što se može kliknuti nije dostupno preko tastature. Koristite pravo dugme ili vezu."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Ugrađeni okvir nema naslov, tako da čitač ekrana ne može da sazna šta je u pitanju."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Polje forme nema oznaku, tako da njegova svrha nije najavljena."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Ovaj naslov je prazan. Korisnici čitača ekrana navigiraju pomoću naslova; uklonite ga ili dodajte tekst."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Naslov stranice je već H1; koristite H2 za najviši nivo sadržaja."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Ovaj H%1$d preskače nivo; onaj pre njega je H%2$d. Pretvorite ga u H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Ova slika nema alternativni tekst. Opišite je ili je označite kao dekorativnu ako ničemu ne doprinosi."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Zatvori panel"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7569,18 +9531,6 @@ msgstr "Prilagođeno"
 msgid "Width / height"
 msgstr "Širina / visina"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Vrh"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Dno"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7593,20 +9543,6 @@ msgstr "Nasleđena slika — zameni"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Ukloni sliku"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Položaj"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Veličina"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7672,22 +9608,6 @@ msgstr "Svaka strana posebno"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Bočna strana"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Stil"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Boja"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7937,14 +9857,6 @@ msgstr "%1$s (%2$d подешено)"
 msgid "Replace icon"
 msgstr "Замени икону"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Izaberite ikonu"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Изаберите икону"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Nema ikona koje se podudaraju."
@@ -7956,10 +9868,6 @@ msgstr "Редовно"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Brendovi"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Ocrtano"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8088,21 +9996,9 @@ msgstr "Boja teksta"
 msgid "Cursor"
 msgstr "Kursor"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Strelica"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Pokazivač"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Tekst"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8260,10 +10156,6 @@ msgstr "Naziv oblasti"
 msgid "Named areas"
 msgstr "Именоване области"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Redovi"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Visina"
@@ -8381,10 +10273,6 @@ msgstr "Поравнај обострано"
 msgid "Decoration"
 msgstr "Dekoracija"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Podvučeno"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Gornja linija"
@@ -8467,19 +10355,9 @@ msgstr "Konusno"
 msgid "Angle (degrees)"
 msgstr "Ugao (stepeni)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Oblik"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Elipsa"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Krug"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8515,10 +10393,6 @@ msgstr "Zasićenost pozadine (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Nijansa (koristite providnu boju)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Zaobljeni kvadrat"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8535,10 +10409,6 @@ msgstr "Trougao"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamond"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Ozvezdi"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9416,11 +11286,6 @@ msgstr "Obriši"
 msgid "The change could not be saved."
 msgstr "Promena nije mogla biti sačuvana."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Zatvori panel"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Podrazumevana tema"
@@ -9477,9 +11342,49 @@ msgstr "Klase, tokeni, tamni režim, brend kit i prilagođeni fontovi dolaze uz 
 msgid "Open the Site Editor’s styles"
 msgstr "Otvorite stilove uređivača sajta"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Naslov"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Naslov sa užim proredom, stilizovan pomoću kartice Stil."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Odeljak teksta stilizovan pomoću kartice Stil."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Slika"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Slika sa zaobljenim uglovima, stilizovana pomoću kartice Stil."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Video zapis iz Biblioteke medija, stilizovan pomoću kartice Stil."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Razdvojnik"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Prazan prostor između blokova; podesite različite visine za svaku veličinu ekrana na kartici „Stil“."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Razdjelnik"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Horizontalna linija između odeljaka, stilizovana pomoću kartice Stil."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Sadržaj sa drugog sajta (video, objavu, mapu) možete dodati lepljenjem njegove adrese."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Nekoliko slika u mreži, stilizovanih pomoću kartice Stil."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9513,10 +11418,6 @@ msgstr "Lista"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Pilule"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Дуgmad"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9561,10 +11462,6 @@ msgstr "Sakrij jezike na koje ova stranica nije prevedena"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Slaganje po vertikali"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Pozadina"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9623,11 +11520,6 @@ msgstr "Подешавања блока"
 #, js-format
 msgid "Add block: %s"
 msgstr "Додај блок: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(bez naslova)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9703,10 +11595,6 @@ msgstr "Isključi bezbedni režim"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Uključite bezbedni režim (drugi dodaci isključeni, za vas, samo u Studiju)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Objavljeno"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10049,11 +11937,6 @@ msgstr "Naziv graditelja"
 msgid "Visual editor name"
 msgstr "Naziv vizuelnog uređivača"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Autor"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10130,10 +12013,6 @@ msgstr[2] "Opozvano: %d stranica je vraćeno."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Замени"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Linkovi"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10244,10 +12123,6 @@ msgstr "Дозволите клијенту да коментарише ову �
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Svako ko ima link može da vidi ovu stranicu, čak i pre nego što bude objavljena, i da ostavi komentare. Nije potreban nalog."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Кopiran"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10497,6 +12372,52 @@ msgstr "Kopirajte slike u biblioteku medijuma ovog sajta"
 msgid "Show what will happen"
 msgstr "Prikaži šta će se desiti"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Stavka harmonike"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Jedna sekcija harmonike: naslov koji otvara njen sadržaj."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Harmonika"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Pitanja ili odeljci koji se otvaraju i zatvaraju. Opciono jedno po jedno, i opcionalno označeni kao FAQ za pretraživače."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "harmonika"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Često postavljana pitanja"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "prekidač"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "skupi"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "detalji"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10513,6 +12434,7 @@ msgid "notice"
 msgstr "obaveštenje"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "poruka"
@@ -10527,6 +12449,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "Upozorenje"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Značka"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Kratka oznaka kao što je Novo, Rasprodaja ili Najbolja vrednost."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "oznaka"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "oznaka"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "oznaka"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "novo"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Kalendar rezervacija"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Calendly ili Cal.com kalendar za rezervacije, koji se učitava samo kada posetilac to zatraži."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "резервација"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "zakazivanje"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "zakorači"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10538,6 +12525,7 @@ msgid "A link styled as a button."
 msgstr "Veza stilizovana kao dugme."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "dugme"
@@ -10551,6 +12539,98 @@ msgstr "veza"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "poziv na akciju"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Poziv na akciju"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Naslov, rečenica i jedno ili dva dugmeta koja pozivaju posetioca na akciju."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "акција"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "baner"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "registruj se"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Kontrolna lista"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Lista zadataka, od kojih je svaki označen kao završen ili još uvek nezavršen, rečima za čitače ekrana, kao i pomoću kvačice."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "задатак"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "zadaci"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "tikovi"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "lista"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Lista koda sa isticanjem sintakse, brojevima linija i dugmetom za kopiranje. Ostaje čitljivo čak i ako se dodatak ikada isključi."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "sintaksa"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "istakni"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "odlomak"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "програмирање"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10574,6 +12654,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "raspored"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Tabela poređenja"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Planovi ili proizvodi jedan pored drugog, sa oznakama da i ne koje čitači ekrana čitaju kao reči."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "uporedi"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "cene cene"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "paketi"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "tabela"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "funkcije"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Kontakt dugmad"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Dugmad za pozivanje, slanje imejlova, SMS poruka ili poruka na WhatsApp-u."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "kontakt"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "poziv"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "telefon"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "е-пошта"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10591,11 +12749,13 @@ msgid "container"
 msgstr "kontejner"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "polje"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10612,6 +12772,52 @@ msgstr "флексбокс"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "kolone"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Dvostruko zaglavlje"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Naslov u dva dela, od kojih je drugi naglašen bojom, gradientom, konturom ili podvlačenjem."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "naslov"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "Наслов"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "gradijent"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Lista funkcija"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Funkcije u mreži, svaka sa ikonom, naslovom i kratkim opisom."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Погодности"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "usluge"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10655,6 +12861,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "текст"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Obrazac"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Prikazuje formu sa dodataka Contact Form 7, WPForms, Gravity Forms ili Fluent Forms, prilagođenu dizajnu vašeg sajta."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "obrazac"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Rečnik"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Termini i njihove definicije, sortirani od A do Š, svaki sa svojim linkom. Može da poveže prvo pominjanje svakog termina na stranici sa njegovom definicijom."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Uslovi korišćenja"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "definicije"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "rečnik"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Листа икона"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Lista u kojoj svaka linija počinje ikonom: znakom za potvrdu, strelicom ili bilo kojom ikonom iz biblioteke."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "stavke"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "ikonice"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10675,6 +12961,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Informativni okvir"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Ikona, kratak naslov, rečenica-dve i opcioni link: za usluge, pogodnosti ili kontakt podatke."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "funkcionalnost"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "servis"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "kartica"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10694,6 +13005,204 @@ msgstr "превод"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "višejezično"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Мапирај"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Mapa mesta sa servisa OpenStreetMap: bez ključa, i ništa se ne učitava sa servisa OpenStreetMap dok posetilac ne zatraži mapu."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "mapiraj"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "lokacija"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "adresa"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Модални прозорец"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Dugme koje otvara prozor preko stranice, sa bilo kojim blokovima unutra."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "модални прозор"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "iskačući prozor"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "lightbox"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "dijalog"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Панел ван екрана"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Dugme koje uvlači panel sa strane prozora, sa bilo kojim blokovima unutra."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "van ekrana"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "fioka"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "бочна трака"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "kontrolna tabla"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "meni"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Detalji objave"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Autor objave, datumi, kategorije, oznake, vreme čitanja i broj komentara."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "autor"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "datum"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "vreme čitanja"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "autor"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Traka napretka"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Označena traka koja prikazuje dokle je nešto stiglo, kao što je veština ili cilj."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "napredak"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "трака"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "veština"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "cilj"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Sadržaj zaštićen lozinkom"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Блокира садржај тако да га могу видети само посетиоци са лозинком. Док је не унесу, садржај се уопште не налази на страници."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "lozinka"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "zaštićeno"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "privatno"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "zaključaj"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "članovi"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10719,6 +13228,86 @@ msgstr "svetlo"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "shema boja"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR код"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "QR kod za veb-adresu ili bilo koji tekst, nacrtan na vašem sopstvenom sajtu (ne koristi se QR servis)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR kod"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "barkod"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "skeniranje"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Traka napretka čitanja"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Tankana traka na ivici prozora koja se popunjava dok posetioci skroluju stranicu."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "читање"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "skroluj"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Srodne objave"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Objave koje dele kategorije ili oznake ove objave, zajedno sa njihovim slikama, datumima i rezimeima."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "повезано"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "objave"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "slično"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "još"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10782,13 +13371,284 @@ msgstr "Prikazuje vidžete u jednoj od oblasti za vidžete teme."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "бочна трака"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "oblast vidžeta"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Mapa sajta"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Stranica koja prikazuje svaku objavljenu stranicu i post (i drugi javni sadržaj), uz očuvanje strukture stabla stranica."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "мапа сајта"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "mapa sajta"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "indeks"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "sve stranice"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Друштвене иконе"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Veze ka vašim profilima, prikazane sa originalnim ikonama mreža."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "друштвене мреже"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "везе"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "prati"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "profili"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Ocena zvezdicom"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Ocena prikazana kao zvezdice, u koracima od pola zvezdice."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "zvezdice"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "ocena"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "rezultat"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Коraci"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Numerisani koraci procesa, redom, nadole ili jedan pored drugog."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "proces"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "каako се"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "istorija promena"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "numerisano"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Kartica"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Jedna kartica u bloku kartica: njen naslov i panel."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Садржај"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Lista zaglavlja na stranici, napravljena automatski, koja vodi do svakog od njih."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Sadržaj"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "садржај"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "naslovi"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Kartice"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Sadržaj u karticama: posetioci se prebacuju između panela mišem ili tastaturom."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "kartice"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "sa karticama"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "paneli"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Izjava o preporuci"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Citat klijenta sa njihovim imenom, ulogom, fotografijom i opcionalnom ocenom u zvezdicama."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "Pregledaj"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "citat"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "клиεнт"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "povratne informacije"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Opišić"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Reč ili fraza koja prikazuje kratko objašnjenje pri prelazu mišem i fokusu tastature."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "alatka"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Savet"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "definicija"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Profil autora"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Slika, ime, biografija i veze autora ili izabranog korisnika."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "biografija"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "профил"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "o nama"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp dugme za ćaskanje"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Plutajuće dugme u uglu stranice koje otvara WhatsApp čet sa vama."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "Разговор"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "plutajuće"
 
 #: blocks/widget/block.json
 msgctxt "block title"

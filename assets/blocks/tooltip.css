@@ -1,0 +1,85 @@
+/*
+ * Front-end styles for pbs/tooltip and the inline "Tooltip" text format. `__PREFIX__` is the neutral
+ * class prefix; logical properties only. Loaded only where a tooltip renders. The tip is `hidden`
+ * in the markup and shown here on hover and keyboard focus (and while the block is selected in the
+ * editor: .__PREFIX__-is-previewed).
+ */
+.__PREFIX__-tooltip {
+	margin-block: 1em;
+}
+
+.__PREFIX__-tooltip__wrap {
+	--__PREFIX__-tip-bg: #1b1b1b;
+	--__PREFIX__-tip-fg: #fff;
+	position: relative;
+	display: inline-block;
+}
+
+.__PREFIX__-tooltip__trigger {
+	padding: 0;
+	border: 0;
+	border-block-end: 1px dotted currentcolor;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	cursor: help;
+}
+
+.__PREFIX__-tooltip__trigger:focus-visible {
+	outline: 2px solid currentcolor;
+	outline-offset: 2px;
+}
+
+.__PREFIX__-tooltip__tip {
+	position: absolute;
+	z-index: 10;
+	inset-block-end: calc(100% + 0.5rem);
+	inset-inline-start: 50%;
+	inline-size: max-content;
+	max-inline-size: min(18rem, 80vw);
+	padding-block: 0.4em;
+	padding-inline: 0.65em;
+	border-radius: 4px;
+	background-color: var(--__PREFIX__-tip-bg);
+	color: var(--__PREFIX__-tip-fg);
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: 1.4;
+	text-align: center;
+	translate: -50% 0;
+	pointer-events: none;
+}
+
+.__PREFIX__-tooltip__tip:dir(rtl) {
+	translate: 50% 0;
+}
+
+.__PREFIX__-tooltip__wrap--bottom > .__PREFIX__-tooltip__tip {
+	inset-block-start: calc(100% + 0.5rem);
+	inset-block-end: auto;
+}
+
+.__PREFIX__-tooltip__wrap:hover > .__PREFIX__-tooltip__tip,
+.__PREFIX__-tooltip__wrap:focus-within > .__PREFIX__-tooltip__tip,
+.__PREFIX__-tooltip__wrap.__PREFIX__-is-previewed > .__PREFIX__-tooltip__tip {
+	display: block;
+}
+
+.__PREFIX__-tooltip__wrap.__PREFIX__-is-dismissed > .__PREFIX__-tooltip__tip {
+	display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+	.__PREFIX__-tooltip__wrap:hover > .__PREFIX__-tooltip__tip,
+	.__PREFIX__-tooltip__wrap:focus-within > .__PREFIX__-tooltip__tip {
+		animation: __PREFIX__-tip-in 0.12s ease-out;
+	}
+
+	@keyframes __PREFIX__-tip-in {
+
+		from {
+			opacity: 0;
+		}
+	}
+}

@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Yeniden kullanılabilir şablon olarak kaydet"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Erişilebilirlik denetleyicisi"
 
@@ -990,6 +994,7 @@ msgstr "← Farklı bir sağlayıcı seçin"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Adres"
 
@@ -1043,6 +1048,8 @@ msgstr "Test"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Kaldır"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Sağlayıcılardaki model listelerini yenile"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Görseller"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "kapalı"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Aç"
 
@@ -1448,6 +1457,7 @@ msgstr "Henüz yapay zeka isteğinde bulunulmadı."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Tamamlandı"
 
@@ -1515,7 +1525,11 @@ msgstr "Çok fazla deneme yapıldı. Lütfen birkaç dakika sonra tekrar deneyin
 msgid "Something went wrong. Please contact the admin."
 msgstr "Bir şeyler yanlış gitti. Lütfen yöneticiyle iletişime geçin."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Eşle"
 
@@ -1538,52 +1552,385 @@ msgstr "Bu aile saklanmıyor."
 msgid "Removed."
 msgstr "Kaldırıldı."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Geçerli bir yazı tipi ailesi adı değil."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts bu yazı tipini döndürmedi. Adını kontrol edin ve tekrar deneyin."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Yazı tipi dosyaları indirilemedi veya kaydedilemedi. Yüklemeler klasörünün yazılabilir olduğunu kontrol edin."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Yazı tipi stil sayfası kaydedilemedi. Yüklemeler klasörünün yazılabilir olduğunu kontrol edin."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Bu bildirimi kapat"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(yeni bir sekmede açılır)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Tamamlandı:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Yapılacaklar:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Terimler dizini"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s üzerinden %1$s oy aldı"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "İlerleme"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Kodu kopyala"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Kopyalandı"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Bu bileşen bu sitede mevcut değil."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "E-posta"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Telefon"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS akışı"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Web Sitesi"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Bağlantı"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (yeni bir sekmede açılır)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "5 üzerinden %d puan almıştır"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(önerilen)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Dahil"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Dahil değil"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Karşılaştırma tablosu"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Ara: %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "E-posta %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Metin %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "WhatsApp'ta Sohbet Et"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Bize ulaşın"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "WhatsApp üzerinden bizimle sohbet edin"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Bu form şu anda kullanılamıyor."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s etkin olmadığı için bu form gösterilemiyor."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Eşle: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Haritayı göstermek, onu OpenStreetMap'ten yükler."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Haritayı göster"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMap üzerinden haritayı aç"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s tarihinden rezervasyon takvimi"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Rezervasyon takviminin gösterilmesi, onu şuradan yükler: %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Rezervasyon takvimini göster"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%s tarihinde rezervasyon yap"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s için QR kodu"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Tasarım"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "İçerik"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Medya"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Pazarlama"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Site"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Veri"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "İlgili gönderiler"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Gönderi detayları"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Tarafından"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Yayında"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Güncellendi"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "İçinde"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Etiketlendi"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d dakikalık okuma"
+msgstr[1] "%d dakika okuma süresi"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Henüz yorum yok"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d yorum"
+msgstr[1] "%d yorum"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Site Haritası"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(başlık yok)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s adlı kullanıcının tüm yazıları"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Bu içerik korumalıdır. Görmek için şifreyi girin."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Şifre yanlış. Tekrar deneyin."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Şifre"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "İçeriği göster"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "O sayfa kilidi açılamaz."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Çok fazla deneme yapıldı. Birkaç dakika bekleyip tekrar deneyin."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Şifre 4 ila 200 karakter uzunluğunda olmalıdır."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Daha fazla"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Kapat"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Sekme %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "İçindekiler"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Sandwich Studio ile Düzenle"
 msgid "Blank canvas"
 msgstr "Boş tuval"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "İçeriğe geç"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Tablet genişliği 480 ile 2560 arasında tam bir piksel sayısı olmalıdır."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Yüklenen simgeler"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Simge"
 
@@ -2553,6 +2908,8 @@ msgstr "%s müşterimin e-posta adresidir"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Kod"
 
@@ -3048,13 +3405,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Düzenle"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "E-posta"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "E-posta adresi"
 
@@ -3104,6 +3457,10 @@ msgstr "Beyaz etiket modu etkinleştiriliyor"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3126,6 +3483,7 @@ msgstr "Yeni e-posta adresini girin"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Hata"
 
@@ -3724,6 +4082,7 @@ msgstr "%2$s alanının bu sitelerin birebir kopyası olduğu tespit edildiği i
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3827,6 +4186,7 @@ msgstr "Bu eklenti, PHP'nin daha yeni bir sürümünü gerektirir."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Hayır"
 
@@ -4812,6 +5172,13 @@ msgstr "Sosyal medya (Facebook, Twitter vb.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5097,6 +5464,9 @@ msgstr "Zaman Damgası"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Başlık"
 
@@ -5172,6 +5542,8 @@ msgstr "%1$s uygulamasını şimdiye kadar nasıl buldunuz? Tüm %2$s premium ö
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Tür"
@@ -5287,6 +5659,7 @@ msgstr "Kullanıcılar"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Değer"
@@ -5341,6 +5714,7 @@ msgstr "Ücretli özellikleri görüntüle"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Uyarı"
 
@@ -5667,6 +6041,7 @@ msgid "Optional"
 msgstr "İsteğe Bağlı"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Plan"
 
@@ -5989,18 +6364,26 @@ msgstr "Çok küçük"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Küçük"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Orta"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Geniş"
 
@@ -6013,7 +6396,9 @@ msgid "Huge"
 msgstr "Çok Büyük"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6327,16 +6712,9 @@ msgid "The trial could not be started."
 msgstr "Deneme sürümü başlatılamadı."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Özellik"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Dahil"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Dahil değil"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6691,10 +7069,6 @@ msgstr "Giriş adresi"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Kullanıcı Adı"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Şifre"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7090,15 +7464,62 @@ msgstr "Geri alma işlemi başlatıldı. Arka planda devam ediyor; bu sayfadan a
 msgid "Undo all conversions"
 msgstr "Tüm dönüştürmeleri geri al"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Öğe"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Sayfa yüklendiğinde aç"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Başlık bir başlık alanıdır"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Ziyaretçilerin aralarında gezinebilmesi için öğeler sayfanın bölümleri olduğunda başlığı bir başlık yapın."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Başlık %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Soru veya bölüm başlığı"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Akordeon"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Aynı anda yalnızca bir öğe açık"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Arama motorları için SSS olarak işaretle"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Başlıklardan (sorulardan) ve metinlerinden (cevaplardan) oluşturulmuş SSS yapılandırılmış verisi ekler."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Uyarı"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Bilgi"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Başarılı"
 
@@ -7107,6 +7528,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Uyarılar ve hatalar ekran okuyucu kullanıcılara hemen bildirilir; bilgi ve başarı bildirimleri ise yaptıklarını bitirdiklerinde okunur."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Simgeyi göster"
 
@@ -7122,64 +7544,702 @@ msgstr "Başlık (isteğe bağlı)"
 msgid "Write the message…"
 msgstr "Mesajı yazın…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "bölüm — tematik bir bölüm"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Merkez"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — anlamsız"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Rozet"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "üstbilgi — tanıtım içeriği"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Renk"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "alt bilgi — kapanış içeriği"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Tema vurgusu"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "makale — bağımsız içerik"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Nötr"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "kenar çubuğu — ilgili içerik"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Konum"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "ana — ana içerik (sayfa başına bir kez)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Etiket"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — gezinme bağlantıları"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Rezervasyon takvimi"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Yığın (flexbox, sütun)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Hizmet"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Satır (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Rezervasyon sayfası adresi"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Izgara"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Örneğin %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Takvimin ne amaçla kullanıldığı, ekran okuyucular tarafından seslendirilir ve altında gösterilir."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Bu geçerli bir %s rezervasyon sayfası adresi değil, bu nedenle sayfada hiçbir şey görünmeyecektir."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Takvimi önizle"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Bağlantı adresi"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Düğme, hem bir etiket hem de bir adres içerdiğinde görünür."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Yeni sekmede aç"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Eylem çağrısı"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Yerleşim"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Alttaki düğmeler"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Metnin yanındaki düğmeler"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Hizalama"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Ana düğme"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "İkinci düğme"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Başlık…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Şu nedenle bir cümle…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "İkinci düğme (isteğe bağlı)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Kontrol Listesi"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "İşaret rengi"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Satırlar"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Satır %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Görev…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Satır ekle"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Dil"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Otomatik olarak algıla"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Vurgu yok"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Dosya adı"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Kodun üzerinde gösterilir, örneğin functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Satır numaraları"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Kopyala düğmesi"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Uzun satırları kaydır"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Kod yazın veya yapıştırın…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Metin"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Sütunlar"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Sütun %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "%s Öne Çıkar"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Sütun ekle"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Satırlar"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Satır %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Satır ekle"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Başlık (ne karşılaştırılıyor)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Hücre türü: %s. Değiştir"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Telefon araması"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Metin mesajı"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Düğmeler"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Ülke koduyla birlikte telefon numarası"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Düğme metni"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Bu düğmeyi kaldır"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Düğme ekle"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Başlamak için WhatsApp mesajı (isteğe bağlı)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "İletişim düğmeleri"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Kenar çubuğuna bir telefon numarası, e-posta adresi veya WhatsApp numarası ekleyin."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Çift başlık"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Başlık düzeyi"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Sayfanın ana başlığı için her sayfada bir kez H1 kullanın."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "İkinci kısım görünümü"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Vurgu rengi"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Gradyan"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Anahat"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Altı çizili"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "İkinci kısım ayrı bir satırda"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "İlk kısım"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "ikinci bölüm"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "İşaret kalemi"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Kalın alt çizgi"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Arka Plan"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Vurgula"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Vurguyu kaldır"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Büyük baş harf"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Büyük ilk harf"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Bir kutucuktaki ilk harf için \"Kutucuk içinde düşen büyük harf\" stilini seçin."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Kutulu süslü baş harf"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Vurgu çubuğu"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Öne çıkan alıntı (vurgu çubuğu)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Dikkat çekmek için renkli bir çubuğun yanında büyük olarak ayarlanmış metinden bir alıntı."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "Teklif"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Özellik listesi"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Telefonlarda özellikler her zaman üst üste dizilir."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Özellikler"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Özellik %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Özel sima"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Özellik…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Tanımla…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Özellik ekle"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms veya Fluent Forms'u yükleyip etkinleştirin, ardından buradan formlarından birini seçin."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Form eklentisi"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Seç…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Formu doldurun"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Bir form seçin…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s henüz form içermiyor"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s bu sitede aktif değil, bu nedenle bu form gösterilemez."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Form listesi yüklenemedi."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Form stili"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Alanlar"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Çerçeveli"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Dolduruldu"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Altı çizili"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Buton genişliği"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Metni sığdır"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Tam genişlik"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Renkler, yazı tipleri, boşluklar ve köşeler, site tasarımınızdan ve bu bloğun tasarım ayarlarından gelir."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Sitenizin stiline uygun olarak biçimlendirilmiş, form eklentinizden bir form gösterin."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Form eklentisine mi ihtiyacınız var? Contact Form 7 ücretsizdir."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Sözlük"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "A'dan Z'ye Sırala"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Sayfa terimleri alfabetik sırada gösterir; burada onları yazdığınız sırada kalırlar."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "A–Z dizini göster"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Bu sayfada başka bir yerde kullanılan bağlantı terimleri"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Her terim sayfa metninde ilk kez geçtiğinde tanımına bağlanır. Başlıklar, butonlar, kodlar ve mevcut bağlantılar olduğu gibi bırakılır."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Şartlar"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Dönem %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Süre"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Ne anlama geliyor…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Terim ekle"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Simge listesi"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Alt alta"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Yanyana"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Liste öğesi…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Bilgi kutusu"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Kütüphaneden dilediğiniz simgeyi seçin:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Bağlantı metni"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Bağlantının nereye gittiğini belirtin (\"Fiyatlarımızı görün\"), \"Daha fazla oku\" demeyin."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Birkaç cümle…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "bölüm — tematik bir bölüm"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — anlamsız"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "üstbilgi — tanıtım içeriği"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "alt bilgi — kapanış içeriği"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "makale — bağımsız içerik"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "kenar çubuğu — ilgili içerik"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "ana — ana içerik (sayfa başına bir kez)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — gezinme bağlantıları"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Yığın (flexbox, sütun)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Satır (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Izgara"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Düzenleniyor: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Alt öğeleri şu şekilde düzenle:"
 
@@ -7187,7 +8247,7 @@ msgstr "Alt öğeleri şu şekilde düzenle:"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7195,70 +8255,50 @@ msgstr "Alt öğeleri şu şekilde düzenle:"
 msgid "Inherited (%s)"
 msgstr "Devralınan (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Yığılmış bloklar"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Sütunlar"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Tuvale sürükleyin veya yazın"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "İçerik genişliği"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Kutulu (temanın içerik genişliği)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Tam genişlik"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Minimum yükseklik"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML etiketi"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Bağlantı"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Bütün bloğu şuraya bir bağlantı yapın:"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Ekran okuyucular için bağlantı metni"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Bloku göremeyen ziyaretçiler için bağlantının ne işe yaradığı."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Yeni sekmede aç"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Bağlantılı bir bloğun içine bağlantı veya buton koymayın: Bir bağlantı içindeki bağlantı tarayıcılarda çalışmaz."
 
@@ -7290,14 +8330,143 @@ msgstr "+ Satır"
 msgid "− Row"
 msgstr "− Satır"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Konum"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Koordinatları veya bir OpenStreetMap bağlantısını yapıştırın"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org adresinde yeri bulun, ardından adres çubuğundaki adresi kopyalayın veya haritaya sağ tıklayıp \"Adresi göster\" seçeneğini seçin."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Enlem"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Boylam"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Yakınlaştır"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Yerin Adı"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Haritanın altında gösterilir ve ekrandan okuyucular tarafından seslendirilir."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Koordinatları yapıştırın (örneğin 51.5074, -0.1278) veya bir OpenStreetMap bağlantısı ekleyin."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Koordinatlar veya bağlantı"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Haritayı önizle"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMap üzerinde %1$s, %2$s öğesini kontrol edin"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Yazar"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Yayınlanma tarihi"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Güncellenme tarihi (farklı olduğunda)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Kategoriler"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Etiketler"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Okuma süresi"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Yorum sayısı"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Gösterilecek ayrıntılar"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Göstermek için en az bir detay seçin."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "İlerleme çubuğu"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Maksimum"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "Yüzde için 100; 10 üzerinden 8 gibi bir sayı için başka bir rakam."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Yüzdeyi göster"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Bir parola ayarlandı. Ziyaretçiler, bu içeriği girmeleri gerekene kadar içerik yerine bir parola formu görür."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Henüz bir parola belirlenmediği için ziyaretçiler burada hiçbir şey görmüyor."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Yeni parola"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Şifreyi belirle"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Parola belirlendi. Uygulamak için sayfayı kaydedin; sayfanın kilidini açmış olan ziyaretçilerin yeni parolayı girmesi gerekecektir."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Page Builder Sandwich devre dışı bırakılırsa, bu içerik herkese gösterilir."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Şifre formunun üstündeki mesaj (isteğe bağlı)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Değiştir"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Etiket"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7307,30 +8476,698 @@ msgstr "Ekran okuyucular tarafından okunur ve \"Etiketi göster\" açık olduğ
 msgid "Show label"
 msgstr "Etiketi göster"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Web adresi veya metin"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR kodu"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Ekran okuyucular için açıklama"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"QR kodu için\" ifadesini ve metni kullanmak için boş bırakın."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Bir web adresi, telefon bağlantısı (tel:) veya herhangi bir metin yazın."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Bu bir QR kodu için çok uzun. Kısaltın."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Açıklama ekle"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Okuma ilerleme çubuğu"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Pencerenin kenarı"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "En üst"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Alt"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Ziyaretçiler kaydırdıkça pencerenin alt kısmında gösterilir."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Ziyaretçiler kaydırırken pencerenin üst kısmında gösterilir."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Kaç tane"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "İlişkilendiren"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Kategoriler veya etiketler"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "İlişkili öğe bulunmadığında bunun yerine en yenileri göster"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Başlık"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "\"İlgili yazılar\" için boş bırakın."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Öne çıkan görseli göster"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Tarihi göster"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Özet göster"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Bu gönderinin kategorilerini veya etiketlerini paylaşan henüz başka bir gönderi yok. Paylaştıklarında burada görünecekler."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Kalıp pencere"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Canvas dışı panel"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Boyut"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Şuradan kayarak girer"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Başlangıç, okumanın başladığı taraftır: İngilizcede sol, Arapçada sağ."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Arkadaki sayfaya tıklandığında kapat"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Pencere başlığı"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Onay işareti"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Çember"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Çapraz"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Nokta"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Ok"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Yıldızla"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Simge rengi"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Metinle aynı"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Tema birincil"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "İkincil tema"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Tema kontrastı"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Sayfadaki başlıkları sırayla tutun: yer aldığı bölümün bir alt seviyesindeki başlık."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Simge seç"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Varsayılan simgeyi kullan"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Bir simge seçin"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Yukarı taşı"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Aşağı taşı"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Her tür için bir başlık göster"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Seçtiğiniz türlerde henüz yayınlanan bir içerik yok."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Bağlantılar"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Bağlantı %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Ağ"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Bir profil adresi, mailto:you@example.com veya tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Ekran okuyucular için okunan ad"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Diğer simge"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Bağlantı ekle"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Göz at"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Stil"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Yalnızca simge"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Ölçü"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Köşeli kare"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Kare"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Profilleri yeni sekmede aç"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Yıldız derecelendirmesi"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Değerlendirme"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Yıldız sayısı"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Sayıyı göster"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Adımlar"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Sayfanın aşağısına"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Yan yana (telefonlarda alt alta)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Numara rengi"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Adımların sırası"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Adım %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Adım…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Ne yapmalı..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Adım ekle"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Sekme"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Sayfaya başlıklar ekleyin; bunlar burada listelenecektir."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "İçindekiler"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Başlık seviyesinden"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Başlık düzeyine"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Numaralandırılmış"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Daraltılabilir"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Daraltılmış olarak başlat"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Okunmakta olan bölümü vurgula"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Sekmeler"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Ekran okuyucular için ad"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "İsteğe bağlı. Sekmelerin ne hakkında olduğunu belirtir, örneğin \"Planlar\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Sayfa yüklendiğinde aç"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Yanlarda sekmeler"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Sekme ekle"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Referans"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Fotoğrafı değiştir"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Fotoğraf seç"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Fotoğrafı kaldır"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Fotoğraf açıklaması"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Fotoğrafta yalnızca yanında adı geçen kişi görünüyorsa bu alanı boş bırakın."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Yıldız puanı (0 = yok)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Alıntı altındaki ad"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Alıntının yanındaki fotoğraf"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Müşterinin söylediği…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Rol veya şirket"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "İpucu"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "İpucu metni"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Kısa tutun: bir veya iki cümle. Ekran okuyucular bunu açıkladığı sözcükle birlikte okur."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Göster"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Yukarıda"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Aşağıda"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Kelime veya ifade"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Uygula"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Profil"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Kimin profili"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Yazının yazarı"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Profil fotoğrafını göster"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Biyografiyi göster"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Gönderilere ve web sitesine bağlantıları göster"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Yazar profili"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Hangi profili göstereceğinizi seçin."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Ülke koduyla birlikte WhatsApp numarası"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Örneğin +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Başlangıç mesajı (isteğe bağlı)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Simgenin yanında metni göster"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Köşe"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Alt uç (İngilizce'de sağ)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Sol alt (İngilizcede sol)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "WhatsApp numaranızı kenar çubuğuna ekleyin. O zamana kadar düğme sayfada gösterilmez."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Sayfada bu düğme, ekranın alt köşelerinden birinde yüzer."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Kısa kod etiketi"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Yalnızca harf, sayı, tire ve alt çizgi kullanın."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Öznitelik adı"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Öznitelik ekle"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Kısa kod"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Diğer nitelikler"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Blok ayarlarında bir kısa kod etiketi seçin."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Galeri"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Görsel boyutu"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Küçük Resim"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Orijinal boyut"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Şuraya bağla"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Ek sayfası"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Medya dosyası"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Ses"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Video"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Dosya adresi"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Döngü"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Otomatik oynat"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Kapak görseli"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Oynatma Listesi"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Virgülle ayrılmış Medya ID'leri"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Parça listesini göster"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Göm"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Gömülecek adres"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Maksimum genişlik"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Alt Yazı"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "Görsel ve altyazı HTML'i"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Genişlik"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "İpucu: Form bloğu, bu formu sitenize uyumlu bir tasarımla gösterir."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Form başlığını göster"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Form açıklamasını göster"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Sayfayı yeniden yüklemeden gönder"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7351,123 +9188,108 @@ msgstr "Dosya seç"
 msgid "— Default —"
 msgstr "— Varsayılan —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Gelişmiş biçimlendirme"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Satır İçi CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS bildirimleri, örneğin: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Efektler (eski sınıflar)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Eski sürümlerden aktarılan, boşlukla ayrılmış efekt adları, örneğin: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Satır"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Genişlik"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Tam genişlik, içerik ortada tutulur"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Bağlantı adresi"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Bağlantı ilişkisi"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Hizalama"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Sol"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Merkez"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Sağ"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Düğme metni"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Metin ekle…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Yerleşim"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Ayrı bir satırda"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Satır içinde, diğer içeriğin yanında"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Otomatik (sayfanın en üst düzeyinde kendi satırında)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Erişilebilir etiket"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Dekoratif bir simge için boş bırakın."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Blok ayarlarından bir simge seçin."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Yeni ayar adı"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Örneğin: başlık veya metin"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Ayar ekle"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Bileşen"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Bir araç takımı seçin"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Bileşen alanı"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Bir widget alanı seçin"
 
@@ -7490,6 +9312,142 @@ msgstr "Bu gömülü içerik yüklendiğinde kendi boyutunu değiştirir, bu da 
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Sayfa kayması"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Bu widget ayarlarını açıklamadığı için ad ve değer çiftleri olarak düzenlenirler."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Sorun"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Kontrol et"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Bloğu göster"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Okunabilir bir tema rengi kullanın"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "H%d yapın"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Alternatif metin"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Alternatif metni kaydet"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Bu görsel dekoratif amaçlıdır"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Kontrol ediliyor…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Bu sayfada erişilebilirlik sorunu bulunamadı."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d sorun"
+msgstr[1] "%d sorun"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "Kontrol edilecek %d şey"
+msgstr[1] "%d kontrol edilecek şey"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Tekrar kontrol et"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Otomatik bir kontrol birçok sorunu bulur ancak hepsini değil. Sayfayı ayrıca yalnızca klavye ile ve bir ekran okuyucu ile deneyin."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Metin kontrastı %1$s:1; okunabilir olması için en az %2$s:1 olması gerekir."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "buraya tıklayın,burada,daha fazla oku,daha fazla,bağlantı,bu bağlantı,daha fazla bilgi edinin,git"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Bir bağlantının metni yok, bu nedenle ekran okuyucu yalnızca \"bağlantı\" seslendirir. Metin veya etiket ekleyin."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "\"%s\" bağlantı metni nereye gittiğini belirtmiyor. Bunun yerine hedefi açıklayın."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Bir elemanın pozitif tabindex değeri var, bu da klavye sırasını okuma sırasından uzaklaştırır. 0 kullanın veya kaldırın."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Tıklanabilir bir öğeye klavyeyle ulaşılamıyor. Gerçek bir düğme veya bağlantı kullanın."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Gömülü çerçevenin başlığı yok, bu nedenle ekran okuyucu bunun ne olduğunu söyleyemez."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Bir form alanının etiketi yok, bu nedenle amacı duyurulmuyor."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Bu başlık boş. Ekran okuyucu kullanıcıları başlıklar aracılığıyla gezinir; başlığı kaldırın veya metin ekleyin."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Sayfa başlığı zaten H1; içerik düzeyi için H2 kullanın."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Bu H%1$d bir seviye atlıyor; bundan önceki H%2$d. Bunu bir H%3$d yapın."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Bu görselin alternatif metni yok. Açıklayın veya hiçbir şey katmıyorsa dekoratif olarak işaretleyin."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Paneli kapat"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7564,18 +9522,6 @@ msgstr "Özel"
 msgid "Width / height"
 msgstr "Genişlik / yükseklik"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "En üst"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Alt"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7588,20 +9534,6 @@ msgstr "Devralınan görsel — değiştir"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Görseli kaldır"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Konum"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Boyut"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7667,22 +9599,6 @@ msgstr "Her iki taraf da ayrı ayrı"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Kenar"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Stil"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Renk"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7932,14 +9848,6 @@ msgstr "%1$s (%2$d adet)"
 msgid "Replace icon"
 msgstr "Simgeyi değiştir"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Simge seç"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Bir simge seçin"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Eşleşen simge yok."
@@ -7951,10 +9859,6 @@ msgstr "Düzenli"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Markalar"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Çerçeveli"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8083,21 +9987,9 @@ msgstr "Metin rengi"
 msgid "Cursor"
 msgstr "İmleç"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Ok"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "İşaretçi"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Metin"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8255,10 +10147,6 @@ msgstr "Alan adı"
 msgid "Named areas"
 msgstr "Adlandırılmış alanlar"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Satırlar"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Yükseklik"
@@ -8376,10 +10264,6 @@ msgstr "İki İki Yana Yasla"
 msgid "Decoration"
 msgstr "Dekorasyon"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Altı çizili"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Üst çizgi"
@@ -8462,19 +10346,9 @@ msgstr "Konik"
 msgid "Angle (degrees)"
 msgstr "Açı (derece)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Ölçü"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Elips"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Çember"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8510,10 +10384,6 @@ msgstr "Arka plan doluluk oranı (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Ton (şeffaf bir renk kullanın)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Köşeli kare"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Nesne"
@@ -8530,10 +10400,6 @@ msgstr "Üçgen"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Elmas"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Yıldızla"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9411,11 +11277,6 @@ msgstr "Temizle"
 msgid "The change could not be saved."
 msgstr "Değişiklik kaydedilemedi."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Paneli kapat"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Varsayılan Tema"
@@ -9472,9 +11333,49 @@ msgstr "Sınıflar, belirteçler, karanlık mod, marka kiti ve özel yazı tiple
 msgid "Open the Site Editor’s styles"
 msgstr "Site Düzenleyicisinin stillerini açın"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Başlık"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Stil sekmesiyle biçimlendirilmiş, daha dar satır yüksekliğine sahip bir başlık."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Stil sekmesi ile biçimlendirilmiş bir metin paragrafı."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Görsel"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Stil sekmesiyle biçimlendirilmiş, köşeleri yuvarlatılmış bir görsel."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Stil sekmesiyle biçimlendirilmiş, Medya Kitaplığı'ndan bir video."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Boşluk"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Bloklar arasında boş alan; Stil sekmesinden her ekran boyutu için farklı bir yükseklik ayarlayın."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Ayırıcı"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Stil sekmesiyle biçimlendirilmiş, bölümler arası yatay çizgi."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Adresini yapıştırarak başka bir siteden içerik (bir video, bir gönderi, bir harita) ekleyin."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Stil sekmesiyle biçimlendirilmiş bir ızgara içindeki birkaç görsel."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9508,10 +11409,6 @@ msgstr "Liste"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Etiketler"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Düğmeler"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9556,10 +11453,6 @@ msgstr "Bu sayfanın çevrilmediği dilleri gizle"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Dikey olarak hizala"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Arka Plan"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9618,11 +11511,6 @@ msgstr "Blok ayarları"
 #, js-format
 msgid "Add block: %s"
 msgstr "Blok ekle: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(başlık yok)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9698,10 +11586,6 @@ msgstr "Güvenli modu kapat"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Güvenli modu aç (diğer eklentiler kapalı, sizin için, yalnızca Studio'da)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Yayında"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10041,11 +11925,6 @@ msgstr "Oluşturucu adı"
 msgid "Visual editor name"
 msgstr "Görsel düzenleyici adı"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Yazar"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10119,10 +11998,6 @@ msgstr[1] "Geri alındı: %d sayfa geri yüklendi."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Değiştir"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Bağlantılar"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10232,10 +12107,6 @@ msgstr "Bu sayfaya bir müşterinin yorum yapmasına izin verin"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Bağlantıya sahip herkes, bu sayfa henüz yayınlanmamış olsa bile sayfayı görebilir ve yorum bırakabilir. Hesap gerekmez."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Kopyalandı"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10478,6 +12349,52 @@ msgstr "Görselleri bu sitenin medya kütüphanesine kopyalayın"
 msgid "Show what will happen"
 msgstr "Ne olacağını göster"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Akordiyon öğesi"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Akordiyonun bir bölümü: içeriğini açan bir başlık."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Akordeon"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Açılıp kapanan sorular veya bölümler. İsteğe bağlı olarak aynı anda yalnızca biri ve arama motorları için isteğe bağlı olarak SSS olarak işaretlenmiş."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "akordeon"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "SSS"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "aç-kapa"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "Daralt"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "ayrıntılar"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10494,6 +12411,7 @@ msgid "notice"
 msgstr "bildirim"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "mesaj"
@@ -10508,6 +12426,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "uyarı"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Rozet"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Yeni, İndirim veya En iyi değer gibi kısa bir etiket."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "etiket"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "etiket"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "hap"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "yeni"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Rezervasyon takvimi"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Ziyaretçi talep ettiğinde yüklenen bir Calendly veya Cal.com rezervasyon takvimi."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "rezervasyon"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "Calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "randevu"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "Zamanla"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10519,6 +12502,7 @@ msgid "A link styled as a button."
 msgstr "Düğme biçiminde bir bağlantı."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "düğme"
@@ -10532,6 +12516,98 @@ msgstr "bağlantı"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "eyleme çağrı"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Eylem çağrısı"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Bir başlık, bir cümle ve ziyaretçinin harekete geçmesini isteyen bir veya iki düğme."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "Harekete geç"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "banner"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Kayıt ol"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Kontrol Listesi"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Ekran okuyucular için sözcüklerle ve ayrıca bir tik işaretiyle belirtilmiş, her biri tamamlandı veya henüz yapılmadı olarak işaretlenmiş bir görev listesi."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Yapılacaklar"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "görevler"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "işaretler"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "liste"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Kod"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Sözdizimi vurgulama, satır numaraları ve bir kopyalama düğmesi içeren bir kod listesi. Eklenti kapatılsa bile okunabilir kalır."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "kod"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "sözdizimi"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "vurgula"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "kod parçacığı"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "programlama"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10555,6 +12631,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "düzen"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Karşılaştırma tablosu"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Ekran okuyucuların kelime olarak okuduğu evet ve hayır işaretleriyle planlar veya ürünler yan yana."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "Karşılaştır"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Fiyatlandırma"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "planlar"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "tablo"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "özellikler"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "İletişim düğmeleri"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Arama, e-posta gönderme, kısa mesaj atma veya WhatsApp üzerinden mesajlaşma düğmeleri."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "İletişim"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "ara"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "telefon"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "e-posta"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "whatsapp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10572,11 +12726,13 @@ msgid "container"
 msgstr "kapsayıcı"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "kutu"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10593,6 +12749,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "sütunlar"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Çift başlık"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "İki parçalı bir başlık; ikincisi renk, gradyan, dış çizgi veya alt çizgi ile vurgulanmıştır."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "başlık"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "Başlık"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "gradiyen"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Özellik listesi"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Bir simge, bir başlık ve kısa bir açıklama içeren ızgara düzenindeki özellikler."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Avantajlar"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "hizmetler"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10636,6 +12838,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "metin"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Formül"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Contact Form 7, WPForms, Gravity Forms veya Fluent Forms eklentilerine ait bir formu, sitenizin tasarımına uyumlu olacak şekilde gösterir."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "form"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "İletişim Formu 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Terimler Sözlüğü"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "A'dan Z'ye sıralanmış ve her biri kendi bağlantısına sahip terimler ve tanımları. Sayfadaki her terimin ilk geçişini tanımına bağlayabilir."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Şartlar"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "tanımlar"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "sözlük"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Simge listesi"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Her satırın bir simgeyle başladığı bir liste: bir onay işareti, bir ok veya kütüphaneden herhangi bir simge."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "maddeler"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "simgeler"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10656,6 +12938,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Bilgi Kutusu"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Bir simge, kısa bir başlık, bir veya iki cümle ve isteğe bağlı bir bağlantı: hizmetler, avantajlar veya iletişim bilgileri için."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "Özellik"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "hizmet"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "kart"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10675,6 +12982,204 @@ msgstr "çeviri"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "çok dilli"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Eşle"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap'ten bir yerin haritası: anahtar yok ve ziyaretçi haritayı isteyene kadar OpenStreetMap'ten hiçbir şey yüklenmez."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "eşle"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "konum"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "adres"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Kalıp pencere"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "İçinde herhangi bir blokla, sayfanın üzerinde bir pencere açan bir düğme."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "Kalıp"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "açılır pencere"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "ışık kutusu"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "iletişim kutusu"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Canvas dışı panel"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Pencerenin kenarından, içindeki tüm bloklarla birlikte bir paneli kaydıran bir düğme."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "ekran dışı"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "Çekmece"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "kenar çubuğu"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "panel"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "menü"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Gönderi ayrıntıları"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Gönderinin yazarı, tarihleri, kategorileri, etiketleri, okuma süresi ve yorum sayısı."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "Yazar"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "tarih"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "okuma süresi"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "Meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "yazan"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "İlerleme çubuğu"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Bir beceri veya hedef gibi bir şeyin ne kadar ilerlediğini gösteren etiketli bir çubuk."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "İlerleme"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "çubuk"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "Yetenek"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "hedef"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Parola korumalı içerik"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Yalnızca parolaya sahip ziyaretçilerin görebileceği bloklar. Parolayı girene kadar içerik sayfada hiç yer almaz."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "parola"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Korumalı"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "özel"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "kilitle"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "üyeler"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10700,6 +13205,86 @@ msgstr "açık renk"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "renk şeması"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Karekod"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Kendi sitenizde çizilen, bir web adresine veya herhangi bir metne ait bir QR kod (hiçbir QR servisi kullanılmaz)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "Karekod"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "Karekod"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "barkod"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "tara"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Okuma ilerleme çubuğu"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Ziyaretçiler sayfada gezindikçe dolan, pencerenin kenarındaki ince bir çubuk."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "Okunuyor"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "kaydır"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "İlgili yazılar"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Bu gönderinin kategorilerini veya etiketlerini paylaşan gönderiler, görselleri, tarihleri ve özetleriyle birlikte."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "ilişkili"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "yazılar"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "benzer"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "daha fazla"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10763,13 +13348,284 @@ msgstr "Temanın bileşen alanlarından birindeki bileşenleri gösterir."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "kenar çubuğu"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "bileşen alanı"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Site Haritası"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Sayfa ağacının korunduğu, yayınlanan her sayfanın ve gönderinin (ve diğer genel içeriğin) listelendiği bir sayfa."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "site haritası"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "site haritası"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "dizin"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "tüm sayfalar"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Sosyal medya simgeleri"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Ağların kendi simgeleriyle çizilen profillerinize bağlantılar."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "sosyal"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "bağlantılar"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "takip et"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "profiller"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Yıldız derecelendirmesi"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Yarım yıldız adımlarıyla yıldız olarak gösterilen bir puan."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "yıldızlar"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "Değerlendirme"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "puan"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Adımlar"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Sayfanın aşağısında veya yan yana olacak şekilde, sırasıyla bir sürecin numaralandırılmış adımları."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "işlem"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "nasıl yapılır"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "zaman çizelgesi"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "Numaralandırılmış"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Sekme"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Sekmeler bloğunun bir sekmesi: başlığı ve paneli."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "İçindekiler"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Her birine bağlantı veren ve otomatik olarak oluşturulan sayfa başlıklarının listesi."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "İçindekiler tablosu"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "içindekiler"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "Başlıklar"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Sekmeler"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Sekmelerdeki içerik: ziyaretçiler fare veya klavye ile paneller arasında geçiş yapar."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "sekmeler"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "sekmeli"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "paneller"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Referans"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Müşteri adı, unvanı, fotoğrafı ve isteğe bağlı yıldız derecelendirmesi içeren bir müşteri alıntısı."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "incele"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "alıntı"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "müşteri"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Geri bildirim"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "İpucu"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "İmleç üzerine getirildiğinde ve klavye odağında kısa bir açıklama gösteren bir sözcük veya ifade."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "ipucu"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "İpucu"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "tanım"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Yazar profili"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Yazarın resmi, adı, biyografisi ve bağlantıları veya seçilen bir kullanıcınınkililer."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "biyografi"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "profil"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "hakkında"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp sohbet düğmesi"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Sayfanın bir köşesinde sizinle bir WhatsApp sohbeti başlatan kayan bir düğme."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "sohbet"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "sabit olmayan"
 
 #: blocks/widget/block.json
 msgctxt "block title"

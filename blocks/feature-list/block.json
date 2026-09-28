@@ -1,0 +1,62 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/feature-list",
+	"title": "Feature list",
+	"category": "pbs-content",
+	"icon": "grid-view",
+	"description": "Features in a grid, each with an icon, a heading and a short description.",
+	"keywords": [
+		"features",
+		"benefits",
+		"grid",
+		"services"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			},
+			"role": "content"
+		},
+		"icon": {
+			"type": "string",
+			"enum": [
+				"check",
+				"star",
+				"info",
+				"arrow",
+				"dot",
+				"circle"
+			],
+			"default": "check"
+		},
+		"columns": {
+			"type": "integer",
+			"default": 3
+		},
+		"level": {
+			"type": "integer",
+			"default": 2
+		},
+		"accent": {
+			"type": "string",
+			"enum": [
+				"text",
+				"primary",
+				"secondary",
+				"contrast"
+			],
+			"default": "primary"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

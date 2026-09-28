@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Hifadhi kama muundo unaoweza kutumika tena"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Kichunguzi cha ufikivu"
 
@@ -990,6 +994,7 @@ msgstr "← Chagua mtoa huduma mwingine"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Anwani"
 
@@ -1043,6 +1048,8 @@ msgstr "Jaribu"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Ondoa"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Onyesha upya orodha za mifni kutoka kwa watoa huduma"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Picha"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "imezimwa"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Fungua"
 
@@ -1448,6 +1457,7 @@ msgstr "Hakuna maombi ya AI yaliyofanywa bado."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Imekamilika"
 
@@ -1515,7 +1525,11 @@ msgstr "Jaribio ni mengi mno. Tafadhali jaribu tena baada ya dakika chache."
 msgid "Something went wrong. Please contact the admin."
 msgstr "Kuna kitu kimeenda vibaya. Tafadhali wasiliana na msimamizi."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Ramani"
 
@@ -1538,52 +1552,385 @@ msgstr "Familia hiyo haijahifadhiwa."
 msgid "Removed."
 msgstr "Imeondolewa."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Hilo sio jina sahihi la familia ya fonti."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts haikurudisha familia hiyo. Angalia jina na ujaribu tena."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Faili za fonti hazikuweza kupakuliwa au kuhifadhiwa. Hakikisha kuwa folda ya kupakia inaweza kuandikika."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Faili la mtindo wa fonti halikuweza kuhifadhiwa. Hakikisha kuwa folda ya kupakia ina ruhusa ya kuandikwa."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Odoa taarifa hii"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(inafunguka kwenye kichupo kipya)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Imekamilika:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Cha kufanya:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Faharasa ya faharasa"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Imepimwa alama ya %1$s kati ya %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Maendeleo"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Nakili msimbo"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Imenakopwa"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Wijeti hiyo haipatikani kwenye tovuti hii."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Barua pepe"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Simu"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Mtiririko wa RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Tovuti"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Unganisha"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (inafungua katika kichupo kipya)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Imekadiriwa %d kati ya 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(inapendekezwa)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Imejumuishwa"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Haijajumuishwa"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Jedwali la kulinganisha"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Piga %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Barua pepe %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Maandishi %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Wasiliana kupitia WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Wasiliana nasi"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Piga gumzo nasi kwenye WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Fomu hii haipatikani kwa sasa."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Fomu hii haiwezi kuonyeshwa kwa sababu %s haifanyi kazi."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Ramani: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Kuonyesha ramani kunatoa mzigo wake kutoka OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Onyesha ramani"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Fungua ramani kwenye OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Kalenda ya kuweka nafasi kutoka %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Kuonyesha kalenda ya kuweka nafasi kunainyanyua kutoka %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Onyesha kalenda ya kuweka nafasi"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Weka kwenye %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Msimbo wa QR kwa ajili ya %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Muundo"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Maudhui"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Vyombo vya habari"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Masoko"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Tovuti"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Data"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Machapisho yanayohusiana"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Maelezo ya chapisho"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Na"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Imechapishwa"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Imesasishwa"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Katika"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Imetambulishwa"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "Somo la dakika %d"
+msgstr[1] "Dakika %d za kusoma"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Hakuna maoni bado"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "maoni %d"
+msgstr[1] "maoni %d"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Ramani ya tovuti"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(hakuna kichwa)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Machapisho yote ya %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Maudhui haya yamelindwa. Weka nenosiri ili kuyaona."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Nywila hiyo si sahihi. Jaribu tena."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Nenosiri"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Onyesha maudhui"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Ukurasa huo hauwezi kufunguliwa."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Jaribio ni mengi mno. Subiri dakika kadhaa kisha ujaribu tena."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Nywila lazima iwe na urefu wa herufi 4 hadi 200."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Zaidi"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Funga"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Tabu %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Yaliyomo"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Hariri kwa Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Turubai tupu"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Ruka hadi maudhui"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Upana wa kompyuta kibao lazima uwe nambari kamili ya saizi kutoka 480 hadi 2560."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Aikoni zilizopakiwa"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Ikoni"
 
@@ -2553,6 +2908,8 @@ msgstr "%s ni barua pepe ya mteja wangu"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Nambari ya siri"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Hariri"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Barua pepe"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Anwani ya barua pepe"
 
@@ -3103,6 +3456,10 @@ msgstr "Inasubuisha hali ya lebo nyeupe"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "Weka barua pepe mpya"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Hitilafu"
 
@@ -3723,6 +4081,7 @@ msgstr "Bidhaa zifuatazo zimewekwa katika hali salama kwa sababu tumegundua kuwa
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "Programu-jalizi hii inahitaji toleo jipya zaidi la PHP."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Hapana"
 
@@ -4811,6 +5171,13 @@ msgstr "Mitandao ya kijamii (Facebook, Twitter, n.k.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "Muhuri wa Wakati"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Kichwa cha habari"
 
@@ -5171,6 +5541,8 @@ msgstr "Unaipendaje %1$s hadi sasa? Jaribu vipengele vyetu vyote vya kulipia vya
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Aina"
@@ -5286,6 +5658,7 @@ msgstr "Watumiaji"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Thamani"
@@ -5340,6 +5713,7 @@ msgstr "Tazama vipengele vinavyolipishwa"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Onyo"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "Si lazima"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Mpango"
 
@@ -5988,18 +6363,26 @@ msgstr "Ndogo sana"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Ndogo"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Wastani"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Kubwa"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "Kubwa"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "Jaribio halikuweza kuanzishwa."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Kipengele"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Imejumuishwa"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Haijajumuishwa"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "Anwani ya kuingia"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Jina la mtumiaji"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Nenosiri"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7088,15 +7462,62 @@ msgstr "Tendeni limeanza. Linaendelea chinichini; unaweza kuacha ukurasa huu."
 msgid "Undo all conversions"
 msgstr "Tendua mabadiliko yote"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Kipengele"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Fungua ukurasa unapopakia"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Kichwa cha habari ni kichwa cha sehemu"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Fanya kichwa cha habari kiwe kichwa cha sehemu wakati vipengele ni sehemu za ukurasa, ili wageni waweze kuruka kati yao."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Kichwa cha habari %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Swali au kichwa cha sehemu"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Akodioni"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Kipengele kimoja tu ndicho kilicho wazi kwa wakati mmoja"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Weka alama kama Maswali Yanayoulizwa Mara kwa Mara kwa ajili ya injini za utafutaji"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Inaongeza data iliyopangwa ya Maswali Yanayoulizwa Mara kwa Mara (FAQ) iliyojengwa kutoka kwa vichwa (maswali) na maandishi yake (majibu)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Tahadhari"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Taarifa"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Imefanikiwa"
 
@@ -7105,6 +7526,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Maonyo na makosa hutangazwa kwa watumiaji wa visoma skrini mara moja; taarifa na arifa za mafanikio husomwa wanapomaliza kile wanachofanya."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Onyesha aikoni"
 
@@ -7120,64 +7542,702 @@ msgstr "Kichwa cha habari (si lazima)"
 msgid "Write the message…"
 msgstr "Andika ujumbe…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "sehemu — sehemu ya maudhui"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Kituo"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — haina maana"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Beji"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "kichwa cha habari — maudhui ya utangulizi"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Rangi"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "kijachini — maudhui ya mwisho"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Rangi ya mandhari"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "makala — maudhui yanayojitegemea"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Bila upande"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "kando — maudhui yanayohusiana"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Nafasi"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — maudhui kuu (mara moja kwa kila kurasa)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Lebo"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "urambaza — viungo vya urambazaji"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Kalenda ya kuweka nafasi"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Safu (flexbox, safu wima)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Huduma"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Safu (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Anwani ya ukurasa wa kuweka nafasi"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Gridi"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Kwa mfano %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Lengo la kalenda, linasomwa na visoma skrini na kuonyeshwa chini yake."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Hii siyo anwani ya ukurasa wa kuweka miadi wa %s, kwa hiyo hakuna kitakachoonekana kwenye ukurasa."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Hakiki kalenda"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Anwani ya kiungo"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Kitufe huonekana ikiwa kina lebo na anwani zote mbili."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Fungua katika kichupo kipya"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Wito wa kuchukua hatua"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Mpangilio"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Vifungo vilivyo hapa chini"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Vitufe vilivyo karibu na maandishi"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Mpangilio"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Kitufe kikuu"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Kitufe cha pili"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Inakaribia…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Sentensi moja kuhusu kwanini…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Kitufe cha pili (si lazima)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Orodha ya kukagua"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Rangi ya tiki"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Mistari"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Mstari wa %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Kazi…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Ongeza mstari"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Lugha"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Gundua kiotomatiki"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Hakuna uangaziaji"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Jina la faili"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Inaonyeshwa juu ya msimbo, kwa mfano functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Nambari za mistari"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Kitufe cha kunakili"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Funga mistari mirefu"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Andika au bandika msimbo…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Maandishi"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Nguzo"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Safu %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Angaza %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Ongeza safu wima"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Safu"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Safu %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Ongeza safu"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Maelezo (kinacholinganishwa)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Aina ya seli: %s. Badilisha"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Simu ya mkononi"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Ujumbe wa maandishi"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Vifungo"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Nambari ya simu, pamoja na nambari ya nchi"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Maandishi ya kitufe"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Ondoa kitufe hiki"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Ongeza kitufe"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Ujumbe wa WhatsApp wa kuanzia (si lazima)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Vitufe vya mawasiliano"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Ongeza nambari ya simu, anwani ya barua pepe au nambari ya WhatsApp kwenye upau wa kando."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Kichwa cha habari cha mara mbili"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Kiwango cha kichwa"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Tumia H1 mara moja kwa kila ukurasa, kwa kichwa chake kikuu."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Sehemu ya pili angalia"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Rangi ya lafudhi"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Mandhari yenye rangi mchanganyiko"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Muhtasari"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Pigia mstari chini"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Sehemu ya pili kwenye mstari wake pekee"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Sehemu ya kwanza"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "sehemu ya pili"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Kalamu ya wino"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Mstari mnene wa chini"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Mandharinyuma"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Angazia"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Ondoa uwekaji alama"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Herufi kubwa ya kwanza"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Herufi kubwa ya kwanza"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Kwa herufi ya kwanza kwenye sanduku, chagua mtindo wa \"Herufi kubwa iliyotumbukizwa kwenye sanduku\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Herufi kubwa ya kwanza iliyo ndani ya sanduku"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Upau wa rangi"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Nukuu kuu (upau wa mkazo)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Nukuu kutoka katika maandishi, iliyowekwa kubwa kando ya upau wa rangi ili kuvutia macho."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "nukuu"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Orodha ya vipengele"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Kwenye simu vipengele huwa vinajipanga kwa wima kila wakati."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Vipengele"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Kipengele %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Aikoni ya mmiliki"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Kipengele…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Elezea…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Ongeza kipengele"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Sakinisha na uwashe Contact Form 7, WPForms, Gravity Forms au Fluent Forms, kisha uchague mojawapo ya fomu zake hapa."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Programu jalizi ya fomu"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Chagua..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Fomu"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Chagua fomu…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s haina fomu bado"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s haijawe 활성화a kwenye tovuti hii, kwa hivyo fomu hii haiwezi kuonyeshwa."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Orodha ya fomu haikuweza kupakiwa."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Mtindo wa fomu"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Sehemu"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Imeelezwa kwa mistari"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Imejazwa"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Imesisitizwa chini"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Upana wa kitufe"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Linganisha maandishi"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Upana kamili"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Rangi, fonti, nafasi na pembe zinatoka kwenye muundo wa tovuti yako na mipangilio ya muundo wa kizuizi hiki."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Onyesha fomu kutoka kwa programu jalizi yako ya fomu, ambayo imepambwa ili kuendana na tovuti yako."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Unahitaji plagi ya fomu? Contact Form 7 ni bure."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Kamusi"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Panga A hadi Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Ukurasa huu unaonyesha maneno kwa mpangilio wa alfabeti; hapa yanabaki katika mpangilio uliowaandika."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Onyesha faharisi ya A–Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Unganisha maneno yanayotumika pengine kwenye ukurasa huu"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Mara ya kwanza kila neno linapotokea kwenye maandishi ya ukurasa huunganishwa na ufafanuzi wake. Vichwa vya habari, vitufe, msimbo na viungo vilivyopo huachwa jinsi vilivyo."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Masharti"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Kipindi %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Kipindi"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Maana yake…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Ongeza neno"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Orodha ya aikoni"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Moja chini ya nyingine"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Kando na kando"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Orodhesha kipengele…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Sanduku la maelezo"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Au chagua ikoni yoyote kutoka kwenye maktaba:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Maandishi ya kiungo"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Eleza mahali ambapo kiungo kinaelekea (\"Tazama bei zetu\"), sio \"Soma zaidi\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Sentensi moja au mbili..."
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "sehemu — sehemu ya maudhui"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — haina maana"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "kichwa cha habari — maudhui ya utangulizi"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "kijachini — maudhui ya mwisho"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "makala — maudhui yanayojitegemea"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "kando — maudhui yanayohusiana"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — maudhui kuu (mara moja kwa kila kurasa)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "urambaza — viungo vya urambazaji"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Safu (flexbox, safu wima)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Safu (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Gridi"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Inahariri: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Panga vipengele vya ndani kama"
 
@@ -7185,7 +8245,7 @@ msgstr "Panga vipengele vya ndani kama"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7193,70 +8253,50 @@ msgstr "Panga vipengele vya ndani kama"
 msgid "Inherited (%s)"
 msgstr "Imetolewa kutoka kwa mzazi (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Vizuvisi vilivyopangwa"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Nguzo"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Buruta kwenye turubai, au andika"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Upana wa maudhui"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Boxed (upana wa maudhui ya mada)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Upana kamili"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Urefu wa chini"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Lebo ya HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Unganisha"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Fanya block yote iwe kiungo cha kwenda"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Maandishi ya kiungo kwa ajili ya wasomaji skrini"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Kile ambacho kiungo hufanya, kwa wageni ambao hawawezi kuona kizuizi hiki."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Fungua katika kichupo kipya"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Usiweke viungo au vitufe ndani ya kizuizi kilichounganishwa: kiungo kilicho ndani ya kiungo hakifanyi kazi katika vivinjari."
 
@@ -7288,14 +8328,143 @@ msgstr "+ Safu"
 msgid "− Row"
 msgstr "− Safu mlalo"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Weka"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Bandika viwianishi au kiungo cha OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Kwenye openstreetmap.org, tafuta eneo hilo, kisha nakili anwani kutoka kwenye mwambaa wa kivinjari, au bofya kulia kwenye ramani na uchague \"Onyesha anwani\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Latitudo"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Longitudo"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Kuza"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Jina la eneo hilo"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Inaonyeshwa chini ya ramani na kusomwa na visoma skrini."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Bandika viw 좌표 (kwa mfano 51.5074, -0.1278) au kiungo cha OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Waratibu au kiungo"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Hakiki ramani"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Angalia %1$s, %2$s kwenye OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Mwandishi"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Tarehe iliyochapishwa"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Tarehe iliyosasishwa (ikiwa inatofautiana)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Makundi"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Lebo"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Muda wa kusoma"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Idadi ya maoni"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Maelezo ya kuonyesha"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Chagua angalau undani mmoja wa kuonyesha."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Upau wa maendeleo"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Kiwango cha juu"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 kwa asilimia; nambari nyingine yoyote kwa idadi, kama vile 8 kati ya 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Onyesha asilimia"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Nenosiri limewekwa. Wageni huona fomu ya nenosiri badala ya maudhui haya hadi watakapoliingiza."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Hakuna nenosiri lililowekwa bado, kwa hiyo wageni hawaoni chochote hapa."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Nywila mpya"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Weka nenosiri"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Nenosiri limewekwa. Hifadhi ukurasa ili kulitumia; wageni walioufungua watahitaji jipya."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Ikiwa Page Builder Sandwich itazimwa wakati wowote, maudohui haya yanaonyeshwa kwa kila mtu."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Ujumbe ulio juu ya fomu ya nenosiri (hiari)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Badili"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Lebo"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7305,30 +8474,698 @@ msgstr "Husomwa na visoma skrini, na huonyeshwa wakati \"Onyesha lebo\" imewashw
 msgid "Show label"
 msgstr "Onyesha lebo"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Anwani ya wavuti au maandishi"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Msimbo wa QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Maelezo kwa ajili ya wasomaji wa skrini"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Acha wazi ili kutumia \"QR code for\" na maandishi."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Andika anwani ya tovuti, kiungo cha simu (tel:) au maandishi yoyote."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Hii ni ndefu sana kwa msimbo wa QR. Ifupishe."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Weka maelezo"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Upau wa maendeleo ya kusoma"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Ukingo wa dirisha"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Juu"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Chini"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Inaonyeshwa chini ya dirisha wakati wageni wanapoteremka chini."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Inaونیka kwenye sehemu ya juu ya dirisha wakati wageni wanaposogeza ukurasa."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Ngapi"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Imehusishwa na"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Jamii au lebo"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Wakati hakuna kinachohusiana, onesha kipya zaidi badala yake"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Kichwa cha habari"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Acha wazi kwa ajili ya \"Machapisho yanayohusiana\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Onyesha picha iliyoangaziwa"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Onyesha tarehe"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Onyesha muhtasari"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Hakuna machapisho yanayoshiriki kategoria au lebo za chapisho hili bado. Yatakapokuwepo, yataonekana hapa."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Modali"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Paneli ya nje ya turubai"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Ukubwa"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Inateleza kutoka upande wa"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Mwanzo ndipo upande ambapo usomaji huanza: upande wa kushoto kwa Kiingereza, upande wa kulia kwa Kiarabu."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Funga ukurasa wa nyuma unapobofya"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Kichwa cha dirisha"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Alama ya vema"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Mzunguko"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Vuka"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Nukta"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Mshale"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Weka Nyota"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Rangi ya ikoni"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Sawa na maandishi"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Mandhari ya msingi"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Mandhari ya pili"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Ulinganifu wa mandhari"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Weka vichwa vya habari kwa mpangilio chini ya ukurasa: kichwa cha habari kiwe kiwango kimoja chini ya sehemu kilipo."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Chagua aikoni"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Tumia aikoni chaguo-msingi"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Chagua ikoni"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Hamisha juu"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Shusha chini"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Onyesha kichwa cha habari kwa kila aina"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Hakuna kilichochapishwa bado katika aina ulizochagua."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Viungo"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Unganisha %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Mtandao"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Anwani ya wasifu, mailto:you@example.com au tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Jina linalosomwa kwa visomaji skrini"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Ikoni nyingine"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Ongeza kiungo"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Tazama"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Mtindo"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Aikoni pekee"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Umbo"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Mraba wenye pembe za mviringo"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Mraba"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Fungua wasifu katika kichupo kipya"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Ukadiriaji wa nyota"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Ukadiriaji"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Idadi ya nyota"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Onyesha nambari"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Hatua"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Chini ya ukurasa"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Ubavu kwa ubavu (inarundika kwenye simu)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Rangi ya namba"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Mpangilio wa hatua"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Hatua ya %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Hatua..."
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Cha kufanya…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Ongeza hatua"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Tabu"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Ongeza vichwa vya habari kwenye kurasa na vitaorodheshwa hapa."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Jedwali la yaliyomo"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Kutoka ngazi ya kichwa"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Hadi kiwango cha kichwa"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Zilizopewa namba"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Inaweza kukunjwa"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Anza imekunjwa"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Angazia sehemu inayomilikiwa kusomwa"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Tabu"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Jina la wasomaji wa skrini"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Si lazima. Inaelezea kile ambacho tabu zinahusu, kwa mfano \"Mipango\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Fungua wakati wa kupakia ukurasa"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Tabu kando"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Ongeza kichupo"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Ushuhuda"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Badilisha picha"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Chagua picha"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Ondoa picha"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Maelezo ya picha"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Acha tupu wakati picha inaonyesha tu mtu aliyetajwa karibu nayo."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Ukadiriaji wa nyota (0 = hakuna)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Jina chini ya nukuu"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Picha kando ya nukuu"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Alichosema mteja…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Jukumu au kampuni"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Kidokezo"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Maandishi ya vidokezo"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Iwe fupi: sentensi moja au mbili. Visoma skrini husoma pamoja na neno linalofafanuliwa."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Onyesha"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Juu"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Chini"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Neno au kirai"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Tumia"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Wasifu"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Wasifu wa nani"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Mwandishi wa chapisho"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Onyesha picha ya wasifu"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Onyesha wasifu"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Onyesha viungo vya machapisho na tovuti"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Wasifu wa mwandishi"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Chagua wasifu wa kuonyesha."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Nambari ya WhatsApp, pamoja na msimbo wa nchi"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Kwa mfano +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Ujumbe wa kuanzia (si lazima)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Onyesha maandishi karibu na aikoni"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Kona"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Mwisho wa chini (kulia kwa Kiingereza)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Chini mwanzo (kushoto kwa Kiingereza)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Ongeza namba yako ya WhatsApp kwenye mwambao wa pembeni. Hadi wakati huo kitufe hakionyeshwi kwenye ukurasa."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Kwenye ukurasa huu, kitufe hiki huelea katika pembe ya chini ya skrini."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Lebo ya msimbo mfupi"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Tumia herufi, namba, vistari na mistari ya chini pekee."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Jina la sifa"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Ongeza sifa"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Nambari fupi"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Sifa nyingine"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Chagua lebo ya msimbo mfupi katika mipangilio ya kizuizi."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Matunzio"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Ukubwa wa picha"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Picha ndogo"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Ukubwa kamili"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Unganisha na"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Ukurasa wa kiambatisho"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Faili ya media"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Sauti"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Video"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Anwani ya faili"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Kitanzi"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Cheza kiotomatiki"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Picha ya bango"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Orodha ya kucheza"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Vitambulisho vya Vyombo vya Habari, vikitenganishwa kwa koma"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Onyesha orodha ya nyimbo"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Weka"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Anwani ya kupachika"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Upana wa juu zaidi"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Maelezo mafupi"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML ya Picha na maelezo"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Upana"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Kidokezo: Kizuizi cha Fomu kinaonyesha fomu hii ikiwa imetengenezwa kwa mtindo unaofanana na tovuti yako."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Onyesha kichwa cha fomu"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Onyesha maelezo ya fomu"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Wasilisha bila kupakia upya ukurasa"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7349,123 +9186,108 @@ msgstr "Chagua faili"
 msgid "— Default —"
 msgstr "— Chaguomsingi —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Mtindo wa kina"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS ya Ndani"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Matamshi ya CSS, kwa mfano: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Madhara (madarasa ya urithi)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Majina ya athari yaliyotenganishwa na nafasi tupu yaliyohamishwa kutoka matoleo ya zamani, kwa mfano: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Safu"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Upana"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Upana wote, maudhui yamewekwa katikati"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Anwani ya kiungo"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Uhusiano wa kiungo"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Mpangilio"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Kushoto"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Kituo"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Kulia"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Maandishi ya kitufe"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Ongeza maandishi…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Mahali"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Katika mstari wake wenyewe"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Katika mstari, kando ya maudhui mengine"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Otomatiki (mstari wake wenyewe katika kiwango cha juu cha ukurasa)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Lebo inayoweza kufikiwa"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Acha wazi kwa ajili ya ikoni ya urembo."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Chagua aikoni katika mipangilio ya kizuizi."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Jina jipya la mpangilio"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Kwa mfano: kichwa au maandishi"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Ongeza mpangilio"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Wijeti"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Chagua wijeti"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Eneo la wijeti"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Chagua eneo la wijeti"
 
@@ -7488,6 +9310,142 @@ msgstr "Kibiriti hiki kinajirekebisha ukubwa baada ya kupakia, jambo ambalo lina
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Kuhama kwa mpangilio"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Wijeti hii haielezei mipangilio yake, kwa hivyo inahaririwa kama jozi za jina na thamani."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Tatizo"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Angalia"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Onyesha kizuizi"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Tumia rangi ya mandhari inayosomeka kwa urahisi"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Ifanye iwe H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Maandishi mbadala"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Hifadhi maandishi mbadala"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Picha hii ni ya urembo"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Inakagua…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Hakuna matida ya ufikiaji yaliyopatikana kwenye ukurasa huu."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "Tatizo %d"
+msgstr[1] "%d matatizo"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "kitu %d cha kuangalia"
+msgstr[1] "Mambo %d ya kuangalia"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Angalia tena"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Ukaguzi wa kiotomatiki hupata matatizo mengi lakini sio yote. Jaribu pia ukurasa huo kwa kutumia kibodi pekee na kisoma skrini."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Uwiano wa maandishi ni %1$s:1; unahitaji angalau %2$s:1 ili uweze kusomeka."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "bonyeza hapa,hapa,soma zaidi,zaidi,kiungo,kiungo hiki,jifunze zaidi,enda"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Kiungo hakina maandishi, kwa hiyo kisoma skrini kinatangaza tu “kiungo”. Ongeza maandishi au lebo."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Maandishi ya kiungo “%s” hayasemi mahali kinapoelekea. Eleza unakoenda badala yake."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Kipengele kina tabindex chanya, ambayo hubadilisha mpangilio wa kibodi mbali na mpangilio wa usomaji. Tumia 0 au kiondoe."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Kitu kinachoweza kubonyewa hakiwezi kufikiwa kwa kibodi. Tumia kitufe au kiungo halisi."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Fremu iliyopachikwa haina kichwa, kwa hivyo kisoma skrini hakiwezi kusema ni nini."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Sehemu ya fomu haina lebo, kwa hivyo madhumuni yake hayajatangazwa."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Kichwa hiki cha habari hakina kitu. Watumiaji wa visoma skrini huabiri kupitia vichwa vya habari; kiondoe au ongeza maandishi."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Kichwa cha ukurasa tayari ni H1; tumia H2 kwa kiwango cha juu cha maudhui."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "H%1$d hii inaruka kiwango kimoja; ile iliyotangulia ni H%2$d. Ifanye iwe H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Picha hii haina maandishi mbadala. Ifafanue, au iweke alama kuwa ni ya urembo ikiwa haiongezi kitu."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Funga kidirisha"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7562,18 +9520,6 @@ msgstr "Maalum"
 msgid "Width / height"
 msgstr "Upana / urefu"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Juu"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Chini"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7586,20 +9532,6 @@ msgstr "Picha iliyorithiwa — badilisha"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Ondoa picha"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Nafasi"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Ukubwa"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7665,22 +9597,6 @@ msgstr "Kila upande kivyake"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Upande"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Mtindo"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Rangi"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7930,14 +9846,6 @@ msgstr "%1$s (%2$d imewekwa)"
 msgid "Replace icon"
 msgstr "Badilisha aikoni"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Chagua aikoni"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Chagua ikoni"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Hakuna aikoni zinazolingana."
@@ -7949,10 +9857,6 @@ msgstr "Kawaida"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Chapa"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Imeelezwa kwa mistari"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8081,21 +9985,9 @@ msgstr "Rangi ya maandishi"
 msgid "Cursor"
 msgstr "Mshale wa kipanya"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Mshale"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Kielekezi"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Maandishi"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8253,10 +10145,6 @@ msgstr "Jina la eneo"
 msgid "Named areas"
 msgstr "Maeneo yenye jina"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Safu"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Urefu"
@@ -8374,10 +10262,6 @@ msgstr "Jaza nafasi"
 msgid "Decoration"
 msgstr "Mapambo"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Pigia mstari chini"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Mstari wa juu"
@@ -8460,19 +10344,9 @@ msgstr "Conic"
 msgid "Angle (degrees)"
 msgstr "Pembe (digrii)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Umbo"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Mviringo"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Mzunguko"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8508,10 +10382,6 @@ msgstr "Kiwango cha kujaa nyuma (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Rangi hafifu (tumia rangi ya kuonekana)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Mraba wenye pembe za mviringo"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8528,10 +10398,6 @@ msgstr "Pembetatu"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Almasi"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Weka Nyota"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9409,11 +11275,6 @@ msgstr "Futa"
 msgid "The change could not be saved."
 msgstr "Mabadiliko hayakuweza kuhifadhiwa."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Funga kidirisha"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Mandhari chaguomsingi"
@@ -9470,9 +11331,49 @@ msgstr "Madarasa, alama, hali ya giza, kifaa cha chapa na fonti maalum huja na P
 msgid "Open the Site Editor’s styles"
 msgstr "Fungua mitindo ya Kihariri cha Tovuti"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Kichwa cha habari"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Kichwa cha habari chenye urefu mdogo wa mstari, kilichopambwa kwa kutumia kichupo cha Mtindo."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Aya ya maandishi, iliyopambwa kwa kichupo cha Mtindo."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Picha"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Picha yenye pembe za mviringo, iliyopambwa kwa kutumia kichupo cha Mtindo."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Video kutoka Maktaba ya Midia, iliyopambwa kwa kichupo cha Mtindo."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Nafasi ya Kuacha"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Nafasi tupu kati ya vizuizi; weka urefu tofauti kwa kila ukubwa wa skrini katika kichupo cha Mtindo."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Kibaguzi"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Mstari wa mlalo kati ya sehemu, uliopambwa kwa kichupo cha Mtindo."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Maudhui kutoka tovuti nyingine (video, chapisho, ramani) kwa kubandika anwani yake."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Picha kadhaa kwenye gridi, zilizopambwa kwa kichupo cha Mtindo."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9506,10 +11407,6 @@ msgstr "Orodha"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Vidonge"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Vifungo"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9554,10 +11451,6 @@ msgstr "Ficha lugha ambazo ukurasa huu haujatafsiriwa kwazo"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Panga wima"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Mandharinyuma"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9616,11 +11509,6 @@ msgstr "Mipangilio ya kuzuia"
 #, js-format
 msgid "Add block: %s"
 msgstr "Ongeza kizuizi: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(hakuna kichwa)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9696,10 +11584,6 @@ msgstr "Zima hali salama"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Washa hali salama (programu jalizi nyingine zikiwa zimezimwa, kwako, katika Studio pekee)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Imechapishwa"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10040,11 +11924,6 @@ msgstr "Jina la mjenzi"
 msgid "Visual editor name"
 msgstr "Jina la kihariri cha kuona"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Mwandishi"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10118,10 +11997,6 @@ msgstr[1] "Haijatendeka: kurasa %d zimerejeshwa."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Badilisha"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Viungo"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10231,10 +12106,6 @@ msgstr "Ruhusu mteja aonyeshe maoni kwenye ukurasa huu"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Mtu yeyote aliye na kiungo anaweza kuona ukurasa huu, hata kabla haujachapishwa, na kuacha maoni. Hakuna akaunti inayohitajika."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Imenakopwa"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10477,6 +12348,52 @@ msgstr "Nakili picha kwenye maktaba ya midia ya tovuti hii"
 msgid "Show what will happen"
 msgstr "Onyesha kitakachotokea"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Kipengele cha akodioni"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Sehemu moja ya akodioni: kichwa kinachofungua maudhui yake."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Akodioni"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Maswali au sehemu zinazofunguka na kufungwa. Hiari moja kwa wakati mmoja, na hiari ikiwa imewekwa alama kama Maswali Yanayoulizwa Mara kwa Mara kwa injini za utafutaji."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "kianzi cha kukunjwa"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Maswali Yanayoulizwa Mara kwa Mara"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "geuza"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "kunja"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "maelezo"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10493,6 +12410,7 @@ msgid "notice"
 msgstr "taarifa"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "ujumbe"
@@ -10507,6 +12425,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "onyo"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Beji"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Lebo fupi kama vile Mpya, Punguzo au Thamani bora zaidi."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "lebo"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "lebo"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "kapsula"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "mpya"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Kalenda ya kuweka nafasi"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Kalenda ya kuweka miadi ya Calendly au Cal.com, inayopakiwa tu pale mgeni anapoihitaji."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "kuweka miadi"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "miadi"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "ratibu"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10518,6 +12501,7 @@ msgid "A link styled as a button."
 msgstr "Kiungo kilichopambwa kama kitufe."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "kitufe"
@@ -10531,6 +12515,98 @@ msgstr "kiungo"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "wito wa kuchukua hatua"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Wito wa kuchukua hatua"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Kichwa cha habari, sentensi na vitufe moja au viwili vinavyomwomba mgeni achukue hatua."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "cta"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "bango"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "jisajili"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Orodha ya kukagua"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Orodha ya kazi, kila moja ikiwa imewekwa alama ya kukamilishwa au ambayo bado haijafanywa, kwa maneno kwa ajili ya visoma skrini pamoja na alama ya vema."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "kazi za kufanya"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "kazi"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "tepe"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "orodhesha"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Nambari ya siri"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Orodha ya msimbo yenye uangazaji wa sintaksia, namba za mistari na kitufe cha kunakili. Huendelea kusomeka hata kama programu-jalizi itazimwa."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "msimbo"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "sintaksia"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "angazia"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "Kipande"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "programurisho"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10554,6 +12630,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "mpangilio"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Jedwali la kulinganisha"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Mipango au bidhaa zikiwa kando kwa kando, zenye alama za ndiyo na hapana ambazo visomaji skrini husoma kama maneno."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "linganisha"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "bei"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "mpango"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "jedwali"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "vipengele"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Vitufe vya mawasiliano"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Vifungo vya kupiga simu, kutuma barua pepe, ujumbe mfupi au ujumbe kwenye WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Wasiliana"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "piga simu"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "simu"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "barua pepe"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "sms"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10571,11 +12725,13 @@ msgid "container"
 msgstr "kontena"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "sanduku"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10592,6 +12748,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "Safu"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Kichwa-habari cha maradufu"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Kichwa cha habari kilichogawanyika katika sehemu mbili, ya pili ikiwa imepambwa kwa rangi, gradient, mpaka au mstari wa chini."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "kichwa cha habari"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "kichwa cha habari"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "mtelezo wa rangi"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Orodha ya vipengele"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Vipengele katika gridi, kila kimoja kikiwa na ikoni, kichwa, na maelezo mafupi."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Faida"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "huduma"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10635,6 +12837,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "maandishi"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Fomu"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Inaonyesha fomu kutoka Contact Form 7, WPForms, Gravity Forms au Fluent Forms, iliyopangwa kuendana na tovuti yako."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "fomu"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Fomu ya Mawasiliano 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Kamusi ya Istilahi"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Masharti na fasili zake, zilizopangwa kutoka A hadi Z, kila moja ikiwa na kiungo chake. Inaweza kuunganisha utajiri wa kwanza wa kila neno kwenye ukurasa hadi fasili yake."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "sheria na masharti"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "ufafanuzi"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "kamusi"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Orodha ya aikoni"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Orodha ambayo kila mstari unaanza na aikoni: alama ya kuangalia, mshale, au aikoni yoyote kutoka kwenye maktaba."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "vifijo"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "aikoni"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10655,6 +12937,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Sanduku la maelezo"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Ikoni, kichwa kifupi, sentensi moja au mbili na kiungo cha hiari: kwa huduma, faida au maelezo ya mawasiliano."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "kipengele"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "huduma"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "kadi"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10674,6 +12981,204 @@ msgstr "tafsiri"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "lugha nyingi"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Ramani"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Ramani ya eneo kutoka OpenStreetMap: hakuna ufunguo, na hakuna kinachopakiwa kutoka OpenStreetMap hadi mgeni aombe ramani."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "ramani"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "Mahali"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "anwani"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Modali"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Kitufe kinachofungua dirisha juu ya ukurasa, chenye vizuizi vyovyote ndani yake."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "dirisha ibuka"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "dirisha ibukizi"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "sanduku la mwanga"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "dirisha la mazungumzo"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Paneli ya nje ya turubai"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Kitufe kinachoteleza paneli kutoka upande wa dirisha, kikiwa na vizuizi vyovyote ndani."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "off-canvas"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "droo"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "mwamba wa pembeni"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "paneli"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "menyu"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Maelezo ya chapisho"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Mwandishi wa chapisho, tarehe, kategoria, lebo, muda wa kusoma na idadi ya maoni."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "mwandishi"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "tarehe"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "muda wa kusoma"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "na mtunzi"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Upau wa maendeleo"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Mwambaa ulioandikwa unaoonyesha umbali uliopigwa na kitu, kama vile ujuzi au lengo."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "maendeleo"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "upaupa"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "ujuzi"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "lengo"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Maudhui yaliyolindwa na nenosiri"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Inazuia wageni pekee ambao wana nenosiri. Hadi pale wanapolijaza, maoni hayapo kabisa kwenye ukurasa."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "nenosiri"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Imelindwa"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "binafsi"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "funga"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "wanachama"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10699,6 +13204,86 @@ msgstr "mwanga"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "mpango wa rangi"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Msimbo wa QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Nambari ya QR ya anwani ya wavuti au maandishi yoyote, iliyochorwa kwenye tovuti yako mwenyewe (hakuna huduma ya QR inayotumiwa)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "msimbo wa QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "mwauko"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "changanua"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Upau wa maendeleo ya kusoma"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Upau mwembamba kwenye ukingo wa dirisha unaojaza wakati wageni wanaposogeza ukurasa."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "inasoma"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "tembeza"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Machapisho yanayohusiana"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Machapisho yanayoshiriki kategoria au lebo za chapisho hili, pamoja na picha, tarehe na muhtasari wao."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "inayohusiana"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "chapisho"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "sawa"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "zingine"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10762,13 +13347,284 @@ msgstr "Inaonyesha wijeti katika moja ya maeneo ya wijeti ya mada."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "mwamba wa pembeni"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "eneo la wijeti"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Ramani ya tovuti"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Ukurasa unaoorodhesha kila ukurasa na chapisho lililochapishwa (na maudhui mengine ya umma), huku muundo wa matawi ya ukurasa ukitunzwa."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "ramani ya tovuti"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "ramani ya tovuti"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "faharasa"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "kurasa zote"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Ikoni za mitandao ya kijamii"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Viungo vya wasifu wako, vilivyoonyeshwa kwa aikoni za mitandao hiyo hiyo."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "kijamii"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "viungo"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "fuata"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "wasifu"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Kiwango cha nyota"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Ukadiriaji unaonyeshwa kama nyota, kwa hatua za nusu nyota."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "nyota"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "ukadiriaji"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "alama"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Hatua"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Hatua za nambari za mchakato, kwa mpangilio, chini ya ukurasa au ubavu kwa ubavu."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "mchakato"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "jinsi ya"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "muda wa matukio"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "yenye namba"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Tabu"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Tabu moja ya kizuizi cha Tabu: kichwa chake na paneli yake."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Yaliyomo"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Orodha ya vichwa vya habari kwenye ukurasa, iliyojengwa kiotomatiki, inayounganisha na kila kimoja."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Yaliyomo"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "yaliyomo"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "vichwa vya habari"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Tabu"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Maudhui katika vichupo: wageni hubadilisha kati ya paneli kwa kutumia kipanya au kibodi."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "vichupo"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "yenye vichupo"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "paneli"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Ushuhuda"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Nukuu kutoka kwa mteja yenye jina lake, jukumu, picha na ukadiriaji wa nyota wa hiari."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "Kagua"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "nukuu"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "mteja"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Maoni"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Kidokezo"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Neno au kifungu kinachoonyesha maelezo mafupi unapoelea na wakati wa mwelekeo wa kibodi."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "dokezi la kuongoza"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "dokezo"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "fasili"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Wasifu wa mwandishi"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Picha, jina, wasifu na viungo vya mwandishi, au vya mtumiaji uliyemchagua."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "wasifu"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "wasifu"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "kuhusu"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Kitufe cha mazungumzo cha WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Kitufe kinachoelea kwenye kona ya ukurasa kinachofungua mazungumzo ya WhatsApp na wewe."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "soga"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "inayoelea"
 
 #: blocks/widget/block.json
 msgctxt "block title"

@@ -24,6 +24,7 @@ import IconField, { IconPreview } from '../design/icons/IconField';
 import '../design/icons/picker.scss';
 import { styleObject } from './style';
 import { COLUMN_STYLE, ROW_STYLE } from './save';
+import WidgetFields from './widget-fields';
 
 /** Data the server adds for the editor (registered widgets and widget areas). */
 const editorData = () => window.pbswCore || { widgets: [], sidebars: [] };
@@ -219,9 +220,15 @@ export function ButtonEdit( props ) {
 
 export function IconEdit( props ) {
 	const { attributes, setAttributes } = props;
+	const block = attributes.display === 'block';
+	const justify = attributes.justify || 'start';
 	const blockProps = useBlockProps( {
-		style: styleObject( attributes.style ),
+		style: {
+			...styleObject( attributes.style ),
+			...( block ? { textAlign: justify } : {} ),
+		},
 	} );
+	const Tag = block ? 'div' : 'span';
 	// Previewed inline through sanitizeSvg() (the twin of the server's Svg::sanitize), so the icon
 	// takes the text colour; the server sanitises again before any visitor sees it.
 	return (
@@ -233,6 +240,69 @@ export function IconEdit( props ) {
 						iconRef={ attributes.iconRef }
 						onChange={ setAttributes }
 					/>
+					<SelectControl
+						__next40pxDefaultSize
+						label={ __( 'Placement', 'page-builder-sandwich' ) }
+						value={ attributes.display || 'auto' }
+						options={ [
+							{
+								value: 'block',
+								label: __(
+									'On its own line',
+									'page-builder-sandwich'
+								),
+							},
+							{
+								value: 'inline',
+								label: __(
+									'In the line, beside other content',
+									'page-builder-sandwich'
+								),
+							},
+							{
+								value: 'auto',
+								label: __(
+									'Automatic (own line at the top level of the page)',
+									'page-builder-sandwich'
+								),
+							},
+						] }
+						onChange={ ( v ) =>
+							setAttributes( {
+								display: v === 'auto' ? undefined : v,
+							} )
+						}
+					/>
+					{ block && (
+						<SelectControl
+							__next40pxDefaultSize
+							label={ __( 'Alignment', 'page-builder-sandwich' ) }
+							value={ justify }
+							options={ [
+								{
+									value: 'start',
+									label: __(
+										'Start',
+										'page-builder-sandwich'
+									),
+								},
+								{
+									value: 'center',
+									label: __(
+										'Centre',
+										'page-builder-sandwich'
+									),
+								},
+								{
+									value: 'end',
+									label: __( 'End', 'page-builder-sandwich' ),
+								},
+							] }
+							onChange={ ( v ) =>
+								setAttributes( { justify: v } )
+							}
+						/>
+					) }
 					<TextControl
 						__next40pxDefaultSize
 						label={ __(
@@ -249,7 +319,7 @@ export function IconEdit( props ) {
 				</PanelBody>
 				<StylePanel { ...props } legacy={ false } />
 			</InspectorControls>
-			<span { ...blockProps }>
+			<Tag { ...blockProps }>
 				{ attributes.svg ? (
 					<IconPreview svg={ attributes.svg } />
 				) : (
@@ -258,14 +328,16 @@ export function IconEdit( props ) {
 						'page-builder-sandwich'
 					)
 				) }
-			</span>
+			</Tag>
 		</>
 	);
 }
 
-function InstanceFields( { instance, onChange } ) {
+function InstanceFields( { instance, onChange, exclude = [] } ) {
 	const [ name, setName ] = useState( '' );
-	const keys = Object.keys( instance || {} );
+	const keys = Object.keys( instance || {} ).filter(
+		( key ) => ! exclude.includes( key )
+	);
 	return (
 		<>
 			{ keys.map( ( key ) => (
@@ -327,12 +399,23 @@ export function WidgetEdit( { attributes, setAttributes, name } ) {
 						] }
 						onChange={ ( widget ) => setAttributes( { widget } ) }
 					/>
-					<InstanceFields
+					<WidgetFields
+						widget={ attributes.widget }
 						instance={ attributes.instance }
 						onChange={ ( instance ) =>
 							setAttributes( { instance } )
 						}
-					/>
+					>
+						{ ( fields ) => (
+							<InstanceFields
+								instance={ attributes.instance }
+								exclude={ fields.map( ( f ) => f.name ) }
+								onChange={ ( instance ) =>
+									setAttributes( { instance } )
+								}
+							/>
+						) }
+					</WidgetFields>
 				</PanelBody>
 			</InspectorControls>
 			<ServerSideRender block={ name } attributes={ attributes } />

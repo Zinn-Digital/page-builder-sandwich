@@ -147,8 +147,17 @@ final class Render {
 		if ( '' === $svg ) {
 			return '';
 		}
-		$out   = '<span class="' . esc_attr( Frontend::classes( $prefix, 'icon' ) ) . '"';
-		$style = Css::sanitize_declarations( (string) ( $attrs['style'] ?? '' ) );
+		// `display: block` (every icon inserted since 6.2, and a 6.1 icon that sits at the top level
+		// of the content — Blocks::icon_display()) is a block of its own, which a block theme's
+		// layout gives the content width and its margins; aligned with `justify` (logical: start /
+		// centre / end). Otherwise it stays the inline span 6.1 printed, so an icon inside a row or
+		// a column (converted legacy content) keeps its place in the line.
+		$block   = 'block' === ( $attrs['display'] ?? '' );
+		$justify = in_array( $attrs['justify'] ?? '', array( 'center', 'end' ), true ) ? (string) $attrs['justify'] : 'start';
+		$tag     = $block ? 'div' : 'span';
+		$names   = $block ? array( 'icon', 'icon--block', 'icon--' . $justify ) : array( 'icon' );
+		$out     = '<' . $tag . ' class="' . esc_attr( Frontend::classes( $prefix, ...$names ) ) . '"';
+		$style   = Css::sanitize_declarations( (string) ( $attrs['style'] ?? '' ) );
 		if ( '' !== $style ) {
 			$out .= ' style="' . esc_attr( $style ) . '"';
 		}
@@ -157,7 +166,7 @@ final class Render {
 			? ' role="img" aria-label="' . esc_attr( $label ) . '"'
 			: ' aria-hidden="true"';
 
-		return $out . '>' . $svg . '</span>';
+		return $out . '>' . $svg . '</' . $tag . '>';
 	}
 
 	/**

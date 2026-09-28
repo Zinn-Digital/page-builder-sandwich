@@ -105,7 +105,13 @@ final class Fallback {
 		$label = (string) ( $attrs['label'] ?? '' );
 		$out  .= '' !== $label ? ' role="img" aria-label="' . self::attr( $label ) . '"' : ' aria-hidden="true"';
 
-		return $out . '>' . (string) ( $attrs['svg'] ?? '' ) . '</span>';
+		$icon = $out . '>' . (string) ( $attrs['svg'] ?? '' ) . '</span>';
+		if ( 'block' !== ( $attrs['display'] ?? '' ) ) {
+			return $icon; // Every 6.1 icon: unchanged.
+		}
+		$align = in_array( $attrs['justify'] ?? '', array( 'center', 'end' ), true ) ? ' style="text-align:' . $attrs['justify'] . '"' : '';
+
+		return '<div' . $align . '>' . $icon . '</div>';
 	}
 
 	/**

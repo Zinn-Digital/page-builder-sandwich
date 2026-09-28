@@ -9,7 +9,8 @@
 		'wp-element',
 		'wp-hooks',
 		'wp-i18n',
-		'wp-server-side-render'
+		'wp-server-side-render',
+		'wp-url'
 	),
-	'version' => 'c548a6b9dfedb6ca1679'
+	'version' => 'fd9bac66e63cf3ff1f43'
 );

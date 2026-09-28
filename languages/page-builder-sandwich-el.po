@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Αποθήκευση ως επαναχρησιμοποιήσιμο μοτίβο"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Έλεγχος προσβασιμότητας"
 
@@ -990,6 +994,7 @@ msgstr "← Επιλέξτε διαφορετικό πάροχο"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Διεύθυνση"
 
@@ -1043,6 +1048,8 @@ msgstr "Δοκιμή"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Κατάργηση"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Ανανέωση των λιστών μοντέλων από τους παρόχους"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Εικόνες"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "απενεργοποιημένο"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Άνοιγμα"
 
@@ -1448,6 +1457,7 @@ msgstr "Δεν έχουν γίνει ακόμη αιτήματα AI."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Ολοκληρώθηκε"
 
@@ -1515,7 +1525,11 @@ msgstr "Πάρα πολλές προσπάθειες. Παρακαλώ δοκι�
 msgid "Something went wrong. Please contact the admin."
 msgstr "Κάτι πήγε στραβά. Παρακαλώ επικοινωνήστε με τον διαχειριστή."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Αντιστοίχιση"
 
@@ -1538,52 +1552,385 @@ msgstr "Αυτή η οικογένεια δεν είναι αποθηκευμέ�
 msgid "Removed."
 msgstr "Αφαιρέθηκε."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Αυτό δεν είναι ένα έγκυρο όνομα οικογένειας γραμματοσειράς."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Τα Google Fonts δεν επέστρεψαν αυτήν την οικογένεια γραμματοσειρών. Ελέγξτε το όνομα και προσπαθήστε ξανά."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Δεν ήταν δυνατή η λήψη ή η αποθήκευση των αρχείων γραμματοσειράς. Βεβαιωθείτε ότι ο φάκελος μεταφορτώσεων είναι εγγραφιμόσ."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Δεν ήταν δυνατή η αποθήκευση του φύλλου στυλ γραμματοσειράς. Ελέγξτε ότι ο φάκελος uploads είναι εγγραψιμος."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Απόρριψη αυτής της ειδοποίησης"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(ανοίγει σε νέα καρτέλα)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Ολοκληρώθηκε:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Προς εκτέλεση:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Ερευνώντος γλωσσαρίου"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Βαθμολογήθηκε με %1$s από %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Πρόοδος"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Αντιγραφή κώδικα"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Αντιγράφηκε"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Αυτό το widget δεν είναι διαθέσιμο σε αυτόν τον ιστότοπο."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Email"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Τηλέφωνο"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Ροή RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Ιστότοπος"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Σύνδεσμος"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (ανοίγει σε νέα καρτέλα)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Βαθμολογήθηκε με %d από 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(προτεινόμενο)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Περιλαμβάνεται"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Δεν περιλαμβάνεται"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Πίνακας σύγκρισης"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Κλήση %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Email %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Κείμενο %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Συνομιλία στο WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Επικοινωνήστε μαζί μας"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Συνομιλήστε μαζί μας στο WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Αυτή η φόρμα δεν είναι διαθέσιμη αυτή τη στιγμή."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Αυτή η φόρμα δεν μπορεί να εμφανιστεί επειδή το %s δεν είναι ενεργό."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Αντιστοίχιση: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Η εμφάνιση του χάρτη τον φορτώνει από το OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Εμφάνιση χάρτη"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Άνοιγμα του χάρτη στο OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Ημερολόγιο κρατήσεων από %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Η εμφάνιση του ημερολογίου κρατήσεων το φορτώνει από το %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Εμφάνιση ημερολογίου κρατήσεων"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Κράτηση στις %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Κωδικός QR για %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Σχεδίαση"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Περιεχόμενο"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Πολυμέσα"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Μάρκετινγκ"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Ιστότοπος"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Δεδομένα"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Σχετικές δημοσιεύσεις"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Λεπτομέρειες δημοσίευσης"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Από"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Δημοσιευμένο"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Ενημερώθηκε"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Σε"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Με ετικέτα"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "ανάγνωση %d λεπτού"
+msgstr[1] "%d λεπτά ανάγνωσης"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Δεν υπάρχουν σχόλια ακόμη"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d σχόλιο"
+msgstr[1] "%d σχόλια"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Χάρτης ιστότοπου"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(χωρίς τίτλο)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Όλες οι δημοσιεύσεις από %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Αυτό το περιεχόμενο προστατεύεται. Εισαγάγετε τον κωδικό πρόσβασης για να το προβάλετε."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Αυτός ο κωδικός πρόσβασης δεν είναι σωστός. Δοκιμάστε ξανά."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Κωδικός πρόσβασης"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Εμφάνιση περιεχομένου"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Αυτή η σελίδα δεν μπορεί να ξεκλειδωθεί."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Πάρα πολλές προσπάθειες. Περιμένετε λίγα λεπτά και δοκιμάστε ξανά."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Ο κωδικός πρόσβασης πρέπει να έχει μήκος από 4 έως 200 χαρακτήρες."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Περισσότερα"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Κλείσιμο"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Καρτέλα %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Περιεχόμενα"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Επεξεργασία με Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Κενός καμβάς"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Μετάβαση στο περιεχόμενο"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Το πλάτος του tablet πρέπει να είναι ακέραιος αριθμός pixel από 480 έως 2560."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Μεταφορτωμένα εικονίδια"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Εικονίδιο"
 
@@ -2553,6 +2908,8 @@ msgstr "Το %s είναι η διεύθυνση email του πελάτη μο�
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Κώδικας"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Email"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Διεύθυνση email"
 
@@ -3103,6 +3456,10 @@ msgstr "Ενεργοποίηση λειτουργίας white-label"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "Εισαγάγετε τη νέα διεύθυνση email"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Σφάλμα"
 
@@ -3723,6 +4081,7 @@ msgstr "Τα παρακάτω προϊόντα τέθηκαν σε ασφαλή 
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "Αυτό το πρόσθετο απαιτεί μια νεότερη έκ
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Όχι"
 
@@ -4811,6 +5171,13 @@ msgstr "Social media (Facebook, Twitter, κ.λπ.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "Χρονική σήμανση"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Τίτλος"
 
@@ -5171,6 +5541,8 @@ msgstr "Πώς σας φαίνεται το %1$s μέχρι τώρα; Δοκιμ
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Τύπος"
@@ -5286,6 +5658,7 @@ msgstr "Χρήστες"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Τιμή"
@@ -5340,6 +5713,7 @@ msgstr "Προβολή επί πληρωμή λειτουργιών"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Προειδοποίηση"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "Προαιρετικό"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Πρόγραμμα"
 
@@ -5988,18 +6363,26 @@ msgstr "Πολύ μικρό"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Μικρό"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Μεσαίο"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Μεγάλο"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "Τεράστιο"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "Η δοκιμή δεν μπόρεσε να ξεκινήσει."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Χαρακτηριστικό"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Περιλαμβάνεται"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Δεν περιλαμβάνεται"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "Διεύθυνση σύνδεσης"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Όνομα χρήστη"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Κωδικός πρόσβασης"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7088,15 +7462,62 @@ msgstr "Η επαναφορά ξεκίνησε. Συνεχίζεται στο π
 msgid "Undo all conversions"
 msgstr "Αναίρεση όλων των μετατροπών"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Στοιχειο"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Άνοιγμα κατά τη φόρτωση της σελίδας"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Ο τίτλος είναι επικεφαλίδα"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Κάντε τον τίτλο επικεφαλίδα όταν τα στοιχεία είναι ενότητες της σελίδας, ώστε οι επισκέπτες να μπορούν να μεταπηδούν μεταξύ τους."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Επικεφαλίδα %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Ερώτηση ή τίτλος ενότητας"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Ακορντεόν"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Μόνο ένα στοιχείο ανοιχτό κάθε φορά"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Επισημάνετε ως FAQ για τις μηχανές αναζήτησης"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Προσθέτει δομημένα δεδομένα FAQ που δημιουργούνται από τους τίτλους (ερωτήσεις) και το κείμενό τους (απαντήσεις)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Ειδοποίηση"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Πληροφορίες"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Επιτυχία"
 
@@ -7105,6 +7526,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Οι προειδοποιήσεις και τα σφάλματα ανακοινώνονται αμέσως στους χρήστες προγραμμάτων ανάγνωσης οθόνης· οι πληροφορίες και οι ειδοποιήσεις επιτυχίας διαβάζονται όταν ολοκληρώσουν αυτό που κάνουν."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Εμφάνιση εικονιδίου"
 
@@ -7120,64 +7542,702 @@ msgstr "Τίτλος (προαιρετικό)"
 msgid "Write the message…"
 msgstr "Σύνταξη μηνύματος…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "ενότητα — μια θεματική ενότητα"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Κέντρο"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — χωρίς νόημα"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Έμβλημα"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "κεφαλίδα — εισαγωγικό περιεχόμενο"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Χρώμα"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "υποσέλιδο — περιεχόμενο κλεισίματος"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Χρώμα έμφασης θέματος"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "άρθρο — αυτοτελές περιεχόμενο"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Οὐδέτερο"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "σχετικό περιεχόμενο"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Θέση"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — το κύριο περιεχόμενο (μία φορά ανά σελίδα)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Ετικέτα"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "πλοήγηση — σύνδεσμοι πλοήγησης"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Ημερολόγιο κρατήσεων"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Στοίβα (flexbox, στήλη)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Υπηρεσία"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Σειρά (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Διεύθυνση σελίδας κρατήσεων"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Πλέγμα"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Για παράδειγμα %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Σε τι χρησιμεύει το ημερολόγιο, εκφωνείται από τα προγράμματα ανάγνωσης οθόνης και εμφανίζεται κάτω από αυτό."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Αυτή δεν είναι μια διεύθυνση σελίδας κρατήσεων %s, επομένως δεν θα εμφανιστεί τίποτα στη σελίδα."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Προεπισκόπηση ημερολογίου"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Διεύθυνση συνδέσμου"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Το κουμπί εμφανίζεται όταν διαθέτει τόσο ετικέτα όσο και διεύθυνση."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Άνοιγμα σε νέα καρτέλα"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Πρόσκληση για δράση"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Διάταξη"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Κουμπιά παρακάτω"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Κουμπιά δίπλα στο κείμενο"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Στοίχιση"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Κύριο κουμπί"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Δεύτερο κουμπί"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Επικεφαλίδα…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Μία πρόταση για το γιατί…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Δεύτερο κουμπί (προαιρετικό)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Λίστα ελέγχου"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Χρώμα επιλογής"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Γραμμές"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Γραμμή %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Εργασία…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Προσθήκη γραμμής"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Γλώσσα"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Αυτόματη εντοπισμός"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Χωρίς επισήμανση"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Όνομα αρχείου"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Εμφανίζεται πάνω από τον κώδικα, για παράδειγμα functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Αριθμοί γραμμών"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Κουμπί αντιγραφής"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Αναδίπλωση μεγάλων γραμμών"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Γράψτε ή επικολλήστε κώδικα…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Κείμενο"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Στήλες"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Στήλη %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Επισήμανση %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Προσθήκη στήλης"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Σειρές"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Γραμμή %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Προσθήκη γραμμής"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Λεζάντα (αυτό που συγκρίνεται)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Τύπος κελιού: %s. Αλλαγή"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Τηλεφωνική κλήση"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Γραπτό μήνυμα"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Κουμπιά"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Αριθμός τηλεφώνου, με κωδικό χώρας"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Κείμενο κουμπιού"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Κατάργηση αυτού του κουμπιού"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Προσθήκη κουμπιού"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Μήνυμα WhatsApp για την έναρξη (προαιρετικό)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Κουμπιά επικοινωνίας"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Προσθέστε έναν αριθμό τηλεφώνου, μια διεύθυνση email ή έναν αριθμό WhatsApp στην πλαϊνή στήλη."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Διπλή κεφαλίδα"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Επίπεδο κεφαλίδας"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Χρησιμοποιήστε το H1 μία φορά ανά σελίδα, για τον κύριο τίτλο της."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Δεύτερη προβολή μέρους"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Χρώμα έμφασης"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Διαβάθμιση"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Περίγραμμα"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Υπογράμμιση"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Δεύτερο μέρος σε δική του γραμμή"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Πρώτο μέρος"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "δεύτερο μέρος"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Μαρκαδόρος"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Έντονη υπογράμμιση"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Φόντο"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Επισήμανση"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Κατάργηση επισήμανσης"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Αρχικό γράμμα"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Μεγάλο πρώτο γράμμα"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Για το πρώτο γράμμα σε πλαίσιο, επιλέξτε το στυλ «Αρχικό γράμμα σε πλαίσιο»."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Αρχικό γράμμα σε πλαίσιο"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Γραμμή έμφασης"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Απόσπασμα με έμφαση (μπάρα έμφασης)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Μια φράση από το κείμενο, εμφανιζόμενη με μεγάλα γράμματα δίπλα σε μια χρωματιστή μπάρα για να τραβάει τα βλέμματα."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "προσφορά"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Λίστα δυνατοτήτων"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Στα κινητά, οι λειτουργίες στοιβάζονται πάντα."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Δυνατότητες"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Δυνατότητα %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Προσαρμοσμένο εικονίδιο"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Δυνατότητα…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Περιγράψτε το…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Προσθήκη δυνατότητας"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Εγκαταστήστε και ενεργοποιήστε το Contact Form 7, το WPForms, το Gravity Forms ή το Fluent Forms και, στη συνέχεια, επιλέξτε μία από τις φόρμες του εδώ."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Πρόσθετο φόρμας"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Επιλέξτε..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Φόρμα"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Επιλέξτε φόρμα…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "Το %s δεν έχει φόρμες ακόμα"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "Το %s δεν είναι ενεργό σε αυτόν τον ιστότοπο, επομένως αυτή η φόρμα δεν μπορεί να εμφανιστεί."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Δεν ήταν δυνατή η φόρτωση της λίστας φόρμων."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Στυλ φόρμας"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Πεδία"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Με περίγραμμα"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Συμπληρωμένο"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Υπογραμμισμένο"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Πλάτος κουμπιού"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Προσαρμογή κειμένου"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Πλήρες πλάτος"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Τα χρώματα, οι γραμματοσειρές, τα περιθώρια και οι γωνίες προέρχονται από τη σχεδίαση του ιστότοπού σας και τις ρυθμίσεις σχεδίασης αυτού του μπλοκ."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Εμφανίστε μια φόρμα από το πρόσθετο φορμών σας, διαμορφωμένη ώστε να ταιριάζει στον ιστότοπό σας."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Χρειάζεστε ένα πρόσθετο φόρμας; Το Contact Form 7 είναι δωρεάν."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Γλωσσάριο"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Ταξινόμηση Α έως Ω"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Η σελίδα εμφανίζει τους όρους με αλφαβητική σειρά· εδώ παραμένουν με τη σειρά που τους γράψατε."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Εμφάνιση ευρετηρίου Α–Ω"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Σύνδεσμος όρων που χρησιμοποιούνται αλλού σε αυτή τη σελίδα"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Την πρώτη φορά που κάθε όρος εμφανίζεται στο κείμενο της σελίδας, συνδέεται με τον ορισμό του. Οι επικεφαλίδες, τα κουμπιά, ο κώδικας και οι υπάρχοντες σύνδεσμοι παραμένουν ως έχουν."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Όροι"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Όρος %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Όρος"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Τι σημαίνει αυτό..."
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Προσθήκη όρου"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Λίστα εικονιδίων"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Το ένα κάτω από το άλλο"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Παράλληλα"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Σστοιχείο λίστας…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Πλαίσιο πληροφοριών"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Ή επιλέξτε οποιοδήποτε εικονίδιο από τη βιβλιοθήκη:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Κείμενο συνδέσμου"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Γράψτε πού οδηγεί ο σύνδεσμος («Δείτε τις τιμές μας») αντί για «Διαβάστε περισσότερα»."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Μία ή δύο προτάσεις…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "ενότητα — μια θεματική ενότητα"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — χωρίς νόημα"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "κεφαλίδα — εισαγωγικό περιεχόμενο"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "υποσέλιδο — περιεχόμενο κλεισίματος"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "άρθρο — αυτοτελές περιεχόμενο"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "σχετικό περιεχόμενο"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — το κύριο περιεχόμενο (μία φορά ανά σελίδα)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "πλοήγηση — σύνδεσμοι πλοήγησης"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Στοίβα (flexbox, στήλη)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Σειρά (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Πλέγμα"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Επεξεργασία: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Διάταξη θυγατρικών ως"
 
@@ -7185,7 +8245,7 @@ msgstr "Διάταξη θυγατρικών ως"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7193,70 +8253,50 @@ msgstr "Διάταξη θυγατρικών ως"
 msgid "Inherited (%s)"
 msgstr "Κληρονομημένο (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Στοιβαγμένα μπλοκ"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Στήλες"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Σύρετε στον καμβά ή πληκτρολογήστε"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Πλάτος περιεχομένου"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Πλαisioμένο (το πλάτος περιεχομένου του θέματος)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Πλήρες πλάτος"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Ελάχιστο ύψος"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Ετικέτα HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Σύνδεσμος"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Κάντε ολόκληρο το μπλοκ σύνδεσμο προς"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Κείμενο συνδέσμου για προγράμματα ανάγνωσης οθόνης"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Τι κάνει ο σύνδεσμος, για τους επισκέπτες που δεν μπορούν να δουν το μπλοκ."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Άνοιγμα σε νέα καρτέλα"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Μην τοποθετείτε συνδέσμους ή κουμπιά μέσα σε ένα συνδεδεμένο μπλοκ: ένας σύνδεσμος μέσα σε σύνδεσμο δεν λειτουργεί στα προγράμματα περιήγησης."
 
@@ -7288,14 +8328,143 @@ msgstr "+ Γραμμή"
 msgid "− Row"
 msgstr "− Γραμμή"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Τοποθεσία"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Επικόλληση συντεταγμένων ή συνδέσμου OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Στο openstreetmap.org, βρείτε την τοποθεσία, στη συνέχεια αντιγράφηκε τη διεύθυνση από τη γραμμή διευθύνσεων του προγράμματος περιήγησης, ή κάντε δεξί κλικ στον χάρτη και επιλέξτε \"Εμφάνιση διεύθυνσης\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Γεωγραφικό πλάτος"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Γεωγραφικό μήκος"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Ζούμ"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Όνομα μέρους"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Εμφανίζεται κάτω από τον χάρτη και διαβάζεται από τα προγράμματα ανάγνωσης οθόνης."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Επικολληστε συντεταγμένες (για παράδειγμα 51.5074, -0.1278) ή έναν σύνδεσμο OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Συντεταγμένες ή σύνδεσμος"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Προεπισκόπηση χάρτη"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Ελέγξτε το %1$s, %2$s στο OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Συντάκτης"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Ημερομηνία δημοσίευσης"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Ημερομηνία ενημέρωσης (όταν διαφέρει)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Κατηγορίες"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Ετικέτες"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Χρόνος ανάγνωσης"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Αριθμός σχολίων"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Εμφanιζόμενες λεπτομέρειες"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Επιλέξτε τουλάχιστον μία λεπτομέρεια για εμφάνιση."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Γραμμή προόδου"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Μέγιστο"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 για ποσοστό· οποιοδήποτε άλλο νούμερο για μέτρηση, όπως 8 από τα 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Εμφάνisή ποσοστού"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Έχει οριστεί κωδικός πρόσβασης. Οι επισκέπτες βλέπουν μια φόρμα κωδικού πρόσβασης αντί για αυτό το περιεχόμενο μέχρι να τον εισαγάγουν."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Δεν έχει οριστεί ακόμη κωδικός πρόσβασης, οπότε οι επισκέπτες δεν βλέπουν τίποτα εδώ."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Νέος κωδικός πρόσβασης"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Ορισμός κωδικού πρόσβασης"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Ο κωδικός πρόσβασης ορίστηκε. Αποθηκεύστε τη σελίδα για να εφαρμοστεί· οι επισκέπτες που την είχαν ξεκλειδώσει θα χρειαστούν τον νέο."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Αν το Page Builder Sandwich απενεργοποιηθεί ποτέ, αυτό το περιεχόμενο εμφανίζεται σε όλους."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Μήνυμα πάνω από τη φόρμα κωδικού πρόσβασης (προαιρετικό)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Εναλλαγή"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Ετικέτα"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7305,30 +8474,698 @@ msgstr "Εκφωνείται από προγράμματα ανάγνωσης ο
 msgid "Show label"
 msgstr "Εμφάνιση ετικέτας"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Διεύθυνση ιστού ή κείμενο"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Κωδικός QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Περιγραφή για προγράμματα ανάγνωσης οθόνης"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Αφήστε το κενό για να χρησιμοποιηθεί η φράση \"QR code for\" και το κείμενο."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Πληκτρολογήστε μια διεύθυνση web, έναν σύνδεσμο τηλεφώνου (tel:) ή οποιοδήποτε κείμενο."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Αυτό είναι πολύ μεγάλο για κωδικό QR. Συντομεύστε το."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Προσθήκη λεζάντας"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Μπάρα προόδου ανάγνωσης"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Άκρη του παραθύρου"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Κορυφή"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Κάτω"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Εμφανίζεται στο κάτω μέρος του παράθυρου καθώς οι επισκέπτες κάνουν κύλιση."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Εμφανίζεται στο επάνω μέρος του παράθυρου καθώς οι επισκέπτες κάνουν κύλιση."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Πόσα"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Σχετικότητα από"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Κατηγορίες ή ετικέτες"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Όταν δεν υπάρχει σχετικό περιεχόμενο, να εμφανίζεται το πιο πρόσφατο"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Επικεφαλίδα"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Αφήστε το κενό για \"Σχετικές δημοσιεύσεις\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Εμφάνιση χαρακτηριστικής εικόνας"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Εμφάνιση ημερομηνίας"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Εμφάνιση σύνοψης"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Δεν υπάρχουν ακόμη δημοσιεύσεις που να μοιράζονται τις κατηγορίες ή τις ετικέτες αυτής της δημοσίευσης. Όταν υπάρξουν, θα εμφανιστούν εδώ."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Αναδυόμενο παράθυρο"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Πλαϊνό πάνελ"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Μέγεθος"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Εμφάνιση με ολίσθηση από"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Η αρχή είναι η πλευρά από όπου ξεκινά η ανάγνωση: τα αριστερά στα αγγλικά, τα δεξιά στα αραβικά."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Κλείσιμο όταν γίνεται κλικ στη σελίδα από πίσω"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Τίτλος παραθύρου"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Σήμανση ελέγχου"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Κύκλος"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Διαγραφή"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Τελεία"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Βέλος"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Αστέρι"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Χρώμα εικονιδίου"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Ίδιο με το κείμενο"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Βασικό θέμα"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Δευτερεύον θέμα"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Αντίθεση θέματος"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Διατηρήστε τις επικεφαλίδες σε τάξη στη σελίδα: μια επικεφαλίδα ένα επίπεδο κάτω από την ενότητα στην οποία βρίσκεται."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Επιλογή εικονιδίου"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Χρήση του προεπιλεγμένου εικονιδίου"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Επιλέξτε εικονίδιο"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Μετακίνηση επάνω"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Μετακίνηση προς τα κάτω"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Εμφάνιση επικεφαλίδας για κάθε τύπο"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Δεν έχει δημοσιευτεί τίποτα ακόμα στους τύπους που επιλέξατε."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Σύνδεσμοι"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Σύνδεσμος %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Δίκτυο"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Μια διεύθυνση προφίλ, mailto:you@example.com ή tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Όνομα που διαβάζεται σε προγράμματα ανάγνωσης οθόνης"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Άλλο εικονίδιο"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Προσθήκη συνδέσμου"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Προβολή"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Στυλ"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Μόνο εικονίδιο"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Σχήμα"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Στρογγυλεμένο τετράγωνο"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Τετράγωνο"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Άνοιγμα προφίλ σε νέα καρτέλα"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Βαθμολογία με αστέρια"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Βαθμολογία"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Αριθμός αστεριών"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Εμφάνιση αριθμού"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Βήματα"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Προς τα κάτω στη σελίδα"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Πλάι πλάι (στοίβαξη σε κινητά)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Χρώμα αριθμού"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Σειρά βημάτων"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Βήμα %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Βήμα…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Τι να κάνετε…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Προσθήκη βήματος"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Καρτέλα"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Προσθέστε επικεφαλίδα στη σελίδα και θα εμφανιστεί εδώ."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Πίνακας περιεχομένων"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Από το επίπεδο επικεφαλίδας"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Σε επίπεδο κεφαλίδας"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Με αρίθμηση"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Μπορεί να συμπτυχθεί"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Έναρξη σε σύμπτυξη"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Επισημάνετε την ενότητα που διαβάζεται"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Καρτέλες"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Όνομα για προγράμματα ανάγνωσης οθόνης"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Προαιρετικό. Υποδεικνύει το περιεχόμενο των καρτελών, για παράδειγμα «Πρόγραμμα»."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Άνοιγμα κατά τη φόρτωση της σελίδας"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Καρτέλες στο πλάι"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Προσθήκη καρτέλας"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Μαρτυρία"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Αντικατάσταση φωτογραφίας"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Επιλογή φωτογραφίας"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Αφαίρεση φωτογραφίας"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Περιγραφή φωτογραφίας"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Αφήστε το κενό όταν η φωτογραφία δείχνει μόνο το άτομο που αναφέρεται δίπλα της."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Βαθμολογία με αστέρια (0 = κανένα)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Όνομα κάτω από την προσφορά"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Φωτογραφία δίπλα στο απόσπασμα"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Τι είπε ο πελάτης…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Ρόλος ή εταιρεία"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Επεξήγηση εργαλείου"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Κείμενο επεξήγησης εργαλείου"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Διατηρήστε το σύντομο: μία ή δύο προτάσεις. Τα προγράμματα ανάγνωσης οθόνης το διαβάζουν μαζί με τη λέξη που εξηγεί."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Εμφάνισή του"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Πάνω"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Παρακάτω"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Λέξη ή φράση"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Εφαρμογή"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Προφίλ"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Ποιου το προφίλ"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Ο συντάκτης της δημοσίευσης"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Εμφάνιση φωτογραφίας προφίλ"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Εμφάνιση βιογραφίας"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Εμφάνιση συνδέσμων προς αναρτήσεις και ιστότοπο"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Προφίλ συντάκτη"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Επιλέξτε ποιο προφίλ θα εμφανίζεται."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Αριθμός WhatsApp, με κωδικό χώρας"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Για παράδειγμα +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Μήνυμα εκκίνησης (προαιρετικό)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Εμφάνιση του κειμένου διπλά στο εικονίδιο"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Γωνία"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Κάτω άκρο (δεξιά στα αγγλικά)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Κάτω αριστερά"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Προσθέστε τον αριθμό σας στο WhatsApp στην πλευρική στήλη. Μέχρι τότε, το κουμπί δεν εμφανίζεται στη σελίδα."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Στη σελίδα, αυτό το κουμπί αιωρείται σε μια κάτω γωνία της οθόνης."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Ετικέτα shortcode"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Χρησιμοποιήστε μόνο γράμματα, αριθμούς, παύλες και κάτω παύλες."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Όνομα γνωρίσματος"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Προσθήκη ιδιότητας"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Άλλα χαρακτηριστικά"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Επιλέξτε μια ετικέτα shortcode στις ρυθμίσεις του block."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Συλλογή"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Μέγεθος εικόνας"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Μικρογραφία"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Πλήρες μέγεθος"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Σύνδεση με"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Σελίδα συνημμένου"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Αρχείο πολυμέσων"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Ήχος"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Βίντεο"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Διεύθυνση αρχείου"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Επανάληψη"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Αυτόματη αναπαραγωγή"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Εικόνα αφίσας"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Λίστα αναπαραγωγής"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "IDs πολυμέσων, χωρισμένα με κόμματα"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Εμφάνιση λίστας κομματιών"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Ενσωμάτωση"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Διεύθυνση για ενσωμάτωση"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Μέγιστο πλάτος"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Λεζάντα"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML εικόνας και λεζάντας"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Πλάτος"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Συμβουλή: το στοιχείο Φόρμας εμφανίζει αυτή τη φόρμα με στυλ που ταιριάζει στον ιστότοπό σας."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Εμφάνιση τίτλου φόρμας"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Εμφάνιση περιγραφής φόρμας"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Υποβολή χωρίς επαναφόρτωση της σελίδας"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7349,123 +9186,108 @@ msgstr "Επιλογή αρχείου"
 msgid "— Default —"
 msgstr "— Προεπιλογή —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Προηγμένο στιλ"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Εσωτερικό CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Δηλώσεις CSS, για παράδειγμα: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Εφέ (παλαιού τύπου κλάσεις)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Ονόματα εφέ χωρισμένα με κενό που μεταφέρονται από παλαιότερες εκδόσεις, για παράδειγμα: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Γραμμή"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Πλάτος"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Πλήρες πλάτος, περιεχόμενο στο κέντρο"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Διεύθυνση συνδέσμου"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Σχέση συνδέσμου"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Στοίχιση"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Αριστερά"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Κέντρο"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Δεξιά"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Κείμενο κουμπιού"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Προσθήκη κειμένου…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Τοποθέτηση"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Σε δική του γραμμή"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Στη γραμμή, δίπλα σε άλλο περιεχόμενο"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Αυτόματα (στη δική της γραμμή στο ανώτατο επίπεδο της σελίδας)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Ετικέτα προσβασιμότητας"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Αφήστε το κενό για ένα διακοσμητικό εικονίδιο."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Επιλέξτε ένα εικονίδιο στις ρυθμίσεις του block."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Νέο όνομα ρύθμισης"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Για παράδειγμα: τίτλος ή κείμενο"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Προσθήκη ρύθμισης"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Γραφικό συστατικό"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Επιλέξτε widget"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Περιοχή widget"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Επιλέξτε περιοχή widget"
 
@@ -7488,6 +9310,142 @@ msgstr "Αυτό το ενσωματωμένο στοιχείο αλλάζει �
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Μετατόπιση διάταξης"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Αυτό το widget δεν περιγράφει τις ρυθμίσεις του, οπότε επεξεργάζονται ως ζεύγη ονόματος και τιμής."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Πρόβλημα"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Έλεγχος"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Εμφάνιση μπλοκ"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Χρησιμοποιήστε ένα ευανάγνωστο χρώμα θέματος"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Να γίνει H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Εναλλακτικό κείμενο"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Αποθήκευση εναλλακτικού κειμένου"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Αυτή η εικόνα είναι διακοσμητική"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Έλεγχος…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Δεν εντοπίστηκαν προβλήματα προσβασιμότητας σε αυτή τη σελίδα."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d πρόβλημα"
+msgstr[1] "%d προβλήματα"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d στοιχείο προς έλεγχο"
+msgstr[1] "%d στοιχεία προς έλεγχο"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Έλεγχος ξανά"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Ένας αυτόματος έλεγχος εντοπίζει πολλά προβλήματα, αλλά όχι όλα. Δοκιμάστε επίσης τη σελίδα μόνο με το πληκτρολόγιο και με ένα πρόγραμμα ανάγνωσης οθόνης."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Η αντίθεση του κειμένου είναι %1$s:1· χρειάζεται τουλάχιστον %2$s:1 για να είναι αναγνώσιμο."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "κάντε κλικ εδώ,εδώ,διαβάστε περισσότερα,περισσότερα,σύνδεσμος,αυτός ο σύνδεσμος,μάθετε περισσότερα,μετάβαση"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Ένας σύνδεσμος δεν έχει κείμενο, επομένως ένα πρόγραμμα ανάγνωσης οθόνης ανακοινώνει μόνο «σύνδεσμος». Προσθέστε κείμενο ή μια ετικέτα."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Το κείμενο συνδέσμου “%s” δεν δείχνει πού οδηγεί. Περιγράψτε τον προορισμό αντί αυτού."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Ένα στοιχείο έχει θετικό tabindex, το οποίο αλλάζει τη σειρά του πληκτρολογίου μακριά από τη σειρά ανάγνωσης. Χρησιμοποιήστε 0 ή αφαιρέστε το."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Κάποιο στοιχείο στο οποίο μπορεί να γίνει κλικ δεν είναι προσβάσιμο από το πληκτρολόγιο. Χρησιμοποιήστε ένα πραγματικό κουμπί ή σύνδεσμο."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Ένα ενσωματωμένο πλαίσιο δεν έχει τίτλο, επομένως ένα πρόγραμμα ανάγνωσης οθόνης δεν μπορεί να προσδιορίσει τι είναι."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Ένα πεδίο φόρμας δεν έχει ετικέτα, επομένως ο σκοπός του δεν ανακοινώνεται."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Αυτή η κεφαλίδα είναι κενή. Οι χρήστες προγραμμάτων ανάγνωσης οθόνης πλοηγούνται με βάση τις κεφαλίδες· αφαιρέστε την ή προσθέστε κείμενο."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Ο τίτλος της σελίδας είναι ήδη το H1· χρησιμοποιήστε H2 για το ανώτερο επίπεδο του περιεχομένου."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Αυτή η κεφαλίδα H%1$d παραλείπει ένα επίπεδο· η προηγούμενή της είναι η H%2$d. Κάντε την H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Αυτή η εικόνα δεν έχει κείμενο εναλλακτικής περιγραφής. Περιγράψτε την ή σημειώστε την ως διακοσμητική εάν δεν προσθέτει τίποτα."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Κλείσιμο πίνακα"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7562,18 +9520,6 @@ msgstr "Προσαρμοσμένο"
 msgid "Width / height"
 msgstr "Πλάτος / ύψος"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Κορυφή"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Κάτω"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7586,20 +9532,6 @@ msgstr "Κληρονομημένη εικόνα — αντικατάσταση"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Αφαίρεση εικόνας"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Θέση"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Μέγεθος"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7665,22 +9597,6 @@ msgstr "Κάθε πλευρά ξεχωριστά"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Πλευρά"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Στυλ"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Χρώμα"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7930,14 +9846,6 @@ msgstr "%1$s (%2$d σετ)"
 msgid "Replace icon"
 msgstr "Αντικατάσταση εικονιδίου"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Επιλογή εικονιδίου"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Επιλέξτε εικονίδιο"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Δεν υπάρχουν εικονίδια που να ταιριάζουν."
@@ -7949,10 +9857,6 @@ msgstr "Κανονικό"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Επωνυμίες"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Με περίγραμμα"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8081,21 +9985,9 @@ msgstr "Χρώμα κειμένου"
 msgid "Cursor"
 msgstr "Δρομέας"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Βέλος"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Δείκτης"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Κείμενο"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8253,10 +10145,6 @@ msgstr "Όνομα περιοχής"
 msgid "Named areas"
 msgstr "Επώνυμες περιοχές"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Σειρές"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Ύψος"
@@ -8374,10 +10262,6 @@ msgstr "Στοίχιση πλήρους πλάτους"
 msgid "Decoration"
 msgstr "Διακόσμηση"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Υπογράμμιση"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Επιγράμμωση"
@@ -8460,19 +10344,9 @@ msgstr "Kωνική"
 msgid "Angle (degrees)"
 msgstr "Γωνία (μοίρες)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Σχήμα"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Έλλειψη"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Κύκλος"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8508,10 +10382,6 @@ msgstr "Κόρεσμος υποβάθρου (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Απόχρωση (χρήση διαφανούς χρώματος)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Στρογγυλεμένο τετράγωνο"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8528,10 +10398,6 @@ msgstr "Τρίγωνο"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Διαμάντι"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Αστέρι"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9409,11 +11275,6 @@ msgstr "Εκκαθάριση"
 msgid "The change could not be saved."
 msgstr "Η αλλαγή δεν μπόρεσε να αποθηκευτεί."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Κλείσιμο πίνακα"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Προεπιλεγμένο θέμα"
@@ -9470,9 +11331,49 @@ msgstr "Τα στυλ, τα tokens, η σκοτεινή λειτουργία, τ
 msgid "Open the Site Editor’s styles"
 msgstr "Ανοίξτε τα στυl του Εποπτικού Προγράμματος Ιστότοπου"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Επικεφαλίδα"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Μια επικεφαλίδα με πιο στενό ύψος γραμμής, διαμορφωμένη με την καρτέλα Στυλ."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Μια παράγραφος κειμένου, διαμορφωμένη με την καρτέλα Στυλ."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Εικόνα"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Μια εικόνα με στρογγυλεμένες γωνίες, διαμορφωμένη με την καρτέλα Στυλ."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Ένα βίντεο από τη Βιβλιοθήκη Πολυμέσων, διαμορφωμένο με την καρτέλα Στυλ."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Διάκενο"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Κενός χώρος μεταξύ των μπλοκ. Ορίστε διαφορετικό ύψος ανά μέγεθος οθόνης στην καρτέλα Στυλ."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Διαχωριστικό"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Μια οριζόντια γραμμή μεταξύ ενοτήτων, με στυλ από την καρτέλα Στυλ."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Περιεχόμενο από άλλο ιστότοπο (ένα βίντεο, μια δημοσίευση, ένας χάρτης) επisynάπτοντας τη διεύθυνσή του."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Πολλές εικόνες σε πλέγμα, διαμορφωμένες με την καρτέλα \"Στυλ\"."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9506,10 +11407,6 @@ msgstr "Λίστα"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Χάπια"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Κουμπιά"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9554,10 +11451,6 @@ msgstr "Απόκρυψη γλωσσών στις οποίες δεν έχει μ
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Κάθετη στοίχιση"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Φόντο"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9616,11 +11509,6 @@ msgstr "Ρυθμίσεις αποκλεισμού"
 #, js-format
 msgid "Add block: %s"
 msgstr "Προσθήκη μπλοκ: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(χωρίς τίτλο)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9696,10 +11584,6 @@ msgstr "Απενεργοποίηση ασφαλούς λειτουργίας"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Ενεργοποίηση ασφαλούς λειτουργίας (τα άλλα πρόσθετα απενεργοποιημένα, για εσάς, μόνο στο Studio)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Δημοσιευμένο"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10039,11 +11923,6 @@ msgstr "Όνομα κατασκευαστή"
 msgid "Visual editor name"
 msgstr "Όνομα οπτικού επεξεργαστή"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Συντάκτης"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10117,10 +11996,6 @@ msgstr[1] "Αναίρεση: %d σελίδες αποκαταστάθηκαν."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Αντικατάσταση"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Σύνδεσμοι"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10230,10 +12105,6 @@ msgstr "Επιτρέψτε σε έναν πελάτη να σχολιάσει σ
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Οποιοσδήποτε διαθέτει τον σύνδεσμο μπορεί να δει αυτή τη σελίδα, ακόμη και πριν δημοσιευτεί, και να αφήσει σχόλια. Δεν απαιτείται λογαριασμός."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Αντιγράφηκε"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10476,6 +12347,52 @@ msgstr "Αντιγραφή των εικόνων στη βιβλιοθήκη π�
 msgid "Show what will happen"
 msgstr "Προβολή του τι θα συμβεί"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Στοιχεία ακοordeon"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Μία ενότητα ενός ακορντεόν: ένας τίτλος που ανοίγει το περιεχόμενό της."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Ακορντεόν"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Ερωτήσεις ή ενότητες που ανοίγουν και κλείνουν. Προαιρετικά μία κάθε φορά, και προαιρετικά επισημασμένες ως FAQ για τις μηχανές αναζήτησης."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "ακορντεόν"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Συχνές ερωτήσεις"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "εναλλαγή"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "σύμπτυξη"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "Λεπτομέρειες"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10492,6 +12409,7 @@ msgid "notice"
 msgstr "ειδοποίηση"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "μήνυμα"
@@ -10506,6 +12424,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "προειδοποίηση"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Σήμανση"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Μια σύντομη ετικέτα όπως Νέο, Προσφορά ή Καλύτερη τιμή."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "ετικέτα"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "ετικέτα"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "ετικέτα"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "νέο"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Ημερολόγιο κρατήσεων"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Ένα ημερολόγιο κρατήσεων Calendly ή Cal.com, το οποίο φορτώνεται μόνο όταν το ζητήσει ο επισκέπτης."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "κράτηση"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "ραντεβού"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "προγραμματισμός"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10517,6 +12500,7 @@ msgid "A link styled as a button."
 msgstr "Ένας σύνδεσμος διαμορφωμένος ως κουμπί."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "κουμπί"
@@ -10530,6 +12514,98 @@ msgstr "σύνδεσμος"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "παρότρυνση για δράση"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Παρότρυνση για δράση"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Μια επικεφαλίδα, μια πρόταση και ένα ή δύο κουμπιά που ζητούν από τον επισκέπτη να ενεργήσει."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "CTA"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "Πλαίσιο επιγραφής"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Εγγραφή"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Λίστα ελέγχου"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Μια λίστα εργασιών, καθεμία από τις οποίες επισημαίνεται ως ολοκληρωμένη ή εκκρεμής, με λέξεις για προγράμματα ανάγνωσης οθόνης καθώς και με ένα σημάδι ελέγχου."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Εκκρεμεί"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "Εργασίες"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "υποδιαστήματα"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "λίστα"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Κωδικός"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Μια λίστα κώδικα με επισήμανση σύνταξης, αριθμούς γραμμών και κουμπί αντιγραφής. Παραμένει ευανάγνωστη εάν το πρόσθετο απενεργοποιηθεί ποτέ."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "κώδικας"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "σύνταξη"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "επισήμανση"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "απόσπασμα"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "προγραμματισμός"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10553,6 +12629,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "Διάταξη"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Πίνακας σύγκρισης"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Πρόγραμμα ή προϊόντα δίπλα-δλίπλα, με σημειώσεις ναι και όχι που τα προγράμματα ανάγνωσης οθόνης διαβάζουν ως λέξεις."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "σύγκριση"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "τιμολόγηση"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "προγράμματα"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "πίνακας"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "δυνατότητες"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Κουμπιά επικοινωνίας"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Κουμπιά για κλήση, αποστολή email, γραπτού μηνύματος ή μηνύματος στο WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Επικοινωνία"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "κλήση"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "τηλέφωνο"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "email"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10570,11 +12724,13 @@ msgid "container"
 msgstr "δοχείο"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "πλαίσιο"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10591,6 +12747,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "στήλες"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Δπλός τίτλος"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Μια επικεφαλίδα σε δύο μέρη, με το δεύτερο να τονίζεται με χρώμα, ντεγκραντέ, περίγραμμα ή υπογράμμιση."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "επικεφαλίδα"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "τίτλος"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "διαβάθμιση"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Λίστα λειτουργιών"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Δυνατότητες σε πλέγμα, κάθε μία με ένα εικονίδιο, επικεφαλίδα και σύντομη περιγραφή."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Πλεονεκτήματα"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "υπηρεσίες"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10634,6 +12836,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "κείμενο"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Φόρμα"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Εμφανίζει μια φόρμα από τα Contact Form 7, WPForms, Gravity Forms ή Fluent Forms, διαμορφωμένη ώστε να ταιριάζει με τον ιστότοπό σας."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "φόρμα"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Γλωσσάρι"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Όροι και οι ορισμοί τους, ταξινομημένοι από το Α έως το Ω, ο καθένας με τον δικό του σύνδεσμο. Μπορεί να συνδέσει την πρώτη αναφορά κάθε όρου στη σελίδα με τον ορισμό του."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "όροι"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "Ορισμοί"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "λεξικό"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Λίστα εικονιδίων"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Μια λίστα όπου κάθε γραμμή ξεκινά με ένα εικονίδιο: ένα σημάδι επιλογής, ένα βέλος ή οποιοδήποτε εικονίδιο από τη βιβλιοθήκη."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "κουκκίδες"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "εικονίδια"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10654,6 +12936,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Πλαίσιο πληροφοριών"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Ένα εικονίδιο, μια σύντομη κεφαλίδα, μια-δύο προτάσεις και ένας προαιρετικός σύνδεσμος: για υπηρεσίες, πλεονεκτήματα ή στοιχεία επικοινωνίας."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "δυνατότητα"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "υπηρεσία"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "κάρτα"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10673,6 +12980,204 @@ msgstr "μετάφραση"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "πολυγλωσσικό"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Αντιστοίχιση"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Ένας χάρτης μιας τοποθεσίας από το OpenStreetMap: χωρίς κλειδί και τίποτα δεν φορτώνεται από το OpenStreetMap μέχρι ο επισκέπτης να ζητήσει τον χάρτη."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "αντιστοίχιση"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "τοποθεσία"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "διεύθυνση"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Παραθυρικό πλαίσιο"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Ένα κουμπί που ανοίγει ένα παράθυρο πάνω από τη σελίδα, με οποιαδήποτε μπλοκ στο εσωτερικό."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "αναδυόμενο παράθυρο"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "αναδυόμενο παράθυρο"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "φωτιστικό κουτί"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "παράθυρο διαλόγου"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Πλαϊνό πάνελ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Ένα κουμπί που σύρει ένα πλαίσιο από το πλάι του παραθύρου, με οποιαδήποτε μπλοκ μέσα."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "εκτός οθόνης"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "συρτάρι"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "πλευρική στήλη"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "πίνακας ελέγχου"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "μενού"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Λεπτομέρειες δημοσίευσης"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Ο συντάκτης της δημοσίευσης, οι ημερομηνίες, οι κατηγορίες, οι ετικέτες, ο χρόνος ανάγνωσης και ο αριθμός σχολίων."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "Συντάκτης"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "ημερομηνία"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "χρόνος ανάγνωσης"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "Όνομα συντάκτη"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Γραμμή προόδου"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Μια γραμμή με ετικέτα που δείχνει πόσο έχει προχωρήσει κάτι, όπως μια δεξιότητα ή ένας στόχος."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "πρόοδος"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "μπάρα"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "δεξιότητα"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "στόχος"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Περιεχόμενο που προστατεύεται με κωδικό πρόσβασης"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Μπλοκάρει μόνο περιεχόμενο που μπορούν να δουν οι επισκέπτες με τον κωδικό πρόσβασης. Μέχρι να τον εισαγάγουν, το περιεχόμενο δεν υπάρχει καθόλου στη σελίδα."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "κωδικός πρόσβασης"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "προστατευμένο"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "ιδιωτικό"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "κλείδωμα"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "μέλη"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10698,6 +13203,86 @@ msgstr "Φωτεινό"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "σχεδιασμός χρωμάτων"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Κωδικός QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Ένας κωδικός QR για μια διεύθυνση web ή οποιοδήποτε κείμενο, σχεδιασμένος στον δικό σας ιστότοπο (δεν χρησιμοποιείται υπηρεσία QR)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "κωδικός QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "γραμμοκώδικας"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "σάρωση"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Γραμμή προόδου ανάγνωσης"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Μια λεπτή γραμμή στην άκρη του παράθυρου που γεμίζει καθώς οι επισκέπτες κάνουν κύλιση στη σελίδα."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "ανάγνωση"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "κύλιση"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Σχετικές δημοσιεύσεις"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Δημοσιεύσεις που μοιράζονται τις κατηγορίες ή τις ετικέτες αυτής της δημοσίευσης, μαζί με τις εικόνες, τις ημερομηνίες και τις περιλήψεις τους."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "σχετικά"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "δημοσιεύσεις"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "παρόμοια"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "περισσότερα"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10761,13 +13346,284 @@ msgstr "Εμφανίζει τα widget σε μία από τις περιοχέ�
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "πλευρική στήλη"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "περιοχή γραφικού στοιχείου"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Χάρτης ιστότοπου"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Μια σελίδα που παραθέτει κάθε δημοσιευμένη σελίδα και δημοσίευση (και άλλο δημόσιο περιεχόμενο), διατηρώντας το δέντρο σελίδων."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "χάρτης ιστότοπου"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "χάρτης ιστότοπου"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "ευρετήριο"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "όλες οι σελίδες"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Εικονίδια κοινωνικών δικτύων"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Σύνδεσμοι προς τα προφίλ σας, σχεδιασμένοι με τα εικονίδια των ίδιων των δικτύων."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "κοινωνικά δίκτυα"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "σύνδεσμοι"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "Ακολουθήστε"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "προφίλ"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Αξιολόγηση με αστέρια"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Μια αξιολόγηση που εμφανίζεται ως αστέρια, σε βήματα μισού αστεριού."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "αστέρια"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "αξιολόγηση"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "βαθμολογία"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Βήματα"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Τα αριθμημένα βήματα μιας διαδικασίας, με τη σειρά, προς τα κάτω στη σελίδα ή δίπλα-δίπλα."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "διεργασία"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "πώς να"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "χρονολόγιο"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "αριθμημένο"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Καρτέλα"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Μία καρτέλα ενός μπλοκ καρτελών: ο τίτλος της και το πάνελ της."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Πίνακας περιεχομένων"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Μια λίστα με τις επικεφαλής της σελίδας, η οποία δημιουργείται αυτόματα και συνδέεται με καθεμία από αυτές."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Περιεχόμενα"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "περιεχόμενα"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "επικεφαλίδες"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Καρτέλες"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Περιεχόμενο σε καρτέλες: οι επισκέπτες κάνουν εναλλαγή μεταξύ των πινάκων με το ποντίκι ή το πληκτρολόγιο."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "καρτέλες"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "με καρτέλες"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "πίνακες"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Μαρτυρία"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Μια παραπομπή από πελάτη με το όνομά του, τον ρόλο, τη φωτογραφία και μια προαιρετική βαθμολογία με αστέρια."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "επισκόπηση"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "προσφορά"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "πελάτης"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Σχόλια"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Εργαλειοσυμβουλή"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Μια λέξη ή φράση που εμφανίζει μια σύντομη εξήγηση κατά την αιώρηση του δείκτη και την εστίαση πληκτρολογίου."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "αναδυόμενη υπόδειξη"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "υπόδειξη"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "ορισμός"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Προφίλ συντάκτη"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Η φωτογραφία, το όνομα, το βιογραφικό και οι σύνδεσμοι του συγγραφέα ή ενός επιλεγμένου χρήστη."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "Βιογραφικό"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "προφίλ"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "σχετικά"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Κουμπί συνομιλίας WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Ένα κυμαινόμενο κουμπί στη γωνία της σελίδας που ανοίγει μια συνομιλία WhatsApp μαζί σας."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "συνομιλία"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "αιωρούμενο"
 
 #: blocks/widget/block.json
 msgctxt "block title"

@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "ပြန်သုံးနိုင်သော ပုံစံအဖြစ် သိမ်းဆည်းရန်"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "သုံးစွဲနိုင်စွမ်း စစ်ဆေးကိရိယာ"
 
@@ -990,6 +994,7 @@ msgstr "← အခြားဝန်ဆောင်မှုပေးသူက�
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "လိပ်စာ"
 
@@ -1043,6 +1048,8 @@ msgstr "စမ်းသပ်ရန်"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "ဖယ်ရှားရန်"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "ဝန်ဆောင်မှုပေးသူများထံမှ မော်ဒယ်စာရင်းများကို ပြန်လည်စတင်ပါ"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "ပုံများ"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "ပိတ်ထားသည်"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "ဖွင့်ရန်"
 
@@ -1448,6 +1457,7 @@ msgstr "AI တောင်းဆိုချက် တစ်ခုမျှ မ�
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "ပြီးပါပြီ"
 
@@ -1515,7 +1525,11 @@ msgstr "ကြိုးပမ်းမှု အကြိမ်ရေ မျာ�
 msgid "Something went wrong. Please contact the admin."
 msgstr "တစ်ခုခု မှားယွင်းသွားပါသည်။ ကျေးဇူးပြု၍ စီမံခန့်ခွဲသူထံ ဆက်သွယ်ပါ။"
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "ချိတ်ဆက်ပါ"
 
@@ -1538,52 +1552,383 @@ msgstr "ထိုမိသားစုကို သိမ်းဆည်းထ�
 msgid "Removed."
 msgstr "ဖယ်ရှားပြီးပါပြီ။"
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "၎င်းသည် မှန်ကန်သော ဖောင့်မိသားစု အမည်မဟုတ်ပါ။"
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts သည် ဤဖောင့်မိသားစုကို မပြန်ပေးပါ။ အမည်ကို စစ်ဆေးပြီး ထပ်ကြိုးစားပါ။"
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "ဖောင့်ဖိုင်များကို ဒေါင်းလုဒ်လုပ်၍ သို့မဟုတ် သိမ်းဆည်း၍မရပါ။ uploads ဖိုင်တွဲတွင် ရေးသားနိုင်သောခွင့်ပြုချက် ရှိမရှိ စစ်ဆေးပါ။"
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "ဖောင့် စတိုင်လ်ရှပ်ကို သိမ်းဆည်း၍မရပါ။ အပ်လုဒ်ဖိုင်တွဲတွင် ရေးသားနိုင်သောခွင့်ပြုချက် ရှိမရှိ စစ်ဆေးပါ။"
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "ဤသတိပေးချက်ကို ဖယ်ရှားပါ"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(တဘ်အသစ်တွင် ဖွင့်ပါမည်)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "ပြီးပါပြီ:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "လုပ်ဆောင်ရန် -"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "ဝေါဟာရ အညွှန်း"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s တွင် %1$s မှတ်ပေးထားသည်"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "တိုးတက်မှု"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "ကုဒ်ကို ကူးယူပါ"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "ကူးယူပြီးပါပြီ"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "ထိုဝစ်ဂျက်ကို ဤဆိုက်တွင် မရရှိနိုင်ပါ။"
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "အီးမေးလ်"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "ဖုန်း"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS ဖိဒ်"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "ဝက်ဘ်ဆိုက်"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "ချိတ်ဆက်ရန်"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (tab အသစ်တွင် ဖွင့်မည်)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "၅ တွင် %d မှတ် ပေးထားသည်"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(အကြံပြုသည်)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "ပါဝင်သည်"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "မပါဝင်ပါ"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "နှိုင်းယှဉ်မှု ဇယား"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "%s သို့ ခေါ်ဆိုပါ"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "အီးမေးလ် %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "စာသား %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "WhatsApp တွင် စကားပြောရန်"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "ကြှနျုပျတို့ကို ဆကျသှယျရနျ"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "WhatsApp တွင် ကျွန်ုပ်တို့နှင့် စကားပြောပါ"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "ဤဖောင်ကို ယခုလက်ရှိ အသုံးမပြုနိုင်ပါ။"
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s မလှုပ်ရှားနိုင်တော့သောကြောင့် ဤပုံစံကို မပြသနိုင်ပါ။"
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "ချိတ်ဆက်ရန်: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "မြေပုံကို ပြသခြင်းဖြင့် ၎င်းကို OpenStreetMap မှ တင်ဆောင်ပေးပါသည်။"
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "မြေပုံကို ပြပါ"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMap ပေါ်တွင် မြေပုံကို ဖွင့်ပါ"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s မှ ကြAိုဆိုသည့် ရက်ချိန်းပြက္ခဒိန်"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "ဘိုကင်ပြက္ခဒိန်ကို ပြသခြင်းဖြင့် ၎င်းကို %s မှ တင်ပေးသည်။"
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "ဘိုကင်ပြက္ခဒိန်ကို ပြပါ"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%s တွင် ဘွတ်ကင်လုပ်ရန်"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s အတွက် QR ကုဒ်"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "ဒီဇိုင်း"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "အကြောင်းအရာ"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "မီဒီယာ"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "စျေးကွက်ရှာဖွေရေး"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "ဆိုက်"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "အချက်အလက်များ"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "ဆက်စပ်နေသော ပို့စ်များ"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "ပို့စ် အသေးစိတ်အချက်အလက်များ"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "မှ"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "ထုတ်ဝေပြီး"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "နောက်ဆုံးပြင်ဆင်ပြီးသည်"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "တွင်"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "တဂ်လုပ်ပြီးသား"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d မိနစ် ဖတ်ရှုရန်"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "မှတ်ချက်များ မရှိသေးပါ"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "မှတ်ချက် %d ခု"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "ဆိုက်ဘစ်မြေပုံ"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(ခေါင်းစဉ် မရှိပါ)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s ၏ ပို့စ်အားလုံး"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "ဤအကြောင်းအရာကို ကာကွယ်ထားသည်။ ၎င်းကိုကြည့်ရှုရန် စကားဝှက်ကို ထည့်ပါ။"
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "ထိုစကားဝှက်မှာ မမှန်ပါ။ ထပ်မံကြိုးစားကြည့်ပါ။"
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "စကားဝှက်"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "အကြောင်းအရာကို ပြသရန်"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "ထိုစာမျက်နှာကို သော့ဖွင့်၍ မရပါ။"
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "ကြိုးစားမှု အကြိမ်ရေ များလွန်းနေပါသည်။ မိနစ်အနည်းငယ်ကြာမှ ထပ်မံကြိုးစားပါ။"
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "စကားဝှက်သည် အက္ခရာ ၄ လုံးမှ ၂၀၀ လုံးအထိ ရှိရပါမည်။"
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "ပို၍"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "ပိတ်ရန်"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "တက်ဘ် %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "ပါဝင်သောအရာများ"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2031,10 @@ msgstr "Sandwich Studio ဖြင့် တည်းဖြတ်ရန်"
 msgid "Blank canvas"
 msgstr "ဗလာ ကင်းဗတ်"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "အကြောင်းအရာသို့ ကျော်သွားရန်"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "တက်ဘလက်၏ အကျယ်သည် 480 မှ 2560 pixels ကြားရှိ ကိန်းပြည့် ဖြစ်ရပါမည်။"
@@ -1760,7 +2109,11 @@ msgid "Uploaded icons"
 msgstr "တင်ထားသော အိုင်ကွန်များ"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "သင်္ကေတ"
 
@@ -2553,6 +2906,8 @@ msgstr "%s သည် ကျွန်ုပ်၏ ကလိုင်းယင့�
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "ကုဒ်"
 
@@ -3047,13 +3402,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "ပြင်ဆင်ရန်"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "အီးမေးလ်"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "အီးမေးလ် လိပ်စာ"
 
@@ -3103,6 +3454,10 @@ msgstr "ဝှိုက်လေဘယ် မုဒ်ကို ဖွင့်�
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3480,7 @@ msgstr "အီးမေးလ်လိပ်စာအသစ်ကို ထည�
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "အမှား"
 
@@ -3723,6 +4079,7 @@ msgstr "အောက်ပါထုတ်ကုန်များကို လ�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4183,7 @@ msgstr "ဤပလပ်အင်အတွက် PHP ဗားရှင်းအ�
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "မဟုတ်ပါ"
 
@@ -4811,6 +5169,13 @@ msgstr "ဆိုရှယ်မီဒီယာ (ဖေ့စ်ဘွတ်ခ�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5461,9 @@ msgstr "အချိန်တံဆိပ်"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "ခေါင်းစဉ်"
 
@@ -5171,6 +5539,8 @@ msgstr "%1$s ကို ဘယ်လိုသဘောရလဲ။ %3$d ရက်
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "အမျိုးအစား"
@@ -5286,6 +5656,7 @@ msgstr "သုံးစွဲသူများ"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "တန်ဖိုး"
@@ -5340,6 +5711,7 @@ msgstr "ငွေပေးချေရသော လုပ်ဆောင်ခ�
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "သတိပေးချက်"
 
@@ -5666,6 +6038,7 @@ msgid "Optional"
 msgstr "(ချန်လှပ်ထားနိုင်သည်)"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "ပလန်"
 
@@ -5988,18 +6361,26 @@ msgstr "အလွန်သေးငယ်သော"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "အသေးစား"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "အလယ်အလတ်"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "ကြီးမားသော"
 
@@ -6012,7 +6393,9 @@ msgid "Huge"
 msgstr "အလွန်ကြီးမားသော"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6324,16 +6707,9 @@ msgid "The trial could not be started."
 msgstr "စမ်းသပ်မှုကို စတင်၍မရပါ။"
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "အင်္ဂါရပ်"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "ပါဝင်သည်"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "မပါဝင်ပါ"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6687,10 +7063,6 @@ msgstr "လော့ဂ်အင်ဝင်ရန်လိပ်စာ"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "သုံးစွဲသူအမည်"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "စကားဝှက်"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7081,15 +7453,62 @@ msgstr "ပြန်လည်ပြင်ဆင်ခြင်းကို စ�
 msgid "Undo all conversions"
 msgstr "ပြောင်းလဲမှုအားလုံးကို မူလအတိုင်းပြန်ထားရန်"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "ပစ္စည်း"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "စာမျက်နှာဖွင့်သည့်အခါ ဖွင့်ပါ"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "ခေါင်းစဉ်သည် ခေါင်းစဉ်ခွဲတစ်ခု ဖြစ်သည်"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "အကြောင်းအရာများသည် စာမျက်နှာ၏ အစိတ်အပိုင်းများ ဖြစ်နေပါက ဝင်ရောက်ကြည့်ရှုသူများ အလွယ်တကူ ကူးပြောင်းကြည့်ရှုနိုင်ရန် ခေါင်းစဉ်ကို ခေါင်းစဉ်ကြီး (heading) အဖြစ် ပြုလုပ်ပါ။"
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "ခေါင်းစဉ် %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "မေးခွန်း သို့မဟုတ် ကဏ္ဍခေါင်းစဉ်"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "အကော်ဒီယံ"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "တစ်ချိန်လျှင် တစ်ခုသာ ဖွင့်နိုင်သည်"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "ရှာဖွေရေးအင်ဂျင်များအတွက် မကြာခဏမေးလေ့ရှိသောမေးခွန်းများ (FAQ) အဖြစ် အမှတ်အသားပြုပါ"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "ခေါင်းစဉ်များ (မေးခွန်းများ) နှင့် ၎င်းတို့၏ စာသားများ (အဖြေများ) မှ တည်ဆောက်ထားသော FAQ ဖွဲ့စည်းတည်ဆောက်ပုံဆိုင်ရာ ဒေတာကို ထည့်သွင်းပေးသည်။"
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "သတိပေးချက်"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "အချက်အလက်"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "အောင်မြင်သည်"
 
@@ -7098,6 +7517,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "သတိပေးချက်များနှင့် အမှားများကို စခရင်ဖတ်စက် အသုံးပြုသူများထံ ချက်ချင်း အသိပေးမည်ဖြစ်ပြီး အချက်အလက်များနှင့် အောင်မြင်မှုဆိုင်ရာ အသိပေးချက်များကိုမူ ၎င်းတို့လုပ်ဆောင်နေသည် ပြီးဆုံးသည့်အခါမှသာ ဖတ်ပြမည်ဖြစ်သည်။"
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "သင်္ကေတကို ပြပါ"
 
@@ -7113,64 +7533,702 @@ msgstr "ခေါင်းစဉ် (ရွေးချယ်နိုင်သ�
 msgid "Write the message…"
 msgstr "စာ ပေးပို့ပါ…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "ကဏ္ဍ — အဓိကအကြောင်းအရာအလိုက် ကဏ္ဍတစ်ခု"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "အလယ်"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — အဓိပ္ပာယ်မရှိပါ"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "တံဆိပ်"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "ခေါင်းစီး - နိဒါန်းအကြောင်းအရာ"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "အရောင်"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "အောက်ခြေ - ပိတ်သည့် အကြောင်းအရာ"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "အပြင်အဆင် အရောင်ဝင်းလက်ချက်"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "ဆောင်းပါး — ကိုယ်ပိုင်အကြောင်းအရာပါရှိသော အကြောင်းအရာ"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "ကြားနေ"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "ဘေးထွက် - ဆက်စပ်အကြောင်းအရာ"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "ရာထူး"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — ပင်မအကြောင်းအရာ (တစ်စာမျက်နှာလျှင် တစ်ကြိမ်)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "တံဆိပ်တုံး"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — လမ်းညွှန်လင့်ခ်များ"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "ကြe booking calendar"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "အစီအစဉ် (flexbox, ကော်လံ)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "ဝန်ဆောင်မှု"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "အတန်း (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "ဘွတ်ကင်လုပ်ရန် စာမျက်နှာ လိပ်စာ"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "ဂရစ်"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "ဥပမာအားဖြင့် %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "စခရင်ဖတ်စက်များက ဖတ်ပြပြီး ၎င်းအောက်တွင် ပြသပေးမည့် ပြက္ခဒိန်၏ ရည်ရွယ်ချက်။"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "၎င်းသည် %s ကြိုတင်မှာယူမှု စာမျက်နှာ လိပ်စာ မဟုတ်ပါ၊ ထို့ကြောင့် စာမျက်နှာတွင် မည်သည့်အရာမျှ ပေါ်လာမည်မဟုတ်ပါ။"
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "ပြက္ခဒိန်ကို ကြိုတင်ကြည့်ရှုရန်"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "လင့်ခ် လိပ်စာ"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "ခလုတ်တွင် အညွှန်းနှင့် လိပ်စာနှစ်ခုစလုံး ပါရှိမှသာ ပြသပေးသည်။"
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "တက်ဘ်အသစ်တွင် ဖွင့်ရန်"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "လုပ်ဆောင်ရန် ဖိတ်ခေါ်ချက်"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "ပုံစံချ"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "အောက်ပါ ခလုတ်များ"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "စာသားဘေးရှိ ခလုတ်များ"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "ညှိနှိုင်းမှု"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "ပင်မခလုတ်"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "ဒုတိယခလုတ်"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "ခေါင်းစဉ်…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "အကြောင်းရင်း တစ်ကြောင်း..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "ဒုတိယ ခလုတ် (စိတ်ကြိုက်)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "စာရင်းဇယား"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "အမှတ်အသား အရောင်"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "စာကြောင်းများ"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "လိုင်း %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "လုပ်ဆောင်ချက်..."
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "လိုင်းထည့်ရန်"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "ဘာသာစကား"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "အလိုအလျောက် စာဖတ်ပါ"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "ဟိုက်လုိုက်လုပ်ထားခြင်း မရှိပါ"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "ဖိုင်အမည်"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "ကုဒ်၏ အထက်တွင် ပြသထားသည်၊ ဥပမာ functions.php။"
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "စာကြောင်း နံပါတ်များ"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "မိတ္တူကူးခလုတ်"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "စာကြောင်းရှည်များကို ကွပ်ကပ်ပါ"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "ကုဒ်များကို ရေးပါ သို့မဟုတ် ကူးထည့်ပါ..."
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "စာသား"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "ကော်လံများ"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "ကော်လံ %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "%s ကို မီးမောင်းထိုးပြရန်"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "ကော်လံထည့်ရန်"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "အတန်းများ"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "အတန်း %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "အတန်းထည့်ရန်"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "စာတန်း (နှိုင်းယှဉ်ထားသည့်အရာ)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "ဆဲလ်အမျိုးအစား: %s။ ပြောင်းလဲရန်"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "ဖုန်းခေါ်ဆိုမှု"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "စာသားမက်ဆေ့ချ်"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "ဝပ်ဆပ်စ်"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "ခလုတ်များ"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "နိုင်ငံကုဒ်ပါ ဖုန်းနံပါတ်"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "ခလုတ်စာသား"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "ဤခလုတ်ကို ဖယ်ရှားပါ"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "ခလုတ်တစ်ခု ထည့်ရန်"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "စတင်ရန် WhatsApp မက်ဆေ့ချ် (ရွေးချယ်ရန်)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "ဆက်သွယ်ရန် ခလုတ်များ"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "ဘေးဘားတွင် ဖုန်းနံပါတ်၊ အီးမေးလ်လိပ်စာ သို့မဟုတ် WhatsApp နံပါတ်တစ်ခု ထည့်ပါ။"
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "ခေါင်းစဉ်နှစ်ခု"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "ခေါင်းစဉ်အဆင့်"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "စာမျက်နှာတစ်ခုလျှင် H1 ကို ၎င်း၏ ပင်မခေါင်းစဉ်အတွက် တစ်ကြိမ်သာ အသုံးပြုပါ။"
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "ဒုတိယပိုင်း ပုံစံ"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "အသံထွက်အရောင်"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "အရောင်စပ်"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "အကျဉ်းချုပ်"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "မျဉ်းသားရန်"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "ဒုတိယပိုင်းသည် ၎င်း၏ကိုယ်ပိုင်လိုင်းပေါ်တွင် ရှိနေသည်"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "ပထမပိုင်း"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "ဒုတိယပိုင်း"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "မာကာပင်"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "အထူမျဉ်းသား"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "နောက်ခံ"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "ပေါ်လွင်စေရန်"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "ဟိုက်လုဒ်လုပ်ထားသည်ကို ဖယ်ရှားရန်"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "စာလုံးကြီးပထမစာကြောင်း"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "ပထမစာလုံးအကြီး"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "သေတ္တာတစ်ခုအတွင်းရှိ ပထမဆုံးစာလုံးအတွက် \"သေတ္တာအတွင်းပါသော စာလုံးကြီး\" ပုံစံကို ရွေးပါ။"
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "ဘောက်စ်တစ်ခုအတွင်း ပထမစာလုံးအကြီး သို့မဟုတ် ပုံနှိပ်စာလုံးကြီး"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "အလေးပေးဘား"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "ကိုးကားချက် (အသံထွက်ဘား)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "အာရုံဖမ်းစားနိုင်ရန် အရောင်ပါသောဘားတစ်ခု၏ဘေးတွင် ကြီးမားစွာထားရှိထားသည့် စာသားမှကိုးကားချက်တစ်ခု။"
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "ကိုးကားချက်"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "အင်္ဂါရပ်စာရင်း"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "ဖုန်းများတွင် အင်္ဂါရပ်များသည် အမြဲတမ်း တစ်ခုအပေါ်တစ်ခု ထပ်နေပါသည်။"
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "အင်္ဂါရပ်များ"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "လုပ်ဆောင်ချက် %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "ကိုယ်ပိုင်သင်္ကေတပုံစံ"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "အင်္ဂါရပ်…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "၎င်းကို ဖော်ပြပါ..."
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "လုပ်ဆောင်ချက် ထည့်ရန်"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7၊ WPForms၊ Gravity Forms သို့မဟုတ် Fluent Forms ကို ထည့်သွင်းပြီး အသက်သွင်းပါ၊ ထို့နောက် ဤနေရာတွင် ၎င်း၏ဖောင်များထဲမှ တစ်ခုကို ရွေးချယ်ပါ။"
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "ဖောင် ပလပ်အင်"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "ရွေးချယ်ပါ..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "ပုံစံ"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "ဖောင်တစ်ခုကို ရွေးပါ…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s တွင် ဖောင်များ မရှိသေးပါ"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s သည် ဤဆိုဒ်တွင် မလှုပ်ရှားပါ၊ ထို့ကြောင့် ဤပုံစံကို မပြသနိုင်ပါ။"
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "ပုံစံစာရင်းကို တင်၍မရပါ။"
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "ဖောင်ပုံစံ"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "အကွက်များ"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "မျဉ်းစွန်းပါ"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "ဖြည့်ထားပြီး"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "မျဉ်းသားထားသော"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "ခလုတ် အကျယ်"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "စာသားကို အထိုင်ကျအောင်လုပ်ပါ"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "အပြည့်အဝ အကျယ်"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "အရောင်များ၊ ဖောင့်များ၊ အကွာအဝေးများနှင့် ထောင့်များသည် သင့်ဆိုဒ်ဒီဇိုင်းနှင့် ဤဘလောက်၏ ဒီဇိုင်းဆက်တင်များမှ လာပါသည်။"
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "သင့်ဆိုဒ်နှင့် လိုက်ဖက်အောင် ပုံစံထုတ်ထားသော သင်၏ ဖောင်ပလပ်အင်မှ ဖောင်တစ်ခုကို ပြပါ။"
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "ဖောင်ပလပ်အင်တစ်ခု လိုအပ်ပါသလား။ Contact Form 7 က အခမဲ့ဖြစ်သည်။"
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "ဝေါဟာရ အဘိဓာန်"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "က မှ ဇ သို့ စီရန်"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "စာမျက်နှာတွင် ဝေါဟာရများကို အက္ခရာစဉ်အတိုင်း ပြသထားသည်။ ဤနေရာတွင်မူ သင်ရေးသားခဲ့သည့် အစဉ်အတိုင်း ရှိနေမည်ဖြစ်သည်။"
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "A–Z အညွှန်းကို ပြသရန်"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "ဤစာမျက်နှာ၏ အခြားနေရာများတွင် အသုံးပြုထားသော လင့်ခ်အသုံးအနှုန်းများ"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "စာမျက်နှာစာသားတွင် ဝေါဟာရတစ်ခုစီ ပထမဆုံးအကြိမ် ပေါ်လာသည့်အခါ ၎င်း၏အဓိပ္ပာယ်ဖွင့်ဆိုချက်သို့ လင့်ခ်ချိတ်ပေးသည်။ ခေါင်းစဉ်များ၊ ခလုတ်များ၊ ကုဒ်များနှင့် ရှိနှင့်ပြီးသား လင့်ခ်များကို မူလအတိုင်း ထားရှိသည်။"
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "စည်းမျဉ်းများ"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "ကာလအပိုင်းအခြား %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "သက်တမ်းကာလ"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "၎င်း၏ အဓိပ္ပာယ်မှာ…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "ဝေါဟာရ ထည့်ရန်"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "သင်္ကေတ စာရင်း"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "တစ်ခုအောက်တစ်ခု"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "ဘေးချင်းယှဉ်"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "စာရင်း ပစ္စည်း..."
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "အချက်အလက်ပုံး"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "သို့မဟုတ် စာကြည့်တိုက်မှ မည်သည့်သင်္ကေတကိုမဆို ရွေးချယ်ပါ-"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "လင့်ခ် စာသား"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "\"နောက်ထပ်ဖတ်ပါ\" ဟု မရေးဘဲ လင့်ခ်သွားမည့်နေရာ (\"ကျွန်ုပ်တို့၏ စျေးနှုန်းများကို ကြည့်ရှုပါ\") ကို ဖော်ပြပါ။"
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "စာကြောင်းတစ်ကြောင်း နှစ်ကြောင်း..."
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "ကဏ္ဍ — အဓိကအကြောင်းအရာအလိုက် ကဏ္ဍတစ်ခု"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — အဓိပ္ပာယ်မရှိပါ"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "ခေါင်းစီး - နိဒါန်းအကြောင်းအရာ"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "အောက်ခြေ - ပိတ်သည့် အကြောင်းအရာ"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "ဆောင်းပါး — ကိုယ်ပိုင်အကြောင်းအရာပါရှိသော အကြောင်းအရာ"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "ဘေးထွက် - ဆက်စပ်အကြောင်းအရာ"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — ပင်မအကြောင်းအရာ (တစ်စာမျက်နှာလျှင် တစ်ကြိမ်)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — လမ်းညွှန်လင့်ခ်များ"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "အစီအစဉ် (flexbox, ကော်လံ)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "အတန်း (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "ဂရစ်"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "ပြင်ဆင်နေသည်: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "ကလေးများကို စီစဉ်ရန် သို့မဟုတ် ခင်းကျင်းရန်"
 
@@ -7178,7 +8236,7 @@ msgstr "ကလေးများကို စီစဉ်ရန် သို့�
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7186,70 +8244,50 @@ msgstr "ကလေးများကို စီစဉ်ရန် သို့�
 msgid "Inherited (%s)"
 msgstr "အမွေဆက်ခံရရှိသည် (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "ပုံစံကျတုံးများ"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "ကော်လံများ"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "ကင်းဗတ်စ်အတွင်းသို့ ဆွဲထည့်ပါ သို့မဟုတ် ရိုက်ထည့်ပါ"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "အကြောင်းအရာ အကျယ်အဝန်း"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Boxed (thိင်း၏ အကြောင်းအရာ အကျယ်)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "အပြည့်အဝ အကျယ်"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "အနည်းဆုံး ဉပ်"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML တဂ်"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "ချိတ်ဆက်ရန်"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "တဘ်လောက်တစ်ခုလုံးကို လင့်ခ်တစ်ခုဖြစ်အောင် ပြုလုပ်ပါ"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "စခရင်ဖတ်စက်များအတွက် လင့်ခ်စာသား"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "ဘလောက်ကို မမြင်နိုင်သော ဧည့်သည်များအတွက် လင့်ခ်၏ လုပ်ဆောင်ချက်။"
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "တက်ဘ်အသစ်တွင် ဖွင့်ရန်"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "ချိတ်ဆက်ထားသော ဘလောက်တစ်ခုအတွင်းသို့ လင့်ခ်များ သို့မဟုတ် ခလုတ်များကို မထည့်ပါနှင့်- လင့်ခ်တစ်ခုအတွင်းရှိ လင့်ခ်သည် ဘရောက်ဆာများတွင် အလုပ်မလုပ်ပါ။"
 
@@ -7281,14 +8319,143 @@ msgstr "အတန်း အသစ်ထည့်ရန်"
 msgid "− Row"
 msgstr "− အတန်း"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "နေရာ"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "ကိုဩဒိနိတ်များ သို့မဟုတ် OpenStreetMap လင့်ခ်ကို ကူးယူထည့်ပါ"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org တွင် နေရာကို ရှာဖွေပါ၊ ထို့နောက် ဘရောက်ဆာ ဘားမှ လိပ်စာကို ကူးယူပါ သို့မဟုတ် မြေပုံပေါ်တွင် ညာကလစ်နှိပ်ပြီး \"Show address\" ကို ရွေးချယ်ပါ။"
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "လတ္တီကျု"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "လောင်ဂျီကျု"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "ချဲ့ရန်"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "နေရာ၏ အမည်"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "မြေပုံအောက်တွင် ပြသပြီး စခရင်ဖတ်စက်များက ဖတ်ပြသည်။"
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "ကိုဩဒိနိတ်များ (ဥပမာ 51.5074, -0.1278) သို့မဟုတ် OpenStreetMap လင့်ခ်ကို ကူးထည့်ပါ။"
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "အညွှန်းကိန်း သို့မဟုတ် လင့်ခ်"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "မြေပုံကို ကြိုတင်ကြည့်ရှုရန်"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMap ပေါ်တွင် %1$s, %2$s ကို စစ်ဆေးပါ"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "ရေးသားသူ"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "ထုတ်ဝေသည့်ရက်စွဲ"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "မွမ်းမံထားသည့် ရက်စွဲ (ကွဲပြားသည့်အခါ)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "အမျိုးအစားများ"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "တဂ်များ"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "ဖတ်ရှုချိန်"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "မှတ်ချက် အရေအတွက်"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "ပြသမည့် အသေးစိတ်အချက်အလက်များ"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "ပြသမည့် အသေးစိတ်အချက်အလက် အနည်းဆုံး တစ်ခုကို ရွေးချယ်ပါ။"
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "တိုးတက်မှုဘား"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "အများဆုံး"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "ရာခိုင်နှုန်းအတွက် ၁၀၀၊ ဥပမာ ၁၀ ခုတွင် ၈ ခုကဲ့သို့သော အရေအတွက်အတွက် အခြားမည်သည့်နံပါတ်မဆို။"
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "ရာခိုင်နှုန်းကို ပြပါ"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "စကားဝှက်တစ်ခု သတ်မှတ်ထားသည်။ ဧည့်သည်များသည် ၎င်းကို မထည့်မချင်း ဤအကြောင်းအရာအစား စကားဝှက်ပုံစံတစ်ခုကို မြင်ရမည်ဖြစ်သည်။"
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "စကားဝှက် မသတ်မှတ်ရသေးပါ၊ ထို့ကြောင့် ဧည့်သည်များသည် ဤနေရာတွင် မည်သည့်အရာကိုမျှ မမြင်ရပါ။"
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "စကားဝှက်အသစ်"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "စကားဝှက် သတ်မှတ်ရန်"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "စကားဝှက် သတ်မှတ်ပြီးပါပြီ။ ၎င်းကို အသုံးချရန် စာမျက်နှာကို သိမ်းဆည်းပါ။ ဖွင့်ထားပြီးသား ဧည့်သည်များသည် စကားဝှက်အသစ် လိုအပ်ပါမည်။"
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Page Builder Sandwich ကို ပိတ်ထားလိုက်ပါက ဤအကြောင်းအရာကို လူတိုင်းမြင်နိုင်မည်ဖြစ်သည်။"
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "စကားဝှက်ပုံစံ၏ အထက်တွင်ပြသရန် မက်ဆေ့ဂျ် (စိတ်ကြိုက်)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "ပြောင်းရန်"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "တံဆိပ်တုံး"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7298,30 +8465,698 @@ msgstr "စခရင်ဖတ်စက်များက ဖတ်ပြပြ�
 msgid "Show label"
 msgstr "တံဆိပ်ကို ပြပါ"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "ဝက်ဘ်လိပ်စာ (သို့) စာသား"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR ကုဒ်"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "မျက်နှာပြင်ဖတ်စက်များအတွက် ဖော်ပြချက်"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"QR code for\" နှင့် စာသားကို အသုံးပြုရန် ဤနေရာကို ကွက်လပ်ထားခဲ့ပါ။"
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "ဝဘ်လိပ်စာ၊ ဖုန်းလင့်ခ် (tel:) သို့မဟုတ် မည်သည့်စာသားကိုမဆို ရိုက်ထည့်ပါ။"
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "ဤသည်မှာ QR ကုဒ်တစ်ခုအတွက် အလွန်ရှည်နေပါသည်။ ၎င်းကို အတိုချုပ်ပါ။"
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "စာတန်းထည့်ပါ"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "စာဖတ်ခြင်း တိုးတက်မှုဘား"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "ဝင်းဒိုး၏ အစွန်း"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "ထိပ်ဆုံး"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "အောက်ခြေ"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "ဧည့်သည်များ စာမျက်နှာကို အောက်သို့ ရွှေ့ကြည့်စဉ် ဝင်းဒိုး၏ အောက်ခြေတွင် ပြသသည်။"
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "ဧည့်သည်များ စာမျက်နှာကို ဆင်းသွားစဉ် ဝင်းဒိုး၏ အပေါ်ဆုံးတွင် ပြသသည်။"
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "မည်မျှ"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "ဆက်စပ်သည့်အကြောင်းအရာ -"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "အမျိုးအစားများ သို့မဟုတ် တဂ်များ"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "မည်သည့်အရာမျှ သက်ဆိုင်မှုမရှိပါက နောက်ဆုံးထွက်အသစ်များကို အစားထိုးပြသပါ"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "ခေါင်းစဉ်"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "\"Related posts\" အတွက် လွတ်ထားပါ။"
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "featured ပုံကို ပြသရန်"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "ရက်စွဲကို ပြပါ။"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "အကျဉ်းချုပ်ကို ပြသပါ"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "ဤပို့စ်၏ အမျိုးအစား သို့မဟုတ် စာရင်းတံဆိပ်များကို မျှဝေထားသော ပို့စ်များ မရှိသေးပါ။ ရှိလာသည့်အခါ ဤနေရာတွင် ပေါ်လာပါမည်။"
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "မော်ဒယ်"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "အပြင်ဘက်ကပ်လျက် ပန်နယ်"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "အရွယ်အစား"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "ဘေးမှဝင်လာသည်"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "စာစောင်စတင်ရာဘက်သည် ဖတ်ရှုခြင်းစတင်ရာဘက် ဖြစ်သည်- အင်္ဂလိပ်လိုတွင် ဘက်ဝဲ၊ အာရဗီလိုတွင် ညာဘက်။"
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "နောက်ခံ စာမျက်နှာကို နှိပ်လိုက်သောအခါ ပိတ်ပါ"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "ဝင်းဒိုးခေါင်းစဉ်"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "အမှန်ခြစ်"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "စက်ဝိုင်း"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "ကူးကျော်ရန်"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "အစက်"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "မြှား"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "ကြယ်ပွင့်သတ်မှတ်ရန်"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "အိုင်ကွန် အရောင်"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "စာသားနှင့် တူညီသည်"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "အဓိက အပြင်အဆင်"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "အပြင်အဆင် ဒုတိယအဆင့်"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "အပြင်အဆင် မီးမောင်းထိုးပြမှု"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "စာမျက်နှာပေါ်တွင် ခေါင်းစဉ်များကို အစဉ်လိုက် ထားရှိပါ - ၎င်းတည်ရှိရာ ကဏ္ဍ၏အောက် တစ်ဆင့်နိမ့်သော ခေါင်းစဉ်တစ်ခု ဖြစ်ရပါမည်။"
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "အိုင်ကွန်ကို ရွေးပါ"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "မူရင်း သင်္ကေတပုံကို သုံးပါ"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "အိုင်ကွန်တစ်ခုကို ရွေးပါ"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "အပေါ်သို့ ရွှေ့ရန်"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "အောက်သို့ရွှေ့ရန်"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "အမျိုးအစားတစ်ခုချင်းစီအတွက် ခေါင်းစဉ်တစ်ခုကို ပြပါ။"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "သင်ရွေးချယ်ထားသော အမျိုးအစားများတွင် ဘာမျှထုတ်ဝေထားခြင်း မရှိသေးပါ။"
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "ချိတ်ဆက်မှုများ"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "လင့်ခ် %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "ကွန်ရက်"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "ပရိုဖိုင် လိပ်စာတစ်ခု၊ mailto:you@example.com သို့မဟုတ် tel:+441234567890။"
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "စခreen reader များအတွက် ဖတ်ပြမည့် အမည်"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "အခြား သင်္ကေတ"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "လင့်ခ်ထည့်ရန်"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "ကြည့်ရန်"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "စတိုင်"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "သင်္ကေတ သက်သက်"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "ပုံစံခွဲ"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "ဝိုင်းစက်သော စတုရန်း"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "စတုရန်းပုံ"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "ပရိုဖိုင်များကို တက်ဘ်အသစ်တွင် ဖွင့်ပါ"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "ကြယ်ပွင့် အဆင့်သတ်မှတ်ချက်"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "အဆင့်သတ်မှတ်ချက်"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "ကြယ်ပွင့်အရေအတွက်"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "နံပါတ်ကို ပြပါ။"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "အဆင့်များ"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "စာမျက်နှာအောက်ဘက်သို့"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "ဘေးချင်းယှဉ် (ဖုန်းများတွင် အထပ်လိုက်ပြမည်)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "နံပါတ်အရောင်"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "အဆင့်များ၏ အစဉ်လိုက်"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "အဆင့် %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "အဆင့်…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "ဘာလုပ်ရမလဲ..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "အဆင့် ပေါင်းထည့်ရန်"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "စာညှပ်တန်း"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "စာမျက်နှာတွင် ခေါင်းစဉ်များ ထည့်ပါ၊ ဤနေရာတွင် စာရင်းပြုစုပါမည်။"
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "မာတိကာ"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "ခေါင်းစဉ်အဆင့်မှ"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "ခေါင်းစဥ်အဆင့်သို့"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "နံပါတ်တပ်ထားသည်"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "ခေါက်သိမ်းနိုင်သည်"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "ကျုံ့လျက် စတင်ပါ"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "ဖတ်ရှုနေသည့် အပိုင်းကို မီးမောင်းထိုးပြပါ"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "စာညှပ်များ"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "မျက်နှာပြင်ဖတ်စနစ်များအတွက် အမည်"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "စိတ်ကြိုက် ရွေးချယ်နိုင်ပါသည်။ ဥပမာ - \"Plan များ\" ကဲ့သို့ တက်ဘ်များမှာ ဘာအကြောင်းဖြစ်သည်ကို ဖော်ပြသည်။"
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "စာမျက်နှာဖွင့်ချိန်တွင် ဖွင့်ပါ"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "ဘေးဘက်ရှိ တက်ဘ်များ"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "တဘ်အသစ်ထည့်ရန်"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "ဂုဏ်ပြုလွှာ"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "ဓာတ်ပုံ အစားထိုးရန်"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "ဓာတ်ပုံကို ရွေးပါ"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "ဓာတ်ပုံ ဖယ်ရှားရန်"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "ဓာတ်ပုံ ဖော်ပြချက်"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "ဓာတ်ပုံတွင် ၎င်း၏ဘေးတွင် အမည်ဖော်ပြထားသော လူကိုသာ ပြသနေသည့်အခါ ဗလာဖြစ်အောင် ထားခဲ့ပါ။"
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "ကြယ်ပွင့် အဆင့်သတ်မှတ်ချက် (0 = မရှိပါ)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "quotation အောက်ရှိ အမည်"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "ကိုးကားချက်ဘေးရှိ ဓာတ်ပုံ"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "ဖောက်သည် ပြောကြားခဲ့သည်မှာ…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "အခန်းကဏ္ဍ သို့မဟုတ် ကုမ္ပဏီ"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "တူးလ်ထစ်ပ် (Tooltip)"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Tooltips စာသား"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "အတိုဆုံးထားပါ - တစ်ကြောင်း သို့မဟုတ် နှစ်ကြောင်း။ မျက်နှာပြင်ဖတ်စက်များသည် ၎င်းရှင်းပြထားသည့် စာသားနှင့်အတူ ၎င်းကို ဖတ်ရှုသည်။"
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "ပြပါ"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "အထက်"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "အောက်ပါ"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "စကားလုံး သို့မဟုတ် စကားစု"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "အသုံးပြုရန်"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "ပရိုဖိုင်"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "မည်သူ၏ ပရိုဖိုင်"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "စာရေးသူ"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "ပရိုဖိုင်ပုံကို ပြပါ"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "ကိုယ်ရေးအကျဉ်းကို ပြပါ"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "ပို့စ်များနှင့် ဝဘ်ဆိုဒ်သို့ လင့်ခ်များကို ပြသပါ"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "ရေးသားသူ ပရိုဖိုင်"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "ပြသရန် ပရိုဖိုင်ကို ရွေးချယ်ပါ။"
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "နိုင်ငံကုဒ်ပါသော WhatsApp နံပါတ်"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "ဥပမာအားဖြင့် +44 7700 900123။"
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "စတင်မည့် စာတ Nachricht (optional)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "အိုင်ကွန်ဘေးတွင် စာသားကို ပြပါ"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "ထောင့်"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "အောက်ဆုံး (အင်္ဂလိပ်လို ညာဘက်)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "အောက်ဆုံး အစ (အင်္ဂလိပ်လို ဘယ်ဘက်)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "ဘေးဘားတွင် သင်၏ WhatsApp နံပါတ်ကို ထည့်ပါ။ ထိုသို့ မထည့်မချင်း စာမျက်နှာတွင် ခလုတ်ကို ပြသမည် မဟုတ်ပါ။"
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "စာမျက်နှာပေါ်တွင် ဤခလုတ်သည် မျက်နှာပြင်၏ အောက်ခြေထောင့်တစ်ခုတွင် ပေါ်နေမည်ဖြစ်သည်။"
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Shortcode တဂ်"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "စာလုံးများ၊ နံပါတ်များ၊ ဒက်ရှ်များနှင့် အောက်ခံမျဉ်းများကိုသာ အသုံးပြုပါ။"
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "ဂုဏ်သတ္တိအမည်"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "ဂုဏ်သတ္တိ ထည့်ရန်"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "စက္ကူတို"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "အခြားဂုဏ်သတ္တိများ"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "လုပ်ဆောင်ချက် ဆက်တင်များတွင် ဆော့ကုဒ် တဂ်တစ်ခုကို ရွေးချယ်ပါ။"
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "ပြခန်း"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "ပုံအရွယ်အစား"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "သေးငယ်သောပုံရိပ်"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "မူရင်းအတိုင်း"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "ချိတ်ဆက်ရန်"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "ပူးတွဲပါဖိုင် စာမျက်နှာ"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "မီဒီယာဖိုင်"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "အသံဖိုင်"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "ဗီဒီယို"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "ဖိုင်လိပ်စာ"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "လည်ပတ်မှုအထပ်ထပ်"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "အလိုအလျောက် ဖွင့်မည်"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "ပို့စ်ပုံရိပ်"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "ဖွင့်စရာစာရင်း"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "မီဒီယာ ID များ၊ ကော်မာများဖြင့် ခြားထားသည်"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "သီချင်းစာရင်းကို ပြပါ"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "ထည့်သွင်းရန်"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "ထည့်သွင်းရန် လိပ်စာ"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "အများဆုံး အကျယ်"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "ခေါင်းစဉ်ငယ်"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "ပုံနှင့် စာတန်း HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "အကျယ်"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "အကြံပြုချက်- ဖောင်တုံးသည် ဤဖောင်ကို သင့်ဆိုက်နှင့် ကိုက်ညီစေရန် စတိုင်လ်သွင်းထားသည်ကို ပြသပေးပါသည်။"
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "ဖောင်ခေါင်းစဉ်ကို ပြပါ"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "ဖောင်ဖော်ပြချက်ကို ပြသပါ"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "စာမျက်နှာကို ပြန်လည်မတင်ဘဲ ပေးပို့ပါ"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7342,123 +9177,108 @@ msgstr "ဖိုင်ကို ရွေးပါ"
 msgid "— Default —"
 msgstr "— မူလ —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "အဆင့်မြင့် စတိုင်ထုတ်ခြင်း"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "အိုက်လိုင်း CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS ရှင်းလင်းချက်များ၊ ဥပမာအားဖြင့်- min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "သက်ရောက်မှုများ (ယခင်ဗားရှင်း အတန်းအစားများ)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "ယခင်ဗားရှင်းများမှ ပါလာသည့် နေရာလပ်ဖြင့် ခြားထားသော အာနိသင်အမည်များ၊ ဥပမာ- hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "အတန်း"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "အကျယ်"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "အကျယ်အဝန်း အပြည့်၊ အကြောင်းအရာကို အလယ်တွင် ထိန်းသိမ်းထားသည်"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "လင့်ခ် လိပ်စာ"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "ချိတ်ဆက်မှု ဆက်စပ်ပုံ"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "ညှိနှိုင်းမှု"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "ဝဲဘက်"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "အလယ်"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "ညာဘက်"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "ခလုတ်စာသား"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "စာသားထည့်ပါ..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "နေရာချထားမှု"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "၎င်း၏ ကိုယ်ပိုင်စာကြောင်းပေါ်တွင်"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "လိုင်းပေါ်တွင် အခြားအကြောင်းအရာများဘေး၌"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "အလိုအလျောက် (စာမျက်နှာ၏ ထိပ်ဆုံးအဆင့်တွင် သီးသန့်စာကြောင်း)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "လက်လှမ်းမီနိုင်သော တံဆိပ်"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "အလှဆင်သင်္ကေတတစ်ခုအတွက်ဖြစ်ပါက အလွတ်ထားပါ။"
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "ဘလောက် ဆက်တင်များတွင် အိုင်ကွန်တစ်ခုကို ရွေးချယ်ပါ။"
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "ဆက်တင်အသစ်အမည်"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "ဥပမာအားဖြင့် - ခေါင်းစဉ် သို့မဟုတ် စာသား"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "ဆက်တင်ထည့်ရန်"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "ဝစ်ဂျက်"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "ဝစ်ဂျက်တစ်ခုကို ရွေးပါ"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "ဝစ်ဂျက် ဧရိယာ"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "ဝစ်ဂျက် ဧရိယာကို ရွေးချယ်ပါ"
 
@@ -7481,6 +9301,140 @@ msgstr "ဤထည့်သွင်းထားသော အရာသည် ၎�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "အပြင်အဆင် ရွှေ့ပြောင်းမှု"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "ဤဝစ်ဂျက်သည် ၎င်း၏ ဆက်တင်များကို မဖော်ပြထားသောကြောင့် ၎င်းတို့ကို အမည်နှင့် တန်ဖိုး တွဲများအနေဖြင့် တည်းဖြတ်ရမည်ဖြစ်သည်။"
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "ပြဿနာ"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "စစ်ဆေးရန်"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "ပိတ်ပင်ထားမှုကို ပြရန်"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "ဖတ်ရလွယ်ကူသော အပြင်အဆင် အရောင်ကို အသုံးပြုပါ"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "H%d သို့ ပြုလုပ်ပါ"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "အစားထိုး စာသား"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Alt စာသားကို သိမ်းဆည်းရန်"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "ဤပုံမှာ အလှဆင်ရန် ဖြစ်ပါသည်"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "စစ်ဆေးနေသည်…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "ဤစာမျက်နှာတွင် အသုံးပြုနိုင်စွမ်းဆိုင်ရာ ပြဿနာ တစ်စုံတစ်ရာ မတွေ့ရှိရပါ။"
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s၊ %2$s။"
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "ပြဿနာ %d ခု"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "စစ်ဆေးရန် အရာ %d ခု"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "ထပ်စစ်ပါ"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "အလိုအလျောက် စစ်ဆေးမှုတစ်ခုက ပြဿနာများစွာကို ရှာဖွေပေးနိုင်သော်လည်း အားလုံးကိုမူ မဟုတ်ပါ။ ကီးဘုတ်တစ်ခုတည်းဖြင့်သာမက မျက်နှာပြင်ဖတ်စက် (စခရင် ရီဒါ) ကို အသုံးပြု၍လည်း ထိုစာမျက်နှာကို စမ်းသပ်ကြည့်ပါ။"
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "စာသား ကွဲပြားမှုမှာ %1$s:1 ဖြစ်ပြီး ဖတ်ရှုနိုင်ရန် အနည်းဆုံး %2$s:1 လိုအပ်ပါသည်။"
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "ဒီကိုနှိပ်ပါ,ဒီမှာ,ပိုပြီးဖတ်ရန်,ပိုမိုသိရှိရန်,လင့်ခ်,ဤလင့်ခ်,ပိုမိုလေ့လာရန်,သွားရန်"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "ချိတ်ဆက်မှုတွင် စာသားမရှိပါ၊ ထို့ကြောင့် စခရင်ဖတ်စက်က “ချိတ်ဆက်မှု” ဟုသာ ပြောပါမည်။ စာသား သို့မဟုတ် အညွှန်းတစ်ခု ထည့်ပါ။"
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "“%s” ဆိုသည့် လင့်ခ်စာသားသည် ၎င်းဘယ်ကိုသွားသည်ကို မဖော်ပြထားပါ။ ယင်းအစား လားရာကို ဖော်ပြပါ။"
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "ဒြပ်စင်တစ်ခုတွင် အကောင်းဘက်ရှိ tabindex ပါရှိပြီး ၎င်းက ကီးဘုတ်အစီအစဥ်ကို ဖတ်ရှုသည့်အစီအစဥ်မှ ပြောင်းလဲသွားစေသည်။ 0 ကို အသုံးပြုပါ သို့မဟုတ် ၎င်းကို ဖယ်ရှားပါ။"
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "နှိပ်နိုင်သော အရာတစ်ခုကို ကီးဘုတ်ဖြင့် ရောက်ရှိနိုင်ခြင်း မရှိပါ။ ခလုတ် အစစ် သို့မဟုတ် လင့်ခ်ကို အသုံးပြုပါ။"
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "ထည့်သွင်းထားသော ဖရိမ်တွင် ခေါင်းစဉ်မရှိပါ၊ သို့ဖြစ်၍ စခရင်ဖတ်စက် (screen reader) က ၎င်းသည် မည်သည့်အရာဖြစ်ကြောင်း မပြောနိုင်ပါ။"
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "ဖောင်ကွက်လပ်တွင် အညွှန်းမရှိပါ၊ ထို့ကြောင့် ၎င်း၏ ရည်ရွယ်ချက်ကို ကြေညာပေးမည် မဟုတ်ပါ။"
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "ဤခေါင်းစဉ်သည် ဗလာဖြစ်နေသည်။ စခရင်ဖတ်စက် အသုံးပြုသူများသည် ခေါင်းစဉ်များဖြင့် လမ်းညွှန်ကြသည်၊ ၎င်းကို ဖယ်ရှားပါ သို့မဟုတ် စာသားထည့်ပါ။"
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "စာမျက်နှာ ခေါင်းစဉ်သည် H1 ဖြစ်ပြီးသားဖြစ်သည်၊ အကြောင်းအရာ၏ အမြင့်ဆုံးအဆင့်အတွက် H2 ကို အသုံးပြုပါ။"
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "ဤ H%1$d သည် အဆင့်တစ်ခုကို ကျော်သွားသည်; ယင်း၏ရှေ့တွင် H%2$d ဖြစ်သည်။ ယင်းကို H%3$d တစ်ခု ဖြစ်စေပါ။"
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "ဤပုံတွင် alt စာသား မရှိပါ။ ၎င်းကို ဖော်ပြပါ၊ သို့မဟုတ် ဘာမှမထည့်ပါက အလှဆင်အဖြစ် အမှတ်အသားပြုပါ။"
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "ဘေနယ်ကို ပိတ်မည်"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7555,18 +9509,6 @@ msgstr "စိတ်ကြိုက်ပြင်ဆင်ထားသော"
 msgid "Width / height"
 msgstr "အကျယ် / အမြင့်"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "ထိပ်ဆုံး"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "အောက်ခြေ"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7579,20 +9521,6 @@ msgstr "အမွေဆက်ခံထားသော ရုပ်ပုံ - �
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "ပုံကို ဖယ်ရှားရန်"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "ရာထူး"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "အရွယ်အစား"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7658,22 +9586,6 @@ msgstr "ဘက်တစ်ဖက်စီ သီးခြားစီ"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "ဘေးဘက်"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "စတိုင်"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "အရောင်"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7923,14 +9835,6 @@ msgstr "%1$s (%2$d ခု သတ်မှတ်ထားသည်)"
 msgid "Replace icon"
 msgstr "အိုင်ကွန် အစားထိုးရန်"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "အိုင်ကွန်ကို ရွေးပါ"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "အိုင်ကွန်တစ်ခုကို ရွေးပါ"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "မည်သည့် သင်္ကေတမျှ ကိုက်ညီမှု မရှိပါ။"
@@ -7942,10 +9846,6 @@ msgstr "ပုံမှန်"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "ကုန်အမှတ်တံဆိပ်များ"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "မျဉ်းစွန်းပါ"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8074,21 +9974,9 @@ msgstr "စာသားအရောင်"
 msgid "Cursor"
 msgstr "ကာဆာ"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "မြှား"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "ညွှန်တံ"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "စာသား"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8246,10 +10134,6 @@ msgstr "နယ်မြေအမည်"
 msgid "Named areas"
 msgstr "အမည်ပေးထားသော နယ်ပယ်များ"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "အတန်းများ"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "အမြင့်"
@@ -8367,10 +10251,6 @@ msgstr "ဘေးညှိရန်"
 msgid "Decoration"
 msgstr "အလှဆင်မှု"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "မျဉ်းသားရန်"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "အိုဗာလိုင်း"
@@ -8453,19 +10333,9 @@ msgstr "ကုန်းပုံစံ"
 msgid "Angle (degrees)"
 msgstr "ထောင့် (ဒီဂရီ)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "ပုံစံခွဲ"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "ဘဲဥပုံ"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "စက်ဝိုင်း"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8501,10 +10371,6 @@ msgstr "နောက်ခံပြည့်ဝမှု (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "အရောင်ဖျော့ (မြင်ရနိုင်သော အရောင်ကိုသုံးပါ)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "ဝိုင်းစက်သော စတုရန်း"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "ဘလော့ခ်"
@@ -8521,10 +10387,6 @@ msgstr "တြိဂံ"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "ဒိုင်ယာမွန်"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "ကြယ်ပွင့်သတ်မှတ်ရန်"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9402,11 +11264,6 @@ msgstr "ရှင်းလင်းရန်"
 msgid "The change could not be saved."
 msgstr "အပြောင်းအလဲကို သိမ်းဆည်း၍မရပါ။"
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "ဘေနယ်ကို ပိတ်မည်"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "ပုံစံခွက် မူရင်း"
@@ -9463,9 +11320,49 @@ msgstr "Pro တွင် အတန်းများ၊ တိုကင်မျ
 msgid "Open the Site Editor’s styles"
 msgstr "ဆိုက် အယ်ဒီတာ၏ စတိုင်များကို ဖွင့်ပါ"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "ခေါင်းစဉ်"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Style တက်ဘ်ဖြင့် ပုံစံဖော်ထားပြီး လိုင်းအကွာအဝေး ပိုကျဉ်းသော ခေါင်းစဉ်တစ်ခု။"
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "စတိုင် တက်ဘ်ဖြင့် စတိုင်ထုတ်ထားသော စာပိုဒ်တစ်ခု။"
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "ပုံရိပ်"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "စတိုင် တက်ဘ်ဖြင့် ပုံစံထုတ်ထားသော ထောင့်ဝိုင်းများပါသည့် ပုံတစ်ပုံ။"
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "စတိုင် တက်ဘ်ဖြင့် ပုံစံထုတ်ထားသော မီဒီယာစာကြည့်တိုက်မှ ဗီဒီယိုတစ်ခု။"
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "နေရာလပ်"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "ဘလောက်များအကြားရှိ နေရာလွတ်၊ စတိုင် (Style) တက်ဘ်တွင် စခရင်အရွယ်အစားအလိုက် အမြင့်ကို သီးခြားစီ သတ်မှတ်ပါ။"
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "ရန်ပုံခွဲမျဉ်း"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "စတိုင် (Style) တက်ဘ်ဖြင့် စတိုင်ထုတ်ထားသော အပိုင်းများကြားရှိ အလျားလိုက်မျဉ်း။"
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "လိပ်စာကို ကူးထည့်ခြင်းဖြင့် အခြားဆိုက်တစ်ခုမှ အကြောင်းအရာ (ဗီဒီယို၊ ပို့စ်၊ ကတ်ပြား) ကို ထည့်ပါ။"
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "စတိုင်လ် တက်ဘ်ဖြင့် ပုံစံထုတ်ထားသော ဂရစ်ကွက်တစ်ခုအတွင်းရှိ ပုံများစွာ။"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9499,10 +11396,6 @@ msgstr "စာရင်းဇယား"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "ဆေးပြားများ"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "ခလုတ်များ"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9547,10 +11440,6 @@ msgstr "ဤစာမျက်နှာကို ဘာသာမပြန်ဆ�
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "ဒေါင်လိုက် စီစဉ်ရန်"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "နောက်ခံ"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9609,11 +11498,6 @@ msgstr "ပိတ်ဆို့ခြင်း ဆက်တင်များ"
 #, js-format
 msgid "Add block: %s"
 msgstr "အကွက် ထည့်ရန် - %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(ခေါင်းစဉ် မရှိပါ)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9689,10 +11573,6 @@ msgstr "လုံခြုံရေး မုဒ်ကို ပိတ်ပါ"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "ဘေးကင်းသော မုဒ်ကို ဖွင့်ပါ (အခြား ပလပ်အင်များကို ပိတ်ထားပါ၊ သင့်အတွက်၊ Studio တွင်သာ)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "ထုတ်ဝေပြီး"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10029,11 +11909,6 @@ msgstr "တည်ဆောက်သူ အမည်"
 msgid "Visual editor name"
 msgstr "Visual Editor အမည်"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "ရေးသားသူ"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10104,10 +11979,6 @@ msgstr[0] "မပြီးပြတ်သေးပါ: %d စာမျက်န�
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "အစားထိုးရန်"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "ချိတ်ဆက်မှုများ"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10216,10 +12087,6 @@ msgstr "ဤစာမျက်နှာတွင် ဖောက်သည်တ�
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "လင့်ခ်ရှိသူတိုင်းသည် ဤစာမျက်နှာကို မထုတ်ဝေရသေးမီပင် ကြည့်ရှုနိုင်ပြီး မှတ်ချက်များရေးနိုင်ပါသည်။ အကောင့်ဖွင့်ရန် မလိုပါ။"
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "ကူးယူပြီးပါပြီ"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10455,6 +12322,52 @@ msgstr "ဤဆိုက်၏ မီဒီယာစာကြည့်တို�
 msgid "Show what will happen"
 msgstr "ဘာဖြစ်မည်ကို ပြပါ"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "ခေါက်ဆွဲပုံစံ ထည့်သွင်းချက် ပစ္စည်း"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "accordion တစ်ခု၏ အပိုင်းတစ်ပိုင်း- ၎င်း၏ အကြောင်းအရာကို ဖွင့်ပေးသည့် ခေါင်းစဉ်။"
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "အကော်ဒီယံ"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "ဖွင့်ပြီး ပိတ်နိုင်သော မေးခွန်းများ သို့မဟုတ် ကဏ္ဍများ။ ရွေးချယ်မှုအရ တစ်ကြိမ်လျှင် တစ်ခုစီဖြစ်ပြီး၊ ရှာဖွေရေးအင်ဂျင်များအတွက် FAQ တစ်ခုအနေဖြင့် ရွေးချယ်မှုအရ အမှတ်အသားပြုလုပ်ထားသည်။"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "ခေါက်ဆွဲပုံစံချဲ့ထွင်နိုင်သောစာရင်း"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "မကြာခဏ မေးလေ့ရှိသော မေးခွန်းများ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "ပြောင်းလဲရန်"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "ခေါက်သိမ်းရန်"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "အသေးစိတ်အချက်အလက်များ"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10471,6 +12384,7 @@ msgid "notice"
 msgstr "အသိပေးချက်"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "မိတ်ဆက်စာ"
@@ -10485,6 +12399,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "သတိပေးချက်"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "တံဆိပ်"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "အသစ်၊ လျှော့ဈေး သို့မဟုတ် တန်ဖိုးအရှိဆုံးကဲ့သို့သော အတိုချုံးတံဆိပ်တစ်ခု။"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "တံဆိပ်တုံး"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "အညွှန်းစာလုံး"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "ဆေးတel"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "အသစ်"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "ကြoချင်စရာပြက္ခဒိန်"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "ဧည့်သည်က တောင်းဆိုမှသာ ဖွင့်ပေးမည့် Calendly သို့မဟုတ် Cal.com ကြိုတင်စာရင်းသွင်းသည့် ပြက္ခဒိန်။"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "ကြိုတင်မှာယူမှု"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "ကလန်လီ"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "ချိန်းဆိုမှု"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "အချိန်ဇယားဆွဲရန်"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10496,6 +12475,7 @@ msgid "A link styled as a button."
 msgstr "ခလုတ်တစ်ခုအနေဖြင့် ပုံစံဖော်ထားသော လင့်ခ်တစ်ခု။"
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "ခလုပ်"
@@ -10509,6 +12489,98 @@ msgstr "ချိတ်ဆက်ရန်"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "လုပ်ဆောင်ရန် တိုက်တွန်းချက်"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "လုပ်ဆောင်ရန် ခေါ်ဆိုမှု"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "ခေါင်းစဉ်တစ်ခု၊ ဝါကျတစ်ကြောင်းနှင့် ဧည့်သည်အား လုပ်ဆောင်ချက်တစ်ခုလုပ်ဆောင်ရန် တောင်းဆိုသော ခလုတ်တစ်ခု သို့မဟုတ် နှစ်ခု။"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "လုပ်ဆောင်ချက် ခေါ်ဆိုမှု"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "ဘန်နာ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "စာရင်းသွင်းရန်"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "စစ်ဆေးရန်စာရင်း"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "စခရင်ဖတ်စနစ်များအတွက် စာသားဖြင့်လည်းကောင်း၊ အမှန်ခြစ်ဖြင့်လည်းကောင်း ပြီးစီးကြောင်း သို့မဟုတ် လုပ်ဆောင်ရန် ကျန်ရှိသေးကြောင်း မှတ်သားထားသည့် လုပ်ဆောင်ချက်များ စာရင်း။"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "လုပ်ရန်စာရင်း"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "လုပ်ငန်းတာဝန်များ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "အမှတ်အသားများ"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "စာရင်း"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "ကုဒ်"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Syntax highlighting၊ လိုင်းနံပါတ်များနှင့် ကူးယူရန် ခလုတ်ပါရှိသော ကုဒ်စာရင်း။ ပလပ်အင်ကို ပိတ်လိုက်လျှင်ပင် ဖတ်ရှု၍ရနေမည်ဖြစ်သည်။"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "ကုဒ်"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "ဝါကျဖွဲ့စည်းပုံဆိုင်ရာ"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "ပေါ်လွင်စေရန်"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "အစအန"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "ပရိုဂရမ်းမင်း"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10532,6 +12604,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "အပြင်အဆင်"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "နှိုင်းယှဉ်မှု ဇယား"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "စခရင်းဖတ်စက်များက စကားလုံးများအဖြစ် ဖတ်ရှုနိုင်သည့် ဟုတ်နှင့် မဟုတ် အမှတ်အသားများပါရှိသော ဘေးချင်းယှဉ်လျက်ရှိသည့် အစီအစဉ်များ သို့မဟုတ် ထုတ်ကုန်များ။"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "နှိုင်းယှဉ်မည်"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "ဈေးနှုန်းစာရင်း"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "ပလန်များ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "ဇယား"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "အင်္ဂါရပ်များ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "ဆက်သွယ်ရန် ခလုပ်များ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "သင့်ကို WhatsApp မှတစ်ဆင့် ဖုန်းခေါ်ဆိုရန်၊ အီးမေးလ်ပို့ရန်၊ စာတိုပေးပို့ရန် သို့မဟုတ် မက်ဆေ့ချ်ပို့ရန် ခလုတ်များ။"
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "ဆက်သွယ်ရန်"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "ခေါ်ဆိုရန်"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "ဖုန်း"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "အီးမေးလ်"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "ဝပ်ဆပ်စ်"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10549,11 +12699,13 @@ msgid "container"
 msgstr "ကွန်တိန်နာ"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "သေတ္တာ"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10570,6 +12722,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "ကော်လံများ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "ခေါင်းစဉ်နှစ်ခု"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "အရောင်၊ အရောင်စပ်၊ အပြင်စည်း သို့မဟုတ် မျဉ်းသားဖြင့် အလေးပေးထားသော ဒုတိယပိုင်းပါရှိသည့် အပိုင်းနှစ်ပိုင်းပါ ခေါင်းစဉ်တစ်ခု။"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "ခေါင်းစဉ်"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "ခေါင်းစဉ်"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "အရောင်စပ်"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "အင်္ဂါရပ်များစာရင်း"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "အိုင်ကွန်၊ ခေါင်းစဉ်နှင့် ဖော်ပြချက်တို ပါရှိသော ဂရစ်ကွက်တစ်ခုအတွင်းရှိ အင်္ဂါရပ်များ။"
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "အကျိုးကျေးဇူးများ"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "ဝန်ဆောင်မှုများ"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10613,6 +12811,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "စာသား"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "ပုံစံ"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "သင့်ဆိုဒ်နှင့် လိုက်ဖက်အောင် ဒီဇိုင်းထုတ်ထားသော Contact Form 7၊ WPForms၊ Gravity Forms သို့မဟုတ် Fluent Forms မှ ဖောင်တစ်ခုကို ပြသသည်။"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "ဖောင်"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "ဝေါဟာရများ"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "စည်းကမ်းချက်များနှင့် ၎င်းတို့၏ အဓိပ္ပာယ်ဖွင့်ဆိုချက်များ၊ A မှ Z အထိ စီစဥ်ထားပြီး တစ်ခုချင်းစီတွင် ၎င်းတို့၏ကိုယ်ပိုင် လင့်ခ်ပါရှိသည်။ စာမျက်နှာပေါ်ရှိ စည်းကမ်းချက်တစ်ခုစီ၏ ပထမဆုံးအကြိမ် ဖော်ပြချက်ကို ၎င်း၏ အဓိပ္ပာယ်ဖွင့်ဆိုချက်သို့ လင့်ခ်ချိတ်ပေးနိုင်သည်။"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "စည်းကမ်းချက်များ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "အဓိပ္ပာယ်ဖွင့်ဆိုချက်များ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "အဘိဓာန်"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "သင်္ကေတစာရင်း"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "မျဉ်းတိုင်း၏ အစတွင် အိုင်ကွန်တစ်ခု (အမှန်ခြစ်၊ မြှား၊ သို့မဟုတ် စာကြည့်တိုက်ရှိ မည်သည့်အိုင်ကွန်မဆို) ပါရှိသည့် စာရင်းတစ်ခု။"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "အချက်များ"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "အိုင်ကွန်များ"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10633,6 +12911,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "အချက်အလက် သေတ္တာ"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "အိုင်ကွန်တစ်ခု၊ ခေါင်းစဉ်တိုတစ်ခု၊ စာကြောင်းတစ်ကြောင်း သို့မဟုတ် နှစ်ကြောင်းနှင့် စိတ်ကြိုက်ထည့်နိုင်သော လင့်ခ်တစ်ခု- ဝန်ဆောင်မှုများ၊ အကျိုးကျေးဇူးများ သို့မဟုတ် ဆက်သွယ်ရန် အသေးစိတ်အချက်အလက်များအတွက်။"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "အင်္ဂါရပ်"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "ဝန်ဆောင်မှု"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "ကတ်ပြား"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10652,6 +12955,204 @@ msgstr "ဘာသာပြန်ဆိုချက်"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "ဘာသာစကားမျိုးစုံသုံး"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "ချိတ်ဆက်ရန်"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap မှ နေရာတစ်ခု၏ မြေပုံ- သော့ချက်မပါပါ၊ နှင့် ဧည့်သည်က မြေပုံကို မတောင်းဆိုမချင်း OpenStreetMap မှ မည်သည့်အရာမျှ တင်မည်မဟုတ်ပါ။"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "ချိတ်ဆက်ရန်"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "တည်နေရာ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "လိပ်စာ"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "မော်ဒယ်လ်"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "စာမျက်နှာပေါ်တွင် ဝင်းဒိုးတစ်ခုနှင့် ၎င်းအတွင်းရှိ မည်သည့် ဘလောက်များကိုမဆို ဖွင့်ပေးသည့် ခလုတ်တစ်ခု။"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "မော်ဒယ်"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "ပေါ့ပ်အပ်"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "လိုက်ဘောက်စ်"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "ဒိုင်ယာလော့ခ်"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "မျက်နှာပြင်ပြင်ပ ပန်နယ်"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "ဝင်းဒow ဘေးဘက်မှ ပန်နယ်တစ်ခုကို အတွင်းရှိ ဘလောက်များနှင့်အတူ ပွတ်ဆွဲဖော်ပြပေးသော ခလုတ်တစ်ခု။"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "ဖရိန်ပြင်ဘက်"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "အံဆွဲ"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "ဘေးဘား"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "ထိန်းချုပ်အကွက်"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "မီနူး"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "ပိုစ့်အသေးစိတ်များ"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "ပို့စ်၏ စာရေးသူ၊ ရက်စွဲများ၊ အမျိုးအစားများ၊ စာချွန်လွှာများ၊ ဖတ်ရှုချိန်နှင့် မှတ်ချက်အရေအတွက်။"
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "စာရေးသူ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "ရက်စွဲ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "ဖတ်ရှုချိန်"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "မီတာ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "ရေးသားသူအမည်"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "တိုးတက်မှု အခြေအနေဘား"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "ကျွမ်းကျင်မှု သို့မဟုတ် ဉီးတည်ချက် စသည်တို့ မည်မျှအထိ ရောက်ရှိပြီးကြောင်း ပြသပေးသည့် အညွှန်းပါ ဘားတစ်ခု။"
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "လုပ်ဆောင်ဆဲအခြေအနေ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "ဘား"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "ကျွမ်းကျင်မှု"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "ရည်မှန်းချက်"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "စကားဝှက်ဖြင့် ကာကွယ်ထားသော အကြောင်းအရာ"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "စကားဝှက်ရှိသူ ဧည့်သည်များသာ ကြည့်ရှုနိုင်သည့် ဘလောက်များ။ ၎င်းတို့ မထည့်မချင်း အကြောင်းအရာသည် စာမျက်နှာတွင် လုံးဝ ပါဝင်မည်မဟုတ်ပါ။"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "စကားဝှက်"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "ကာကွယ်ထားသည်"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "သီးသန့်"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "သော့ခတ်ပါ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "အဖွဲ့ဝင်များ"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10677,6 +13178,86 @@ msgstr "အလင်း"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "အရောင်စနစ်"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR ကုဒ်"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "သင့်ကိုယ်ပိုင်ဆိုက်တွင် ဖန်တီးထားသော ဝဘ်လိပ်စာ သို့မဟုတ် မည်သည့်စာသားမဆိုအတွက် QR ကုဒ် (QR ဝန်ဆောင်မှုကို အသုံးပြုထားခြင်း မရှိပါ)။"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR ကုဒ်"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "ဘားကုဒ်"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "စစ်ဆေးရန်"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "စာဖတ်နှုန်းတိုးတက်မှုဘား"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "လာရောက်သူများ စာမျက်နှာကို ဆင်း၍ကြည့်ရှုစဉ် ဖြည့်ဆည်းပေးမည့် ဝင်းဒိုး၏ အစွန်းဘက်ရှိ ပါးလွှာသော ဘားတစ်ခု။"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "ဖတ်ရှုနေသည်"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "စခေါ်လ်လုပ်ရန်"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "ဆက်စပ်ပို့စ်များ"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "ဤပို့စ်၏ အမျိုးအစားများ သို့မဟုတ် တဂ်များကို ၎င်းတို့၏ ပုံများ၊ နေ့စွဲများနှင့် အနှစ်ချုပ်များဖြင့် မျှဝေထားသော ပို့စ်များ။"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "ဆက်စပ်နေသော"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "ပို့တ်များ"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "ဆင်တူသော"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "ပိုမိုကြည့်ရှုရန်"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10740,13 +13321,284 @@ msgstr "အပြင်အဆင်၏ ဝစ်ဂျက်နယ်မြေ�
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "ဘေးဘား"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "ဝစ်ဂျက် ဧရိယာ"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "ဆိုက်မြေပုံ"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "စာမျက်နှာပင့်သက် (page tree) ကို ထိန်းသိမ်းထားရှိပြီး၊ ထုတ်ဝေထားပြီးသမျှ စာမျက်နှာများနှင့် ပို့စ်များ (နှင့် အခြား အများပြည်သူမြင်နိုင်သော အကြောင်းအရာများ) အားလုံးကို စာရင်းပြုစုဖော်ပြထားသော စာမျက်နှာတစ်ခု။"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "ဆိုဒ်မြေပုံ"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "ဆိုဒ်မြေပုံ"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "အညွှန်း"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "စာမျက်နှာအားလုံး"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "လူမှုကွန်ရက် အိုင်ကွန်များ"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "ကွန်ရက်များ၏ ကိုယ်ပိုင်အိုင်ကွန်များဖြင့် ဖော်ပြထားသော သင့်ပရိုဖိုင်များသို့ လင့်ခ်များ။"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "ဆိုရှယ်မီဒီယာ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "ချိတ်ဆက်မှုများ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "လိုက်နာရန်"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "ပရိုဖိုင်များ"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "ကြယ်ပွင့် အဆင့်သတ်မှတ်ချက်"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "ကြယ်ပွင့်များအဖြစ် ပြသထားသော အဆင့်သတ်မှတ်ချက်၊ တဝက်ကြယ်ပွင့် အဆင့်များဖြင့်။"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "ကြယ်ပွင့်များ"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "အဆင့်သတ်မှတ်ချက်"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "ရမှတ်"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "အဆင့်များ"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "စာမျက်နှာအောက်သို့ဖြစ်စေ၊ ဘေးချင်းယှဉ်လျက်ဖြစ်စေ လုပ်ငန်းစဉ်တစ်ခု၏ နံပါတ်တပ်ထားသော အဆင့်များ။"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "လုပ်ငန်းစဉ်"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "လုပ်နည်း"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "အချိန်ဇယား"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "နံပါတ်တပ်ထားသော"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "စာညှပ်တန်း"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Tabs ဘလောက်တစ်ခု၏ တက်ဘ်တစ်ခု- ၎င်း၏ ခေါင်းစဉ်နှင့် ၎င်း၏ ပန်နယ်။"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "မာတိကာ"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "စာမျက်နှာပေါ်ရှိ ခေါင်းစဉ်များစာရင်းဖြစ်ပြီး အလိုအလျောက်ဖန်တီးထားကာ တစ်ခုချင်းစီသို့ လင့်ခ်ချိတ်ပေးထားသည်။"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "အကြောင်းအရာမာတိကာ"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "အကြောင်းအရာများ"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "ခေါင်းစဉ်များ"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "တက်ဘ်များ"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "တက်ဘ်များအတွင်းရှိ အကြောင်းအရာ- ဝင်ရောက်ကြည့်ရှုသူများသည် မောက်စ် သို့မဟုတ် ကီးဘုတ်ကို အသုံးပြု၍ ပန်နယ်လ်များအကြား အကူးအပြောင်း ပြုလုပ်ကြသည်။"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "တဘ်များ"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "တက်ဘ်များသုံးသော"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "ပန်နယ်များ"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "သက်သေခံချက်"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "ဖောက်သည်တစ်ဦး၏ ကိုးကားချက်၊ ၎င်းတို့၏ အမည်၊ ရာထူး၊ ဓာတ်ပုံနှင့် ရွေးချယ်နိုင်သော ကြယ်ပွင့်အဆင့်သတ်မှတ်ချက်။"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "သုံးသပ်ရန်"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "ကိုးကားချက်"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "သုံးစွဲသူ"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "တုံ့ပြန်ချက်"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "တူးလ်တစ်ပ်ခ် (Tooltip)"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "hover ပြုလုပ်စဉ်နှင့် ကီးဘုတ်ဖြင့် အာရုံစိုက်သည့်အခါ အတိုချုံး ရှင်းလင်းချက်ကို ပြသပေးသော စကားလုံး သို့မဟုတ် စကားစု။"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "ကိရိယာအကြံပြုချက်"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "အရိပ်အမြွက်"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "အဓိပ္ပာယ်ဖွင့်ဆိုချက်"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "စာရေးသူ ပရိုဖိုင်"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "စာရေးဆရာ၏ ပုံ၊ အမည်၊ ကိုယ်ရေးအကျဉ်းနှင့် လင့်ခ်များ၊ သို့မဟုတ် ရွေးချယ်ထားသော သုံးစွဲသူတစ်ဦး၏ အဆိုပါအချက်အလက်များ။"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "ကိုယ်ရေးအကျဉ်း"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "ပရိုဖိုင်"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "အကြောင်း"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp ချတ်ခလုတ်"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "သင့်ထံ WhatsApp ချတ်ကို ဖွင့်ပေးသည့် စာမျက်နှာ၏ ထောင့်တစ်နေရာရှိ ပေါလောပေါ်နေသော ခလုတ်တစ်ခု။"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "ချတ်"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "ပေါ်နေသော"
 
 #: blocks/widget/block.json
 msgctxt "block title"

@@ -26,6 +26,7 @@ import {
 	__experimentalNumberControl as NumberControl,
 } from '@wordpress/components';
 import { useMergeRefs } from '@wordpress/compose';
+import { applyFilters } from '@wordpress/hooks';
 import { grid, stack, row } from '@wordpress/icons';
 
 import { STORE } from '../../design/store';
@@ -94,8 +95,21 @@ export default function LayoutEdit( props ) {
 	const mergedInnerRef = useMergeRefs( [ innerRef, layoutRef ] );
 
 	const showGrid = mode === 'grid' && ( isSelected || childSelected );
+	/**
+	 * Background and divider layers drawn in the canvas (the premium effects add them: shape
+	 * dividers, background video, slideshow). They sit where the front end puts them: right inside
+	 * the block's own element, before its content.
+	 *
+	 * @type {Element|null}
+	 */
+	const layers = applyFilters( 'pbsw.layout.canvasLayers', null, {
+		clientId,
+		name: props.name,
+		attributes,
+	} );
 	const layoutEl = (
 		<div { ...innerRest } ref={ mergedInnerRef }>
+			{ ! boxed && layers }
 			{ children }
 			{ showGrid && (
 				<GridOverlay
@@ -356,7 +370,14 @@ export default function LayoutEdit( props ) {
 					) }
 				</PanelBody>
 			</InspectorControls>
-			{ boxed ? <div { ...blockProps }>{ layoutEl }</div> : layoutEl }
+			{ boxed ? (
+				<div { ...blockProps }>
+					{ layers }
+					{ layoutEl }
+				</div>
+			) : (
+				layoutEl
+			) }
 		</>
 	);
 }

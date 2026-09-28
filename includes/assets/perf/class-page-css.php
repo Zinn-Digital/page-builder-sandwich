@@ -132,7 +132,10 @@ final class Page_Css {
 	public static function minify( string $css ): string {
 		$css = (string) preg_replace( '#/\*.*?\*/#s', '', $css );
 		$css = (string) preg_replace( '/\s+/', ' ', $css );
-		$css = (string) preg_replace( '/\s*([{};:,>])\s*/', '$1', $css );
+		$css = (string) preg_replace( '/\s*([{};,>])\s*/', '$1', $css );
+		// Only the space AFTER a colon: the space before one is a descendant combinator in a
+		// selector (`.a :focus-visible`, `.a :is(b)`), and removing it changes what matches.
+		$css = (string) preg_replace( '/:\s+/', ':', $css );
 
 		return str_replace( ';}', '}', trim( $css ) );
 	}

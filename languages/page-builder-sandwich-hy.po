@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Պահպանել որպես վերօգտագործվող նախշ"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Մատչելիության ստուգիչ"
 
@@ -990,6 +994,7 @@ msgstr "← Ընտրեք այլ մատակարար"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Հասցե"
 
@@ -1043,6 +1048,8 @@ msgstr "Փորձարկել"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Հեռացնել"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Թարմացրեք մոդելների ցանկերը մատակարարներից"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Պատկերներ"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "անջատված"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Բացել"
 
@@ -1448,6 +1457,7 @@ msgstr "Ահա արհեստական ​​բանականության հարցո�
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Կատարված է"
 
@@ -1515,7 +1525,11 @@ msgstr "Փորձերի քանակը գերազանցված է: Խնդրում ե
 msgid "Something went wrong. Please contact the admin."
 msgstr "Ինչ-որ բան այն չէ: Խնդրում ենք կապվել ադմինիստրատորի հետ:"
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Քարտեզագրել"
 
@@ -1538,52 +1552,385 @@ msgstr "Այդ ընտանիքը պահպանված չէ։"
 msgid "Removed."
 msgstr "Հեռացված է։"
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Դա վավեր տառատեսակի ընտանիքի անուն չէ։"
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts տառատեսակների ընտանիքը չվերադարձրեց: Ստուգեք անունը և նորից փորձեք:"
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Տառատեսակի ֆայլերը չհաջողվեց ներբեռնել կամ պահպանել: Ստուգեք, որ վերբեռնումների թղթապանակը գրելի է:"
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Տառատեսակի ոճային ֆայլը չհաջողվեց պահպանել: Ստուգեք, արդյոք վերբեռնումների թղթապանակը գրելի է:"
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Փակել այս ծանուցումը"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(բացվում է նոր ներդիրում)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Կատարված է."
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Անելիքներ՝"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Բառարանի ցանկ"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Գնահատված է %1$s / %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Ընթացք"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Պատճենել կոդը"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Պատճենված է"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Այդ վիջեթը հասանելի չէ այս կայքում:"
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Էլ. փոստ"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Հեռախոս"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS հոսք"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Վեբ կայք"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Հղում"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (բացվում է նոր ներդիրում)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Գնահատված է %d / 5-ից"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(խորհուրդ է տրվում)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Ներառված է"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Ներառված չէ"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Համեմատության աղյուսակ"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Զանգահարել %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Էլ. փոստ %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Տեքստ %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Զրուցել WhatsApp-ում"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Կապ մեզ հետ"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Զրուցեք մեզ հետ WhatsApp-ում"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Այս ձևաթուղթն այս պահին հասանելի չէ:"
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Այս ձևաթուղթը չի կարող ցուցադրվել, քանի որ %s-ը ակտիվ չէ:"
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Քարտեզ՝ %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Քարտեզի ցուցադրումն այն բեռնում է OpenStreetMap-ից:"
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Ցույց տալ քարտեզը"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Բացել քարտեզը OpenStreetMap-ում"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Ամրագրման օրացույց %s-ից"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Ամրագրման օրացույցի ցուցադրումն այն բեռնում է %s-ից:"
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Ցուցադրել ամրագրման օրացույցը"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Ամրագրել %s-ում"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "QR կոդ %s-ի համար"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Դիզայն"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Բովանդակություն"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Մեդիա"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Մարքեթինգ"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Կայք"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Տվյալներ"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Նմանատիպ գրառումներ"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Գրառման մանրամասները"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Կողմից"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Հրապարակված է"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Թարմացված է"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Մեջ"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Պիտակավորված"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d րոպե ընթերցանություն"
+msgstr[1] "%d րոպե ընթերցման ժամանակ"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Դեռևս մեկնաբանություններ չկան"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d մեկնաբանություն"
+msgstr[1] "%d մեկնաբանություն"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Կայքի քարտեզ"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(առանց վերնագրի)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s-ի բոլոր գրառումները"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Այս բովանդակությունը պաշտպանված է: Մուտքագրեք գաղտնաբառը՝ այն տեսնելու համար:"
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Այդ գաղտնաբառը սխալ է: Կրկին փորձեք:"
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Գաղտնբառ"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Ցուցադրել բովանդակությունը"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Այդ էջը հնարավոր չէ ապակողպել:"
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Փորձերի քանակը գերազանցված է: Սպասեք մի քանի րոպե և նորից փորձեք:"
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Գաղտնաբառը պետք է լինի 4-ից 200 նշան երկարությամբ:"
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Ավելին"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Փակել"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Ներդիր %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Բովանդակություն"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Խմբագրել Sandwich Studio-ի միջոցով"
 msgid "Blank canvas"
 msgstr "Դատարկ կտավ"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Անցնել բովանդակությանը"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Պլանշետի լայնությունը պետք է լինի ամբողջ թիվ՝ պիքսելներով՝ 480-ից մինչև 2560:"
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Վերբեռնված պատկերակներ"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Պատկերակ"
 
@@ -2553,6 +2908,8 @@ msgstr "%s-ը իմ հաճախորդի էլ. փոստի հասցeն է"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Կոդ"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Խմբագրել"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Էլ. փոստ"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Էլ. հասցե"
 
@@ -3103,6 +3456,10 @@ msgstr "Սպիտակ պիտակի ռեժիմի միացում"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "Մուտքագրեք նոր էլ. փոստի հասցեն"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Սխալ"
 
@@ -3723,6 +4081,7 @@ msgstr "Ստորև նշված ապրանքները դրվել են անվտան�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "Այս հավելվածը պահանջում է PHP-ի ավելի նոր
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Ոչ"
 
@@ -4811,6 +5171,13 @@ msgstr "Սոցիալական ցանցեր (Facebook, Twitter և այլն)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "Ժամնիշ"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Վերնագիր"
 
@@ -5171,6 +5541,8 @@ msgstr "Ի՞նչ կարծիքի եք %1$s-ի մասին առայժմ: Փորձա
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Տեսակ"
@@ -5286,6 +5658,7 @@ msgstr "Օգտատերեր"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Արժեք"
@@ -5340,6 +5713,7 @@ msgstr "Դիտել վճարովի հնարավորությունները"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Զգուշացում"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "Ընտրովի"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Սակագնային պլան"
 
@@ -5988,18 +6363,26 @@ msgstr "Շատ փոքր"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Փոքր"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Միջին"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Մեծ"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "Խոշոր"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "Փորձաշրջանը չհաջողվեց սկսել։"
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Հատկանիշ"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Ներառված է"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Ներառված չէ"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "Մուտքի հասցե"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Օգտանուն"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Գաղտնբառ"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7089,15 +7463,62 @@ msgstr "Գործողության չեղարկումը սկսված է։ Այն �
 msgid "Undo all conversions"
 msgstr "Չեղարկել բոլոր փոխակերպումները"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Տարր"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Բացել էջը բեռնվելիս"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Վերնագիրը վերնագիր է"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Վերնագիրը դարձրեք ենթավերնագիր, երբ տարրերը էջի բաժիններ են, որպեսզի այցելուները կարողանան անցնել դրանց միջև:"
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Վերնագիր %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Հարց կամ բաժնի վերնագիր"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Ակորդեոն"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Միաժամանակ միայն մեկ տարր է բաց"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Նշել որպես ՀՏՀ որոնման համակարգերի համար"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Ավելացնում է FAQ կառուցվածքային տվյալներ՝ ստեղծված վերնագրերից (հարցեր) և դրանց տեքստից (պատասխաններ)։"
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Ծանուցում"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Տեղեկատվություն"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Հաջողություն"
 
@@ -7106,6 +7527,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Զգուշացումների և սխալների մասին էկրանային ընթերցման ծրագրերից օգտվողներին տեղեկացվում է անմիջապես, իսկ տեղեկատվական և հաջողության մասին ծանուցումները ընթերցվում են, երբ նրանք ավարտում են ընթացիկ գործողությունը։"
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Ցուցադրել պատկերակը"
 
@@ -7121,64 +7543,702 @@ msgstr "Վերնագիր (կամընտիր)"
 msgid "Write the message…"
 msgstr "Գրեք հաղորդագրությունը…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "բաժին — թեմատիկ բաժին"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Կենտրոն"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — անիմաստ"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Նշանաբան"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "գլխամաս — ներածական բովանդակություն"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Գույն"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "ստորինգիր՝ փակվող բովանդակություն"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Թեմայի շեշտադրում"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "հոդված — ինքնավար բովանդակություն"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Չեզոք"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "հարակից բովանդակություն"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Դիրք"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — հիմնական բովանդակությունը (էջում մեկ անգամ)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Պիտակ"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — նավարկման հղումներ"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Ամրագրման օրացույց"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Ստեկ (flexbox, սյունակ)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Ծառայություն"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Տող (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Ամրագրման էջի հասցե"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Ցանց"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Օրինակ՝ %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Ինչի համար է նախատեսված օրացույցը, որը կարդացվում է էկրանի ընթերցողների կողմից և ցուցադրվում դրա տակ:"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Սա %s ամրագրման էջի հասցե չէ, ուստի էջում որևէ բան չի ցուցադրվի:"
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Նախադիտել օրացույցը"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Հղման հասցե"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Կոճակը ցուցադրվում է, երբ այն ունի և՛ պիտակ, և՛ հասցե:"
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Բացել նոր ներդիրում"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Գործողության կոչ"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Էջադրում"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Ստորև ներկայացված կոճակները"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Կոճակներ տեքստի կողքին"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Հավասարեցում"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Հիմնական կոճակ"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Երկրորդ կոճակը"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Վերնագիր…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Մեկ նախադասություն այն մասին, թե ինչու..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Երկրորդ կոճակ (ըստ ցանկության)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Ստուգաթերթ"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Նշանի գույնը"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Տողեր"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Տող %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Առաջադրանք…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Ավելացնել տող"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Լեզու"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Ավտոմատ հայտնաբերել"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Առանց ընդգծման"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Ֆայլի անունը"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Ցուցադրված է կոդից վեր, օրինակ՝ functions.php։"
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Տողերի համարներ"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Պատճենելու կոճակ"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Երկար տողերի փաթաթում"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Գրեք կամ տեղադրեք կոդ…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Տեքստ"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Սյունակներ"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Սյունակ %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Ընդգծել %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Ավելացնել սյունակ"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Տողեր"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Տող %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Ավելացնել տող"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Բացատրություն (ինչն է համեմատվում)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Բջջի տեսակը՝ %s։ Փոխել"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Հեռախոսազանգ"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Տեքստային հաղորդագրություն"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Կոճակներ"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Հեռախոսահամար՝ երկրի կոդով"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Կոճակի տեքստ"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Հեռացնել այս կոճակը"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Ավելացնել կոճակ"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Սկսելու համար WhatsApp հաղորդագրություն (կամընտիր)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Կապի կոճակներ"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Կողային վահանակում ավելացրեք հեռախոսահամար, էլ. փոստի հասցե կամ WhatsApp-ի համար:"
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Երկակի վերնագիր"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Վերնագրի մակարդակ"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Օգտագործեք H1-ը էջում միայն մեկ անգամ՝ դրա հիմնական վերնագրի համար:"
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Երկրորդ մասի տեսքը"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Շեշտադրման գույն"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Գրադիենտ"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Ունթլայն"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Ընդգծել"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Երկրորդ մասն առանձին տողում"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Առաջին մաս"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "երկրորդ մաս"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Մարկեր"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Hաստ ընդգծում"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Ֆոնային"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Ընդգծել"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Հեռացնել ընդգծումը"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Խոշորատառ առաջին տառ"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Մեծ առաջին տառ"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Վանդակի առաջին տառի համար ընտրեք «Drop cap in a box» ոճը։"
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Խոշորացված առաջին տառը վանդակում"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Շեշտադրման գոտի"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Մեջբերում (շեշտադրման գիծ)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Տեքստից մեջբերում, որը մեծացված է գունավոր գծի կողքին՝ ուշադրություն գրավելու համար:"
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "գնանշում"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Հատկանիշների ցանկ"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Հեռախոսներում գործառույթները միշտ դասավորվում են իրար վրա։"
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Հատկություններ"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Հատկանիշ %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Սեփական պատկերակ"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Հատկանիշ…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Նկարագրեք այն…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Ավելացնել հնարավորություն"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Տեղադրեք և ակտիվացրեք Contact Form 7-ը, WPForms-ը, Gravity Forms-ը կամ Fluent Forms-ը, այնուհետև այստեղ ընտրեք դրանց ձևերից մեկը:"
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Ձևանմուշի հավելված"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Ընտրել..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Ձևանմուշ"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Ընտրեք ձևաթուղթ…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s-ը դեռևս ձևաթղթեր չունի"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s-ը ակտիվ չ է այս կայքում, ուստի այս ձևաթուղթը չի կարող ցուցադրվել:"
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Հնարավոր չեղավ բեռնել ձևերի ցանկը:"
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Ձևի ոճը"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Դաշտեր"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Ուրվագծված"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Լցված է"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Ընդգծված"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Կոճակի լայնությունը"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Հարմարեցնել տեքստը"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Ամբողջ լայնությամբ"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Գույները, տառատեսակները, բացատները և անկյունները վերցվում են ձեր կայքի դիզայնից և այս բլոկի դիզայնի կարգավորումներից:"
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Ցուցադրեք ձեր ձևերի հավելվածի ձևը՝ ձեր կայքին համապատասխանեցված ոճով:"
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Ձե՞ւաթղթերի հավելված է պետք։ Contact Form 7-ն անվճար է:"
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Բառարան"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Տեսակավորել Ա-ից Ֆ"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Էջում տերմինները ցուցադրվում են այբբենական կարգով, իսկ այստեղ դրանք մնում են այն կարգով, ինչպես դուք եք դրանք գրել:"
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Ցուցադրել Ա–Ֆ ինդեքսը"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Այս էջի այլ վայրերում օգտագործվող հղման պայմանները"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Տերմինի առաջին հայտնվելը էջի տեքստում հղվում է դրա սահմանմանը։ Վերնագրերը, կոճակները, կոդը և գոյություն ունեցող հղումները անփոփոխ են մնում։"
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Պայմաններ"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Ժամկետ %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Ժամկետ"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Ինչ է դա նշանակում…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Ավելացնել տերմին"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Պատկերների ցանկ"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Մեկը մյուսի հետևից"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Կողք կողքի"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Ցանկի տարր..."
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Տեղեկատվական վահանակ"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Կամ ընտրեք որևէ պատկերակ գրադարանից."
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Հղման տեքստ"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Նշեք, թե ուր է տանում հղումը («Տեսե՛ք մեր գները»), և ոչ թե «Կարդալ ավելին»։"
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Մեկ կամ երկու նախադասություն..."
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "բաժին — թեմատիկ բաժին"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — անիմաստ"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "գլխամաս — ներածական բովանդակություն"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "ստորինգիր՝ փակվող բովանդակություն"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "հոդված — ինքնավար բովանդակություն"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "հարակից բովանդակություն"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — հիմնական բովանդակությունը (էջում մեկ անգամ)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — նավարկման հղումներ"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Ստեկ (flexbox, սյունակ)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Տող (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Ցանց"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Խմբագրվում է՝ %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Դասավորել երեխաներին որպես"
 
@@ -7186,7 +8246,7 @@ msgstr "Դասավորել երեխաներին որպես"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7194,70 +8254,50 @@ msgstr "Դասավորել երեխաներին որպես"
 msgid "Inherited (%s)"
 msgstr "Ժառանգված (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Ֆլեքսբոքս"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Դասավորված բլոկներ"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Սյունակներ"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Քաշեք կտավի մեջ կամ մուտքագրեք"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Բովանդակության լայնությունը"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Տուփային (թեմայի բովանդակության լայնությունը)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Ամբողջ լայնությամբ"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Նվազագույն բարձրություն"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML թեգ"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Հղում"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Դարձրեք ամբողջ բլոկը հղում դեպի"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Հղման տեքստ էկրանային ընթերցիչների համար"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Այն, ինչ անում է հղումը այցելուների համար, ովքեր չեն կարող տեսնել բլոկը:"
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Բացել նոր ներդիրում"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Մի՛ տեղադրեք հղումներ կամ կոճակներ հղում պարունակող բլոկի ներսում. հղման ներսում գտնվող հղումը չի աշխատում զննարկիչներում:"
 
@@ -7289,14 +8329,143 @@ msgstr "+ Տող"
 msgid "− Row"
 msgstr "− Տող"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Տեղադրել"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Տեղադրեք կոորդինատները կամ OpenStreetMap-ի հղումը"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Բացեք openstreetmap.org կայքը, գտեք վայրը, այնուհետև պատճենեք հասցեն զննարկչի տողից կամ աջ սեղմեք քարտեզի վրա և ընտրեք «Ցույց տալ հասցեն»։"
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Լայնություն"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Երկայնություն"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Խոշորացնել"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Վայրի անվանումը"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Ցուցադրվում է քարտեզի տակ և ընթերցվում է էկրանի ընթերցողների կողմից:"
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Տեղադրեք կոորդինատները (օրինակ՝ 51.5074, -0.1278) կամ OpenStreetMap-ի հղումը։"
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Կոորդինատներ կամ հղում"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Դիտել քարտեզի նախնական տարբերակը"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Ստուգեք %1$s, %2$s OpenStreetMap-ում"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Հեղինակ"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Հրապարակման ամսաթիվ"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Թարմացված ամսաթիվ (երբ տարբերվում է)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Կատեգորիաներ"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Պիտակներ"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Ընթերցանության տևողությունը"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Մեկնաբանությունների քանակը"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Ցուցադրվող մանրամասները"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Ընտրեք առնվազն մեկ մանրամասն՝ ցույց տալու համար:"
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Առաջընթացի սանդղակ"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Առավելագույնը"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "Տոկոսի դեպքում՝ 100, իսկ քանակի դեպքում՝ ցանկացած այլ թիվ, օրինակ՝ 10-ից 8-ը:"
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Ցույց տալ տոկոսը"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Գաղտնաբառը սահմանված է։ Այս բովանդակության փոխարեն այցելուները տեսնում են գաղտնաբառի ձևաթուղթ, մինչև որ մուտքագրեն այն:"
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Գաղտնաբառ դեռ սահմանված չէ, ուստի այցելուներն այստեղ ոչինչ չեն տեսնում:"
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Նոր գաղտնաբառ"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Սահմանել գաղտնաբառը"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Գաղտնաբառը սահմանված է։ Պահպանեք էջը այն կիրառելու համար. այն ապակողպած այցելուներին անհրաժեշտ կլինի նորը:"
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Եթե Page Builder Sandwich-ը երևէ անջատվի, այս բովանդակությունը կցուցադրվի բոլորին:"
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Հաղորդագրություն գաղտնաբառի ձևից վերև (ոչ պարտադիր)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Փոխել"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Պիտակ"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7306,30 +8475,698 @@ msgstr "Ընթերցվում է էկրանային ընթերցիչների կո
 msgid "Show label"
 msgstr "Ցուցադրել պիտակը"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Վեբ հասցե կամ տեքստ"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR կոդ"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Նկարագրություն էկրանի ընթերցողների համար"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Թողեք դատարկ՝ «QR code for» և տեքստն օգտագործելու համար:"
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Մուտքագրեք վեբ հասցե, հեռախոսահամարի հղում (tel:) կամ որևէ տեքստ:"
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Սա չափից երկար է QR կոդի համար: Կրճատեք այն:"
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Ավելացնել ենթնագիր"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Ընթերցանության առաջընթացի սանդղակ"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Պատուհանի եզրը"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Վերևում"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Ներքևի"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Ցուցադրվում է պատուհանի ներքևի մասում, երբ այցելուները ոլորում են էջը։"
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Ցուցադրվում է պատուհանի վերին մասում, երբ այցելուները ոլորում են էջը։"
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Քանի՞ հատ"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Կապված է"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Կատեգորիաներ կամ պիտակներ"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Երբ որևէ բան կապված չէ, փոխարենը ցույց տուր ամենանորը"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Վերնագիր"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Թողեք դատարկ «Առնչվող գրառումներ»-ի համար:"
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Ցուցադրել հիմնական պատկերը"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Ցույց տալ ամսաթիվը"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Ցուցադրել ամփոփումը"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Այս հրապարակման կատեգորիաները կամ պիտակները կիսող այլ հրապարակումներ դեռևս չկան։ Երբ դրանք հայտնվեն, կցուցադրվեն այստեղ։"
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Մոդալ"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Դրսի վահանակ"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Չափը"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Սահում է ներս հետևյալից՝"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Սկիզբն այն կողմն է, որտեղից սկսվում է ընթերցանությունը. անգլերենում՝ ձախ, արաբերենում՝ աջ:"
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Փակել, երբ հետևի էջը սեղմվում է"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Պատուհանի վերնագիրը"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Նշանաբան"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Շրջանագիծ"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Խաչ"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Կետ"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Սլաք"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Աստղանիշ"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Պատկերակի գույնը"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Նույնը, ինչ տեքստում"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Հիմնական թեմա"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Երկրորդական թեմա"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Թեմայի հակադրություն"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Վերնագրերը պահպանեք հաջորդականությամբ էջում՝ վերնագիր՝ այն բաժնից մեկ մակարդակ ցածր, որում այն գտնվում է:"
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Ընտրել պատկերակ"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Օգտագործել լռելյայն պատկերակը"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Ընտրեք պատկերակ"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Վերև տեղափոխել"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Տեղափոխել ներքև"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Ցույց տալ վերնագիր յուրաքանչյուր տեսակի համար"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Ձեր ընտրած տեսակներով դեռևս ոչինչ հրապարակված չէ։"
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Հղումներ"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Հղում %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Ցանց"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Պրոֆիլի հասցե՝ mailto:you@example.com կամ tel:+441234567890:"
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Անուն, որը կարդացվում է էկրանի ընթերցիչների համար"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Այլ պատկերակ"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Ավելացնել հղում"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Դիտել"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Ոճ"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Միայն պատկերակ"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Ձևավորել"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Կլորացված քառակուսի"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Քառակուսի"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Բացել պրոֆիլները նոր ներդիրում"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Աստղային գնահատական"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Գնահատական"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Աստղերի քանակը"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Ցույց տալ համարը"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Քայլեր"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Էջի ներքևի մասում"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Կողք կողքի (բջջային հեռախոսներում դասավորված են վերևից ներքև)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Համարի գույնը"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Քայլերի հերթականությունը"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Քայլ %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Քայլ…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Ինչ անել…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Ավելացնել քայլ"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Ներդիր"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Ավելացրեք վերնագրեր էջին, և դրանք կցուցակվեն այստեղ:"
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Բովանդակություն"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Վերնագրի մակարդակից"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Վերնագրի մակարդակին"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Համարակալված"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Կարող է կծկվել"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Սկսել կծկված"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Ընդգծել կարդացվող հատվածը"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Ներդիրներ"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Անուն էկրանային ընթերցիչների համար"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Կամընտիր: Ցույց է տալիս, թե ինչի մասին են ներդիրները, օրինակ՝ «Պլաններ»։"
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Բացել էջը բեռնվելիս"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Ներդիրներ կողքին"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Ավելացնել ներդիր"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Վկայություն"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Փոխարինել լուսանկարը"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Ընտրել լուսանկարը"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Հեռացնել լուսանկարը"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Լուսանկարի նկարագրություն"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Թողեք դատարկ, երբ լուսանկարում պատկերված է միայն դրա կողքին նշված անձը։"
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Աստղային գնահատական (0 = չկա)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Անունը մեջբերման տակ"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Լուսանկարը մեջբերման կողքին"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Ինչ ասաց հաճախորդը…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Դեր կամ ընկերություն"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Հուշում"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Հուշման տեքստ"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Այն կարճ պահեք՝ մեկ կամ երկու նախադասություն: Էկրանի ընթերցիչներն այն կարդում են այն բառի հետ, որը բացատրում է:"
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Ցույց տալ այն"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Վերևում"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Ստորև"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Բառ կամ արտահայտություն"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Կիրառել"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Պրոֆիլ"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Ո՞ւմ պրոֆիլը"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Գրառման հեղինակը"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Ցուցադրել պրոֆիլի նկարը"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Ցուցադրել կենսագրությունը"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Ցույց տալ հղումները գրառումներին և վեբկայքին"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Հեղինակի պրոֆիլ"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Ընտրեք, թե որ պրոֆիլը ցուցադրել:"
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "WhatsApp-ի համար՝ երկրի կոդով"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Օրինակ՝ +44 7700 900123:"
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Հաղորդագրություն, որից պետք է սկսել (ոչ պարտադիր)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Ցույց տալ տեքստը պատկերակից աջ"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Անկյուն"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Ներքևի վերջ (աջ անգլերենում)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Ներքևի սկիզբ (ձախում անգլերենով)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Ավելացրեք ձեր WhatsApp համարը կողային վահանակում։ Մինչ այդ կոճակը էջում չի ցուցադրվում։"
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Այս կոճակը էկրանի ստորին անկյունում է լողում էջի վրա։"
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Կարճ կոդի պիտակ"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Օգտագործեք միայն տառեր, թվեր, գծիկներ և ընդգծման նշաններ:"
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Ատրիբուտի անվանում"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Ավելացնել հատկանիշ"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "ԿShortcode"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Այլ հատկանիշներ"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Ընտրեք կարճ կոդի պիտակը բլոկի կարգավորումներում:"
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Պատկերասրահ"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Պատկերի չափսը"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Մանրապատկեր"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Ամբողջական չափս"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Հղել դեպի"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Կցորդի էջ"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Մեդիաֆայլ"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Աուդիո"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Տեսանյութ"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Ֆայլի հասցե"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Ցիկլ"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Նվագարկել ավտոմատ"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Պլակատի պատկեր"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Նվագացանկ"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Մեդիա ID-ներ, բաժանված ստորակետերով"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Ցուցադրել երգերի ցանկը"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Տեղադրել"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Ներդրման հասցե"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Առավելագույն լայնություն"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Բացատրություն"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "Նկար և վերնագիր HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Լայնություն"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Խորհուրդ. «Ձև» բլոկն այս ձևը ցույց է տալիս ձեր կայքին համապատասխան ոճավորված:"
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Ցուցադրել ձևաթղթի վերնագիրը"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Ցույց տալ ձևի նկարագրությունը"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Ուղարկել առանց էջը թարմացնելու"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7350,123 +9187,108 @@ msgstr "Ընտրել ֆայլը"
 msgid "— Default —"
 msgstr "— Լռելյայն —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Ընդլայնված ոճավորում"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Ներտողային CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS հայտարարություններ, օրինակ՝ min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Էֆեկտներ (հին դասեր)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Ավելի հին տարբերակներից փոխանցված բացատներով բաժանված էֆեկտների անուններ, օրինակ՝ hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Տող"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Լայնություն"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Ամբողջ լայնությամբ, բովանդակությունը՝ կենտրոնում"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Հղման հասցե"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Հղման հարաբերություն"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Հավասարեցում"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Ձախ"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Կենտրոն"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Աջ"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Կոճակի տեքստ"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Ավելացնել տեքստ..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Տեղադրում"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Առանձին տողում"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Տողում, այլ բովանդակության կողքին"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Ավտոմատ (սեփական տող էջի վերին մակարդակում)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Մատչելի պիտակ"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Թողեք դատարկ դեկորատիվ պատկերակ ստանալու համար:"
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Ընտրեք պատկերակ բլոկի կարգավորումներում։"
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Նոր կարգավորման անունը"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Օրինակ՝ վերնագիր կամ տեքստ"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Ավելացնել կարգավորում"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Վիդջեթ"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Ընտրեք վիջեթ"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Վիջեթների տարածք"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Ընտրեք վիջեթների տիրույթ"
 
@@ -7489,6 +9311,142 @@ msgstr "Այս ներդրված բովանդակությունն իր չափսե
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Էջի տեղաշարժ"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Այս վիջեթը չի նկարագրում իր կարգավորումները, ուստի դրանք խմբագրվում են որպես անվան և արժեքի զույգեր:"
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Խնդիր"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Ստուգել"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Ցույց տալ բլոկը"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Օգտագործեք ընթեռնելի թեմայի գույն"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Դարձնել H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Այլընտրանքային տեքստ"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Պահպանել այլընտրանքային տեքստը"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Այս պատկերը դեկորատիվ է"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Ստուգվում է..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Այս էջում մատչելիության խնդիրներ չեն հայտնաբերվել:"
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d խնդիր"
+msgstr[1] "%d խնդիր"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "Ստուգելու %d բան"
+msgstr[1] "Ստուգելու %d բան"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Կրկին ստուգել"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Ավտոմատ ստուգումը գտնում է բազմաթիվ խնդիրներ, բայց ոչ բոլորը: Փորձեք նաև էջը միայն ստեղնաշարով և էկրանային ընթերցիչով:"
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Տեքստի հակադրությունը %1$s:1 է, այն կարդալու համար պահանջվում է առնվազն %2$s:1։"
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "սեղմեք այստեղ,այստեղ,կարդալ ավելին,ավելին,հղում,այս հղումը,իմացեք ավելին,անցնել"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Հղումը տեքստ չունի, ուստի էկրանի ընթերցիչը հայտարարում է միայն «հղում»: Ավելացրեք տեքստ կամ պիտակ:"
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "«%s» հղման տեքստը չի նշում, թե ուր է այն տանում: Փոխարենը նկարագրեք նպատակակետը:"
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Տարրն ունի դրական tabindex, ինչը փոխում է ստեղնաշարի հերթականությունը՝ հեռացնելով այն կարդալու հերթականությունից: Օգտագործեք 0 կամ հեռացրեք այն:"
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Սեղմվող տարրին հնարավոր չէ հասնել ստեղնաշարի միջոցով: Օգտագործեք իրական կոճակ կամ հղում:"
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Ներդրված շրջանակը վերնագիր չունի, ուստի էկրանի ընթերցողը չի կարող ասել, թե ինչ է այն:"
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Ձևի դաշտը պիտակ չունի, ուստի դրա նպատակը չի հայտարարվում:"
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Այս վերնագիրը դատարկ է: Էկրանի ընթերցիչից օգտվողները նավարկում են ըստ վերնագրերի. հեռացրեք այն կամ տեքստ ավելացրեք:"
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Էջի վերնագիրն արդեն H1 է. օգտագործեք H2 բովանդակության ամենաբարձր մակարդակի համար:"
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Այս H%1$d-ն բաց է թողնում մեկ մակարդակ. դրան նախորդողը H%2$d է: Դարձրեք այն H%3$d:"
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Այս նկարը այլընտրանքային տեքստ չունի: Նկարագրեք այն կամ նշեք որպես զարդանախշային, եթե այն ոչինչ չի ավելացնում:"
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Փակել վահանակը"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7563,18 +9521,6 @@ msgstr "Ուղղված"
 msgid "Width / height"
 msgstr "Լայնություն / բարձրություն"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Վերևում"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Ներքևի"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7587,20 +9533,6 @@ msgstr "Ժառանգված պատկեր — փոխարինել"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Հեռացնել պատկերը"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Դիրք"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Չափը"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7666,22 +9598,6 @@ msgstr "Յուրաքանչյուր կողմն առանձին"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Կողմնակի"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Ոճ"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Գույն"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7931,14 +9847,6 @@ msgstr "%1$s (%2$d հատ սահմանված)"
 msgid "Replace icon"
 msgstr "Փոխարինել պատկերակը"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Ընտրել պատկերակ"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Ընտրեք պատկերակ"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Ոչ մի պատկերակ չի համընկնում։"
@@ -7950,10 +9858,6 @@ msgstr "Կանոնավոր"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Բրենդներ"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Ուրվագծված"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8082,21 +9986,9 @@ msgstr "Տեքստի գույնը"
 msgid "Cursor"
 msgstr "Կուրսոր"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Սլաք"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Ցուցիչ"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Տեքստ"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8254,10 +10146,6 @@ msgstr "Տարածքի անունը"
 msgid "Named areas"
 msgstr "Անվանական տարածքներ"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Տողեր"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Բարձրություն"
@@ -8375,10 +10263,6 @@ msgstr "Հավասարաչափ լայնացնել"
 msgid "Decoration"
 msgstr "Ձևավորում"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Ընդգծել"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Վերնագիր"
@@ -8461,19 +10345,9 @@ msgstr "Կոնիկ"
 msgid "Angle (degrees)"
 msgstr "Անկյուն (աստիճաններ)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Ձևավորել"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Էլիպսիս"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Շրջանագիծ"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8509,10 +10383,6 @@ msgstr "Հագեցվածությունը (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Երանգ (օգտագործել թափանցիկ գույն)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Կլորացված քառակուսի"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Բլոբ"
@@ -8529,10 +10399,6 @@ msgstr "Եռանկյուն"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Ադամանդ"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Աստղանիշ"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9410,11 +11276,6 @@ msgstr "Մաքրել"
 msgid "The change could not be saved."
 msgstr "Փոփոխությունը չհաջողվեց պահպանել։"
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Փակել վահանակը"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Թեմայի լռելյայն"
@@ -9471,9 +11332,49 @@ msgstr "Դասերը, թոքենները, մութ ռեժիմը, բրենդի հ
 msgid "Open the Site Editor’s styles"
 msgstr "Բացեք Կայքի խմբագրիչի ոճերը"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Վերնագիր"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Ավելի նեղ տողերի բարձրությամբ վերնագիր, որը ձևավորված է «Ոճ» ներդիրի միջոցով:"
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Տեքստի պարբերություն՝ ոճավորված Style ներդիրով:"
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Պատկեր"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Կլորացված անկյուններով և «Ոճ» ներդիրով ձևավորված պատկեր։"
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Մեդիա գրադարանի տեսանյութ՝ ձևավորված Ոճի ներդիրով:"
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Բացատ"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Բլոկների միջև դատարկ տարածություն․ սահմանեք տարբեր բարձրություն յուրաքանչյուր էկրանի չափի համար «Ոճ» ներդիրում։"
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Բաժանարար"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Բաժինների միջև հորիզոնական գիծ, որը ձևավորված է «Ոճ» ներդիրով:"
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Բովանդակություն այլ կայքից (տեսանյութ, գրառում, քարտեզ)՝ տեղադրելով դրա հասցեն:"
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Մի քանի պատկեր ցանցում՝ ձևավորված «Ոճ» ներդիրով:"
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9507,10 +11408,6 @@ msgstr "Ցանկ"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Հաբեր"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Կոճակներ"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9555,10 +11452,6 @@ msgstr "Թաքցնել այն լեզուները, որոնցով այս էջը �
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Դասավորել ուղղահայաց"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Ֆոնային"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9617,11 +11510,6 @@ msgstr "Բլոկի կարգավորումներ"
 #, js-format
 msgid "Add block: %s"
 msgstr "Ավելացնել բլոկ՝ %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(առանց վերնագրի)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9697,10 +11585,6 @@ msgstr "Անջատել անվտանգ ռեժիմը"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Միացնել անվտանգ ռեժիմը (մյուս հավելվածները անջատված են, ձեզ համար, միայն Studio-ում)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Հրապարակված է"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10040,11 +11924,6 @@ msgstr "Կառուցողի անունը"
 msgid "Visual editor name"
 msgstr "Տեսողական խմբագրի անունը"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Հեղինակ"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10118,10 +11997,6 @@ msgstr[1] "Կատարված չէ. վերականգնված է %d էջ:"
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Փոխարինել"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Հղումներ"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10231,10 +12106,6 @@ msgstr "Թույլ տալ հաճախորդին մեկնաբանել այս էջ�
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Հղումն ունեցող յուրաքանչյուր ոք կարող է տեսնել այս էջը՝ նույնիսկ մինչև դրա հրապարակումը, և մեկնաբանություններ թողնել: Հաշիվ անհրաժեշտ չէ:"
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Պատճենված է"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10477,6 +12348,52 @@ msgstr "Պատճենեք պատկերները այս կայքի մեդիա գր�
 msgid "Show what will happen"
 msgstr "Ցույց տալ, թե ինչ կլինի"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Ակորդեոնի տարր"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Ակորդեոնի մեկ բաժին. վերնագիր, որը բացում է դրա բովանդակությունը:"
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Ակորդեոն"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Բացվող և փակվող հարցեր կամ բաժիններ: Ըստ ցանկության՝ մեկական և որոնողական համակարգերի համար որպես ՀՏՀ (FAQ) ձևաչափված:"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "կորդեոն"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "ՀՏՀ"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "փոխարկել"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "կծկել"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "Մանրամասներ"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10493,6 +12410,7 @@ msgid "notice"
 msgstr "ծանուցում"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "հաղորդագրություն"
@@ -10507,6 +12425,72 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "զգուշացում"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Նշանաբան"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Կարճ պիտակ, ինչպիսին է «Նոր», «Զեղչված» կամ «Լավագույն արժեք»:"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "պիտակ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "պիտակ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "պլաստիկ հաբ"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "նոր"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Ամրագրման օրացույց"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Calendly-ի կամ Cal.com-ի ամրագրման օրացույց, որըբեռնվում է միայն այն դեպքում, երբ այցելուն պահանջում է այն:"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "ամրագրում"
+
+#. zinn-i18n: human translation — the machine translator refused this string
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "կալենդլի"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "հանդիպում"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "ժամանակացույց"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10518,6 +12502,7 @@ msgid "A link styled as a button."
 msgstr "Կոճակի տեսքով հղում:"
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "Կոճակ"
@@ -10531,6 +12516,98 @@ msgstr "հղում"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "գործողության կոչ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Գործողության կոչ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Վերնագիր, նախադասություն և մեկ կամ երկու կոճակ, որոնք այցելուին խնդրում են գործել:"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "Գործողություն"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "բաններ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Գրանցվել"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Ստուգաթերթ"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Առաջադրանքների ցանկ, որոնցից յուրաքանչյուրը նշված է որպես կատարված կամ դեռևս անկատար՝ բառերով էկրանային ընթերցիչների համար, ինչպես նաև նշանով:"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Անելիքներ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "խնդիրներ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "թիթեռնիկներ"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "ցանկ"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Կոդ"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Կոդի ցուցակ՝ շարահյուսության ընդգծմամբ, տողերի համարներով և պատճենման կոճակով: Մնում է ընթեռնելի, եթե հավելվածն անջատվի:"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "կոդ"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "շարահյուսություն"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "Ընդգծել"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "հատված"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "ծրագրավորում"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10554,6 +12631,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "դասավորություն"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Համեմատության աղյուսակ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Պլանները կամ ապրանքները կողք կողքի, այո և ոչ նշաններով, որոնք էկրանի ընթերցիչները կարդում են որպես բառեր:"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "համեմատել"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Գնացուցակ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "պլաններ"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "աղյուսակ"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "հնարավորություններ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Կապի կոճակներ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Կոճակներ՝ ձեզ զանգահարելու, էլփոստ ուղարկելու, հաղորդագրություն գրելու կամ WhatsApp-ով կապվելու համար:"
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Կապ"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "զանգահարել"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "Հեռախոս"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "էլ. փոստ"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10571,11 +12726,13 @@ msgid "container"
 msgstr "կոնտեյներ"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "տուփ"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10592,6 +12749,52 @@ msgstr "ֆլեքսբոքս"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "սյունակներ"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Երկակի վերնագիր"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Երկմաս վերնագիր, որոնցից երկրորդն առանձնացված է գույնով, գրադիենտով, ուրվագծով կամ ընդգծմամբ:"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "վերնագիր"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "Վերնագիր"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "Գրադիենտ"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Հատկանիշների ցանկ"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Առանձնահատկությունները ցանցում, յուրաքանչյուրը պատկերակով, վերնագրով և կարճ նկարագրությամբ:"
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Առավելություններ"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "ծառայություններ"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10635,6 +12838,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "տեքստ"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Ձևանմուշ"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Ցուցադրում է Contact Form 7, WPForms, Gravity Forms կամ Fluent Forms ձևաթուղթը՝ ձեր կայքին համապատասխանեցված ոճով:"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "ձեւաթուղթ"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Բառարան"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Տերմիններն ու դրանց սահմանումները՝ դասավորված Ա-ից Ֆ, որոնցից յուրաքանչյուրն ունի իր հղումը: Հնարավոր է էջում յուրաքանչյուր տերմինի առաջին հիշատակումը հղել դրա սահմանմանը:"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "պայմաններ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "սահմանումներ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "Բառարան"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Պատկերների ցանկ"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Ցանկ, որտեղ յուրաքանչյուր տող սկսվում է պատկերակով՝ նշում, սլաք կամ ցանկացած պատկերակ գրադարանից:"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "կետեր"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "պատկերակներ"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10655,6 +12938,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Տեղեկատվական վահանակ"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Պատկեր, կարճ վերնագիր, մեկ կամ երկու նախադասություն և կամընտիր հղում՝ ծառայությունների, առավելությունների կամ կոնտակտային տվյալների համար:"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "հատկանիշ"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "ծառայություն"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "քարտ"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10674,6 +12982,204 @@ msgstr "թարգմանություն"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "բազմալեզու"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Քարտեզագրել"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap-ից որևէ վայրի քարտեզ. չկա բանալի, և OpenStreetMap-ից որևէ բան չի բեռնվում մինչև այցելուի կողմից քարտեզը պահանջելը:"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "քարտեզագրել"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "Տեղադրություն"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "հասցե"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Մոդուլային պատուհան"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Կոճակ, որը բացում է պատուհան էջի վրա՝ ներսում ցանկացած բլոկով:"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "մոդալ պատուհան"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "ելնող պատուհան"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "լայթբոքս"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "երկխոսություն"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Արտաքին վահանակ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Կոճակ, որը պատուհանի կողքից սահեցնելով բացում է վահանակ՝ ներսում գտնվող ցանկացած բլոկով:"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "արտաքին պանելային մենյու"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "ուղղորդիչ պահարան"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "կողային վահանակ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "վահանակ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "ցանկ"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Գրառման մանրամասները"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Գրառման հեղինակը, ամսաթվերը, կատեգորիաները, պիտակները, ընթերցանության տևողությունը և մեկնաբանությունների քանակը:"
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "հեղինակ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "ամսաթիվ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "ընթերցման ժամանակը"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "մետա"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "հեղինակ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Առաջընթացի սանդղակ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Պիտակավորված սանդղակ, որը ցույց է տալիս, թե ինչ-որ բան, օրինակ՝ հմտություն կամ նպատակ, որքան առաջ է գնացել:"
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "Ընթացք"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "գոտի"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "հմտություն"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "նպատակ"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Գաղտնբառով պաշտպանված բովանդակություն"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Արգելափակում է բլոկները, որոնք կարող են տեսնել միայն գաղտնաբառ ունեցող այցելուները: Մինչև նրանց կողմից այն մուտքագրելը, բովանդակությունը բնավ չկա էջում:"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "գաղտնաբառ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "պաշտպանված"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "Մասնավոր"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "Կողպել"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "անդամներ"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10699,6 +13205,86 @@ msgstr "բաց գույնի"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "գույների սխեմա"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR կոդ"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Վեբ հասցեի կամ ցանկացված տեքստի QR կոդ, որը գծված է հենց ձեր կայքում (QR ծառայություն չի օգտագործվում):"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR կոդ"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR կոդ"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "գծիկավոր կոդ"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "սկանավորել"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Ընթերցանության առաջընթացի սանդղակ"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Պատուհանի եզրին գտնվող բարակ գիծ, որը լցվում է, երբ այցելուները ոլորում են էջը:"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "ընթերցում"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "ոլորել"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Նմանատիպ գրառումներ"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Այս գրառմանը կատեգորիաներով կամ պիտակներով կիսվող գրառումներ՝ իրենց նկարներով, ամսաթվերով և նկարագրություններով:"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "առնչվող"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "գրառումներ"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "նման"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "ավելին"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10762,13 +13348,284 @@ msgstr "Ցուցադրում է վիջեթները թեմայի վիջեթներ
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "կողային վահանակ"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "վիջեթների տարածք"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Կայքի քարտեզ"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Հրապարակված բոլոր էջերի և գրառումների (և այլ հանրային բովանդակության) ցանկը պարունակող էջ՝ պահպանված էջերի ծառով:"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "կայքի քարտեզ"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "կայքի քարտեզ"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "ինդեքս"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "բոլոր էջերը"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Սոցիալական պատկերակներ"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Հղումներ ձեր պրոֆիլներին՝ ցանցերի սեփական պատկերակներով:"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "սոցիալական"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "հղումներ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "հետևել"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "պրոֆիլներ"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Աստղային գնահատական"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Աստղերի տեսքով ցուցադրվող գնահատական՝ կես աստղ քայլերով:"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "աստղեր"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "Գնահատական"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "գնահատական"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Քայլեր"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Գործընթացի համարակալված քայլերը՝ հերթականությամբ, էջի երկայնքով կամ կողք կողքի։"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "ընթացք"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "ինչպես"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "Ժամանակացույց"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "համարակալված"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Ներդիր"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Tabs բլոկի մեկ ներդիր՝ դրա վերնագիրը և վահանակը:"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Բովանդակություն"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Էջի վերնագրերի ցանկ, որը կառուցվում է ավտոմատ կերպով և հղվում դրանցից յուրաքանչյուրին:"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Բովանդակություն"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "բովանդակություն"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "Վերնագրեր"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Ներդիրներ"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Բովանդակություն ներդիրներում. այցելուները տեղափոխվում են վահանակների միջև մկնիկի կամ ստեղնաշարի միջոցով:"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "Ներդիրներ"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "ներդիրներով"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "վահանակներ"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Վկայություն"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Հաճախորդի մեջբերում՝ իր անունով, պաշտոնով, լուսանկարով և աստղային գնահատականի կամընտիր նշումով:"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "ստուգել"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "գնանշում"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "հաճախորդ"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Կարծիք"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Հուշում"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Բառ կամ արտահայտություն, որը ցույց է տալիս կարճ բացատրություն մկնիկի սլաքը վրայից անցկացնելիս և ստեղնաշարի ֆոկուսի ժամանակ:"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "հուշում"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Հուշում"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "սահմանում"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Հեղինակի պրոֆիլ"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Հեղինակի նկարը, անունը, կենսագրությունը և հղումները կամ ընտրված օգտատիրոջ տվյալները:"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "կենսագրություն"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "Պրոֆիլ"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "Մասին"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp զրույցի կոճակ"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Էջի անկյունում գտնվող լողացող կոճակ, որը բացում է ձեզ հետ WhatsApp զրույցը:"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "չատ"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "լողացող"
 
 #: blocks/widget/block.json
 msgctxt "block title"

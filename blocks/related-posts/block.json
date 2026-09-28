@@ -1,0 +1,65 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/related-posts",
+	"title": "Related posts",
+	"category": "pbs-site",
+	"icon": "screenoptions",
+	"description": "Posts that share this post's categories or tags, with their pictures, dates and summaries.",
+	"keywords": [
+		"related",
+		"posts",
+		"similar",
+		"more"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"count": {
+			"type": "number",
+			"default": 3
+		},
+		"by": {
+			"type": "string",
+			"enum": [
+				"both",
+				"categories",
+				"tags"
+			],
+			"default": "both"
+		},
+		"fallback": {
+			"type": "boolean",
+			"default": true
+		},
+		"heading": {
+			"type": "string",
+			"default": ""
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 2
+		},
+		"showImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"showDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"showExcerpt": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor",
+	"usesContext": [
+		"postId",
+		"postType"
+	]
+}

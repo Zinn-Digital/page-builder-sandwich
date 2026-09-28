@@ -64,9 +64,44 @@ final class Registry {
 	 */
 	public const BLOCKS = array(
 		// pbs-blocks:start.
-		'alert'     => 'content',
-		'section'   => 'design',
-		'container' => 'design',
+		'alert'             => 'content',
+		'section'           => 'design',
+		'container'         => 'design',
+		'tabs'              => 'content',
+		'tab'               => 'content',
+		'accordion'         => 'content',
+		'accordion-item'    => 'content',
+		'modal'             => 'content',
+		'off-canvas'        => 'content',
+		'tooltip'           => 'content',
+		'table-of-contents' => 'site',
+		'reading-progress'  => 'site',
+		'star-rating'       => 'data',
+		'progress-bar'      => 'data',
+		'icon-list'         => 'content',
+		'info-box'          => 'content',
+		'feature-list'      => 'content',
+		'steps'             => 'content',
+		'checklist'         => 'content',
+		'badge'             => 'content',
+		'dual-heading'      => 'content',
+		'glossary'          => 'content',
+		'social-icons'      => 'marketing',
+		'testimonial'       => 'marketing',
+		'call-to-action'    => 'marketing',
+		'comparison-table'  => 'marketing',
+		'map'               => 'media',
+		'booking'           => 'media',
+		'qr-code'           => 'media',
+		'code'              => 'data',
+		'related-posts'     => 'site',
+		'post-meta'         => 'site',
+		'sitemap'           => 'site',
+		'user-profile'      => 'site',
+		'protected'         => 'site',
+		'contact-buttons'   => 'marketing',
+		'whatsapp'          => 'marketing',
+		'form'              => 'marketing',
 		// pbs-blocks:end.
 	);
 
@@ -79,6 +114,14 @@ final class Registry {
 	public const MODULES = array(
 		// pbs-modules:start.
 		'alert',
+		'tabs',
+		'modal',
+		'tooltip',
+		'table-of-contents',
+		'reading-progress',
+		'map',
+		'booking',
+		'code',
 		// pbs-modules:end.
 	);
 

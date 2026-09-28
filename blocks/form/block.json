@@ -1,0 +1,58 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pbs/form",
+    "title": "Form",
+    "category": "pbs-marketing",
+    "icon": "feedback",
+    "description": "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site.",
+    "keywords": [
+        "form",
+        "contact",
+        "Contact Form 7",
+        "WPForms",
+        "Gravity Forms",
+        "Fluent Forms"
+    ],
+    "textdomain": "page-builder-sandwich",
+    "attributes": {
+        "provider": {
+            "type": "string",
+            "enum": [
+                "",
+                "cf7",
+                "wpforms",
+                "gravityforms",
+                "fluentforms"
+            ],
+            "default": ""
+        },
+        "formId": {
+            "type": "string",
+            "default": ""
+        },
+        "fieldStyle": {
+            "type": "string",
+            "enum": [
+                "outlined",
+                "filled",
+                "underlined"
+            ],
+            "default": "outlined"
+        },
+        "buttonWidth": {
+            "type": "string",
+            "enum": [
+                "auto",
+                "full"
+            ],
+            "default": "auto"
+        }
+    },
+    "supports": {
+        "className": false,
+        "customClassName": false,
+        "html": false
+    },
+    "editorScript": "pbsw-blocks-editor"
+}

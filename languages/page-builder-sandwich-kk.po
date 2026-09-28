@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Қайта пайдалануға болатын үлгі ретінде сақтау"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Қолжетімділікті тексеруші"
 
@@ -990,6 +994,7 @@ msgstr "← Басқа провайдерді таңдау"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Мекенжай"
 
@@ -1043,6 +1048,8 @@ msgstr "Тест"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Жою"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Провайдерлерден модельдер тізімін жаңарту"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Суреттер"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "өшірілген"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Ашу"
 
@@ -1448,6 +1457,7 @@ msgstr "Әзірге ешқандай AI сұрауы жасалған жоқ."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Орындалды"
 
@@ -1515,7 +1525,11 @@ msgstr "Әрекеттер саны тым көп. Бірнеше минутта
 msgid "Something went wrong. Please contact the admin."
 msgstr "Бірдеңe дұрыс болмады. Әкімшіге хабарласыңыз."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Карталау"
 
@@ -1538,52 +1552,385 @@ msgstr "Бұл отбасы сақталмаған."
 msgid "Removed."
 msgstr "Жойылды."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Бұл қате қаріп отбасының атауы."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts бұл жанұяны қайтармады. Атын тексеріп, қайта көріңіз."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Қаріп файлдарын жүктеп алу немесе сақтау мүмкін емес. Жүктеулер бумасына жазуға болатынын тексеріңіз."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Қаріптің стильдер кестесін сақтау мүмкін емес. Жүктеулер қалшысына жазуға болатынын тексеріңіз."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Бұл хабарламаны жабу"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(жаңа қойындыда ашылады)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Орындалды:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Орындалуы тиіс:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Сөздік көрсеткіші"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s ішінен %1$s бағаланды"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Орындалу барысы"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Кодты көшіру"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Көшірілді"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Бұл виджет бұл сайтта қолжетімді емес."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Электрондық пошта"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Телефон"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS арнасы"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Сілтеме"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (жаңа қойындыда ашылады)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "5 жұлдыздың ішінен %d бағаланды"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(ұсынылады)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Қосылған"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Қосылмаған"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Салыстыру кестесі"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "%s нөміріне қоңырау шалу"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Электрондық пошта %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Мәтін %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "WhatsApp-та чаттасу"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Бізбен байланысу"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "WhatsApp арқылы бізбен хабарласыңыз"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Бұл пішін қазір қолжетімді емес."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s белсенді емес болғандықтан, бұл пішінді көрсету мүмкін емес."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Карта: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Картаны көрсету оны OpenStreetMap жүйесінен жүктейді."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Картаны көрсету"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMap жүйесінен картаны ашу"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s бастап брондау күнтізбесі"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Брондау күнтізбесін көрсету оны %s жүктейді."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Брондау күнтізбесін көрсету"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%s үшін брондау"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s үшін QR код"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Дизайн"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Мазмұн"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Медиа"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Маркетинг"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Сайт"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Деректер"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Ұқсас жазбалар"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Жазба мәліметтері"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Авторы:"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Жарияланған"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Жаңартылды"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Ішінде"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Белгіленген"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d минуттық оқу"
+msgstr[1] "%d минут оқу"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Әзірге пікірлер жоқ"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d пікір"
+msgstr[1] "%d пікір"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Сайт картасы"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(тақырыпсыз)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s авторының барлық жазбалары"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Бұл мазмұн қорғалған. Оны көру үшін құпия сөзді енгізіңіз."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Бұл құпия сөз қате. Қайта көріңіз."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Құпия сөз"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Мазмұнды көрсету"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Бұл бетті құлпын ашу мүмкін емес."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Әрекеттер тым көп. Бірнеше минут күтіп, қайтадан көріңіз."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Құпия сөз 4 пен 200 таңба аралығында болуы тиіс."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Көбірек"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Жбу"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Қойынды %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Мазмұны"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Sandwich Studio көмегімен өңдеу"
 msgid "Blank canvas"
 msgstr "Бос кенеп"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Мазмұнға өту"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Планшет ені 480 бен 2560 аралығындағы бүтін пиксель саны болуы тиіс."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Жükтелген белгішелер"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Белгіше"
 
@@ -2553,6 +2908,8 @@ msgstr "%s — бұл менің клиентімнің электрондық �
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Код"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Өңдеу"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Электрондық пошта"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Электрондық пошта мекенжайы"
 
@@ -3103,6 +3456,10 @@ msgstr "Ақ лейбл режимін қосуда"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "Жаңа электрондық пошта мекенжайын енгі
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Қате"
 
@@ -3723,6 +4081,7 @@ msgstr "Төмендегі өнімдер қауіпсіз режимге өтт
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "Бұл плагин PHP-нің жаңарақ нұсқасын тала�
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Жоқ"
 
@@ -4811,6 +5171,13 @@ msgstr "Әлеуметтік желілер (Facebook, Twitter, т.б.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "Уақыт белгісі"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Тақырып"
 
@@ -5171,6 +5541,8 @@ msgstr "%1$s қалай ұнап жатыр? %3$d күндік тегін сын
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Түрі"
@@ -5286,6 +5658,7 @@ msgstr "Пайдаланушылар"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Мәні"
@@ -5340,6 +5713,7 @@ msgstr "Ақылы мүмкіндіктерді көру"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Ескерту"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "Қосымша"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Жоспар"
 
@@ -5988,18 +6363,26 @@ msgstr "Өте кішкентай"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Кіші"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Орташа"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Үлкен"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "Үлкен"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "Сынақ мерзімін бастау мүмкін болмады."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Мүмкіндік"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Қосылған"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Қосылмаған"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "Кіру мекенжайы"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Пайдаланушы аты"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Құпия сөз"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7089,15 +7463,62 @@ msgstr "Болдырмау әрекеті басталды. Ол фонда жа
 msgid "Undo all conversions"
 msgstr "Барлық түрлендірулерді болдырмау"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Элемент"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Bet жүklengende ashu"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Тақырып - бұл тақырыпша"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Элементтер беттің бөлімдері болған кезде, келушілер олардың арасында өте алуы үшін тақырыпты тақырыпша етіңіз."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Тақырып %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Сұрақ немесе бөлім атауы"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Аккордеон"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Бі уақытта тек бір элемент қана ашық"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Іздеу жүйелері үшін FAQ ретінде белгілеу"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Тақырыптардан (сұрақтардан) және олардың мәтінінен (жауаптарынан) жасалған FAQ құрылымдық деректерін қосады."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Ескерту"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Ақпарат"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Сәтті аяқталды"
 
@@ -7106,6 +7527,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Ескертулер мен қателер экран оқу құралын пайдаланушыларға бірден хабарланады; ақпарат пен сәттілік туралы хабарламалар олар атқарып жатқан жұмысын аяқтаған кезде оқылады."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Белгішені көрсету"
 
@@ -7121,64 +7543,702 @@ msgstr "Тақырып (міндетті емес)"
 msgid "Write the message…"
 msgstr "Хабарлама жазыңыз…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "бөлім — тақырыптық бөлім"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Орталық"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — мағынасыз"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Белгіше"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "тақырып — кіріспе мазмұн"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Түс"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "футер — соңғы контент"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Тақырып акценті"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "мақала — өздігінен толық мазмұн"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Бейтарап"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "қосымша — қатысты мазмұн"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Позиция"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — негізгі контент (бет сайын бір рет)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Жапсырма"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — шолу сілтемелері"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Брондау күнтізбесі"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Стек (flexbox, баған)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Қызмет"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Жол (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Брондау бетінің мекенжайы"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Тор"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Мысалы: %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Күнтізбе не үшін арналған, экран оқу құралдарымен оқылады және оның астында көрсетіледі."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Бұл %s брондау бетінің мекенжайы емес, сондықтан бетте ешнәрсе көрсетілмейді."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Күнтізбені алдын ала қарау"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Сілтеме мекенжайы"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Түймешікте атауы да, мекенжайы да болған кезде көрсетіледі."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Жаңа бетте ашу"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Әрекетке шақыру"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Мәкет"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Төмендегі түймелер"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Мәтін жанындағы түймелер"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Туraрuшлау"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Негізгі түйме"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Екінші түйме"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Тақырыпша…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Неліктен екені туралы бір сөйлем…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Екінші түйме (міндетті емес)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Бақылау тізімі"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Белгі түсі"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Жолдар"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "%d-жол"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Тапсырма…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Жол қосу"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Тіл"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Автоматты түрде анықтау"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Бөлекше көрсету жоқ"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Файл атауы"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Кодтың үстінде көрсетілген, мысалы functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Жол нөмірлері"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Көшіру түймесі"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Ұзын жолдарды тасымалдау"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Кодты жазыңыз немесе кірістіріңіз..."
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Мәтін"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Бағандар"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "%d баған"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "%s мәнін ерекшелеу"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Баған қосу"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Жолдар"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "%d-жол"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Жол қосу"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Тақырыпша (не салыстырылып жатыр)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Ұяшық түрі: %s. Өзгерту"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Телефон қоңырауы"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Мәтіндік хабарлама"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Батырмалар"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Телефон нөмірі, ел кодымен"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Түйме мәтіні"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Бұл түймені жою"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Батырма қосу"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Бастапқы WhatsApp хабарламасы (міндетті емес)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Байланыс түймелері"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Бүйірлік панельге телефон нөмірін, электрондық пошта мекенжайын немесе WhatsApp нөмірін қосыңыз."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Қос тақырыпша"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Тақырып деңгейі"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Әр бетте H1 тегін оның негізгі тақырыбы үшін бір рет пайдаланыңыз."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Екінші бөлікті қарау"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Бекер түсі"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Градиент"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Нобай"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Астын сызу"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Өздік жолдағы екінші бөлік"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Бірінші бөлік"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "екінші бөлім"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Маркер қаламы"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Қалың астыңғы сызық"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Фон"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Бөлектеу"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Бөлектеуді алып тастау"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Буквица"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Үлкен бірінші әріп"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Қораптағы бірінші әріп үшін «Қораптағы буквица» стилін таңдаңыз."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Қорапшадағы буквица"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Акцент жолағы"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Дәйексөз (акцент жолағы)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Назар аудару үшін түрлі-түсті жолақтың жанында үлкен шрифтпен көрсетілген мәтіннен дәйексөз."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "дәйексөз"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Мүмкіндіктер тізімі"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Телефондарда функциялар әрқашан үсті-үстіне орналасады."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Мүмкіндіктері"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "%d мүмкіндігі"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Өз белгішесі"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Мүмкіндік…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Сипаттау…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Мүмкіндік қосу"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms немесе Fluent Forms орнатып, іске қосыңыз, содан кейін оның пішіндерінің бірін осы жерден таңдаңыз."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Форма плагині"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Таңдау…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Пішін"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Форманы таңдаңыз…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s әлі пішіндер жоқ"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s бұл сайтта белсенді емес, сондықтан бұл пішінді көрсету мүмкін емес."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Пішіндер тізімін жүктеу мүмкін болмады."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Форма стилі"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Өрістер"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Ноutlined"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Толтырылған"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Асты сызылған"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Көрсеткіш ені"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Мәтінді сыйғызу"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Толық ені"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Tүстер, қаріптер, аралықтар және бұрыштар сіздің сайт дизайнынан және осы блок параметрлерінен алынады."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Форма плагинінен сайтыңызға сай безендірілген форманы көрсету."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Форма плагині керек пе? Contact Form 7 тегін."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Сөздік"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "А-дан Я-ға дейін сұрыптау"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Бұл бет терминдерді алфавиттік тәртіппен көрсетеді; мұнда олар сіз жазған ретпен қалады."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "A–Z индексін көрсету"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Осы бетте басқа жерде пайдаланылған сілтеме шарттары"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Бет мәтінінде әрбір термин алғаш рет пайда болған кезде оның анықтамасына сілтеме жасайды. Тақырыптар, түймелер, кодтар және бұрыннан бар сілтемелер өзгертілмейді."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Шарттар"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "%d-мерзім"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Мерзімі"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Бұл нені білдіреді…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Мән қосу"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Белгішелер тізімі"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Бірінің астында бірі"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Қатар орналасқан"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Тізім элементі…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Ақпарат өрісі"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Немесе кітапханадан кез келген белгішені таңдаңыз:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Сілтеме мәтіні"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "«Толығырақ» демей, сілтеме қайда апаратынын көрсетіңіз («Бағаларымызды қараңыз»)."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Бір неше сөйлем…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "бөлім — тақырыптық бөлім"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — мағынасыз"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "тақырып — кіріспе мазмұн"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "футер — соңғы контент"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "мақала — өздігінен толық мазмұн"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "қосымша — қатысты мазмұн"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — негізгі контент (бет сайын бір рет)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — шолу сілтемелері"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Стек (flexbox, баған)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Жол (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Тор"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Өңделуде: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Бала элементтерді орналастыру тәсілі:"
 
@@ -7186,7 +8246,7 @@ msgstr "Бала элементтерді орналастыру тәсілі:"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7194,70 +8254,50 @@ msgstr "Бала элементтерді орналастыру тәсілі:"
 msgid "Inherited (%s)"
 msgstr "Мұраланған (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Жинақталған блоктар"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Бағандар"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Кенепке сүйреңіз немесе теріңіз"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Мазмұн ені"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Қорапталған (тақырыптың мазмұн ені)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Толық ені"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Минималды биіктік"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML тегі"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Сілтеме"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Бүкіл блокты мынаған сілтеме жасаңыз:"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Экран оқу құралдары үшін сілтеме мәтіні"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Блокты көре алмайтын келушілер үшін сілтеме не істейтіні."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Жаңа бетте ашу"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Сілтеме жасалған блоктын ішіне сілтемелер немесе түймелер қоймаңыз: сілтеме ішіндегі сілтеме браузерлерде жұмыс істемейді."
 
@@ -7289,14 +8329,143 @@ msgstr "+ Жол"
 msgid "− Row"
 msgstr "− Жол"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Орын"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Координаттарды немесе OpenStreetMap сілтемесін қойыңыз"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org сайтынан орынды табыңыз, содан кейін браузер жолағынан мекенжайды көшіріңіз немесе картаны тінтуірдің оң жақ түймешігімен басып, «Мекенжайды көрсету» опциясын таңдаңыз."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Ендік"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Ендік"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Масштабтау"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Орынның атауы"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Картаның астында көрсетіледі және экран оқу құралдары арқылы оқылады."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Координаттарды (мысалы, 51.5074, -0.1278) немесе OpenStreetMap сілтемесін қойыңыз."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Координаттар немесе сілтеме"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Картаны алдын ала қарау"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMap жүйесінен %1$s, %2$s тексеру"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Автор"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Жарияланған күні"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Жаңартылған күні (өзгеше болған кезде)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Санаттар"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Тегтер"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Оқу уақыты"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Пікірлер саны"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Көрсетілетін мәліметтер"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Көрсету үшін кемінде бір бөлшекті таңдаңыз."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Жүру жолағы"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Максимум"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "Процент үшін 100; кез келген басқа сан саны үшін, мысалы, 10-нан 8."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Пайызды көрсету"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Құпия сөз орнатылған. Келушілер бұл мазмұнды көру үшін құпия сөзді енгізуі тиіс."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Әлі құпия сөз орнатылмаған, сондықтан келушілер мұнда ештеңе көрмейді."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Жаңа құпия сөз"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Құпия сөзді орнату"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Құпия сөз орнатылды. Оны қолдану үшін бетті сақтаңыз; оның құлпын бұрын ашқан келушілерге жаңа құпия сөз қажет болады."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Eгер Page Builder Sandwich өшірілсе, бұл мазмұн барлық пайдаланушыға көрсетіледі."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Құпия сөз формасының үстіндегі хабар (міндетті емес)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Ауыстыру"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Жапсырма"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7306,30 +8475,698 @@ msgstr "Экран оқу құралдарымен оқылады және \"Б�
 msgid "Show label"
 msgstr "Белгіні көрсету"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Веб-адрес немесе мәтін"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR код"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Экран оқу құралдарына арналған сипаттама"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "«QR code for» және мәтінді пайдалану үшін бос қалдырыңыз."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Веб-адресті, телефон сілтемесін (tel:) немесе кез келген мәтінді теріңіз."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Бұл QR коды үшін тым ұзын. Оны қысқартыңыз."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Жазба қосу"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Оқу барысының жолағы"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Терезе жиегі"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Үстіңгі"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Төменгі"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Пайдаланушылар бетті төмен айналдырған кезде терезенің төменгі жағында көрсетіледі."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Келушілер бетті төмен жылжытқан кезде терезенің жоғарғы жағында көрсетіледі."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Қанша"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Қатысты:"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Санаттар немесе тегтер"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Ешбір байланысты дүние болмаса, орнына ең жаңасын көрсету"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Тақырыпша"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "«Ұқсас жазбалар» үшін бос қалдырыңыз."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Таңдаулы суретті көрсету"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Күнді көрсету"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Қорытындыны көрсету"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Бұл жазбаның категорияларын немесе тегтерін әзірге ешқандай жазба бөліспейді. Ортақ жазбалар пайда болғанда, олар осында көрсетіледі."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Модальді терезе"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Беттен тыс панель"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Өлшемі"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Келесі жақтан сырғып кіреді:"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Бастау – оқу басталатын жақ: ағылшын тілінде сол жақ, араб тілінде оң жақ."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Артындағы бетті басқан кезде жабу"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Терезе атауы"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Белгі салу"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Шеңбер"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Жою"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Нүкте"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Стрелка"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Таңдаулылар"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Белгіше түсі"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Мәтінмен бірдей"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Негізгі тақырып"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Екінші тақырып"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Тақырып контрастысы"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Тақырыптарды бет бойынша ретімен сақтаңыз: ол орналасқан бөлімнен бір деңгей төмен тұрған тақырып."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Иконканы таңдау"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Әдепкі белгішені пайдалану"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Белгішені таңдау"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Жоғары жылжыту"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Төмен жылжыту"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Әрбір түр үшін тақырыпты көрсету"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Сіз таңдаған түрлер бойынша әлі ешнәрсе жарияланған жоқ."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Сілтемелер"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Сілтеме %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Желі"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Профиль мекенжайы, mailto:you@example.com немесе tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Экран оқу құралдары үшін оқылатын атау"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Басқа белгіше"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Сілтеме қосу"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Қарау"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Стиль"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Tek белгіше"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Пішін"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Дөңгелектелген квадрат"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Квадрат"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Профильдерді жаңа қойындыда ашу"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Жұлдызды рейтинг"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Бағалау"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Жұлдыздар саны"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Санды көрсету"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Қадамдар"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Парақша бойынша төмен"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Қатар орналасқан (телефондарда үсті-үстіне тізіледі)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Сан түсі"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Қadamдар реті"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "%d-қадам"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Қдам…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Не істеу керек…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Қадам қосу"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Қойынды"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Betке тақырыптарды қосыңыз, сонда олар осында тізімделеді."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Мазмұны"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Тақырып деңгейінен"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Тақырып деңгейіне дейін"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Нөмірленген"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Жиюге болады"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Бастапқыда жиналған"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Оқылып жатқан бөлімді бөлектеу"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Қоймалар"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Экран оқу құралдарына арналған атау"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Міндетті емес. Мысалы, \"Жоспарлар\" сияқты қойындылардың не туралы екенін көрсетеді."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Bet ашылған кезде ашу"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Қойындылар жанында"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Қойынды қосу"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Пікір"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Фотоны ауыстыру"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Фотоны таңдау"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Фотоны жою"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Фото сипаттамасы"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Фотосуретте тек қасында аты көрсетілген адам ғана болса, бос қалдырыңыз."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Жұлдызша түріндегі бағалау (0 = жоқ)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Дәйексөз астындағы атау"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Дәйekcöz janindaghi fotosuret"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Клиенттің айтқаны…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Рөл немесе компания"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Құралды көмекші белгісі"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Құралдар кеңесінің мәтіні"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Қысқаша ұстаңыз: бір немесе екі сөйлем. Экран оқу құралдары оны түсіндіретін сөзбен бірге оқиды."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Көрсету"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Жоғарыдағы"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Төменде"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Сөз немесе тіркес"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Қолдану"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Профиль"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Кімнің профилі"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Жазба авторы"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Профиль суретін көрсету"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Өмірбаянды көрсету"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Жазбалар мен веб-сайтқа сілтемелерді көрсету"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Автор профилі"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Кімнің профилін көрсету керектігін таңдаңыз."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "WhatsApp нөмірі, ел кодымен"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Мысалы, +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Бастапқы хабарлама (міндетті емес)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Белгішенің жанында мәтінді көрсету"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Бұрыш"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Төменгі соңы (ағылшын тілінде оң жақта)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Төменгі бастап (ағылшын тілінде сол жақта)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Бүйірлік панельге WhatsApp нөміріңізді қосыңыз. Соған дейін түйме бетте көрсетілмейді."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Бұл түйме беттің экранның төменгі бұрышында қалқып тұрады."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Шорткод тегі"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Тек әріптерді, сандарды, дефистерді және астын сызу таңбаларын ғана пайдаланыңыз."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Атрибут атауы"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Атрибут қосу"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Қысқа код"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Басқа атрибуттар"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Блок параметрлерінен shortcode тегін таңдаңыз."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Галерея"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Сурет өлшемі"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Ноubnail"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Толық өлшем"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Сілтеме жасау"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Тіркеме беті"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Медиафайл"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Аудио"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Видео"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Файл мекенжайы"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Қайталау"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Автоматты түрде ойнату"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Плакат суреті"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Плейлист"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Үтір арқылы бөлінген медиа идентификаторлары"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Тректер тізімін көрсету"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Ендіру"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Ендіруге арналған мекенжай"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Максимальді ені"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Тақырыпша"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "Сурет пен тақырыпша HTML-і"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Ені"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Кеңес: Форма блогы бұл форманың сайтыңызға сай етіп безендірілгенін көрсетеді."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Форма атауын көрсету"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Form сипаттамасын көрсету"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Betти қайта жүктемей жіберу"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7350,123 +9187,108 @@ msgstr "Файлды таңдау"
 msgid "— Default —"
 msgstr "— Әдепкі —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Жетілдірілген стильдер"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Кірістірілген CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS декларациялары, мысалы: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Әсерлер (ескі кластар)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Бұрынғы нұсқалардан өткен, бос орынмен бөлінген эффект атаулары, мысалы: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Жол"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Ені"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Толық ені, мазмұны ортасында сақталады"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Сілтеме мекенжайы"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Сілтеме қатынасы"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Туraрuшлау"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Соol"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Орталық"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Оң жақ"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Түйме мәтіні"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Мәтін қосу…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Orналасу орны"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Жеке жолда"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Жолда, басқа мазмұнның қасында"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Автоматты (беттің жоғары деңгейіндегі жеке жол)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Қолжетімділік белгісі"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Декоративті белгіше үшін бос қалдырыңыз."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Блок параметрлерінен белгішені таңдаңыз."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Жаңа параметр атауы"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Мысалы: тақырып немесе мәтін"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Parametr қосу"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Виджет"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Виджетті таңдаңыз"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Виджет аймағы"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Виджет аймағын таңдаңыз"
 
@@ -7489,6 +9311,142 @@ msgstr "Бұл вставка жүктелгеннен кейін өзінің �
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Макettің ауысуы"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Бұл виджет өз параметрлерін сипаттамайды, сондықтан олар атау және мән жұптары ретінде өңделеді."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Ақаулық"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Тексеру"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Блокты көрсету"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Оқылатын тақырып түсін пайдаланыңыз"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "H%d етіп жасау"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Балама мәтін"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Балама мәтінді сақтау"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Бұл кескін – сәндік"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Тексерілуде…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Бұл беттен ешқандай қолжетімділік мәселелері табылған жоқ."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d мәселе"
+msgstr[1] "%d проблема"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d тексерілетін элемент"
+msgstr[1] "Тексерілетін заттар саны: %d"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Қайта тексеру"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Автоматты тексеру көптеген мәселені анықтайды, бірақ барлығын емес. Сондай-ақ бетті пернетақтаның өзімен және экран оқу құралымен тексеріп көріңіз."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Мәтін контрасты %1$s:1; оны оқылатын ету үшін кемінде %2$s:1 қажет."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "мұнда басыңыз,мұнда,толығырақ оқу,толығырақ,сілтеме,осы сілтеме,көбірек білу,өту"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Сілтемеде мәтіn жоқ, сондықтан экран оқу құралы тек «сілтеме» деп хабарлайды. Мәтін немесе белгі қосыңыз."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "“%s” сілтеме мәтіні оның қайда бағыттайтынын көрсетпейді. Оның орнына бағытты сипаттаңыз."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Элементтің оң tabindex мәні бар, бұл пернетақта реттілігін оқу ретінен өзгертеді. 0 пайдаланыңыз немесе оны алып тастаңыз."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Басылатын элементке пернетақта арқылы қол жеткізу мүмкін емес. Нақты түймені немесе сілтемені пайдаланыңыз."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Енгiziлгeн фрeймдe атак жоқ, сондyқтан экран оқығышы оның не екенін айта алмайды."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Форма өрісінде белгі жоқ, сондықтан оның мақсаты хабарланбайды."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Бұл тақырып бос. Экран оқу құралын пайдаланушылар тақырыптар арқылы шарлайды; оны жойыңыз немесе мәтін қосыңыз."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Бет атауы қазірдің өзінде H1 болып табылады; мазмұнның жоғары деңгейі үшін H2 қолданыңыз."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Бұл H%1$d бір деңгейді өткізіп жібереді; оған дейінгісі H%2$d. Оны H%3$d етіңіз."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Бұл суретте alt мәтіні жоқ. Оны сипаттаңыз немесе ешқандай мағына қоспаса, декоративті деп белгілеңіз."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Панельді жабу"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7563,18 +9521,6 @@ msgstr "Қолданыстағы"
 msgid "Width / height"
 msgstr "Eni / биіктігі"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Үстіңгі"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Төменгі"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7587,20 +9533,6 @@ msgstr "Мұраланған кескін — ауыстыру"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Суретті жою"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Позиция"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Өлшемі"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7666,22 +9598,6 @@ msgstr "Әрқайсысы бөлек"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Жақ (Бүйір)"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Стиль"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Түс"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7931,14 +9847,6 @@ msgstr "%1$s (%2$d жиын)"
 msgid "Replace icon"
 msgstr "Белгішені ауыстыру"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Иконканы таңдау"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Белгішені таңдау"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Ешбір белгіше сәйкес келмейді."
@@ -7950,10 +9858,6 @@ msgstr "Тұрақты"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Бренндер"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Ноutlined"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8082,21 +9986,9 @@ msgstr "Мәтін түсі"
 msgid "Cursor"
 msgstr "Курсор"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Стрелка"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Нұсқағыш"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Мәтін"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8254,10 +10146,6 @@ msgstr "Аймақ атауы"
 msgid "Named areas"
 msgstr "Аталған аймақтар"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Жолдар"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Биіктігі"
@@ -8375,10 +10263,6 @@ msgstr "Ені бойынша туралау"
 msgid "Decoration"
 msgstr "Бездендіру"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Астын сызу"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Жолақша"
@@ -8461,19 +10345,9 @@ msgstr "Конустық"
 msgid "Angle (degrees)"
 msgstr "Бұрыш (градус)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Пішін"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Эллипс"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Шеңбер"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8509,10 +10383,6 @@ msgstr "Қанығу деңгейі (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Реңк (мөлдір түсті пайдаланыңыз)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Дөңгелектелген квадрат"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "КБЛ"
@@ -8529,10 +10399,6 @@ msgstr "Үшбұрыш"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamond"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Таңдаулылар"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9410,11 +11276,6 @@ msgstr "Тазарту"
 msgid "The change could not be saved."
 msgstr "Өзгерісті сақтау мүмкін болмады."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Панельді жабу"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Тақырып әдепкісі бойынша"
@@ -9471,9 +11332,49 @@ msgstr "Про нұсқасымен кластар, токендер, қараң
 msgid "Open the Site Editor’s styles"
 msgstr "Сайт редакторының стильдерін ашу"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Тақырыпша"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Style қойындысымен стильделген, жол биіктігі тартылыңқы тақырып."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Stil қойындысымен стильденген мәтін абзацы."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Сурет"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Стиль қойындысымен өңделген, бұрыштары дөңгелектелген сурет."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Media Library кітапханасынан алынған, Style қойындысымен безендірілген бейне."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Аралық сызық"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Блоктар арасындағы бос орын; Стиль қойындысынан экран өлшемі бойынша басқа биіктікті орнатыңыз."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Бөлгіш"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Стиль қойындысымен безендірілген, бөлімдер арасындағы көлденең сызық."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Басқа сайттың (видео, жазба, карта) мекенжайын қою арқылы оның мазмұнын енгізіңіз."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Style қойындысымен безендірілген тор түріндегі бірнеше сурет."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9507,10 +11408,6 @@ msgstr "Тізім"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Индикаторлар"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Батырмалар"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9555,10 +11452,6 @@ msgstr "Бұл бет аударылмаған тілдерді жасыру"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Тігінен орналастыру"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Фон"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9617,11 +11510,6 @@ msgstr "Блок параметрлері"
 #, js-format
 msgid "Add block: %s"
 msgstr "Блок қосу: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(тақырыпсыз)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9697,10 +11585,6 @@ msgstr "Қауіпсіз режимді өшіру"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Қауіпсіз режимді қосу (басқа плагиндер өшірулі, сіз үшін, тек Studio ішінде)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Жарияланған"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10040,11 +11924,6 @@ msgstr "Құрастырушы аты"
 msgid "Visual editor name"
 msgstr "Визуалды редактордың атауы"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Автор"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10118,10 +11997,6 @@ msgstr[1] "Болдырылмады: %d бет қалпына келтірілд
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Ауыстыру"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Сілтемелер"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10231,10 +12106,6 @@ msgstr "Бұл бетке клиенттердің пікір қалдыруын
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Сілтемесі бар кез келген адам бұл бетті жарияланбай тұрып та көре алады және пікір қалдыра алады. Тіркелгі қажет емес."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Көшірілді"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10478,6 +12349,52 @@ msgstr "Суреттерді осы сайттың медиа кітапхана
 msgid "Show what will happen"
 msgstr "Не болатынын көрсету"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Аккордеон элементі"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Аккорordeонның бір бөлігі: оның мазмұнын ашатын тақырып."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Аккордеон"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Ашылып-жабылатын сұрақтар немесе бөлімдер. Қаласаңыз, бір уақытта біреуі ғана және қаласаңыз, іздеу жүйелеріне арналған FAQ ретінде белгіленеді."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "аккордеон"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Жиі қойылатын сұрақтар"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "ауыстырып қосу"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "Жюу"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "Мәліметтер"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10494,6 +12411,7 @@ msgid "notice"
 msgstr "Ескерту"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "хабарлама"
@@ -10508,6 +12426,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "ескерту"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Белгіше"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Жаңа, Жеңілдік немесе Ең жақsi баға сияқты қысқаша белгі."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "белгіше"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "теg"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "капсула"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "жаңа"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Брондау күнтізбесі"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Calendly немесе Cal.com брондау күнтізбесі, тек келуші сұраған кезде ғана жүктеледі."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "Брондау"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "кездесу"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "жоспарлау"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10519,6 +12502,7 @@ msgid "A link styled as a button."
 msgstr "Батырма түрінде жасалған сілтеме."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "күйme"
@@ -10532,6 +12516,98 @@ msgstr "сілтеме"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "әрекетке шақыру"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Әрекетке шақыру"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Тақырып, сөйлем және келушіден әрекет етуді сұрайтын бір немесе екі түйме."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "әрекетке шақыру"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "баннер"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Тіркелу"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Бақылау тізімі"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Экран оқу құралдарына арналған мәтінмен және белгімен көрсетілген, әрқайсысы орындалды немесе әлі орындалуы керек деп белгіленген тапсырмалар тізімі."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Орындалуы тиіс тапсырмалар"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "Тапсырмалар"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "белгілер"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "тізім"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Синтаксисті ерекшелеу, жол нөмірлері және көшіру түймешігі бар код тізімі. Плагин өшірілсе де, оқыла береді."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "код"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "синтаксис"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "ерекшелеу"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "Үзінді"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "программалау"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10555,6 +12631,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "макет"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Салыстыру кестесі"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Жоспарлар немесе өнімдер қатар орналасқан, ал экраннан оқу құралдары сөз ретінде оқитын \"иә\" және \"жоқ\" белгілері бар."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "салыстыру"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Баға белгілеу"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "Жоспарлар"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "кесте"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "Мүмкіндіктер"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Байланыс түймелері"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "WhatsApp арқылы сізге қоңырау шалуға, электрондық пошта немесе мәтіндік хабарлама жіберуге арналған түймелер."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "байланыс"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "Қоңырау шалу"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "Телефон"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "электрондық пошта"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10572,11 +12726,13 @@ msgid "container"
 msgstr "контейнер"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "блок"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10593,6 +12749,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "бағандар"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Қос тақырыпша"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Екі бөлімнен тұратын тақырып, оның екінші бөлігі түспен, градиентпен, контурмен немесе асты сызылған түрде ерекшеленген."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "тақырыпша"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "Тақырыбы"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "градиент"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Мүмкіндіктер тізімі"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Әрқайсысында белгіше, тақырып және қысқаша сипаттамасы бар тордағы мүмкіндіктер."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Артықшылықтар"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "қызметтер"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10636,6 +12838,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "мәтін"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Форма"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Contact Form 7, WPForms, Gravity Forms немесе Fluent Forms пішінін сайтыңыздың стиліне сәйкес келтіріп көрсетеді."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "пішін"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Сөздік"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "А-дан Я-ға дейін сұрыпталған терминдер мен олардың анықтамалары, әрқайсысының жеке сілтемесі бар. Беттегі әр терминнің бірінші аталған жерін оның анықтамасына байланыстыруға болады."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Шарттар"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "анықтамалар"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "Сөздік"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Белгішелер тізімі"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Әр жолы белгішемен басталатын тізім: құсбелгі, көрсеткі немесе кітапханадан кез келген белгіше."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "Маркерлер"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "белгішелер"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10656,6 +12938,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Ақпарат өрісі"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Кismеттер, артықшылықтар немесе байланыс деректері үшін: белгіше, қысқа тақырып, бір-екі сөйлем және қосымша сілтеме."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "мүмкіндік"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "қызмет"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "карта"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10675,6 +12982,204 @@ msgstr "аудару"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "көптілді"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Карта"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap жүйесінен алынған жер картасы: ешқандай кілт жоқ және келуші картаны сұрамайынша, OpenStreetMap жүйесінен ешнәрсе жүктелмейді."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "карта"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "орналасқан жері"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "мекенжай"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "OpenStreetMap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Модальды терезе"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Ішінде кез келген блогы бар, беттің үстінен терезе ашатын түйме."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "модальді терезе"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "қалқымалы терезе"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "лайтбокс"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "диалог"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Экраннан тыс панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Ішіндегі кез келген блоктары бар, терезенің шетінен панельді сырғытып шығаратын түйме."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "жасырын панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "таartribuna"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "бүйірлік панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "панель"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "мәзір"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Жазба мәліметтері"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Жазба авторы, күндері, санаттары, тегтері, оқу уақыты және пікірлер саны."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "автор"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "күні"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "оқу уақыты"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "мета"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "автор жолағы"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Прогресс жолағы"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Дағды немесе мақсат сияқты бір нәрсенің қаншалықты орындалғанын көрсететіn белгіленген жолақ."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "Орындалу барысы"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "жолақ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "Дағды"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "мақсат"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Құпия сөзбен қорғалған мазмұн"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Тек құпия сөзді білетін келушілер ғана көре алатын блоктар. Олар оны енгізгенге дейін мазмұн бетте мүлдем болмайды."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "Құпия сөз"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "Қорғалған"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "жеке"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "бұптау"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "мүшелер"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10700,6 +13205,86 @@ msgstr "жарық"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "tүs схемасы"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR коды"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Веб-адреске немесе кез келген мәтінге арналған QR код, ол өзіңіздің сайтыңызда жасалады (ешқандай QR қызметі пайдаланылмайды)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR-код"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "штрихкод"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "сканерлеу"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Оқу үрдісінің индикаторы"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Пайдаланушылар бетті төмен айналдырған сайын толатын, терезе жиегіндегі жіңішке жолақ."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "Оқу"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "айналдыру"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Ұқсас жазбалар"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Бұл жазбаның санаттары немесе тегтері бар басқа жазбалар, олардың суреттері, күндері және қысқаша мазмұны."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "қатысты"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "Жазбалар"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "ұқсас"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "көбірек"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10763,13 +13348,284 @@ msgstr "Тақырыпшаның виджет аймақтарының бірі�
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "бүйірлік панель"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "виджет аймағы"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Сайт картасы"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Беттер ағашы сақтала отырып, барлық жарияланған беттер мен жазбаларды (және басқа да жария мазмұнды) тізімдейтін бет."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "сайт картасы"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "сайт картасы"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "индекс"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "барлық беттер"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Әлеуметтік желі белгішелері"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Желілердің өз белгішелерімен жасалған профильдеріңізге сілтемелер."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "әлеуметтік"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "сілтемелер"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "орындау"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "профильдер"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Жұлдызша түріндегі бағалау"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Жарты жұлдыз қадамдарымен жұлдызшалар түрінде көрсетілген рейтинг."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "жұлдыздар"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "Бағалау"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "ұпай"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Қadımlar"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Бет түйірі немесе қатар орналасқан, ретімен келген процестің нөмірленген қадамдары."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "өңдеу"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "қалайша"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "Уақыт шкаласы"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "нөмірленген"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Қойынды"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Tabs блогының бір қойындысы: оның атауы және панелі."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Мазмұны"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Әрқайсысына сілтейтін, автоматты түрде жасалған беттегі тақырыптар тізімі."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Мазмұны"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "мазмұны"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "Тақырыптар"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Қойындылар"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Қойындылардағы мазмұн: келушілер панельдер арасында тінтуір немесе пернетақта арқылы ауысады."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "бетбелгілер"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "беттерге бөлінген"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "панельдер"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Пікір"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Тұтынушының аты, қызметі, фотосуреті және қосымша жұлдызды рейтингі бар пікірі."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "қарап шығу"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "дәйексөз"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "клиент"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Кері байланыс"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Құралды көмекші терезесі"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Меңзерді апарғанда және пернетақта арқылы бағыттағанда қысқаша түсіндірмені көрсететін сөз немесе сөз тіркесі."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "құралдар кеңесі"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Кеңес"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "анықтама"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Автор профилі"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Автордың суреті, аты, өмірбаяны және сілтемелері немесе таңдалған пайдаланушының деректері."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "Біография"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "Профиль"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "туралы"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp чат түймешігі"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Беттің бұрышында сізбен WhatsApp чатын ашатын қалқымалы түйме."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "чат"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "Қалқымалы"
 
 #: blocks/widget/block.json
 msgctxt "block title"

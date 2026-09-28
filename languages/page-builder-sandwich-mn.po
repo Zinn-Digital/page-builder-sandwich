@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Дахин ашиглах боломжтой загвар болгон хадгалах"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Хүртээмжийн шалгагч"
 
@@ -990,6 +994,7 @@ msgstr "← Өөр үйлчилгээ үзүүлэгч сонгох"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Хаяг"
 
@@ -1043,6 +1048,8 @@ msgstr "Тест"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Устгах"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Үйлчилгээ үзүүлэгчдээс загварын жагсаалтыг шинэчлэх"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Зураг"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "унтраасан"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Нээх"
 
@@ -1448,6 +1457,7 @@ msgstr "AI-ийн ямар ч хүсэлт хараахан ирээгүй ба�
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Дууссан"
 
@@ -1515,7 +1525,11 @@ msgstr "Хэт олон оролдлого хийсэн байна. Хэдэн �
 msgid "Something went wrong. Please contact the admin."
 msgstr "Ямар нэг зүйл буруу боллоо. Админтай холбогдоно уу."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Холбох"
 
@@ -1538,52 +1552,385 @@ msgstr "Энэ гэр бүл хадгалагдаагүй байна."
 msgid "Removed."
 msgstr "Устгагдсан."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Энэ нь хүчинтэй фонтын бүkийн нэр биш байна."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts нь энэ шрифтийн файлыг буцааж өгсөнгүй. Нэрээ шалгаад дахин оролдоно уу."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Шрифтний файлуудыг татаж авах эсвэл хадгалах боломжгүй байна. Оруулах хавтас (uploads) рүү бичих эрхтэй эсэхийг шалгана уу."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Шрифтын загварын хүснэгтийг хадгалж чадсангүй. Байршуулах хавтас руу бичих эрхтэй эсэхийг шалгана уу."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Энэ мэдэгдлийг хаах"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(шинэ таб дээр нээгдэнэ)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Дууссан:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Хийх зүйлс:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Нэр томъёоны жагсаалт"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s-оос %1$s үнэлгээ авсан"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Я явц"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Кодын хуулбарлах"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Хуулбарлагдсан"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Энэ виджет энэ сайт дээр байхгүй байна."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "И-мэйл"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Утас"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS мэдээний суваг"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Вэбсайт"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Холбоос"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (шинэ таб дээр нээгдэнэ)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "5-оос %d-оор үнэлэгдсэн"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(саз болгосон)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Багтсан"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "О ороогүй"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Харрьцуулалтын хүснэгт"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "%s-д залгах"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Имэйл %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Текст %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "WhatsApp дээр чатлах"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Бидэнтэй холбогдох"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "WhatsApp дээр бидэнтэй чатлах"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Энэ маягт одоогоор боломжгүй байна."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s идэвхгүй байгаа тул энэ маягтыг харуулах боломжгүй байна."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Холбоос: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Газрын зургийг харуулах нь үүнийг OpenStreetMap-оос ачаалдаг."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Газрын зургийг харуулах"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMap дээр газрын зургийг нээх"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s-аас захиалгын хуанли"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "За захиалгын календарыг харуулах нь үүнийг %s-ээс ачаалж байна."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "За захиалгын календарыг харуулах"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%s-д захиалах"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s-д зориулсан QR код"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Загвар"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Контент"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Медиа"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Маркетинг"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Вэбсайт"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Өgөгдөл"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Холбоотой нийтлэлүүд"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Нийтлэлийн дэлгэрэнгүй"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Зохиогч:"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Ниit нийтлэгдсэн"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Шинэчлэгдсэн"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Дотор"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Таag-лэсэн"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d минут унших"
+msgstr[1] "%d минутын уншлага"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Сэтгэгдэл байхгүй байна"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d сэтгэгдэл"
+msgstr[1] "%d сэтгэгдэл"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Сайтын зураглал"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(гарчиг байхгүй)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s-ийн бүх нийтлэлүүд"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Энэ агуулга хамгаалагдсан байна. Үүнийг үзэхийн тулд нууц үгээ оруулна уу."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Нууц үг буруу байна. Дахин оролдоно уу."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Нууц үг"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Контент харуулах"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Э тэр хуудсыг түгжээг тайлах боломжгүй байна."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Хэт олон удаа оролдлоо. Хэдэн минут хүлээгээд дахин оролдоно уу."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Нууц үг нь 4-өөс 200 тэмдэгтийн урттай байх ёстой."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Илүү олон"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Хаах"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Таб %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Агуулга"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Sandwich Studio-oor заsаh"
 msgid "Blank canvas"
 msgstr "Хоосон хуудас"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Агуулга руу алгасах"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Таblet-ийн өргөн нь 480-аас 2560 пикселийн хоорондох бүхэл тоо байх ёстой."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Оруулсан дүрс тэмдэгтүүд"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Дүрс тэмдэг"
 
@@ -2553,6 +2908,8 @@ msgstr "%s бол миний үйлчлүүлэгчийн имэйл хаяг ю
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Код"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Засварлах"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "И-мэйл"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "И-мэйл хаяг"
 
@@ -3103,6 +3456,10 @@ msgstr "Цагаан шошгоны горимыг идэвхжүүлж байн
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "Шинэ имэйл хаягаа оруулна уу"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Алдаа"
 
@@ -3723,6 +4081,7 @@ msgstr "Доорх бүтээгдэхүүнүүдийг аюулгүй гори�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "Энэ плагинд PHP-ийн илүү шинэ хувилбар ша
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Үгүй"
 
@@ -4811,6 +5171,13 @@ msgstr "Сошиал медиа (Facebook, Twitter гэх мэт)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "Цагийн тэмдэглэгээ"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Гарчиг"
 
@@ -5171,6 +5541,8 @@ msgstr "%1$s танд одоогоор хэр таалагдаж байна вэ
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Төрөл"
@@ -5286,6 +5658,7 @@ msgstr "Хэрэглэгчид"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Utга утга"
@@ -5340,6 +5713,7 @@ msgstr "Төлбөртэй боломжуудыг харах"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Анхааруулга"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "Нэмэлт"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Төлөвлөгөө"
 
@@ -5988,18 +6363,26 @@ msgstr "Маш жижиг"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Жижиг"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Дунджаар"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Том"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "Маш том"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "Туршилтын хугацааг эхлүүлэх боломжгүй байв."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Боломж"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Багтсан"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "О ороогүй"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "Нэвтрэх хаяг"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Хэрэглэгчийн нэр"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Нууц үг"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7089,15 +7463,62 @@ msgstr "Буцаах үйл явц эхэлсэн. Энэ нь цаана үрг
 msgid "Undo all conversions"
 msgstr "Бүх хөрвүүлэлтийг буцаах"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Зүйл"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Хуудас ачааллахад нээх"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Гарчиг бол гарчиг юм"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Зочид хооронд нь шилжих боломжтой байхын тулд гарчгийг хуудасны хэсгүүд болох үед гарчиг болгоно уу."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Гарчиг %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Асуулт эсвэл хэсгийн гарчиг"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Аккордеон"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Нэг удаад зөвхөн нэг зүйл нээлттэй байна"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Хайгч системд зориулж FAQ хэлбэрээр тэмдэглэх"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Гарчиг (асуулт) болон тэдгээрийн текстээс (хариулт) бүтсэн FAQ (түгээмэл асуултууд) бүтцийн өгөгдлийг нэмнэ."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Анхааруулга"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Мэдээлэл"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Амжилттай"
 
@@ -7106,6 +7527,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Анхааруулга болон алдааг дэлгэцийн уншигч хэрэглэгчдэд шууд мэдэгдэх бөгөөд харин мэдээлэл болон амжилтын мэдэгдлийг хийж буй зүйлээ дуусгах үед нь уншина."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Дүрс тэмдэг харуулах"
 
@@ -7121,64 +7543,702 @@ msgstr "Гарчиг (заавал биш)"
 msgid "Write the message…"
 msgstr "Зурвас бичих…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "хэсэг — сэдэвчилсэн хэсэг"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Төв"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — утгагүй"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Тэмдэг"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "толgoй хэсэг — удиртгал агуулга"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Өнгө"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "футер — төгсгөлийн контент"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Загварын өнгө аяс"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "нийтлэл — бие даасан контент"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Нейтраль"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "хажуу тал — холбоотой агуулга"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Байрлал"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — үндсэн агуулга (хуудас бүрт нэг удаа)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Шошго"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "навиц — залуурын холбоосууд"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Захиалгын хуанли"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Стек (flexbox, багана)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Үйлчилгээ"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Мөр (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "За захиалгын хуудасны хаяг"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Сүлжээ"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Жишээ нь %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Календар юунд зориулагдсан болохыг дэлгэц уншигч уншиж, түүний доор харуулна."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Энэ нь %s захиалгын хуудасны хаяг биш тул хуудсанд юу ч харагдахгүй."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Календарийг урьдчилан харах"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Холбоосын хаяг"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Товчлуур нь шошго болон хаяг хоёуланг нь агуулсан үед харагдана."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Шинэ таб дээр нээх"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Үйлдэл хийх уриан"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Байршил"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Доорх товчлуурууд"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Текстийн хажуу дахь товчлуурууд"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Зэрэгцүүлэлт"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Үндсэн товчлуур"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Хоёр дахь товчлуур"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Гарчиг..."
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Яагаад гэх шалтгаан..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Хоёр дахь товчлуур (заавал биш)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Шалгах хуудас"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Чекбоксны өнгө"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Mөр"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Мөр %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Даалгавар..."
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Мөр нэмэх"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Хэл"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Автоматаар илрүүлэх"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Тодруулга байхгүй"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Файлын нэр"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Кодын дээр, тухайлбал functions.php дээр харагдана."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Мөрний дугаарууд"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Хуулах товчлуур"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Мөр уртадвал таслах"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Код бичих эсвэл буулгах…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Текст"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Багананууд"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Багана %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "%s-г тодруулах"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Багана нэмэх"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Мөрүүд"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Мөр %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Мөр нэмэх"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Тайлбар (юуг харьцуулж байгаа вэ)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Нүдний төрөл: %s. Өөрчлөх"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Утасны дуудлага"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Текст мессеж"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Товчнууд"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Утасны дугаар, улсын кодын хамт"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Товчлуурын текст"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Энэ товчлуурыг устгах"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Товчлуур нэмэх"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Эхлэх WhatsApp зурвас (заавал биш)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Холбоо барих товчлуурууд"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Хажуугийн самбарт утасны дугаар, имэйл хаяг эсвэл WhatsApp дугаар нэмнэ үү."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Да давхар гарчиг"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Гарчигийн түвшин"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Хуудас бүрт үндсэн гарчигт зориулж H1-ийг нэг удаа ашиглана уу."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Хоёр дахь хэсгийн харагдах байдал"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Өргөлтийн өнгө"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Градиент"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Тойм"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Доогуур нь зурах"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Дараагийн хэсэг тусдаа мөрөнд"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Эхний хэсэг"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "хоёр дахь хэсэг"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Маркер үзэг"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Зузаан доогуур зураас"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Фон"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Тодруулах"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Тодруулгыг арилгах"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Дусал үсэг"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Том анхны үсэг"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Хайрцаг доторх эхний үсэгт \"Хайрцагласан том үсэг\" загварыг сонгоно уу."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Хүрээн дэх том үсэг"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Акцент мөр"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Дэд гарчиг (онцолсон зурвас)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Өнгөт зурвасын хажууд анхаарал татахуйц том хэмжээтэйгээр байрлуулсан текстээс авсан ишлэл."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "Үнийн санал"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Онцлогын жагсаалт"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "У утсаар үзэхэд функцууд үргэлж дарааллаар давхарлагдана."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Боломжууд"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Үзүүлэлт %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Өөрийн дүрс тэмдэг"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Нэмэлт үйлдэл…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Үзүүлэлтийг бичих…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Боломж нэмэх"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms эсвэл Fluent Forms-г суулгаж идэвхжүүлээд, эндээс түүний аль нэг маягтыг сонгоно уу."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Маягтын залгаас"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Сонгох…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Маягт"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Маягт сонгоно уу…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s-д одоогоор маягт байхгүй байна"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s нь энэ сайтод идэвхгүй байгаа тул энэ маягтыг харуулах боломжгүй байна."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Маягтын жагсаалтыг ачаалж чадсангүй."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Формын загвар"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Талбарууд"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Хүрээлэгдсэн"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Дүүрсэн"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Доогуур зураастай"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Товчны өргөн"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Текстийг тааруулах"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Бүтэн өргөн"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Өнгө, фонт, зай болон булангууд нь таны сайтын дизайн болон энэ блокийн дизайны тохиргооноос үүсдэг."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Манай сайтад тохируулан загварчилсан маягтын залгааснаас маягт харуулах."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Форм залгаас хэрэгтэй байна уу? Contact Form 7 үнэгүй."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Үгийн тайлбар"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "А-аас Я хүртэл эрэмбэлэх"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Энэ хуудас нэр томьёог цагаан толгойн үсгийн дарааллаар харуулдаг бол энд таны бичсэн дарааллаараа үлдэх болно."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "A–Z индексийг харуулах"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Энэ хуудсанд өөр газар ашигласан холбоосын нэр томьёо"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Хуудасны текст дээрх нэр томьёо бүр анх гарч ирэхдээ өөрийн тодорхойлолт руу холбогдоно. Гарчиг, товчлуур, код болон одоо байгаа холбоосуудад өөрчлөлт оруулахгүй."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Үйлчилгээний нөхцөл"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Хугацаа %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Хугацаа"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Энэ нь юу гэсэн үг вэ…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Нэр томъёо нэмэх"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Дүрс тэмдгийн жагсаалт"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Нэг нь нөгөөгийнхөө доор"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Зэрэгцүүлсэн"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Жагсаалтын зүйл…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Мэдээллийн хэсэг"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Эсвэл номын сангаас дурын дүрс тэмдэг сонгоно уу:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Линкний текст"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Линк хаашаа чиглэж байгааг хэл (\"Бидний үнэ ханшийг үзэх\"), \"Цааш унших\" гэхийн оронд."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Нэг э хоёр өүүлбэр…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "хэсэг — сэдэвчилсэн хэсэг"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — утгагүй"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "толgoй хэсэг — удиртгал агуулга"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "футер — төгсгөлийн контент"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "нийтлэл — бие даасан контент"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "хажуу тал — холбоотой агуулга"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — үндсэн агуулга (хуудас бүрт нэг удаа)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "навиц — залуурын холбоосууд"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Стек (flexbox, багана)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Мөр (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Сүлжээ"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Засварлаж байна: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Хүүхэд элементүүдийг байрлуулах арга:"
 
@@ -7186,7 +8246,7 @@ msgstr "Хүүхэд элементүүдийг байрлуулах арга:"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7194,70 +8254,50 @@ msgstr "Хүүхэд элементүүдийг байрлуулах арга:"
 msgid "Inherited (%s)"
 msgstr "Өвлөсөн (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Флексбокс"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Дараалсан блокууд"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Багананууд"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Зураг дээр чирж оруулах эсвэл бичих"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Агуулгын өргөн"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Хайрцаглагдсан (сэдвийн контентын өргөн)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Бүтэн өргөн"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Хамгийн бага өндөр"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML шошго"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Холбоос"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Бүтэн блокийг холбоос болгох"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Дэлгэц уншигчдад зориулсан холбоосын текст"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Блокыг харах боломжгүй зочдод зориулсан холбоосын гүйцэтгэх үүрэг."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Шинэ таб дээр нээх"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Холбоос бүхий блок дотор холбоос эсвэл товчлуур байрлуулж болохгүй: холбоос доторх холбоос нь хөтөч дээр ажилладаггүй."
 
@@ -7289,14 +8329,143 @@ msgstr "+ Мөр"
 msgid "− Row"
 msgstr "− Мөр"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Байршил"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Координат эсвэл OpenStreetMap линк буулгах"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Openstreetmap.org сайтаас тухайн газрыг олж, дараа нь хөтчийн хаягийн мөрөөс хаягийг хуулж авах эсвэл газрын зураг дээр хулганы баруун товчийг дарж \"Хаягийг харуулах\"-ыг сонгоно уу."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Өргөрөг"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Уртраг"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "То томруулах"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Байршлын нэр"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Газрын зургийн доор харагдаж, дэлгэцийн уншигчаар уншигдана."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Өргөрөг, уртрагийн координатыг (жишээ нь 51.5074, -0.1278) эсвэл OpenStreetMap линк оруулна уу."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Координатууд эсвэл холбоос"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Газрын зургийг урьдчилан харах"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMap дээр %1$s, %2$s-г шалгах"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Зохиогч"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Ниytлэгдсэн огноо"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Шинэчлэгдсэн огноо (ялгаатай үед)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Ангилал"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Шошго"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Унших хугацаа"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Сэтгэгдлийн тоо"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Харуулах дэлгэрэнгүй мэдээлэл"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Харуулахын тулд дор хаяж нэг дэлгэрэнгүй мэдээлэл сонгоно уу."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Я явцын мөр"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Хамгийн их"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "Хувь хэмжээний хувьд 100; 10-аас 8 гэх мэт тооллогын хувьд өөр ямар ч тоо."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Хувиар харуулах"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Нууц үг тохируулсан байна. Зочид үүнийг оруулах хүртэл энэ агуулгын оронд нууц үгийн маягт харна."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Нууц үг одоогоор тохируулаагүй байгаа тул зочид энд юу ч харахгүй."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Шинэ нууц үг"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Нууц үг тохируулах"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Нууц үг тохирууллаа. Үүнийг хэрэгжүүлэхийн тусламжаар хуудсаа хадгална уу; өмнө нь түгжээг нь тайлсан зочид шинэ нууц үгийг оруулах шаардлагатай болно."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Хэрэв Page Builder Sandwich-г унтраавал энэ агуулгыг хүн бүрд харуулна."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Нууц үгийн маягтын дээрх мессеж (заавал биш)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Шлүүр"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Шошго"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7306,30 +8475,698 @@ msgstr "Дэлгэц уншигч уншиж, “Шошгыг харуулах�
 msgid "Show label"
 msgstr "Шошгыг харуулах"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Вэб хаяг эсвэл текст"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR код"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Дэлгэц уншигчдад зориулсан тайлбар"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"QR code for\" болон текстийг ашиглах бол хоосон үлдээнэ үү."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Вэб хаяг, утасны холбоос (tel:) эсвэл дурын текст оруулна уу."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Энэ нь QR код гаргахад дэндүү урт байна. Үүнийг богиносгоно уу."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Тайлбар нэмэх"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Унших явцын зурвас"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Цонхны зах"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Дээд"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Доод тал"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Зочдод гүйлгэх үед цонхны доод талд харагдана."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Зочдыг хуудас гүйлгэх үед цонхны дээд хэсэгт гарч ирнэ."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Хэдэн"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Холбогдох хүн:"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Ангилал эсвэл шошго"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Холбоотой зүйл байхгүй бол оронд нь хамгийн сүүлийн үеийнхийг харуулна уу"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Гарчиг"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "\"Холбоотой нийтлэлүүд\" хэсгийг хоосон үлдээнэ үү."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Онцлох зургийг харуулах"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Огноог харуулах"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Хураангуйг харуулах"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Энэ нийтлэлтэй ижил ангилал эсвэл шошготой нийтлэл одоогоор байхгүй байна. Тийм нийтлэлүүд гарч ирмэгц энд харагдах болно."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Модал цонх"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Дэлгэцээс гарах самбар"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Хэмжээ"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Баруун талаас гулсаж гарч ирэх"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Эхлэх тал бол уншиж эхлэх тал мөн: англи хэлэнд зүүн, араб хэлэнд баруун."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Ар талын хуудсыг товшиход хаах"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Цонхны гарчиг"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Тэмдэглэгээ"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Дугуй"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Хөндлөн"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Цэг"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Сум"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Тараалагдсан"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Дүрсний өнгө"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Тексттэй адилхан"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Үндсэн загвар"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Загварын хоёрдагч"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Загварын ялгарал"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Гарчигуудыг хуудасны дагуу зөв дарааллаар байлгана уу: тухайн хэсгийн доторх гарчиг нь түүнээс нэг түвшнээр доогуур байна."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Икон сонгох"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Өөгдмөл дүрс тэмдгийг ашиглах"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Дүрс тэмдэг сонгох"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Дээш зөөх"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Доош зөөх"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Төрөл тус бүрээр гарчиг харуулах"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Таны сонгосон төрлүүдэд хараахан нийтлэгдсэн зүйл алга байна."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Холбоосууд"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Линк %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Сүлжээ"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Профайл хаяг, mailto:you@example.com эсвэл tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Дэлгэц уншигчдад зориулж унших нэр"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Бусад дүрс тэмдэг"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Холбоос нэмэх"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Үзэх"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Загвар"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Зөвхөн дүрс тэмдэг"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Хэлбэр"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Дугуй дөрвөлжин"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Квадрат"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Профайлуудыг шинэ таб дээр нээх"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Одоор үнэлэх"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Үнэлгээ"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Одоор үнэлсэн тоо"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Тооныг харуулах"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Алcууд"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Хуудасны доошоо"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Зэрэгцүүлсэн (утсанд хураагдана)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Дугаарын өнгө"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Алхамын дараалал"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Алхам %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Алхам…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Юу хийх вэ…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Алхам нэмэх"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Таб"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Хуудас руу гарчиг нэмэхэд тэдгээр нь энд жагсаагдах болно."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Агуулгын хүснэгт"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Гарчигийн түвшингээс"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Гарчигийн түвшин хүртэл"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Дугаарлагдсан"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Хураах боломжтой"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Эхлэхдээ хураангуйлагдсан"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Уншиж буй хэсгийг тодруулах"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Табрууд"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Дэлгэц уншигчийн нэр"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Заaвал биш. Таб юуны тухай болохыг тайлбарлана, жишээ нь \"Төлөвлөгөө\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Хуудас ачааллахад нээх"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Хажуу талын табрууд"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Таб нэмэх"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Сэтгэгдэл"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Зураг солих"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Зураг сонгох"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Зураг устгах"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Зургийн тайлбар"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Зураг дээр зөвхөн хажууд нь нэр нь бичигдсэн хүн гарсан байвал хоосон үлдээнэ үү."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Одны үнэлгээ (0 = байхгүй)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Иүний доорх нэр"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "И эш талбарын хажуу талын зураг"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Үйлчлүүлэгчийн хэлсэн нь…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Үүрэг эсвэл компани"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Багажийн зөвлөгөө"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Багажын зөвлөмжийн текст"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Богино байлгах: нэг эсвэл хоёр өгүүлбэр. Дэлгэц уншигч үүнийг тайлбарлаж буй үгтэй нь хамт уншина."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Үзүүлэх"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Дээд талд"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Доор"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Үг эсвэл хэллэг"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Хэрэгжүүлэх"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Профайл"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Хэний профайл"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Нийтлэлийн зохиогч"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Профайл зургийг харуулах"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Намтрыг харуулах"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Нийтлэл болон вэбсайтын линкүүдийг харуулах"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Зохиогчийн профайл"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Аль профайлыг харуулахаа сонгоно уу."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "WhatsApp дугаар, улсын кодын хамт"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Жишээ нь +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Эхлэх мессеж (заавал биш)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Дүрс тэмдгийн хажууд текстийг харуулах"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Булан"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Доод төгсгөл (монголоор баруун талд)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Доод эхлэл (Англи хэл дээр зүүн талд)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "WhatsApp дугаараа хажуугийн самбарт нэмнэ үү. Түүнээс нааш уг товчлуур хуудсанд харагдахгүй."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Энэ товчлуур нь хуудасны дэлгэцийн доод буланд хөвж гарч ирдэг."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Богино кодын шошго"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Үсэг, тоо, зураас болон доогуур зураас л ашиглана уу."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Үзүүлэлтийн нэр"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Шинж чанар нэмэх"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Богино код"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Бусад шинж чанарууд"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Блокын тохиргооноос богино кодын шошгыг сонгоно уу."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Галерея"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Зургийн хэмжээ"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Бяцхан зураг"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Бүтэн хэмжээ"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Холбоос руу"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Хавсралтын хуудас"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Медиа файл"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Аудио"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Видео"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Файлын хаяг"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Давталт"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Автоматаар тоглуулах"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Зурагт хуудасны зураг"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "То тоглуулах жагсаалт"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Медиа ID-ууд, таслалаар тусгаарлагдсан"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Дууны жагсаалтыг харуулах"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Суулгах"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Суурилуулах хаяг"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Хамгийн их өргөн"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Тайлбар"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "Зураг болон тайлбарын HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Өргөн"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Зөвлөмж: Форм блок нь энэхүү формыг таны сайтад тохируулан загварчилсныг харуулна."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Маягтын гарчгийг харуулах"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Маягтын тайлбарыг харуулах"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Хуудсыг дахин ачааллахгүйгээр илгээх"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7350,123 +9187,108 @@ msgstr "Файл сонгох"
 msgid "— Default —"
 msgstr "Үндсэн"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Деэшлэг загварчлал"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "Инлайн CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS тунхаглалууд, жишээ нь: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Үр нөлөө (хуучин классууд)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Хуучин хувилбаруудаас үлдсэн зайгаар тусгаарлагдсан эффектийн нэрс, жишээ нь: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Мөр"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Өргөн"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Бүтэн өргөн, агуулга нь голдоо хадгалагдана"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Холбоосын хаяг"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Холбоосын хамаарал"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Зэрэгцүүлэлт"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Зүүн"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Төв"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Баруун"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Товчлуурын текст"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Текст нэмэх…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Байршил"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Тусдаа мөрөнд"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Мөрөнд, бусад агуулгын хажууд"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Автомат (хуудасны дээд түвшинд тусдаа мөрөнд)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Хүртээмжтэй шошго"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Гоёлын дүрс болгох бол хоосон үлдээнэ үү."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Блокийн тохиргооноос дүрс тэмдэг сонгоно уу."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Шинэ тохиргооны нэр"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Жишээ нь: гарчиг эсвэл текст"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Тохиргоо нэмэх"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Виджет"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Виджет сонгох"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Виджетийн хэсэг"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Виджет хэсгийг сонгох"
 
@@ -7489,6 +9311,142 @@ msgstr "Энэхүү суулгац нь ачаалагдсаныхаа дара
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Макетын шилжилт"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Энэ виджет нь тохиргоогоо тайлбарлаагүй байгаа тул тэдгээрийг нэр болон утгын хослолоор засварлана."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Асуудал"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Шалгах"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Блокийг харуулах"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Уншихад хялбар өнгийн загвар ашиглана уу"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "H%d болгох"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Альтернатив текст"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Альт текстийг хадгалах"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Энэ зураг нь чимэглэлийн зориулалттай"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Шалгаж байна…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Энэ хуудсаас хандалтын ямар нэгэн асуудал олдсонгүй."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d асуудал"
+msgstr[1] "%d асуудал"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "Шалгах %d зүйл"
+msgstr[1] "Шастгах %d зүйл"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Дахин шалгах"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Автомат шалгалт нь олон асуудлыг илрүүлдэг боловч бүгдийг нь илрүүлж чадахгүй. Мөн хуудсыг зөвхөн гар ашиглан болон дэлгэц уншигч ашиглан шалгаж үзээрэй."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Текстийн тодруулга нь %1$s:1 байна; уншигдахуйц байхын тулд дор хаяж %2$s:1 шаардлагатай."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "энд дарж,энд,дэлгэрэнгүй унших,дэлгэрэнгүй,холбоос,энэ холбоос,илүү ихийг мэдэх,очих"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Холбоос нь ямар ч текстгүй тул дэлгэц уншигч зөвхөн \"холбоос\" гэж зарлана. Текст эсвэл шошго нэмнэ үү."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "“%s” холбоос нь хаашаа чиглэхийг заагаагүй байна. Үүний оронд хүрэх газрыг нь тайлбарлана уу."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Элемент нь эерэг tabindex-тай байгаа нь гарны дарааллыг унших дарааллаас өөрчилнө. 0 ашиглах эсвэл үүнийг устгана уу."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Дарж болох элементэд гар утсаар хүрэх боломжгүй байна. Жинхэнэ товчлуур эсвэл холбоос ашиглана уу."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Суулгасан хүрээ нь гарчиггүй тул дэлгэц уншигч түүнийг юу болохыг хэлж чадахгүй байна."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Форм талбар шошгогүй байгаа тул түүний зорилго зарлагдахгүй байна."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Энэ гарчиг хоосон байна. Дэлгэц уншигч хэрэглэгчид гарчигаар дамжин шилждэг тул үүнийг устгах эсвэл текст нэмнэ үү."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Хуудасны гарчиг аль хэдийн H1 байгаа тул агуулгын хамгийн дээд түвшинд H2 ашиглана уу."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Энэ H%1$d нь нэг түвшинг алгасаж байна; үүний өмнөх нь H%2$d байна. Үүнийг H%3$d болгоно уу."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Энэ зурагт альт текст байхгүй байна. Үүнийг тайлбарлах эсвэл ямар ч утгагүй бол гоёл чимэглэлийн гэж тэмдэглэнэ үү."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Панел хаах"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7563,18 +9521,6 @@ msgstr "Дурын"
 msgid "Width / height"
 msgstr "Өргөн / өндөр"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Дээд"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Доод тал"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7587,20 +9533,6 @@ msgstr "Өвлөж авсан зураг — сольх"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Зураг устгах"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Байрлал"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Хэмжээ"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7666,22 +9598,6 @@ msgstr "Тал тус бүр тусдаа"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Таalt"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Загвар"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Өнгө"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7931,14 +9847,6 @@ msgstr "%1$s (%2$d багц)"
 msgid "Replace icon"
 msgstr "Дүрс тэмдэг солих"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Икон сонгох"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Дүрс тэмдэг сонгох"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Ямар ч дүрс тэмдэг таарсангүй."
@@ -7950,10 +9858,6 @@ msgstr "Үзүүлэлт"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Брэндүүд"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Хүрээлэгдсэн"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8082,21 +9986,9 @@ msgstr "Текстийн өнгө"
 msgid "Cursor"
 msgstr "Хургуур"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Сум"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Заoрчг"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Текст"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8254,10 +10146,6 @@ msgstr "Бүсийн нэр"
 msgid "Named areas"
 msgstr "Нэрлэсэн бүсүүд"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Мөрүүд"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Өндөр"
@@ -8375,10 +10263,6 @@ msgstr "Тэгшлэх"
 msgid "Decoration"
 msgstr "Чимэглэл"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Доогуур нь зурах"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Дээд зураас"
@@ -8461,19 +10345,9 @@ msgstr "Коник"
 msgid "Angle (degrees)"
 msgstr "Өнцөг (градус)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Хэлбэр"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Эллипс"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Дугуй"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8509,10 +10383,6 @@ msgstr "Бөглөрөл (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Өнгө оруулах (тунгалаг өнгө ашиглах)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Дугуй дөрвөлжин"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Блоб"
@@ -8529,10 +10399,6 @@ msgstr "Гурвалжин"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Даймонд"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Тараалагдсан"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9410,11 +11276,6 @@ msgstr "Цэвэрлэх"
 msgid "The change could not be saved."
 msgstr "Өөрчлөлтийг хадгалж чадсангүй."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Панел хаах"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Загварын анхдагч"
@@ -9471,9 +11332,49 @@ msgstr "Pro багцад класс, токен, бараг горим, брэн
 msgid "Open the Site Editor’s styles"
 msgstr "Site Editor-ийн стилийг нээх"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Гарчиг"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Style tab ашиглан загварчлагдсан, илүү нягт мөрийн өндөртэй гарчиг."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Style таb-ийн тусламжтай загварчилсан текстийн догол мөр."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Зураг"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Загвар табаар загварчилсан, булан нь бөөрөнхийлөгсөн зураг."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Медиа сангаас авсан, Загвар табаар тохируулсан видео."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "За зайлуулагч"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Блок хоорондын зай хоосон байна; Стиль табаас дэлгэцийн хэмжээ бүрээр өөр өндөр тохируулна уу."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Тусгаарлагч"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Style tab ашиглан загварчилсан хэсгүүд хоорондын хэвтээ шугам."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Хаягийг нь буулгаж өөр сайтын агуулга (видео, нийтлэл, газрын зураг)-г оруулаарай."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Стил табын тусламжтайгаар загвар оруулсан тор хэлбэртэй хэд хэдэн зураг."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9507,10 +11408,6 @@ msgstr "Жагсаалт"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Таблетууд"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Товчнууд"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9555,10 +11452,6 @@ msgstr "Энэ хуудасны орчуулагдаагүй хэл нуух"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Боorsoj-goorsoor bayrluulah"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Фон"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9617,11 +11510,6 @@ msgstr "Блоклох тохиргоо"
 #, js-format
 msgid "Add block: %s"
 msgstr "Блоц нэмэх: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(гарчиг байхгүй)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9697,10 +11585,6 @@ msgstr "Аюулгүй горимыг унтраах"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Аюулгүй горимыг асаах (бусад залгаасууд унтраалттай, зөвхөн танд, Studio дотор)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Ниit нийтлэгдсэн"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10040,11 +11924,6 @@ msgstr "Бүтээгчийн нэр"
 msgid "Visual editor name"
 msgstr "Визуал засварлагчийн нэр"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Зохиогч"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10118,10 +11997,6 @@ msgstr[1] "Буцаагдсан: %d хуудас сэргээгдсэн."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Орлуулах"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Холбоосууд"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10231,10 +12106,6 @@ msgstr "Энэ хуудсанд үйлчлүүлэгч сэтгэгдэл үлд
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Энэ хуудас нийтлэгдэхээсээ ч өмнө холбоостой хэн бүхэнд харагдах бөгөөд сэтгэгдэл үлдээх боломжтой. Ямар нэгэн бүртгэл шаардлагагүй."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Хуулбарлагдсан"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10477,6 +12348,52 @@ msgstr "Зургуудыг энэ сайтын медиа сан руу хуул
 msgid "Show what will happen"
 msgstr "Юу болохыг харуулах"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Аккордеон зүйл"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Аккордеоны нэг хэсэг: агуулгыг нь нээдэг гарчиг."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Аккордеон"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Нээгдэж хаагддаг асуултууд эсвэл хэсгүүд. Нэг удаад нэгээр нь, мөн хайлтын системд зориулж FAQ хэлбэрээр тэмдэглэх боломжтой."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "аккордион"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Түгээмэл асуултууд"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "шилжүүлэх"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "хуurах"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "Дэлгэрэнгүй"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10493,6 +12410,7 @@ msgid "notice"
 msgstr "Мэдэгдэл"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "зуурvas"
@@ -10507,6 +12425,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "Анхааруулга"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Мэдээлэл тэмдэглэгээ"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Шинэ, Хямдрал эсвэл Хамгийн сайн үнэ гэх мэт богино шошго."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "шошго"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "шошго"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "шошго"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "Шинэ"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Захиалгын календарь"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Ажиглагч шаардсан үед л ачаалагдах Calendly эсвэл Cal.com-ын цаг захиалгын календарь."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "заialалт"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "цаг товлох"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "хуваарь гаргах"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10518,6 +12501,7 @@ msgid "A link styled as a button."
 msgstr "Товчлуурын хэлбэртэй холбоос."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "Товчлуур"
@@ -10531,6 +12515,98 @@ msgstr "холбоос"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "Үйлдлийн товчлуур"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Үйлдлийн уриалга"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Гарчиг, өгүүлбэр болон зочныг үйлдэл хийхийг хүссэн нэг эсвэл хоёр товчлуур."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "ҮSХ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "Баннер"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "бүртгүүлэх"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Хяналтын хуудас"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Дэлгэц уншигчдад зориулсан үг болон тэмдэглэгээгээр хийгдсэн эсвэл хийгдээгүйгээр нь ялгасан даалгавруудын жагсаалт."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Хийх ажил"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "даалгаврууд"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "тикалар"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "жагсаалт"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Код"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Синтакс тодруулга, мөрийн дугаар болон хуулж авах товчлуур бүхий кодын жагсаалт. Плүг-ин унтарсан ч уншигдсан хэвээр үлдэнэ."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "код"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "синтаксис"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "Тодруулах"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "хэсэг"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "програмчлал"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10554,6 +12630,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "байршил"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Харрьцуулятын хүснэгт"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Дэлгэц уншигч үг болгон унших \"тийм\", \"үгүй\" тэмдэглэгээ бүхий хажуу зэрэгцүүлсэн төлөвлөгөө эсвэл бүтээгдэхүүнүүд."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "Харissovuh"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Үнэ тогтоolт"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "Төлөвлөгөөнүүд"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "Хүснэгт"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "Боломжууд"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Холбоо барих товчлуурууд"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "WhatsApp-аар залгах, имэйл бичих, мессеж илгээх эсвэл холбогдох товчлуурууд."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "холбоо барих"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "Дуудах"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "Утас"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "И-мэйл"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10571,11 +12725,13 @@ msgid "container"
 msgstr "контейнер"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "хайрцаг"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10592,6 +12748,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "баганууд"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Хоёр давхар гарчиг"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Хоёр хэсгээс бүрдсэн гарчиг, хоёр дахь нь өнгө, градиент, хүрээ эсвэл зураасаар тодотгогдсон байна."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "гарчиг"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "гарчиг"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "градиент"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Онцлогын жагсаалт"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Баганаар байрлуулсан боломжууд, тус бүрдээ дүрс, гарчиг болон богино тайлбартай."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Давуу талууд"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "Үйлчилгээ"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10635,6 +12837,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "текст"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Маягт"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Contact Form 7, WPForms, Gravity Forms эсвэл Fluent Forms-ийн маягтыг таны сайтын загвартай тохируулан харуулна."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "маягт"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Нэр томьёоны тайлбар"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Нэр томьёо ба тэдгээрийн тодорхойлолт, А-Я үсгийн дарааллаар эрэмбэлэгдсэн, тус бүр өөрийн холбоостой. Хуудсан дээрх нэр томьёоны анхны дурдагдал бүрийг тодорхойлолт руу нь холбох боломжтой."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Үйлчилгээний нөхцөл"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "Тодорхойлолтууд"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "толь бичиг"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Дүрс тэмдгийн жагсаалт"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Мөр бүр нь тэмдэгтээр буюу тэмдэглэгээ, сум, эсвэл сан дахь аль нэг дүрс тэмдэгтээр эхэлдэг жагсаалт."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "Булеттер"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "дүрс тэмдэгтүүд"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10655,6 +12937,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Мэдээллийн хэсэг"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Дүрс тэмдэг, богино гарчиг, нэг эсвэл хоёр өүүлбэр, мөн сонголттой холбоос: үйлчилгээ, үр өгөөж эсвэл холбоо барих мэдээлэлд зориулсан."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "боломжгүй"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "Үйлчилгээ"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "карт"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10674,6 +12981,204 @@ msgstr "орчуулга"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "олон хэлтэй"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Холбох"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap-ийн газрын зураг: түлхүүргүй бөгөөд зочин газрын зураг хүртэл OpenStreetMap-ээс юу ч ачаалагдахгүй."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "Холбох"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "Байршил"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "хаяг"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "OpenStreetMap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Модал цонх"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Хуудасны дээр ямар ч блок агуулсан цонх нээдэг товчлуур."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "модал цонх"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "Поп-ап цонх"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "лайтбокс"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "харилцах цонх"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Дэлгэцээс гарах самбар"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Цонхны хажуу талаас ямар нэгэн блок агуулсан самбарыг гулган гарч ирэхэд зориулсан товчлуур."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "хуудас руу гулсах цэс"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "шургуулга"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "хажуугийн самбар"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "панел"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "Цэс"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Нийтлэлийн дэлгэрэнгүй"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Нийтлэлийн зохиогч, огноо, ангилал, шошго, унших хугацаа болон сэтгэгдлийн тоо."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "Зохиогч"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "огноо"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "унших хугацаа"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "мета"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "Зохиогч"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Явцын мөр"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Ур чадвар эсвэл зорилго гэх мэт ямар нэгэн зүйл хэр зэрэг ахисныг харуулдаг шошготой зуруусан диаграмм."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "явц"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "самбар"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "Узэх чадвар"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "Зорилго"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Нууц үгээр хамгаалагдсан агуулга"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Зөвхөн нууц үгтэй зочдод харагдах блокууд. Тэд үүнийг оруулах хүртэл агуулга хуудсанд огт байршихгүй."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "нууц үг"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "хамгаалагдсан"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "хувийн"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "Цоожлох"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "гишүүд"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10699,6 +13204,86 @@ msgstr "Бүдэг"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "өнгөний схем"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR код"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Таны өөрийн сайт дээр зурагдсан вэб хаяг эсвэл аливаа текстэд зориулсан QR код (ямар нэгэн QR үйлчилгээ ашиглагдаагүй)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR код"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "баркод"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "сканердах"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Унших явцын явцын мөр"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Зочид хуудсаар гүйлгэх үед дэлгэцийн зах хэсэгт дүүрдэг нарийн зурвас."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "Уншиж байна"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "гүйлгэх"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Холбоотой нийтлэлүүд"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Энэ нийтлэлийн ангилал эсвэл шошгыг хуваалцдаг нийтлэлүүд, тэдгээрийн зураг, огноо, хураангуй."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "холбоотой"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "Ниenлэлүүд"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "ижил төстэй"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "илүү"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10762,13 +13347,284 @@ msgstr "Тухайн загварын виджетийн хэсгүүдийн а
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "хажуугийн самбар"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "виджетийн талбар"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Сайтын зураглал"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Нийтлэгдсэн бүх хуудас, пост (болон бусад нийтийн контент)-ыг хуудасны бүтцийг хадгалж жагсаасан хуудас."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "сайт мап"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "сайт мап"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "индекс"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "бүх хуудсууд"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Нийтийн сүлжээний дүрсүүд"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Сүлжээний өөрсдийн дүрс тэмдэг бүхий таны профайл руу холбох холбоосууд."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "социал"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "холбоосууд"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "дагах"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "профайл"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Одын үнэлгээ"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Хагас одны алхамтай, одоор харуулсан үнэлгээ."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "Оvуд"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "Үнэлгээ"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "Оноо"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Алcууд"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Үйл явцын дугаарласан алхамууд, дарааллаараа, хуудас уруудаад эсвэл хажуу зэрэгцэн байрлана."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "процесс"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "хэрхэн"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "он дараалал"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "дугаарлагдсан"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Таб"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Tabs блокийн нэг таб: түүний гарчиг болон панель."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Агуулгын хүснэгт"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Хуудасны гарчигуудын жагсаалт бөгөөд автоматаар үүсч, тус бүр рүү холбоос өгдөг."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Гарчиг"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "агуулга"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "Гарчиг"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Таблууд"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Tabs дахь агуулга: зочид хулгана эсвэл гар ашиглан самбаруудын хооронд шилжинэ."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "Табҳо"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "таbs-тай"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "панелууд"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Сэтгэгдэл"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Хэрэглэгчийн нэр, албан тушаал, зураг болон сонголтоор одоор үнэлсэн үнэлгээ бүхий харилцагчийн сэтгэгдэл."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "Хянах"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "Иш татлаа"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "харилцагч"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Санал хүсэлт"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Багажны зөвлөмж"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Хулганаар заах эсвэл гарны фокус шилжихэд богино тайлбар харуулдаг үг эсвэл хэллэг."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "багажийн тайлбар"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Зөвлөмж"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "тодорхойлолт"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Зохиогчийн профайл"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Зохиогчийн зураг, нэр, намтар болон холбоосууд, эсвэл сонгосон хэрэглэгчийнх."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "Намтар"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "Профайл"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "тухай"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp чат товчлуур"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Хуудасны буланд байрлах, тантай WhatsApp-аар чатлах цонхыг нээдэг хөвөгч товчлуур."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "чат"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "Урсдаг"
 
 #: blocks/widget/block.json
 msgctxt "block title"

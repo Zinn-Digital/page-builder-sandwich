@@ -45,6 +45,28 @@ final class Blocks {
 		add_filter( 'wp_kses_allowed_html', array( self::class, 'allow_icon_svg' ), 10, 2 );
 		add_action( 'enqueue_block_editor_assets', array( self::class, 'editor_data' ) );
 		add_filter( 'wp_insert_post_data', array( self::class, 'widget_fallbacks' ), 10, 1 );
+		add_filter( 'render_block_data', array( self::class, 'icon_display' ), 10, 3 );
+	}
+
+	/**
+	 * A pbs/icon saved by 6.1 carries no `display`. At the TOP level of the content it is a block
+	 * of its own (as a block theme lays out every top-level block) — 6.1 printed a bare inline
+	 * span there, which the theme's layout could not give margins, so it sat at the page edge.
+	 * Inside another block (a row or column from converted legacy content) it stays inline.
+	 * Only the render sees this: the saved post is not changed, so 6.1 content stays valid.
+	 *
+	 * @param mixed $parsed_block Parsed block.
+	 * @param mixed $source_block Unfiltered parsed block.
+	 * @param mixed $parent_block The parent WP_Block, or null at the top level.
+	 * @return mixed
+	 */
+	public static function icon_display( $parsed_block, $source_block = null, $parent_block = null ) {
+		if ( ! is_array( $parsed_block ) || 'pbs/icon' !== ( $parsed_block['blockName'] ?? '' ) || isset( $parsed_block['attrs']['display'] ) || null !== $parent_block ) {
+			return $parsed_block;
+		}
+		$parsed_block['attrs']['display'] = 'block';
+
+		return $parsed_block;
 	}
 
 	/**

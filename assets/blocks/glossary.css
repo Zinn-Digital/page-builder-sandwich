@@ -1,0 +1,100 @@
+/*
+ * Front-end styles for pbs/glossary. `__PREFIX__` is the neutral class prefix; logical
+ * properties only (wp/bin/pbs-logical-css.php). Loaded only where this block renders.
+ */
+.__PREFIX__-glossary {
+	margin-block: 1em;
+}
+
+.__PREFIX__-glossary__index ul {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25em;
+	margin-block: 0 1em;
+	margin-inline: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.__PREFIX__-glossary__index a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-inline-size: 2em;
+	min-block-size: 2em;
+	border: 1px solid currentcolor;
+	border-radius: 4px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.__PREFIX__-glossary__index a:focus-visible {
+	outline: 2px solid currentcolor;
+	outline-offset: 2px;
+}
+
+.__PREFIX__-glossary__list {
+	margin: 0;
+}
+
+.__PREFIX__-glossary__entry {
+	padding-block: 0.75em;
+	border-block-end: 1px solid rgb(0 0 0 / 12%);
+	scroll-margin-block-start: 4em;
+}
+
+.__PREFIX__-glossary__entry:target {
+	outline: 2px solid currentcolor;
+	outline-offset: 4px;
+}
+
+.__PREFIX__-glossary__term {
+	font-weight: 700;
+}
+
+.__PREFIX__-glossary__definition {
+	margin-block: 0.25em 0;
+	margin-inline: 0;
+}
+
+/* A term linked from the page text. */
+.__PREFIX__-glossary-link {
+	text-decoration: underline dotted;
+	text-underline-offset: 0.2em;
+}
+
+/* Shared by the G-B blocks. Each block file carries its own copy, because a page loads only the
+   stylesheets of the blocks it uses. */
+.__PREFIX__-accent--primary {
+	--__PREFIX__-accent: var(--wp--preset--color--primary, var(--wp--preset--color--accent-3, #5b21b6));
+}
+
+.__PREFIX__-accent--secondary {
+	--__PREFIX__-accent: var(--wp--preset--color--secondary, var(--wp--preset--color--accent-4, #3f3f46));
+}
+
+.__PREFIX__-accent--contrast {
+	--__PREFIX__-accent: var(--wp--preset--color--contrast, currentcolor);
+}
+
+.__PREFIX__-accent--text {
+	--__PREFIX__-accent: currentcolor;
+}
+
+.__PREFIX__-kit-icon,
+.__PREFIX__-kit-icon svg {
+	display: inline-block;
+	line-height: 0;
+}
+
+.__PREFIX__-sr {
+	position: absolute;
+	inline-size: 1px;
+	block-size: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}

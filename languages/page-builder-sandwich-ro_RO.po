@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Salvați ca șablon reutilizabil"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Verificator de accesibilitate"
 
@@ -990,6 +994,7 @@ msgstr "← Alegeți un alt furnizor"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Adresă"
 
@@ -1043,6 +1048,8 @@ msgstr "Test"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Șterge"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Actualizați listele de modele de la furnizori"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Imagini"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "dezactivat"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Deschide"
 
@@ -1448,6 +1457,7 @@ msgstr "Nicio solicitare AI nu a fost efectuată încă."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Gata"
 
@@ -1515,7 +1525,11 @@ msgstr "Prea multe încercări. Vă rugăm să încercați din nou în câteva m
 msgid "Something went wrong. Please contact the admin."
 msgstr "Ceva nu a mers bine. Vă rugăm să contactați administratorul."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Asociază"
 
@@ -1538,52 +1552,387 @@ msgstr "Această familie nu este stocată."
 msgid "Removed."
 msgstr "Șters."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Aceasta nu este o denumire validă de familie de fonturi."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts nu a returnat acea familie. Verificați numele și încercați din nou."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Fișierele de font nu au putut fi descărcate sau salvate. Verificați dacă folderul de încărcări are drepturi de scriere."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Fișierul de stiluri pentru fonturi nu a putut fi salvat. Verificați dacă folderul de încărcări are drepturi de scriere."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Ignoră această notificare"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(se deschide într-o filă nouă)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Efectuat:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "De făcut:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Index glosar"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Cotat cu %1$s din %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Progres"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Copiază codul"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Copiat"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Widgetul respectiv nu este disponibil pe acest site."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "E-mail"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Telefon"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Flux RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Site web"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Link"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (se deschide într-o filă nouă)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Cotat cu %d din 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(recomandat)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Inclus"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Neinclus"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Tabel comparativ"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Apelați %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "E-mail %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Text %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Discutați pe WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Contactați-ne"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Discutați cu noi pe WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Acest formular nu este disponibil momentan."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Acest formular nu poate fi afișat deoarece %s nu este activ."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Mapare: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Afișarea hărții o încarcă de pe OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Afișați harta"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Deschide harta pe OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Calendar de rezervări de la %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Afișarea calendarului de rezervări îl încarcă de pe %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Afișați calendarul de rezervări"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Rezervă pe %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Cod QR pentru %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Design"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Conținut"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Media"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Marketing"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Site"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Date"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Articole similare"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Detalii postare"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "De"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Publicat"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Actualizat"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "În"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Etichetat"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "lectură de %d minute"
+msgstr[1] "%d minute de lectură"
+msgstr[2] "%d minute de lectură"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Niciun comentariu încă"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d comentariu"
+msgstr[1] "%d comentarii"
+msgstr[2] "%d comentarii"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Sitemap"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(fără titlu)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Toate articolele scrise de %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Acest conținut este protejat. Introduceți parola pentru a-l vedea."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Parola nu este corectă. Încearcă din nou."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Parolă"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Afișați conținutul"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Această pagină nu poate fi deblocată."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Prea multe încercări. Așteptați câteva minute și încercați din nou."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Parola trebuie să aibă între 4 și 200 de caractere."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Mai mult"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Închide"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Fileşa %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Conținut"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2035,10 @@ msgstr "Editați cu Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Pânză goală"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Treci la conținut"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Lățimea tabletei trebuie să fie un număr întreg de pixeli de la 480 la 2560."
@@ -1760,7 +2113,11 @@ msgid "Uploaded icons"
 msgstr "Pictograme încărcate"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Pictogramă"
 
@@ -2553,6 +2910,8 @@ msgstr "%s este adresa de e-mail a clientului meu"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Cod"
 
@@ -3047,13 +3406,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Editează"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "E-mail"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Adresă de e-mail"
 
@@ -3103,6 +3458,10 @@ msgstr "Activarea modului etichetă albă"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3484,7 @@ msgstr "Introduceți noua adresă de e-mail"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Eroare"
 
@@ -3723,6 +4083,7 @@ msgstr "Produsele de mai jos au fost trecute în modul de siguranță deoarece a
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4187,7 @@ msgstr "Acest modul necesită o versiune mai nouă de PHP."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Nu"
 
@@ -4811,6 +5173,13 @@ msgstr "Social media (Facebook, Twitter etc.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5465,9 @@ msgstr "Marcă de timp"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Titlu"
 
@@ -5171,6 +5543,8 @@ msgstr "Cum vă place %1$s până acum? Testați toate funcțiile noastre premiu
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Tip"
@@ -5286,6 +5660,7 @@ msgstr "Utilizatori"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Valoare"
@@ -5340,6 +5715,7 @@ msgstr "Vizualizați funcțiile plătite"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Avertizare"
 
@@ -5666,6 +6042,7 @@ msgid "Optional"
 msgstr "Opțional"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Abonament"
 
@@ -5988,18 +6365,26 @@ msgstr "Extra mic"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Mic"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Mediu"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Mare"
 
@@ -6012,7 +6397,9 @@ msgid "Huge"
 msgstr "Uriaș"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6328,16 +6715,9 @@ msgid "The trial could not be started."
 msgstr "Testul nu a putut fi pornit."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Funcție"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Inclus"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Neinclus"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6693,10 +7073,6 @@ msgstr "Adresă de autentificare"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Nume de utilizator"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Parolă"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7095,15 +7471,62 @@ msgstr "Anularea a început. Continuă în fundal; puteți părăsi această pag
 msgid "Undo all conversions"
 msgstr "Anulează toate conversiile"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Element"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Se deschide la încărcarea paginii"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Titlul este un antet"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Faceți titlul un antet atunci când elementele sunt secțiuni ale paginii, astfel încât vizitatorii să poată sări între ele."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Antet %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Întrebare sau titlu de secțiune"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Accordion"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Un singur element deschis în același timp"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Marcați ca ÎF pentru motoarele de căutare"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Adaugă date structurate FAQ construite din titluri (întrebări) și textul acestora (răspunsuri)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Alertă"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Informații"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Succes"
 
@@ -7112,6 +7535,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Avertismentele și erorile sunt anunțate imediat utilizatorilor de cititoare de ecran; notificările de informații și succes sunt citite atunci când aceștia își termină activitatea."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Afișați pictograma"
 
@@ -7127,64 +7551,702 @@ msgstr "Titlu (opțional)"
 msgid "Write the message…"
 msgstr "Scrieți mesajul…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "secțiune — o secțiune tematică"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Centru"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — fără semnificație"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Insignă"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "antet — conținut introductiv"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Culoare"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "subsol — conținut de încheiere"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Accent temă"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "articol — conținut independent"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Neutru"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "lateral — conținut conexe"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Poziție"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — conținutul principal (o dată pe pagină)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Etichetă"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — linkuri de navigare"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Calendar de rezervări"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Stivă (flexbox, coloană)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Serviciu"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Rând (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Adresă pagină rezervări"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Grilă"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "De exemplu %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "La ce folosește calendarul, citit cu voce tare de cititoarele de ecran și afișat sub acesta."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Aceasta nu este o adresă de pagină de rezervare %s, așa că nimic nu va fi afișat pe pagină."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Previzualizați calendarul"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Adresă link"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Butonul este afișat atunci când are atât o etichetă, cât și o adresă."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Deschide într-o filă nouă"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Apel la acțiune"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Aspect"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Butoanele de mai jos"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Butoane lângă text"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Aliniere"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Buton principal"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Al doilea buton"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Titlu…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "O singură propoziție despre de ce..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Al doilea buton (opțional)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Listă de verificare"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Culoarea bifei"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Linii"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Linia %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Sarcină…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Adăugați o linie"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Limbă"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Detectare automată"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Fără evidențiere"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Nume fișier"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Afișat deasupra codului, de exemplu functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Numerele rândurilor"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Buton de copiere"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Încadrare rânduri lungi"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Scrieți sau inserați codul…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Text"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Coloane"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Coloana %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Evidențiază %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Adăugați o coloană"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Rânduri"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Rândul %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Adaugă rând"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Legendă (ce se compară)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Tipul celulei: %s. Schimbă"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Apel telefonic"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Mesaj text"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Butoane"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Număr de telefon, cu prefixul de țară"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Text buton"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Elimină acest buton"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Adăugați un buton"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Mesaj WhatsApp de început (opțional)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Butoane de contact"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Adăugați un număr de telefon, o adresă de e-mail sau un număr de WhatsApp în bara laterală."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Titlu dublu"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Nivel titlu"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Folosiți H1 o singură dată pe pagină, pentru titlul său principal."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "A doua parte arată"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Culoare de accent"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Gradient"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Contur"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Subliniere"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "A a doua parte pe rând separat"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Prima parte"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "a doua parte"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Pix cu marker"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Subliniere groasă"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Fundal"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Evidențiere"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Eliminare evidențiere"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Capital inițial decorativ"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Prima literă mare"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Pentru prima literă dintr-o casetă, alegeți stilul „Capitală înglobată într-o casetă”."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Liter stors în chenar"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Bară de accent"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Citat extras (bară de accent)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Un citat din text, afișat cu litere mari alături de o bară colorată pentru a atrage atenția."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "cotă"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Listă de funcționalități"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Pe telefoane, funcționalitățile se suprapun întotdeauna."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Funcționalități"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Funcționalitatea %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Pictogramă proprie"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Funcție…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Descrieți..."
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Adăugați o funcționalitate"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Instalați și activați Contact Form 7, WPForms, Gravity Forms sau Fluent Forms, apoi alegeți unul dintre formularele sale de aici."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Modul de formular"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Alegeți..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Formular"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Alegeți un formular…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s nu are încă formulare"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s nu este activ pe acest site, așa că acest formular nu poate fi afișat."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Lista de formulare nu a putut fi încărcată."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Stil formular"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Câmpuri"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Conturat"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Completat"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Subliniat"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Lățime buton"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Redimensionare text"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Lățime completă"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Culorile, fonturile, spațierea și colțurile provin din designul site-ului tău și din setările de design ale acestui bloc."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Afișați un formular din modulul dvs. de formulare, stilizat astfel încât să se potrivească cu site-ul dvs."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Ai nevoie de un modul de formular? Contact Form 7 este gratuit."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Glosar"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Sortare de la A la Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Pagina afișează termenii în ordine alfabetică; aici aceștia rămân în ordinea în care i-ați scris."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Afișați un index de la A la Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Termenii de legătură utilizați în altă parte pe această pagină"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Prima dată când fiecare termen apare în textul paginii, acesta face trimitere la definiția sa. Titlurile, butoanele, codul și linkurile existente rămân neschimbate."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Termeni"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Termenul %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Perioadă"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Ce înseamnă…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Adaugă termen"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Listă de pictograme"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Unul sub altul"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Lângă altul"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Element de listă…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Casetă de informații"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Sau alegeți orice pictogramă din bibliotecă:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Text link"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Specificați unde duce linkul („Consultați prețurile noastre”), nu „Citește mai mult”."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "O propoziție sau două…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "secțiune — o secțiune tematică"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — fără semnificație"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "antet — conținut introductiv"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "subsol — conținut de încheiere"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "articol — conținut independent"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "lateral — conținut conexe"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — conținutul principal (o dată pe pagină)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — linkuri de navigare"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Stivă (flexbox, coloană)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Rând (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Grilă"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Se editează: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Dispunere copii ca"
 
@@ -7192,7 +8254,7 @@ msgstr "Dispunere copii ca"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7200,70 +8262,50 @@ msgstr "Dispunere copii ca"
 msgid "Inherited (%s)"
 msgstr "Moștenit (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Blocuri stivuite"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Coloane"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Trageți în spațiul de lucru sau tastați"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Lățime conținut"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Caseta (lățimea conținutului temei)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Lățime completă"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Înălțime minimă"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Etichetă HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Link"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Faceți ca întregul bloc să fie un link către"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Textul linkului pentru cititoarele de ecran"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Ce face linkul, pentru vizitorii care nu pot vedea blocul."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Deschide într-o filă nouă"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Nu plasați linkuri sau butoane în interiorul unui bloc cu link: un link în interiorul altui link nu funcționează în browsere."
 
@@ -7295,14 +8337,143 @@ msgstr "+ Rând"
 msgid "− Row"
 msgstr "− Rând"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Locație"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Lipiți coordonatele sau un link OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Pe openstreetmap.org, găsiți locația, apoi copiați adresa din bara browserului sau faceți clic dreapta pe hartă și alegeți „Arată adresa”."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Latitudine"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Longitudine"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Mărire"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Numele locului"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Afișat sub hartă și citit de cititoarele de ecran."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Lipiți coordonatele (de exemplu 51.5074, -0.1278) sau un link OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Coordonate sau link"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Previzualizează harta"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Verifică %1$s, %2$s pe OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Autor"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Data publicării"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Data actualizării (când difere)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Categorii"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Etichete"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Timp de citire"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Număr de comentarii"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Detalii de afișat"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Alegeți cel puțin un detaliu de afișat."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Bară de progres"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Maxim"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 pentru un procent; orice alt număr pentru o numărătoare, cum ar fi 8 din 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Afișați procentul"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "O parolă este setată. Vizitatorii văd un formular pentru parolă în loc de acest conținut până când o introduc."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Nicio parolă nu a fost setată încă, așa că vizitatorii nu văd nimic aici."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Parolă nouă"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Setați parola"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Parola a fost setată. Salvați pagina pentru a o aplica; vizitatorii care au deblocat-o vor avea nevoie de cea nouă."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Dacă Page Builder Sandwich este dezactivat vreodată, acest conținut este afișat tuturor."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Mesaj deasupra formularului pentru parolă (opțional)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Comută"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Etichetă"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7312,30 +8483,698 @@ msgstr "Citit de cititoarele de ecran și afișat când opțiunea „Afișați e
 msgid "Show label"
 msgstr "Afișează eticheta"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Adresă web sau text"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Cod QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Descriere pentru cititoarele de ecran"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Lăsați gol pentru a folosi „Cod QR pentru” și textul."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Introduceți o adresă web, un link telefonic (tel:) sau orice text."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Acesta este prea lung pentru un cod QR. Scurtați-l."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Adăugați o legendă"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Bară de progres pentru citire"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Marginea ferestrei"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Sus"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Jos"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Afișat în partea de jos a ferestrei pe măsură ce vizitatorii derulează."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Se afișează în partea de sus a ferestrei pe măsură ce vizitatorii derulează."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Câte"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Asociat de"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Categorii sau etichete"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Când nimic nu este asociat, afișați-le pe cele mai recente în schimb"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Titlu"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Lăsați gol pentru „Postări similare”."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Afișează imaginea reprezentativă"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Afișați data"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Afișați un rezumat"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Nicio altă postare nu folosește încă categoriile sau etichetele acestei postări. Când vor exista, acestea vor apărea aici."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Modal"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Panou glisant lateral"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Dimensiune"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Se glisează din"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Start este partea în care începe citirea: stânga în engleză, dreapta în arabă."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Închide la clic pe pagina din fundal"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Titlul ferestrei"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Bifă"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Cerc"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Cruce"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Punct"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Săgeată"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Marchează cu stea"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Culoarea pictogramei"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "La fel ca textul"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Tema principală"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Temă secundară"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Contrast temă"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Păstrați titlurile în ordine în pagină: un titlu cu un nivel sub secțiunea în care se află."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Alegeți pictograma"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Utilizați pictograma implicită"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Alegeți o pictogramă"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Mută mai sus"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Mută mai jos"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Afișați un titlu pentru fiecare tip"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Nu a fost publicat încă nimic din tipurile alese."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Link-uri"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Linkul %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Rețea"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "O adresă de profil, mailto:you@example.com sau tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Nume citit pentru cititoarele de ecran"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Altă pictogramă"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Adăugați un link"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Vizualizare"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Stil"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Doar pictograma"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Formă"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Pătrat rotunjit"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Pătrat"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Deschideți profilurile într-o filă nouă"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Evaluare cu stele"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Evaluare"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Număr de stele"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Afișați numărul"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Pași"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "În josul paginii"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Alături (se stivuiește pe telefoane)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Culoarea numărului"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Ordinea pașilor"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Pasul %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Pasul..."
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Ce este de făcut..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Adăugați pasul"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Filă"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Adăugați titluri în pagină și acestea vor fi afișate aici."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Cuprins"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "De la nivelul de antet"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "La nivelul de titlu"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Numerotat"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Se poate restrânge"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Începe restrâns"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Evidențiați secțiunea care este citită"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "File de browser"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Nume pentru cititoarele de ecran"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Opțional. Descrie despre ce sunt filele, de exemplu „Planuri”."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Se deschide la încărcarea paginii"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "File de pagini în lateral"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Adăugați o filă"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Recomandare"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Înlocuiește fotografia"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Alegeți fotografia"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Elimină fotografia"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Descriere fotografie"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Lăsați gol când fotografia înfățișează doar persoana numită alături."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Evaluare cu stele (0 = niciuna)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Nume sub cotație"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Fotografie lângă citat"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Ce a spus clientul…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Rol sau companie"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Indiciu infonavigabil"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Text indiciu"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Păstrați-l scurt: una sau două propoziții. Cititoarele de ecran îl citesc împreună cu cuvântul pe care îl explică."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Afișați-l"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Deasupra"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Mai jos"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Cuvânt sau expresie"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Aplică"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Profil"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Profilul cui"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Autorul articolului"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Afișați poza de profil"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Afișează biografia"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Afișează linkurile către postări și site web"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Profil autor"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Alegeți a cui profil să fie afișat."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Număr de WhatsApp, cu prefix de țară"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "De exemplu +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Mesaj de început (opțional)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Afișați textul lângă pictogramă"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Colț"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Partea de jos (dreapta în engleză)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Jos, început (stânga în engleză)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Adăugați numărul de WhatsApp în bara laterală. Până atunci, butonul nu va fi afișat pe pagină."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Pe pagină, acest buton plutește într-un colț inferior al ecranului."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Etichetă scurtcode"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Folosiți numai litere, cifre, cratime și caractere de subliniere."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Nume atribut"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Adăugați atributul"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Shortcode"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Alte atribute"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Alegeți o etichetă scurtă în setările blocului."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Galerie"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Dimensiunea imaginii"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Miniatură"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Dimensiune maximă"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Către"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Pagină atașament"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Fișier media"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Audio"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Video"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Adresă fișier"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Buclă"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Redare automată"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Imagine poster"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Listă de redare"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "ID-uri media, separate prin virgulă"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Afișați lista pieselor"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Încorporează"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Adresă de încorporat"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Lățime maximă"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Legendă"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML pentru imagine și legendă"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Lățime"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Sugestie: Blocul Formular afișează acest formular stilizat pentru a se potrivi cu site-ul dvs."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Afișează titlul formularului"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Afișați descrierea formularului"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Trimiteți fără a reîncărca pagina"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7356,123 +9195,108 @@ msgstr "Alegeți fișierul"
 msgid "— Default —"
 msgstr "— Implicit —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Stil avansat"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS inline"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Declarații CSS, de exemplu: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Efecte (clase vechi)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Numele de efecte separate prin spațiu preluate din versiunile anterioare, de exemplu: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Rând"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Lățime"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Lățime completă, conținut păstrat la mijloc"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Adresă link"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Relație link"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Aliniere"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Stânga"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Centru"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Dreapta"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Text buton"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Adăugați text..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Plasare"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Pe propria linie"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "În rând, alături de alt conținut"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Automat (linie proprie la nivelul superior al paginii)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Etichetă accesibilă"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Lăsați gol pentru o pictogramă decorativă."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Alegeți o pictogramă în setările blocului."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Nume nou de setare"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "De exemplu: titlu sau text"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Adăugați o setare"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Widget"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Alegeți un widget"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Zonă widget"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Alegeți o zonă de widgeturi"
 
@@ -7495,6 +9319,144 @@ msgstr "Acest element încorporat își redimensionează dimensiunile după înc
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Deplasare a elementelor vizuale"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Acest widget nu își descrie setările, prin urmare acestea sunt editate ca perechi de nume și valoare."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Problemă"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Verifică"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Arată blocul"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Folosiți o culoare de temă lizibilă"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Transformă-l în H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Text alternativ"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Salvează textul alternativ"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Această imagine este decorativă"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Se verifică…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Nu s-au găsit probleme de accesibilitate pe această pagină."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d problemă"
+msgstr[1] "%d probleme"
+msgstr[2] "%d probleme"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d element de verificat"
+msgstr[1] "%d elemente de verificat"
+msgstr[2] "%d elemente de verificat"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Verifică din nou"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "O verificare automată găsește multe probleme, dar nu pe toate. De asemenea, încercați pagina doar cu tastatura și cu un cititor de ecran."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Contrastul textului este de %1$s:1; este nevoie de cel puțin %2$s:1 pentru a fi citibil."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "faceți clic aici,aici,citește mai mult,mai mult,link,acest link,aflați mai multe,mergi"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Un link nu are text, așa că un cititor de ecran anunță doar „link”. Adăugați text sau o etichetă."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Textul linkului „%s” nu spune unde duce. Descrieți în schimb destinația."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Un element are un tabindex pozitiv, ceea ce modifică ordinea tastaturii față de ordinea de citire. Folosiți 0 sau eliminați-l."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Un element interactiv nu poate fi accesat de la tastatură. Folosește un buton sau un link real."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Un cadru încorporat nu are niciun titlu, așa că un cititor de ecran nu poate spune ce este."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Un câmp de formular nu are o etichetă, așa că scopul său nu este anunțat."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Acest antet este gol. Utilizatorii de cititoare de ecran navighează folosind anteturile; eliminați-l sau adăugați text."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Titlul paginii este deja H1; folosiți H2 pentru nivelul superior al conținutului."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Acest H%1$d sare peste un nivel; cel de dinaintea lui este H%2$d. Faceți-l un H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Această imagine nu are text alternativ. Descrieți-o sau marcați-o ca fiind decorativă dacă nu adaugă nicio valoare."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Închide panoul"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7569,18 +9531,6 @@ msgstr "Personalizat"
 msgid "Width / height"
 msgstr "Lățime / înălțime"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Sus"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Jos"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7593,20 +9543,6 @@ msgstr "Imagine moștenită — înlocuiește"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Elimină imaginea"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Poziție"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Dimensiune"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7672,22 +9608,6 @@ msgstr "Fiecare parte separat"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Parte"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Stil"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Culoare"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7937,14 +9857,6 @@ msgstr "%1$s (%2$d set)"
 msgid "Replace icon"
 msgstr "Înlocuiți pictograma"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Alegeți pictograma"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Alegeți o pictogramă"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Nicio pictogramă nu se potrivește."
@@ -7956,10 +9868,6 @@ msgstr "Normal"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Mărci"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Conturat"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8088,21 +9996,9 @@ msgstr "Culoarea textului"
 msgid "Cursor"
 msgstr "Cursor"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Săgeată"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Înregistrare CNAME"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Text"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8260,10 +10156,6 @@ msgstr "Numele zonei"
 msgid "Named areas"
 msgstr "Zone denumite"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Rânduri"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Înălțime"
@@ -8381,10 +10273,6 @@ msgstr "Aliniază la ambele capete"
 msgid "Decoration"
 msgstr "Decorare"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Subliniere"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Supraînregistrare"
@@ -8467,19 +10355,9 @@ msgstr "Conic"
 msgid "Angle (degrees)"
 msgstr "Unghi (grade)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Formă"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Elipsă"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Cerc"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8515,10 +10393,6 @@ msgstr "Saturație în spate (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Nuanță (folosește o culoare translucidă)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Pătrat rotunjit"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8535,10 +10409,6 @@ msgstr "Triunghi"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamant"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Marchează cu stea"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9416,11 +11286,6 @@ msgstr "Șterge"
 msgid "The change could not be saved."
 msgstr "Modificarea nu a putut fi salvată."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Închide panoul"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Temă implicită"
@@ -9477,9 +11342,49 @@ msgstr "Clasele, tokenurile, modul întunecat, kitul de brand și fonturile pers
 msgid "Open the Site Editor’s styles"
 msgstr "Deschideți stilurile Editorului de site"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Titlu"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Un titlu cu o înălțime a rândului mai strânsă, stilizat cu fila Stil."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Un paragraf de text, stilizat cu fila Stil."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Imagine"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "O imagine cu colțuri rotunjite, stilizată cu fila Stil."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Un videoclip din Biblioteca media, stilizat cu fila Stil."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Spațiu de separare"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Spațiu gol între blocuri; setați o înălțime diferită pentru fiecare dimensiune de ecran în fila Stil."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Separator"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "O linie orizontală între secțiuni, stilizată cu ajutorul tabului Stil."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Conținutul de pe un alt site (un videoclip, o postare, o hartă) prin inserarea adresei acestuia."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Mai multe imagini într-o grilă, stilizate cu ajutorul filei Stil."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9513,10 +11418,6 @@ msgstr "Listă"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Etichete"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Butoane"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9561,10 +11462,6 @@ msgstr "Ascundeți limbile în care această pagină nu este tradusă"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Stivuiește vertical"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Fundal"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9623,11 +11520,6 @@ msgstr "Setări blocare"
 #, js-format
 msgid "Add block: %s"
 msgstr "Adaugă bloc: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(fără titlu)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9703,10 +11595,6 @@ msgstr "Dezactivați modul sigur"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Activați modul sigur (celelalte module dezactivate, doar pentru dvs., în Studio)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Publicat"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10049,11 +11937,6 @@ msgstr "Numele constructorului"
 msgid "Visual editor name"
 msgstr "Nume editor vizual"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Autor"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10130,10 +12013,6 @@ msgstr[2] "Anulat: %d pagini restaurate."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Înlocuiți"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Link-uri"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10244,10 +12123,6 @@ msgstr "Permiteți unui client să comenteze pe această pagină"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Oricine are linkul poate vedea această pagină, chiar și înainte de a fi publicată, și poate lăsa comentarii. Nu este nevoie de un cont."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Copiat"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10497,6 +12372,52 @@ msgstr "Copiați imaginile în biblioteca media a acestui site"
 msgid "Show what will happen"
 msgstr "Previzualizați ce se va întâmpla"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Element acoperire expandabilă"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "O secțiune a unui acordeon: un titlu care îi deschide conținutul."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Acordeon"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Întrebări sau secțiuni care se deschid și se închid. Opțional, câte una pe rând și, opțional, marcate ca ÎF (FAQ) pentru motoarele de căutare."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "acordion"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Întrebări frecvente"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "comută"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "restrânge"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "detalii"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10513,6 +12434,7 @@ msgid "notice"
 msgstr "notificare"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "mesaj"
@@ -10527,6 +12449,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "avertisment"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Insignă"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "O etichetă scurtă, cum ar fi Nou, Reducere sau Cea mai bună valoare."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "etichetă"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "etichetă"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "etichetă"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "nou"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Calendar de rezervări"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Un calendar de rezervări Calendly sau Cal.com, încărcat numai atunci când vizitatorul îl solicită."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "rezervare"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "programare"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "programează"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10538,6 +12525,7 @@ msgid "A link styled as a button."
 msgstr "Un link stilizat ca un buton."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "buton"
@@ -10551,6 +12539,98 @@ msgstr "link"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "apel la acțiune"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Apel la acțiune"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Un titlu, o propoziție și unul sau două butoane care îi cer vizitatorului să acționeze."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "CTA"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "banner"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "înregistrare"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Listă de verificare"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "O listă de sarcini, fiecare marcată ca fiind finalizată sau încă neefectuată, descrisă în cuvinte pentru cititoarele de ecran, precum și cu un bifă."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "De făcut"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "sarcini"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "bife"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "Listă"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Cod"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "O listă de cod cu evidențierea sintaxei, numere de rând și un buton de copiere. Rămâne citibilă chiar dacă pluginul este dezactivat."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "cod"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "sintaxă"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "Evidențiere"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "fragment"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "programare"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10574,6 +12654,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "aspect"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Tabel de comparție"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Planuri sau produse unul lângă altul, cu marcaje de tip da și nu pe care cititoarele de ecran le citesc ca cuvinte."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "compară"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Prețuri"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "planuri"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "tabel"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "funcționalități"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Butoane de contact"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Butoane pentru a vă apela, trimite email, SMS sau mesaj pe WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "contactează"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "apel"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "telefon"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "e-mail"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "whatsapp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10591,11 +12749,13 @@ msgid "container"
 msgstr "container"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "căsuță"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10612,6 +12772,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "coloane"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Titlu dublu"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Un titlu din două părți, a doua fiind accentuată cu o culoare, un gradient, un contur sau o subliniere."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "Titlu"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "titlu"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "gradient"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Listă de funcționalități"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Funcționalități într-o grilă, fiecare cu o pictogramă, un titlu și o scurtă descriere."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Beneficii"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "servicii"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10655,6 +12861,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "text"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Formular"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Afișează un formular din Contact Form 7, WPForms, Gravity Forms sau Fluent Forms, stilizat pentru a se potrivi cu site-ul tău."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "formular"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Glosar"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Termenii și definițiile lor, sortați de la A la Z, fiecare având propriul link. Poate face ca prima mențiune a fiecărui termen de pe pagină să aibă link către definiția sa."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "Termeni"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "definiții"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "dicționar"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Listă de iconițe"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "O listă în care fiecare rând începe cu o pictogramă: o bifă, o săgeată sau orice pictogramă din bibliotecă."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "Marcatori"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "pictograme"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10675,6 +12961,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Casetă de informații"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "O pictogramă, un titlu scurt, o propoziție sau două și un link opțional: pentru servicii, beneficii sau detalii de contact."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "funcție"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "serviciu"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "card"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10694,6 +13005,204 @@ msgstr "traducere"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "multilingv"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Mapare"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "O hartă a unui loc de pe OpenStreetMap: fără cheie și fără ca ceva să se încarce de pe OpenStreetMap până când vizitatorul nu solicită harta."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "asociere"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "locație"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "adresă"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Fereastră modală"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Un buton care deschide o fereastră peste pagină, cu orice blocuri în interior."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "fereastră modală"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "fereastră pop-up"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "lightbox"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "dialog"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Panou retractabil"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Un buton care glisează un panou din lateralul ferestrei, cu orice blocuri în interior."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "off-canvas"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "sertar"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "bară laterală"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "panou"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "meniu"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Detalii postare"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Autorul articolului, datele, categoriile, etichetele, timpul de lectură și numărul de comentarii."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "autor"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "dată"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "timp de lectură"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "autor"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Bară de progres"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "O bară etichetată care arată progresul realizat, cum ar fi în cazul unei competențe sau al unui obiectiv."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "Progres"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "bară"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "competență"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "obiectiv"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Conținut protejat prin parolă"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Blochează doar conținutul pe care vizitatorii îl pot vedea cu parola. Până când o introduc, conținutul nu se află deloc în pagină."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "parolă"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "protejat"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "privat"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "blochează"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "membri"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10719,6 +13228,86 @@ msgstr "luminos"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "schemă de culori"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Cod QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Un cod QR pentru o adresă web sau orice text, generat direct pe propriul site (nu este utilizat niciun serviciu QR)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "cod QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "cod QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "cod de bare"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "scanare"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Bară de progres pentru citire"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "O bară subțire situată la marginea ferestrei care se umple pe măsură ce vizitatorii derulează pagina."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "se citește"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "derulare"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Articole similare"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Postările care au aceleași categorii sau etichete cu această postare, împreună cu imaginile, datele și rezumatele lor."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "conexe"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "articole"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "similar"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "mai mult"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10782,13 +13371,284 @@ msgstr "Afișează widgeturile într-una dintre zonele de widgeturi ale temei."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "bară laterală"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "zonă widget"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Sitemap"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "O pagină care listează toate paginile și articolele publicate (și alt conținut public), păstrând arborele de pagini."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "sitemap"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "hartă site"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "index"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "toate paginile"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Pictograme pentru rețelele sociale"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Linkuri către profilurile tale, desenate cu propriile pictograme ale rețelelor."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "social"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "linkuri"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "urmăriți"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "profiluri"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Evaluare cu stele"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Un rating afișat sub formă de stele, în pași de jumătate de stea."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "stele"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "Evaluare"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "scor"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Pași"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Pașii numărați ai unui proces, în ordine, de sus în jos sau unul lângă celălalt."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "Procesare"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "cum se face"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "cronologie"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "numerotate"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Filă"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "O filă dintr-un bloc de file: titlul și panoul său."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Cuprins"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "O listă cu titlurile de pe pagină, generată automat, care face trimitere la fiecare dintre ele."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Cuprins"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "conținut"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "titluri"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "File de browser"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Conținut în file: vizitatorii comută între panouri folosind mouse-ul sau tastatura."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "file de și"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "cu file"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "panouri"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Testimonial"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Un citat de la un client cu numele, rolul, fotografia și o evaluare opțională cu stele."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "revizuire"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "citat"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "client"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Feedback"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Indiciu"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Un cuvânt sau o frază care afișează o scurtă explicație la trecerea cursorului și la focalizarea de la tastatură."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "indiciu indisponibil"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "indiciu"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "definiție"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Profil autor"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Imaginea, numele, biografia și linkurile autorului sau cele ale unui utilizator ales."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "biografie"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "profil"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "despre"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Buton de chat WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Un buton flotant într-un colț al paginii care deschide o conversație WhatsApp cu dumneavoastră."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "chat"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "flotant"
 
 #: blocks/widget/block.json
 msgctxt "block title"

@@ -1,0 +1,54 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/steps",
+	"title": "Steps",
+	"category": "pbs-content",
+	"icon": "editor-ol",
+	"description": "The numbered steps of a process, in order, down the page or side by side.",
+	"keywords": [
+		"process",
+		"how to",
+		"timeline",
+		"numbered"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			},
+			"role": "content"
+		},
+		"layout": {
+			"type": "string",
+			"enum": [
+				"vertical",
+				"horizontal"
+			],
+			"default": "vertical"
+		},
+		"level": {
+			"type": "integer",
+			"default": 2
+		},
+		"accent": {
+			"type": "string",
+			"enum": [
+				"text",
+				"primary",
+				"secondary",
+				"contrast"
+			],
+			"default": "primary"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

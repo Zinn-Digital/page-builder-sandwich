@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "නැවත භාවිත කළ හැකි රටාවක් ලෙස සුරකින්න"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "ප්‍රවේශ්‍යතා පරීක්ෂකය"
 
@@ -990,6 +994,7 @@ msgstr "← වෙනත් සපයන්නෙකු තෝරන්න"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "ලිපිනය"
 
@@ -1043,6 +1048,8 @@ msgstr "පරීක්ෂාව"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "ඉවත් කරන්න"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "සැපයුම්කරුවන්ගෙන් ආකෘති ලැයිස්තු නැවුම් කරන්න"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "පින්තූර"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "ක්‍රියා විරහිත කර ඇත"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "විවෘත කරන්න"
 
@@ -1448,6 +1457,7 @@ msgstr "AI ඉල්ලීම් කිසිවක් තවමත් සිද
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "සිදු කරන ලදී"
 
@@ -1515,7 +1525,11 @@ msgstr "උත්සාහයන් අධිකයි. කරුණාකර �
 msgid "Something went wrong. Please contact the admin."
 msgstr "යම් දෝෂයක් සිදු විය. කරුණාකර පරිපාලක සම්බන්ධ කර ගන්න."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "සිතියම"
 
@@ -1538,52 +1552,385 @@ msgstr "එම පවුල ගබඩා කර නොමැත."
 msgid "Removed."
 msgstr "ඉවත් කර ඇත."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "එය වලංගු අකුරු පවුලේ නමක් නොවේ."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts මඟින් එම ෆැමිලිය ලබා දුන්නේ නැත. නම පරීක්ෂා කර නැවත උත්සාහ කරන්න."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "අකුරු අනුරූ ගොනු (font files) බාගත කර ගැනීමට හෝ සුරැකීමට නොහැකි විය. උඩුගත කිරීමේ (uploads) ෆෝල්ඩරයට ලිවීමට හැකි බව (writable) තහවුරු කර ගන්න."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "අකුරු මෝස්තර පත්‍රිකාව (font stylesheet) සුරැකීමට නොහැකි විය. උඩුගත කිරීම් (uploads) ෆෝල්ඩරය ලිවිය හැකි එකක් දැයි පරීක්ෂා කරන්න."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "මෙම දැනුම්දීම ඉවත් කරන්න"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(නව ටැබයකින් විවෘත වේ)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "සුරක්ෂිතයි:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "කළ යුතු දේ:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "ශබ්දකෝෂ දර්ශකය"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s න් %1$s ක් ලෙස ශ්‍රේණිගත කර ඇත"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "ප්‍රගතිය"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "කේතය පිටපත් කරන්න"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "පිටපත් කරන ලදී"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "සm විජට් එක මෙම වෙබ් අඩවියේ නොමැත."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "ඊමේල්"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "දුරකථන"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS සංග්‍රහය"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "වෙබ් අඩවිය"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "සබැඳිය"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (නව ටැබයක විවෘත වේ)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "5 න් %d ක් ලෙස ශ්‍රේණිගත කර ඇත"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(නිර්දේශිතයි)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "ඇතුළත් කර ඇත"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "ඇතුළත් කර නැත"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "සංසන්දනාත්මක වගුව"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "%s අමතන්න"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "විද්‍යුත් තැපෑල %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "පෙළ %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "WhatsApp හරහා කතා කරන්න"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "අප අමතන්න"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "WhatsApp හරහා අප සමඟ කතාබස් කරන්න"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "මෙම පෝරමය දැනට ලබා ගත නොහැක."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s සක්‍රීය කර නොමැති නිසා මෙම පෝරමය පෙන්විය නොහැක."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "සිතියම: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "සිතියම පෙන්වීම මඟ එය OpenStreetMap වෙතින් පූරණය කරයි."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "සිතියම පෙන්වන්න"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMap හි සිතියම විවෘත කරන්න"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s වෙතින් වෙන්කරවා ගැනීමේ දින දර්ශනය"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "වෙන්කිරීමේ කැලැන්ඩරය පෙන්වීමෙන් එය %s වෙතින් ලෝඩ් වේ."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "වෙන්කරවා ගැනීමේ දින දර්ශනය පෙන්වන්න"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%s මත වෙන්කරවා ගන්න"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s සඳහා QR කේතය"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "රූප සැලැස්ම"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "අන්තර්ගතය"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "මාධ්‍ය"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "අලෙවිකරණය"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "අඩවිය"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "දත්ත"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "අදාළ සටහන්"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "පෝස්ට් විස්තර"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "විසින්"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "ප්‍රකාශිතයි"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "යාවත්කාලීන කරන ලදී"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "තුළ"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "ටැග් කරන ලදී"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "විනාඩි %d ක කියවීමක්"
+msgstr[1] "විනෝද චාරිකා %d ක් කියවන්න"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "තවම අදහස් දක්වා නැත"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d අදහසක්"
+msgstr[1] "%d අදහස්"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "සිතියම"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(මාතෘකාවක් නොමැත)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s හි සියලුම පළ කිරීම්"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "මෙම අන්තර්ගතය ආරක්ෂා කර ඇත. එය බැලීමට මුරපදය ඇතුළත් කරන්න."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "ඒ මුරපදය වැරදියි. නැවත උත්සාහ කරන්න."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "මුස්පොත"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "අන්තර්ගතය පෙන්වන්න"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "එම පිටුව අගුළු ඇරිය නොහැක."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "උත්සාහයන් වැඩියි. මිනිත්තු කිහිපයක් රැඳී සිට නැවත උත්සාහ කරන්න."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "මුරපදය අකුරු 4ත් 200ත් අතර විය යුතුය."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "තවත්"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "වසන්න"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "ටැබ් %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "අන්තර්ගතය"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Sandwich Studio සමඟ සංස්කරණය කරන්න"
 msgid "Blank canvas"
 msgstr "හිස් කැන්වසය"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "ප්‍රධාන අන්තර්ගතයට යන්න"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "ටැබ්ලටයේ පළල 480 සහ 2560 අතර සම්පූර්ණ පික්සල් සංඛ්‍යාවක් විය යුතුය."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "උඩුගත කළ නිරූපක"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "අතිකෝමකය"
 
@@ -2553,6 +2908,8 @@ msgstr "%s යනු මගේ සේවාදායකයාගේ විද්
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "කේතය"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "සඳහන් කරන්න"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "ඊමේල්"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "විද්‍යුත් තැපැල් ලිපිනය"
 
@@ -3103,6 +3456,10 @@ msgstr "සුදු ලේබල් මාදිලිය සක්‍රීය
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "නව විද්‍යුත් තැපැල් ලිපිනය
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "දෝෂයකි"
 
@@ -3723,6 +4081,7 @@ msgstr "%2$s මෙම අඩවිවල නියම පිටපතක් බ
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "මෙම ප්ලගිනය සඳහා PHP හි නව සංස
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "නැත"
 
@@ -4811,6 +5171,13 @@ msgstr "සමාජ මාධ්‍ය (ෆේස්බුක්, ට්වි�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "කාල මුද්‍රාව"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "ශීර්ෂකය"
 
@@ -5171,6 +5541,8 @@ msgstr "මේ දක්වා %1$s ඔබට කෙසේ හැඟේද? ද�
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "වර්ගය"
@@ -5286,6 +5658,7 @@ msgstr "පරිශීලකයින්"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "අගය"
@@ -5340,6 +5713,7 @@ msgstr "ගෙවන ලද විශේෂාංග බලන්න"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "අවවාදයයි"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "අත්‍යවශ්‍ය නොවන"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "සැලසුම"
 
@@ -5988,18 +6363,26 @@ msgstr "අතිශයින් කුඩා"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "කුඩා"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "මධ්‍යම"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "විශාල"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "විශාල"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "පරීක්ෂණ කාලය ආරම්භ කිරීමට නොහැකි විය."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "විශේෂාංගය"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "ඇතුළත් කර ඇත"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "ඇතුළත් කර නැත"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "පිවිසුම් ලිපිනය"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "පරිශීලක නාමය"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "මුස්පොත"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7089,15 +7463,62 @@ msgstr "වෙළඳසැලේ වෙනස්කම් ආපසු හැර
 msgid "Undo all conversions"
 msgstr "සියලු පරිවර්තන අහෝසි කරන්න"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "අයිතමය"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "පිටුව පූරණය වූ විට විවෘත කරන්න"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "ශීර්ෂය යනු ශීර්ෂකයකි"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "භගුන්වහන්සේට පිටුවෙහි කොටස් වන විට මාතෘකාව ශීර්ෂයක් බවට පත් කරන්න, එවිට අමුත්තන්ට ඒවා අතරට මාරු විය හැක."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "ශීර්ෂකය %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "ප්‍රශ්නය හෝ අංශයේ ශීර්ෂය"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "ඇකෝඩියන්"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "එක් වරකට එක් අයිතමයක් පමණක් විවෘත කළ හැක"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "සෙවුම් යන්ත්‍ර සඳහා නිතර අසන පැන (FAQ) ලෙස සලකුණු කරන්න"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "මාතෘකා (ප්‍රශ්න) සහ ඒවායේ පෙළ (පිළිතුරු) මඟින් සකස් කරන ලද FAQ ව්‍යුහගත දත්ත එක් කරයි."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "අනතුරු අඟවන්න"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "තොරතුරු"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "සාර්ථකයි"
 
@@ -7106,6 +7527,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "අනතුරු ඇඟවීම් සහ දෝෂ තිර කියවීමේ යන්ත්‍ර භාවිතා කරන්නන්ට වහාම දැනුම් දෙනු ලැබේ; තොරතුරු සහ සාර්ථකත්ව දැන්වීම් ඔවුන් කරමින් සිටින දෙය අවසන් වූ විට කියවනු ලැබේ."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "නිරූපකය පෙන්වන්න"
 
@@ -7121,64 +7543,702 @@ msgstr "මාතෘකාව (අත්‍යවශ්‍ය නොවේ)"
 msgid "Write the message…"
 msgstr "පණිවිඩය ලියන්න..."
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "කොටසක් — මාතෘකාමය කොටසක්"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "මධ්‍යස්ථානය"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — අර්ථයක් නැත"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "ලේබලය"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "ශීර්ෂකය — හැඳින්වීමේ අන්තර්ගතය"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "වර්ණය"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "පතුල — අවසන් අන්තර්ගතය"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "තේමා උච්චාරණය"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "ලිපිය — ස්වයං-ප්‍රමාණවත් අන්තර්ගතය"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "උදාසීන"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "පැත්තක — අදාළ අන්තර්ගතය"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "ස්ථානය"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "ප්‍රධාන — ප්‍රධාන අන්තර්ගතය (පිටුවකට වරක්)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "ලේබලය"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "පතන - සංචාලන සබැඳි"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "වෙන් කරවා ගැනීමේ දින දර්ශනය"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "ස්ටැක් (flexbox, තීරුව)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "සේවාව"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "පේළිය (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "වෙන් කරවා ගැනීමේ පිටු ලිපිනය"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "ජාලකය"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "උදාහරණයක් ලෙස %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "තිර කියවනයන් මඟින් කියවන සහ ඒ යටතේ පෙන්වන දින දර්ශනය කුමක් සඳහාද යන්නයි."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "මෙය %s වෙන්කරවා ගැනීමේ පිටු ලිපිනයක් නොවන බැවින්, පිටුවේ කිසිවක් නොපෙන්වයි."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "දින දර්ශනය පෙරදසුන් කරන්න"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "සබැඳි ලිපිනය"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "මෙම බොත්තම ලේබලයක් සහ ලිපිනයක් යන දෙකම ඇති විට පෙන්වයි."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "නව පටිත්තක විවෘත කරන්න"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "ක්‍රියාත්මක වීමට අමතන්න"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "ආකෘතිය"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "පහත බොත්තම්"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "පෙළ අසල ඇති බොත්තම්"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "පෙළගැස්ම"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "ප්‍රධාන බොත්තම"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "දෙවන බොත්තම"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "ශීර්ෂය..."
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "…ප්‍රතිශතය කුමක්ද යන්න පිළිබඳ එක් වැකියක්…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "දෙවන බොත්තම (අත්‍යවශ්‍ය නොවේ)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "පරීක්ෂා කිරීමේ ලැයිස්තුව"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "ටිකී වල වර්ණය"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "පේළි"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "පේළිය %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "කාර්යය…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "පේළියක් එක් කරන්න"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "භාෂාව"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "ස්වයංක්‍රීයව හඳුනාගන්න"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "කිසිදු උද්දීපනය කිරීමක් නැත"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "ගොනු නාමය"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "කේතයට ඉහළින් පෙන්වනු ලැබේ, උදාහරණයක් ලෙස functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "පේළි අංක"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "පිටපත් කිරීමේ බොත්තම"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "දිගු පේළි අසුරන්න"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "කේත ලියන්න හෝ අලවන්න..."
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "පෙළ"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "තම්බි තීරු"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "තීරුව %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "%s උද්දීපනය කරන්න"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "තීරුව එක් කරන්න"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "පේළි"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "පේළිය %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "පේළියක් එක් කරන්න"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "මාතෘකාව (සංසන්දනය කරන දෙය)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "සෝල අවස්ථාව: %s. වෙනස් කරන්න"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "දුරකථන ඇමතුම"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "පෙළ පණිවිඩය"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "බොත්තම්"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "දුරකථන අංකය, රටේ කේතය සමඟින්"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "බොත්තම් පෙළ"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "මෙම බොත්තම ඉවත් කරන්න"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "බොත්තමක් එක් කරන්න"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "ආරම්භ කිරීමට WhatsApp පණිවිඩය (විකල්ප)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "සම්බන්ධතා බොත්තම්"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "සිහින් පුවරුවට දුරකථන අංකයක්, විද්‍යුත් තැපැල් ලිපිනයක් හෝ WhatsApp අංකයක් එක් කරන්න."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "ද්විත්ව ශීර්ෂය"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "ශීර්ෂ මට්ටම"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "පිටුවකට එක් වරක් ප්‍රධාන මාතෘකාව සඳහා H1 භාවිතා කරන්න."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "දෙවන කොටස පෙනෙන ආකාරය"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "උච්චාරණ වර්ණය"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "වර්ණ අනුක්‍රමණය"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "දළ සටහන"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "යටtis රේඛාගත කරන්න"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "දෙවන කොටස වෙනම පේළියක"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "පළමු කොටස"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "දෙවන කොටස"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "මාකර් පෑන"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "ඝන යටින් ඉරක්"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "පසුබිම"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "අවධානයට යොමු කරන්න"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "අවධානය යොමු කිරීම ඉවත් කරන්න"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "ඩ්‍රොප් කැප්"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "විශාල පළමු අකුර"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "කොටුවක ඇති පළමු අකුර සඳහා, \"Drop cap in a box\" රටාව තෝරන්න."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "පෙට්ටියක් තුළ ඩ්‍රොප් කැප් (Drop cap) එකක්"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "උච්චාරණ තීරුව"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "උපුටාගත් කොටස (උද්දීපන තීරුව)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "ඇස් ඇද බැඳ තබා ගැනීම සඳහා වර්ණවත් තීරුවක් අසල විශාල ලෙස සකස් කරන ලද, පාඨයෙන් උපුටාගත් උද්ධෘතයක්."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "උද්ධෘතය"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "විශේෂාංග ලැයිස්තුව"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "දුරකථනවලදී විශේෂාංග සැමවිටම එකිනෙක මත තැන්පත් වේ."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "විශේෂාංග"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "විශේෂාංගය %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "මගේ අයිකනය"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "විශේෂාංගය..."
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "විස්තර කරන්න..."
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "විශේෂාංගය එකතු කරන්න"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms හෝ Fluent Forms ස්ථාපනය කර සක්‍රීය කරන්න, ඉන්පසු මෙහි ඇති එහි පෝරමවලින් එකක් තෝරන්න."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "පෝරම ප්ලගිනය"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "තෝරන්න..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "පෝරමය"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "පෝරමයක් තෝරන්න..."
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s වෙත තවමත් ආකෘති නොමැත"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s මෙම අඩවියේ ක්‍රියාත්මක නොවන බැවින්, මෙම පෝරමය පෙන්විය නොහැක."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "පෝරම ලැයිස්තුව පූරණය කරගත නොහැකි විය."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "පෝරම විලාසය"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "ක්ෂේත්‍ර"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "බාහිර සීමාසහිත"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "පිරී ඇත"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "යටින් ඉරි ඇඳ ඇති"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "බොත්තමේ පළල"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "පෙළට සරිලන සේ සකසන්න"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "සම්පූර්ණ පළල"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "වර්ණ, අකුරු විලාස (fonts), පරතරයන් සහ කොන් ඔබේ අඩවි නිර්මාණයෙන් සහ මෙම කොටසේ (block) නිර්මාණ සැකසීම් වලින් ලබා ගැනේ."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "ඔබේ වෙබ් අඩවියට ගැළපෙන පරිදි හැඩගස්වන ලද, ඔබේ පෝරම ප්ලගීනයෙන් පෝරමයක් පෙන්වන්න."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "පෝරම ප්ලගිනයක් අවශ්‍යද? Contact Form 7 නොමිලේ."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "පද මාලාව"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "A සිට Z දක්වා අනුපිළිවෙළට සකසන්න"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "පිටුව මඟින් නියමයන් අකාරාදී පිළිවෙළට පෙන්වන අතර, මෙහිදී ඒවා ඔබ ලිවූ පිළිවෙළටම පවතී."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "A සිට Z දක්වා දර්ශකයක් පෙන්වන්න"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "මෙම පිටුවේ වෙනත් තැන්වල භාවිතා වන සබැඳි නියමයන්"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "පිටු පෙළෙහි සෑම පදයකුම පළමු වරට දිස්වන විට එය එහි අර්ථ දැක්වීම වෙත සබැඳි වේ. සිරස්තල, බොත්තම්, කේත සහ පවතින සබැඳි එලෙසම ඉතිරි වේ."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "කොන්දේසි"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "පදය %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "කාල සීමාව"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "එයින් අදහස් කරන්නේ කුමක්ද..."
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "පදය එක් කරන්න"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "නිරූපක ලැයිස්තුව"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "එකකට පහළින් අනෙක"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "පැත්තෙන් පැත්තට"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "ලැයිස්තු අයිතමය..."
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "තොරතුරු පෙට්ටිය"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "නැතහොත් පුස්තකාලයෙන් ඕනෑම අයිකනයක් තෝරන්න:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "සම්බන්ධක පෙළ"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "සබැඳිය යන්නේ කොතැනටදැයි සඳහන් කරන්න (\"අපගේ මිල ගණන් බලන්න\"), \"වැඩිදුර කියවන්න\" යන්න වෙනුවට."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "වාක්‍යයක් හෝ දෙකක්…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "කොටසක් — මාතෘකාමය කොටසක්"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — අර්ථයක් නැත"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "ශීර්ෂකය — හැඳින්වීමේ අන්තර්ගතය"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "පතුල — අවසන් අන්තර්ගතය"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "ලිපිය — ස්වයං-ප්‍රමාණවත් අන්තර්ගතය"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "පැත්තක — අදාළ අන්තර්ගතය"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "ප්‍රධාන — ප්‍රධාන අන්තර්ගතය (පිටුවකට වරක්)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "පතන - සංචාලන සබැඳි"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "ස්ටැක් (flexbox, තීරුව)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "පේළිය (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "ජාලකය"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "සංස්කරණය කරමින්: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "ළමයින් මේ ලෙස සකසන්න"
 
@@ -7186,7 +8246,7 @@ msgstr "ළමයින් මේ ලෙස සකසන්න"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7194,70 +8254,50 @@ msgstr "ළමයින් මේ ලෙස සකසන්න"
 msgid "Inherited (%s)"
 msgstr "උරුම වූ (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "ෆ්ලෙක්ස්බොක්ස්"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "ගොඩගැසූ කොටු"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "තම්බි තීරු"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "කැන්වසය තුළට අදින්න, හෝ ටයිප් කරන්න"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "අන්තර්ගතයේ පළල"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "කොටු කළ (තේමාවේ අන්තර්ගත පළල)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "සම්පූර්ණ පළල"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "අවම උස"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML ටැගය"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "සබැඳිය"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "සම්පූර්ණ කොටුවම සබැඳියක් බවට පත් කරන්න"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "තිර කියවනයන් සඳහා වන සබැඳි පෙළ"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "බ්ලොක් එක දැකගත නොහැකි නරඹන්නන් සඳහා, සබැඳිය මඟින් සිදු කරන දෙය."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "නව පටිත්තක විවෘත කරන්න"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "සබැඳි කොටසක් තුළ සබැඳි හෝ බොත්තම් තබන්න එපා: සබැඳියක් තුළ ඇති සබැඳියක් බ්‍රව්සර් තුළ ක්‍රියා නොකරයි."
 
@@ -7289,14 +8329,143 @@ msgstr "+ පේළියක්"
 msgid "− Row"
 msgstr "− පේළිය"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "ස්ථානය"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "ඛණ්ඩාංක හෝ OpenStreetMap සබැඳියක් අලවන්න"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org වෙත ගොස් ස්ථානය සොයා ගන්න, ඉන්පසු බ්‍රව්සර් තීරුවෙන් ලිපිනය පිටපත් කරන්න, නැතහොත් සිතියම මත දකුණු-ක්ලික් කර \"ලිපිනය පෙන්වන්න\" තෝරන්න."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "අක්ෂාංශය"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "දේශාංශය"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "සම්ප්‍රාප්ත කරන්න"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "ස්ථානයේ නම"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "සිතියම යටතේ පෙන්වන අතර තිර කියවනයන් මඟින් කියවනු ලැබේ."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "ඛණ්ඩාංක (උදාහරණයක් ලෙස 51.5074, -0.1278) හෝ OpenStreetMap සබැඳියක් අලවන්න."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "ඛණ්ඩාංක හෝ සබැඳිය"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "සිතියම පෙරදසුන් කරන්න"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMap හි %1$s, %2$s පරීක්ෂා කරන්න"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "කර්තෘ"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "ප්‍රකාශිත දිනය"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "යාවත්කාලීන කළ දිනය (වෙනස් වන විට)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "ප්‍රවර්ග"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "ටෑග්"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "කියවීමේ කාලය"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "සම්මන්ත්‍රණ ගණන"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "පෙන්විය යුතු විස්තර"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "පෙන්වීම සඳහා අවම වශයෙන් විස්තරයක්වත් තෝරන්න."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "ප්‍රගති තීරුව"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "උපරිම"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "ප්‍රතිශතයක් සඳහා 100; 10 න් 8 ක් වැනි ගණනක් සඳහා වෙනත් ඕනෑම අංකයක්."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "ප්‍රතිශතය පෙන්වන්න"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "මුස්පන් පදය සකසා ඇත. අමුත්තන් මෙම අන්තර්ගතය වෙනුවට මුස්පන් පද පෝරමයක් දකිනු ඇත."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "මුරපදයක් තවමත් සකසා නැත, එබැවින් නරඹන්නන්ට මෙහි කිසිවක් නොපෙනේ."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "නව මුරපදය"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "මුළු පදය සකසන්න"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "මුරපදය සකසා ඇත. එය යෙදීමට පිටුව සුරකින්න; එය අගුළු හැර සිටි අමුත්තන්ට නව මුරපදය අවශ්‍ය වනු ඇත."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Page Builder Sandwich ක්‍රියා විරහිත කළහොත්, මෙම අන්තර්ගතය සැමට පෙනෙනු ඇත."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "මුරපද පෝරමයට ඉහත පණිවිඩය (විකල්ප)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "මාරු කරන්න"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "ලේබලය"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7306,30 +8475,698 @@ msgstr "තිර කියවනයන් මඟින් කියවනු �
 msgid "Show label"
 msgstr "ලේබලය පෙන්වන්න"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "වෙබ් ලිපිනය හෝ පෙළ"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR කේතය"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "තිර කියවනයන් සඳහා විස්තරය"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"QR කේතය සඳහා\" සහ පෙළ භාවිතා කිරීම සඳහා හිස්ව තබන්න."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "වෙබ් ලිපිනයක්, දුරකථන සබැඳියක් (tel:) හෝ ඕනෑම පෙළක් ටයිප් කරන්න."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "මෙය QR කේතයක් සඳහා දිග වැඩිය. එය කෙටි කරන්න."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "සිරුරක් එක් කරන්න"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "කියවීමේ ප්‍රගති තීරුව"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "කවුළුවේ කෙළවර"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "ඉහළ"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "පහළ"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "visitors අනුචලනය කරන විට කවුළුවේ පතුලේ පෙන්වනු ලැබේ."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "අමුත්තන් අනුචලනය කරන විට කවුළුව මුදුනේ පෙන්වනු ලැබේ."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "කොපමණ ප්‍රමාණයක්"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "සම්බන්ධිත ස්ථාපකයන්:"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "ප්‍රවර්ග හෝ ටැග්"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "කිසිවක් සම්බන්ධ නොවන විට, ඒ වෙනුවට නවතම ඒවා පෙන්වන්න"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "ශීර්ෂකය"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "\"සම්බන්ධිත පළ කිරීම්\" සඳහා හිස්ව තබන්න."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "විශේෂාංග රූපය පෙන්වන්න"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "දිනය පෙන්වන්න"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "සාරාංශයක් පෙන්වන්න"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "මෙම සටහනේ ප්‍රවර්ග හෝ ටැග් කිසිවක් තවම කිසිදු සටහනක් සමඟ බෙදාගෙන නැත. ඒවා බෙදාගත් විට, ඒවා මෙහි පෙන්වනු ඇත."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "මොඩලය"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "ප්‍රතික්‍රියා විරහිත පුවරුව"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "ප්‍රමාණය"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "විනිවිද එන්නේ"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "ආරම්භය යනු කියවීම ආරම්භ වන පැත්තයි: ඉංග්‍රීසි භාෂාවෙන් වම් පැත්ත සහ අරාබි භාෂාවෙන් දකුණු පැත්ත."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "පසුපස ඇති පිටුව ක්ලික් කළ විට වසන්න"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "කවුළුවේ මාතෘකාව"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "කරි ලකුණ"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "වෘත්තය"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "හරස්"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "තිතක්"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "ඊතලය"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "තරු"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "අතිකම් වර්ණය"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "පෙළට සමාන වේ"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "තේමා ප්‍රාථමික"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "ද්විතීය තේමාව"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "තේමා වෙනස"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "පිටුව දිගේ සිරස්තල පිළිවෙළට තබා ගන්න: එය පිහිටා ඇති කොටසට වඩා මට්ටමකින් පහළ සිරස්තලයකි."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "නිරූපකය තෝරන්න"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "පෙරනිමි නිරූපකය භාවිතා කරන්න"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "නිරූපකයක් තෝරන්න"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "ඉහළට ගෙන යන්න"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "පහළට ගෙන යන්න"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "සෑම වර්ගයක් සඳහාම ශීර්ෂයක් පෙන්වන්න"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "ඔබ තෝරාගත් වර්ගවල තවමත් කිසිවක් ප්‍රකාශයට පත් කර නොමැත."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "සබැඳි"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "සබැඳිය %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "ජාලය"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "පැතිකඩ ලිපිනයක්, mailto:you@example.com හෝ tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "තිර කියවනයන් සඳහා නම කියවන ලදී"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "වෙනත් නිරූපකය"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "සබැඳියක් එක් කරන්න"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "නරඹන්න"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "ශෛලිය"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "නිරූපකය පමණයි"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "හැඩය"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "වටකුරු වචුරකය"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "චතුරස්‍රය"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "ප්‍රොෆයිල අලුත් ටැබයකින් විවෘත කරන්න"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "තරු ශ්‍රේණිගත කිරීම්"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "ශ්‍රේණිගත කිරීම"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "තරු ගණන"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "සංඛ්‍යාව පෙන්වන්න"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "පියවරයන්"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "පිටුව පහළට"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "පැත්තෙන් පැත්තට (දුරකථනවල උඩින් යටට තඩ වේ)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "අංක වර්ණය"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "පියවරවල අනුපිළිවෙල"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "පියවර %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "පියවර…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "ක කළ යුතු දේ..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "පියවරක් එක් කරන්න"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "ටැබ්"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "පිටුවට ශීර්ෂ එක් කරන්න, එවිට ඒවා මෙහි ලැයිස්තුගත කෙරෙනු ඇත."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "පරිච්ඡේද නාමාවලිය"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "ශීර්ෂ මට්ටමේ සිට"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "ශීර්ෂ මට්ටමට"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "අංකිත"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "හැකිලීමට පුළුවන"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "ආරම්භයේදී හකුළා ඇත"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "කියවන කොටස උද්දීපනය කරන්න"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "ටැබ්"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "තිර කියවනයන් සඳහා නම"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "අයිතිචඡන්දිතයි. ටැබ් මඟින් අදහස් කරන්නේ කුමක්දැයි පවසයි, උදාහරණයක් ලෙස \"සැලසුම්\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "පිටුව පූරණය වූ වහාම විවෘත කරන්න"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "පැත්තේ ටැබ්"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "ටැබ් එකක් එක් කරන්න"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "ප්‍රශංසාව"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "පින්තූරය ප්‍රතිස්ථාපනය කරන්න"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "ඡායාරූපයක් තෝරන්න"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "ඡායාරූපය ඉවත් කරන්න"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "ඡායාරූප විස්තරය"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "ඡායාරූපයෙහි දැක්වෙන්නේ ඒ අසල නම් කර ඇති පුද්ගලයා පමණක් නම්, එය හිස්ව තබන්න."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "තරු ශ්‍රේණිගත කිරීම (0 = කිසිවක් නැත)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "උපුටා දැක්වීම යටතේ ඇති නම"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "උපුටා දැක්වීම් අසල ඇති ඡායාරූපය"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "පාරිභෝගිකයා පැවසූ දෙය..."
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "භූමිකාව හෝ සමාගම"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "මෙවලම් ඉඟිය"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "ටූල්ටිප් පෙළ"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "පැහැදිලිව තබා ගන්න: වාක්‍ය එකක් හෝ දෙකකි. එයින් පැහැදිලි කෙරෙන වචනය සමඟ තිර කියවනයන් (screen readers) එය කියවයි."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "පෙන්වන්න"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "ඉහතින්"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "පහත"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "වචනයක් හෝ වාක්‍ය ඛණ්ඩයක්"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "යොදන්න"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "පැතිකඩ"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "කාගේ පැතිකඩද"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "ලිපියේ කතුවරයා"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "පැතිකඩ පින්තූරය පෙන්වන්න"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "චරිතාපදානය පෙන්වන්න"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "පෝස්ට් සහ වෙබ් අඩවිය වෙත සබැඳි පෙන්වන්න"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "කර්තෘ පැතිකඩ"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "පෙන්විය යුත්තේ කාගේ පැතිකඩද යන්න තෝරන්න."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "රටේ කේතය සමඟ WhatsApp අංකය"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "උදාහරණයක් ලෙස +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "ආරම්භ කිරීමට පණිවිඩයක් (විකල්ප)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "නිරූපකය අසල පෙළ පෙන්වන්න"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "කෝනාරක්ෂක"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "පහළ කෙළවර (ඉංග්‍රීසියෙන් දකුණ)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "පහළ ආරම්භය (ඉංග්‍රීසියෙන් වමට)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "පැති තීරුවට ඔබේ WhatsApp අංකය එක් කරන්න. එතෙක් බොත්තම පිටුවේ පෙන්වනු නොලැබේ."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "පිටුවේ, මෙම බොත්තම තිරයේ පහළ කෙළවරක පාවෙමින් පවතී."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "කෙටි කේත ටැගය"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "අකුරු, ඉලක්කම්, හිඩැස් ඉරි (-) සහ යටින් ඉරි (_) පමණක් භාවිත කරන්න."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "ආපද්‍රව නමය"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "ආරෝපණය එක් කරන්න"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "ෂෝට්කෝඩ්"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "වෙනත් ගුණාංග"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "බ්ලොක් සැකසුම් තුළ කෙටි කේත ටැගයක් තෝරන්න."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "ගැලරිය"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "පින්තූරයේ ප්‍රමාණය"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "කුඩා රූපය (Thumbnail)"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "පූර්ණ ප්‍රමාණය"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "සඳහා සබැඳිය"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "ඇමුණුම් පිටුව"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "මාධ්‍ය ගොනුව"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "ශ්‍රව්‍ය"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "වීඩියෝ"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "ගොනු ලිපිනය"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "ලූප්"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "ස්වයංක්‍රීයව වාදනය කරන්න"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "පෝස්ටර් රූපය"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "ධාවන ලැයිස්තුව"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "මාධ්‍ය හැඳුනුම්පත්, කොමමා මඟින් වෙන් කරන ලද"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "පථ ලැයිස්තුව පෙන්වන්න"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "ස්ථාපනය කරන්න"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "ස්ථාපනය කිරීමට ලිපිනය"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "උපරිම පළල"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "ශීර්ෂ පාඨය"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "පින්තූරය සහ ශීර්ෂ පාඨ HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "පළල"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "ඉඟිය: ඔබේ වෙබ් අඩවියට ගැළපෙන පරිදි හැඩගස්වන ලද මෙම පෝරමය Form බ්ලොක් එක මඟින් පෙන්වයි."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "පෝරමයේ මාතෘකාව පෙන්වන්න"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "පෝරමයේ විස්තරය පෙන්වන්න"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "පිටුව නැවත පූරණය නොකර යවන්න"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7350,123 +9187,108 @@ msgstr "ගොනුවක් තෝරන්න"
 msgid "— Default —"
 msgstr "— පෙරනිමි —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "දියුණු කළ මෝස්තරකරණය"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "ස්ථානීය CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS ප්‍රකාශන, උදාහරණයක් ලෙස: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "ප්‍රතිඵල (පැරණි පන්ති)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "පැරණි අනුවාදවලින් රැගෙන ආ, ඉඩ මගින් වෙන් කරන ලද ආචරණ නම්, උදාහරණයක් ලෙස: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "පේළිය"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "පළල"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "පූර්ණ පළල, අන්තර්ගතය මැද තබා ඇත"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "සබැඳි ලිපිනය"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "සබැඳි සම්බන්ධතාවය"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "පෙළගැස්ම"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "වම්"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "මධ්‍යස්ථානය"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "දකුණ"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "බොත්තම් පෙළ"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "පෙළ එක් කරන්න..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "ස්ථානගත කිරීම"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "තනි පේළියක"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "පේළියේ, වෙනත් අන්තර්ගතයන් අසලින්"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "ස්වයංක්‍රීය (පිටුවේ ඉහළම මට්ටමේ තනි පේළියක)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "ප්‍රවේශ විය හැකි ලේබලය"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "අලංකාර නිරූපකයක් සඳහා හිස්ව තබන්න."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "බ්ලොක් සැකසීම් තුළ අයිකනයක් තෝරන්න."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "නව සැකසීම් නම"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "උදාහරණයක් ලෙස: මාතෘකාව හෝ පෙළ"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "සැකසුම එකතු කරන්න"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "විජට් එක"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "විජට් එකක් තෝරන්න"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "විජට් ප්‍රදේශය"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "විජට් ප්‍රදේශයක් තෝරන්න"
 
@@ -7489,6 +9311,142 @@ msgstr "මෙම ඇල්බඩය (embed) පූරණය වූ පසු �
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "පිරිසැලසුම් වෙනස් වීම"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "මෙම විජට් එක එහි සැකසුම් විස්තර නොකරයි, එබැවින් ඒවා නම සහ අගය යුගල ලෙස සංස්කරණය කරනු ලැබේ."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "ගැටළුව"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "පරීක්ෂා කරන්න"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "අවහිරය පෙන්වන්න"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "කියවිය හැකි තේමා වර්ණයක් භාවිතා කරන්න"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "H%d ලෙස සකසන්න"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "විකල්ප පෙළ"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "වෙනත් පෙළ සුරකින්න"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "මෙම රූපය අලංකරණ අරමුණු සඳහා වේ"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "පරීක්ෂා කරමින් පවතී..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "මෙම පිටුවේ ප්‍රවේශ්‍යතා ගැටලු කිසිවක් හමු නොවී ඇත."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "ගැටළුව %d යි"
+msgstr[1] "ගැටලු %d ක්"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "පරීක්ෂා කිරීමට ඇති දේ %d යි"
+msgstr[1] "පරීක්ෂා කිරීමට දේවල් %d ක්"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "නැවත පරීක්ෂා කරන්න"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "ස්වයංක්‍රීය පරීක්ෂාවකින් බොහෝ ගැටලු සොයාගත හැකි වුවද, ඒවා සියල්ලම සොයාගත නොහැක. එසේම යතුරුපුවරුව පමණක් භාවිත කරමින් සහ තිර කියවනයක් (screen reader) භාවිත කරමින්ද මෙම පිටුව අත්හදා බලන්න."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "පෙළ ප්‍රතිවිරුද්ධතාව %1$s:1 වේ; කියවිය හැකි වීමට අවම වශයෙන් %2$s:1 අවශ්‍ය වේ."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "මෙතන ක්ලික් කරන්න,මෙතන,වැඩිදුර කියවන්න,තවත්,සබැඳිය,මෙම සබැඳිය,වැඩිදුර ඉගෙන ගන්න,යන්න"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "සබැඳියක පෙළක් නොමැත, එබැවින් තිර කියවනයක් නිවේදනය කරන්නේ \"සබැඳිය\" යන්න පමණි. පෙළක් හෝ ලේබලයක් එක් කරන්න."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "“%s” යන සබැඳි පෙළ මඟින් එය ගමන් කරන්නේ කොතැනටද යන්න පෙන්වා නොදෙයි. ඒ වෙනුවට ගමනාන්තය විස්තර කරන්න."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "මූලද්‍රව්‍යයකට ධනාත්මක tabindex එකක් ඇත, එමඟින් කියවීමේ අනුපිළිවෙලින් යතුරුපුවරු අනුපිළිවෙල වෙනස් කරයි. 0 භාවිතා කරන්න හෝ එය ඉවත් කරන්න."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "ක්ලික් කළ හැකි දෙයක් යතුරු පුවරුවෙන් ළඟා විය නොහැක. සැබෑ බොත්තමක් හෝ සබැඳියක් භාවිතා කරන්න."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "කාවද්දන ලද රාමුවකට මාතෘකාවක් නොමැත, එබැවින් තිර කියවනයකට එය කුමක්දැයි කිව නොහැක."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "පෝරම ක්ෂේත්‍රයකට ලේබලයක් නොමැත, එබැවින් එහි අරමුණ නිවේදනය නොකෙරේ."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "මෙම ශීර්ෂය හිස් ය. තිර කියව පරිශීලකයින් ශීර්ෂ හරහා ගමන් කරයි; එය ඉවත් කරන්න හෝ පෙළ එකතු කරන්න."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "පිටු මාතෘකාව දැනටමත් H1 වන බැවින්, අන්තර්ගතයේ ඉහළම මට්ටම සඳහා H2 භාවිතා කරන්න."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "මෙම H%1$d මට්ටමක් මඟහරියි; ඊට පෙර තිබුණේ H%2$d වේ. එය H%3$d බවට පත් කරන්න."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "මෙම රූපය සඳහා විකල්ප පෙළක් (alt text) නොමැත. එය විස්තර කරන්න, නැතහොත් කිසිදු අගයක් එකතු නොකරන්නේ නම් එය අලංකාරයක් ලෙස සලකුණු කරන්න."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "පැනලය වසන්න"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7563,18 +9521,6 @@ msgstr "අභිරුචි"
 msgid "Width / height"
 msgstr "පළල / උස"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "ඉහළ"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "පහළ"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7587,20 +9533,6 @@ msgstr "පරම්පරාගත රූපයක් — ප්‍රතිස
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "රූපය ඉවත් කරන්න"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "ස්ථානය"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "ප්‍රමාණය"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7666,22 +9598,6 @@ msgstr "සෑම පැත්තක්ම වෙන වෙනම"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "පැත්ත"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "ශෛලිය"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "වර්ණය"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7931,14 +9847,6 @@ msgstr "%1$s (%2$d කට්ටලය)"
 msgid "Replace icon"
 msgstr "අස්ථාපන නිරූපකය"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "නිරූපකය තෝරන්න"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "නිරූපකයක් තෝරන්න"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "නිරූපක කිසිවක් නොගැලපේ."
@@ -7950,10 +9858,6 @@ msgstr "සාමාන්‍ය"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "වෙළඳ නාම"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "බාහිර සීමාසහිත"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8082,21 +9986,9 @@ msgstr "පෙළ වර්ණය"
 msgid "Cursor"
 msgstr "සංචරක"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "ඊතලය"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "පොයින්ටර්"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "පෙළ"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8254,10 +10146,6 @@ msgstr "ප්‍රදේශයේ නම"
 msgid "Named areas"
 msgstr "නම් කරන ලද ප්‍රදේශ"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "පේළි"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "උස"
@@ -8375,10 +10263,6 @@ msgstr "නෙරීම සහළන්න"
 msgid "Decoration"
 msgstr "අලංකරණය"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "යටtis රේඛාගත කරන්න"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "උඩ ඉර"
@@ -8461,19 +10345,9 @@ msgstr "කොනික්"
 msgid "Angle (degrees)"
 msgstr "කෝණය (අංශක)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "හැඩය"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "ඉලිප්සය"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "වෘත්තය"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8509,10 +10383,6 @@ msgstr "සංතෘප්තිය පසුපසින් (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "වර්ණ ගන්වන්න (පෙනෙන වර්ණයක් භාවිතා කරන්න)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "වටකුරු වචුරකය"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "බ්ලොබ්"
@@ -8529,10 +10399,6 @@ msgstr "ත්‍රිකෝණය"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "දියමන්ති"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "තරු"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9410,11 +11276,6 @@ msgstr "මකන්න"
 msgid "The change could not be saved."
 msgstr "වෙනස සුරැකීමට නොහැකි විය."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "පැනලය වසන්න"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "තේමා පෙරනිමිය"
@@ -9471,9 +11332,49 @@ msgstr "Pro සමඟ පන්ති, ටෝකන, ඩාර්ක් මෝ�
 msgid "Open the Site Editor’s styles"
 msgstr "අඩවි සංස්කාරකයේ විලාස විවෘත කරන්න"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "ශීර්ෂකය"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Style ටැබය භාවිතයෙන් මෝස්තර කර ඇති, පේළි උස අඩු ශීර්ෂයකි."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Style ටැබය භාවිතයෙන් විලාසිතා කරන ලද ඡේදයකි."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "රූපය"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "ශෝභන ටැබය මඟින් විලාසිතා කරන ලද, වටකුරු කොන් සහිත රූපයක්."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "මාධ්‍ය පුස්තකාලයෙන් ලබාගත් වීඩියෝවක්, මෝස්තර පටිත්ත (Style tab) භාවිතයෙන් හැඩගස්වා ඇත."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "අන්තරාලය"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "බ්ලොක් අතර හිස් අවකාශය; ස්ටයිල් ටැබය තුළ එක් එක් තිර ප්‍රමාණය සඳහා වෙනස් උසක් සකසන්න."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "බෙදුම"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "ස්ටයිල් ටැබ් එක භාවිතයෙන් සකස් කරන ලද, කොටස් අතර ඇති තිරස් රේඛාවකි."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "වෙනත් අඩවියක අන්තර්ගතයක් (වීඩියෝවක්, සටහනක්, සිතියමක්) එහි ලිපිනය ඇලවීම මගින් එක් කරන්න."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "ශෛලී ටැබය සමඟ සකස් කරන ලද, ග්‍රිඩ් එකක් තුළ ඇති පින්තූර කිහිපයක්."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9507,10 +11408,6 @@ msgstr "ලේඛනය"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "පෙති"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "බොත්තම්"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9555,10 +11452,6 @@ msgstr "මෙම පිටුව පරිවර්තනය කර නොම�
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "සිරස් අතට තබන්න"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "පසුබිම"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9617,11 +11510,6 @@ msgstr "තොග සැකසීම්"
 #, js-format
 msgid "Add block: %s"
 msgstr "බ්ලොක් එක එකතු කරන්න: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(මාතෘකාවක් නොමැත)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9697,10 +11585,6 @@ msgstr "ආරක්ෂිත මාදිලිය අක්‍රීය කර
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "ආරක්ෂිත ප්‍රකාරය සක්‍රිය කරන්න (Studio තුළ පමණක්, ඔබ සඳහා වෙනත් ප්ලගීන අක්‍රියයි)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "ප්‍රකාශිතයි"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10040,11 +11924,6 @@ msgstr "සාදා ගන්නාගේ නම"
 msgid "Visual editor name"
 msgstr "දෘශ්‍ය සංස්කාරකයේ නම"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "කර්තෘ"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10118,10 +11997,6 @@ msgstr[1] "ආපසු හරවන ලදී: පිටු %d ක් යථා
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "ආදේශ කරන්න"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "සබැඳි"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10231,10 +12106,6 @@ msgstr "මෙම පිටුවට අදහසක් දැක්වීමට
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "සංස්කරණය කිරීමට පෙර පවා, සබැඳිය ඇති ඕනෑම අයෙකුට මෙම පිටුව බැලීමට සහ අදහස් දැක්වීමට හැක. කිසිදු ගිණුමක් අවශ්‍ය නොවේ."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "පිටපත් කරන ලදී"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10477,6 +12348,52 @@ msgstr "මෙම අඩවියේ මාධ්‍ය පුස්තකාල
 msgid "Show what will happen"
 msgstr "සිදු වන්නේ කුමක්දැයි පෙන්වන්න"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "විහිදුම් අයිතමය"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "ඇකෝඩියන් එකක එක් කොටසක්: එහි අන්තර්ගතය විවෘත කරන මාතෘකාවක්."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "ප්‍රධාන විවරණයෝල් (Accordion)"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "විවෘත වන සහ වැසෙන ප්‍රශ්න හෝ කොටස්. විකල්පමය වශයෙන් එක බැගින්, සහ විකල්පමය වශයෙන් සෙවුම් යන්ත්‍ර සඳහා FAQ එකක් ලෙස ලකුණු කරන ලද."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "ඇකෝඩියන්"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "නිතර අසන ප්‍රශ්න"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "මාරු කරන්න"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "කුඩා කරන්න"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "විස්තර"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10493,6 +12410,7 @@ msgid "notice"
 msgstr "නිවේදනය"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "පණිවිඩය"
@@ -10507,6 +12425,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "අනතුරු ඇඟවීමක්"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "ලාංඡනය"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "නව, වට්ටම් හෝ හොඳම අගය වැනි කෙටි ලේබලයකි."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "ලේබලය"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "ටැගය"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "පෙත්ත"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "නව"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "වෙන්කරවා ගැනීමේ දින දර්ශනය"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "නරඹන්නා ඉල්ලා සිටින විට පමණක් පූරණය වන, Calendly හෝ Cal.com වෙන්කරවා ගැනීමේ දින දර්ශනයක්."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "වෙන්කරවා ගැනීම"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "කැලෙන්ඩ්ලි"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "හමුවීම"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "කාලසටහනකට අඹන්න"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10518,6 +12501,7 @@ msgid "A link styled as a button."
 msgstr "බොත්තමක් ලෙස හැඩගැන්වූ සබැඳියක්."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "බොත්තම"
@@ -10531,6 +12515,98 @@ msgstr "සබැඳිය"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "ක්‍රියාත්මක වන්න"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "ක්‍රියාත්මක වන්න"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "ශීර්ෂයක්, වාක්‍යයක් සහ නරඹන්නාට ක්‍රියාත්මක වන ලෙස ඉල් සිටින බොත්තම් එකක් හෝ දෙකක්."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "ක්‍රියාමාර්ගය"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "බැනරය"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "ලියාපදිංචි වන්න"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "පිරික්සුම් ලැයිස්තුව"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "තිර කියවනයන් සඳහා මෙන්ම සලකුණකින් ද දැක්වෙන, එක් එක් කාර්යය සම්පූර්ණ කර ඇති බව හෝ තවමත් කළ යුතු බව දක්වන ලැයිස්තුවක්."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "කළ යුතු දේ"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "කාර්යයන්"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "ටිකස්"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "ලැයිස්තුව"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "කේතය"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "වාක්‍ය ඛණ්ඩ උද්දීපනය, පේළි අංක සහ පිටපත් කිරීමේ බොත්තමක් සහිත කේත ලැයිස්තුවක්. ප්ලගීන අක්‍රිය කළහොත් පවා කියවීමේ හැකියාව පවතී."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "කේතය"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "වාක්‍ය වින්‍යාසය"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "ඉස්මතු කරන්න"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "ස්නිපෙට් එක"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "ක්‍රමලේඛනය"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10554,6 +12630,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "ආකෘතිය"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "සංසන්දනාත්මක වගුව"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "තිර කියවනයන් විසින් වචන ලෙස කියවනු ලබන ඔව් සහ නැත ලකුණු සහිතව, සැලසුම් හෝ නිෂ්පාදන කරට කර."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "සසඳන්න"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "මිල ගණන්"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "ඇසුරුම්"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "වගුව"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "විශේෂාංග"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "සම්බන්ධතා බොත්තම්"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "ඔබට ඇමතීමට, විද්‍යුත් තැපෑලක් යැවීමට, කෙටි පණිවිඩයක් යැවීමට හෝ WhatsApp හරහා පණිවිඩයක් යැවීමට ඇති බොත්තම්."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "සම්බන්ධ වන්න"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "ඇමතුම"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "දුරකථනය"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "විද්‍යුත් තැපෑල"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10571,11 +12725,13 @@ msgid "container"
 msgstr "කොන්ටේනරය"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "කොට්ටුව"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10592,6 +12748,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "තීරු"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "ද්විත්ව ශීර්ෂය"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "කොටස් දෙකකින් යුත් ශීර්ෂයක්, දෙවැන්න වර්ණයකින්, අනුක්‍රමණයකින්, බාහිර රේඛාවකින් හෝ යටින් ඉරක් ඇඳීමකින් උද්දීපනය කර ඇත."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "ශීර්ෂකය"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "ශීර්ෂය"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "අනුක්‍රමණය"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "විශේෂාංග ලැයිස්තුව"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "විශේෂාංග ජාලයක, එක් එක් විශේෂාංගය සඳහා නිරූපකයක්, ශීර්ෂයක් සහ කෙටි විස්තරයක් ඇත."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "ප්‍රතිලාභ"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "සේවාවන්"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10635,6 +12837,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "පෙළ"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "පෝරමය"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "ඔබේ වෙබ් අඩවියට ගැළපෙන පරිදි හැඩගස්වන ලද Contact Form 7, WPForms, Gravity Forms හෝ Fluent Forms වෙතින් පෝරමයක් පෙන්වයි."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "පෝරමය"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "ග්‍රැවිටි ෆෝම්ස්"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "පද මාලාව"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "A සිට Z දක්වා අකාරාදී පිළිවෙලට සකසා ඇති, එක් එක් පද සඳහා වෙනම ලින්ක් සහිත පද සහ ඒවායේ අර්ථ දැක්වීම්. පිටුවේ ඇති එක් එක් පදයේ පළමු සඳහන් කිරීම, එහි අර්ථ දැක්වීම වෙත ලින්ක් කළ හැක."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "කොන්දේසි"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "අර්ථදැක්වීම්"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "ශබ්දකෝෂය"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "අයිකන ලැයිස්තුව"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "සෑම පේළියක්ම අයිකනයකින් ආරම්භ වන ලැයිස්තුවක්: කිනිතු ලකුණක්, ඊතලයක් හෝ පුස්තකාලයේ ඕනෑම අයිකනයක්."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "බුලට් ලැයිස්තු"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "නිරූපක"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10655,6 +12937,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "SVG"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "තොරතුරු පෙට්ටිය"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "නිරූපකයක්, කෙටි සිරස්සක්, වාක්‍යයක් හෝ දෙකක් සහ විකල්ප සබැඳියක්: සේවාවන්, ප්‍රතිලාභ හෝ සම්බන්ධතා විස්තර සඳහා."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "විශේෂාංගය"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "සේවාව"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "කාඩ්පත"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10674,6 +12981,204 @@ msgstr "පරිවර්තනය කරන්න"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "බහුභාෂා"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "සිතියම්ගත කරන්න"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap වෙතින් ලබාගත් ස්ථානයක සිතියමක්: කිසිදු යතුරක් නොමැති අතර, නරඹන්නා සිතියම ඉල්ලා සිටින තෙක් OpenStreetMap වෙතින් කිසිවක් පූරණය නොවේ."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "සිතියම් කරන්න"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "ස්ථානය"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "ලිපිනය"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "මෝඩලය"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "ඕනෑම බ්ොක්ස් (blocks) සමඟ, පිටුවක් මත කවුළුවක් විවෘත කරන බොත්තමකි."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "මොඩලය"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "උත්පතන කවුළුව"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "ලයිට්බොක්ස්"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "සංවාද කොටුව"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "ඕෆ්-කෑන්වස් පැනලය"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "කවුළුවේ පැත්තෙන් පැනලයක් ඇතුළට ස්ලයිඩින් වන, ඇතුළත ඕනෑම බ්ලොක් එකක් සහිත බොත්තමක්."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "ඕෆ්-කැන්වස්"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "ලාච්චුව"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "පැත්ත තීරුව"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "පැනලය"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "මෙනුව"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "පැකේජයේ විස්තර"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "ලිපියේ කතුවරයා, දිනයන්, කාණ්ඩ, ටැග්, කියවීමේ කාලය සහ ප්‍රතිචාර ගණන."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "කර්තෘ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "දිනය"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "කියවීමේ කාලය"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "පැතිකඩ"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "විසින්"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "ප්‍රගති තීරුව"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "කුසලතාවක් හෝ ඉලක්කයක් වැනි දෙයක් කොතෙක් දුරට පැමිණ තිබේද යන්න පෙන්වන ලේබල් කරන ලද තීරු සටහනකි."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "ප්‍රගතිය"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "පටිය"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "නිපුණතාව"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "ඉලක්කය"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "මුරපදයකින් ආරක්ෂා කළ අන්තර්ගතය"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "මුsරu පදය ඇතුළත් කළ පසු පමණක් පෙනෙන කොටු අවහිර කරයි. ඒවා ඇතුළත් කරන තුරු, අන්තර්ගතය පිටුවේ කිසිසේත්ම නොමැත."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "මුරපදය"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "ආරක්ෂිතයි"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "පුද්ගලික"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "අගුලු දමන්න"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "සාමාජිකයින්"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10699,6 +13204,86 @@ msgstr "ලාම්පු අළු පැහැය"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "වර්ණ ක්‍රමය"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR කේතය"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "QR සේවාවක් භාවිතා නොකර, ඔබේම අඩවියක අඳින ලද, වෙබ් ලිපිනයක් හෝ ඕනෑම පෙළක් සඳහා වන QR කේතයක්."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR කේතය"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "බාර්කෝඩ් එක"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "සංස්කරණය කරන්න"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "කියවීමේ ප්‍රගති තීරුව"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "පරිශීලකයින් පිටුව හරහා පහළට හෝ ඉහළට යන විට පිරවෙන, කවුළුවේ දාරයේ ඇති සිහින් තීරුවක්."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "කියවමින්"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "අනුචලනය කරන්න"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "සම්බන්ධිත පළකිරීම්"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "මෙම පෝස්ටුවේ වර්ගීකරණයන් (categories) හෝ ටැග් (tags) බෙදාගන්නා පෝස්ටු, ඒවායේ පින්තූර, දිනයන් සහ සාරාංශයන් සමඟ."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "සම්බන්ධිත"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "ලිපි"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "සමාන"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "තවත්"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10762,13 +13347,284 @@ msgstr "තේමාවේ විජට් ප්‍රදේශවලින් 
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "පැත්ත තීරුව"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "විජට් ප්‍රදේශය"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "සිතියම"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "පිටු වෘක්ෂය සුරක්ෂිතව තබමින්, ප්‍රකාශිත සෑම පිටුවක්ම සහ ලිපියක්ම (සහ අනෙකුත් පොදු අන්තර්ගතයන්) ලැයිස්තුගත කරන පිටුවකි."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "සිතියම"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "අඩවි සිතියම"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "දර්ශකය"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "සියලුම පිටු"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "සමාජ මාධ්‍ය නිරූපක"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "ජාලවලම අයිකන සමඟ අඳින ලද ඔබේ පැතිකඩ වෙත සබැඳි."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "සමාජීය"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "සබැඳි"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "අනුගමනය කරන්න"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "ගොනු සටහන්"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "තරු ශ්‍රේණිගත කිරීම"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "අර්ධ-තරු පියවර වලින්, තරු ලෙස පෙන්වන ශ්‍රේණිගත කිරීමක්."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "තරු"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "ශ්‍රේණිගත කිරීම"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "ලකුණු සංඛ්‍යාව"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "පියවර"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "ක්‍රියාවලියක අංකිත පියවර, අනුපිළිවෙලින්, පිටුව පහළට හෝ එක ළඟ."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "ක්‍රියාවලිය"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "කොහොමද"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "කාලරේඛාව"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "අංකිත"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "ටැබය"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "ටැබ්ස් බ්ලොක් එකක ටැබ් එකක්: එහි ශීර්ෂය සහ පැනලය."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "අන්තර්ගත ළමනුව"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "පිටුවේ ඇති ශීර්ෂ ලැයිස්තුවක්, ස්වයංක්‍රීයව සකස් කරන ලද, ඒ සෑම එකක් වෙතම සම්බන්ධ වන."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "පerගතය"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "අන්තර්ගතය"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "ශීර්ෂක"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "ටැබ්"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "ටැබ්වල ඇති අන්තර්ගතය: අමුත්තන් මූසිකය හෝ යතුරුපුවරුව මඟින් පැනල් අතර මාරු වේ."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "ටැබ්"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "ටැබ් කළ"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "පැනල්"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "ප්‍රශංසා ප්‍රකාශය"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "පාරිභෝගිකයෙකුගේ නම, තේමාව, ඡායාරූපය සහ විකල්ප තරු ශ්‍රේණිගත කිරීමක් සමඟින් ඔවුන්ගේ උපුටා දැක්වීමක්."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "සමාලෝචනය කරන්න"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "ලංසු මුදල"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "ග්‍රාහකයා"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "ප්‍රතිපෝෂණ"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "උපදෙස් තුඩුව"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "මූසිකය හෝතිකළුව මතට ගෙන යද්දී සහ යතුරුපුවරු නාභිගත කිරීමේදී කෙටි පැහැදිලි කිරීමක් පෙන්වන වචනයක් හෝ වාක්‍ය ඛණ්ඩයක්."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "ටූල්ටිප් එක"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "ඉඟිය"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "අර්ථකථනය"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "කර්තෘ පැතිකඩ"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "කර්තෘගේ පින්තූරය, නම, ජීව දත්ත සහ සබැඳි, නැතහොත් තෝරාගත් පරිශීලකයෙකුගේ ඒවා."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "චරිතාපදානය"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "ප්‍රොෆයිලය"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "පිළිබඳව"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "WhatsApp කතාබස් බොත්තම"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "පිටුවේ කෙළවරක පාවෙන බොත්තමක් වන අතර එය ඔබ සමඟ WhatsApp කතාබහක් විවෘත කරයි."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "චැට්"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "පාපෙන"
 
 #: blocks/widget/block.json
 msgctxt "block title"

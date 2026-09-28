@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/glossary",
+	"title": "Glossary",
+	"category": "pbs-content",
+	"icon": "book",
+	"description": "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition.",
+	"keywords": [
+		"terms",
+		"definitions",
+		"dictionary",
+		"faq"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": [],
+			"items": {
+				"type": "object"
+			},
+			"role": "content"
+		},
+		"sort": {
+			"type": "boolean",
+			"default": true
+		},
+		"showIndex": {
+			"type": "boolean",
+			"default": false
+		},
+		"autoLink": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

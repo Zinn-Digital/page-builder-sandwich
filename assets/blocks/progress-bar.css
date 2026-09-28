@@ -1,0 +1,76 @@
+/*
+ * Front-end styles for pbs/progress-bar (a native <progress>). `__PREFIX__` is the neutral class
+ * prefix; logical properties only. Loaded only where this block renders. The fill grows in once,
+ * unless the visitor prefers reduced motion; it fills from the reading start in right-to-left too.
+ */
+.__PREFIX__-progress-bar {
+	--__PREFIX__-progress-fill: #1d4ed8;
+	--__PREFIX__-progress-track: rgb(0 0 0 / 10%);
+	--__PREFIX__-progress-height: 0.75rem;
+	margin-block: 1em;
+}
+
+.__PREFIX__-progress-bar__head {
+	display: flex;
+	gap: 1em;
+	justify-content: space-between;
+	margin-block-end: 0.35em;
+}
+
+.__PREFIX__-progress-bar__value {
+	font-variant-numeric: tabular-nums;
+}
+
+.__PREFIX__-progress-bar__bar {
+	display: block;
+	inline-size: 100%;
+	block-size: var(--__PREFIX__-progress-height);
+	overflow: hidden;
+	border: 0;
+	border-radius: 999px;
+	background-color: var(--__PREFIX__-progress-track);
+	color: var(--__PREFIX__-progress-fill);
+	appearance: none;
+}
+
+.__PREFIX__-progress-bar__bar::-webkit-progress-bar {
+	background-color: var(--__PREFIX__-progress-track);
+}
+
+.__PREFIX__-progress-bar__bar::-webkit-progress-value {
+	border-radius: 999px;
+	background-color: var(--__PREFIX__-progress-fill);
+}
+
+.__PREFIX__-progress-bar__bar::-moz-progress-bar {
+	border-radius: 999px;
+	background-color: var(--__PREFIX__-progress-fill);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+	.__PREFIX__-progress-bar__bar::-webkit-progress-value {
+		transform-origin: 0 50%;
+		animation: __PREFIX__-progress-grow 0.9s ease-out;
+	}
+
+	.__PREFIX__-progress-bar__bar::-moz-progress-bar {
+		transform-origin: 0 50%;
+		animation: __PREFIX__-progress-grow 0.9s ease-out;
+	}
+
+	.__PREFIX__-progress-bar__bar:dir(rtl)::-webkit-progress-value {
+		transform-origin: 100% 50%;
+	}
+
+	.__PREFIX__-progress-bar__bar:dir(rtl)::-moz-progress-bar {
+		transform-origin: 100% 50%;
+	}
+
+	@keyframes __PREFIX__-progress-grow {
+
+		from {
+			transform: scaleX(0);
+		}
+	}
+}

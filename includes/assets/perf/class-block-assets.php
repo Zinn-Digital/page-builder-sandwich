@@ -54,8 +54,18 @@ final class Block_Assets {
 	 * @return array<string, string>
 	 */
 	public static function map(): array {
-		return array_merge( Registry::styles(), self::$extra );
+		return array_merge( array( self::BASE => self::BASE_KEY ), Registry::styles(), self::$extra );
 	}
+
+	/**
+	 * The accessibility base every page with a design-system block gets once (pbs-a2): visible
+	 * focus, reduced motion, the screen-reader-only and skip-link utilities. A pseudo block name,
+	 * so it rides the same page sheet and per-block fallback as the blocks' own CSS.
+	 */
+	public const BASE = 'pbs/*';
+
+	/** Its published key. */
+	public const BASE_KEY = 'block/a11y.css';
 
 	/**
 	 * Add a block's stylesheet (the premium registry, at boot).
@@ -81,6 +91,7 @@ final class Block_Assets {
 	 * @return void
 	 */
 	public static function register(): void {
+		Assets::add_source( self::BASE_KEY, 'assets/a11y.css' );
 		foreach ( Registry::style_sources() as $key => $relative ) {
 			Assets::add_source( $key, $relative );
 		}
@@ -132,6 +143,9 @@ final class Block_Assets {
 		if ( ! isset( $map[ $name ] ) || Page_Css::covers( $name ) ) {
 			return false;
 		}
+		if ( self::BASE !== $name ) {
+			self::ensure( self::BASE );
+		}
 		Assets::enqueue_style( $map[ $name ] );
 
 		return true;
@@ -149,6 +163,9 @@ final class Block_Assets {
 		self::walk( $blocks, $found );
 		if ( $button_shortcode ) {
 			$found['pbs/button'] = true;
+		}
+		if ( array() !== $found ) {
+			$found[ self::BASE ] = true;
 		}
 
 		return array_values( array_filter( array_keys( self::map() ), static fn( string $n ): bool => isset( $found[ $n ] ) ) );

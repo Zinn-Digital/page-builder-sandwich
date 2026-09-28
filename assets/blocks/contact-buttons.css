@@ -1,0 +1,42 @@
+/*
+ * pbs/contact-buttons. Zero-specificity defaults (:where) so the design panel wins. Logical properties only.
+ */
+:where(.__PREFIX__-contact-buttons) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75em;
+	margin-block: 0 1.5em;
+	margin-inline: 0;
+	padding: 0;
+	list-style: none;
+}
+
+:where(.__PREFIX__-contact-buttons__link) {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	padding-block: 0.6em;
+	padding-inline: 1.1em;
+	border-radius: 999px;
+	text-decoration: none;
+	font-weight: 600;
+}
+
+/* Colours at class specificity: a theme's link colour must not land on the dark button. */
+.__PREFIX__-contact-buttons__link {
+	background: #1e1e1e;
+	color: #fff;
+}
+
+.__PREFIX__-contact-buttons__link--whatsapp {
+	background: #075e54;
+}
+
+:where(.__PREFIX__-contact-buttons__link:focus-visible) {
+	outline: 2px solid #1e1e1e;
+	outline-offset: 2px;
+}
+
+:where(.__PREFIX__-contact-buttons__icon) {
+	flex: none;
+}

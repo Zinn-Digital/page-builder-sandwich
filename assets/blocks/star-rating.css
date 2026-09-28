@@ -1,0 +1,40 @@
+/*
+ * Front-end styles for pbs/star-rating. `__PREFIX__` is the neutral class prefix; logical properties
+ * only. Loaded only where this block renders. A half star is mirrored in right-to-left, so it
+ * fills from the reading start like the row does.
+ */
+.__PREFIX__-star-rating {
+	--__PREFIX__-star-fill: #b45309;
+	--__PREFIX__-star-empty: rgb(0 0 0 / 18%);
+	display: flex;
+	gap: 0.5em;
+	align-items: center;
+	margin-block: 1em;
+}
+
+.__PREFIX__-star-rating__stars {
+	display: inline-flex;
+	gap: 0.125em;
+	line-height: 0;
+}
+
+.__PREFIX__-star-rating__star {
+	inline-size: 1.25em;
+	block-size: 1.25em;
+}
+
+.__PREFIX__-star-rating__star--half:dir(rtl) {
+	transform: scaleX(-1);
+}
+
+.__PREFIX__-star-rating__fill {
+	fill: var(--__PREFIX__-star-fill);
+}
+
+.__PREFIX__-star-rating__empty {
+	fill: var(--__PREFIX__-star-empty);
+}
+
+.__PREFIX__-star-rating__value {
+	font-weight: 600;
+}

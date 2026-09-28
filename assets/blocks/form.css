@@ -1,0 +1,174 @@
+/*
+ * pbs/form (pbs-m6): one look for Contact Form 7, WPForms, Gravity Forms and Fluent Forms, from the
+ * site's own design (theme.json colours and fonts, and the block's design settings). `__PREFIX__`
+ * is the neutral class prefix; logical properties only. Loaded only on pages with a Form block.
+ *
+ * Every rule is scoped to the block and doubled (`.x.x`) so it outranks the form plugins' own
+ * stylesheets without `!important`, which would stop a site owner overriding it.
+ */
+.__PREFIX__-form {
+	--__PREFIX__-form-accent: var(--wp--preset--color--primary, var(--wp--preset--color--contrast, currentcolor));
+	--__PREFIX__-form-line: color-mix(in srgb, currentcolor 35%, transparent);
+	--__PREFIX__-form-fill: color-mix(in srgb, currentcolor 6%, transparent);
+	--__PREFIX__-form-radius: var(--__PREFIX__-radius-s, 6px);
+	--__PREFIX__-form-gap: var(--__PREFIX__-space-m, 1rem);
+	font: inherit;
+	color: inherit;
+}
+
+/*
+ * WPForms (modern markup) and Fluent Forms style themselves through their own custom properties,
+ * set on their containers; setting them on those same containers (more specifically) hands the
+ * plugins the site's design without fighting their selectors.
+ */
+.__PREFIX__-form.__PREFIX__-form :is(.wpforms-container, form.frm-fluent-form, .fluentform) {
+	--wpforms-button-background-color: var(--__PREFIX__-form-accent);
+	--wpforms-button-border-color: var(--__PREFIX__-form-accent);
+	--wpforms-button-text-color: var(--wp--preset--color--base, #fff);
+	--wpforms-button-border-radius: var(--__PREFIX__-form-radius);
+	--wpforms-field-border-radius: var(--__PREFIX__-form-radius);
+	--wpforms-field-border-color: var(--__PREFIX__-form-line);
+	--wpforms-field-background-color: transparent;
+	--wpforms-field-text-color: currentcolor;
+	--wpforms-label-color: currentcolor;
+	--fluentform-primary: var(--__PREFIX__-form-accent);
+	--fluentform-border-color: var(--__PREFIX__-form-line);
+	--fluentform-border-radius: var(--__PREFIX__-form-radius);
+}
+
+.__PREFIX__-form.__PREFIX__-form :is(form, fieldset) {
+	display: flex;
+	flex-direction: column;
+	gap: var(--__PREFIX__-form-gap);
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+/* Labels. */
+.__PREFIX__-form.__PREFIX__-form :is(label, legend, .wpforms-field-label, .gfield_label, .ff-el-input--label label) {
+	display: block;
+	margin-block-end: 0.35em;
+	font-size: 0.95em;
+	font-weight: 600;
+	color: inherit;
+}
+
+/* Text fields, selects and text areas. */
+.__PREFIX__-form.__PREFIX__-form :is(input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="hidden"], [type="file"], [type="range"]), select, textarea) {
+	box-sizing: border-box;
+	inline-size: 100%;
+	max-inline-size: 100%;
+	min-block-size: 2.75rem;
+	margin: 0;
+	padding-block: 0.6em;
+	padding-inline: 0.85em;
+	border: 1px solid var(--__PREFIX__-form-line);
+	border-radius: var(--__PREFIX__-form-radius);
+	background: transparent;
+	box-shadow: none;
+	color: inherit;
+	font: inherit;
+	line-height: 1.4;
+}
+
+.__PREFIX__-form.__PREFIX__-form textarea {
+	min-block-size: 8rem;
+	resize: block;
+}
+
+.__PREFIX__-form--filled.__PREFIX__-form--filled :is(input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="hidden"], [type="file"], [type="range"]), select, textarea) {
+	border-color: transparent;
+	border-block-end-color: var(--__PREFIX__-form-line);
+	background: var(--__PREFIX__-form-fill);
+}
+
+.__PREFIX__-form--underlined.__PREFIX__-form--underlined :is(input:not([type="checkbox"], [type="radio"], [type="submit"], [type="button"], [type="hidden"], [type="file"], [type="range"]), select, textarea) {
+	border-width: 0 0 1px;
+	border-radius: 0;
+	padding-inline: 0;
+}
+
+.__PREFIX__-form.__PREFIX__-form :is(input, select, textarea):focus-visible {
+	border-color: var(--__PREFIX__-form-accent);
+	outline: 2px solid var(--__PREFIX__-form-accent);
+	outline-offset: 1px;
+}
+
+.__PREFIX__-form.__PREFIX__-form :is(input[type="checkbox"], input[type="radio"]) {
+	inline-size: 1.1em;
+	block-size: 1.1em;
+	margin-inline-end: 0.4em;
+	accent-color: var(--__PREFIX__-form-accent);
+	vertical-align: -0.15em;
+}
+
+/* The submit button. */
+.__PREFIX__-form.__PREFIX__-form :is(input[type="submit"], button[type="submit"], .wpforms-submit, .gform_button, .ff-btn-submit) {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-block-size: 2.75rem;
+	margin: 0;
+	padding-block: 0.7em;
+	padding-inline: 1.5em;
+	border: 1px solid var(--__PREFIX__-form-accent);
+	border-radius: var(--__PREFIX__-form-radius);
+	background: var(--__PREFIX__-form-accent);
+	box-shadow: none;
+	color: var(--wp--preset--color--base, #fff);
+	font: inherit;
+	font-weight: 600;
+	line-height: 1.2;
+	cursor: pointer;
+	transition: filter 0.15s ease;
+}
+
+.__PREFIX__-form.__PREFIX__-form :is(input[type="submit"], button[type="submit"], .wpforms-submit, .gform_button, .ff-btn-submit):hover {
+	filter: brightness(1.1);
+}
+
+.__PREFIX__-form.__PREFIX__-form :is(input[type="submit"], button[type="submit"], .wpforms-submit, .gform_button, .ff-btn-submit):focus-visible {
+	outline: 2px solid var(--__PREFIX__-form-accent);
+	outline-offset: 2px;
+}
+
+.__PREFIX__-form--btn-full.__PREFIX__-form--btn-full :is(input[type="submit"], button[type="submit"], .wpforms-submit, .gform_button, .ff-btn-submit) {
+	inline-size: 100%;
+}
+
+/* Each plugin's field wrappers: spacing comes from the form's gap, not from the plugin's margins. */
+.__PREFIX__-form.__PREFIX__-form :is(.wpcf7-form > p, .wpforms-field, .gfield, .ff-el-group) {
+	margin: 0;
+	padding: 0;
+}
+
+.__PREFIX__-form.__PREFIX__-form :is(.wpforms-field-container, .gform_fields) {
+	display: flex;
+	flex-direction: column;
+	gap: var(--__PREFIX__-form-gap);
+}
+
+/* Validation messages. */
+.__PREFIX__-form.__PREFIX__-form :is(.wpcf7-not-valid-tip, .wpforms-error, .gfield_validation_message, .validation_message, .error.text-danger) {
+	margin-block-start: 0.35em;
+	font-size: 0.9em;
+	color: var(--wp--preset--color--vivid-red, #b3261e);
+}
+
+.__PREFIX__-form.__PREFIX__-form :is(.wpcf7-response-output, .gform_validation_errors, .wpforms-error-container, .ff-message-success) {
+	margin: 0;
+	padding-block: 0.75em;
+	padding-inline: 1em;
+	border: 1px solid var(--__PREFIX__-form-line);
+	border-radius: var(--__PREFIX__-form-radius);
+}
+
+/* The notice shown when the form plugin is not active. */
+.__PREFIX__-form__missing {
+	margin: 0;
+	padding-block: 0.75em;
+	padding-inline: 1em;
+	border: 1px dashed var(--__PREFIX__-form-line);
+	border-radius: var(--__PREFIX__-form-radius);
+}

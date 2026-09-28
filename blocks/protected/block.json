@@ -1,0 +1,38 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/protected",
+	"title": "Password-protected content",
+	"category": "pbs-site",
+	"icon": "lock",
+	"description": "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all.",
+	"keywords": [
+		"password",
+		"protected",
+		"private",
+		"lock",
+		"members"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"lockId": {
+			"type": "string",
+			"default": ""
+		},
+		"hash": {
+			"type": "string",
+			"default": ""
+		},
+		"message": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

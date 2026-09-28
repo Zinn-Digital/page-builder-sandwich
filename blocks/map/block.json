@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/map",
+	"title": "Map",
+	"category": "pbs-media",
+	"icon": "location-alt",
+	"description": "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map.",
+	"keywords": [
+		"map",
+		"location",
+		"address",
+		"openstreetmap"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"lat": {
+			"type": "number"
+		},
+		"lng": {
+			"type": "number"
+		},
+		"zoom": {
+			"type": "number",
+			"default": 14
+		},
+		"label": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false,
+		"align": [
+			"wide",
+			"full"
+		],
+		"interactivity": true
+	},
+	"editorScript": "pbsw-blocks-editor"
+}

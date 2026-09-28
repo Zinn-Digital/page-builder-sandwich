@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Ruaj si model të ripërdorshëm"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Kontrolluesi i aksesueshmërisë"
 
@@ -990,6 +994,7 @@ msgstr "← Zgjidhni një ofrues tjetër"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Adresa"
 
@@ -1043,6 +1048,8 @@ msgstr "Test"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Hiq"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Rreshto listat e modeleve nga ofruesit"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Imazhet"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "i çaktivizuar"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Hap"
 
@@ -1448,6 +1457,7 @@ msgstr "Nuk është bërë ende asnjë kërkesë për AI."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Kryer"
 
@@ -1515,7 +1525,11 @@ msgstr "Shumë tentativa. Ju lutemi provoni përsëri pas pak minutash."
 msgid "Something went wrong. Please contact the admin."
 msgstr "Diçka shkoi keq. Ju lutemi kontaktoni administratorin."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Krijo hartë"
 
@@ -1538,52 +1552,385 @@ msgstr "A familja nuk ruhet."
 msgid "Removed."
 msgstr "Hequr."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Ky nuk është një emër i vlefshëm familjeje fontesh."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts nuk e ktheu atë familje. Kontrolloni emrin dhe provoni përsëri."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Skedarët e shkronjave nuk mund të shkarkoheshin ose ruheshin. Kontrolloni që dosja e ngarkimeve të jetë e shkruajtshme."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Fleta e stilit e shkronjave nuk mundi të ruhej. Kontrolloni që dosja e ngarkimeve të jetë e shkruajtshme."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Hiq këtë njoftim"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(hapet në një skedë të re)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Kryer:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Për t'u bërë:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Indeksi i fjalorit"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Vlerësuar me %1$s nga %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Progresi"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Kopjo kodin"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Kopjuar"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Ai widget nuk është i disponueshëm në këtë faqe."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Email"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Telefon"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Burimi RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Faqja e internetit"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "Lidhje"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (hapet në një skedë të re)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Vlerësuar me %d nga 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(rekomandohet)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Përfshirë"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "E papërfshirë"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Tabela e krahasimit"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Telefono %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "E-maili %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Teksti %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Bisedo në WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Na kontaktoni"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Bisedoni me ne në WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Ky formular nuk është i disponueshëm tani për tani."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "Kjo formular nuk mund të shfaqet sepse %s nuk është aktiv."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Krijo lidhje: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Shfaqja e hartës e ngarkon atë nga OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Shfaq hartën"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Hapni hartën në OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Kalendari i rezervimeve nga %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Shfaqja e kalendarit të rezervimeve e ngarkon atë nga %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Shfaq kalendarin e rezervimeve"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Rezervo në %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Kodi QR për %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Dizajni"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Përmbajtja"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Media"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Marketing"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Faqja"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Të dhënat"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Postimet e ngjashme"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Detajet e postimit"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Nga"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Publikuar"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Përditësuar"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Në"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "Etiketuar"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "lexim %d minutë"
+msgstr[1] "%d minuta lexim"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Endaj ende nuk ka komente"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d koment"
+msgstr[1] "%d komente"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Sitemap"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(nuk ka titull)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Të gjitha postimet nga %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Kjo përmbajtje është e mbrojtur. Fut fjalëkalimin për ta parë."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Kjo fjalëkalim nuk është e saktë. Provoni përsëri."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Fjalëkalimi"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Shfaq përmbajtjen"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "Kjo faqe nuk mund të zhbllokohet."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Shumë tentativa. Pritni disa minuta dhe provoni përsëri."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Fjalëkalimi duhet të ketë nga 4 deri në 200 karaktere."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Më shumë"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Mbyll"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Skeda %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Përmbajtja"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "Redakto me Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Kanvas i zbrazët"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Kalo te përmbajtja"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Gjerësia e tabletit duhet të jetë një numër i plotë pikselësh nga 480 deri në 2560."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "Ikonat e ngarkuara"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Ikona"
 
@@ -2553,6 +2908,8 @@ msgstr "%s është adresa e emailit të klientit tim"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Kodi"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Modifiko"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Email"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Adresa e emailit"
 
@@ -3103,6 +3456,10 @@ msgstr "Aktivizimi i modalitetit pa markë"
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "Vendosni adresën e re të emailit"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Gabim"
 
@@ -3723,6 +4081,7 @@ msgstr "Produktet e mëposhtme janë vendosur në modalitetin e sigurisë sepse 
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "Ky shtojcë kërkon një version më të ri të PHP."
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Jo"
 
@@ -4811,6 +5171,13 @@ msgstr "Rrjetet sociale (Facebook, Twitter, etj.)"
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "Koha e regjistrimit"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Titulli"
 
@@ -5171,6 +5541,8 @@ msgstr "Si ju duket %1$s deri më tani? Testoni të gjitha veçoritë tona premi
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Lloji"
@@ -5286,6 +5658,7 @@ msgstr "Përdoruesit"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Vlera"
@@ -5340,6 +5713,7 @@ msgstr "Shiko veçoritë me pagesë"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Paralajmërim"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "Opsionale"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Pako"
 
@@ -5988,18 +6363,26 @@ msgstr "Shumë i vogël"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "E vogël"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "E mesme"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "E madhe"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "I madh"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "Prova nuk mund të fillonte."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Veçori"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Përfshirë"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "E papërfshirë"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "Adresa e hyrjes"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Emri i përdoruesit"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Fjalëkalimi"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7088,15 +7462,62 @@ msgstr "Anulimi ka filluar. Ai vazhdon në sfond; mund ta lini këtë faqe."
 msgid "Undo all conversions"
 msgstr "Anulo të gjitha konvertimet"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Artikull"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Hap kur faqja ngarkohet"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Titulli është një kryefjalë"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Bëjeni titullin një kryefjalë kur artikujt janë seksione të faqes, në mënyrë që vizitorët të mund të kalojnë mes tyre."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Titulli %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Pyetje ose titull seksioni"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Harmonikë"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Vetëm një artikull i hapur në të njëjtën kohë"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Shëno si FAQ për motorët e kërkimit"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Shton të dhëna të strukturuara të pyetjeve të shpeshta (FAQ) të ndërtuara nga titujt (pyetjet) dhe teksti i tyre (përgjigjet)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Sinjalizim"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Informacion"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Sukses"
 
@@ -7105,6 +7526,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Paralajmërimet dhe gabimet u komunikohen përdoruesve të lexuesve të ekranit menjëherë; njoftimet e informacionit dhe të suksesit lexohen kur ata përfundojnë atë që po bëjnë."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Shfaq ikonën"
 
@@ -7120,64 +7542,702 @@ msgstr "Titulli (opsionale)"
 msgid "Write the message…"
 msgstr "Shkruani mesazhin..."
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "seksion — një seksion tematik"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Qendra"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — pa kuptim"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Distinktiv"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "kokërr — përmbajtje hyrëse"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Ngjyra"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "fundi i faqes — përmbajtja mbyllëse"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Thelbi i temës"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "artikull — përmbajtje e pavarur"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Neutrale"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "anësore — përmbajtje e lidhur"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Pozicioni"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — përmbajtja kryesore (një herë për faqe)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Etiketa"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — lidhjet e navigimit"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Kalendari i rezervimeve"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Stivë (flexbox, kolonë)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Shërbimi"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Rresht (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Adresa e faqes së rezervimit"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Grilë"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Për shembull %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Për çfarë shërben kalendari, lexuar me zë nga lexuesit e ekranit dhe shfaqur nën të."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Kjo nuk është një adresë e faqes së rezervimit %s, kështu që asgjë nuk do të shfaqet në faqe."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Parapriqë kalendarin"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Adresa e lidhjes"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Butoni shfaqet kur ka si një etiketë ashtu edhe një adresë."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Hap në një skedë të re"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Thirrje për veprim"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Formati"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Butona poshtë"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Butona pranë tekstit"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Rreshtimi"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Butoni kryesor"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Butoni i dytë"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Titulli…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Një fjali se pse…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Butoni i dytë (opsional)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Lista e kontrollit"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Ngjyra e shenjës"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Rreshtat"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Rreshti %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Detyra..."
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Shto rresht"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Gjuha"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Detekto automatikisht"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Pa theksim"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Emri i skedarit"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "Shfaqur mbi kodin, për shembull functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Numrat e rreshtave"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Butoni i kopjimit"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Mbështill rreshtat e gjatë"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Shkruani ose ngjitni kodin…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Teksti"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Kolonat"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Kolona %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Thekso %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Shto kolonë"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Rreshtat"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Rreshti %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Shto rresht"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Titulli (çfarë po krahasohet)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Lloji i qelisë: %s. Ndrysho"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Telefonatë"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Mesazh me tekst"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Butona"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Numri i telefonit, me kodin e shtetit"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Teksti i butonit"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Hiq këtë buton"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Shto një buton"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Mesazh WhatsApp për të filluar (opsionale)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Butonët e kontaktit"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Shto një numër telefoni, një adresë e-posti ose një numër WhatsApp në shiritin anësor."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Titull i dyfishtë"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Niveli i titullit"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Përdorni H1 një herë për faqe, për titullin e saj kryesor."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Pamja e pjesës së dytë"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Ngjyra e theksimit"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Gradiente"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Skicë"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Nënvizato"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Pjesa e dytë në një rresht të vetëm"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Pjesa e parë"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "pjesa e dytë"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Marker shënimi"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Vizë e trashë poshtë"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Sfondi"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Pastroj"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Hiq theksin"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Shkronja e madhe fillestare"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Shkronjë e parë e madhe"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Për shkronjën e parë në një kuti, zgjidhni stilin \"Shkronjë e madhe nistore në kuti\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Shkronja e parë e madhe në kuti"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Shirit theksimi"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Citim të tërhequr (shirit theksimi)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Një citat nga teksti, i vendosur i madh pranë një shirit me ngjyrë për të tërhequr vëmendjen."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "ofertë"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Lista e veçorive"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Në telefona funksionalitetet gjithmonë vendosen njëri mbi tjetrin."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Veçoritë"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Veçoria %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Ikona e vetë"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Veçori..."
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Përshkruani…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Shto funksionalitet"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Instaloni dhe aktivizoni Contact Form 7, WPForms, Gravity Forms ose Fluent Forms, pastaj zgjidhni një nga formularët e tij këtu."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Shtojca e formularëve"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Zgjidhni…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Formulari"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Zgjidhni një formë…"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s nuk ka ende asnjë formular"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s nuk është aktiv në këtë sajt, ndaj ky formular nuk mund të shfaqet."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "Lista e formularëve nuk mund të ngarkohej."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Stili i formularit"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Fushat"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Me kontur"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "I mbushur"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Nënvizuar"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Gjerësia e butonit"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Prshtas tekstin"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Gjerësia e plotë"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Ngjyrat, shkronjat, hapësirat dhe cepat vijnë nga dizajni i faqes suaj dhe nga cilësimet e dizajnit të këtij blloku."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Shfaqni një formular nga shtojca juaj e formularëve, të stiluar për t'iu përshtatur faqes suaj."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Keni nevojë për një shtojcë formularësh? Contact Form 7 është falas."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Fjalor"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Rendit A deri në Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Faqja i tregon termat në rend alfabetik; këtu ato mbeten në rendin që i keni shkruar."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Shfaq një indeks A–Z"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Lidhni termat e përdorur diku tjetër në këtë faqe"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Herën e parë që çdo term shfaqet në tekstin e faqes, ai lidhet me përkufizimin e tij. Titujt, butonat, kodi dhe lidhjet ekzistuese mbeten të paprekura."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Kushtet"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Afati %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Periudha"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Çfarë do të thotë kjo..."
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Shto termin"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Lista e ikonave"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Njëri poshtë tjetrit"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Krah për krah"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Element i listës…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Kutia e informacionit"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Ose zgjidhni ndonjë ikonë nga biblioteka:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Teksti i linkut"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Thuani se ku të çon lidhja (\"Shihni çmimet tona\"), jo \"Lexo më shumë\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Një fjali ose dy…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "seksion — një seksion tematik"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — pa kuptim"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "kokërr — përmbajtje hyrëse"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "fundi i faqes — përmbajtja mbyllëse"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "artikull — përmbajtje e pavarur"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "anësore — përmbajtje e lidhur"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — përmbajtja kryesore (një herë për faqe)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — lidhjet e navigimit"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Stivë (flexbox, kolonë)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Rresht (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Grilë"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Duke redaktuar: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Radhit fëmijët si"
 
@@ -7185,7 +8245,7 @@ msgstr "Radhit fëmijët si"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7193,70 +8253,50 @@ msgstr "Radhit fëmijët si"
 msgid "Inherited (%s)"
 msgstr "Trashëguar (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Blloqe të stivosura"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Kolonat"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Zvarritni në kanvas, ose shkruani"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Gjerësia e përmbajtjes"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Me kuti (gjerësia e përmbajtjes së temës)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Gjerësia e plotë"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Lartësia minimale"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Etjeta HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "Lidhje"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Bëje të gjithë bllokun një lidhje për te"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Teksti i lidhjes për lexuesit e ekranit"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Çfarë bën lidhja, për vizitorët që nuk mund ta shohin bllokun."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Hap në një skedë të re"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Mos vendosni lidhje ose butona brenda një blloku të lidhur: një lidhje brenda një lidhjeje nuk funksionon në shfletues."
 
@@ -7288,14 +8328,143 @@ msgstr "+ Rresht"
 msgid "− Row"
 msgstr "− Rresht"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Vendos"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Ngjitni koordinatat ose një lidhje të OpenStreetMap"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Në openstreetmap.org, gjeni vendin, më pas kopjoni adresën nga shirita i shfletuesit, ose klikoni me të djathtën në hartë dhe zgjidhni \"Shfaq adresën\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Gjerësia gjeografike"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Gjatësia gjeografike"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Zmadho"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Emri i vendit"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Shfaqur nën hartë dhe e lexuar nga lexuesit e ekranit."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Ngjitni koordinatat (për shembull 51.5074, -0.1278) ose një lidhje të OpenStreetMap."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Koordinata ose linku"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Parashiko hartën"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Kontrollo %1$s, %2$s në OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Autori"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Data e publikimit"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Data e përditësuar (kur ndryshon)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Kategoritë"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Etiketat"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Koha e leximit"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Numri i komenteve"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Detajet për t'u shfaqur"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Zgjidhni të paktën një detaj për të shfaqur."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Shirit progresie"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "Maksimumi"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 për një përqindje; çdo numër tjetër për një numërim, si 8 nga 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Shfaq përqindjen"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "Një fjalëkalim është caktuar. Vizitorët shohin një formular fjalëkalimi në vend të këtij përmbajtjeje derisa ta fusin atë."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Nuk është caktuar ende asnjë fjalëkalim, kështu që vizitorët nuk shohin gjë këtu."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Fjalëkalim i ri"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Cakto fjalëkalimin"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "Fjalëkalimi u caktua. Ruani faqen për ta zatuar; vizitorët që e kishin zhbllokuar do të kenë nevojë për atë të re."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Nëse Page Builder Sandwich çaktivizohet ndonjëherë, kjo përmbajtje u shfaqet të gjithëve."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Mesazhi sipër formularit të fjalëkalimit (opsionale)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Ndërro"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Etiketa"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7305,30 +8474,698 @@ msgstr "Lexuar nga lexuesit e ekranit dhe shfaqur kur opsioni \"Shfaq etiketën\
 msgid "Show label"
 msgstr "Shfaq etiketën"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Adresa e uebit ose teksti"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Kodi QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Përshkrim për lexuesit e ekranit"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Lëreni bosh për të përdorur \"QR code for\" dhe tekstin."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Shkruani një adresë uebi, një lidhje telefoni (tel:) ose çdo tekst."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Kjo është tepër e gjatë për një kod QR. Shkurtojeni."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Shto një përshkrim"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Shiriti i progresit të leximit"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Skaji i dritares"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Më e larta"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Fundi"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Shfaqet përgjatë fundit të dritares ndërsa vizitorët lëvizin faqen."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Shfaqet përgjatë pjesës së sipërme të dritares ndërsa vizitorët lëvizin faqen."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Sa"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Lidhur nga"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Kategoritë ose etiketat"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Kur asgjë nuk lidhet, shfaq më të rejat në vend të saj"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Kreu"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Lëreni bosh për \"Postimet e ngjashme\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Shfaq imazhin e veçuar"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Shfaq datën"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Shfaq një përmbledhje"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Asnjë postim nuk ndan ende kategoritë ose etiketat e këtij postimi. Kur disa ta bëjnë këtë, ato do të shfaqen këtu."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Modaliteti"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Paneli jashtë kornizës"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Madhësia"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Rrëshqet nga"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Fillimi është ana ku fillon leximi: majtas në anglisht, djathtas në arabisht."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Mbyll kur klikohet faqja në prapaskenë"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Titulli i dritares"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Shenja e zgjedhjes"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Rrethi"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Kryq"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Pikë"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Shigjeta"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Yll"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Ngjyra e ikonës"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Njësoj si teksti"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Tema kryesore"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Tema dytësore"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Kontrasti i temës"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Mbani titujt në rregull në faqen tuaj: një titull një nivel nën seksionin në të cilin ndodhet."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Zgjidhni ikonën"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Përdor ikonën e paracaktuar"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Zgjidhni një ikonë"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Lëviz lart"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Zbrit poshtë"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Shfaq një titull për secilin lloj"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Asgjë e publikuar ende në llojet që keni zgjedhur."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Lidhjet"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Lidhja %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Rrjeti"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Një adresë profili, mailto:you@example.com ose tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Emri i lexuar për lexuesit e ekranit"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Ikona e tjera"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Shto lidhje"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Shiko"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Stili"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Vetëm ikona"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Formë"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Katror i rrumbullakosur"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Katror"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Hap profilet në një skedë të re"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Vlerësimi me yje"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Vlerësimi"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Numri i yjeve"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Shfaq numrin"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Hapat"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Poshtë në faqe"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Krah për krah (vendoset njëri mbi tjetrin në telefona)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Ngjyra e numrit"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Rendi i hapave"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Hapi %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Hapi…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Çfarë të bëni..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Shto hapin"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Skeda"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Shto tituj në faqe dhe ata do të listohen këtu."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Tabela e përmbajtjes"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Nga niveli i titullit"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Në nivelin e titullit"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "I numëruar"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "Mund të paloset"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Fillo i palosur"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Vijo diçka që po lexohet"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Skedat"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Emri për lexuesit e ekranit"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "Opsionale. Thotë se për çfarë bëjnë fjalë skedat, për shembull \"Paketat\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Hap gjatë ngarkimit të faqes"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Skeda anësore"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Shto një skedë"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Dëshmi"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Zëvendëso foton"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Zgjidh foton"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Hiq foton"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Përshkrimi i fotos"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Lëreni bosh kur fotoja tregon vetëm personin e emërtuar pranë saj."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Vlerësimi me yje (0 = asnjë)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Emri nën kuotë"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Foto pranë kuotës"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Çfarë tha klienti…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Roli ose kompania"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Këshillë mjetesh"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Teksti i ndihmës"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Mbajeni të shkurtër: një ose dy fjali. Lexuesit e ekranit e lexojnë atë me fjalën që shpjegon."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Shfaqje"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Mbi"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Më poshtë"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Fjalë ose frazë"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Apliko"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Profili"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Profil i kujt"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Autori i postimit"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Shfaq foton e profilit"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Shfaq biografinë"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Shfaq lidhjet te postimet dhe faqja e internetit"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Profili i autorit"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Zgjidhni se cilin profil të shfaqni."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Numri i WhatsApp, me kodin e shtetit"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Për shembull +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Mesazhi për të filluar (opsionale)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Shfaq tekstin pranë ikonës"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Kënd"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Fundi (djathtas në anglisht)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Fundi në fillim (majtas në anglisht)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Shto numrin tuaj të WhatsApp në shiritin anësor. Deri atëherë, butoni nuk shfaqet në faqe."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Në faqe, ky buton lundron në një nga skajet e poshtme të ekranit."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Etiketa e kodit të shkurtër"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Përdorni vetëm shkronja, numra, viza dhe vizat poshtë."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Emri i atributit"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Shto atribut"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Kodi i shkurtër"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Atribute të tjera"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Zgjidhni një etiketë shortcode te cilësimet e bllokut."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Galeria"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Madhësia e imazhit"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Miniaturë"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Madhësia e plotë"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "Lidhu me"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Faqja e bashkëngjitjes"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Skedar media"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Audio"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Video"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Adresa e skedarit"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Cikli"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Luaj automatikisht"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Imazhi i posterit"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Lista e luajtjes"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "ID-të e mediave, të ndara me presje"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Shfaq listën e pjesëve muzikore"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Gjiraso"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Adresa për t'u ngulur"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Gjerësia maksimale"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Titulli"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML i imazhit dhe titullit"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Gjerësia"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Këshillë: Blloku i formularit e shfaq këtë formular të stiluar që të përputhet me faqen tuaj."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Shfaq titullin e formularit"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Shfaq Përshkrimin e Formularit"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Dorëzo pa rifreskuar faqen"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7349,123 +9186,108 @@ msgstr "Zgjidh skedarin"
 msgid "— Default —"
 msgstr "— Parazgjedhje —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Stilizim i avancuar"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS i brendshëm"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Deklaratat CSS, për shembull: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Efektet (klasat e vjetra)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Emrat e efekteve të ndarë me hapësirë të mbartur nga versionet më të vjetra, për shembull: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Rresht"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Gjerësia"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Gjerësi e plotë, përmbajtja e ruajtur në mes"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Adresa e lidhjes"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Lidhja e marrëdhënies"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Rreshtimi"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Majtas"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Qendra"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Djathtas"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Teksti i butonit"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Shto tekst..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Vendosja"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Në rreshtin e tij"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Në rresht, pranë përmbajtjes tjetër"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Automatik (në rreshtin e vet në nivelin më të lartë të faqes)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Etiketa e aksesueshme"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Lëreni bosh për një ikonë dekorative."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Zgjidhni një ikonë në cilësimet e bllokut."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Emri i cilësimit të ri"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Për shembull: titull ose tekst"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Shto cilësimin"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Widget"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Zgjidhni një widget"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Zona e widget-it"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Zgjidhni një zonë widget-i"
 
@@ -7488,6 +9310,142 @@ msgstr "Ky element i ngulitur ndryshon madhësinë e vet pasi të ngarkohet, gj�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Ndryshimi i skicës"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Ky widget nuk i përshkruan cilësimet e tij, kështu që ato editohen si çifte emri dhe vlere."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Problem"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Kontrollo"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Shfaq bllokun"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Përdorni një ngjyrë teme të lexueshme"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Bëje H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Teksti alternatif"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Ruaj tekstin alternativ"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Kjo imazh është dekorative"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Duke kontrolluar..."
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "Nuk u gjet asnjë problem përdorshmërie në këtë faqe."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d problemë"
+msgstr[1] "%d probleme"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d element për të kontrolluar"
+msgstr[1] "%d gjëra për të kontrolluar"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Kontrollo sërish"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Një kontroll automatik gjen shumë probleme, por jo të gjitha. Provoni faqen gjithashtu vetëm me tastierë dhe me një lexues ekrani."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Kontrasti i tekstit është %1$s:1; ai ka nevojë për të paktën %2$s:1 për të qenë i lexueshëm."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "kalo këtu,këtu,lexo më shumë,më shumë,lidhje,kjo lidhje,mëso më shumë,shko"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Një lidhje nuk ka tekst, kështu që një lexues ekrani njofton vetëm “lidhje”. Shtoni tekst ose një etiketë."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Teksti i lidhjes “%s” nuk tregon se ku të çon. Në vend të kësaj, përshkruani destinacionin."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Një element ka një tabindex pozitiv, i cili ndryshon radhën e tastierës larg rendit të leximit. Përdorni 0 ose hiqeni atë."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "Një element i klikueshëm nuk mund të arrihet me tastierë. Përdorni një buton ose lidhje të vërtetë."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Një kornizë e integruar nuk ka titull, kështu që një lexues ekrani nuk mund të thotë se çfarë është."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Një fushë formulari nuk ka etiketë, kështu që qëllimi i saj nuk njoftohet."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Ky titull është bosh. Përdoruesit e lexuesve të ekranit lundrojnë sipas titujve; hiqeni atë ose shtoni tekst."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Titulli i faqes është tashmë H1; përdorni H2 për nivelin e sipërm të përmbajtjes."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "Ky H%1$d kapërcen një nivel; ai para tij është H%2$d. Bëje atë H%3$d."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Ky imazh nuk ka tekst alt. Përshkruajeni, ose shënojeni si dekorativ nëse nuk shton asgjë."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Mbyll panelin"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7562,18 +9520,6 @@ msgstr "Personalizuar"
 msgid "Width / height"
 msgstr "Gjerësia / lartësia"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Më e larta"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Fundi"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7586,20 +9532,6 @@ msgstr "Imazhi i trashëguar — zëvendësoje"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Hiq imazhin"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Pozicioni"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Madhësia"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7665,22 +9597,6 @@ msgstr "Securitetit secila anë veç e veç"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Ana"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Stili"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Ngjyra"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7930,14 +9846,6 @@ msgstr "%1$s (%2$d e caktuar)"
 msgid "Replace icon"
 msgstr "Zëvendëso ikonën"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Zgjidhni ikonën"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Zgjidhni një ikonë"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Nuk ka ikona përputhëse."
@@ -7949,10 +9857,6 @@ msgstr "Rregullt"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Markat"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Me kontur"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8081,21 +9985,9 @@ msgstr "Ngjyra e tekstit"
 msgid "Cursor"
 msgstr "Kursori"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Shigjeta"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Regulator"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Teksti"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8253,10 +10145,6 @@ msgstr "Emri i zonës"
 msgid "Named areas"
 msgstr "Zona të emërtuara"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Rreshtat"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Lartësia"
@@ -8374,10 +10262,6 @@ msgstr "Justifiko"
 msgid "Decoration"
 msgstr "Dekorimi"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Nënvizato"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Vija e sipërme"
@@ -8460,19 +10344,9 @@ msgstr "Conic"
 msgid "Angle (degrees)"
 msgstr "Këndi (gradë)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Formë"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Elipsë"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Rrethi"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8508,10 +10382,6 @@ msgstr "Ngopja prapa (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Nuancë (përdor një ngjyrë gjysmë të tejdukshme)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Katror i rrumbullakosur"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8528,10 +10398,6 @@ msgstr "Trekëndësh"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamond"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Yll"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9409,11 +11275,6 @@ msgstr "Pastro"
 msgid "The change could not be saved."
 msgstr "Ndryshimi nuk mund të ruhej."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Mbyll panelin"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Tema e paracaktuar"
@@ -9470,9 +11331,49 @@ msgstr "Klasat, shenjat, modaliteti i errët, kompleti i markës dhe shkronjat e
 msgid "Open the Site Editor’s styles"
 msgstr "Hapni stilet e Redaktuesit të Faqes"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Kreu"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Një titull me lartësi rreshti më të ngushtë, i stiluar me skedën Stil."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Një paragraf teksti, i stiluar me skedën Stil."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Imazh"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Një imazh me skaje të rrumbullakosura, i stilit me skedën Stili."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Një video nga Media Library, e stiluar me skedën Style."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Ndarës"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Hapësirë e zbrazët midis blloqeve; caktoni një lartësi të ndryshme për çdo madhësi ekrani në skedën Stil."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Ndarrës"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Një vijë horizontale mid e seksioneve, e stilizuar me skedën Stili."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Përmbajtje nga një faqe tjetër (një video, një postim, një hartë) duke ngjitur adresën e saj."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Disa imazhe në një rrjetë, të stiluara me skedën Stil."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9506,10 +11407,6 @@ msgstr "Lista"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Kapsula"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Butona"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9554,10 +11451,6 @@ msgstr "Fshi gjuhët në të cilat kjo faqe nuk është e përkthyer"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Vendos vertikalisht"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Sfondi"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9616,11 +11509,6 @@ msgstr "Cilësimet e bllokimit"
 #, js-format
 msgid "Add block: %s"
 msgstr "Shto bllok: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(nuk ka titull)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9696,10 +11584,6 @@ msgstr "Çaktivizo modalitetin e sigurt"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Aktivizo modalitetin e sigurt (shtojcat e tjera të fikura, vetëm për ju, në Studio)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Publikuar"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10039,11 +11923,6 @@ msgstr "Emri i ndërtuesit"
 msgid "Visual editor name"
 msgstr "Emri i redaktuesit pamor"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Autori"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10117,10 +11996,6 @@ msgstr[1] "E pavendosur: u rivendosën %d faqe."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Zëvendëso"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Lidhjet"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10230,10 +12105,6 @@ msgstr "Lejoni një klient të komentojë në këtë faqe"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Kushdo që ka linkun mund ta shohë këtë faqe, madje edhe para se të publikohet, dhe të lërë komente. Nuk kërkohet llogari."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Kopjuar"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10476,6 +12347,52 @@ msgstr "Kopjoni imazhet në bibliotekën e medias të kësaj faqeje"
 msgid "Show what will happen"
 msgstr "Shfaq se çfarë do të ndodhë"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Element akordeoni"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Një seksion i një santilioni: një titull që hap përmbajtjen e tij."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Akordeon"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Pyetje ose seksione që hapen dhe mbyllen. Opsionalisht një nga një, dhe opsionalisht të shënuara si FAQ për motorët e kërkimit."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "akordeon"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "pytje të shpeshta"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "ndrysho"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "palos"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "detajet"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10492,6 +12409,7 @@ msgid "notice"
 msgstr "njoftim"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "mesazh"
@@ -10506,6 +12424,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "parajmërim"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Distinktiv"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Një etiketë e shkurtër si E re, Ulje ose Vlera më e mirë."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "etiketë"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "etiketë"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "kokrër"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "e re"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Kalendari i rezervimeve"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Një kalendar rezervimi Calendly ose Cal.com, i ngarkuar vetëm kur vizitori e kërkon atë."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "rezervim"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "takim"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "orari"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10517,6 +12500,7 @@ msgid "A link styled as a button."
 msgstr "Një link i stiluar si buton."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "butoni"
@@ -10530,6 +12514,98 @@ msgstr "lidhje"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "thirrje për veprim"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Thirrje për veprim"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Një titull, një fjali dhe një ose dy butona që i kërkojnë vizitorit të veprojë."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "thirrje për veprim"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "banderolë"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "regjistrohuni"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Lista e kontrollit"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Një listë detyrash, secila e shënuar e kryer ose ende për t'u bërë, me fjalë për lexuesit e ekranit, si dhe me një shenjë zgjedhjeje."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "Për të bërë"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "detyrat"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "tikët"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "lista"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Kodi"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Një listim kodi me theksim sintakse, numra rreshtash dhe një buton kopjimi. Mbetet i lexueshëm nëse plugini fiket ndonjëherë."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "kodi"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "sintaksa"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "thekso"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "fragment"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "programcim"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10553,6 +12629,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "skica"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Tabela e krahasimit"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Planet ose produktet krah për krah, me shenja po dhe jo që lexuesit e ekranit i lexojnë si fjalë."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "krahaso"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Çmimet"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "planet"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "tabelë"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "veçoritë"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Butonët e kontaktit"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Butona për t'ju thirrur, dërguar email, SMS ose mesazh në WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "kontakto"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "thirr"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "telefon"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "email"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "whatsapp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "SMS"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10570,11 +12724,13 @@ msgid "container"
 msgstr "kontejner"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "kutia"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10591,6 +12747,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "kolonat"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Titull i dyfishtë"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Një titull në dy pjesë, ku e dyta theksohet me ngjyrë, gradient, kontur ose vijë nën vizë."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "titull"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "titulli"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "gradient"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Lista e veçorive"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Veçoritë në një rrjet, secila me një ikonë, një titull dhe një përshkrim të shkurtër."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Përfitimet"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "shërbimet"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10634,6 +12836,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "tekst"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Forma"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Shfaq një formular nga Contact Form 7, WPForms, Gravity Forms ose Fluent Forms, të stiluar për t'iu përshtatur faqes tuaj."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "formular"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Fjalor"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Terminat dhe përkufizimet e tyre, të renditura nga A në Z, secila me lidhjen e vet. Mund të lidhë përmendjen e parë të çdo termi në faqe me përkufizimin e tij."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "kushtet"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "përkufizimet"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "fjalor"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Lista e ikonave"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Një listë ku çdo rresht fillon me një ikonë: një shenjë zgjedhjeje, një shigjetë ose çdo ikonë nga biblioteka."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "plumba"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "ikona"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10654,6 +12936,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Kutia e informacionit"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Një ikonë, një titull i shkurtër, një ose dy fjali dhe një lidhje opsionale: për shërbimet, përfitimet ose detajet e kontaktit."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "veçori"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "shërbimi"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "kartë"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10673,6 +12980,204 @@ msgstr "përkthim"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "shumëgjuhësh"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Lidhni"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Një hartë e një vendi nga OpenStreetMap: pa çelës dhe asgjë nuk ngarkohet nga OpenStreetMap derisa vizitori të kërkojë hartën."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "hapërsirë e emërtuar"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "vendndodhja"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "adresa"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Dritare modale"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Një buton që hap një dritare mbi faqe, me çdo bllok brenda."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "dritare modale"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "dritare kërcyese"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "lightbox"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "dialog"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Paneli jashtë kornizës"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Një buton që rrëshqet një panel nga ana e dritares, me çdo bllok brenda."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "jashtë kornizës"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "sirtar"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "shirit anësor"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "paneli"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "menyja"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Detajet e postimit"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Autori i postimit, datat, kategoritë, etiketat, koha e leximit dhe numri i komenteve."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "autor"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "data"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "kohë leximi"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "nënautor"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Shufra e progresit"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Një shirit i etiketuar që tregon se sa larg ka arritur diçka, si për shembull një aftësi ose një qëllim."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "progresi"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "shirit"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "aftësi"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "qëllimi"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Përmbajtje e mbrojtur me fjalëkalim"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "Bllokon vetëm vizitorët që mund ta shohin fjalëkalimin. Derisa ta vendosin atë, përmbajtja nuk është fare në faqe."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "fjalëkalim"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "i mbrojtur"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "privat"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "kyq andal"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "anëtarët"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10698,6 +13203,86 @@ msgstr "e lehtë"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "skema e ngjyrave"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Kodi QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Një kod QR për një adrese uebi ose çfarëdo teksti, i vizatuar në sajtin tuaj (nuk përdoret asnjë shërbim QR)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "kodi QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "barkod"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "skano"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Shiriti i progresit të leximit"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Një shirit i hollë në skajin e dritares që mbushet ndërsa vizitorët lëvizin nëpër faqe."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "duke lexuar"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "lëviz"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Postimet e ngjashme"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Postimet që ndajnë kategoritë ose etiketat e këtij postimi, së bashku me fotografitë, datat dhe përmbledhjet e tyre."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "të ngjashme"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "postimet"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "të ngjashme"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "më shumë"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10761,13 +13346,284 @@ msgstr "Shfaq miniwidget-et në një nga zonat e miniwidget-eve të temës."
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "shirit anësor"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "zona e widget-eve"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Harta e faqes"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Një faqe që liston çdo faqe dhe postim të publikuar (dhe përmbajtje të tjera publike), duke ruajtur strukturën e pemës së faqeve."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "sitetmapë"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "harta e faqes"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "indeksi"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "të gjitha faqet"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Ikonat e rrjeteve sociale"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Lidhjet me profile tuaja, të paraqitura me ikonat e vetë rrjeteve."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "sociale"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "lidhjet"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "ndiq"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "profile"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Vlerësimi me yje"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Një vlerësim i shfaqur si yje, në hapa me gjysmë ylli."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "yje"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "vlerësimi"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "rezultati"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Hapat"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Hapat e numëruara të një procesi, në rregull, poshtë faqes ose krah për krah."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "përpuno"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "si të"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "historori i ngjarjeve"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "të numëruara"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Skeda"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Një skedë e një blloku Skedash: titulli dhe paneli i saj."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Tabela e përmbajtjes"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Një listë e titujve në faqe, e ndërtuar automatikisht, e cila lidhet me secilin prej tyre."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Përmbajtja"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "përmbajtja"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "Titujt"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Skedat"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Përmbajtja në skeda: vizitorët kalojnë ndërmjet paneleve me miun ose tastierë."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "skeda"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "me skeda"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "panelet"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Dëshmi"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Një thënie nga një klient me emrin, rolin, foton dhe një vlerësim opsional me yje."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "shqyrto"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "ofertë"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "klient"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "përvojë e përdoruesit"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Këshillë ndihmëse"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Një fjalë ose frazë që tregon një shpjegim të shkurtër gjatë kalimit të mausit dhe fokusit të tastierës."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "ndihmëz"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "këshillë"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "përkufizimi"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Profili i autorit"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Fotografia, emri, biografia dhe lidhjet e autorit, ose ato të një përdoruesi të zgjedhur."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "biografia"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "profili"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "rreth"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Butoni i bisedës në WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Një buton lundrues në një nga këndet e faqes që hap një bisedë në WhatsApp me ju."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "bisedë"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "lundrues"
 
 #: blocks/widget/block.json
 msgctxt "block title"

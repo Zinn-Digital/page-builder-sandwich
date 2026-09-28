@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/user-profile",
+	"title": "Author profile",
+	"category": "pbs-site",
+	"icon": "admin-users",
+	"description": "The author's picture, name, bio and links, or those of a chosen user.",
+	"keywords": [
+		"author",
+		"bio",
+		"profile",
+		"about"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"source": {
+			"type": "string",
+			"enum": [
+				"author",
+				"user"
+			],
+			"default": "author"
+		},
+		"userId": {
+			"type": "number",
+			"default": 0
+		},
+		"showAvatar": {
+			"type": "boolean",
+			"default": true
+		},
+		"showBio": {
+			"type": "boolean",
+			"default": true
+		},
+		"showLinks": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor",
+	"usesContext": [
+		"postId",
+		"postType"
+	]
+}

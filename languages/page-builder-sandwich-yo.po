@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "Fipamọ gẹgẹ bi àpẹẹrẹ atunlò"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "Ayẹwo ìrọ̀rùn wíwọlé"
 
@@ -990,6 +994,7 @@ msgstr "← Yan olupese miiran"
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "Àdíréṣì"
 
@@ -1043,6 +1048,8 @@ msgstr "Idanwo"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "Yọ kuro"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "Sọ àwọn àkọlé àwọn àwòṣe di tuntun láti ọ̀dọ̀ àwọn olùpèsè"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "Àwọn àwòrán"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "a pa"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "Ṣí"
 
@@ -1448,6 +1457,7 @@ msgstr "Ko ti si awọn ibeere AI kankan ti a ṣe sibẹsibẹ."
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "Ti pari"
 
@@ -1515,7 +1525,11 @@ msgstr "Àwọn ìgbìyànjú pọ̀ jù. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀ka
 msgid "Something went wrong. Please contact the admin."
 msgstr "Nkan kan ko tọ. Jọwọ kan si oluṣakoso na."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "Ṣe àmì ojú-òpó"
 
@@ -1538,52 +1552,383 @@ msgstr "A kò tọ́jú ìdílé yẹn."
 msgid "Removed."
 msgstr "Ti yọ kuro."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "Orúkọ ìdílé fọ́ǹtì yẹn kò wúlò."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google kò dá ìdílé yẹn padà. Ṣàyẹ̀wò orúkọ náà kí o sì tún gbiyanju lẹ́ẹ̀kan sí i."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "Awọn faili fọọti naa ko le ṣe igbasilẹ tabi fipamọ. Ṣayẹwo pe folda igbasilẹ data (uploads folder) le ni kikọ si i."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "Àwòse òrùkà fɔ́ntì náà kò lè fipamọ́. Ṣe ìvèwò pé a lè kó sínú folda àwòse ti a s̀e àpò sí."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "Pa akiyesi yii tì"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(ónsì ní taba tuntun)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "Gbà á sílẹ̀:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "Lati ṣe:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "Atọka Glosari"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "Wɔ̀ ń %1$s nínú %2$s"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "Ilọsiwaju"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "Ṣe àakọsọ koodu náà"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "Wọn ti daakọ rẹ̀"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "Wọ́gìtì yẹn kò sí lórí ojú-wẹ́bù yìí."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "Imeli"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "Ẹ̀rọ̀ amóhùn-máwòrán"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "Ìkànnì RSS"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "Ojula opo wẹbọ"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "So pọ̀ọ̀kùn"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (ó 🔓 sí taba tuntun)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "Wọn fún ní àmì %d nínú 5"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(a ni imọran)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "Ti a fi kun"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "Ko si ninu"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "Tabili afiwe"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "Pe %s"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "Ímeeli %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "Ọrọ %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "Gbọ̀rọ̀ lórí WhatsApp"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "Kanṣe wa"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "Sọ̀rọ̀ pẹ̀lú wa lórí WhatsApp"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "Fọ́ọ̀mù yìí kò wà ní tòsí báyìí."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "A kò lè fi fọ́mù yìí hàn nítorí pé %s kò ṣiṣẹ́."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "Àwòrán ilẹ̀: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "Fiimu maapu naa n gbe e lati OpenStreetMap."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "Fi maapu naa hàn"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "Ṣí àwòrán orí ilẹ̀ lórí OpenStreetMap"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "Kalenda ìṣe-àyè láti ọwọ́ %s"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "Fiisi kalẹnda ìpamọ́ gba a wọlé láti %s."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "Fi kalẹnda ℹbeere hàn"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "Ṣe ìwé lórí %s"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "Koodu QR fun %s"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "Àpẹẹrẹ"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "Akoonu"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "Mẹdias"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "Ọjàọrọ"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "Ojula"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "Àwọn dátà"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "Àwọn ìfiránṣẹ́ tó ní ṣe pẹ̀lú rẹ̀"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "Àwọn kúlẹ̀kúlẹ̀ ìfiránṣẹ́"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "Nipasẹ"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "Ti tẹjade"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "Ti ṣe imudojuiwọn"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "Ninu"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "A tò sí àmì"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "Àkókò kíkà ìṣẹ́jú %d"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "Kò sí àlàyé kankan lọ́wọ́ lọ́wọ́"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d asọye"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "Sitemap"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(kò sí àkọlé)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "Gbogbo awọn ifiweranṣẹ nipasẹ %s"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "Àwọn ohun àmúṣọrọ̀ yìí ní ààbò. Tẹ ọ̀rọ̀ aṣínà sínú rẹ̀ láti rí i."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "Ọ̀rọ̀ aṣírí yẹn kò tọ́. Gbìyànjú lẹ́ẹ̀kan sí i."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "Ọrọ̀ aṣínà"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "Fi akoonu naa han"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "A ko le ṣí ojú-ewé yẹn."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "Àwọn ìgbìyànjú pọ̀ jù. Dúró fún ìṣẹ́jú mélòó kan kí o sì tún gbìyànjú lẹ́ẹ̀kan sí i."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "Ọ̀rọ̀ aṣírí náà gbọ́dọ̀ gùn tó àárín lẹtà mẹ́rin sí igba (4 sí 200)."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "Jù"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "Pa"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "Tábì %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "Awọn ohun inú"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2031,10 @@ msgstr "Ṣàtúnṣe pẹ̀lú Sandwich Studio"
 msgid "Blank canvas"
 msgstr "Fọ́tò tí kò ní ohunkóhun lórí rẹ̀"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "Fò lọ sí apá tí ó ní àkóópọ̀"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "Ìgbòòrò wídìí (tablet width) gbọ́dọ̀ jẹ́ nọ́mbà pípé ti píhẹ̀sì láti 480 dé 2560."
@@ -1760,7 +2109,11 @@ msgid "Uploaded icons"
 msgstr "Àwọn àmì tó ti wọlé"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "Àmì"
 
@@ -2553,6 +2906,8 @@ msgstr "%s ni adirẹsi imeeli alabara mi"
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "Koodu"
 
@@ -3047,13 +3402,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Ṣatunṣe"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "Imeli"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "Adirẹsi imeeli"
 
@@ -3103,6 +3454,10 @@ msgstr "Ṣíṣe ààyè fún ipò àmì-ìṣòwò alátò gẹ́gẹ́ bí ti
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3480,7 @@ msgstr "Tẹ adirẹsi imeeli titun sii"
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "Àṣìṣe"
 
@@ -3723,6 +4079,7 @@ msgstr "Awon oja ti o wa ni isale ni a ti fi si ipo aabo nitori pe a akiyesi pe 
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4183,7 @@ msgstr "Fọ́ọ̀mù pínlì yìí ń béèrè fún ẹ̀yà PHP tó tuntun j�
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "Bẹẹkọ"
 
@@ -4811,6 +5169,13 @@ msgstr "Àwọn oníròyìn ayélujára (Facebook, Twitter, àti bẹ́ẹ̀ b�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5461,9 @@ msgstr "Àkókò tí a ṣe é"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "Àkọlé"
 
@@ -5171,6 +5539,8 @@ msgstr "Báwo ni o ṣe nífẹ̀ẹ́ %1$s títí di báyìí? Dán gbogbo àw�
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "Iru"
@@ -5286,6 +5656,7 @@ msgstr "Awọn olumulo"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "Iye"
@@ -5340,6 +5711,7 @@ msgstr "Wo awọn ẹya ti a san fun"
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "Ìkìlọ̀"
 
@@ -5666,6 +6038,7 @@ msgid "Optional"
 msgstr "Àṣ yàn fún ra rẹ"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "Eto"
 
@@ -5988,18 +6361,26 @@ msgstr "Kere gan-an"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "Kékeré"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "Àárín"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "Ńlá"
 
@@ -6012,7 +6393,9 @@ msgid "Huge"
 msgstr "Nla"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6324,16 +6707,9 @@ msgid "The trial could not be started."
 msgstr "A kò lè bẹ̀rẹ̀ àdánwò náà."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "Ẹ̀yà ara"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "Ti a fi kun"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "Ko si ninu"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6687,10 +7063,6 @@ msgstr "Adirẹsi ìwọlé"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "Orúkọ olùṣe"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "Ọrọ̀ aṣínà"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7081,15 +7453,62 @@ msgstr "Ìṣẹ̀dá sẹ́yìn bẹ̀rẹ̀. Ó ń tẹ̀ síwájú ní ẹ̀y
 msgid "Undo all conversions"
 msgstr "Pa gbogbo iyipada rẹ kuro"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "Ohun kan"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "Ṣíṣílẹ̀ nígbà tí ojúewé bá gbé sórí ayélujára"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "Akọle jẹ àkọlé kan"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "Jọ̀ọ́ sọ àkọlé náà di àkọlé ńlá nígbà tí àwọn ohun tí ó wà níbẹ̀ jẹ́ apá kan ojú-ewé náà, kí àwọn alábẹ̀wò lè fò láàárín wọn."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "Àkọlé %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "Ìbéèrè tàbí àkọlé apá"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "Àpótí tí ń gbòòrò sí i"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "Ohun kan nìkan ni ó sí ni ẹ̀ẹ̀kan"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "Fi aami si bi FAQ fun awọn ẹrọ iwadii"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "Ó fi data tí a ṣètò ti FAQ kún tí a kọ́ láti ara àwọn àkọlé (àwọn ìbéèrè) àti ọ̀rọ̀ wọn (àwọn ìdáhùn)."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "Ìkìlọ̀"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "Alaye"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "Àṣeyọrí"
 
@@ -7098,6 +7517,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "Awon ikilo ati asise ni a n fi to awon olumulo to n lo ero kika iboju leti lojukanna; a n ka awon akọsilẹ alaye ati ti asori nipa igba ti wọn ba pari ohun ti wọn n se."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "Fi àwòrán hàn"
 
@@ -7113,64 +7533,702 @@ msgstr "Àkọlé (aṣàyàn)"
 msgid "Write the message…"
 msgstr "Kọ ifiranṣẹ na…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "apakan — apakan akori kan"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "Àárín"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — kò sí ìtumọ̀"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "Àmì Ìdánimọ̀"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "àlàyé — àkóbá ìbẹ̀rẹ̀"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "Àwọ̀"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "àlàyé ìpínlẹ̀ – àfikún ìparọ̀"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "Àwọ̀ àfihàn kókó"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "nkan tí ó wà nínú ara rẹ̀ — àkóónú tí ó dúró fún ra rẹ̀"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "Kò sí ẹgbẹ́ kan"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "apakan — akoonu ti o jọmọ"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "Ipò"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "akọkọ — akọkọ akoonu (lẹẹkan fun oju-iwe kan)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "Àmì"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "nav — àwọn ìjápọ̀ ìwakọ̀"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "Kàlẹ́ndà ìpamọ́fún"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "Stack (flexbox, kọlọmọ)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "Iṣẹ"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "Ahọn (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "Adirẹsi ojú-ewé ìpamọ́"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "Giriidu"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "Fún àpẹẹrẹ %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "Ohun ti kalẹnda jẹ fún, tí àwọn olùkà ojú-ibò ń kà jáde tí wọ́n sì ǹ fi hàn lábẹ́ rẹ̀."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "Eyi kii ṣe adirẹsi oju-iwe ìpamọ fun %s, nitorina ko si ohun ti yoo han lori oju-iwe naa."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "Ṣe àyẹ̀wò kalẹ́ndà náàájẹ́lẹ́kọ̀ọ́"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "Àdírẹ́sì ìjápọ̀"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "Bọtìnì náà máa ń yọjú nígbà tí ó ní àmì àti àdírẹ́sì méjèèjì."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "Ṣíṣí ní taabu tuntun kan"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "Pe sí iṣẹ́"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "Àgbékalẹ̀"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "Àwọn bọ́tìnnì tó wà ní ìsàlẹ̀"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "Bọtìnì lẹ́gbẹ̀ẹ́ ọ̀rọ̀ náà"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "Àgbékalẹ̀"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "Bọtìnì àkọ́kọ́"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "Bọtini keji"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "Akọlé…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "Gbólọhùn kan lórí ìdí tí…"
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "Bọtìnì keji (aṣayan)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "Àyẹ̀wò"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "Àwọ̀ àmì ìmúṣẹ"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "Àwọn ìlà"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "Ahọ́n %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "Iṣẹ́ lọ́wọ́…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "Fi ila kun"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "Èdè"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "Ṣe àwárí fúnra rẹ̀"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "Kò sí àmì siṣẹ́"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "Oruko faili"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "A han loke koodu naa, fun apẹẹrẹ functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "Àwọn nọ́mbà ìlà"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "Bọtìnì ẹ̀dà kọ̀ọ̀tù"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "Fi àwọn ìlà gígùn wé ara wọn"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "Kọ tabi lẹ koodu…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "Ọ̀rọ̀"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "Àwọn kọlọmù"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "Kọlọmọ %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "Se àmì sí %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "Fi kọlọmọ kun"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "Àwọn Ìlà"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "Ọ̀wọ̀ %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "Fi ìlà kún un"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "Àkọlé (ohun tí a ń fi wé ara wọn)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "Iru sẹ́lì: %s. Yí padà"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "Ìpè tẹlifóònù"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "Ifiranṣẹ ọrọ"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "Awọn bọtini"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "Nọmba foonu, pẹlu koodu orilẹ-ede"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "Ọrọ bọtini"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "Yọ bọtìnì yii"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "Fi bọtini kun"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "Ifiranṣẹ WhatsApp lati bẹrẹ pẹlu (aṣayan)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "Bọtìnì olubasọrọ"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "Fi nọmba tẹlifoonu kan, adirẹsi imeeli kan tabi nọmba WhatsApp kun si apakan ẹgbẹ."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "Àkọlé méjì"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "Ìpele àkọlé"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "Lo H1 lẹẹkan pẹlu oju-iwe kọọkan, fun akọle akọkọ rẹ."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "Wiwo apá keji"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "Àwọ̀ ìjẹmí"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "Gradiẹnti"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "Akojọ"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "Fa abẹ́ rẹ"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "Apakan keji lori ila rẹ"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "Apá akọkọ"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "apakan keji"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "Kọ̀sọ́ ìkọ̀wé"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "Ìṣàlẹ̀ ìlà tó nipọn"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "Ẹ̀yìn-ilé"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "Ṣe àmì sí"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "Yọ àmì ìmọ́lẹ̀"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "Ọ̀rọ̀ àkọ́kọ́ nlá"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "Lẹta akọkọ ti o tobi"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "Fun lẹta akọkọ ninu apoti kan, yan aṣa \"Drop cap in a box\"."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "Lẹ́tà àkọ́kọ́ ńlá nínú àpótíì"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "Ọpa àmì ìdánimọ̀"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "Ọ̀rọ̀ ayọ̀ (igi ìforúkọsilẹ̀)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "Gbólóhùn àti fọ́ọ̀mù láti inú ìkọ̀wé náà, tí a gbé kalẹ̀ ní ẹ̀gbẹ́ kan pẹ̀lú ọ̀pá aláwọ̀ kan láti fà á sọ́dọ̀ ojú."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "fa ẹ̀kọ́"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "Àkójọ àwọn ẹ̀yà ara"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "Lori awọn foonu awọn ẹya ara ẹrọ ma n wa lori ara wọn nigbagbogbo."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "Àwọn ànímọ́"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "Ẹ̀ka %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "Ami ti ara ẹni"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "Ànímọ́…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "Ṣe àpèjúwe rẹ̀…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "Fi ẹ̀yà ara kún un"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Fi sori ẹrọ kí o sì mú Contact Form 7, WPForms, Gravity Forms tàbí Fluent Forms ṣiṣẹ́, lẹ́yìn náà yan ọ̀kan nínú àwọn fọ́ọ̀mù rẹ̀ níhìn-ín."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "Plọọgi fọọmu"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "Yan…"
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "Fọọmu"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "Yan fọọmu kan..."
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s ko ti ni fọọmu kankan rara"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "%s kò ṣiṣẹ́ lori aaye yii, nitorinaa a ko le fi fọọmu yii han."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "A ko le kó àwọn àkọsílẹ̀ fọ́ọ̀mù náà jáde."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "Àṣà fọ́ọ̀mù"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "Àwọn ààyè"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "Ti a kọ̀ si tẹlẹ"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "Ti kún"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "Abẹ́là"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "Gbòòrò bọtìnnì"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "Mu ọrọ naa mu"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "Gbogbo iwọn"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "Àwọn àwọ̀, àwọn fọ́ǹtì, ààyè àti àwọn igun wá láti apẹrẹ ojúsówọ̀ rẹ àti àwọn ètò apẹrẹ àkọsílẹ̀ yìí."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "Fi fọọmu han lati inu fọọmu plugini rẹ, ti a ṣe ọṣọ lati ba aaye rẹ mu."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "Ṣe o nilo fọọmu plugin kan? Contact Form 7 jẹ ọfẹ."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "Gbólóhùn Ìtumọ Ọ̀rọ̀"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "Tito lẹ́sẹẹsẹ láti A dé Z"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "Ojú-ewé náà fi àwọn ọ̀rọ̀ hàn ní ìtòsí àtẹ́lẹsẹ̀ àlfábẹ́tì; níhìn-ín wọ́n dúró sí ìtòsí tí o kọ wọ́n sí."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "Fi atọka A–Z hàn"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "Sopọ awọn ọrọ ti a lo ni ibi miiran lori oju-iwe yii"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "Àkọkọ ìgbà tí ìgbékalẹ̀ kọ̀ọ̀kan bá farahàn nínú ọ̀rọ̀ ojú-ewé náà, ó ní ìsopọ̀ mọ́ ìtumọ̀ rẹ̀. A fi àwọn àkọlé, bọ́tìnì, kódù, àti àwọn ìsopọ̀ tó wà tẹ́lẹ̀ sílẹ̀."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "Awọn ipo ati ofin"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "Àkókò %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "Akoko"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "Ohun ti o tumọ si…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "Fi ọrọ kun un"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "Àkójọ àwọn àwòrán kékeré"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "Ọkan lẹhin ekeji"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "Ẹgbẹ́-kẹgbẹ́"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "Atọka ohun kan…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "Apoti alaye"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "Tab àìyẹ èrò yínlátiúé ìkàwé náà:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "Ọ̀rọ̀ àjápọ̀"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "Sọ ibi tí ìjápọ̀ náà ń lọ (\"Wo àwọn owó wa\"), kì í ṣe \"Ka sí i\"."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "Gbolohun kan tabi meji…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "apakan — apakan akori kan"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — kò sí ìtumọ̀"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "àlàyé — àkóbá ìbẹ̀rẹ̀"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "àlàyé ìpínlẹ̀ – àfikún ìparọ̀"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "nkan tí ó wà nínú ara rẹ̀ — àkóónú tí ó dúró fún ra rẹ̀"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "apakan — akoonu ti o jọmọ"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "akọkọ — akọkọ akoonu (lẹẹkan fun oju-iwe kan)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "nav — àwọn ìjápọ̀ ìwakọ̀"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "Stack (flexbox, kọlọmọ)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "Ahọn (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "Giriidu"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "Gbígbà sí àtúnṣe: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "Tẹ awọn ọmọ bii"
 
@@ -7178,7 +8236,7 @@ msgstr "Tẹ awọn ọmọ bii"
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7186,70 +8244,50 @@ msgstr "Tẹ awọn ọmọ bii"
 msgid "Inherited (%s)"
 msgstr "Wọn ti jogun (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "Flexbox"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "Awọn bulọọki ti a kojọpọ"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "Àwọn kọlọmù"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "Fa si inu kanfasi naa, tabi tẹ́"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "Ìgbòòrò àkóónú"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "Fífín (ìbú ohun tí ó wà nínú akori náà)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "Gbogbo iwọn"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "Giga tó kéré jù"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "Aami HTML"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "So pọ̀ọ̀kùn"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "Ṣe gbòǹgbò àkójọpọ̀ yìí ní ìjápọ̀ sí"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "Ọ̀rọ̀ ìjápọ̀ fún àwọn olùkà ibrènsi"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "Ohun ti ọna asọfun n se, fun awọn alejò ti ko le ri bulọọki na."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "Ṣíṣí ní taabu tuntun kan"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "Má ṣe fi àwọn àpèjọ (links) tàbí àwọn bọ́tìnnì sí inú àpèjọ tí a ti sopọ̀ mọ́: àpèjọ kan tó wà nínú àpèjọ míì kì í ṣiṣẹ́ nínú àwọn wẹ́bù àṣàwádìí (browsers)."
 
@@ -7281,14 +8319,143 @@ msgstr "+ Ìlà"
 msgid "− Row"
 msgstr "− Àtẹ"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "Gbọ̀dọ̀"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "Fi àwọn kọ́ọ̀dìnètì tàbí ìjápọ̀ OpenStreetMap sílẹ̀"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "Lori openstreetmap.org, wa ibi naa, lẹhinna da adirẹsi naa kọja lati inu Pẹpẹ aṣàwákiri, tabi tẹ-ọtun sori maapu naa ki o yan \"Fi adirẹsi han\"."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "Latitude"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "Ògùgùn-ìlà-oòrùn"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "Sun-un"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "Orúkọ ibẹ̀ náà"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "Wọn fi hàn lábẹ́ mápìì náà, a sì ka ẹ̀rọ amóhùn-máwòrán náà sókè."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "Fi awọn asopọ sílẹ̀ (fún àpẹrẹ 51.5074, -0.1278) tàbí àsopọ̀ OpenStreetMap kan."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "Àwọn kọ́ọ̀dìnsì tàbí ìjápọ̀"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "Ṣe àkọ́wò apẹrẹ maapu náà"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "Ṣayẹwo %1$s, %2$s lori OpenStreetMap"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "Olùkọ̀wé"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "Ọjọ́ ìtẹ̀jáde"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "Ọjọ́ tí a ṣe àtúnṣe rẹ̀ (nígbà tí ó bá yà tọ̀rọ̀)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "Àwọn Ẹ̀ka"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "Àwọn tágì"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "Akoko kika"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "Iye àwọn àlàyé"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "Àwọn kúlẹ̀kúlẹ̀ láti fi hàn"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "Yan o kere ju alaye kan lati fi han."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "Bari ilọsiwaju"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "O pọ jùlọ"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "100 fún ìpín ọgọ́rùn-ún; nọ́mbà mìkàn fún ìka, bíi 8 nínú 10."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "Fi ogorun-un han"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "A ti ṣètò ọ̀rọ̀ aṣínà kan. Àwọn alábàbẹ́wò máa ń rí fọ́ọ̀mù ọ̀rọ̀ aṣínà dípò àkóbá yìí títí tí wọ́n fi máa tẹ́ ẹ sí abẹ́."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "Àכו́ ìg̀bàkúrò kò tíì še, nítorí náà àwọn àbẹ̀wò kò ní rí ǹkan kan níbi yìí."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "Ọrọ igbaniwọle titun"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "Ṣe àfikún ọ̀rọ̀ aṣírí náà"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "O ti ṣeto ọrọ igbaniwọle. Fi oju-iwe naa pamọ lati lo; awọn alejo ti o ti ṣii rẹ yoo nilo tuntun naa."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Tí A bí Page Builder Sandwich bá ti pa, a ó máa fi àkóópọ̀ yìí hàn sí gbogbo ènìyàn."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "Firanṣẹ loke fọọmu ọrọ igbaniوەle (ti o ba fẹ)"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "Yipada"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "Àmì"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7298,30 +8465,698 @@ msgstr "Àwọn olùkàwé ojú-ìwé ló ń kọ́ ọ jáde, a sì ń fi hàn 
 msgid "Show label"
 msgstr "Ṣe afihan àmì"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "Adirẹsi wẹbu tabi ọrọ"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "Koodu QR"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "Àpèjúwe fún àwọn olùkà kọ̀ǹpútà fún àwọn afọ̀jú"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "Fi si silẹ lati lo \"Koodu QR fun\" ati ọrọ naa."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "Tẹ adirẹsi wẹbu kan, ìjápọ̀ foonu kan (tel:) tàbí èyíkéyìí ọ̀rọ̀."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "Èyí gùn jù fún kòdù QR. Kúrú rẹ̀."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "Fi àkọlé kún un"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "Pẹpẹ ìlọsíwájú kika"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "Etí fèdirán náà"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "Apẹrẹ"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "Isale"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "Awon eniyan le rii ni isale ferese bi awon alejo se n yi oju-iwe na kiri."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "Awon nkan ti n han ni oke ferese bi awon alejo se n yi lo si isale."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "Èló ni"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "Nipa ti"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "Àwọn ẹ̀ka tàbí àwọn àmì"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "Nígbà tí ohunkohun kò bá ní í ṣe pẹ̀lú ara wọn, fi èyí tó tuntun jù lọ hàn dípò rẹ̀"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "Orí-ọ̀rọ̀"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "Fi o sọ di òfo fún \"Àwọn ìfiránṣẹ́ tó ní í ṣe pẹ̀lú rẹ̀\"."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "Fi àwòrán àkọkọ hàn"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "Fi ọjọ han"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "Fi àkópọ̀ hàn"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "Kò sí àwọn àkọsílẹ̀ tó pín àwọn ẹ̀ka tàbí àmì àkọsílẹ̀ yìí ní báyìí. Nígbà tí àwọn kan bá wà, wọn yóò hàn níhìn-ín."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "Apoti agbède"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "Pẹlẹẹdẹ ita"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "Iwọn"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "Yiyọ wọle láti"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "Ìbẹ̀rẹ̀ ni apá ibi tí kika ti bẹ̀rẹ̀: apá òsì ní èdè Gẹ̀ẹ́sì, apá ọ̀tún ní èdè Lárúbáwá."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "Pa nigbati a tẹ oju-iwe ti o wa lẹhin"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "Àkọlé fèrèsé náà"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "Àmì ìṣàyẹ̀wò"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "Gbọngan"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "Gige"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "Àìpẹ"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "Àfẹ̀fẹ̀múlẹ̀"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "Fà á sí ààyè ayò"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "Àwọ̀ àmì kékeré"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "Bakanna bi oro naa"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "Akọkọ akọsilẹ"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "Ẹya keji"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "Àìṣò tàbí ìyàtọ̀ àwọn àwọ̀ ojú-iṣẹ́"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "Tọ́ àwọn àkọlé sẹ́sẹ́ lẹ́sẹ̀sẹ́ lórí ojú ìwé náà: àkọlé kan tí ó wà ní ìpele kan ní ìsàlẹ̀ apá kan tí ó wà nínú rẹ̀."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "Yan àami"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "Lo aami aiyipada"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "Yan aami kan"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "Gbe e soke"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "Gbe e kalẹ"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "Fi akọle han fun iru kọọkan"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "Kò tíì sí ohun tí a té jáde nínú àwọn irú tí o yan."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "Àwọn Ìjápọ̀"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "Ọna asopọ %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "Nẹ́twọ̀kì"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "Adirẹsi profaili kan, mailto:you@example.com tabi tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "Orúkọ tí a kà sí àwọn olùkà ojú-ìwé fún àwọn afọ̀jú"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "Àwọn àmì mìíràn"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "Fi ọna asopọ kun"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "Wo"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "Àwòrán Ìrísí"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "Àwọn àmì nìkan"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "Apẹẹrẹ"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "Onigun merin ti o ni eti ti o ro"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "Square"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "Ṣí àwọn mọ̀ọ̀kàn àkọsílẹ̀ sí tàbù tuntun kan"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "Ìwọ̀n ìrààwọ̀"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "Ìwọ̀n"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "Iye awon irawo"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "Fi nọ́mbà náà hàn"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "Àwọn ìgbésẹ̀"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "Isalẹ ojiji peji náà"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "Ẹgbẹ́ pẹ̀lú ẹgbẹ́ (ó n ṣe àkójọ lórí fóònù)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "Àwọ̀ nọ́mbà"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "Àwọn ìgbésẹ̀ náà"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "Ìgbésẹ̀ %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "Ìgbésẹ̀…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "Ohun tí a lè ṣe..."
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "Fi igbesẹ kun"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "Tábì"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "Fi awọn akọle kun oju-iwe naa, wọn si yoo wa ni atọju nibi."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "Atokọ awọn akọle"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "Lati ipele ori"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "Si ipele akọlé"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "Ti a ka nọmba rẹ"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "A lè kó jọ"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "Bẹrẹ pẹ̀lú wípé ó di pọ̀"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "Se apakan ti a n ka lowo"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "Àwọn tàbù"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "Orúkọ fún àwọn olùkà Ẹ̀rọ Ìfihàn"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "O pọn dandan kọ. Ó n sọ ohun ti awọn taabu jẹ nipa, fún apẹẹrẹ \"Awọn ètò\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "Ṣí nígbà tí ojúewé bá ń kó"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "Awọn taabu ni ẹgbẹ"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "Fi taabu kun"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "Ẹ̀rí Ìjẹ́rìísí"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "Rọ́pọ̀ fọ́tò"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "Yan fọto"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "Yọ fọ́tò náà"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "Àpèjúwe fọ́tò"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "Fi sílẹ̀ ní ṣofo nígbà tí fọ́tò náà bá fi ẹnì tí a darúkọ rẹ̀ lẹ́gbẹ̀ẹ́ rẹ̀ hàn nìkan."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "Iwọn ìrààwọ̀ (0 = kò sí)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "Orukọ labẹ agbasọ ọrọ na"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "Fọ́tò lẹ́gbẹ̀ẹ́ ọ̀rọ̀ náà"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "Ohun tí oníbàárà sọ…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "Ipò tàbí ilé-iṣẹ́"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "Àlàyé Ọ̀rọ̀"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "Ọrọ ìtọ́sọ́nà ìrànlọ́wọ́"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "Jẹ́ kí ó kúrú: gbólóhùn kan tàbí méjì. Àwọn olùkàwé ojú-ibò máa ń kà á pẹ̀lú ọ̀rọ̀ tí ó ń ṣàlàyé rẹ̀."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "Fi hàn ọ"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "Loke"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "Isale"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "Ọ̀rọ̀ tàbí gbólóhùn"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "Lo siṣẹ"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "Ojú-iwe aṣojútùú"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "Profaifì tani"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "Olùkọ̀wọ́fééṣì náà"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "Fi aworan profaილები han"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "Fi ìtàn igbesi aye rẹ han"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "Fi awọn ọna aṣojulọ si awọn atẹ̀jade ati oju opo wẹẹbu hàn"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "Àkọsílẹ olùkọwé"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "Yan profaイル to fihan."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "Nọ́mbà WhatsApp, pẹ̀lú koodu orílẹ̀-èdè"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "Fún àpẹẹrẹ +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "Ìfiránṣẹ́ láti bẹ̀rẹ̀ sí í lo (aṣàyàn)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "Fi ọrọ naa han lẹgbẹẹ àmì-ìrántí náà"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "Igun"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "Isale (ọtún ni Gẹẹsi)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "Isale bẹrẹ (osì ni Gẹ̀ẹ́sì)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "Fi nọmba WhatsApp rẹ kun inu apakan ẹgbẹ. Titi di igba naa, bọtini naa ko ni han lori oju-iwe naa."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "Lori oju-iwe naa, bọtọni yii n léfòó ni igun isalẹ ti iboju naa."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "Àmì kékeré fún ìlà kíkúrú"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "Lo lẹta, nọmba, àmì iyọkuro ati àmì abẹlẹ nikan."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "Orúkọ ànímọ́"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "Fi àfikún kún un"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "Koodu Kúrúsì"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "Àwọn ànímọ́ míràn"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "Yan ami aami kukuru kan ninu awọn eto bulọọki naa."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "Galaari"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "Iwọn àwòrán"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "Àwòrán kékeré"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "Ìwọ̀n tó kún"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "So si"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "Ojú ìwé ìfikún"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "Fáìlì média"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "Ohùn"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "Fidio"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "Adirẹsi fáìlì"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "Yii"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "Ṣe afihan laifọwọyi"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "Aworan àmúlò"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "Àkójọ àwọn orin"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "Àwọn ID media, tí a pín pẹ̀lú àwọn ìsòroro"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "Fi atokọ awọn orin hàn"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "Fi sílẹ"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "Adirẹsi lati fi sinu rẹ"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "Iwọn ti o pọ julọ"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "Àkọlé ìwé"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "HTML àwòrán àti àkọlé rẹ̀"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "Ìbú"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "Ìmọ̀ràn: Ìdènà Fọ́ọ̀mù fi fọ́ọ̀mù yìí hàn pẹ̀lú ìrísí tí ó bá ojula rẹ mu."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "Fi akọle fọọmu han"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "Fi apejuwe fọọmu han"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "Fi sílẹ̀ láìṣe àtúnṣe ojúewé náà"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7342,123 +9177,108 @@ msgstr "Yan fáìlì"
 msgid "— Default —"
 msgstr "— Aiyipada —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "Ìlànà aṣọ tó ga julọ"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "CSS Abẹnu"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "Àwọn ìkéde CSS, fún àpẹrẹ: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "Àwọn ipa (àwọn kíláìsì ìṣẹ̀dá àtijọ́)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "Àwọn orúkọ ipa tí a pín nípa lílo àlàfo tí ó wá láti àwọn ẹ̀dà àtijọ́, fún àpẹẹrẹ: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "Ahọnni"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "Ìbú"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "Fífẹ̀ kíkún, a pa àwọn àkóónú mọ́ láàárín"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "Àdírẹ́sì ìjápọ̀"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "Asiko idapo awon oju-opona"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "Àgbékalẹ̀"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "Apa osi"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "Àárín"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "Ọtún"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "Ọrọ bọtini"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "Fi ọrọ kun…"
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "Ipò"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "Lori laini tirẹ"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "Nínú ìlà náà, lẹ́gbẹ̀ẹ́ àwọn ohun àfikún yòókù"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "Fífúnni lọ́fẹ̀ẹ́ (ojú ìwé tuntun ní ìpele tó ga jù lọ lórí ojú ìwé náà)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "Àmìwò ẹ̀rọ alábòójútó tí ó ṣeé wọlé"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "Fi sílẹ̀ láìsí nǹkankan fún àmì ìṣọ́ṣọ́."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "Yan àmì kan ninu awọn eto bulọọki."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "Orúkọ ètò tuntun"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "Fún àpẹẹrẹ: àkọlé tàbí ọrọ̀"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "Fi ètò kun"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "Wíjẹ̀tì"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "Yan wiṣeti kan"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "Agbegbe Wigi"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "Yan agbegbe fídíìítì kan"
 
@@ -7481,6 +9301,140 @@ msgstr "Èké yìí ń tún iwọn ara rẹ̀ ṣe lẹ́yìn tí ó bá gbé w�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "Yiyipada Iṣeto"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "Widget yii kii ṣe apejuwe awọn eto rẹ, nitorina a ṣatunkọ wọn gẹgẹbi oruko ati awọn orisii iye."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "Àwọn Ìṣòro"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "Ṣayẹwo"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "Fi àwòrán hàn"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "Lo awọ akori ti o le kika daradara"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "Sọ ọ di H%d"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "Àwọn àpèjúwe àfidípò"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "Fipamọ ọrọ alt"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "Àwòrán yìí jẹ́ ohun ọ̀ṣọ́ ni"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "Níbẹ̀ wò lọ́wọ́ lọ́wọ́…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "A kò rí ìṣòro ìwọlé kankan lórí ojú ewé yìí."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "Ìṣòro %d"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "Ohun %d lati ṣayẹwo"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "Ṣayẹwo lẹẹkan si"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "Ayẹwo aládàáṣiṣẹ́ kan ń rí ọ̀pọ̀lọpọ̀ ìṣòro ṣùgbọ́n kì í ṣe gbogbo wọn. Gbìyànjú ojú ewé náà pẹ̀lú titẹ bọ́tìnnì nìkan àti pẹ̀lú olùkà ojú-iboju pẹ̀lú."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "Ìyàtọ̀ àwọ̀ ọ̀rọ̀ jẹ́ %1$s:1; ó nílò ó kéré tán %2$s:1 láti jẹ́ kí ó ṣe é kà."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "tẹ ibi,ibi,ka siwaju,siwaju,ọna asopọ,ọna asopọ yii,kọ diẹ sii,lo"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "Ọna asopọ kan ko ni ọrọ kankan, nitorina oluka iboju n kede “link” nikan. Fi ọrọ tabi aami kun."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "Ọ̀rọ̀ ìjápọ̀ “%s” kò sọ ibi tí ó ń lọ. Dípò bẹ́ẹ̀, ṣe àpèjúwe ibi tí ó ń lọ."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "Ohun kan ni tabindex ti o dara, eyiti o yipada aṣẹ bọtini itẹwe kuro ninu aṣẹ kika. Lo 0 tabi yọ kuro."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "A kò lè dé ohun tí a lè tẹ pẹ̀lú bọ́tìnnì tẹ́pù. Lo bọ́tìnnì tàbí àjápọ̀ gidi kan."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "Foonu tí a fi sínú kò ní àkọlé, nítorí náà olùkà aṣọ-ojú kò lè sọ ohun tí ó jẹ́."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "Ko si àmì lórí pápá fọ́ọ̀mù kan, nítorí náà a kò mọ ète rẹ̀."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "Akọlé yìí ṣofo. Àwọn olùmúlò olùkà ojú-ibẹ̀ ń lọ kiri nípa lílo àwọn àkọlé; yọ ọ́ kúrò tàbí fi ọ̀rọ̀ kún un."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "Àkọlé ojú-ewé náà jẹ́ H1 tẹ́lẹ̀; lo H2 fún ìpele òkè jù lọ ti àkóópọ̀ náà."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "H%1$d yii fo ipele kan; eyi ti o wa ṣaju rẹ jẹ H%2$d. Ṣe e ni H%3$d kan."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "Àwòrán yìí kò ní ọ̀rọ̀ àlàyé yiyan. Ṣàlàyé rẹ̀, tàbí kí o sàmì sí i gẹ́gẹ́ bí ohun ọ̀ṣọ́ tí kò bá fi bẹ́ẹ̀ ṣe tàbí kò fi kún ohunkóhun."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "Pa pátákì náà"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7555,18 +9509,6 @@ msgstr "Àṣà"
 msgid "Width / height"
 msgstr "Ìbú / giga"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "Apẹrẹ"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "Isale"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7579,20 +9521,6 @@ msgstr "Àwòrán tí a jogún — rọ́pò"
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "Yọ aworan bi"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "Ipò"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "Iwọn"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7658,22 +9586,6 @@ msgstr "Ọkọ̀ọ̀kan ní ọ̀tọ̀ọ̀tọ̀"
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "Ẹ̀gbẹ́"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "Àwòrán Ìrísí"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "Àwọ̀"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7923,14 +9835,6 @@ msgstr "%1$s (%2$d ti a ṣeto)"
 msgid "Replace icon"
 msgstr "Rọ́pọ̀ àmì ìdánimọ̀"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "Yan àami"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "Yan aami kan"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "Ko si aami ti o baamu."
@@ -7942,10 +9846,6 @@ msgstr "Deede"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "Àwọn àmì ọjà"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "Ti a kọ̀ si tẹlẹ"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8074,21 +9974,9 @@ msgstr "Àwọ̀ ọ̀rọ̀"
 msgid "Cursor"
 msgstr "Atọka bọtini"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "Àfẹ̀fẹ̀múlẹ̀"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "Olùtọ́ka"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "Ọ̀rọ̀"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8246,10 +10134,6 @@ msgstr "Orúkọ agbègbè"
 msgid "Named areas"
 msgstr "Àwọn agbègbè tí a fún ní orúkọ"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "Àwọn Ìlà"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "Giga"
@@ -8367,10 +10251,6 @@ msgstr "Ṣe ìpínlẹ̀"
 msgid "Decoration"
 msgstr "Ìṣọ́ṣì"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "Fa abẹ́ rẹ"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "Langooke Oke"
@@ -8453,19 +10333,9 @@ msgstr "Kóníìkì"
 msgid "Angle (degrees)"
 msgstr "Igun (ìwọn)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "Apẹẹrẹ"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "Elipiisi"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "Gbọngan"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8501,10 +10371,6 @@ msgstr "Ìkún lẹ́yìn (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "Tàǹtì (lo àwọ̀ tí a lè rígbà)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "Onigun merin ti o ni eti ti o ro"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "Blob"
@@ -8521,10 +10387,6 @@ msgstr "Triangle"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "Diamond"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "Fà á sí ààyè ayò"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9402,11 +11264,6 @@ msgstr "Ko kuro"
 msgid "The change could not be saved."
 msgstr "A ko le fi iyipada naa pamọ."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "Pa pátákì náà"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "Àkọ́ṣẹ́ńsì kókó"
@@ -9463,9 +11320,49 @@ msgstr "Awọn kilasi, àmì, ipò òkùnkùn, ohun elo aami ati awọn fọọm
 msgid "Open the Site Editor’s styles"
 msgstr "Ṣí àwọn àṣà Ṣátì Ẹ̀dítọ̀ (Site Editor)"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "Orí-ọ̀rọ̀"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "Ori akọle kan pẹlu giga laini to sunmọ diẹ sii, ti a ṣe lọṣọ pẹlu taabu 𝖲𝗍𝗒𝗅𝖾."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "Ẹka ọrọ kan, ti a fi taabu Ara ṣe àṣà."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "Àwòrán"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "Awọn aworan pẹlu awọn igun ti o yipo, ti a fi aṣa pẹlu taabu Aṣa."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "Fidio kan lati inú Ilé Òkè Ẹ̀rọ Ìgbóhùnsáfẹ́fẹ́, tí a ṣe lọ́sọ̀ọ̀gbọ́ pẹ̀lú tàbù Style."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "Ààyè ìfàsí"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "Ààyè tí ó ṣófo láàárín àwọn bálọ̀kì; ṣètìgbò gíga tí ó yàtọ̀ fún ìwọ̀n iboju kọ̀ọ̀kan ní taabu Àṣà."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "Pínpín"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "Ìlà pẹlẹbẹ kan laarin awọn apakan, ti a ṣe pẹlu taabu Ìfarahan."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "Akoonu lati aaye miiran (fideo, positi, maapu) nipa lilo adirẹsi rẹ."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "Àwọn àwòrán púpọ̀ ní inú gírìdì kan, tí a ṣe lọ́sọ̀ọ́ pẹ̀lú tàbù Style."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9499,10 +11396,6 @@ msgstr "Atọka"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "Àwọnéǹtìkéré"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "Awọn bọtini"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9547,10 +11440,6 @@ msgstr "Fi awọn ede ti a ko tumọ oju-iwe yii si pamọ"
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "Ko sori si isale"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "Ẹ̀yìn-ilé"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9609,11 +11498,6 @@ msgstr "Àwọn ètò ìdènà"
 #, js-format
 msgid "Add block: %s"
 msgstr "Fi bulọọki kun: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(kò sí àkọlé)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9689,10 +11573,6 @@ msgstr "Pa ipo ailewu rẹ kuro"
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "Tan ipo aabo (awọn afikun miiran pa, fun ọ, ni Studio nikan)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "Ti tẹjade"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10029,11 +11909,6 @@ msgstr "Oruko olùkọ́"
 msgid "Visual editor name"
 msgstr "Orúkọ olóòtú ojú-iṣẹ́ awòrán"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "Olùkọ̀wé"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10104,10 +11979,6 @@ msgstr[0] "A ti ṣe é: Oju-iwe %d ti tunṣe."
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "Rọ́pọ̀"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "Àwọn Ìjápọ̀"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10216,10 +12087,6 @@ msgstr "Jẹ́ kí oníbàárà sọ̀rọ̀ lórí ojú ewé yìí"
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "Ẹnikẹni tí ó bá ní ọna aṣojútó yẹn le ri ojúewé yìí, kódà kí a tó gbe e jáde, kí wọn sì sọ àlàyé sílẹ̀. Kò nílò àkọọ́lẹ̀ kankan."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "Wọn ti daakọ rẹ̀"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10455,6 +12322,52 @@ msgstr "Da awọn aworan naa kọ sinu ile-ikawe media aaye yii"
 msgid "Show what will happen"
 msgstr "Fi ohun tí yóò ṣẹlẹ hàn"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "Apakan akọọdun"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "Apá kan ti akọọdọni: akọle kan ti o ṣi akoonu rẹ silẹ."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "Akọọdọni"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "Awọn ibi aṣayan tabi awọn apakan ti o ṣii ti o si n pa. Ni aṣayan ni ẹẹkanṣoṣo, ati ni aṣayan bi FAQ fun awọn ẹ̀rọ àwárí."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "ákọ̀ọ̀dù"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "Ibeere ati Idahun"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "yi pada"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "fún pọ̀ kúrò"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "àwọn kúlẹ̀kúlẹ̀"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10471,6 +12384,7 @@ msgid "notice"
 msgstr "àkíyèsí"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "ifiranṣẹ"
@@ -10485,6 +12399,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "Ìkìlọ̀"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "Àmì Ìdánimọ̀"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "Ìṣàmì kúkúrú bíi Titun, Ìtàgùn tàbí Ìye tó dára jù."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "àlámọ̀"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "àmì"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "fọ́nrán"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "tuntun"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "Kalẹnda ìṣeàyè"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "Kalẹnda ìṣètò ti Calendly tàbí Cal.com, tí a kún nìkan nígbà tí alábẹwò bá béèrè fún un."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "ìwé ìpamọ́"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "calendly"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "pàdé"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "ṣètò ẹnà"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10496,6 +12475,7 @@ msgid "A link styled as a button."
 msgstr "Ọna aṣopọ kan tí a ṣe bí bọtìnì."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "bọtìnì"
@@ -10509,6 +12489,98 @@ msgstr "ọna asopọ"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "pè láti ṣe ohun kan"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "Pe síṣẹ́"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "Akọlé kan, gbolohun kan ati bọtini kan tabi meji ti o beere lọwọ alejo lati ṣe igbese kan."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "Àpẹẹrẹ"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "Báàná"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "Forukọsilẹ"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "Àyẹ̀wò"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "Àtòjọ àwọn iṣẹ́, èyí tí a fi àmì sí bí ó ti parí tàbí tí ó ṣì kù, nínú àwọn ọ̀rọ̀ fún àwọn olùkàwé ojú-ibò gẹ́gẹ́ bí ó ti wà pẹ̀lú àmì ìṣàyẹ̀wò."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "lati ṣe"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "àwọn iṣẹ́"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "àmì àgbéyẹ̀wò"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "tò oju opo"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "Koodu"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "Àtòjọ kóòdù pẹ̀lú ìṣàfihàn ìlànà kòòdù, nọ́mbà ìlà àti bọ́tìnnì àkàwé. Ó máa ń wà ní mímọ̀ kíka bí wọ́n bá pa afikún náà tì."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "koodu"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "àkọsílẹ̀ àmì ọ̀rọ̀"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "fihan mọlẹ"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "apakan kékeré"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "ètò ìṣètò kọmpútà"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10532,6 +12604,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "èdè ojú-iṣẹ́"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "Tabili afiwe"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "Awọn eto tabi awọn ọja ni egbé ara wọn, pẹlu awọn aami bẹẹni ati bẹẹkọ ti awọn oluka iboju ka gẹgẹ bi awọn ọrọ."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "fiwe ra"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "Iye owó"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "àwọn ètò ìwọ̀n"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "tábìlì"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "àwọn ẹ̀yà ra"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "Bọtìnì ìwọ̀ntúnwọ̀nsì olùkan si"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "Bọtìnì láti pè, fi imeeli ránṣẹ́, fi ìkọ̀wé ránṣẹ́ tàbí fi ọ̀rọ̀ ránṣẹ́ sí ọ lórí WhatsApp."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "Kan si"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "pepe"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "foonu"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "imeeli"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "WhatsApp"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "sms"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10549,11 +12699,13 @@ msgid "container"
 msgstr "apá kan"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "àpótí"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10570,6 +12722,52 @@ msgstr "flexbox"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "àwọn Òpó"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "Orí méjìí"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "Orí kan tí ó pín sí apá méjì, apá kejì ni a fi àwọ̀, gíràdìéntì, ìlà ìta, tàbí ìlà abẹ́ ṣe lọ́ṣọ̀ọ́."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "àkọlé"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "àkọlé"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "gíràdìéntì"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "Àkójọ àwọn ẹ̀yà ara"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "Àwọn ohun ìní tó wà nínú gírìdì, olúkúlùkù ní àmì ìdánimọ̀ kan, àkọlé kan, àti àpèjúwe kúkúrú kan."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "Àwọn àǹfààní"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "àwọn iṣẹ́"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10613,6 +12811,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "ọ̀rọ̀"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "Fọọmu"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "Ó fi fọ́ọ̀mù hàn láti Contact Form 7, WPForms, Gravity Forms tàbí Fluent Forms, tí a ṣe lọ́sọ̀ọ̀sọ́ láti bá ojúskùn rẹ mu."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "fọ́ọ̀mù"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "Fọọmu Ìbánisọ̀rọ̀ 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "Àkójọ àwọn Ọ̀rọ̀"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "Awọn ọrọ ati awọn ìtumọ̀ wọn, ti a ṣeto láti A sí Z, olúkúlùkù pẹ̀lú ọ̀nà-èsopọ̀ tirẹ̀. Le sopọ̀ ìdarúkọ àkọ́kọ́ ti ọ̀rọ̀ kọ̀ọ̀kan lori ojú-ewé naa sí ìtumọ̀ rẹ̀."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "awọn aami asopọ"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "àwọn ìtumọ̀"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "akojọ àwọn ọ̀rọ̀"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "Àkójọ àwọn àwòrán kékeré"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "Àtòjọ kan níbi tí ìlà kọ̀ọ̀kan ti bẹ̀rẹ̀ pẹ̀lú àmì kan: àmì ààyè, àmì ọfà, tàbí àmì èyíkéyìí láti inú ilé kíkà wẹ́bù náà."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "àwọn àmì ìtọ́kasí"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "àwọn àmì kékeré"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10633,6 +12911,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "Àpótí ìsọ̀wọ́nrín"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "Àwọn àmì, àkọlé kúkúrú, gbólóhùn kan tàbí méjì àti àfikún àsopọ̀: fún àwọn iṣẹ́, àǹfààní tàbí àwọn kúlẹ̀kúlẹ̀ ìkànnì."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "ẹ̀ya ara"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "iṣẹ́ Ìránṣẹ́"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "Káàdì"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10652,6 +12955,204 @@ msgstr "Ìtumọ̀"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "ọ̀pọ̀ èdè"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "Ṣe àtọka orúkọ"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "Maapu ibi kan lati OpenStreetMap: ko si bọtini, ati pe ko si ohun ti n gba lati OpenStreetMap titi ti alejo yoo fi beere fun maapu naa."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "àwòrán ilẹ̀"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "ibi"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "adirẹẹsi"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "Modali"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "Bọtini kan ti o ṣii ferese kan lori oju-iwe naa, pẹlu eyikeyi awọn bulọọki inu rẹ."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "modal"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "agogo afoju"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "agbohùn apá kan"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "ìjíròrò"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "Panẹli ti o wa ni ita"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "Bọtìnì kan tí ó ń fa pálììsì kan wọlé láti ẹ̀gbẹ́ fèrèsé náà, pẹ̀lú èyíkéyìí nínú àwọn blọ́kì tí ó wà níbẹ̀."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "kọja oju-iwe"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "akọọ̀gbẹ́"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "apadi ẹgbẹ"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "p̣ánẹ́lì"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "àkójọ aṣàyàn"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "Àwọn alaye ìfikún"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "Olùkọ̀wẹ́ àpilẹ̀kọ náà, àwọn ọjọ́ oṣù, àwọn ẹ̀ka, àwọn àmì, àkókò kíkà àti iye àwọn àlàyé."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "onkọwe"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "ọjọ oṣù"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "àkókò kíkà"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "fọtò meta"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "oruko onkowe"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "Ọ̀pá ìṣẹ̀lẹ̀"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "Fìtítò tó ní àmì tó ń fi bí oh kan ti lọ tó hàn, bí ìmọ̀ tàbí góńgọ̀ kan."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "ilọsiwaju"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "pẹpẹ"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "Ọgbọ́n"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "fojuri"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "Ohun tí a dáàbò bo pẹ̀lú ọ̀rọ̀ aṣínírí"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "O ni awọn àdìbọ̀ nìkan ti awọn alábàdéwò ti o ni ọrọigbaniwọle le rii. Titi ti wọn yoo fi tẹ sii, akoonu na ko si ninu oju-iwe naa rara."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "ọrọ igbaniwọle"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "ti a daabobo"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "ikọ agbẹnusọ"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "tiipa"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "àwọn ọmọ ẹgbẹ"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10677,6 +13178,86 @@ msgstr "fẹ́lẹ́fẹ́"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "Ètò àwọ̀"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "Koodu QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "Koodu QR kan fun adirẹsi wẹbu tabi eyikeyi ọrọ, ti a fa sori aaye tirẹ (ko si iṣẹ QR ti a lo)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "koodu QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "koodu qr"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "koodu pẹpẹ"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "Ṣàyẹ̀wò"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "Pẹpẹ ilọsiwaju kika"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "Pẹpẹ tinrin kan ni egbé ferese naa ti o n kun bi awọn alejo ṣe n yioju nipasẹ oju-iwe naa."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "kika"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "Yi lọ soke ati isalẹ"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "Àwọn ìfiránṣẹ́ tó ní ṣe pẹ̀lú rẹ̀"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "Àwọn ìkéde tí wọ́n pín àwọn ẹ̀ka tàbí àmì ìdámọ̀ ìkéde yìí, pẹ̀lú àwọn àwòrán wọn, ọjọ́ oṣù, àti àkópọ̀ wọn."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "tó ní ṣe pẹ̀lú rẹ̀"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "Àwọn ìfiránṣẹ́"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "bakanna"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "pupo yii"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10740,13 +13321,284 @@ msgstr "Ó fi àwọn widget hàn ní ọ̀kan lára àwọn agbègbè widget ti
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "apadi ẹgbẹ"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "agbègbè wígìtì"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "Maapu aaye"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "Ojú-ewé kan tí ó ṣe àkọsílẹ̀ gbogbo ojú-ewé àti àpilẹ̀kọ tí a tẹ̀ jáde (àti àwọn ohun àfikún mìíràn tí ó jẹ́ ti gbogbo ènìyàn), pẹ̀lú ìtọ́jú igi ojú-ewé náà."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "sitemap"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "mapu aaye ayelujara"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "atọka"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "gbogbo oju-iwe"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "Àwọn àmì ayélujára"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "Awọn asopọ si awọn profaili rẹ, ti a fa pẹlu awọn aami ti awọn nẹtiwọki funrararẹ."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "awujọ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "awọn ọna asopọ"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "tẹle"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "àwọn profaili"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "Iwọn ìràwọ̀"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "Àmì ìṣírò tí ó hàn gẹ́gẹ́ bí ìràwọ̀, ní àwọn ìgbésẹ̀ ìràwọ̀-àbọ̀."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "àwọn ìràwọ̀"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "ìwọ̀n"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "àyè"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "Àwọn ìgbésẹ̀"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "Awọn igbesẹ ilana ti a kọ sori nọmba, ni tẹlentẹle, isalẹ oju-iwe naa tabi lẹgbẹ ara wọn."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "ṣiṣẹ́"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "báwo ni láti"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "àkókò aláyègbọ̀"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "tí a pín sí nọ́mbà"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "Tábì"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "Tábì kan nínú bọ́lọ́kì Àwọn tábì: àkọlé rẹ̀ àti pẹ́lẹ̀sì rẹ̀."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "Atokọ awọn akọle"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "Àkójọ àwọn àkọlé tó wà lórí ojú-ìwé náà, tí a ṣe nípasẹ̀ ẹ̀rọ láìsí ìrànlọ́wọ́, tí ó ní àwọn ìsopọ̀ mọ́ ọ̀kọ̀ọ̀kan wọn."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "Atokọ Awọn Akoonu"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "àwọn ohun inú"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "àwọn àkọlé"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "Àwọn tàbù"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "Akoonu ninu awọn taabu: awọn alejo yipada laarin awọn panẹli nipasẹ eku tabi bọtini itẹwe."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "àwọn taabu"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "tí a pín sí taba"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "àwọn pálǹì"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "Ẹ̀rí Ìjẹ́rìí"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "Ọ̀rọ̀ láti ọ̀dọ̀ oníbàárà kan pẹ̀lú orúkọ wọn, ipò wọn, fọ́tò wọn àti ìwọ̀n ìràwọ̀ àṣàyàn."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "tún wo"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "fa ọnà fún rẹ̀"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "onibara"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "Èrò oníbàárọ̀"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "Ohun ìrànlọ́wọ́ ojú-òpó"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "Ọ̀rọ̀ tàbí gbólóhùn kan tí ó ń fi àlàyé kúkúrú hàn nígbà tí eku bá wà lórí rẹ̀ tàbí tí a tẹ bọ́tìnnì rẹ̀ lórí tẹ́ẹ̀bìlì kọ̀mpútà."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "irinṣẹ onítumọ̀"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "Ìtọ́kasí"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "ìtumọ̀"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "Profaili ओंkọwe"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "Àwòrán òmùkọ̀wé náà, orúkọ rẹ̀, ìtàn ìgbésí ayé rẹ̀ àti àwọn ìjápọ̀ rẹ̀, tàbí ti olùlò tí a yàn."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "ìtàn ayéẹni"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "àkọsílẹ olùmúlò"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "Nipa"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "Bọtìnì ìfọ̀rọ̀wérọ̀ WhatsApp"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "Bọtini léfọ̀ọ̀tì kan ní igun ojúewé náà tí ó ń ṣí ìfọ̀rọ̀wérọ̀ WhatsApp kan sí ọ."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "ìfiránṣẹ́ ìsopọ̀"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "ti n fo lọ"
 
 #: blocks/widget/block.json
 msgctxt "block title"

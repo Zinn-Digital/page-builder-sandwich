@@ -15,6 +15,7 @@ import { useSelect } from '@wordpress/data';
 import domReady from '@wordpress/dom-ready';
 
 import './attribute';
+import './variations';
 import { STORE, config } from './store';
 import DesignPanel, { StylePanel } from './editor/panel';
 import DesignPreview from './editor/preview';

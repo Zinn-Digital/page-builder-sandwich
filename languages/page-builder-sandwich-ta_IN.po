@@ -342,6 +342,10 @@ msgid "Save as reusable pattern"
 msgstr "மீண்டும் பயன்படுத்தக்கூடிய வடிவமாகச் சேமிக்கவும்"
 
 #: includes/admin-kit/class-matrix.php:415
+#: src/design/a11y/index.js:20
+#: src/design/a11y/index.js:25
+#: src/design/a11y/index.js:42
+#: src/design/a11y/index.js:56
 msgid "Accessibility checker"
 msgstr "அணுகல் தன்மை சரிபார்ப்பு"
 
@@ -990,6 +994,7 @@ msgstr "← வேறு வழங்குநரைத் தேர்ந்த
 #: includes/ai-core/class-admin.php:227
 #: includes/freemius-strings.php:202
 #: includes/freemius-strings.php:3187
+#: src/blocks/social-icons/edit.js:163
 msgid "Address"
 msgstr "முகவரி"
 
@@ -1043,6 +1048,8 @@ msgstr "சோதனை"
 #: includes/freemius-strings.php:2132
 #: includes/freemius-strings.php:4997
 #: src/admin-kit/Support.js:605
+#: src/blocks/shared/kit.js:326
+#: src/blocks/tooltip/format.js:109
 #: src/design/icons/IconField.js:52
 msgid "Remove"
 msgstr "நீக்கு"
@@ -1096,6 +1103,7 @@ msgid "Refresh the model lists from the providers"
 msgstr "வழங்குநர்களிடமிருந்து மாதிரி பட்டியல்களைப் புதுப்பிக்கவும்"
 
 #: includes/ai-core/class-admin.php:356
+#: src/core/dev-compat/known.js:52
 msgid "Images"
 msgstr "படங்கள்"
 
@@ -1188,6 +1196,7 @@ msgid "turned off"
 msgstr "நிறுத்தப்பட்டது"
 
 #: includes/ai-core/class-admin.php:526
+#: includes/blocks/interactive/class-dialog.php:50
 msgid "Open"
 msgstr "திறக்க"
 
@@ -1448,6 +1457,7 @@ msgstr "இதுவரை எந்த AI கோரிக்கைகளும�
 #: includes/freemius-strings.php:3777
 #: src/admin-kit/Tour.js:128
 #: src/admin-kit/Wizard.js:58
+#: src/blocks/checklist/edit.js:77
 msgid "Done"
 msgstr "முடிந்தது"
 
@@ -1515,7 +1525,11 @@ msgstr "அதிக முயற்சிகள். சில நிமிட�
 msgid "Something went wrong. Please contact the admin."
 msgstr "ஏதோ தவறாக நடந்துவிட்டது. தயவுசெய்து நிர்வாகியைத் தொடர்பு கொள்ளவும்."
 
+#. translators: %s: the place the map shows, as the author named it.
 #: includes/assets/class-legacy-script.php:176
+#: includes/blocks/class-media.php:54
+#: src/blocks/map/edit.js:105
+#: src/blocks/map/edit.js:139
 msgid "Map"
 msgstr "வரைபடமாக்கு"
 
@@ -1538,52 +1552,385 @@ msgstr "அந்தக் குடும்பம் சேமிக்கப�
 msgid "Removed."
 msgstr "நீக்கப்பட்டது."
 
-#: includes/assets/perf/class-fonts.php:134
+#: includes/assets/perf/class-fonts.php:137
 msgid "That is not a valid font family name."
 msgstr "அது சரியான எழுத்துரு குடும்பப் பெயர் அல்ல."
 
-#: includes/assets/perf/class-fonts.php:150
+#: includes/assets/perf/class-fonts.php:153
 msgid "Google Fonts did not return that family. Check the name and try again."
 msgstr "Google Fonts அந்த எழுத்துருக் குடும்பத்தைத் திரும்பத் தரவில்லை. பெயரைச் சரிபார்த்து மீண்டும் முயற்சிக்கவும்."
 
-#: includes/assets/perf/class-fonts.php:165
+#: includes/assets/perf/class-fonts.php:171
 msgid "The font files could not be downloaded or saved. Check that the uploads folder is writable."
 msgstr "எழுத்துருக் கோப்புகளைப் பதிவிறக்கவோ சேமிக்கவோ முடியவில்லை. பதிவேற்றங்கள் கோப்புறை எழுதக்கூடியதாக உள்ளதா எனச் சரிபார்க்கவும்."
 
-#: includes/assets/perf/class-fonts.php:169
+#: includes/assets/perf/class-fonts.php:175
 msgid "The font stylesheet could not be saved. Check that the uploads folder is writable."
 msgstr "எழுத்துரு ஸ்டைல்ஷீட்டைச் சேமிக்க முடியவில்லை. பதிவேற்றங்கள் கோப்புறை (uploads folder) எழுதக்கூடியதாக உள்ளதா என்பதைச் சரிபார்க்கவும்."
 
-#: includes/blocks/class-content.php:87
+#: includes/blocks/class-content.php:90
 msgid "Dismiss this notice"
 msgstr "இந்த அறிவிப்பை நிராகரிக்கவும்"
 
-#: includes/blocks/class-registry.php:164
+#: includes/blocks/class-content.php:261
+#: includes/blocks/class-marketing.php:194
+msgid "(opens in a new tab)"
+msgstr "(புதிய தாவலில் திறக்கும்)"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:90
+msgid "Done:"
+msgstr "முடிந்தது:"
+
+#: includes/blocks/class-content.php:350
+#: src/blocks/checklist/edit.js:91
+msgid "To do:"
+msgstr "செய்ய வேண்டியவை:"
+
+#: includes/blocks/class-content.php:428
+msgid "Glossary index"
+msgstr "சொற்களஞ்சிய அகச்சுட்டி"
+
+#. translators: 1: the rating, e.g. 4.5; 2: the highest possible rating, e.g. 5.
+#: includes/blocks/class-data.php:46
+#: src/blocks/star-rating/edit.js:38
+#, php-format, js-format
+msgid "Rated %1$s out of %2$s"
+msgstr "%2$s இல் %1$s மதிப்பிடப்பட்டுள்ளது"
+
+#: includes/blocks/class-data.php:77
+#: src/blocks/progress-bar/edit.js:79
+msgid "Progress"
+msgstr "செயல்பாடு"
+
+#. translators: %s: a percentage number, e.g. 70.
+#: includes/blocks/class-data.php:82
+#: src/blocks/progress-bar/edit.js:19
+#, php-format, js-format
+msgid "%s%%"
+msgstr "%s%%"
+
+#: includes/blocks/class-data.php:177
+#: src/blocks/code/edit.js:108
+msgid "Copy code"
+msgstr "குறியீட்டை நகலெடு"
+
+#: includes/blocks/class-data.php:178
+#: src/workflow/pro__premium_only/ReviewPanel.js:155
+msgid "Copied"
+msgstr "நகலெடுக்கப்பட்டது"
+
+#: includes/blocks/class-friendly.php:66
+msgid "That widget is not available on this site."
+msgstr "அந்த விட்ஜெட் இந்த தளத்தில் கிடைக்கவில்லை."
+
+#: includes/blocks/class-marketing.php:72
+#: includes/freemius-strings.php:990
+#: includes/freemius-strings.php:3852
+#: src/blocks/contact-buttons/edit.js:23
+#: src/blocks/social-icons/edit.js:61
+msgid "Email"
+msgstr "மின்னஞ்சல்"
+
+#: includes/blocks/class-marketing.php:74
+#: src/blocks/social-icons/edit.js:62
+msgid "Phone"
+msgstr "தொலைபேசி"
+
+#: includes/blocks/class-marketing.php:76
+#: src/blocks/social-icons/edit.js:63
+msgid "RSS feed"
+msgstr "RSS ஃபீட்"
+
+#: includes/blocks/class-marketing.php:78
+#: includes/blocks/class-site.php:367
+#: src/blocks/social-icons/edit.js:64
+msgid "Website"
+msgstr "இணையதளம்"
+
+#: includes/blocks/class-marketing.php:80
+#: src/blocks/info-box/edit.js:129
+#: src/blocks/layout/edit.js:306
+#: src/core/edit.js:151
+msgid "Link"
+msgstr "இணைப்பு"
+
+#. translators: %s: link name, e.g. "GitHub".
+#: includes/blocks/class-marketing.php:107
+#, php-format
+msgid "%s (opens in a new tab)"
+msgstr "%s (புதிய தாவலில் திறக்கும்)"
+
+#. translators: %d: number of stars, 1 to 5.
+#: includes/blocks/class-marketing.php:151
+#: src/blocks/testimonial/edit.js:188
+#, php-format, js-format
+msgid "Rated %d out of 5"
+msgstr "5-க்கு %d மதிப்பிடப்பட்டது"
+
+#: includes/blocks/class-marketing.php:253
+msgid "(recommended)"
+msgstr "(பரிந்துரைக்கப்படுகிறது)"
+
+#: includes/blocks/class-marketing.php:271
+#: src/admin-kit/PlansScreen.js:80
+#: src/blocks/comparison-table/edit.js:47
+msgid "Included"
+msgstr "சேர்க்கப்பட்டுள்ளது"
+
+#: includes/blocks/class-marketing.php:273
+#: src/admin-kit/PlansScreen.js:87
+#: src/blocks/comparison-table/edit.js:48
+msgid "Not included"
+msgstr "உள்ளடக்கப்படவில்லை"
+
+#: includes/blocks/class-marketing.php:287
+msgid "Comparison table"
+msgstr "ஒப்பீட்டு அட்டவணை"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:344
+#: src/blocks/contact-buttons/edit.js:30
+#, php-format, js-format
+msgid "Call %s"
+msgstr "%s ஐ அழைக்கவும்"
+
+#. translators: %s: an email address.
+#: includes/blocks/class-marketing.php:347
+#: src/blocks/contact-buttons/edit.js:37
+#, php-format, js-format
+msgid "Email %s"
+msgstr "மின்னஞ்சல் %s"
+
+#. translators: %s: a phone number.
+#: includes/blocks/class-marketing.php:350
+#: src/blocks/contact-buttons/edit.js:44
+#, php-format, js-format
+msgid "Text %s"
+msgstr "உரை %s"
+
+#: includes/blocks/class-marketing.php:352
+#: src/blocks/contact-buttons/edit.js:50
+msgid "Chat on WhatsApp"
+msgstr "வாட்ஸ்அப்பில் அரட்டையடிக்கவும்"
+
+#: includes/blocks/class-marketing.php:401
+msgid "Contact us"
+msgstr "எங்களைத் தொடர்பு கொள்ளவும்"
+
+#: includes/blocks/class-marketing.php:419
+#: src/blocks/whatsapp/edit.js:23
+#: src/blocks/whatsapp/edit.js:56
+msgid "Chat with us on WhatsApp"
+msgstr "வாட்ஸ்அப்பில் எங்களுடன் அரட்டையடிக்கவும்"
+
+#: includes/blocks/class-marketing.php:454
+msgid "This form is not available right now."
+msgstr "இந்தப் படிவம் தற்போது கிடைக்கவில்லை."
+
+#. translators: %s: form plugin name.
+#: includes/blocks/class-marketing.php:458
+#, php-format
+msgid "This form cannot be shown because %s is not active."
+msgstr "%s செயலில் இல்லாததால் இந்தப் படிவத்தைக் காட்ட முடியாது."
+
+#. translators: %s: the place the map shows, as the author named it.
+#: includes/blocks/class-media.php:54
+#, php-format
+msgid "Map: %s"
+msgstr "வரைபடம்: %s"
+
+#: includes/blocks/class-media.php:60
+#: src/blocks/map/edit.js:145
+msgid "Showing the map loads it from OpenStreetMap."
+msgstr "வரைபடத்தைக் காண்பிப்பது அதை OpenStreetMap இலிருந்து ஏற்றுகிறது."
+
+#: includes/blocks/class-media.php:61
+msgid "Show the map"
+msgstr "வரைபடத்தைக் காட்டுங்கள்"
+
+#: includes/blocks/class-media.php:63
+msgid "Open the map on OpenStreetMap"
+msgstr "OpenStreetMap இல் வரைபடத்தைத் திறக்கவும்"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:107
+#, php-format
+msgid "Booking calendar from %s"
+msgstr "%s இலிருந்து முன்பதிவு காலண்டர்"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:114
+#: src/blocks/booking/edit.js:98
+#, php-format, js-format
+msgid "Showing the booking calendar loads it from %s."
+msgstr "முன்பதிவு நாட்காட்டியைக் காட்டுவது அதை %s இலிருந்து ஏற்றுகிறது."
+
+#: includes/blocks/class-media.php:115
+msgid "Show the booking calendar"
+msgstr "முன்பதிவு நாட்காட்டியைைக் காட்டுங்கள்"
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: includes/blocks/class-media.php:118
+#, php-format
+msgid "Book on %s"
+msgstr "%s இல் பதிவு செய்யவும்"
+
+#. translators: %s: what the QR code encodes, e.g. a web address.
+#: includes/blocks/class-media.php:225
+#, php-format
+msgid "QR code for %s"
+msgstr "%s க்கான QR குறியீடு"
+
+#: includes/blocks/class-registry.php:207
 #: src/editor/language-switcher.js:67
 msgid "Design"
 msgstr "வடிவமைப்பு"
 
-#: includes/blocks/class-registry.php:165
-#: src/core/dev-compat/edit.js:94
+#: includes/blocks/class-registry.php:208
+#: src/core/dev-compat/edit.js:135
 #: src/editor/index.js:27
 msgid "Content"
 msgstr "உள்ளடக்கம்"
 
-#: includes/blocks/class-registry.php:166
+#: includes/blocks/class-registry.php:209
 msgid "Media"
 msgstr "ஊடகம்"
 
-#: includes/blocks/class-registry.php:167
+#: includes/blocks/class-registry.php:210
 msgid "Marketing"
 msgstr "மார்க்கெட்டிங்"
 
-#: includes/blocks/class-registry.php:168
+#: includes/blocks/class-registry.php:211
 msgid "Site"
 msgstr "தளம்"
 
-#: includes/blocks/class-registry.php:169
+#: includes/blocks/class-registry.php:212
 msgid "Data"
 msgstr "தரவு"
+
+#: includes/blocks/class-site.php:150
+#: src/blocks/related-posts/edit.js:22
+#: src/blocks/related-posts/edit.js:131
+msgid "Related posts"
+msgstr "தொடர்புடைய பதிவுகள்"
+
+#: includes/blocks/class-site.php:209
+#: src/blocks/post-meta/edit.js:65
+msgid "Post details"
+msgstr "பதிவு விவரங்கள்"
+
+#: includes/blocks/class-site.php:231
+msgid "By"
+msgstr "மூலம்"
+
+#: includes/blocks/class-site.php:233
+#: src/studio/components/header.js:33
+msgid "Published"
+msgstr "வெளியிடப்பட்டது"
+
+#: includes/blocks/class-site.php:235
+msgid "Updated"
+msgstr "புதுப்பிக்கப்பட்டது"
+
+#: includes/blocks/class-site.php:237
+msgid "In"
+msgstr "உள்"
+
+#: includes/blocks/class-site.php:239
+msgid "Tagged"
+msgstr "குறிச்சொல் இடப்பட்டது"
+
+#. translators: %d: minutes it takes to read the post.
+#: includes/blocks/class-site.php:243
+#, php-format
+msgid "%d minute read"
+msgid_plural "%d minutes read"
+msgstr[0] "%d நிமிட வாசிப்பு"
+msgstr[1] "%d நிமிடங்கள் படிக்க வேண்டிய நேரம்"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+msgid "No comments yet"
+msgstr "எந்தக் கருத்துகளும் இல்லை"
+
+#. translators: %d: number of comments.
+#: includes/blocks/class-site.php:247
+#, php-format
+msgid "%d comment"
+msgid_plural "%d comments"
+msgstr[0] "%d கருத்து"
+msgstr[1] "%d கருத்துகள்"
+
+#: includes/blocks/class-site.php:290
+#: src/blocks/sitemap/edit.js:30
+#: src/blocks/sitemap/edit.js:79
+msgid "Sitemap"
+msgstr "தள வரைபடம்"
+
+#: includes/blocks/class-site.php:322
+#: src/studio/components/commands.js:161
+#: src/workflow/pro__premium_only/ReplacePanel.js:226
+msgid "(no title)"
+msgstr "(தலைப்பு இல்லை)"
+
+#. translators: %s: a person's name.
+#: includes/blocks/class-site.php:364
+#, php-format
+msgid "All posts by %s"
+msgstr "%s இன் அனைத்துப் பதிவுகளும்"
+
+#: includes/blocks/class-site.php:408
+msgid "This content is protected. Enter the password to see it."
+msgstr "இந்த உள்ளடக்கம் பாதுகாக்கப்பட்டுள்ளது. அதைக் காண கடவுச்சொல்லை உள்ளிடவும்."
+
+#: includes/blocks/class-site.php:416
+msgid "That password is not right. Try again."
+msgstr "அந்த கடவுச்சொல் சரியில்லை. மீண்டும் முயற்சிக்கவும்."
+
+#: includes/blocks/class-site.php:417
+#: src/admin-kit/Support.js:584
+#: src/blocks/protected/edit.js:56
+#: src/blocks/protected/edit.js:76
+msgid "Password"
+msgstr "கடவுச்சொல்"
+
+#: includes/blocks/class-site.php:421
+msgid "Show the content"
+msgstr "உள்ளடக்கத்தைக் காட்டு"
+
+#: includes/blocks/class-site.php:505
+msgid "That page cannot be unlocked."
+msgstr "அந்தப் பக்கத்தைத் திறக்க முடியாது."
+
+#: includes/blocks/class-site.php:511
+msgid "Too many tries. Wait a few minutes and try again."
+msgstr "அதிக முயற்சிகள். சில நிமிடங்கள் காத்திருந்து மீண்டும் முயற்சிக்கவும்."
+
+#: includes/blocks/class-site.php:619
+msgid "The password must be 4 to 200 characters long."
+msgstr "கடவுச்சொல் 4 முதல் 200 எழுத்துகள் வரை இருக்க வேண்டும்."
+
+#: includes/blocks/interactive/class-accordion.php:103
+msgid "More"
+msgstr "மேலும்"
+
+#: includes/blocks/interactive/class-dialog.php:72
+msgid "Close"
+msgstr "மூடு"
+
+#. translators: %d: the number of a tab (1, 2, 3…).
+#: includes/blocks/interactive/class-tabs.php:66
+#: src/blocks/tabs/edit.js:72
+#, php-format, js-format
+msgid "Tab %d"
+msgstr "கட்டம் %d"
+
+#: includes/blocks/site/class-toc.php:120
+#: src/blocks/table-of-contents/edit.js:68
+#: src/blocks/table-of-contents/edit.js:100
+msgid "Contents"
+msgstr "உள்ளடக்கம்"
 
 #: includes/class-admin.php:83
 #: includes/design/globals/class-site-design.php:86
@@ -1686,6 +2033,10 @@ msgstr "சண்ட்விச் ஸ்டுடியோ மூலம் த
 msgid "Blank canvas"
 msgstr "வெற்று கேன்வாஸ்"
 
+#: includes/core/templates/blank-canvas.php:29
+msgid "Skip to content"
+msgstr "உள்ளடக்கத்திற்குச் செல்லவும்"
+
 #: includes/design/class-breakpoints.php:89
 msgid "The tablet width must be a whole number of pixels from 480 to 2560."
 msgstr "டேப்லெட் அகலம் 480 முதல் 2560 வரையிலான முழு எண் பிக்சல்களாக இருக்க வேண்டும்."
@@ -1760,7 +2111,11 @@ msgid "Uploaded icons"
 msgstr "பதிவேற்றப்பட்ட சின்னங்கள்"
 
 #: includes/design/icons/class-icons.php:253
-#: src/core/edit.js:230
+#: src/blocks/feature-list/edit.js:67
+#: src/blocks/icon-list/edit.js:44
+#: src/blocks/info-box/edit.js:68
+#: src/core/edit.js:237
+#: src/core/index.js:21
 msgid "Icon"
 msgstr "சின்னம்"
 
@@ -2553,6 +2908,8 @@ msgstr "%s என்பது எனது வாடிக்கையாளர�
 
 #: includes/freemius-strings.php:613
 #: includes/freemius-strings.php:3591
+#: src/blocks/code/edit.js:32
+#: src/blocks/code/edit.js:133
 msgid "Code"
 msgstr "குறியீடு"
 
@@ -3047,13 +3404,9 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "திருத்து"
 
-#: includes/freemius-strings.php:990
-#: includes/freemius-strings.php:3852
-msgid "Email"
-msgstr "மின்னஞ்சல்"
-
 #: includes/freemius-strings.php:994
 #: includes/freemius-strings.php:3857
+#: src/blocks/contact-buttons/edit.js:84
 msgid "Email address"
 msgstr "மின்னஞ்சல் முகவரி"
 
@@ -3103,6 +3456,10 @@ msgstr "வெள்ளை-லேபிள் பயன்முறையை இ
 
 #: includes/freemius-strings.php:1032
 #: includes/freemius-strings.php:3877
+#: src/blocks/badge/edit.js:17
+#: src/blocks/shared/dialog-edit.js:98
+#: src/core/dev-compat/known.js:191
+#: src/core/edit.js:298
 #: src/design/editor/controls/length.js:279
 #: src/design/props/align-items.js:19
 #: src/design/props/align-self.js:19
@@ -3125,6 +3482,7 @@ msgstr "புதிய மின்னஞ்சல் முகவரியை 
 #: includes/freemius-strings.php:1044
 #: includes/freemius-strings.php:3908
 #: src/blocks/alert/edit.js:75
+#: src/blocks/badge/edit.js:63
 msgid "Error"
 msgstr "பிழை"
 
@@ -3723,6 +4081,7 @@ msgstr "%2$s இந்தத் தளங்களின் அச்சு அ�
 
 #: includes/freemius-strings.php:1496
 #: includes/freemius-strings.php:4524
+#: src/blocks/testimonial/edit.js:224
 #: src/design/pro__premium_only/custom-breakpoints.js:76
 #: src/design/pro__premium_only/globals/BrandKitSection.js:146
 #: src/design/pro__premium_only/globals/ClassesSection.js:70
@@ -3826,6 +4185,7 @@ msgstr "இந்த செருகுநிறைவுக்கு (plugin) P
 #: includes/freemius-strings.php:1574
 #: includes/freemius-strings.php:4591
 #: src/admin-kit/Support.js:638
+#: src/blocks/accordion-item/edit.js:51
 msgid "No"
 msgstr "இல்லை"
 
@@ -4811,6 +5171,13 @@ msgstr "சமூக ஊடகம் (பேஸ்புக், ட்விட�
 
 #: includes/freemius-strings.php:2331
 #: includes/freemius-strings.php:5229
+#: src/blocks/badge/edit.js:15
+#: src/blocks/call-to-action/edit.js:102
+#: src/blocks/info-box/edit.js:114
+#: src/blocks/shared/dialog-edit.js:91
+#: src/blocks/testimonial/edit.js:160
+#: src/core/dev-compat/known.js:186
+#: src/core/edit.js:284
 #: src/design/editor/controls/length.js:281
 #: src/design/props/align-items.js:17
 #: src/design/props/align-self.js:17
@@ -5096,6 +5463,9 @@ msgstr "கால முத்திரை"
 
 #: includes/freemius-strings.php:2540
 #: includes/freemius-strings.php:5520
+#: src/blocks/booking/edit.js:64
+#: src/blocks/tab/edit.js:25
+#: src/blocks/table-of-contents/edit.js:99
 msgid "Title"
 msgstr "தலைப்பு"
 
@@ -5171,6 +5541,8 @@ msgstr "இதுவரை %1$s உங்களுக்கு எப்பட�
 #: includes/freemius-strings.php:5575
 #: src/admin-kit/Support.js:551
 #: src/blocks/alert/edit.js:55
+#: src/blocks/contact-buttons/edit.js:72
+#: src/core/dev-compat/known.js:131
 #: src/design/pro__premium_only/effects/controls.js:104
 msgid "Type"
 msgstr "வகை"
@@ -5286,6 +5658,7 @@ msgstr "பயனர்கள்"
 
 #: includes/freemius-strings.php:2683
 #: includes/freemius-strings.php:5662
+#: src/blocks/progress-bar/edit.js:29
 #: src/design/pro__premium_only/globals/TokenList.js:58
 msgid "Value"
 msgstr "மதிப்பு"
@@ -5340,6 +5713,7 @@ msgstr "பணம் செலுத்திப் பெறும் அம்
 #: includes/freemius-strings.php:2722
 #: includes/freemius-strings.php:5736
 #: src/blocks/alert/edit.js:71
+#: src/blocks/badge/edit.js:59
 msgid "Warning"
 msgstr "எச்சரிக்கை"
 
@@ -5666,6 +6040,7 @@ msgid "Optional"
 msgstr "விருப்பத்தேர்வு"
 
 #: includes/freemius-strings.php:4755
+#: src/blocks/comparison-table/edit.js:206
 msgid "Plan"
 msgstr "திட்டம்"
 
@@ -5988,18 +6363,26 @@ msgstr "மிகவும் சிறியது"
 #: includes/pro__premium_only/design/class-tokens.php:51
 #: includes/pro__premium_only/design/class-tokens.php:59
 #: includes/pro__premium_only/design/class-tokens.php:65
+#: src/blocks/shared/dialog-edit.js:52
+#: src/blocks/social-icons/edit.js:294
 msgid "Small"
 msgstr "சிறியது"
 
 #: includes/pro__premium_only/design/class-tokens.php:52
 #: includes/pro__premium_only/design/class-tokens.php:60
 #: includes/pro__premium_only/design/class-tokens.php:66
+#: src/blocks/shared/dialog-edit.js:59
+#: src/blocks/social-icons/edit.js:298
+#: src/core/dev-compat/known.js:72
 msgid "Medium"
 msgstr "நடுத்தரம்"
 
 #: includes/pro__premium_only/design/class-tokens.php:53
 #: includes/pro__premium_only/design/class-tokens.php:61
 #: includes/pro__premium_only/design/class-tokens.php:67
+#: src/blocks/shared/dialog-edit.js:66
+#: src/blocks/social-icons/edit.js:302
+#: src/core/dev-compat/known.js:73
 msgid "Large"
 msgstr "பெரிய"
 
@@ -6012,7 +6395,9 @@ msgid "Huge"
 msgstr "பெரிய"
 
 #: includes/pro__premium_only/design/class-tokens.php:58
-#: src/core/edit.js:183
+#: src/core/dev-compat/known.js:87
+#: src/core/dev-compat/known.js:185
+#: src/core/edit.js:184
 #: src/design/editor/controls/complex.js:448
 #: src/design/props/text-decoration.js:16
 #: src/design/props/text-transform.js:16
@@ -6326,16 +6711,9 @@ msgid "The trial could not be started."
 msgstr "சோதனைக் கணக்கைத் தொடங்க முடியவில்லை."
 
 #: src/admin-kit/PlansScreen.js:70
+#: src/blocks/comparison-table/edit.js:232
 msgid "Feature"
 msgstr "அம்சம்"
-
-#: src/admin-kit/PlansScreen.js:80
-msgid "Included"
-msgstr "சேர்க்கப்பட்டுள்ளது"
-
-#: src/admin-kit/PlansScreen.js:87
-msgid "Not included"
-msgstr "உள்ளடக்கப்படவில்லை"
 
 #: src/admin-kit/PlansScreen.js:111
 #: src/admin-kit/tours.js:60
@@ -6690,10 +7068,6 @@ msgstr "உள்நுழைவு முகவரி"
 #: src/admin-kit/Support.js:571
 msgid "Username"
 msgstr "பயனர்பெயர்"
-
-#: src/admin-kit/Support.js:584
-msgid "Password"
-msgstr "கடவுச்சொல்"
 
 #: src/admin-kit/Support.js:619
 msgid "Add a login"
@@ -7090,15 +7464,62 @@ msgstr "செயற்பாட்டைத் திரும்பப் ப�
 msgid "Undo all conversions"
 msgstr "அனைத்து மாற்றங்களையும் செயல்நீக்கு"
 
+#: src/blocks/accordion-item/edit.js:26
+msgid "Item"
+msgstr "உொருள்"
+
+#: src/blocks/accordion-item/edit.js:28
+msgid "Open when the page loads"
+msgstr "பக்கம் லோட் ஆகும் போது திறக்கவும்"
+
+#: src/blocks/accordion-item/edit.js:39
+msgid "Title is a heading"
+msgstr "தலைப்பு ஒரு தலைப்பாகும்"
+
+#: src/blocks/accordion-item/edit.js:43
+msgid "Make the title a heading when the items are sections of the page, so visitors can jump between them."
+msgstr "உள்ளடக்கப் பொருட்கள் பக்கத்தின் பிரிவுகளாக இருக்கும்போது தலைப்பை ஒரு தலைப்பாக (heading) மாற்றவும், இதனால் பார்வையாளர்கள் அவற்றுக்கிடையே செல்ல முடியும்."
+
+#. translators: %d: a heading level, 2 to 6.
+#. translators: %d: a heading level, 1 to 6.
+#: src/blocks/accordion-item/edit.js:57
+#: src/blocks/table-of-contents/edit.js:76
+#, js-format
+msgid "Heading %d"
+msgstr "தலைப்பு %d"
+
+#: src/blocks/accordion-item/edit.js:77
+msgid "Question or section title"
+msgstr "கேள்வி அல்லது பிரிவுத் தலைப்பு"
+
+#: src/blocks/accordion/edit.js:32
+msgid "Accordion"
+msgstr "அக்கார்டியன்"
+
+#: src/blocks/accordion/edit.js:34
+msgid "Only one item open at a time"
+msgstr "ஒரே நேரத்தில் ஒரு உருப்படி மட்டுமே திறந்திருக்கும்"
+
+#: src/blocks/accordion/edit.js:42
+msgid "Mark up as FAQ for search engines"
+msgstr "தேடு பொறிகளுக்காக FAQ ஆகக் குறிக்கவும்"
+
+#: src/blocks/accordion/edit.js:46
+msgid "Adds FAQ structured data built from the titles (questions) and their text (answers)."
+msgstr "தலைப்புகள் (கேள்விகள்) மற்றும் அவற்றின் உரையிலிருந்து (பதில்கள்) உருவாக்கப்பட்ட FAQ கட்டமைக்கப்பட்ட தரவைச் சேர்க்கிறது."
+
 #: src/blocks/alert/edit.js:52
 msgid "Alert"
 msgstr "எச்சரிக்கை"
 
 #: src/blocks/alert/edit.js:60
+#: src/blocks/badge/edit.js:48
+#: src/blocks/shared/kit.js:94
 msgid "Information"
 msgstr "தகவல்"
 
 #: src/blocks/alert/edit.js:67
+#: src/blocks/badge/edit.js:55
 msgid "Success"
 msgstr "வெற்றி"
 
@@ -7107,6 +7528,7 @@ msgid "Warnings and errors are announced to screen reader users straight away; i
 msgstr "எச்சரிக்கைகளும் பிழைகளும் ஸ்கிரீன் ரீடர் பயனர்களுக்கு உடனடியாக அறிவிக்கப்படும்; தகவல் மற்றும் வெற்றி அறிவிப்புகள் அவர்கள் தாங்கள் செய்யும் செயலை முடித்தவுடன் வாசிக்கப்படும்."
 
 #: src/blocks/alert/edit.js:87
+#: src/blocks/info-box/edit.js:59
 msgid "Show icon"
 msgstr "சின்னத்தைக் காட்டு"
 
@@ -7122,64 +7544,702 @@ msgstr "தலைப்பு (விருப்பத்தேர்வு)"
 msgid "Write the message…"
 msgstr "செய்தியை எழுதுங்கள்…"
 
-#: src/blocks/layout/edit.js:42
-msgid "section — a thematic section"
-msgstr "பிரிவு — ஒரு கருப்பொருள் பிரிவு"
+#: src/blocks/badge/edit.js:16
+#: src/blocks/call-to-action/edit.js:98
+#: src/blocks/info-box/edit.js:118
+#: src/blocks/testimonial/edit.js:164
+#: src/core/dev-compat/known.js:187
+#: src/core/edit.js:192
+#: src/core/edit.js:291
+#: src/design/editor/controls/complex.js:242
+#: src/design/props/align-items.js:18
+#: src/design/props/align-self.js:18
+#: src/design/props/justify-content.js:26
+#: src/design/props/place-items.js:18
+#: src/design/props/text-align.js:17
+#: src/design/pro__premium_only/effects/controls.js:141
+#: src/design/pro__premium_only/effects/controls.js:244
+msgid "Centre"
+msgstr "மத்தியம்"
 
-#: src/blocks/layout/edit.js:43
-msgid "div — no meaning"
-msgstr "div — பொருள் இல்லை"
+#: src/blocks/badge/edit.js:28
+msgid "Badge"
+msgstr "வில்லை"
 
-#: src/blocks/layout/edit.js:44
-msgid "header — introductory content"
-msgstr "தலைப்பு - அறிமுக உள்ளடக்கம்"
+#: src/blocks/badge/edit.js:32
+#: src/design/editor/controls/complex.js:506
+#: src/design/editor/controls/complex.js:634
+#: src/design/pro__premium_only/effects/controls.js:157
+#: src/design/pro__premium_only/effects/controls.js:405
+#: src/design/pro__premium_only/effects/panel.js:301
+msgid "Colour"
+msgstr "நிறம்"
 
-#: src/blocks/layout/edit.js:45
-msgid "footer — closing content"
-msgstr "அடிக்குறிப்பு — முடிவுறும் உள்ளடக்கம்"
+#: src/blocks/badge/edit.js:37
+msgid "Theme accent"
+msgstr "தீம் உச்சரிப்பு"
 
-#: src/blocks/layout/edit.js:46
-msgid "article — self-contained content"
-msgstr "கட்டுரை — தனியாகக் கொண்ட உள்ளடக்கம்"
+#: src/blocks/badge/edit.js:44
+msgid "Neutral"
+msgstr "நடுநிலை"
 
-#: src/blocks/layout/edit.js:47
-msgid "aside — related content"
-msgstr "ஒதுக்கிடப்பட்டவை — தொடர்புடைய உள்ளடக்கம்"
+#: src/blocks/badge/edit.js:71
+#: src/design/editor/controls/complex.js:308
+#: src/design/editor/panel.js:45
+#: src/design/props/position.js:13
+#: src/design/pro__premium_only/effects/controls.js:352
+msgid "Position"
+msgstr "இடம்"
 
-#: src/blocks/layout/edit.js:48
-msgid "main — the main content (once per page)"
-msgstr "main — முதன்மை உள்ளடக்கம் (பக்கத்திற்கு ஒரு முறை)"
+#: src/blocks/badge/edit.js:87
+#: src/blocks/progress-bar/edit.js:64
+#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
+#: src/design/pro__premium_only/globals/TokenList.js:52
+msgid "Label"
+msgstr "லேபிள்"
 
-#: src/blocks/layout/edit.js:52
-msgid "nav — navigation links"
-msgstr "வழிசெலுத்தல் — வழிசெலுத்தல் இணைப்புகள்"
+#: src/blocks/booking/edit.js:30
+msgid "Booking calendar"
+msgstr "முன்பதிவு நாட்காட்டி"
 
-#: src/blocks/layout/edit.js:123
-msgid "Stack (flexbox, column)"
-msgstr "ஸ்டாக் (பிளெக்ஸ்பாக்ஸ், நெடுவரிசை)"
+#: src/blocks/booking/edit.js:35
+msgid "Service"
+msgstr "சேவை"
 
-#: src/blocks/layout/edit.js:142
-msgid "Row (flexbox)"
-msgstr "நிரை (flexbox)"
+#: src/blocks/booking/edit.js:49
+msgid "Booking page address"
+msgstr "புக்கிங் பக்க முகவரி"
 
-#: src/blocks/layout/edit.js:158
-#: src/blocks/layout/edit.js:204
-#: src/design/props/display.js:29
-msgid "Grid"
-msgstr "வலைப்பின்னல்"
+#. translators: %s: an example booking page address.
+#: src/blocks/booking/edit.js:55
+#, js-format
+msgid "For example %s"
+msgstr "உதாரணமாக %s"
 
-#: src/blocks/layout/edit.js:170
+#: src/blocks/booking/edit.js:65
+msgid "What the calendar is for, read out by screen readers and shown under it."
+msgstr "கலெண்டர் எதற்காகப் பயன்படுத்தப்படுகிறது என்பதை ஸ்கிரீன் ரீடர்கள் வாசித்துக் காட்டும் மற்றும் அதற்கு கீழே காட்டும்."
+
+#. translators: %s: the booking service, e.g. "Calendly".
+#: src/blocks/booking/edit.js:78
+#, js-format
+msgid "This is not a %s booking page address, so nothing will show on the page."
+msgstr "இது ஒரு %s முன்பதிவு பக்க முகவரி அல்ல, எனவே பக்கத்தில் எதுவும் காட்டப்படாது."
+
+#: src/blocks/booking/edit.js:111
+msgid "Preview the calendar"
+msgstr "காலெண்டரை முன்தோற்றுவிக்கவும்"
+
+#: src/blocks/call-to-action/edit.js:28
+#: src/blocks/info-box/edit.js:136
+#: src/core/edit.js:155
+msgid "Link address"
+msgstr "இணைப்பு முகவரி"
+
+#: src/blocks/call-to-action/edit.js:33
+msgid "The button shows when it has both a label and an address."
+msgstr "பொத்தான் ஒரு லேபிள் மற்றும் முகவரி இரண்டையும் கொண்டிருக்கும்போது அது காட்டப்படும்."
+
+#: src/blocks/call-to-action/edit.js:40
+#: src/blocks/info-box/edit.js:153
+#: src/blocks/layout/edit.js:349
+#: src/core/edit.js:160
+msgid "Open in a new tab"
+msgstr "புதிய தாவதலில் திறக்கவும்"
+
+#: src/blocks/call-to-action/edit.js:65
+msgid "Call to action"
+msgstr "செயலுக்கு அழைக்கவும்"
+
+#: src/blocks/call-to-action/edit.js:70
+#: src/blocks/icon-list/edit.js:58
+#: src/blocks/layout/edit.js:184
+#: src/blocks/steps/edit.js:32
+#: src/blocks/testimonial/edit.js:132
 #: src/design/editor/panel.js:38
 msgid "Layout"
 msgstr "தளவமைப்பு"
 
+#: src/blocks/call-to-action/edit.js:75
+msgid "Buttons below"
+msgstr "கீழே உள்ள பொத்தானlகள்"
+
+#: src/blocks/call-to-action/edit.js:82
+msgid "Buttons beside the text"
+msgstr "உரைய beside இருக்கும் பொத்தான்கள்"
+
+#: src/blocks/call-to-action/edit.js:93
+#: src/blocks/dual-heading/edit.js:99
+#: src/blocks/info-box/edit.js:109
+#: src/blocks/social-icons/edit.js:310
+#: src/blocks/testimonial/edit.js:155
+#: src/core/dev-compat/known.js:183
+#: src/core/edit.js:180
+#: src/core/edit.js:279
+#: src/design/props/text-align.js:13
+msgid "Alignment"
+msgstr "சீரமைப்பு"
+
+#: src/blocks/call-to-action/edit.js:113
+#: src/blocks/call-to-action/edit.js:160
+msgid "Main button"
+msgstr "முதன்மைக் பொத்தான்"
+
+#: src/blocks/call-to-action/edit.js:119
+msgid "Second button"
+msgstr "இரண்டாவது பொத்தான்"
+
+#: src/blocks/call-to-action/edit.js:132
+#: src/blocks/info-box/edit.js:173
+msgid "Heading…"
+msgstr "தலைப்பு…"
+
+#: src/blocks/call-to-action/edit.js:143
+msgid "One sentence on why…"
+msgstr "காரணம் பற்றிய ஒரு வாக்கியம்..."
+
+#: src/blocks/call-to-action/edit.js:177
+msgid "Second button (optional)"
+msgstr "இரண்டாவது பொத்தான் (விருப்பத்தேர்வு)"
+
+#: src/blocks/checklist/edit.js:27
+msgid "Checklist"
+msgstr "சரிபார்ப்புப் பட்டியல்"
+
+#: src/blocks/checklist/edit.js:29
+msgid "Tick colour"
+msgstr "டிக் நிறம்"
+
+#: src/blocks/checklist/edit.js:35
+#: src/blocks/icon-list/edit.js:84
+msgid "Lines"
+msgstr "வரிகள்"
+
+#. translators: %d: line number.
+#: src/blocks/checklist/edit.js:41
+#: src/blocks/icon-list/edit.js:90
+#: src/blocks/icon-list/edit.js:153
+#, js-format
+msgid "Line %d"
+msgstr "வரி %d"
+
+#: src/blocks/checklist/edit.js:100
+msgid "Task…"
+msgstr "பணி…"
+
+#: src/blocks/checklist/edit.js:126
+#: src/blocks/icon-list/edit.js:168
+msgid "Add line"
+msgstr "வரி சேர்க்கவும்"
+
+#: src/blocks/code/edit.js:36
+msgid "Language"
+msgstr "மொழி"
+
+#: src/blocks/code/edit.js:41
+msgid "Detect automatically"
+msgstr "தானாகக் கண்டறி"
+
+#: src/blocks/code/edit.js:48
+msgid "No highlighting"
+msgstr "ஹைலைட் செய்யப்படவில்லை"
+
+#: src/blocks/code/edit.js:65
+msgid "File name"
+msgstr "கோப்பு பெயர்"
+
+#: src/blocks/code/edit.js:66
+msgid "Shown above the code, for example functions.php."
+msgstr "குறியீட்டிற்கு மேலே காட்டப்பட்டுள்ளது, உதாரணமாக functions.php."
+
+#: src/blocks/code/edit.js:75
+msgid "Line numbers"
+msgstr "வரி எண்கள்"
+
+#: src/blocks/code/edit.js:83
+msgid "Copy button"
+msgstr "நகலெடு பொத்தான்"
+
+#: src/blocks/code/edit.js:89
+msgid "Wrap long lines"
+msgstr "நீண்ட வரிகளை மடி (Wrap long lines)"
+
+#: src/blocks/code/edit.js:129
+msgid "Write or paste code…"
+msgstr "குறியீட்டை எழுதுங்கள் அல்லது ஒட்டுங்கள்…"
+
+#: src/blocks/comparison-table/edit.js:46
+#: src/design/props/cursor.js:30
+#: src/design/variations.js:44
+#: src/editor/index.js:35
+#: src/editor/language-switcher.js:190
+#: src/workflow/pro__premium_only/ReplacePanel.js:118
+msgid "Text"
+msgstr "உரை"
+
+#: src/blocks/comparison-table/edit.js:57
+#: src/blocks/feature-list/edit.js:54
+#: src/blocks/layout/edit.js:233
+#: src/core/dev-compat/known.js:58
+#: src/design/props/grid-columns.js:14
+msgid "Columns"
+msgstr "நிரல்கள்"
+
+#. translators: %d: column number.
+#: src/blocks/comparison-table/edit.js:63
+#, js-format
+msgid "Column %d"
+msgstr "நிரல்வரி %d"
+
+#. translators: %s: column name.
+#: src/blocks/comparison-table/edit.js:72
+#, js-format
+msgid "Highlight %s"
+msgstr "ஹைலைட் செய் %s"
+
+#: src/blocks/comparison-table/edit.js:127
+msgid "Add column"
+msgstr "நிரலைச் சேர்"
+
+#: src/blocks/comparison-table/edit.js:132
+#: src/design/props/grid-rows.js:14
+msgid "Rows"
+msgstr "வரிகள்"
+
+#. translators: %d: row number.
+#: src/blocks/comparison-table/edit.js:140
+#, js-format
+msgid "Row %d"
+msgstr "வரி %d"
+
+#: src/blocks/comparison-table/edit.js:168
+msgid "Add row"
+msgstr "வரிசை சேர்"
+
+#: src/blocks/comparison-table/edit.js:179
+msgid "Caption (what is being compared)"
+msgstr "தலைப்பு (எது ஒப்பிடப்படுகிறது)"
+
+#. translators: %s: current cell type (Text, Included, Not included).
+#: src/blocks/comparison-table/edit.js:294
+#, js-format
+msgid "Cell type: %s. Change"
+msgstr "கலத்தின் வகை: %s. மாற்றுக"
+
+#: src/blocks/contact-buttons/edit.js:22
+msgid "Phone call"
+msgstr "தொலைபேசி அழைப்பு"
+
+#: src/blocks/contact-buttons/edit.js:24
+msgid "Text message"
+msgstr "உரைச் செய்தி"
+
+#: src/blocks/contact-buttons/edit.js:25
+#: src/blocks/whatsapp/edit.js:28
+msgid "WhatsApp"
+msgstr "வாட்சப்"
+
+#: src/blocks/contact-buttons/edit.js:66
+#: src/editor/language-switcher.js:80
+msgid "Buttons"
+msgstr "பொத்தான்கள்"
+
+#: src/blocks/contact-buttons/edit.js:88
+msgid "Phone number, with country code"
+msgstr "நாட்டின் குறியீட்டுடன் கூடிய தொலைபேசி எண்"
+
+#: src/blocks/contact-buttons/edit.js:99
+#: src/blocks/shared/dialog-edit.js:129
+#: src/blocks/whatsapp/edit.js:55
+#: src/core/edit.js:209
+msgid "Button text"
+msgstr "பொத்தான் உரை"
+
+#: src/blocks/contact-buttons/edit.js:119
+msgid "Remove this button"
+msgstr "இந்த பொத்தானை அகற்று"
+
+#: src/blocks/contact-buttons/edit.js:139
+#: src/blocks/contact-buttons/edit.js:200
+msgid "Add a button"
+msgstr "பொத்தானைச் சேர்"
+
+#: src/blocks/contact-buttons/edit.js:144
+msgid "WhatsApp message to start with (optional)"
+msgstr "தொடங்குவதற்கான WhatsApp செய்தி (விருப்பமானது)"
+
+#: src/blocks/contact-buttons/edit.js:183
+msgid "Contact buttons"
+msgstr "தொடர்பு பொத்தான்கள்"
+
+#: src/blocks/contact-buttons/edit.js:184
+msgid "Add a phone number, an email address or a WhatsApp number in the sidebar."
+msgstr "பக்கப்பட்டையில் தொலைபேசி எண், மின்னஞ்சல் முகவரி அல்லது வாட்ஸ்அப் எண்கைச் சேர்க்கவும்."
+
+#: src/blocks/dual-heading/edit.js:31
+msgid "Dual heading"
+msgstr "இரட்டைத் தலைப்பு"
+
+#: src/blocks/dual-heading/edit.js:36
+#: src/blocks/related-posts/edit.js:85
+#: src/blocks/shared/kit.js:192
+#: src/blocks/sitemap/edit.js:62
+msgid "Heading level"
+msgstr "தலைப்பு நிலை"
+
+#: src/blocks/dual-heading/edit.js:45
+msgid "Use H1 once per page, for its main title."
+msgstr "ஒவ்வொரு பக்கத்திற்கும் அதன் முக்கிய தலைப்புக்கு H1-ஐ ஒரு முறை பயன்படுத்தவும்."
+
+#: src/blocks/dual-heading/edit.js:53
+msgid "Second part look"
+msgstr "இரண்டாம் பாகம் தோற்றம்"
+
+#: src/blocks/dual-heading/edit.js:61
+msgid "Accent colour"
+msgstr "உச்சரிப்பு நிறம்"
+
+#: src/blocks/dual-heading/edit.js:68
+msgid "Gradient"
+msgstr "கிரேடியன்ட்"
+
+#: src/blocks/dual-heading/edit.js:75
+#: src/blocks/social-icons/edit.js:250
+msgid "Outline"
+msgstr "வெளிக்கோடு"
+
+#: src/blocks/dual-heading/edit.js:79
+#: src/design/props/text-decoration.js:17
+msgid "Underline"
+msgstr "அடிக்கோடு"
+
+#: src/blocks/dual-heading/edit.js:89
+msgid "Second part on its own line"
+msgstr "இரண்டாவது பகுதி அதன் சொந்த வரியில்"
+
+#: src/blocks/dual-heading/edit.js:112
+msgid "First part"
+msgstr "முதல் பகுதி"
+
+#: src/blocks/dual-heading/edit.js:120
+msgid "second part"
+msgstr "இரண்டாம் பகுதி"
+
+#: src/blocks/extensions/highlight.js:26
+msgid "Marker pen"
+msgstr "மார்க்கர் பேனா"
+
+#: src/blocks/extensions/highlight.js:27
+msgid "Thick underline"
+msgstr "கந்தையான அடிக்கோடு"
+
+#: src/blocks/extensions/highlight.js:28
+#: src/editor/language-switcher.js:193
+msgid "Background"
+msgstr "பின்னணி"
+
+#: src/blocks/extensions/highlight.js:53
+#: src/blocks/extensions/highlight.js:105
+msgid "Highlight"
+msgstr "ஹைலைட் செய்"
+
+#: src/blocks/extensions/highlight.js:91
+msgid "Remove highlight"
+msgstr "ஹைலைட்டை அகற்று"
+
+#: src/blocks/extensions/text-styles.js:31
+msgid "Drop cap"
+msgstr "துளி எழுத்து"
+
+#: src/blocks/extensions/text-styles.js:36
+msgid "Large first letter"
+msgstr "பெரிய முதல் எழுத்து"
+
+#: src/blocks/extensions/text-styles.js:44
+msgid "For the first letter in a box, choose the \"Drop cap in a box\" style."
+msgstr "பெட்டியில் உள்ள முதல் எழுத்துக்கு, \"டிராப் கேப் இன் எ பாக்ஸ்\" பாணியைத் தேர்ந்தெடுக்கவும்."
+
+#: src/blocks/extensions/text-styles.js:61
+msgid "Drop cap in a box"
+msgstr "பெட்டியில் டிராப் கேப்"
+
+#: src/blocks/extensions/text-styles.js:65
+msgid "Accent bar"
+msgstr "உச்சரிப்புப் பட்டை"
+
+#: src/blocks/extensions/text-styles.js:69
+msgid "Pull quote (accent bar)"
+msgstr "புள் மேற்கோள் (வலியுறுத்தல் பட்டை)"
+
+#: src/blocks/extensions/text-styles.js:70
+msgid "A quote from the text, set large beside a coloured bar to draw the eye."
+msgstr "கண்ணைக் கவரும் வகையில் வண்ணப் பட்டைக்கு அருகில் பெரிய அளவில் அமைக்கப்பட்டுள்ள உரையிலிருந்து ஒரு மேற்கோள்."
+
+#: src/blocks/extensions/text-styles.js:75
+msgid "quote"
+msgstr "மேற்கோள் காட்டு"
+
+#: src/blocks/feature-list/edit.js:49
+msgid "Feature list"
+msgstr "அம்சப் பட்டியல்"
+
+#: src/blocks/feature-list/edit.js:59
+msgid "On phones the features always stack."
+msgstr "ஃபோன்களில் அம்சங்கள் எப்போதும் அடுக்கி வைக்கப்படும்."
+
+#: src/blocks/feature-list/edit.js:89
+msgid "Features"
+msgstr "அம்சங்கள்"
+
+#. translators: %d: feature number.
+#: src/blocks/feature-list/edit.js:97
+#, js-format
+msgid "Feature %d"
+msgstr "அம்சம் %d"
+
+#: src/blocks/feature-list/edit.js:108
+#: src/blocks/icon-list/edit.js:99
+msgid "Own icon"
+msgstr "சொந்த சின்னம்"
+
+#: src/blocks/feature-list/edit.js:154
+msgid "Feature…"
+msgstr "அம்சம்…"
+
+#: src/blocks/feature-list/edit.js:169
+msgid "Describe it…"
+msgstr "விவரிக்கவும்…"
+
+#: src/blocks/feature-list/edit.js:188
+msgid "Add feature"
+msgstr "அம்சத்தைச் சேர்"
+
+#: src/blocks/form/edit.js:47
+msgid "Install and activate Contact Form 7, WPForms, Gravity Forms or Fluent Forms, then choose one of its forms here."
+msgstr "Contact Form 7, WPForms, Gravity Forms அல்லது Fluent Forms ஐ நிறுவி செயல்படுத்தவும், பின்னர் அதிலிருந்து ஒரு படிவத்தை இங்கே தேர்வு செய்யவும்."
+
+#: src/blocks/form/edit.js:59
+msgid "Form plugin"
+msgstr "படிவ செருகுநிரல்"
+
+#: src/blocks/form/edit.js:64
+msgid "Choose…"
+msgstr "தேர்ந்தெடுக்கவும்..."
+
+#: src/blocks/form/edit.js:79
+#: src/blocks/form/edit.js:153
+#: src/blocks/form/edit.js:232
+#: src/core/dev-compat/known.js:213
+#: src/core/dev-compat/known.js:229
+#: src/core/dev-compat/known.js:256
+#: src/core/dev-compat/known.js:290
+msgid "Form"
+msgstr "படிவம்"
+
+#: src/blocks/form/edit.js:85
+#: src/core/dev-compat/known.js:19
+msgid "Choose a form…"
+msgstr "ஒரு படிவத்தைத் தேர்ந்தெடுக்கவும்..."
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:91
+#, js-format
+msgid "%s has no forms yet"
+msgstr "%s-ல் இன்னும் படிவங்கள் எதுவும் இல்லை"
+
+#. translators: %s: form plugin name.
+#: src/blocks/form/edit.js:110
+#, js-format
+msgid "%s is not active on this site, so this form cannot be shown."
+msgstr "இந்தத் தளத்தில் %s இயக்கத்தில் இல்லை, எனவே இந்தப் படிவத்தைக் காட்ட முடியாது."
+
+#: src/blocks/form/edit.js:131
+msgid "The form list could not be loaded."
+msgstr "படிவப் பட்டியலை ஏற்ற முடியவில்லை."
+
+#: src/blocks/form/edit.js:159
+msgid "Form style"
+msgstr "படிவப் பாணி"
+
+#: src/blocks/form/edit.js:164
+msgid "Fields"
+msgstr "புலங்கள்"
+
+#: src/blocks/form/edit.js:169
+#: src/design/icons/IconPicker.js:43
+msgid "Outlined"
+msgstr "வெளியே கோடிட்டது"
+
+#: src/blocks/form/edit.js:176
+#: src/blocks/social-icons/edit.js:246
+msgid "Filled"
+msgstr "நிரப்பப்பட்டது"
+
+#: src/blocks/form/edit.js:180
+msgid "Underlined"
+msgstr "அடிக்கோடு இடப்பட்டது"
+
+#: src/blocks/form/edit.js:193
+msgid "Button width"
+msgstr "பட்டன் அகலம்"
+
+#: src/blocks/form/edit.js:198
+msgid "Fit the text"
+msgstr "உரையைப் பொருத்துக"
+
+#: src/blocks/form/edit.js:205
+#: src/blocks/layout/edit.js:270
+#: src/core/edit.js:98
+msgid "Full width"
+msgstr "முழு அகலம்"
+
+#: src/blocks/form/edit.js:216
+msgid "Colours, fonts, spacing and corners come from your site design and this block’s design settings."
+msgstr "நிறங்கள், எழுத்துருக்கள், இடைவெளி மற்றும் மூலைகள் ஆகியவை உங்கள் தள வடிவமைப்பு மற்றும் இந்தத் தொகுதியின் வடிவமைப்பு அமைப்புகளிலிருந்து பெறப்படுகின்றன."
+
+#: src/blocks/form/edit.js:233
+msgid "Show a form from your form plugin, styled to match your site."
+msgstr "உங்கள் தளத்திற்கு ஏற்றவாறு வடிவமைக்கப்பட்ட உங்கள் ஃபார்ம் பிளக்கினிலிருந்து ஒரு ஃபார்மைக் காட்டுக."
+
+#: src/blocks/form/edit.js:240
+msgid "Need a form plugin? Contact Form 7 is free."
+msgstr "படிவ செருகுநிரல் தேவையா? காண்டாக்ட் ஃபார்ம் 7 இலவசம்."
+
+#: src/blocks/glossary/edit.js:25
+msgid "Glossary"
+msgstr "சொற்களஞ்சியம்"
+
+#: src/blocks/glossary/edit.js:28
+msgid "Sort A to Z"
+msgstr "A முதல் Z வரை வரிசைப்படுத்துக"
+
+#: src/blocks/glossary/edit.js:31
+msgid "The page shows the terms in alphabetical order; here they stay in the order you wrote them."
+msgstr "இந்தப் பக்கம் சொற்களை அகரவரிசையில் காட்டுகிறது; இங்கே அவை நீங்கள் எழுதிய முறையிலேயே இருக்கும்."
+
+#: src/blocks/glossary/edit.js:38
+msgid "Show an A–Z index"
+msgstr "A–Z அட்டவணையைக் காட்டு"
+
+#: src/blocks/glossary/edit.js:47
+msgid "Link terms used elsewhere on this page"
+msgstr "இந்தப் பக்கத்தில் வேறு இடங்களில் பயன்படுத்தப்பட்டுள்ள இணைப்புச் சொற்கள்"
+
+#: src/blocks/glossary/edit.js:53
+msgid "The first time each term appears in the page text it links to its definition. Headings, buttons, code and existing links are left alone."
+msgstr "பக்கத்தின் உரைக்குள் ஒவ்வொரு சொற்களும் முதல் முறை தோன்றும் போது, அது அதன் வரையறுப்பிற்கு இணைப்பு கொடுக்கிறது. தலைப்புகள், பொத்தான்கள், குறியீடு மற்றும் ஏற்கனவே உள்ள இணைப்புகள் அப்படியே விடப்படுகின்றன."
+
+#: src/blocks/glossary/edit.js:60
+msgid "Terms"
+msgstr "நிபந்தனைகள்"
+
+#. translators: %d: term number.
+#: src/blocks/glossary/edit.js:68
+#, js-format
+msgid "Term %d"
+msgstr "காலம் %d"
+
+#: src/blocks/glossary/edit.js:103
+msgid "Term"
+msgstr "காலம்"
+
+#: src/blocks/glossary/edit.js:120
+msgid "What it means…"
+msgstr "இதன் அர்த்தம் என்னவென்றால்…"
+
+#: src/blocks/glossary/edit.js:142
+msgid "Add term"
+msgstr "சொல்லைச் சேர்க்கவும்"
+
+#: src/blocks/icon-list/edit.js:40
+msgid "Icon list"
+msgstr "சின்னங்களின் பட்டியல்"
+
+#: src/blocks/icon-list/edit.js:63
+msgid "One below the other"
+msgstr "ஒன்றுக்கு கீழே மற்றொன்று"
+
+#: src/blocks/icon-list/edit.js:70
+msgid "Side by side"
+msgstr "பக்கம் பக்கமாக"
+
+#: src/blocks/icon-list/edit.js:142
+msgid "List item…"
+msgstr "பட்டியல் உருப்படி…"
+
+#: src/blocks/info-box/edit.js:56
+msgid "Info box"
+msgstr "தகவல் பெட்டி"
+
+#: src/blocks/info-box/edit.js:84
+msgid "Or choose any icon from the library:"
+msgstr "நூலகத்திலிருந்து ஏதேனும் ஐகானைத் தேர்ந்தெடுக்கவும்:"
+
+#: src/blocks/info-box/edit.js:143
+msgid "Link text"
+msgstr "இணைப்பு உரை"
+
+#: src/blocks/info-box/edit.js:146
+msgid "Say where the link goes (\"See our prices\"), not \"Read more\"."
+msgstr "\"மேலும் படிக்கவும்\" என்பதற்குப் பதிலாக, இணைப்பு எங்கு செல்கிறது என்பதைக் குறிப்பிடவும் (\"எங்கள் விலைகளைப் பார்க்கவும்\")."
+
+#: src/blocks/info-box/edit.js:181
+msgid "A sentence or two…"
+msgstr "ஒன்று அல்லது இரண்டு வாக்கியங்கள்…"
+
+#: src/blocks/layout/edit.js:43
+msgid "section — a thematic section"
+msgstr "பிரிவு — ஒரு கருப்பொருள் பிரிவு"
+
+#: src/blocks/layout/edit.js:44
+msgid "div — no meaning"
+msgstr "div — பொருள் இல்லை"
+
+#: src/blocks/layout/edit.js:45
+msgid "header — introductory content"
+msgstr "தலைப்பு - அறிமுக உள்ளடக்கம்"
+
+#: src/blocks/layout/edit.js:46
+msgid "footer — closing content"
+msgstr "அடிக்குறிப்பு — முடிவுறும் உள்ளடக்கம்"
+
+#: src/blocks/layout/edit.js:47
+msgid "article — self-contained content"
+msgstr "கட்டுரை — தனியாகக் கொண்ட உள்ளடக்கம்"
+
+#: src/blocks/layout/edit.js:48
+msgid "aside — related content"
+msgstr "ஒதுக்கிடப்பட்டவை — தொடர்புடைய உள்ளடக்கம்"
+
+#: src/blocks/layout/edit.js:49
+msgid "main — the main content (once per page)"
+msgstr "main — முதன்மை உள்ளடக்கம் (பக்கத்திற்கு ஒரு முறை)"
+
+#: src/blocks/layout/edit.js:53
+msgid "nav — navigation links"
+msgstr "வழிசெலுத்தல் — வழிசெலுத்தல் இணைப்புகள்"
+
+#: src/blocks/layout/edit.js:137
+msgid "Stack (flexbox, column)"
+msgstr "ஸ்டாக் (பிளெக்ஸ்பாக்ஸ், நெடுவரிசை)"
+
+#: src/blocks/layout/edit.js:156
+msgid "Row (flexbox)"
+msgstr "நிரை (flexbox)"
+
+#: src/blocks/layout/edit.js:172
+#: src/blocks/layout/edit.js:218
+#: src/design/props/display.js:29
+msgid "Grid"
+msgstr "வலைப்பின்னல்"
+
 #. translators: %s: a screen size such as "Tablet".
-#: src/blocks/layout/edit.js:174
+#: src/blocks/layout/edit.js:188
 #, js-format
 msgid "Editing: %s"
 msgstr "திருத்துகிறது: %s"
 
-#: src/blocks/layout/edit.js:181
+#: src/blocks/layout/edit.js:195
 msgid "Lay out children as"
 msgstr "குழந்தைகளைக் கீழே அமைக்கவும்"
 
@@ -7187,7 +8247,7 @@ msgstr "குழந்தைகளைக் கீழே அமைக்கவ�
 #. translators: %s: the value a setting inherits from a wider screen size.
 #. translators: %s: a colour inherited from a wider screen size.
 #. translators: %s: inherited value.
-#: src/blocks/layout/edit.js:191
+#: src/blocks/layout/edit.js:205
 #: src/design/editor/controls/basic.js:31
 #: src/design/editor/controls/color.js:83
 #: src/design/editor/controls/complex.js:127
@@ -7195,70 +8255,50 @@ msgstr "குழந்தைகளைக் கீழே அமைக்கவ�
 msgid "Inherited (%s)"
 msgstr "பரம்பரை வழி வந்தவை (%s)"
 
-#: src/blocks/layout/edit.js:200
+#: src/blocks/layout/edit.js:214
 #: src/design/props/display.js:28
 msgid "Flexbox"
 msgstr "ஃப்ளெக்ஸ்பாக்ஸ்"
 
-#: src/blocks/layout/edit.js:208
+#: src/blocks/layout/edit.js:222
 msgid "Stacked blocks"
 msgstr "அடுக்கிய தொகுதிகள்"
 
-#: src/blocks/layout/edit.js:219
-#: src/design/props/grid-columns.js:14
-msgid "Columns"
-msgstr "நிரல்கள்"
-
-#: src/blocks/layout/edit.js:227
+#: src/blocks/layout/edit.js:241
 msgid "Drag in the canvas, or type"
 msgstr "கேன்வாஸில் இழுக்கவும் அல்லது தட்டச்சு செய்யவும்"
 
-#: src/blocks/layout/edit.js:244
-#: src/core/edit.js:90
+#: src/blocks/layout/edit.js:258
+#: src/core/edit.js:91
 #: src/design/props/content-width.js:15
 msgid "Content width"
 msgstr "உடக்கின் அகலம்"
 
-#: src/blocks/layout/edit.js:249
+#: src/blocks/layout/edit.js:263
 msgid "Boxed (the theme’s content width)"
 msgstr "பாக்சு செய்யப்பட்டவை (தீமின் உள்ளடக்க அகலம்)"
 
-#: src/blocks/layout/edit.js:256
-#: src/core/edit.js:97
-msgid "Full width"
-msgstr "முழு அகலம்"
-
-#: src/blocks/layout/edit.js:265
+#: src/blocks/layout/edit.js:279
 msgid "Minimum height"
 msgstr "குறைந்தபட்ச உயரம்"
 
-#: src/blocks/layout/edit.js:280
+#: src/blocks/layout/edit.js:294
 msgid "HTML tag"
 msgstr "HTML குறிச்சொல்"
 
-#: src/blocks/layout/edit.js:292
-#: src/core/edit.js:150
-msgid "Link"
-msgstr "இணைப்பு"
-
-#: src/blocks/layout/edit.js:299
+#: src/blocks/layout/edit.js:313
 msgid "Make the whole block a link to"
 msgstr "முழுத் தொகுதியையும் இதற்கான இணைப்பாக மாற்றுக"
 
-#: src/blocks/layout/edit.js:315
+#: src/blocks/layout/edit.js:329
 msgid "Link text for screen readers"
 msgstr "திரை வாசிப்பான்களுக்கான இணைப்பு உரை"
 
-#: src/blocks/layout/edit.js:319
+#: src/blocks/layout/edit.js:333
 msgid "What the link does, for visitors who cannot see the block."
 msgstr "தடுப்பைப் பார்க்க முடியாத பார்வையாளர்களுக்கு, இணைப்பு என்ன செய்கிறது."
 
-#: src/blocks/layout/edit.js:335
-#: src/core/edit.js:159
-msgid "Open in a new tab"
-msgstr "புதிய தாவதலில் திறக்கவும்"
-
-#: src/blocks/layout/edit.js:350
+#: src/blocks/layout/edit.js:364
 msgid "Do not put links or buttons inside a linked block: a link inside a link does not work in browsers."
 msgstr "இணைக்கப்பட்ட தொகுதிக்குள் இணைப்புகளையோ பொத்தான்களையோ வைக்க வேண்டாம்: இணைப்பினுள் இருக்கும் இணைப்பு உலாவிகளில் வேலை செய்யாது."
 
@@ -7290,14 +8330,143 @@ msgstr "+ வரிசை"
 msgid "− Row"
 msgstr "− வரிசை"
 
+#: src/blocks/map/edit.js:30
+msgid "Place"
+msgstr "இடம்"
+
+#: src/blocks/map/edit.js:34
+msgid "Paste coordinates or an OpenStreetMap link"
+msgstr "ஆள்கூறுகளை (coordinates) அல்லது OpenStreetMap இணைப்பை ஒட்டவும்"
+
+#: src/blocks/map/edit.js:38
+msgid "On openstreetmap.org, find the place, then copy the address from the browser bar, or right-click the map and choose \"Show address\"."
+msgstr "openstreetmap.org தளத்தில் அந்த இடத்தைக் கண்டுபிடித்து, உலாவியின் பட்டையிலிருந்து முகவரியை நகலெடுக்கவும் அல்லது வரைபடத்தில் வலது கிளிக் செய்து \"முகவரியைக் காட்டு\" என்பதைத் தேர்ந்தெடுக்கவும்."
+
+#: src/blocks/map/edit.js:55
+msgid "Latitude"
+msgstr "அகலாநிறை"
+
+#: src/blocks/map/edit.js:67
+msgid "Longitude"
+msgstr "தீர்க்கதாவம்"
+
+#: src/blocks/map/edit.js:78
+msgid "Zoom"
+msgstr "பெரிதாக்கு"
+
+#: src/blocks/map/edit.js:87
+msgid "Name of the place"
+msgstr "இடத்தின் பெயர்"
+
+#: src/blocks/map/edit.js:88
+msgid "Shown under the map and read out by screen readers."
+msgstr "வரைபடத்தின் கீழ் காட்டப்படும் மற்றும் திரை வாசகர்களால் வாசிக்கப்படும்."
+
+#: src/blocks/map/edit.js:106
+msgid "Paste coordinates (for example 51.5074, -0.1278) or an OpenStreetMap link."
+msgstr "ஆள்கூறுகளை (உதாரணத்திற்கு 51.5074, -0.1278) அல்லது OpenStreetMap இணைப்பை ஒட்டவும்."
+
+#: src/blocks/map/edit.js:114
+msgid "Coordinates or link"
+msgstr "ஆயத்தொலைவுகள் அல்லது இணைப்பு"
+
+#: src/blocks/map/edit.js:154
+msgid "Preview the map"
+msgstr "வரைபடத்தைக் முன்னோட்டமிடுங்கள்"
+
+#. translators: 1: latitude, 2: longitude.
+#: src/blocks/map/edit.js:159
+#, js-format
+msgid "Check %1$s, %2$s on OpenStreetMap"
+msgstr "OpenStreetMap-ல் %1$s, %2$s ஐச் சரிபார்க்கவும்"
+
+#: src/blocks/post-meta/edit.js:22
+#: src/workflow/pro__premium_only/network.js:172
+#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
+msgid "Author"
+msgstr "ஆசிரியர்"
+
+#: src/blocks/post-meta/edit.js:23
+msgid "Published date"
+msgstr "வெளியிடப்பட்ட தேதி"
+
+#: src/blocks/post-meta/edit.js:24
+msgid "Updated date (when it differs)"
+msgstr "புதுப்பிக்கப்பட்ட தேதி (மாறுபடும் போது)"
+
+#: src/blocks/post-meta/edit.js:28
+#: src/blocks/related-posts/edit.js:48
+msgid "Categories"
+msgstr "வகைகள்"
+
+#: src/blocks/post-meta/edit.js:29
+#: src/blocks/related-posts/edit.js:55
+msgid "Tags"
+msgstr "டக்குகள்"
+
+#: src/blocks/post-meta/edit.js:30
+msgid "Reading time"
+msgstr "வாசிப்பு நேரம்"
+
+#: src/blocks/post-meta/edit.js:31
+msgid "Comment count"
+msgstr "கருத்துகளின் எண்ணிக்கை"
+
+#: src/blocks/post-meta/edit.js:38
+msgid "Details to show"
+msgstr "காண்பிக்க வேண்டிய விவரங்கள்"
+
+#: src/blocks/post-meta/edit.js:66
+msgid "Choose at least one detail to show."
+msgstr "காட்ட குறைந்தபட்சம் ஒரு விவரத்தையாவது தேர்ந்தெடுக்கவும்."
+
+#: src/blocks/progress-bar/edit.js:25
+msgid "Progress bar"
+msgstr "முன்னேற்றப் பட்டை"
+
+#: src/blocks/progress-bar/edit.js:37
+msgid "Maximum"
+msgstr "அதிகபட்சம்"
+
+#: src/blocks/progress-bar/edit.js:38
+msgid "100 for a percentage; any other number for a count, such as 8 of 10."
+msgstr "சதவீதத்திற்கு 100; எண்ணிக்கைக்கு வேறு ஏதேனும் எண், 10-ல் 8 போன்றது."
+
+#: src/blocks/progress-bar/edit.js:48
+msgid "Show the percentage"
+msgstr "சதவீதத்தைக் காட்டுங்கள்"
+
+#: src/blocks/protected/edit.js:59
+msgid "A password is set. Visitors see a password form instead of this content until they enter it."
+msgstr "கடவுச்சொல் அமைக்கப்பட்டுள்ளது. பார்வையாளர்கள் அதை உள்ளிடும் வரை இந்த உள்ளடக்கத்திற்குப் பதிலாக கடவுச்சொல் படிவத்தைக் காண்பார்கள்."
+
+#: src/blocks/protected/edit.js:63
+msgid "No password is set yet, so visitors see nothing here."
+msgstr "கடவுச்சொல் எதுவும் இன்னும் அமைக்கப்படவில்லை, எனவே பார்வையாளர்கள் இங்கு எதையும் பார்க்க மாட்டார்கள்."
+
+#: src/blocks/protected/edit.js:75
+msgid "New password"
+msgstr "புதிய கடவுச்சொல்"
+
+#: src/blocks/protected/edit.js:88
+msgid "Set the password"
+msgstr "கடவுச்சொல்லை அமைக்கவும்"
+
+#: src/blocks/protected/edit.js:92
+msgid "Password set. Save the page to apply it; visitors who had unlocked it will need the new one."
+msgstr "கடவுச்சொல் அமைக்கப்பட்டது. இதைப் பயன்படுத்தப் பக்கத்தைச் சேமிக்கவும்; இதைத் திறந்திருந்த பார்வையாளர்களுக்கு புதிய கடவுச்சொல் தேவைப்படும்."
+
+#: src/blocks/protected/edit.js:104
+msgid "If Page Builder Sandwich is ever switched off, this content is shown to everyone."
+msgstr "Page Builder Sandwich எப்போதாவது அணைக்கப்பட்டால், இந்த உள்ளடக்கம் அனைவருக்கும் காட்டப்படும்."
+
+#: src/blocks/protected/edit.js:116
+msgid "Message above the password form (optional)"
+msgstr "கடவுச்சொல் படிவத்திற்கு மேலே உள்ள செய்தி ( விருப்பமானது )"
+
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:18
 msgid "Switch"
 msgstr "மாறுதல்"
-
-#: src/blocks/pro__premium_only/dark-mode-switch/edit.js:21
-#: src/design/pro__premium_only/globals/TokenList.js:52
-msgid "Label"
-msgstr "லேபிள்"
 
 #: src/blocks/pro__premium_only/dark-mode-switch/edit.js:22
 msgid "Read out by screen readers, and shown when “Show label” is on."
@@ -7307,30 +8476,698 @@ msgstr "திரை வாசிப்பான்களால் வாசி�
 msgid "Show label"
 msgstr "லேபிலைக் காட்டுங்கள்"
 
-#: src/core/dev-compat/edit.js:54
+#: src/blocks/qr-code/edit.js:33
+msgid "Web address or text"
+msgstr "வலை முகவரி அல்லது உரை"
+
+#: src/blocks/qr-code/edit.js:42
+#: src/blocks/qr-code/edit.js:67
+msgid "QR code"
+msgstr "QR குறியீடு"
+
+#: src/blocks/qr-code/edit.js:47
+msgid "Description for screen readers"
+msgstr "திரை வாசகர்களுக்கான விளக்கம்"
+
+#: src/blocks/qr-code/edit.js:51
+msgid "Leave empty to use \"QR code for\" and the text."
+msgstr "\"QR கோடு - \" மற்றும் உரைய இதைப் பயன்படுத்த காலியாக விடுங்கள்."
+
+#: src/blocks/qr-code/edit.js:68
+msgid "Type a web address, a phone link (tel:) or any text."
+msgstr "ஒரு வலை முகவரி, தொலைபேசி இணைப்பு (tel:) அல்லது ஏதேனும் உரையைத் தட்டச்சு செய்க."
+
+#: src/blocks/qr-code/edit.js:76
+msgid "This is too long for a QR code. Shorten it."
+msgstr "இது QR குறியீட்டிற்கு மிகவும் நீளமானது. அதைச் சுருக்கவும்."
+
+#: src/blocks/qr-code/edit.js:90
+msgid "Add a caption"
+msgstr "தலைப்பைச் சேர்"
+
+#: src/blocks/reading-progress/edit.js:20
+msgid "Reading progress bar"
+msgstr "வாசிப்பு முன்னேற்றப் பட்டி"
+
+#: src/blocks/reading-progress/edit.js:27
+msgid "Edge of the window"
+msgstr "சாளரத்தின் விளிம்பு"
+
+#: src/blocks/reading-progress/edit.js:35
+#: src/design/editor/controls/complex.js:243
+#: src/design/editor/controls/length.js:278
+#: src/design/pro__premium_only/effects/controls.js:245
+msgid "Top"
+msgstr "மேல்"
+
+#: src/blocks/reading-progress/edit.js:39
+#: src/design/editor/controls/complex.js:244
+#: src/design/editor/controls/length.js:280
+#: src/design/pro__premium_only/effects/controls.js:246
+msgid "Bottom"
+msgstr "கீழ் பகுதி"
+
+#: src/blocks/reading-progress/edit.js:52
+msgid "Shown along the bottom of the window as visitors scroll."
+msgstr "பார்வையாளர்கள் கீழே உருட்டும்போது சாளரத்தின் அடிப்பகுதியில் காட்டப்படும்."
+
+#: src/blocks/reading-progress/edit.js:56
+msgid "Shown along the top of the window as visitors scroll."
+msgstr "பார்வையாளர்கள் கீழே செல்லும்போது சாளரத்தின் மேற்பகுதியில் காட்டப்படும்."
+
+#: src/blocks/related-posts/edit.js:27
+msgid "How many"
+msgstr "எவ்வளவு"
+
+#: src/blocks/related-posts/edit.js:36
+msgid "Related by"
+msgstr "இதன் மூலம் தொடர்புடையது"
+
+#: src/blocks/related-posts/edit.js:41
+msgid "Categories or tags"
+msgstr "வகைகள் அல்லது குறிச்சொற்கள்"
+
+#: src/blocks/related-posts/edit.js:62
+msgid "When nothing is related, show the newest instead"
+msgstr "எதுவும் தொடர்புடையதாக இல்லாவிட்டால், அதற்கு பதிலாக புதியதைக் காட்டுங்கள்"
+
+#: src/blocks/related-posts/edit.js:74
+#: src/design/variations.js:28
+#: src/editor/index.js:30
+msgid "Heading"
+msgstr "தலைப்பு"
+
+#: src/blocks/related-posts/edit.js:75
+msgid "Leave empty for \"Related posts\"."
+msgstr "\"தொடர்புடைய பதிவுகள்\" என்பதற்கு காலியாக விடவும்."
+
+#: src/blocks/related-posts/edit.js:97
+msgid "Show the featured image"
+msgstr "சிறப்புப் படத்தைக் காட்டுங்கள்"
+
+#: src/blocks/related-posts/edit.js:106
+msgid "Show the date"
+msgstr "தேதியைக் காட்டு"
+
+#: src/blocks/related-posts/edit.js:112
+msgid "Show a summary"
+msgstr "சுருக்கத்தைக் காட்டுங்கள்"
+
+#: src/blocks/related-posts/edit.js:132
+msgid "No posts share this post’s categories or tags yet. When some do, they show here."
+msgstr "இந்தப் பதிவின் வகைகளைப் பகிரும் அல்லது குறிச்சொற்களைக் கொண்ட பதிவுகள் எதுவும் இன்னும் இல்லை. சில அவ்வாறு இருக்கும்போது, அவை இங்கே தோன்றும்."
+
+#: src/blocks/shared/dialog-edit.js:37
+msgid "Modal"
+msgstr "மாதிரி"
+
+#: src/blocks/shared/dialog-edit.js:38
+msgid "Off-canvas panel"
+msgstr "ஆஃப்-கேன்வாஸ் பேனல்"
+
+#: src/blocks/shared/dialog-edit.js:47
+#: src/blocks/social-icons/edit.js:289
+#: src/design/editor/controls/complex.js:326
+#: src/design/editor/panel.js:40
+#: src/design/props/font-size.js:13
+#: src/design/pro__premium_only/effects/controls.js:328
+msgid "Size"
+msgstr "அளவு"
+
+#: src/blocks/shared/dialog-edit.js:79
+msgid "Slides in from"
+msgstr "இதிலிருந்து ஸ்லைடு செய்கிறது"
+
+#: src/blocks/shared/dialog-edit.js:83
+msgid "Start is the side where reading begins: the left in English, the right in Arabic."
+msgstr "வாசிப்பு தொடங்கும் பக்கம் ஆரம்பமாகும்: ஆங்கிலத்தில் இடதுபுறம், அரபு மொழியில் வலதுபுறம்."
+
+#: src/blocks/shared/dialog-edit.js:110
+msgid "Close when the page behind is clicked"
+msgstr "பின்புள்ள பக்கம் கிளிக் செய்யப்படும்போது மூடவும்"
+
+#: src/blocks/shared/dialog-edit.js:151
+msgid "Title of the window"
+msgstr "சாளர தலைப்பு"
+
+#: src/blocks/shared/kit.js:88
+msgid "Check mark"
+msgstr "டிக் குறி"
+
+#: src/blocks/shared/kit.js:89
+#: src/blocks/social-icons/edit.js:270
+#: src/design/pro__premium_only/effects/controls.js:132
+#: src/design/pro__premium_only/effects/controls.js:250
+msgid "Circle"
+msgstr "வட்டம்"
+
+#: src/blocks/shared/kit.js:90
+msgid "Cross"
+msgstr "குறுக்கு"
+
+#: src/blocks/shared/kit.js:91
+msgid "Dot"
+msgstr "புள்ளி"
+
+#: src/blocks/shared/kit.js:92
+#: src/design/props/cursor.js:28
+#: src/design/pro__premium_only/effects/panel.js:260
+msgid "Arrow"
+msgstr "அம்பு குறி"
+
+#: src/blocks/shared/kit.js:93
+#: src/design/pro__premium_only/effects/controls.js:256
+msgid "Star"
+msgstr "நட்சத்திரம்"
+
+#: src/blocks/shared/kit.js:153
+msgid "Icon colour"
+msgstr "சின்னத்தின் நிறம்"
+
+#: src/blocks/shared/kit.js:158
+msgid "Same as the text"
+msgstr "உரையைப் போலவே"
+
+#: src/blocks/shared/kit.js:162
+msgid "Theme primary"
+msgstr "தீம் முதன்மை"
+
+#: src/blocks/shared/kit.js:166
+msgid "Theme secondary"
+msgstr "இரண்டாம் நிலை தீம்"
+
+#: src/blocks/shared/kit.js:170
+msgid "Theme contrast"
+msgstr "தீம் மாறுபாடு"
+
+#: src/blocks/shared/kit.js:199
+msgid "Keep headings in order down the page: a heading one level below the section it sits in."
+msgstr "பக்கத்தில் தலைப்புகளை வரிசையாக வைத்திருங்கள்: அது இருக்கும் பிரிவுக்குக் கீழே ஒரு நிலை தலைப்பு."
+
+#: src/blocks/shared/kit.js:238
+#: src/design/icons/IconField.js:43
+msgid "Choose icon"
+msgstr "சின்னத்தைத் தேர்ந்தெடுங்கள்"
+
+#: src/blocks/shared/kit.js:246
+msgid "Use the default icon"
+msgstr "இயல்பு ஐகானைப் பயன்படுத்துக"
+
+#: src/blocks/shared/kit.js:251
+#: src/design/icons/IconField.js:58
+msgid "Choose an icon"
+msgstr "சின்னத்தைத் தேர்ந்தெடுக்கவும்"
+
+#: src/blocks/shared/kit.js:311
+msgid "Move up"
+msgstr "மேலே நகர்த்து"
+
+#: src/blocks/shared/kit.js:318
+msgid "Move down"
+msgstr "கீே நகர்த்து"
+
+#: src/blocks/sitemap/edit.js:50
+msgid "Show a heading for each type"
+msgstr "ஒவ்வொரு வகைக்கும் தலைப்பைக் காட்டு"
+
+#: src/blocks/sitemap/edit.js:80
+msgid "Nothing published yet in the types you chose."
+msgstr "நீங்கள் தேர்ந்தெடுத்த வகைகளில் இன்னும் எதுவும் வெளியிடப்படவில்லை."
+
+#: src/blocks/social-icons/edit.js:135
+#: src/workflow/pro__premium_only/ReplacePanel.js:122
+msgid "Links"
+msgstr "இணைப்புகள்"
+
+#. translators: %d: link number.
+#: src/blocks/social-icons/edit.js:142
+#, js-format
+msgid "Link %d"
+msgstr "இணைப்பு %d"
+
+#: src/blocks/social-icons/edit.js:151
+msgid "Network"
+msgstr "வலைப்பின்னல்"
+
+#: src/blocks/social-icons/edit.js:167
+msgid "A profile address, mailto:you@example.com or tel:+441234567890."
+msgstr "ஒரு சுயவிவர முகவரி, mailto:you@example.com அல்லது tel:+441234567890."
+
+#: src/blocks/social-icons/edit.js:183
+msgid "Name read to screen readers"
+msgstr "திரை வாசிப்பான்களுக்கு வாசிக்கப்படும் பெயர்"
+
+#: src/blocks/social-icons/edit.js:202
+msgid "Other icon"
+msgstr "மற்ற ஐகான்"
+
+#: src/blocks/social-icons/edit.js:231
+#: src/blocks/social-icons/edit.js:356
+msgid "Add link"
+msgstr "இணைப்பைச் சேர்"
+
+#: src/blocks/social-icons/edit.js:235
+msgid "Look"
+msgstr "பார் பார்வையிடு"
+
+#: src/blocks/social-icons/edit.js:241
+#: src/design/editor/controls/complex.js:491
+#: src/design/icons/IconPicker.js:242
+#: src/design/props/font-style.js:13
+#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
+#: src/editor/index.js:41
+msgid "Style"
+msgstr "பாணி"
+
+#: src/blocks/social-icons/edit.js:254
+msgid "Icon only"
+msgstr "சின்னம் மட்டும்"
+
+#: src/blocks/social-icons/edit.js:265
+#: src/design/pro__premium_only/effects/controls.js:128
+#: src/design/pro__premium_only/effects/panel.js:283
+msgid "Shape"
+msgstr "வடிவம்"
+
+#: src/blocks/social-icons/edit.js:274
+#: src/design/pro__premium_only/effects/controls.js:251
+msgid "Rounded square"
+msgstr "வட்டமான சதுரம்"
+
+#: src/blocks/social-icons/edit.js:281
+msgid "Square"
+msgstr "சதுரம்"
+
+#: src/blocks/social-icons/edit.js:317
+msgid "Open profiles in a new tab"
+msgstr "புதிய தாவதலில் சுயவிவரங்களைத் திறக்கவும்"
+
+#: src/blocks/star-rating/edit.js:92
+msgid "Star rating"
+msgstr "நட்சத்திர மதிப்பீடு"
+
+#: src/blocks/star-rating/edit.js:96
+msgid "Rating"
+msgstr "மதிப்பீடு"
+
+#: src/blocks/star-rating/edit.js:107
+msgid "Number of stars"
+msgstr "நட்சத்திரங்களின் எண்ணிக்கை"
+
+#: src/blocks/star-rating/edit.js:122
+msgid "Show the number"
+msgstr "எண்ணிக்கையைக் காட்டு"
+
+#: src/blocks/steps/edit.js:28
+msgid "Steps"
+msgstr "படிகள்"
+
+#: src/blocks/steps/edit.js:37
+msgid "Down the page"
+msgstr "பக்கத்தின் கீழே"
+
+#: src/blocks/steps/edit.js:44
+msgid "Side by side (stacks on phones)"
+msgstr "பக்கத்து பக்கத்தில் (போன்களில் ஒன்றுக்கு மேல் ஒன்றாக அடுக்கப்படும்)"
+
+#: src/blocks/steps/edit.js:53
+msgid "Number colour"
+msgstr "எண் நிறம்"
+
+#: src/blocks/steps/edit.js:63
+msgid "Order of the steps"
+msgstr "படிகளின் வரிசை"
+
+#. translators: %d: step number.
+#: src/blocks/steps/edit.js:72
+#, js-format
+msgid "Step %d"
+msgstr "படி %d"
+
+#: src/blocks/steps/edit.js:113
+msgid "Step…"
+msgstr "படி…"
+
+#: src/blocks/steps/edit.js:128
+msgid "What to do…"
+msgstr "என்ன செய்வது…"
+
+#: src/blocks/steps/edit.js:147
+msgid "Add step"
+msgstr "படியைச் சேர்"
+
+#: src/blocks/tab/edit.js:22
+msgid "Tab"
+msgstr "தத்தல்"
+
+#: src/blocks/table-of-contents/edit.js:84
+msgid "Add headings to the page and they will be listed here."
+msgstr "பக்கத்தில் தலைப்புகளைச் சேர்க்கவும், அவை இங்கு பட்டியலிடப்படும்."
+
+#: src/blocks/table-of-contents/edit.js:95
+msgid "Table of contents"
+msgstr "உள்ளடக்க அட்டவணை"
+
+#: src/blocks/table-of-contents/edit.js:111
+msgid "From heading level"
+msgstr "தலைப்பு மட்டத்திலிருந்து"
+
+#: src/blocks/table-of-contents/edit.js:123
+msgid "To heading level"
+msgstr "தலைப்பு மட்டத்திற்கு"
+
+#: src/blocks/table-of-contents/edit.js:134
+msgid "Numbered"
+msgstr "எண் இடப்பட்டது"
+
+#: src/blocks/table-of-contents/edit.js:141
+msgid "Can be collapsed"
+msgstr "சுருக்கலாம்"
+
+#: src/blocks/table-of-contents/edit.js:152
+msgid "Start collapsed"
+msgstr "சுருங்கிய நிலையில் தொடங்கவும்"
+
+#: src/blocks/table-of-contents/edit.js:163
+msgid "Highlight the section being read"
+msgstr "வாசிக்கப்படும் பகுதியை முன்னிலைப்படுத்தவும்"
+
+#: src/blocks/tabs/edit.js:77
+msgid "Tabs"
+msgstr "தாவுகள்"
+
+#: src/blocks/tabs/edit.js:80
+msgid "Name for screen readers"
+msgstr "திரை வாசிப்பான்களுக்கான பெயர்"
+
+#: src/blocks/tabs/edit.js:84
+msgid "Optional. Says what the tabs are about, for example \"Plans\"."
+msgstr "விருப்பத்தேர்வு. தாவிகள் எதைப் பற்றியவை என்பதைக் கூறுகிறது, உதாரணமாக \"திட்டங்கள்\"."
+
+#: src/blocks/tabs/edit.js:95
+msgid "Open on page load"
+msgstr "பக்க ஏற்றத்தின்போது திறக்கவும்"
+
+#: src/blocks/tabs/edit.js:113
+msgid "Tabs down the side"
+msgstr "பக்கவாட்டில் தப்புகள்"
+
+#: src/blocks/tabs/edit.js:158
+msgid "Add a tab"
+msgstr "ஒரு தாவாைச் சேர்"
+
+#: src/blocks/testimonial/edit.js:48
+msgid "Testimonial"
+msgstr "சான்றுரை"
+
+#: src/blocks/testimonial/edit.js:67
+msgid "Replace photo"
+msgstr "புகைப்படத்தை மாற்று"
+
+#: src/blocks/testimonial/edit.js:71
+msgid "Choose photo"
+msgstr "புகைப்படத்தைத் தேர்ந்தெடுங்கள்"
+
+#: src/blocks/testimonial/edit.js:92
+msgid "Remove photo"
+msgstr "புகைப்படத்தை அகற்று"
+
+#: src/blocks/testimonial/edit.js:100
+msgid "Photo description"
+msgstr "புகைப்பட விவரம்"
+
+#: src/blocks/testimonial/edit.js:104
+msgid "Leave empty when the photo only shows the person named next to it."
+msgstr "புகைப்படம் அதற்கு அருகில் பெயரிடப்பட்ட நபரை மட்டுமே காட்டும்போது காலியாக விடவும்."
+
+#: src/blocks/testimonial/edit.js:118
+msgid "Star rating (0 = none)"
+msgstr "நட்சத்திர மதிப்பீடு (0 = இல்லை)"
+
+#: src/blocks/testimonial/edit.js:137
+msgid "Name under the quote"
+msgstr "மேற்கோளின் கீழ் உள்ள பெயர்"
+
+#: src/blocks/testimonial/edit.js:144
+msgid "Photo beside the quote"
+msgstr "மேற்கோளுக்கு அருகிலுள்ள புகைப்படம்"
+
+#: src/blocks/testimonial/edit.js:202
+msgid "What the customer said…"
+msgstr "வாடிக்கையாளர் கூறியது…"
+
+#: src/blocks/testimonial/edit.js:235
+msgid "Role or company"
+msgstr "பங்கு அல்லது நிறுவனம்"
+
+#: src/blocks/tooltip/edit.js:25
+#: src/blocks/tooltip/format.js:27
+#: src/blocks/tooltip/format.js:60
+msgid "Tooltip"
+msgstr "உதவிக் குறிப்பு"
+
+#: src/blocks/tooltip/edit.js:27
+#: src/blocks/tooltip/format.js:91
+msgid "Tooltip text"
+msgstr "உதவிக்குறிப்பு உரை"
+
+#: src/blocks/tooltip/edit.js:28
+msgid "Keep it short: one or two sentences. Screen readers read it with the word it explains."
+msgstr "சுருக்கமாக வையுங்கள்: ஒன்று அல்லது இரண்டு வாக்கியங்கள். திரை வாசிப்பான்கள் அது விளக்கும் சொல்லுடன் சேர்த்து இதையும் வாசிக்கும்."
+
+#: src/blocks/tooltip/edit.js:39
+msgid "Show it"
+msgstr "இதைக் காட்டுங்கள்"
+
+#: src/blocks/tooltip/edit.js:44
+msgid "Above"
+msgstr "மேலே"
+
+#: src/blocks/tooltip/edit.js:48
+msgid "Below"
+msgstr "கீழே"
+
+#: src/blocks/tooltip/edit.js:72
+msgid "Word or phrase"
+msgstr "வார்த்தை அல்லது சொற்றொடர்"
+
+#: src/blocks/tooltip/format.js:99
+msgid "Apply"
+msgstr "பயன்படுத்துக"
+
+#: src/blocks/user-profile/edit.js:27
+msgid "Profile"
+msgstr "சுயவிவரம்"
+
+#: src/blocks/user-profile/edit.js:31
+msgid "Whose profile"
+msgstr "யாருடைய சுயவிவரம்"
+
+#: src/blocks/user-profile/edit.js:40
+msgid "The post’s author"
+msgstr "பதிவின் ஆசிரியர்"
+
+#: src/blocks/user-profile/edit.js:60
+msgid "Show the profile picture"
+msgstr "சுயவிவரப் படத்தைக் காட்டு"
+
+#: src/blocks/user-profile/edit.js:71
+msgid "Show the biography"
+msgstr "சுயசரிதையைக் காட்டுங்கள்"
+
+#: src/blocks/user-profile/edit.js:80
+msgid "Show links to posts and website"
+msgstr "பதிவுகள் மற்றும் வலைத்தளத்திற்கான இணைப்புகளைக் காட்டு"
+
+#: src/blocks/user-profile/edit.js:99
+msgid "Author profile"
+msgstr "ஆசிரியர் சுயவிவரம்"
+
+#: src/blocks/user-profile/edit.js:103
+msgid "Choose whose profile to show."
+msgstr "எந்த சுயவிவரத்தைக் காட்ட வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்."
+
+#: src/blocks/whatsapp/edit.js:32
+msgid "WhatsApp number, with country code"
+msgstr "வாட்ஸ்அப் எண், நாட்டு குறியீட்டுடன்"
+
+#: src/blocks/whatsapp/edit.js:36
+msgid "For example +44 7700 900123."
+msgstr "உதாரணமாக +44 7700 900123."
+
+#: src/blocks/whatsapp/edit.js:45
+msgid "Message to start with (optional)"
+msgstr "தொடங்குவதற்கான செய்தி (விருப்பமானது)"
+
+#: src/blocks/whatsapp/edit.js:65
+msgid "Show the text next to the icon"
+msgstr "சின்னத்திற்கு அருகில் உரையைக் காட்டு"
+
+#: src/blocks/whatsapp/edit.js:75
+msgid "Corner"
+msgstr "மூலை"
+
+#: src/blocks/whatsapp/edit.js:80
+msgid "Bottom end (right in English)"
+msgstr "கீழ் முனை (ஆங்கிலத்தில் வலது பக்கம்)"
+
+#: src/blocks/whatsapp/edit.js:87
+msgid "Bottom start (left in English)"
+msgstr "கீழ் தொடக்கம் (ஆங்கிலத்தில் இடது)"
+
+#: src/blocks/whatsapp/edit.js:99
+msgid "Add your WhatsApp number in the sidebar. Until then the button is not shown on the page."
+msgstr "பக்கப்பட்டையில் உங்கள் வாட்ஸ்அப் எண்ணைச் சேர்க்கவும். அதுவரை பக்கத்தில் அந்தப் பொத்தான் காட்டப்படாது."
+
+#: src/blocks/whatsapp/edit.js:106
+msgid "On the page, this button floats in a bottom corner of the screen."
+msgstr "இந்தப் பக்கத்தில், இந்தப் பொத்தான் திரையின் கீழ் மூலையில் மிதக்கும்."
+
+#: src/core/dev-compat/edit.js:88
 msgid "Shortcode tag"
 msgstr "சுகுணுக்குறியீடு குறிச்சொல்"
 
-#: src/core/dev-compat/edit.js:58
+#: src/core/dev-compat/edit.js:92
 msgid "Use letters, numbers, dashes and underscores only."
 msgstr "எழுத்துக்கள், எண்கள், கோடுகள் மற்றும் அடிக்கோடுகளை மட்டும் பயன்படுத்தவும்."
 
-#: src/core/dev-compat/edit.js:83
+#: src/core/dev-compat/edit.js:123
 msgid "Attribute name"
 msgstr "பண்புக் கூறு பெயர்"
 
-#: src/core/dev-compat/edit.js:90
+#: src/core/dev-compat/edit.js:130
 msgid "Add attribute"
 msgstr "பண்பைச் சேர்"
 
-#: src/core/dev-compat/edit.js:130
-#: src/core/dev-compat/edit.js:152
+#: src/core/dev-compat/edit.js:187
+#: src/core/dev-compat/edit.js:242
 msgid "Shortcode"
 msgstr "சுகுழுக் குறியீடு"
 
-#: src/core/dev-compat/edit.js:156
+#: src/core/dev-compat/edit.js:213
+msgid "Other attributes"
+msgstr "மற்ற பண்புகள்"
+
+#: src/core/dev-compat/edit.js:246
 msgid "Choose a shortcode tag in the block settings."
 msgstr "பிளாக் அமைப்புகளில் ஒரு குறுகிய குறியீட்டு (shortcode) குறிச்சொல்லைத் தேர்ந்தெடுக்கவும்."
+
+#: src/core/dev-compat/known.js:47
+#: src/design/variations.js:133
+msgid "Gallery"
+msgstr "கேலரி"
+
+#: src/core/dev-compat/known.js:66
+msgid "Image size"
+msgstr "படத்தின் அளவு"
+
+#: src/core/dev-compat/known.js:68
+msgid "Thumbnail"
+msgstr "சிறுபடம்"
+
+#: src/core/dev-compat/known.js:74
+msgid "Full size"
+msgstr "முழு அளவு"
+
+#: src/core/dev-compat/known.js:80
+msgid "Link to"
+msgstr "இணைப்பு இணைப்பு"
+
+#: src/core/dev-compat/known.js:82
+msgid "Attachment page"
+msgstr "இணைப்புப் பக்கம்"
+
+#: src/core/dev-compat/known.js:86
+msgid "Media file"
+msgstr "ஊடகக் கோப்பு"
+
+#: src/core/dev-compat/known.js:97
+#: src/core/dev-compat/known.js:133
+msgid "Audio"
+msgstr "ஆடியோ"
+
+#: src/core/dev-compat/known.js:98
+#: src/core/dev-compat/known.js:134
+#: src/design/variations.js:80
+msgid "Video"
+msgstr "வீடியோ"
+
+#: src/core/dev-compat/known.js:103
+msgid "File address"
+msgstr "கோப்பு முகவரி"
+
+#: src/core/dev-compat/known.js:105
+msgid "Loop"
+msgstr "மடக்கு"
+
+#: src/core/dev-compat/known.js:108
+msgid "Play automatically"
+msgstr "தானாக இயக்கும்"
+
+#: src/core/dev-compat/known.js:115
+msgid "Poster image"
+msgstr "சுவரொட்டிப் படம்"
+
+#: src/core/dev-compat/known.js:126
+msgid "Playlist"
+msgstr "பிளேலிஸ்ட்"
+
+#: src/core/dev-compat/known.js:140
+msgid "Media IDs, separated by commas"
+msgstr "கால்ப்புள்ளிகளால் பிரிக்கப்பட்ட மீடியா ஐடிகள்"
+
+#: src/core/dev-compat/known.js:147
+msgid "Show the track list"
+msgstr "ட்ராக் பட்டியலைக் காட்டுங்கள்"
+
+#: src/core/dev-compat/known.js:153
+#: src/design/variations.js:122
+msgid "Embed"
+msgstr "உ embeds செய்வதற்கான குறியீடு"
+
+#: src/core/dev-compat/known.js:158
+msgid "Address to embed"
+msgstr "உட்பொதிக்க வேண்டிய முகவரி"
+
+#: src/core/dev-compat/known.js:163
+msgid "Maximum width"
+msgstr "அதிகபட்ச அகலம்"
+
+#: src/core/dev-compat/known.js:170
+msgid "Caption"
+msgstr "தலைப்புக்குறிப்பு"
+
+#: src/core/dev-compat/known.js:175
+msgid "Image and caption HTML"
+msgstr "படம் மற்றும் தலைப்புச் செய்தி HTML"
+
+#: src/core/dev-compat/known.js:197
+#: src/core/edit.js:87
+#: src/design/editor/controls/complex.js:479
+#: src/design/props/width.js:16
+msgid "Width"
+msgstr "அகலம்"
+
+#: src/core/dev-compat/known.js:205
+#: src/core/dev-compat/known.js:221
+#: src/core/dev-compat/known.js:248
+#: src/core/dev-compat/known.js:282
+msgid "Tip: the Form block shows this form styled to match your site."
+msgstr "உதவிக்குறிப்பு: ஃபார்ம் பிளாக் உங்கள் தளத்துடன் பொருந்தும் வகையில் வடிவமைக்கப்பட்ட இந்த படிவத்தைக் காட்டுகிறது."
+
+#: src/core/dev-compat/known.js:234
+#: src/core/dev-compat/known.js:261
+msgid "Show the form title"
+msgstr "படிவத்தின் தலைப்பைக் காட்டுங்கள்"
+
+#: src/core/dev-compat/known.js:238
+#: src/core/dev-compat/known.js:265
+msgid "Show the form description"
+msgstr "படிவ விளக்கத்தைக் காட்டு"
+
+#: src/core/dev-compat/known.js:272
+msgid "Submit without reloading the page"
+msgstr "பக்கத்தை மீண்டும் ஏற்றாமல் சமர்ப்பிக்கவும்"
 
 #. translators: %s: the legacy control type, e.g. "border".
 #: src/core/dev-compat/option-controls.js:32
@@ -7351,123 +9188,108 @@ msgstr "கோப்பைத் தேர்ந்தெடு"
 msgid "— Default —"
 msgstr "— முன்னிருப்பு —"
 
-#: src/core/edit.js:34
+#: src/core/edit.js:35
 msgid "Advanced styling"
 msgstr "மேம்பட்ட ஸ்டைலிங்"
 
-#: src/core/edit.js:38
+#: src/core/edit.js:39
 msgid "Inline CSS"
 msgstr "இன்லைன் CSS"
 
-#: src/core/edit.js:39
+#: src/core/edit.js:40
 msgid "CSS declarations, for example: min-height: 380px; background-color: #333"
 msgstr "CSS அறிவிப்புகள், உதாரணமாக: min-height: 380px; background-color: #333"
 
-#: src/core/edit.js:49
+#: src/core/edit.js:50
 msgid "Effects (legacy classes)"
 msgstr "விளைவுகள் (பழைய வகுப்புகள்)"
 
-#: src/core/edit.js:53
+#: src/core/edit.js:54
 msgid "Space-separated effect names carried over from older versions, for example: hover-shadow"
 msgstr "பழைய பதிப்புகளில் இருந்து கொண்டுவரப்பட்ட இடைவெளி-பிரிக்கப்பட்ட விளைவு பெயர்கள், உதாரணமாக: hover-shadow"
 
-#: src/core/edit.js:83
+#: src/core/edit.js:84
 #: src/design/props/flex-direction.js:17
 msgid "Row"
 msgstr "வரிசை"
 
-#: src/core/edit.js:86
-#: src/design/editor/controls/complex.js:479
-#: src/design/props/width.js:16
-msgid "Width"
-msgstr "அகலம்"
-
-#: src/core/edit.js:104
+#: src/core/edit.js:105
 msgid "Full width, content kept in the middle"
 msgstr "முழு அகலம், உள்ளடக்கம் நடுவில் வைக்கப்பட்டுள்ளது"
 
-#: src/core/edit.js:154
-msgid "Link address"
-msgstr "இணைப்பு முகவரி"
-
-#: src/core/edit.js:170
+#: src/core/edit.js:171
 msgid "Link relationship"
 msgstr "இணைப்பு உறவுமுறை"
 
-#: src/core/edit.js:179
-#: src/design/props/text-align.js:13
-msgid "Alignment"
-msgstr "சீரமைப்பு"
-
-#: src/core/edit.js:187
+#: src/core/edit.js:188
 msgid "Left"
 msgstr "இடது"
 
-#: src/core/edit.js:191
-#: src/design/editor/controls/complex.js:242
-#: src/design/props/align-items.js:18
-#: src/design/props/align-self.js:18
-#: src/design/props/justify-content.js:26
-#: src/design/props/place-items.js:18
-#: src/design/props/text-align.js:17
-#: src/design/pro__premium_only/effects/controls.js:141
-#: src/design/pro__premium_only/effects/controls.js:244
-msgid "Centre"
-msgstr "மத்தியம்"
-
-#: src/core/edit.js:195
+#: src/core/edit.js:196
 msgid "Right"
 msgstr "வலது"
 
-#: src/core/edit.js:208
-msgid "Button text"
-msgstr "பொத்தான் உரை"
-
-#: src/core/edit.js:209
+#: src/core/edit.js:210
 msgid "Add text…"
 msgstr "உரையைச் சேர்..."
 
-#: src/core/edit.js:238
+#: src/core/edit.js:245
+msgid "Placement"
+msgstr "இடம்"
+
+#: src/core/edit.js:250
+msgid "On its own line"
+msgstr "தனி வரியில்"
+
+#: src/core/edit.js:257
+msgid "In the line, beside other content"
+msgstr "வரிசையில், பிற உள்ளடக்கத்திற்கு அருகில்"
+
+#: src/core/edit.js:264
+msgid "Automatic (own line at the top level of the page)"
+msgstr "தானியங்கி (பக்கத்தின் மேல் மட்டத்தில் சொந்த வரி)"
+
+#: src/core/edit.js:308
 #: src/editor/index.js:83
 #: src/editor/language-switcher.js:178
 msgid "Accessible label"
 msgstr "அணுகக்கூடிய லேபிள்"
 
-#: src/core/edit.js:242
+#: src/core/edit.js:312
 msgid "Leave empty for a decorative icon."
 msgstr "அலங்கார ஐகானுக்கு காலியாக விடவும்."
 
-#: src/core/edit.js:256
+#: src/core/edit.js:326
 msgid "Choose an icon in the block settings."
 msgstr "தொகுதி அமைப்புகளில் ஒரு சின்னத்தைத் தேர்ந்தெடுக்கவும்."
 
-#: src/core/edit.js:283
+#: src/core/edit.js:355
 msgid "New setting name"
 msgstr "புதிய அமைப்புப் பெயர்"
 
-#: src/core/edit.js:284
+#: src/core/edit.js:356
 msgid "For example: title or text"
 msgstr "உதாரணமாக: தலைப்பு அல்லது உரை"
 
-#: src/core/edit.js:299
+#: src/core/edit.js:371
 msgid "Add setting"
 msgstr "அமைப்பைச் சேர்"
 
-#: src/core/edit.js:310
-#: src/core/edit.js:313
+#: src/core/edit.js:382
+#: src/core/edit.js:385
 msgid "Widget"
 msgstr "விட்செட்"
 
-#: src/core/edit.js:317
+#: src/core/edit.js:389
 msgid "Choose a widget"
 msgstr "விட்ஜெட்டைத் தேர்ந்தெடுக்கவும்"
 
-#: src/core/edit.js:349
-#: src/core/edit.js:353
+#: src/core/edit.js:432
+#: src/core/edit.js:436
 msgid "Widget area"
 msgstr "விட்செட் பகுதி"
 
-#: src/core/edit.js:357
+#: src/core/edit.js:440
 msgid "Choose a widget area"
 msgstr "விட்ஜெட்டுக்கான பகுதியைத் தேர்ந்தெடுக்கவும்"
 
@@ -7490,6 +9312,142 @@ msgstr "இந்த எம்பெட் (embed) ஏற்றிய பிற�
 #: src/core/perf/index.js:52
 msgid "Layout shift"
 msgstr "லேஅவுட் மாற்றம்"
+
+#: src/core/widget-fields.js:180
+msgid "This widget does not describe its settings, so they are edited as name and value pairs."
+msgstr "இந்த விட்ஜெட் அதன் அமைப்புகளை விவரிக்கவில்லை, எனவே அவை பெயர் மற்றும் மதிப்பு ஜோடிகளாகத் திருத்தப்படுகின்றன."
+
+#: src/design/a11y/Checker.js:54
+msgid "Problem"
+msgstr "சிக்கல்"
+
+#: src/design/a11y/Checker.js:55
+msgid "Check"
+msgstr "சரிபார்க்கவும்"
+
+#: src/design/a11y/Checker.js:61
+msgid "Show block"
+msgstr "தடுப்பைக் காட்டுங்கள்"
+
+#: src/design/a11y/Checker.js:70
+msgid "Use a readable theme colour"
+msgstr "படிக்கக்கூடிய தீம் வண்ணத்தைப் பயன்படுத்தவும்"
+
+#. translators: %d: heading level.
+#: src/design/a11y/Checker.js:76
+#, js-format
+msgid "Make it H%d"
+msgstr "H%d ஆக மாற்றுங்கள்"
+
+#: src/design/a11y/Checker.js:89
+msgid "Alt text"
+msgstr "மாற்று உரை"
+
+#: src/design/a11y/Checker.js:103
+msgid "Save alt text"
+msgstr "மாற்று உரையைச் சேமிக்கவும்"
+
+#: src/design/a11y/Checker.js:107
+msgid "This image is decorative"
+msgstr "இந்த படம் அலங்காரமானது"
+
+#: src/design/a11y/Checker.js:163
+msgid "Checking…"
+msgstr "சரிபார்க்கிறது…"
+
+#: src/design/a11y/Checker.js:173
+msgid "No accessibility problems found on this page."
+msgstr "இந்தப் பக்கத்தில் எந்த அணுக்கத்தன்மை சிக்கல்களும் கண்டறியப்படவில்லை."
+
+#. translators: 1: number of problems, 2: number of things to check.
+#: src/design/a11y/Checker.js:179
+#, js-format
+msgid "%1$s, %2$s."
+msgstr "%1$s, %2$s."
+
+#. translators: %d: number of problems.
+#: src/design/a11y/Checker.js:182
+#, js-format
+msgid "%d problem"
+msgid_plural "%d problems"
+msgstr[0] "%d சிக்கல்"
+msgstr[1] "%d சிக்கல்கள்"
+
+#. translators: %d: number of things to check.
+#: src/design/a11y/Checker.js:192
+#, js-format
+msgid "%d thing to check"
+msgid_plural "%d things to check"
+msgstr[0] "%d சரிபார்க்க வேண்டிய விஷயம்"
+msgstr[1] "சோதிக்க வேண்டிய %d விஷயங்கள்"
+
+#: src/design/a11y/Checker.js:203
+msgid "Check again"
+msgstr "மீண்டும் சரிபார்க்கவும்"
+
+#: src/design/a11y/Checker.js:226
+msgid "An automatic check finds many problems but not all of them. Also try the page with the keyboard alone and with a screen reader."
+msgstr "தானியங்கி சோதனை பல சிக்கல்களைக் கண்டறிகிறது, ஆனால் அனைத்தையுமல்ல. விசைப்பலகையை மட்டும் கொண்டும், திரை வாசிப்பானைக் கொண்டும் பக்கத்தைச் சோதித்துப் பார்க்கவும்."
+
+#. translators: 1: measured contrast ratio, 2: required ratio.
+#: src/design/a11y/checks.js:340
+#, js-format
+msgid "Text contrast is %1$s:1; it needs at least %2$s:1 to be readable."
+msgstr "உரையின் மாறுபாடு %1$s:1 ஆகும்; படிக்கக்கூடியதாக இருக்கக் குறைந்தது %2$s:1 தேவைப்படுகிறது."
+
+#: src/design/a11y/checks.js:354
+msgid "click here,here,read more,more,link,this link,learn more,go"
+msgstr "இங்கே சொடுக்கவும்,இங்கே,மேலும் வாசிக்க,மேலும்,இணைப்பு,இந்த இணைப்பு,மேலும் அறிய,செல்"
+
+#: src/design/a11y/checks.js:386
+msgid "A link has no text, so a screen reader announces only “link”. Add text or a label."
+msgstr "ஒரு இணைப்பில் உரை இல்லை, எனவே திரை வாசிப்பான் \"link\" என்று மட்டுமே அறிவிக்கும். உரையை அல்லது லேபிளைச் சேர்க்கவும்."
+
+#. translators: %s: the link text.
+#: src/design/a11y/checks.js:401
+#, js-format
+msgid "The link text “%s” does not say where it goes. Describe the destination instead."
+msgstr "\"%s\" என்ற இணைப்பு உரை அது எங்கு செல்கிறது என்பதைக் கூறவில்லை. அதற்குப் பதிலாக இலக்கைத் விவரிக்கவும்."
+
+#: src/design/a11y/checks.js:440
+msgid "An element has a positive tabindex, which changes the keyboard order away from the reading order. Use 0 or remove it."
+msgstr "ஒரு உறுப்பு நேர்மறையான tabindex-ஐக் கொண்டுள்ளது, இது விசைப்பலகை வரிசையை வாசிப்பு வரிசையிலிருந்து மாற்றுகிறது. 0 ஐப் பயன்படுத்தவும் அல்லது அதை அகற்றவும்."
+
+#: src/design/a11y/checks.js:456
+msgid "Something clickable cannot be reached with the keyboard. Use a real button or link."
+msgstr "கிளிக் செய்யக்கூடிய ஒன்றை விசைப்பலகை மூலம் அடைய முடியாது. உண்மையான பொத்தான் அல்லது இணைப்பைப் பயன்படுத்தவும்."
+
+#: src/design/a11y/checks.js:474
+msgid "An embedded frame has no title, so a screen reader cannot say what it is."
+msgstr "உட்பொதிக்கப்பட்ட சட்டத்திற்கு தலைப்பு இல்லை, எனவே ஸ்கிரீன் ரீடரால் அது என்ன என்பதைச் சொல்ல முடியாது."
+
+#: src/design/a11y/checks.js:527
+msgid "A form field has no label, so its purpose is not announced."
+msgstr "படிவப் புலத்தில் லேபிள் இல்லை, எனவே அதன் நோக்கம் அறிவிக்கப்படவில்லை."
+
+#: src/design/a11y/checks.js:585
+msgid "This heading is empty. Screen reader users navigate by headings; remove it or add text."
+msgstr "இந்தத் தலைப்பு காலியாக உள்ளது. திரை வாசகப் பயனர்கள் தலைப்புகள் மூலம் உலாவுவார்கள்; அதை அகற்றவும் அல்லது உரையையும் சேர்க்கவும்."
+
+#: src/design/a11y/checks.js:599
+msgid "The page title is already the H1; use H2 for the top level of the content."
+msgstr "பக்கத் தலைப்பு ஏற்கனவே H1 ஆகும்; உள்ளடக்கத்தின் மேல் மட்டத்திற்கு H2 ஐப் பயன்படுத்தவும்."
+
+#. translators: 1: this heading's level, 2: the level before it, 3: the level it should be.
+#: src/design/a11y/checks.js:617
+#, js-format
+msgid "This H%1$d skips a level; the one before it is H%2$d. Make it an H%3$d."
+msgstr "இந்த H%1$d ஒரு நிலையைத் தவிர்க்கிறது; அதற்கு முந்தையது H%2$d ஆகும். இதை H%3$d ஆக மாற்றவும்."
+
+#: src/design/a11y/checks.js:656
+msgid "This image has no alt text. Describe it, or mark it as decorative if it adds nothing."
+msgstr "இந்தப் படத்திற்கு ஆல்ட் உரை இல்லை. இதை விவரிக்கவும், அல்லது இது எதையும் சேர்க்கவில்லை என்றால் அலங்காரமானதாகக் குறிக்கவும்."
+
+#: src/design/a11y/index.js:63
+#: src/design/site-design/editor.js:60
+#: src/studio/app.js:152
+msgid "Close panel"
+msgstr "பலகு மூடு"
 
 #: src/design/editor/breakpoint-items.js:24
 msgid "Desktop"
@@ -7564,18 +9522,6 @@ msgstr "தனிப்பயன்"
 msgid "Width / height"
 msgstr "அகலம் / உயரம்"
 
-#: src/design/editor/controls/complex.js:243
-#: src/design/editor/controls/length.js:278
-#: src/design/pro__premium_only/effects/controls.js:245
-msgid "Top"
-msgstr "மேல்"
-
-#: src/design/editor/controls/complex.js:244
-#: src/design/editor/controls/length.js:280
-#: src/design/pro__premium_only/effects/controls.js:246
-msgid "Bottom"
-msgstr "கீழ் பகுதி"
-
 #: src/design/editor/controls/complex.js:266
 #: src/design/props/background-image.js:42
 msgid "Background image"
@@ -7588,20 +9534,6 @@ msgstr "மரபுவழிப் படம் — மாற்றுங்க
 #: src/design/editor/controls/complex.js:292
 msgid "Remove image"
 msgstr "படத்தை நீக்கு"
-
-#: src/design/editor/controls/complex.js:308
-#: src/design/editor/panel.js:45
-#: src/design/props/position.js:13
-#: src/design/pro__premium_only/effects/controls.js:352
-msgid "Position"
-msgstr "இடம்"
-
-#: src/design/editor/controls/complex.js:326
-#: src/design/editor/panel.js:40
-#: src/design/props/font-size.js:13
-#: src/design/pro__premium_only/effects/controls.js:328
-msgid "Size"
-msgstr "அளவு"
 
 #: src/design/editor/controls/complex.js:335
 msgid "Cover"
@@ -7667,22 +9599,6 @@ msgstr "ஒவ்வொரு பக்கமும் தனித்தனி�
 #: src/design/editor/controls/complex.js:469
 msgid "Side"
 msgstr "பக்கம்"
-
-#: src/design/editor/controls/complex.js:491
-#: src/design/icons/IconPicker.js:242
-#: src/design/props/font-style.js:13
-#: src/design/pro__premium_only/globals/CustomFontsSection.js:161
-#: src/editor/index.js:41
-msgid "Style"
-msgstr "பாணி"
-
-#: src/design/editor/controls/complex.js:506
-#: src/design/editor/controls/complex.js:634
-#: src/design/pro__premium_only/effects/controls.js:157
-#: src/design/pro__premium_only/effects/controls.js:405
-#: src/design/pro__premium_only/effects/panel.js:301
-msgid "Colour"
-msgstr "நிறம்"
 
 #: src/design/editor/controls/complex.js:573
 msgid "Add a shadow"
@@ -7932,14 +9848,6 @@ msgstr "%1$s (%2$d தொகுப்பு)"
 msgid "Replace icon"
 msgstr "சின்னத்தை மாற்றுங்கள்"
 
-#: src/design/icons/IconField.js:43
-msgid "Choose icon"
-msgstr "சின்னத்தைத் தேர்ந்தெடுங்கள்"
-
-#: src/design/icons/IconField.js:58
-msgid "Choose an icon"
-msgstr "சின்னத்தைத் தேர்ந்தெடுக்கவும்"
-
 #: src/design/icons/IconGrid.js:255
 msgid "No icons match."
 msgstr "எந்த ஐகான்களும் பொருந்தவில்லை."
@@ -7951,10 +9859,6 @@ msgstr "வழக்கமான"
 #: src/design/icons/IconPicker.js:42
 msgid "Brands"
 msgstr "பிராண்டுகள்"
-
-#: src/design/icons/IconPicker.js:43
-msgid "Outlined"
-msgstr "வெளியே கோடிட்டது"
 
 #: src/design/icons/IconPicker.js:44
 #: src/design/pro__premium_only/effects/panel.js:268
@@ -8083,21 +9987,9 @@ msgstr "உரை வண்ணம்"
 msgid "Cursor"
 msgstr "கர்சர்"
 
-#: src/design/props/cursor.js:28
-#: src/design/pro__premium_only/effects/panel.js:260
-msgid "Arrow"
-msgstr "அம்பு குறி"
-
 #: src/design/props/cursor.js:29
 msgid "Pointer"
 msgstr "சுட்டி"
-
-#: src/design/props/cursor.js:30
-#: src/editor/index.js:35
-#: src/editor/language-switcher.js:190
-#: src/workflow/pro__premium_only/ReplacePanel.js:118
-msgid "Text"
-msgstr "உரை"
 
 #: src/design/props/cursor.js:31
 msgid "Move"
@@ -8255,10 +10147,6 @@ msgstr "பகுதிப் பெயர்"
 msgid "Named areas"
 msgstr "பெயரிடப்பட்ட பகுதிகள்"
 
-#: src/design/props/grid-rows.js:14
-msgid "Rows"
-msgstr "வரிகள்"
-
 #: src/design/props/height.js:16
 msgid "Height"
 msgstr "உயரம்"
@@ -8376,10 +10264,6 @@ msgstr "நேராக்கு"
 msgid "Decoration"
 msgstr "அலங்காரம்"
 
-#: src/design/props/text-decoration.js:17
-msgid "Underline"
-msgstr "அடிக்கோடு"
-
 #: src/design/props/text-decoration.js:18
 msgid "Overline"
 msgstr "மேல்கோடு"
@@ -8462,19 +10346,9 @@ msgstr "கோணவடிவ"
 msgid "Angle (degrees)"
 msgstr "கோணம் (டிகிரிகள்)"
 
-#: src/design/pro__premium_only/effects/controls.js:128
-#: src/design/pro__premium_only/effects/panel.js:283
-msgid "Shape"
-msgstr "வடிவம்"
-
 #: src/design/pro__premium_only/effects/controls.js:131
 msgid "Ellipse"
 msgstr "நீள்வட்டம்"
-
-#: src/design/pro__premium_only/effects/controls.js:132
-#: src/design/pro__premium_only/effects/controls.js:250
-msgid "Circle"
-msgstr "வட்டம்"
 
 #. translators: %d: gradient colour stop number.
 #: src/design/pro__premium_only/effects/controls.js:152
@@ -8510,10 +10384,6 @@ msgstr "நிறைவு நிலை (%)"
 msgid "Tint (use a see-through colour)"
 msgstr "டின்ட் (ஒளிபுகும் நிறத்தைப் பயன்படுத்தவும்)"
 
-#: src/design/pro__premium_only/effects/controls.js:251
-msgid "Rounded square"
-msgstr "வட்டமான சதுரம்"
-
 #: src/design/pro__premium_only/effects/controls.js:252
 msgid "Blob"
 msgstr "ப்ளாப்"
@@ -8530,10 +10400,6 @@ msgstr "முக்கோணம்"
 #: src/design/pro__premium_only/effects/controls.js:255
 msgid "Diamond"
 msgstr "டமண்ட்"
-
-#: src/design/pro__premium_only/effects/controls.js:256
-msgid "Star"
-msgstr "நட்சத்திரம்"
 
 #: src/design/pro__premium_only/effects/controls.js:257
 msgid "Heart"
@@ -9411,11 +11277,6 @@ msgstr "அழித்துவிடுக"
 msgid "The change could not be saved."
 msgstr "மாற்றத்தைச் சேமிக்க முடியவில்லை."
 
-#: src/design/site-design/editor.js:60
-#: src/studio/app.js:152
-msgid "Close panel"
-msgstr "பலகு மூடு"
-
 #: src/design/site-design/FontsSection.js:34
 msgid "Theme default"
 msgstr "தீம் இயல்புநிலை"
@@ -9472,9 +11333,49 @@ msgstr "வகுப்புகள், டோக்கன்கள், டா�
 msgid "Open the Site Editor’s styles"
 msgstr "தளம் திருத்தியின் (Site Editor) நடைகளைத் திறக்கவும்"
 
-#: src/editor/index.js:30
-msgid "Heading"
-msgstr "தலைப்பு"
+#: src/design/variations.js:29
+msgid "A heading with a tighter line height, styled with the Style tab."
+msgstr "ஸ்டைல் ​​டேப் மூலம் வடிவமைக்கப்பட்ட, குறுகிய வரி உயரத்தைக் கொண்ட தலைப்பு."
+
+#: src/design/variations.js:45
+msgid "A paragraph of text, styled with the Style tab."
+msgstr "ஸ்டைல் தாவலைப் பயன்படுத்தி வடிவமைக்கப்பட்ட ஒரு உரை பத்தி."
+
+#: src/design/variations.js:55
+msgid "Image"
+msgstr "படம்"
+
+#: src/design/variations.js:56
+msgid "An image with rounded corners, styled with the Style tab."
+msgstr "ஸ்டைல் ​​டேப் மூலம் வடிவமைக்கப்பட்ட, வளைந்த மூலைகளைக் கொண்ட படம்."
+
+#: src/design/variations.js:81
+msgid "A video from the Media Library, styled with the Style tab."
+msgstr "மீடியா நூலகத்திலிருந்து ஒரு வீடியோ, ஸ்டைல் ​​தப்பாப் மூலம் வடிவமைக்கப்பட்டது."
+
+#: src/design/variations.js:91
+msgid "Spacer"
+msgstr "இடைவெளி"
+
+#: src/design/variations.js:92
+msgid "Empty space between blocks; set a different height per screen size in the Style tab."
+msgstr "தொகுதிகளுக்கு இடையே காலியிடம்; ஸ்டைல் (Style) தாவலில் திரை அளவிற்கு ஏற்ப வெவ்வேறு உயரத்தை அமைக்கவும்."
+
+#: src/design/variations.js:102
+msgid "Divider"
+msgstr "பிரிப்பான்"
+
+#: src/design/variations.js:103
+msgid "A horizontal line between sections, styled with the Style tab."
+msgstr "பிரிவுகளுக்கு இடையே உள்ள ஒரு கிடைமட்டக் கோடு, ஸ்டைல் (Style) தாவல் மூலம் வடிவமைக்கப்பட்டுள்ளது."
+
+#: src/design/variations.js:123
+msgid "Content from another site (a video, a post, a map) by pasting its address."
+msgstr "மற்றொரு தளத்தின் முகவரியை ஒட்டுவதன் மூலம் அங்கிருந்து உள்ளடக்கத்தை (வீடியோ, பதிவு, வரைபடம்) சேர்க்கவும்."
+
+#: src/design/variations.js:134
+msgid "Several images in a grid, styled with the Style tab."
+msgstr "ஸ்டைல் ​​டேப் மூலம் வடிவமைக்கப்பட்ட, கட்டத்தில் பல படங்கள்."
 
 #: src/editor/index.js:45
 msgid "Plain"
@@ -9508,10 +11409,6 @@ msgstr "பட்டியலிடுங்கள்"
 #: src/editor/language-switcher.js:76
 msgid "Pills"
 msgstr "பில்ஸ்"
-
-#: src/editor/language-switcher.js:80
-msgid "Buttons"
-msgstr "பொத்தான்கள்"
 
 #: src/editor/language-switcher.js:84
 msgid "Dropdown"
@@ -9557,10 +11454,6 @@ msgstr "இந்தப் பக்கம் மொழிபெயர்க்�
 #: src/editor/language-switcher.js:166
 msgid "Stack vertically"
 msgstr "செங்குத்தாக அடுக்கு"
-
-#: src/editor/language-switcher.js:193
-msgid "Background"
-msgstr "பின்னணி"
 
 #: src/editor/language-switcher.js:197
 msgid "Current language text"
@@ -9619,11 +11512,6 @@ msgstr "தடுப்பு அமைப்புகள்"
 #, js-format
 msgid "Add block: %s"
 msgstr "தொகுதியைச் சேர்: %s"
-
-#: src/studio/components/commands.js:161
-#: src/workflow/pro__premium_only/ReplacePanel.js:226
-msgid "(no title)"
-msgstr "(தலைப்பு இல்லை)"
 
 #. translators: %s: page title.
 #: src/studio/components/commands.js:166
@@ -9699,10 +11587,6 @@ msgstr "பாதுகாப்பான பயன்முறையை மு�
 #: src/studio/components/commands.js:334
 msgid "Turn on safe mode (other plugins off, for you, in Studio only)"
 msgstr "பாதுகாப்பான பயன்முறையை இயக்கவும் (மற்ற செருகுநிரல்கள் முடக்கப்பட்டிருக்கும், உங்களுக்காக, ஸ்டுடியோவில் மட்டும்)"
-
-#: src/studio/components/header.js:33
-msgid "Published"
-msgstr "வெளியிடப்பட்டது"
 
 #: src/studio/components/header.js:34
 msgid "Scheduled"
@@ -10042,11 +11926,6 @@ msgstr "பில்டர் பெயர்"
 msgid "Visual editor name"
 msgstr "காட்சி எடிட்டர் பெயர்"
 
-#: src/workflow/pro__premium_only/network.js:172
-#: src/workflow/pro__premium_only/WhiteLabelPanel.js:130
-msgid "Author"
-msgstr "ஆசிரியர்"
-
 #: src/workflow/pro__premium_only/network.js:175
 #: src/workflow/pro__premium_only/WhiteLabelPanel.js:134
 msgid "Author website"
@@ -10120,10 +11999,6 @@ msgstr[1] "செயல்படுத்தப்படவில்லை: %d �
 #: src/workflow/pro__premium_only/ReplacePanel.js:114
 msgid "Replace"
 msgstr "மாற்று"
-
-#: src/workflow/pro__premium_only/ReplacePanel.js:122
-msgid "Links"
-msgstr "இணைப்புகள்"
 
 #: src/workflow/pro__premium_only/ReplacePanel.js:135
 msgid "Find"
@@ -10233,10 +12108,6 @@ msgstr "இந்தப் பக்கத்தில் ஒரு வாடி
 #: src/workflow/pro__premium_only/ReviewPanel.js:128
 msgid "Anyone with the link can see this page, even before it is published, and leave comments. No account is needed."
 msgstr "இந்தப் பக்கம் வெளியிடப்படுவதற்கு முன்புகூட, இணைப்பைக் கொண்ட எவரும் இதைப் பார்க்க முடியும் மற்றும் கருத்துகளைத் தெரிவிக்க முடியும். கணக்கு எதுவும் தேவையில்லை."
-
-#: src/workflow/pro__premium_only/ReviewPanel.js:155
-msgid "Copied"
-msgstr "நகலெடுக்கப்பட்டது"
 
 #: src/workflow/pro__premium_only/ReviewPanel.js:156
 msgid "Copy link"
@@ -10479,6 +12350,52 @@ msgstr "படங்களை இந்தத் தளத்தின் மீ
 msgid "Show what will happen"
 msgstr "என்ன நடக்கும் என்பதைக் காட்டுங்கள்"
 
+#: blocks/accordion-item/block.json
+msgctxt "block title"
+msgid "Accordion item"
+msgstr "அக்கார்டியன் உருப்படி"
+
+#: blocks/accordion-item/block.json
+msgctxt "block description"
+msgid "One section of an accordion: a title that opens its content."
+msgstr "அக்கார்டியனின் ஒரு பிரிவு: அதன் உள்ளடக்கத்தைத் திறக்கும் தலைப்பு."
+
+#: blocks/accordion/block.json
+msgctxt "block title"
+msgid "Accordion"
+msgstr "அக்கார்டியன்"
+
+#: blocks/accordion/block.json
+msgctxt "block description"
+msgid "Questions or sections that open and close. Optionally one at a time, and optionally marked up as an FAQ for search engines."
+msgstr "திறந்து மூடும் கேள்விகள் அல்லது பிரிவுகள். விருப்பத்தேர்வாக ஒரே நேரத்தில் ஒன்று, மற்றும் விருப்பத்தேர்வாக தேடுபொறிகளுக்காக ஒரு FAQ ஆகக் குறிக்கப்பட்டிருக்கும்."
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "accordion"
+msgstr "அக்கார்டியன்"
+
+#: blocks/accordion/block.json
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "faq"
+msgstr "அடிக்கடி கேட்கப்படும் கேள்விகள்"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "toggle"
+msgstr "மாற்று"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "collapse"
+msgstr "சுருக்கு"
+
+#: blocks/accordion/block.json
+msgctxt "block keyword"
+msgid "details"
+msgstr "விவரங்கள்"
+
 #: blocks/alert/block.json
 msgctxt "block title"
 msgid "Alert"
@@ -10495,6 +12412,7 @@ msgid "notice"
 msgstr "அறிவிப்பு"
 
 #: blocks/alert/block.json
+#: blocks/whatsapp/block.json
 msgctxt "block keyword"
 msgid "message"
 msgstr "செய்தி"
@@ -10509,6 +12427,71 @@ msgctxt "block keyword"
 msgid "warning"
 msgstr "எச்சரிக்கை"
 
+#: blocks/badge/block.json
+msgctxt "block title"
+msgid "Badge"
+msgstr "பேட்ஜ்"
+
+#: blocks/badge/block.json
+msgctxt "block description"
+msgid "A short label such as New, Sale or Best value."
+msgstr "புதிய, தள்ளுபடி அல்லது சிறந்த மதிப்பு போன்ற ஒரு குறுகிய லேபிள்."
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "label"
+msgstr "லேபிள்"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "tag"
+msgstr "குறிச்சொல்"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "pill"
+msgstr "வில்லை"
+
+#: blocks/badge/block.json
+msgctxt "block keyword"
+msgid "new"
+msgstr "புதிய"
+
+#: blocks/booking/block.json
+msgctxt "block title"
+msgid "Booking calendar"
+msgstr "முன்பதிவு நாட்காட்டி"
+
+#: blocks/booking/block.json
+msgctxt "block description"
+msgid "A Calendly or Cal.com booking calendar, loaded only when the visitor asks for it."
+msgstr "பார்வையாளர் கோரும்போது மட்டுமே ஏற்றப்படும் Calendly அல்லது Cal.com முன்பதிவு நாட்காட்டி."
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "booking"
+msgstr "முன்பதிவு"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "calendly"
+msgstr "காலெண்ட்லி"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "cal.com"
+msgstr "cal.com"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "appointment"
+msgstr "சந்திப்பு"
+
+#: blocks/booking/block.json
+msgctxt "block keyword"
+msgid "schedule"
+msgstr "அட்டவணைப்படுத்து"
+
 #: blocks/button/block.json
 msgctxt "block title"
 msgid "Button link"
@@ -10520,6 +12503,7 @@ msgid "A link styled as a button."
 msgstr "பொத்தானாக வடிவமைக்கப்பட்ட இணைப்பு."
 
 #: blocks/button/block.json
+#: blocks/call-to-action/block.json
 msgctxt "block keyword"
 msgid "button"
 msgstr "பொத்தான்"
@@ -10533,6 +12517,98 @@ msgstr "இணைப்பு"
 msgctxt "block keyword"
 msgid "call to action"
 msgstr "செயல்படுவதற்கான அழைப்பு"
+
+#: blocks/call-to-action/block.json
+msgctxt "block title"
+msgid "Call to action"
+msgstr "செயலுக்கு அழைக்கவும்"
+
+#: blocks/call-to-action/block.json
+msgctxt "block description"
+msgid "A heading, a sentence and one or two buttons that ask the visitor to act."
+msgstr "ஒரு தலைப்பு, ஒரு வாக்கியம் மற்றும் பார்வையாளரைச் செயல்படத் தூண்டும் ஒன்று அல்லது இரண்டு பொத்தான்கள்."
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "cta"
+msgstr "செயல் நடவடிக்கை"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "banner"
+msgstr "பேனர்"
+
+#: blocks/call-to-action/block.json
+msgctxt "block keyword"
+msgid "sign up"
+msgstr "பதிவு செய்க"
+
+#: blocks/checklist/block.json
+msgctxt "block title"
+msgid "Checklist"
+msgstr "சரிபார்ப்புப் பட்டியல்"
+
+#: blocks/checklist/block.json
+msgctxt "block description"
+msgid "A list of tasks, each marked done or still to do, in words for screen readers as well as with a tick."
+msgstr "திரை வாசிப்பாளர்களுக்கான சொற்களாலும் சரிபார்ப்புக் குறியீட்டினாலும், முடிந்தது அல்லது இன்னும் செய்யப்பட வேண்டும் என்று ஒவ்வொன்றும் குறிக்கப்பட்ட பணிகளின் பட்டியல்."
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "todo"
+msgstr "செய்ய வேண்டியவை"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "tasks"
+msgstr "பணிகள்"
+
+#: blocks/checklist/block.json
+msgctxt "block keyword"
+msgid "ticks"
+msgstr "டிக்ஸ்"
+
+#: blocks/checklist/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "list"
+msgstr "பட்டியலிடு"
+
+#: blocks/code/block.json
+msgctxt "block title"
+msgid "Code"
+msgstr "குறியீடு"
+
+#: blocks/code/block.json
+msgctxt "block description"
+msgid "A code listing with syntax highlighting, line numbers and a copy button. Stays readable if the plugin is ever turned off."
+msgstr "தொடரியல் சிறப்பிப்பு, வரி எண்கள் மற்றும் நகலெடுக்கும் பொத்தான் கொண்ட குறியீட்டுப் பட்டியல். செருகுநிரல் எப்போதாவது முடக்கப்பட்டாலும் படிக்கக்கூடியதாக இருக்கும்."
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "code"
+msgstr "குறியீடு"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "syntax"
+msgstr "தொடரியல்"
+
+#: blocks/code/block.json
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "highlight"
+msgstr "சிறப்பித்துக் காட்டு"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "snippet"
+msgstr "துணுக்கு"
+
+#: blocks/code/block.json
+msgctxt "block keyword"
+msgid "programming"
+msgstr "நிரலாக்கம்"
 
 #: blocks/column/block.json
 msgctxt "block title"
@@ -10556,6 +12632,84 @@ msgctxt "block keyword"
 msgid "layout"
 msgstr "தளவமைப்பு"
 
+#: blocks/comparison-table/block.json
+msgctxt "block title"
+msgid "Comparison table"
+msgstr "ஒப்பீட்டு அட்டவணை"
+
+#: blocks/comparison-table/block.json
+msgctxt "block description"
+msgid "Plans or products side by side, with yes and no marks that screen readers read as words."
+msgstr "திட்டங்கள் அல்லது தயாரிப்புகள் பக்கத்து பக்கத்தில், ஸ்கிரீன் ரீடர்கள் சொற்களாகப் படிக்கும் ஆம் மற்றும் இல்லை குறிகளுடன்."
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "compare"
+msgstr "ஒப்பிடு"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "pricing"
+msgstr "விலை நிர்ணயம்"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "plans"
+msgstr "திட்டங்கள்"
+
+#: blocks/comparison-table/block.json
+msgctxt "block keyword"
+msgid "table"
+msgstr "அட்டவணை"
+
+#: blocks/comparison-table/block.json
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "features"
+msgstr "அம்சங்கள்"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block title"
+msgid "Contact buttons"
+msgstr "தொடர்பு பொத்தான்கள்"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block description"
+msgid "Buttons to call, email, text or message you on WhatsApp."
+msgstr "உங்களை அழைக்க, மின்னஞ்சல் அனுப்ப, குறுஞ்செய்தி அனுப்ப அல்லது வாட்ஸ்அப்பில் தொடர்பு கொள்ள பொத்தான்கள்."
+
+#: blocks/contact-buttons/block.json
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "contact"
+msgstr "தொடர்பு கொள்ள"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "call"
+msgstr "அழைப்பு"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "phone"
+msgstr "தொலைபேசி"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "email"
+msgstr "மின்னஞ்சல்"
+
+#: blocks/contact-buttons/block.json
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "whatsapp"
+msgstr "வாட்ஸ்அப்"
+
+#: blocks/contact-buttons/block.json
+msgctxt "block keyword"
+msgid "sms"
+msgstr "குறும்செய்தி"
+
 #: blocks/container/block.json
 msgctxt "block title"
 msgid "Container"
@@ -10573,11 +12727,13 @@ msgid "container"
 msgstr "கலன்"
 
 #: blocks/container/block.json
+#: blocks/info-box/block.json
 msgctxt "block keyword"
 msgid "box"
 msgstr "பெட்டி"
 
 #: blocks/container/block.json
+#: blocks/feature-list/block.json
 #: blocks/section/block.json
 msgctxt "block keyword"
 msgid "grid"
@@ -10594,6 +12750,52 @@ msgstr "ஃப்ளெக்பாக்ஸ்"
 msgctxt "block keyword"
 msgid "columns"
 msgstr "நெடுங்குறிப்புகள்"
+
+#: blocks/dual-heading/block.json
+msgctxt "block title"
+msgid "Dual heading"
+msgstr "இரட்டைத் தலைப்பு"
+
+#: blocks/dual-heading/block.json
+msgctxt "block description"
+msgid "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline."
+msgstr "இரண்டு பகுதிகளாக உள்ள ஒரு தலைப்பு, இதில் இரண்டாவது பகுதி வண்ணம், சாய்வு, அவுட்லைன் அல்லது அடிக்கோடிட்டு சிறப்பிக்கப்பட்டுள்ளது."
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "heading"
+msgstr "தலைப்பு"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "title"
+msgstr "தலைப்பு"
+
+#: blocks/dual-heading/block.json
+msgctxt "block keyword"
+msgid "gradient"
+msgstr "கிரேடியன்ட்"
+
+#: blocks/feature-list/block.json
+msgctxt "block title"
+msgid "Feature list"
+msgstr "அம்சப்பட்டியல்"
+
+#: blocks/feature-list/block.json
+msgctxt "block description"
+msgid "Features in a grid, each with an icon, a heading and a short description."
+msgstr "சிறப்பம்சங்கள் ஒரு கட்டத்தில் (grid) உள்ளன, ஒவ்வொன்றும் ஒரு ஐகான், தலைப்பு மற்றும் ஒரு சிறிய விளக்கத்தைக் கொண்டுள்ளன."
+
+#: blocks/feature-list/block.json
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "benefits"
+msgstr "நன்மைகள்"
+
+#: blocks/feature-list/block.json
+msgctxt "block keyword"
+msgid "services"
+msgstr "சேவைகள்"
 
 #: blocks/fixture-switcher/block.json
 msgctxt "block title"
@@ -10637,6 +12839,86 @@ msgctxt "block keyword"
 msgid "text"
 msgstr "உரை"
 
+#: blocks/form/block.json
+msgctxt "block title"
+msgid "Form"
+msgstr "படிவம்"
+
+#: blocks/form/block.json
+msgctxt "block description"
+msgid "Shows a form from Contact Form 7, WPForms, Gravity Forms or Fluent Forms, styled to match your site."
+msgstr "உங்கள் தளத்திற்கு ஏற்றவாறு வடிவமைக்கப்பட்ட Contact Form 7, WPForms, Gravity Forms அல்லது Fluent Forms ஆகியவற்றிலிருந்து ஒரு படிவத்தைக் காட்டுகிறது."
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "form"
+msgstr "படிவம்"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Contact Form 7"
+msgstr "காண்டாக்ட் ஃபார்ம் 7"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "WPForms"
+msgstr "WPForms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Gravity Forms"
+msgstr "Gravity Forms"
+
+#: blocks/form/block.json
+msgctxt "block keyword"
+msgid "Fluent Forms"
+msgstr "Fluent Forms"
+
+#: blocks/glossary/block.json
+msgctxt "block title"
+msgid "Glossary"
+msgstr "களஞ்சியம்"
+
+#: blocks/glossary/block.json
+msgctxt "block description"
+msgid "Terms and their definitions, sorted A to Z, each with its own link. Can link the first mention of each term on the page to its definition."
+msgstr "விதிமுறைகளும் அவற்றின் வரையறைகளும் A முதல் Z வரை வரிசைப்படுத்தப்பட்டுள்ளன, ஒவ்வொன்றும் தனித்தனி இணைப்பைக் கொண்டுள்ளன. பக்கத்தில் உள்ள ஒவ்வொரு சொல்லின் முதல் குறிப்பையும் அதன் வரையறையுடன் இணைக்கலாம்."
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "terms"
+msgstr "நிபந்தனைகள்"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "definitions"
+msgstr "வரையறைகள்"
+
+#: blocks/glossary/block.json
+msgctxt "block keyword"
+msgid "dictionary"
+msgstr "அகராதி"
+
+#: blocks/icon-list/block.json
+msgctxt "block title"
+msgid "Icon list"
+msgstr "சின்னப் பட்டியல்"
+
+#: blocks/icon-list/block.json
+msgctxt "block description"
+msgid "A list where every line starts with an icon: a check mark, an arrow, or any icon from the library."
+msgstr "ஒவ்வொரு வரியும் ஒரு ஐகானுடன் தொடங்கும் பட்டியல்: ஒரு டிக் மார்க், ஒரு அம்பு அல்லது நூலகத்திலிருந்து ஏதேனும் ஒரு ஐகான்."
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "bullets"
+msgstr "புள்ளிகள்"
+
+#: blocks/icon-list/block.json
+msgctxt "block keyword"
+msgid "icons"
+msgstr "சின்னங்கள்"
+
 #: blocks/icon/block.json
 msgctxt "block title"
 msgid "Icon"
@@ -10657,6 +12939,31 @@ msgctxt "block keyword"
 msgid "svg"
 msgstr "svg"
 
+#: blocks/info-box/block.json
+msgctxt "block title"
+msgid "Info box"
+msgstr "தகவல் பெட்டி"
+
+#: blocks/info-box/block.json
+msgctxt "block description"
+msgid "An icon, a short heading, a sentence or two and an optional link: for services, benefits or contact details."
+msgstr "ஒரு சின்னம், ஒரு சிறிய தலைப்பு, ஒன்று அல்லது இரண்டு வாக்கியங்கள் மற்றும் விருப்பத்தேர்வு இணைப்பு: சேவைகள், நன்மைகள் அல்லது தொடர்பு விவரங்களுக்கு."
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "feature"
+msgstr "அம்சம்"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "service"
+msgstr "சேவை"
+
+#: blocks/info-box/block.json
+msgctxt "block keyword"
+msgid "card"
+msgstr "அட்டை"
+
 #: blocks/language-switcher/block.json
 msgctxt "block title"
 msgid "Language switcher"
@@ -10676,6 +12983,204 @@ msgstr "மொழிபெயர்ப்பு"
 msgctxt "block keyword"
 msgid "multilingual"
 msgstr "பலமொழி"
+
+#: blocks/map/block.json
+msgctxt "block title"
+msgid "Map"
+msgstr "வரைபடம்"
+
+#: blocks/map/block.json
+msgctxt "block description"
+msgid "A map of a place from OpenStreetMap: no key, and nothing loads from OpenStreetMap until the visitor asks for the map."
+msgstr "OpenStreetMap-லிருந்து ஒரு இடத்தின் வரைபடம்: விசை (key) இல்லை, மேலும் பார்வையாளர் வரைபடத்தைக் கேட்கும் வரை OpenStreetMap-லிருந்து எதுவும் லோட் ஆகாது."
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "map"
+msgstr "வரைபடமாக்கு"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "location"
+msgstr "இடம்"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "address"
+msgstr "முகவரி"
+
+#: blocks/map/block.json
+msgctxt "block keyword"
+msgid "openstreetmap"
+msgstr "openstreetmap"
+
+#: blocks/modal/block.json
+msgctxt "block title"
+msgid "Modal"
+msgstr "மாதிரி"
+
+#: blocks/modal/block.json
+msgctxt "block description"
+msgid "A button that opens a window over the page, with any blocks inside."
+msgstr "பக்கத்தின் மேல் ஒரு சாளரத்தைத் திறக்கும் பொத்தான், அதற்குள் ஏதேனும் தொகுதிகள் இருக்கலாம்."
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "modal"
+msgstr "மாதிரி"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "popup"
+msgstr "மேல் தோன்றும் சாளரம்"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "lightbox"
+msgstr "லைட்பாக்ஸ்"
+
+#: blocks/modal/block.json
+msgctxt "block keyword"
+msgid "dialog"
+msgstr "உரையாடல் பெட்டி"
+
+#: blocks/off-canvas/block.json
+msgctxt "block title"
+msgid "Off-canvas panel"
+msgstr "ஆஃப்-கேன்வாஸ் பேனல்"
+
+#: blocks/off-canvas/block.json
+msgctxt "block description"
+msgid "A button that slides a panel in from the side of the window, with any blocks inside."
+msgstr "ஜன்னலின் பக்கவாட்டிலிருந்து எந்தவொரு பிளாக்குகளுடனும் ஒரு பேனலை ஸ்லைடு செய்யும் பொத்தான்."
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "off-canvas"
+msgstr "ஆஃப்-கேன்வாஸ்"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "drawer"
+msgstr "டிராயர்"
+
+#: blocks/off-canvas/block.json
+#: blocks/sidebar/block.json
+msgctxt "block keyword"
+msgid "sidebar"
+msgstr "பக்கப்பட்டை"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "panel"
+msgstr "பேனல்"
+
+#: blocks/off-canvas/block.json
+msgctxt "block keyword"
+msgid "menu"
+msgstr "மெனு"
+
+#: blocks/post-meta/block.json
+msgctxt "block title"
+msgid "Post details"
+msgstr "பதிவு விவரங்கள்"
+
+#: blocks/post-meta/block.json
+msgctxt "block description"
+msgid "The post's author, dates, categories, tags, reading time and comment count."
+msgstr "பதிவின் ஆசிரியர், தேதிகள், வகைகள், குறிச்சொற்கள், வாசிப்பு நேரம் மற்றும் கருத்துகளின் எண்ணிக்கை."
+
+#: blocks/post-meta/block.json
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "author"
+msgstr "ஆசிரியர்"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "date"
+msgstr "தேதி"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "reading time"
+msgstr "படித்தல் நேரம்"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "meta"
+msgstr "மெடா"
+
+#: blocks/post-meta/block.json
+msgctxt "block keyword"
+msgid "byline"
+msgstr "பைலைன்"
+
+#: blocks/progress-bar/block.json
+msgctxt "block title"
+msgid "Progress bar"
+msgstr "முன்னேற்றப் பட்டை"
+
+#: blocks/progress-bar/block.json
+msgctxt "block description"
+msgid "A labelled bar that shows how far something has come, such as a skill or a goal."
+msgstr "திறன் அல்லது இலக்கு போன்ற ஏதேனும் ஒன்று எவ்வளவு தூரம் முன்னேறியுள்ளது என்பதைக் காட்டும் பெயரிடப்பட்ட பட்டை."
+
+#: blocks/progress-bar/block.json
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "progress"
+msgstr "செயல்முன்னேற்றம்"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "bar"
+msgstr "பட்டியிடல்"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "skill"
+msgstr "திறன்"
+
+#: blocks/progress-bar/block.json
+msgctxt "block keyword"
+msgid "goal"
+msgstr "இக்குறிக்கோள்"
+
+#: blocks/protected/block.json
+msgctxt "block title"
+msgid "Password-protected content"
+msgstr "கடவுச்சொல்-பாதுகாக்கப்பட்ட உள்ளடக்கம்"
+
+#: blocks/protected/block.json
+msgctxt "block description"
+msgid "Blocks only visitors with the password can see. Until they enter it, the content is not in the page at all."
+msgstr "கடவுச்சொல் உள்ள பார்வையாளர்கள் மட்டுமே பார்க்கக்கூடிய தொகுதிகள். அவர்கள் அதை உள்ளிடும் வரை, உள்ளடக்கம் பக்கத்தில் இருக்கவே செய்யாது."
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "password"
+msgstr "கடவுச்சொல்"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "protected"
+msgstr "பாதுகாக்கப்பட்டது"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "private"
+msgstr "தனிப்பட்ட"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "lock"
+msgstr "பூட்டு"
+
+#: blocks/protected/block.json
+msgctxt "block keyword"
+msgid "members"
+msgstr "உறுப்பினர்கள்"
 
 #: blocks/pro__premium_only/dark-mode-switch/block.json
 msgctxt "block title"
@@ -10701,6 +13206,86 @@ msgstr "வெளிர்"
 msgctxt "block keyword"
 msgid "colour scheme"
 msgstr "நிறத் திட்டம்"
+
+#: blocks/qr-code/block.json
+msgctxt "block title"
+msgid "QR code"
+msgstr "QR குறியீடு"
+
+#: blocks/qr-code/block.json
+msgctxt "block description"
+msgid "A QR code for a web address or any text, drawn on your own site (no QR service is used)."
+msgstr "வலைத்தளம் அல்லது எந்தவொரு உரைக்கான க்யூஆர் குறியீடு, உங்கள் சொந்தத் தளத்திலேயே உருவாக்கப்படுகிறது (க்யூஆர் சேவை எதுவும் பயன்படுத்தப்படவில்லை)."
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr"
+msgstr "QR"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "qr code"
+msgstr "QR குறியீடு"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "barcode"
+msgstr "பார்கோடு"
+
+#: blocks/qr-code/block.json
+msgctxt "block keyword"
+msgid "scan"
+msgstr "ஸ்கேன் செய்"
+
+#: blocks/reading-progress/block.json
+msgctxt "block title"
+msgid "Reading progress bar"
+msgstr "படிக்கும் முன்னேற்றப் பட்டை"
+
+#: blocks/reading-progress/block.json
+msgctxt "block description"
+msgid "A thin bar at the edge of the window that fills as visitors scroll through the page."
+msgstr "பார்வையாளர்கள் பக்கத்தில் உருட்டும்போது நிரப்பப்படும், சாளரத்தின் விளிம்பில் உள்ள ஒரு மெல்லிய பட்டை."
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "reading"
+msgstr "படித்துக்கொண்டிருக்கிறது"
+
+#: blocks/reading-progress/block.json
+msgctxt "block keyword"
+msgid "scroll"
+msgstr "உருக்குள் (Scroll)"
+
+#: blocks/related-posts/block.json
+msgctxt "block title"
+msgid "Related posts"
+msgstr "தொடர்புடைய பதிவுகள்"
+
+#: blocks/related-posts/block.json
+msgctxt "block description"
+msgid "Posts that share this post's categories or tags, with their pictures, dates and summaries."
+msgstr "இந்தப் பதிவின் பகுப்புகள் அல்லது குறிச்சொற்களைப் பகிர்ந்துகொள்ளும் பதிவுகள், அவற்றின் படங்கள், தேதிகள் மற்றும் சுருக்கங்களுடன்."
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "related"
+msgstr "தொடர்புடையது"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "posts"
+msgstr "பதிவுகள்"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "similar"
+msgstr "ஒத்த"
+
+#: blocks/related-posts/block.json
+msgctxt "block keyword"
+msgid "more"
+msgstr "மேலும்"
 
 #: blocks/row/block.json
 msgctxt "block title"
@@ -10764,13 +13349,284 @@ msgstr "தீமின் விட்ஜெட் பகுதிகளில�
 
 #: blocks/sidebar/block.json
 msgctxt "block keyword"
-msgid "sidebar"
-msgstr "பக்கப்பட்டை"
-
-#: blocks/sidebar/block.json
-msgctxt "block keyword"
 msgid "widget area"
 msgstr "விட்செட் பகுதி"
+
+#: blocks/sitemap/block.json
+msgctxt "block title"
+msgid "Sitemap"
+msgstr "தள வரைபடம்"
+
+#: blocks/sitemap/block.json
+msgctxt "block description"
+msgid "A page listing every published page and post (and other public content), with the page tree kept."
+msgstr "பக்க மரத்தை (page tree) பராமரித்து, வெளியிடப்பட்ட ஒவ்வொரு பக்கம் மற்றும் பதிவையும் (மற்றும் பிற பொதுக் உள்ளடக்கத்தையும்) பட்டியலிடும் ஒரு பக்கம்."
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "sitemap"
+msgstr "தள வரைபடம்"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "site map"
+msgstr "தளம் வரைபடம்"
+
+#: blocks/sitemap/block.json
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "index"
+msgstr "சுட்டி"
+
+#: blocks/sitemap/block.json
+msgctxt "block keyword"
+msgid "all pages"
+msgstr "அனைத்து பக்கங்களும்"
+
+#: blocks/social-icons/block.json
+msgctxt "block title"
+msgid "Social icons"
+msgstr "சமூக ஊடக ஐகான்கள்"
+
+#: blocks/social-icons/block.json
+msgctxt "block description"
+msgid "Links to your profiles, drawn with the networks' own icons."
+msgstr "நெட்வொர்க்குகளின் சொந்த ஐகான்களுடன் வரையப்பட்ட உங்கள் சுயவிவரங்களுக்கான இணைப்புகள்."
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "social"
+msgstr "சமூக வலைப்பின்னல்"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "links"
+msgstr "இணைப்புகள்"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "follow"
+msgstr "பின்பற்று"
+
+#: blocks/social-icons/block.json
+msgctxt "block keyword"
+msgid "profiles"
+msgstr "சுயவிவரங்கள்"
+
+#: blocks/star-rating/block.json
+msgctxt "block title"
+msgid "Star rating"
+msgstr "நட்சத்திர மதிப்பீடு"
+
+#: blocks/star-rating/block.json
+msgctxt "block description"
+msgid "A rating shown as stars, in half-star steps."
+msgstr "அரை நட்சத்திரப் படிகளில், நட்சத்திரங்களாகக் காட்டப்படும் மதிப்பீடு."
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "stars"
+msgstr "நட்சத்திரங்கள்"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "rating"
+msgstr "மதிப்பீடு"
+
+#: blocks/star-rating/block.json
+msgctxt "block keyword"
+msgid "score"
+msgstr "மதிப்பெண்"
+
+#: blocks/steps/block.json
+msgctxt "block title"
+msgid "Steps"
+msgstr "படிகள்"
+
+#: blocks/steps/block.json
+msgctxt "block description"
+msgid "The numbered steps of a process, in order, down the page or side by side."
+msgstr "ஒரு செயல்முறையின் எண்கள் இடப்பட்ட படிகள், வரிசையாக, பக்கத்தில் கீழே அல்லது அருகருகே."
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "process"
+msgstr "செயல்முறைத்தொடங்கு"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "how to"
+msgstr "எவ்வாறு"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "timeline"
+msgstr "காலவரிசை"
+
+#: blocks/steps/block.json
+msgctxt "block keyword"
+msgid "numbered"
+msgstr "எண் இடப்பட்ட"
+
+#: blocks/tab/block.json
+msgctxt "block title"
+msgid "Tab"
+msgstr "தத்தல்"
+
+#: blocks/tab/block.json
+msgctxt "block description"
+msgid "One tab of a Tabs block: its title and its panel."
+msgstr "ஒரு தாவல் தொகுதியின் ஒரு தாவல்: அதன் தலைப்பு மற்றும் அதன் குழு."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block title"
+msgid "Table of contents"
+msgstr "உள்ளடக்க அட்டவணை"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block description"
+msgid "A list of the headings on the page, built automatically, that links to each one."
+msgstr "ஒவ்வொன்றிற்கும் இணைப்புகளுடன், பக்கத்தில் உள்ள தலைப்புகளின் தானாக உருவாக்கப்பட்ட பட்டியல்."
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "toc"
+msgstr "பொருளடக்கம்"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "contents"
+msgstr "உள்ளடக்கம்"
+
+#: blocks/table-of-contents/block.json
+msgctxt "block keyword"
+msgid "headings"
+msgstr "தலைப்புகள்"
+
+#: blocks/tabs/block.json
+msgctxt "block title"
+msgid "Tabs"
+msgstr "தாவுகள்"
+
+#: blocks/tabs/block.json
+msgctxt "block description"
+msgid "Content in tabs: visitors switch between panels by mouse or keyboard."
+msgstr "தாவல்களில் உள்ள உள்ளடக்கம்: பார்வையாளர்கள் மவுஸ் அல்லது விசைப்பலகை மூலம் பலகைகளுக்கு இடையில் மாறுகின்றனர்."
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabs"
+msgstr "தகவல் அட்டவணைகள்"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "tabbed"
+msgstr "தத்தல் அடுக்குகள்"
+
+#: blocks/tabs/block.json
+msgctxt "block keyword"
+msgid "panels"
+msgstr "பேனல்கள்"
+
+#: blocks/testimonial/block.json
+msgctxt "block title"
+msgid "Testimonial"
+msgstr "சான்றுரை"
+
+#: blocks/testimonial/block.json
+msgctxt "block description"
+msgid "A quote from a customer with their name, role, photo and an optional star rating."
+msgstr "வாடிக்கையாளரின் பெயர், பதவி, புகைப்படம் மற்றும் விருப்பமான நட்சத்திர மதிப்பீடு ஆகியவற்றுடன் கூடிய வாடிக்கையாளர் மேற்கோள்."
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "review"
+msgstr "மதிப்பாய்வு செய்க"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "quote"
+msgstr "மேற்கோள் காட்டு"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "customer"
+msgstr "வாடிக்கையாளர்"
+
+#: blocks/testimonial/block.json
+msgctxt "block keyword"
+msgid "feedback"
+msgstr "கருத்துப் பகிர்வு"
+
+#: blocks/tooltip/block.json
+msgctxt "block title"
+msgid "Tooltip"
+msgstr "உதவிக்குறிப்பு"
+
+#: blocks/tooltip/block.json
+msgctxt "block description"
+msgid "A word or phrase that shows a short explanation on hover and keyboard focus."
+msgstr "மவுஸ் கர்சர் (hover) மற்றும் விசைப்பலகை ஃபோகஸின் போது ஒரு குறுகிய விளக்கத்தைக் காட்டும் வார்த்தை அல்லது சொற்றொடர்."
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "tooltip"
+msgstr "உதவிக்குறிப்பு"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "hint"
+msgstr "குறிப்பு"
+
+#: blocks/tooltip/block.json
+msgctxt "block keyword"
+msgid "definition"
+msgstr "வரையறை"
+
+#: blocks/user-profile/block.json
+msgctxt "block title"
+msgid "Author profile"
+msgstr "ஆசிரியர் சுயவிவரம்"
+
+#: blocks/user-profile/block.json
+msgctxt "block description"
+msgid "The author's picture, name, bio and links, or those of a chosen user."
+msgstr "ஆசிரியரின் படம், பெயர், சுயவிவரம் மற்றும் இணைப்புகள் அல்லது தேர்ந்தெடுக்கப்பட்ட பயனரின் படம், பெயர், சுயவிவரம் மற்றும் இணைப்புகள்."
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "bio"
+msgstr "வாழ்க்கைக் குறிப்பு"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "profile"
+msgstr "சுயவிவரம்"
+
+#: blocks/user-profile/block.json
+msgctxt "block keyword"
+msgid "about"
+msgstr "பற்றி"
+
+#: blocks/whatsapp/block.json
+msgctxt "block title"
+msgid "WhatsApp chat button"
+msgstr "வாட்சப் அரட்டைப் பொத்தான்"
+
+#: blocks/whatsapp/block.json
+msgctxt "block description"
+msgid "A floating button in a corner of the page that opens a WhatsApp chat with you."
+msgstr "பக்கத்தின் மூலையில் உள்ள மிதக்கும் பொத்தான், உங்களுடன் WhatsApp அரட்டையைத் திறக்கும்."
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "chat"
+msgstr "அரட்டை"
+
+#: blocks/whatsapp/block.json
+msgctxt "block keyword"
+msgid "floating"
+msgstr "மிதக்கும்"
 
 #: blocks/widget/block.json
 msgctxt "block title"

@@ -81,14 +81,24 @@ export function buttonSave( { attributes } ) {
 }
 
 export function iconSave( { attributes } ) {
-	const { svg, style, label } = attributes;
+	const { svg, style, label, display, justify } = attributes;
 	const a11y = label
 		? { role: 'img', 'aria-label': label }
 		: { 'aria-hidden': 'true' };
-	return (
+	const icon = (
 		<span style={ opt( style ) } { ...a11y }>
 			<RawHTML>{ svg }</RawHTML>
 		</span>
+	);
+	// 6.2: an icon on its own line is wrapped in a block element (aligned with an inline style
+	// in this fallback only). With no `display` — every 6.1 icon — the markup is unchanged, so
+	// 6.1 content stays valid without a deprecation (Core\Fallback::icon() writes the same).
+	if ( display !== 'block' ) {
+		return icon;
+	}
+	const align = justify === 'center' || justify === 'end' ? justify : '';
+	return (
+		<div style={ opt( align && `text-align:${ align }` ) }>{ icon }</div>
 	);
 }
 

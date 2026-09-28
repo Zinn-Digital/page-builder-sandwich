@@ -1,0 +1,61 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "pbs/dual-heading",
+	"title": "Dual heading",
+	"category": "pbs-content",
+	"icon": "heading",
+	"description": "A heading in two parts, the second one accented with a colour, a gradient, an outline or an underline.",
+	"keywords": [
+		"heading",
+		"title",
+		"gradient",
+		"highlight"
+	],
+	"textdomain": "page-builder-sandwich",
+	"attributes": {
+		"first": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"second": {
+			"type": "string",
+			"default": "",
+			"role": "content"
+		},
+		"level": {
+			"type": "integer",
+			"default": 2
+		},
+		"look": {
+			"type": "string",
+			"enum": [
+				"accent",
+				"gradient",
+				"outline",
+				"underline"
+			],
+			"default": "accent"
+		},
+		"stacked": {
+			"type": "boolean",
+			"default": false
+		},
+		"justify": {
+			"type": "string",
+			"enum": [
+				"start",
+				"center",
+				"end"
+			],
+			"default": "start"
+		}
+	},
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"html": false
+	},
+	"editorScript": "pbsw-blocks-editor"
+}
