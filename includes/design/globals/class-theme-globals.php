@@ -437,13 +437,42 @@ final class Theme_Globals {
 
 	/**
 	 * Is this a CSS colour we are willing to write into theme.json? Hex, the colour functions
-	 * with numeric arguments, `transparent` and `currentcolor`.
+	 * with numeric arguments, `transparent`, `currentcolor`, and a `color-mix()` of two of those.
+	 *
+	 * `color-mix()` is here because WordPress's own Twenty Twenty-Five ships one (accent-6), and
+	 * refusing it meant the Colours panel could not be saved at all on that theme (O9 review).
 	 *
 	 * @param string $color Colour.
 	 * @return bool
 	 */
 	public static function is_color( string $color ): bool {
 		$color = strtolower( trim( $color ) );
+		if ( self::is_plain_color( $color ) ) {
+			return true;
+		}
+		if ( strlen( $color ) > 200 || 1 !== preg_match( '/^color-mix\(\s*in\s+(?:srgb|srgb-linear|display-p3|a98-rgb|prophoto-rgb|rec2020|lab|oklab|xyz|xyz-d50|xyz-d65|hsl|hwb|lch|oklch)(?:\s+(?:shorter|longer|increasing|decreasing)\s+hue)?\s*,(.+)\)$/', $color, $m ) ) {
+			return false;
+		}
+		$parts = self::split_top_level( $m[1] );
+		if ( 2 !== count( $parts ) ) {
+			return false;
+		}
+		foreach ( $parts as $part ) {
+			if ( 1 !== preg_match( '/^(?:\d{1,3}(?:\.\d+)?%\s+)?(.+?)(?:\s+\d{1,3}(?:\.\d+)?%)?$/', trim( $part ), $pm ) || ! self::is_plain_color( trim( $pm[1] ) ) ) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	/**
+	 * Hex, a colour function with numeric arguments, `transparent` or `currentcolor`.
+	 *
+	 * @param string $color Lower-cased, trimmed colour.
+	 * @return bool
+	 */
+	private static function is_plain_color( string $color ): bool {
 		if ( 1 === preg_match( '/^#(?:[0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/', $color ) ) {
 			return true;
 		}
@@ -453,6 +482,39 @@ final class Theme_Globals {
 
 		return 1 === preg_match( '/^(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch)\([0-9.%\s,\/+a-z-]{1,80}\)$/', $color )
 			&& 1 !== preg_match( '/[a-z]{5,}/', substr( $color, (int) strpos( $color, '(' ) ) );
+	}
+
+	/**
+	 * Split on commas outside parentheses; an unbalanced string yields no parts.
+	 *
+	 * @param string $args Arguments.
+	 * @return list<string>
+	 */
+	private static function split_top_level( string $args ): array {
+		$parts = array();
+		$depth = 0;
+		$cur   = '';
+		foreach ( str_split( $args ) as $ch ) {
+			if ( '(' === $ch ) {
+				++$depth;
+			} elseif ( ')' === $ch ) {
+				--$depth;
+				if ( $depth < 0 ) {
+					return array();
+				}
+			} elseif ( ',' === $ch && 0 === $depth ) {
+				$parts[] = $cur;
+				$cur     = '';
+				continue;
+			}
+			$cur .= $ch;
+		}
+		if ( 0 !== $depth ) {
+			return array();
+		}
+		$parts[] = $cur;
+
+		return $parts;
 	}
 
 	/**

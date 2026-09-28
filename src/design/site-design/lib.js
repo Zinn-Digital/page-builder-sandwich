@@ -7,8 +7,67 @@
 /** A theme.json preset slug. */
 export const SLUG_RE = /^[a-z0-9][a-z0-9-]{0,47}$/;
 
+const PLAIN_FN_RE =
+	/^(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch)\([0-9.%\s,/+a-z-]{1,80}\)$/;
+const MIX_RE =
+	/^color-mix\(\s*in\s+(?:srgb|srgb-linear|display-p3|a98-rgb|prophoto-rgb|rec2020|lab|oklab|xyz|xyz-d50|xyz-d65|hsl|hwb|lch|oklch)(?:\s+(?:shorter|longer|increasing|decreasing)\s+hue)?\s*,(.+)\)$/;
+const MIX_PART_RE =
+	/^(?:\d{1,3}(?:\.\d+)?%\s+)?(.+?)(?:\s+\d{1,3}(?:\.\d+)?%)?$/;
+
 /**
- * Is this a colour the server accepts (Theme_Globals::is_color)?
+ * Hex, a colour function with numeric arguments, `transparent` or `currentcolor`.
+ *
+ * @param {string} color Lower-cased, trimmed colour.
+ * @return {boolean} Valid.
+ */
+function isPlainColor( color ) {
+	if ( /^#(?:[0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/.test( color ) ) {
+		return true;
+	}
+	if ( color === 'transparent' || color === 'currentcolor' ) {
+		return true;
+	}
+	return (
+		PLAIN_FN_RE.test( color ) &&
+		! /[a-z]{5,}/.test( color.slice( color.indexOf( '(' ) ) )
+	);
+}
+
+/**
+ * Split on commas outside parentheses; an unbalanced string yields no parts.
+ *
+ * @param {string} args Arguments.
+ * @return {string[]} Parts.
+ */
+function splitTopLevel( args ) {
+	const parts = [];
+	let depth = 0;
+	let cur = '';
+	for ( const ch of args ) {
+		if ( ch === '(' ) {
+			depth++;
+		} else if ( ch === ')' ) {
+			depth--;
+			if ( depth < 0 ) {
+				return [];
+			}
+		} else if ( ch === ',' && depth === 0 ) {
+			parts.push( cur );
+			cur = '';
+			continue;
+		}
+		cur += ch;
+	}
+	if ( depth !== 0 ) {
+		return [];
+	}
+	parts.push( cur );
+	return parts;
+}
+
+/**
+ * Is this a colour the server accepts (Theme_Globals::is_color)? Hex, the colour functions,
+ * `transparent`, `currentcolor`, and a `color-mix()` of two of those (Twenty Twenty-Five ships one).
  *
  * @param {string} value Colour.
  * @return {boolean} Valid.
@@ -17,14 +76,20 @@ export function isColor( value ) {
 	const color = String( value || '' )
 		.trim()
 		.toLowerCase();
-	if ( /^#(?:[0-9a-f]{3,4}|[0-9a-f]{6}|[0-9a-f]{8})$/.test( color ) ) {
+	if ( isPlainColor( color ) ) {
 		return true;
 	}
-	if ( color === 'transparent' || color === 'currentcolor' ) {
-		return true;
+	const m = color.length <= 200 ? MIX_RE.exec( color ) : null;
+	if ( ! m ) {
+		return false;
 	}
-	return /^(?:rgba?|hsla?|hwb|lab|lch|oklab|oklch)\([0-9.%\s,/+a-z-]{1,80}\)$/.test(
-		color
+	const parts = splitTopLevel( m[ 1 ] );
+	return (
+		parts.length === 2 &&
+		parts.every( ( part ) => {
+			const pm = MIX_PART_RE.exec( part.trim() );
+			return !! pm && isPlainColor( pm[ 1 ].trim() );
+		} )
 	);
 }
 

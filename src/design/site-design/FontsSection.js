@@ -94,47 +94,49 @@ export default function FontsSection() {
 			</h3>
 			<div className="pbsw-sd-list">
 				{ custom.map( ( f, i ) => (
-					<div className="pbsw-sd-row" key={ `${ f.slug }-${ i }` }>
-						<TextControl
-							__next40pxDefaultSize
-							label={ __( 'Name', 'page-builder-sandwich' ) }
-							value={ f.name }
-							onChange={ ( name ) => update( i, { name } ) }
-						/>
-						<TextControl
-							__next40pxDefaultSize
-							label={ __(
-								'Font stack',
-								'page-builder-sandwich'
-							) }
-							help={
-								f.hasFiles
-									? __(
-											'Uploaded font: its files come from the font library.',
-											'page-builder-sandwich'
-										)
-									: undefined
-							}
-							value={ f.fontFamily }
-							onChange={ ( fontFamily ) =>
-								update( i, { fontFamily } )
-							}
-							dir="ltr"
-						/>
-						<Button
-							icon={ trash }
-							size="small"
-							label={ sprintf(
-								/* translators: %s: font name. */
-								__( 'Remove %s', 'page-builder-sandwich' ),
-								f.name || f.slug
-							) }
-							onClick={ () =>
-								setCustom(
-									custom.filter( ( _, j ) => j !== i )
-								)
-							}
-						/>
+					<div className="pbsw-sd-entry" key={ `${ f.slug }-${ i }` }>
+						<div className="pbsw-sd-row">
+							<TextControl
+								__next40pxDefaultSize
+								label={ __( 'Name', 'page-builder-sandwich' ) }
+								value={ f.name }
+								onChange={ ( name ) => update( i, { name } ) }
+							/>
+							<TextControl
+								__next40pxDefaultSize
+								label={ __(
+									'Font stack',
+									'page-builder-sandwich'
+								) }
+								value={ f.fontFamily }
+								onChange={ ( fontFamily ) =>
+									update( i, { fontFamily } )
+								}
+								dir="ltr"
+							/>
+							<Button
+								icon={ trash }
+								size="small"
+								label={ sprintf(
+									/* translators: %s: font name. */
+									__( 'Remove %s', 'page-builder-sandwich' ),
+									f.name || f.slug
+								) }
+								onClick={ () =>
+									setCustom(
+										custom.filter( ( _, j ) => j !== i )
+									)
+								}
+							/>
+						</div>
+						{ f.hasFiles && (
+							<p className="pbsw-sd-help pbsw-sd-entry__note">
+								{ __(
+									'Uploaded font: its files come from the font library.',
+									'page-builder-sandwich'
+								) }
+							</p>
+						) }
 					</div>
 				) ) }
 				<Button

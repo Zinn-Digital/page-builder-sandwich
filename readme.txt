@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.4.1
+Stable tag: 6.5.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,6 +107,14 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.5.0 =
+* Site design: rows of options line up, the box is wider and the entries are spaced (owner design review).
+* Site design: colours made with color-mix(), such as Twenty Twenty-Five's, can be saved.
+* Arabic: the corner-radius scale is named correctly.
+
+= 6.4.2 =
+* Security hardening from the nightly scan: the SVG sanitizer reads attributes without building a pattern from their names.
 
 = 6.4.1 =
 * Maintenance: the design system's editor scripts pass the WordPress coding standards' JavaScript checks (no change to what the editor or your pages do).

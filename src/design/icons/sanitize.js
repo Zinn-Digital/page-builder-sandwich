@@ -276,9 +276,15 @@ export function sizedSvg( input ) {
 	if ( selfClosing ) {
 		head = head.slice( 0, -1 );
 	}
+	// A plain search, not a RegExp built from the name (semgrep detect-non-literal-regexp).
 	const read = ( name ) => {
-		const m = head.match( new RegExp( ` ${ name }="([^"]*)"` ) );
-		return m ? m[ 1 ] : '';
+		const at = head.indexOf( ` ${ name }="` );
+		if ( at < 0 ) {
+			return '';
+		}
+		const from = at + name.length + 3;
+		const to = head.indexOf( '"', from );
+		return to < 0 ? '' : head.slice( from, to );
 	};
 	if ( ! read( 'viewBox' ) ) {
 		const w = parseFloat( read( 'width' ) );
