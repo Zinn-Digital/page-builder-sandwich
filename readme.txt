@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.16.0
+Stable tag: 6.16.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,15 +15,13 @@ The foundation release of the rebuilt Page Builder Sandwich: clean, footprint-fr
 
 == Description ==
 
-This is the first release of Page Builder Sandwich rebuilt from the ground up. It contains the foundations the page-building features are built on, and nothing that pretends to be more than that.
-
 = What this release does =
 
 * **Footprint-free front end.** Everything the plugin prints on your pages uses neutral class names that start with a short prefix (`zd` unless you change it). There are no HTML comments, no generator tags, and the plugin's name does not appear in the page source.
 * **Neutral asset paths.** Front-end styles are copied to `wp-content/uploads/<prefix>-assets/` under a content-hash file name, so page source does not point at the plugin's folder. If that folder cannot be written, the styles are printed inline instead.
 * **A sample content block** (a heading and a paragraph, plain or accented) and a **sample language switcher block** that lists your languages when a compatible translation plugin provides them.
 * **A language switcher element.** With Tranzly active, it shows your site's languages as a list, pills, buttons, a dropdown or language codes, each linking to this page's translation, styled with your own colours, spacing and size. It is keyboard and screen-reader friendly, and flags are optional.
-* **Settings and About screen** under the Page Builder Sandwich menu: set the class prefix and see the beta-update status for licensed installations.
+* **Settings** under the Page Builder Sandwich menu, including the class prefix.
 
 The admin screens stay clearly branded; only what your visitors see is neutral.
 
@@ -53,7 +51,7 @@ The admin screen and editor scripts are built from the human-readable sources in
 
 = Zinn Digital® hosting-customer discount (only on sites Zinn Digital® hosts) =
 
-On a WordPress site hosted by Zinn Digital®, the plugin's screen shows administrators a card offering hosting customers a personal discount code for the Pro edition. Nothing is sent when the page loads. Only when an administrator presses the card's button does the site send one request to Zinn Digital® at `https://api.zinndigital.com/v1/wp/pro-discount/<site id>`, containing the plugin's slug, the word `issue` and the administrator's WordPress language, signed with the site's own key. The address and key come from the `ZINN_UPDATE_URL` (`…/v1/wp/plugin-update/<site id>`) and `ZINN_UPDATE_SECRET` constants the platform writes into wp-config.php; on any other site they do not exist and the card is never shown. The answer is the customer's code and a Freemius checkout link, to which the browser is then sent. Terms: https://zinndigital.com/legal/terms · Privacy policy: https://zinndigital.com/legal/privacy
+On a WordPress site hosted by Zinn Digital®, the plugin's screen shows administrators a card offering hosting customers a personal discount code for the Pro edition. Nothing is sent when the page loads. Only when an administrator presses the card's button does the site send one request to Zinn Digital® at `https://api.zinndigital.com/v1/wp/pro-discount/<site id>`, containing the plugin's slug, the word `issue` and the administrator's WordPress language, signed with the site's own key. Only a site whose wp-config.php carries the platform's `ZINN_UPDATE_URL` (`…/v1/wp/plugin-update/<site id>`) and `ZINN_UPDATE_SECRET` shows the card. The answer is the customer's code and a Freemius checkout link, to which the browser is then sent. Terms: https://zinndigital.com/legal/terms · Privacy policy: https://zinndigital.com/legal/privacy
 
 The plugin bundles the Freemius SDK, which handles licences and updates for the Pro edition and, only if you agree, product usage data.
 
@@ -94,9 +92,7 @@ WhatsApp chat button and contact buttons. These are plain links to `https://wa.m
 * WhatsApp terms: https://www.whatsapp.com/legal/terms-of-service
 * WhatsApp privacy policy: https://www.whatsapp.com/legal/privacy-policy
 
-Code block. Syntax highlighting uses highlight.js 11.12.0 (BSD-3-Clause), bundled with the plugin and served from your own site; no external service is used.
-
-QR code block. QR codes are drawn in the editor by qrcode-generator 2.0.4 (MIT), bundled with the plugin; no QR service is used.
+Code and QR code blocks use no external service: highlight.js 11.12.0 (BSD-3-Clause) and qrcode-generator 2.0.4 (MIT) are bundled and served from your own site.
 
 Crypto prices block (Pro). Prices come from CoinGecko's public API and need no key or account. Your site, not your visitors, asks CoinGecko: `https://api.coingecko.com/api/v3/simple/price` for current prices and `https://api.coingecko.com/api/v3/coins/<coin>/market_chart` for a price chart, sending only the coins and currency the block shows. The answers are kept on your site and refreshed in the background every few minutes (prices) or every hour (charts), and only while a page with the block is being visited; a visitor's page never waits for CoinGecko, and nothing about your visitors is sent. Previewing the block in the editor refreshes prices that are out of date.
 
@@ -109,13 +105,9 @@ Reviews block (Pro, only if you set it up under Appearance → Site design → R
 * Google Places API (New): Google's terms do not allow its reviews to be stored, so when a visitor views a page with a Reviews block that shows Google, the visitor's browser asks your site for them and your site requests `https://places.googleapis.com/v1/places/<your place ID>` with your own API key (sent in a header). Each such page view is one request on your key, billed by Google. What is sent: the place ID, your key and the site language; nothing about the visitor. The plugin stores only the place ID. Terms: https://cloud.google.com/maps-platform/terms and https://cloud.google.com/maps-platform/terms/maps-service-terms, privacy policy: https://policies.google.com/privacy
 * Trustpilot: once a day, in the background, your site requests `https://api.trustpilot.com/v1/business-units/<your business unit ID>` and its reviews with your own API key (sent in a header), and keeps them on your site, so page views never call Trustpilot. Terms: https://legal.trustpilot.com/for-businesses/business-terms, privacy policy: https://legal.trustpilot.com/for-reviewers/end-user-privacy-terms
 
-Share buttons (Pro). These are plain links to each network's own share page (Facebook, X, LinkedIn, WhatsApp, Reddit, Telegram, Pinterest, Bluesky, Threads) carrying the page's address and title. Nothing is loaded from any network until a visitor presses a button; the network then opens in a new tab, under its own terms and privacy policy.
-
 Age gate and responsible gambling notice (Pro). Both use the visitor's country when your host or CDN provides it in the request (for example Cloudflare's `CF-IPCountry` header); the plugin never looks a country up and sends nothing anywhere to learn it. The age gate remembers the visitor's answer in a cookie on your own site. The notice can link to a national help service (for example BeGambleAware in the UK); those are links only, opened by the visitor.
 
 Short links (Pro). Short links (`/go/<name>/`) are handled by your own site: a visit is counted and sent on to the address you entered. No link service is used.
-
-Icons. The share, menu, search and arrow icons of the Pro blocks come from Font Awesome Free (icons CC BY 4.0), bundled with the plugin.
 
 AI features use the AI provider you choose, with your own API key. Nothing is sent to any AI provider until you add a key under Settings → AI providers and use an AI feature. When you do, the text the feature needs (for example, the content being written or translated) and your key are sent to that one provider, and to no one else. Keys are stored encrypted in your database and are never sent to Zinn Digital®. The "Save and test" button sends one short test request to the provider.
 
@@ -178,6 +170,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.16.2 =
+* Maintenance: the readme fits the WordPress.org directory's description limit, and the source (including the shared admin screens) is formatted and linted to WordPress's JavaScript standard. No change in behaviour.
 
 = 6.16.0 =
 * On a site hosted by Zinn Digital®, the plugin screen offers hosting customers a personal discount code for their first payment of the Pro edition. Nothing is shown on other sites, and nothing is fetched until you press the button.
