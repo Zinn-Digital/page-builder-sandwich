@@ -78,13 +78,6 @@ final class Result {
 	public array $images = array();
 
 	/**
-	 * Vectors an embedding request returned (1.2.0), one per input text, in input order.
-	 *
-	 * @var array<int, array<int, float>>
-	 */
-	public array $vectors = array();
-
-	/**
 	 * A failed result.
 	 *
 	 * @param Failure $failure Why.
