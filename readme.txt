@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.12.0
+Stable tag: 6.13.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,7 +41,7 @@ The icon picker offers these free icon sets, shipped with the plugin (editor onl
 
 = Bundled libraries =
 
-The 3D model viewer block (Pro) uses model-viewer 4.3.1 (Apache License 2.0), shipped with the plugin in `assets/vendor/pro__premium_only/model-viewer/` together with its licence and the licences of the libraries it includes (three.js, lit, gainmap-js). It is loaded from your own site, and only on pages that show a 3D model.
+The 3D model viewer block (Pro) uses model-viewer 4.3.1 (Apache License 2.0), shipped with the plugin in `assets/pro__premium_only/model-viewer/` together with its licence and the licences of the libraries it includes (three.js, lit, gainmap-js). It is loaded from your own site, and only on pages that show a 3D model.
 
 = Build from source =
 
@@ -174,6 +174,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.13.0 =
+* The 3D model viewer library moved out of the vendor folder, so the free download no longer carries Pro files.
 
 = 6.12.0 =
 * Smaller download: the editable translation sources (.po) are no longer shipped; WordPress only ever loads the compiled .mo and .l10n.php files, which are unchanged.
