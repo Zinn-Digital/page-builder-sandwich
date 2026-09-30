@@ -106,6 +106,22 @@ final class Studio {
 	}
 
 	/**
+	 * Whether the ONLY thing keeping Studio shut is that the block editor is off for this post:
+	 * a post the user may edit, of a type the block editor could edit, with the block editor
+	 * filtered off (Classic Editor, or a `use_block_editor_for_post` filter).
+	 *
+	 * @param \WP_Post $post Post.
+	 * @return bool
+	 */
+	public static function block_editor_is_off( \WP_Post $post ): bool {
+		$type = get_post_type_object( $post->post_type );
+		if ( ! $type || empty( $type->show_in_rest ) || 'attachment' === $post->post_type ) {
+			return false;
+		}
+		return current_user_can( 'edit_post', $post->ID ) && ! use_block_editor_for_post( $post );
+	}
+
+	/**
 	 * Register the hidden page.
 	 *
 	 * An empty parent keeps it out of every menu. The capability is the loosest one Studio could
@@ -152,6 +168,19 @@ final class Studio {
 			wp_die( esc_html__( 'That page does not exist, or it has been deleted.', 'page-builder-sandwich' ), 404 );
 		}
 		if ( ! self::can_open( $post ) ) {
+			// Allowed to edit it, but the block editor is switched off for it (the Classic Editor
+			// plugin does that for every post by default): say so, rather than "not allowed",
+			// which sends the person looking for a permission problem that is not there (D28902).
+			if ( self::block_editor_is_off( $post ) ) {
+				wp_die(
+					'<p class="pbsw-studio-needs-block-editor">' . esc_html__( 'Sandwich Studio works with the block editor, and the block editor is switched off for this item. A plugin such as Classic Editor does that: allow the block editor for this item in its settings (Settings → Writing), then open Sandwich Studio again.', 'page-builder-sandwich' ) . '</p>',
+					esc_html__( 'Sandwich Studio', 'page-builder-sandwich' ),
+					array(
+						'response'  => 409,
+						'back_link' => true,
+					)
+				);
+			}
 			wp_die( esc_html__( 'Sorry, you are not allowed to edit this item in Sandwich Studio.', 'page-builder-sandwich' ), 403 );
 		}
 
