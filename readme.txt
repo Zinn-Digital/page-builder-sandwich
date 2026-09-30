@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.19.0
+Stable tag: 6.20.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -174,6 +174,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.20.0 =
+* Team libraries (Pro): deleting a team now asks in an accessible confirmation dialog instead of a browser pop-up.
 
 = 6.19.0 =
 * Templates & kits: 28 website kits (20 free) with one-click import, 43 translated section patterns and Save as pattern; Pro cloud library with plan storage, team sharing and bring-your-own R2/S3 storage; fixes a PHP warning on pages with styled core blocks.
