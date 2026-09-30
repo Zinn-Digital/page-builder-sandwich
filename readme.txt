@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.18.1
+Stable tag: 6.18.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.18.2 =
+* WordPress.org: the directory build lists the account that owns the listing among its contributors.
 
 = 6.18.1 =
 * Sandwich Studio: when the block editor is switched off for a page (for example by Classic Editor), Studio now says so and how to allow it, instead of "not allowed".
