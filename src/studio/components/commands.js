@@ -11,7 +11,7 @@ import {
 	getBlockTypes,
 	store as blocksStore,
 } from '@wordpress/blocks';
-import { store as blockEditorStore } from '@wordpress/block-editor';
+import { BlockIcon, store as blockEditorStore } from '@wordpress/block-editor';
 import { __, sprintf } from '@wordpress/i18n';
 import {
 	backup,
@@ -86,7 +86,15 @@ function useAddBlockCommands( { search } ) {
 					t.title
 				),
 				searchLabel: `${ t.title } ${ ( t.keywords || [] ).join( ' ' ) } block`,
-				icon: t.icon?.src || blockDefault,
+				// The palette's Icon clones this as a React ELEMENT, but a block's icon may be a
+				// Dashicon name (pbs/testimonial's `format-quote`), a component or an element:
+				// typing "quote" crashed the whole palette on the string (D28371). BlockIcon is
+				// how the inserter renders every one of those shapes.
+				icon: t.icon?.src ? (
+					<BlockIcon icon={ t.icon } />
+				) : (
+					blockDefault
+				),
 				callback: ( { close } ) => {
 					close();
 					const sel = registry.select( blockEditorStore );
