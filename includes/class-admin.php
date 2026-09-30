@@ -58,8 +58,7 @@ final class Admin {
 			self::SLUG,
 			array( self::class, 'render' ),
 			'dashicons-layout',
-			// Below Settings (80): WordPress.org's closure notice lists a high menu position (T-6/P-2, D28901).
-			81
+			58
 		);
 	}
 

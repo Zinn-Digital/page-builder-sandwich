@@ -1,6 +1,6 @@
 # Page Builder Sandwich
 
-Build pages from 48 blocks, section by section, in the block editor or Sandwich Studio, with clean front-end HTML and no builder wrappers.
+The foundation release of the rebuilt Page Builder Sandwich: clean, footprint-free front-end output and one sample content block.
 
 Built and maintained by **Neil Lock — CEO, Zinn Digital® Ltd** — https://zinndigital.com
 
@@ -15,7 +15,7 @@ Both are the same file. The download page is the canonical one: it is served fro
 
 | | |
 |---|---|
-| Version | `6.18.0` |
+| Version | `6.17.1` |
 | Requires WordPress | 6.8 or later |
 | Tested up to | WordPress **7.1** |
 | Requires PHP | 8.2 or later |
