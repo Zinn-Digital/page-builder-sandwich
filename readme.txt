@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.17.0
+Stable tag: 6.17.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -170,6 +170,10 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.17.1 =
+* Security: the Reviews block only fetches its live reviews from this site's own reviews route (same origin), never from any other address written into the page.
+* Tweak: the editor's effects preview rewrites selectors with plain text replacement instead of building regular expressions.
 
 = 6.17.0 =
 * Legacy licences: an unlimited legacy licence is Agency everywhere (Tranzly multisite network layer; PBS white label, client review, network); no more error on the plugin screen for a licence within 30 days of its end.
