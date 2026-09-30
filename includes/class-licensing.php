@@ -35,7 +35,10 @@ final class Licensing {
 	 * @return bool
 	 */
 	public static function is_agency(): bool {
-		$agency = self::can_use_premium() && pbsw_fs()->is_plan( 'agency' );
+		// ⛔ Ask the admin kit, never the SDK's is_plan(): that ranks plans by store position, and
+		// the legacy plan (673) predates Agency, so an unlimited legacy licence would never be
+		// Agency here although D34 makes it one (docs/843; LegacyAgencyGateTest).
+		$agency = 'agency' === \ZinnDigital\PBS\AdminKit\Licence::tier();
 
 		/**
 		 * Filters whether the Agency plan's features are available on this site.
