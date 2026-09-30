@@ -7,23 +7,22 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.17.1
+Stable tag: 6.18.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-The foundation release of the rebuilt Page Builder Sandwich: clean, footprint-free front-end output and one sample content block.
+Build pages from 48 blocks, section by section, in the block editor or Sandwich Studio, with clean front-end HTML and no builder wrappers.
 
 == Description ==
 
-= What this release does =
+= What it does =
 
-* **Footprint-free front end.** Everything the plugin prints on your pages uses neutral class names that start with a short prefix (`zd` unless you change it). There are no HTML comments, no generator tags, and the plugin's name does not appear in the page source.
-* **Neutral asset paths.** Front-end styles are copied to `wp-content/uploads/<prefix>-assets/` under a content-hash file name, so page source does not point at the plugin's folder. If that folder cannot be written, the styles are printed inline instead.
-* **A sample content block** (a heading and a paragraph, plain or accented) and a **sample language switcher block** that lists your languages when a compatible translation plugin provides them.
-* **A language switcher element.** With Tranzly active, it shows your site's languages as a list, pills, buttons, a dropdown or language codes, each linking to this page's translation, styled with your own colours, spacing and size. It is keyboard and screen-reader friendly, and flags are optional.
-* **Settings** under the Page Builder Sandwich menu, including the class prefix.
-
-The admin screens stay clearly branded; only what your visitors see is neutral.
+* **48 free blocks:** layout, content (accordion, tabs, steps, modal, tooltip and more), marketing (call to action, testimonial, a Form block for Contact Form 7, WPForms or Fluent Forms), media (map, booking calendar, QR code) and site blocks (table of contents, related posts, sitemap).
+* **Sandwich Studio**, a full-screen page editor with a command palette, and an **accessibility checker**.
+* **Site design:** global colours, fonts and styles, synced with your theme's `theme.json`.
+* **Footprint-free front end:** neutral class names with a short prefix (`zd` unless you change it), no HTML comments or generator tags, and each page loads only the styles of the blocks it uses, from your uploads folder.
+* **Pages made with earlier versions** are converted to blocks in the background after the update, with a backup and undo per page.
+* **Language switcher element** for sites that use Tranzly.
 
 = Bundled icon sets =
 
@@ -170,6 +169,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.18.0 =
+* WordPress.org review: the admin menu sits below Settings; the licensing SDK shows the plugin's own icon instead of downloading one before you opt in; the readme describes the blocks this version has.
 
 = 6.17.1 =
 * Security: the Reviews block only fetches its live reviews from this site's own reviews route (same origin), never from any other address written into the page.

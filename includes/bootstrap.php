@@ -36,6 +36,13 @@ require_once __DIR__ . '/design/globals/load.php';
 require_once __DIR__ . '/workflow/load.php';
 require_once __DIR__ . '/design/a11y/load.php';
 
+/*
+ * The licensing SDK's screens show THIS icon (the WordPress.org one, wp/dotorg-assets/page-builder-sandwich).
+ * Without a local icon the SDK downloads one from the licensing service on a local install, before
+ * any consent (D28900; proven by wp/tests/e2e/pbs-release/no-http-before-consent.sh).
+ */
+pbsw_fs()->add_filter( 'plugin_icon', static fn(): string => PBSW_DIR . 'assets/icon-256x256.png' );
+
 \ZinnDigital\PBS\Plugin::boot();
 
 /*
