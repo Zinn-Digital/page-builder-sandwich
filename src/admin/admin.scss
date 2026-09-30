@@ -41,3 +41,140 @@
 		align-items: end;
 	}
 }
+
+// Templates & kits (pbs-c1, pbs-c2, pbs-c3). Logical properties only.
+.pbs-templates {
+	max-inline-size: 72rem;
+}
+
+.pbs-kits__filters {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 12px;
+	align-items: end;
+	margin-block: 16px;
+}
+
+.pbs-kits__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 16px;
+	margin: 0;
+	list-style: none;
+}
+
+.pbs-kit {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	overflow: hidden;
+	background: #fff;
+
+	&.is-locked {
+		opacity: 0.6;
+	}
+
+	&__preview {
+		inline-size: 100%;
+		block-size: auto;
+		aspect-ratio: 8 / 5;
+		object-fit: cover;
+	}
+
+	&__swatches {
+		display: flex;
+		block-size: 96px;
+	}
+
+	&__swatch {
+		flex: 1;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
+		padding: 12px 14px 14px;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	&__name {
+		margin: 0;
+		font-size: 15px;
+	}
+
+	&__tier {
+		display: inline-block;
+		padding-inline: 6px;
+		border-radius: 4px;
+		font-size: 11px;
+		font-weight: 600;
+		background: #f0f0f1;
+
+		&.is-pro {
+			background: #1e1e1e;
+			color: #fff;
+		}
+	}
+
+	&__category,
+	&__pages {
+		color: #646970;
+		font-size: 12px;
+	}
+}
+
+.pbs-kit-import__pages {
+	border: 0;
+	padding: 0;
+	margin-block: 12px;
+}
+
+.pbs-library__meter {
+	inline-size: 100%;
+	max-inline-size: 32rem;
+	block-size: 12px;
+}
+
+.pbs-library__items,
+.pbs-storage,
+.pbs-team {
+	margin-block-start: 12px;
+}
+
+.pbs-storage__steps {
+	margin-inline-start: 1.5em;
+}
+
+.pbs-storage__actions,
+.pbs-team__invite,
+.pbs-team__create,
+.pbs-team__join {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	align-items: end;
+	margin-block: 12px;
+}
+
+.pbs-storage__test {
+	list-style: none;
+	margin-inline-start: 0;
+
+	.is-ok {
+		color: #008a20;
+	}
+
+	.is-failed {
+		color: #d63638;
+	}
+}
+
+.pbs-team__code {
+	font-size: 14px;
+	user-select: all;
+}

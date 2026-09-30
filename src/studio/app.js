@@ -46,6 +46,7 @@ import StudioCommands from './components/commands';
 import { SafeModeBanner } from './components/safe-mode';
 import { ShortcutsHelp, StudioShortcuts } from './components/shortcuts';
 import { BlockMenuItems, PasteDialog } from './components/style-transfer-panel';
+import SavePatternMenu from './components/save-pattern';
 import { useAutosave, useSave } from './hooks/use-save';
 import { getSidebars } from './lib/sidebars';
 import { useSnapshot } from './hooks/use-snapshot';
@@ -241,6 +242,7 @@ function Editor() {
 			<StudioCommands />
 			<CommandMenu />
 			<BlockMenuItems />
+			<SavePatternMenu />
 			<PasteDialog />
 			<ShortcutsHelp />
 			<Notices />

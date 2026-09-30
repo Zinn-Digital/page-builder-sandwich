@@ -193,7 +193,13 @@ final class Lcp {
 		$attrs = is_array( $block['attrs'] ?? null ) ? $block['attrs'] : array();
 		$inner = array_values( array_filter( (array) ( $block['innerBlocks'] ?? array() ), 'is_array' ) );
 		$html  = (string) ( $block['innerHTML'] ?? '' );
-		$min   = self::css_px( (string) ( $attrs['style'] ?? '' ), 'min-height' );
+		// A PBS block keeps `style` as a CSS string; a CORE block keeps it as an object (colours,
+		// spacing, `dimensions.minHeight`). Casting that object to a string warned on every page
+		// with a styled core block (found by the kit import proof, lane L11).
+		$style = $attrs['style'] ?? '';
+		$min   = is_array( $style )
+			? self::css_px( 'min-height:' . (string) ( is_array( $style['dimensions'] ?? null ) ? ( $style['dimensions']['minHeight'] ?? '' ) : '' ), 'min-height' )
+			: self::css_px( (string) $style, 'min-height' );
 
 		switch ( $name ) {
 			case 'pbs/row':
@@ -316,7 +322,9 @@ final class Lcp {
 			$url = self::background_url( (string) ( $block['attrs']['style'] ?? '' ) );
 			if ( null === $url ) {
 				$first = $block['innerBlocks'][0] ?? null;
-				$url   = is_array( $first ) ? self::background_url( (string) ( $first['attrs']['style'] ?? '' ) ) : null;
+				// The first child may be a core block, whose `style` is an object, not CSS text.
+				$inner = is_array( $first ) ? ( $first['attrs']['style'] ?? '' ) : '';
+				$url   = is_string( $inner ) ? self::background_url( $inner ) : null;
 			}
 			return $url;
 		}

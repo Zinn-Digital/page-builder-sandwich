@@ -35,6 +35,8 @@ require_once __DIR__ . '/assets/load.php';
 require_once __DIR__ . '/design/globals/load.php';
 require_once __DIR__ . '/workflow/load.php';
 require_once __DIR__ . '/design/a11y/load.php';
+// Lane L11 P11: the website-kit library, its importer and the translated section patterns.
+require_once __DIR__ . '/cloud/load.php';
 
 /*
  * The licensing SDK's screens show THIS icon (the WordPress.org one, wp/dotorg-assets/page-builder-sandwich).

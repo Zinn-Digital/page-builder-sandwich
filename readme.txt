@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.18.3
+Stable tag: 6.19.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,7 @@ Build pages from 48 blocks, section by section, in the block editor or Sandwich 
 * **Footprint-free front end:** neutral class names with a short prefix (`zd` unless you change it), no HTML comments or generator tags, and each page loads only the styles of the blocks it uses, from your uploads folder.
 * **Pages made with earlier versions** are converted to blocks in the background after the update, with a backup and undo per page.
 * **Language switcher element** for sites that use Tranzly.
+* **Templates & kits:** one-click website kits, section patterns and a Pro cloud library.
 
 = Bundled icon sets =
 
@@ -48,9 +49,13 @@ The admin screen and editor scripts are built from the human-readable sources in
 
 == External services ==
 
+= Zinn Digital® kit and cloud library =
+
+Only when an administrator opens Templates & kits, the site requests `https://api.zinndigital.com/v1/pbs-library/kits/` with its language. Pro, only when a design is saved, inserted or managed: `/v1/pbs-library/sessions`, `/v1/pbs-library/team-sessions`, `/v1/pbs-library/items/`, `/v1/pbs-library/images/`, `/v1/pbs-library/account`, `/v1/pbs-library/teams/` (same host), sending the design, its resized images, its name and the site address; the licence key is never sent. With your own R2/S3 bucket nothing is sent to Zinn Digital®. Terms: https://zinndigital.com/legal/terms · Privacy policy: https://zinndigital.com/legal/privacy
+
 = Zinn Digital® hosting-customer discount (only on sites Zinn Digital® hosts) =
 
-On a WordPress site hosted by Zinn Digital®, the plugin's screen shows administrators a card offering hosting customers a personal discount code for the Pro edition. Nothing is sent when the page loads. Only when an administrator presses the card's button does the site send one request to Zinn Digital® at `https://api.zinndigital.com/v1/wp/pro-discount/<site id>`, containing the plugin's slug, the word `issue` and the administrator's WordPress language, signed with the site's own key. The site's address and key come from constants the platform writes into wp-config.php on the sites it hosts; the card reuses only the host and site id of the address, which ends in `/v1/wp/plugin-update/<site id>`, and never sends anything to that address itself. No other site shows the card. The answer is the customer's code and a Freemius checkout link, to which the browser is then sent. Terms: https://zinndigital.com/legal/terms · Privacy policy: https://zinndigital.com/legal/privacy
+On a WordPress site hosted by Zinn Digital®, the plugin's screen shows administrators a card offering hosting customers a personal discount code for the Pro edition. Only when an administrator presses the card's button does the site send one request to Zinn Digital® at `https://api.zinndigital.com/v1/wp/pro-discount/<site id>`, containing the plugin's slug, the word `issue` and the administrator's WordPress language, signed with the site's own key. The card reuses only the host and site id of the address the platform writes into wp-config.php (ending in `/v1/wp/plugin-update/<site id>`) and sends nothing there itself. No other site shows the card. The answer is the customer's code and a Freemius checkout link, to which the browser is then sent. Terms: https://zinndigital.com/legal/terms · Privacy policy: https://zinndigital.com/legal/privacy
 
 The plugin bundles the Freemius SDK, which handles licences and updates for the Pro edition and, only if you agree, product usage data.
 
@@ -169,6 +174,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.19.0 =
+* Templates & kits: 28 website kits (20 free) with one-click import, 43 translated section patterns and Save as pattern; Pro cloud library with plan storage, team sharing and bring-your-own R2/S3 storage; fixes a PHP warning on pages with styled core blocks.
 
 = 6.18.3 =
 * Support: a reply address that had to be altered to be valid is refused rather than sent as a different address; temporary support access is limited to 3 active logins and to 1, 3 or 7 days.
