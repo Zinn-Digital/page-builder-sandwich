@@ -983,6 +983,11 @@ final class Rest_Map {
 			),
 			array(
 				'method' => 'POST',
+				'route'  => '/zd-u/v1/age',
+				'exempt' => 'public visitor route: the age gate\'s answer',
+			),
+			array(
+				'method' => 'POST',
 				'route'  => '/zd-u/v1/unlock',
 				'exempt' => 'public visitor route: a protected-content password',
 			),
