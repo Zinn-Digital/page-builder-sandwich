@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.20.0
+Stable tag: 6.22.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,26 +65,26 @@ Nothing is sent until you opt in on the screen shown after activation, or activa
 * Terms: https://freemius.com/terms/
 * Privacy policy: https://freemius.com/privacy/
 
-Google Fonts are hosted on your own site. Only when an administrator adds a font (through the plugin's font endpoint in wp-admin, or `wp pbsw fonts download`), the plugin downloads that font family's stylesheet from `https://fonts.googleapis.com` and its font files from `https://fonts.gstatic.com`, sending nothing about your site or visitors beyond the request itself. The files are stored in your uploads folder and your visitors load them from your site; the plugin never contacts Google when a page is viewed.
+Google Fonts are hosted on your own site. Only when an administrator adds a font (in wp-admin or with `wp pbsw fonts download`) does the plugin download its stylesheet from `https://fonts.googleapis.com` and its files from `https://fonts.gstatic.com`, sending nothing about your site or visitors. Visitors load the fonts from your site; Google is never contacted when a page is viewed.
 
 * Service: https://fonts.google.com
 * Terms: https://developers.google.com/terms
 * Privacy policy: https://policies.google.com/privacy
 
-Background videos from YouTube or Vimeo (Pro). Only when an author chooses a YouTube or Vimeo video as a section's background, a visitor's browser loads that video's player — from YouTube's privacy-enhanced domain `https://www.youtube-nocookie.com` or from `https://player.vimeo.com` with "do not track" set — and only once the visitor scrolls to that section and their device does not ask for reduced motion. Until then the page shows the poster image stored on your own site and contacts neither service. The request sends what any embedded video sends (the visitor's IP address and browser details, and the video's ID); the plugin sends nothing else.
+Background videos from YouTube or Vimeo (Pro). Only when an author picks a YouTube or Vimeo background, and only once a visitor scrolls to that section on a device that does not ask for reduced motion, the visitor's browser loads the player from `https://www.youtube-nocookie.com` or `https://player.vimeo.com` ("do not track" on). Until then the page shows the poster stored on your site. The player receives what any embed does (IP address, browser details, the video's ID); the plugin sends nothing else.
 
 * YouTube terms: https://www.youtube.com/t/terms
 * YouTube (Google) privacy policy: https://policies.google.com/privacy
 * Vimeo terms: https://vimeo.com/terms
 * Vimeo privacy policy: https://vimeo.com/privacy
 
-Map block. The map comes from OpenStreetMap and needs no key or account. A page with a map shows only a notice, a "Show the map" button and a link; nothing is loaded from OpenStreetMap until a visitor presses the button. The visitor's browser then loads `https://www.openstreetmap.org/export/embed.html` with the coordinates the author chose, which sends what any embedded map sends (the visitor's IP address and browser details).
+Map block. The map comes from OpenStreetMap (no key or account). The page shows only a notice, a "Show the map" button and a link; when a visitor presses the button, their browser loads `https://www.openstreetmap.org/export/embed.html` with the author's coordinates, sending what any embedded map does (IP address, browser details).
 
 * Service: https://www.openstreetmap.org
 * Terms: https://osmfoundation.org/wiki/Terms_of_Use
 * Privacy policy: https://osmfoundation.org/wiki/Privacy_Policy
 
-Booking calendar block (Calendly or Cal.com). A page with a booking calendar shows only a notice, a button and a link to the booking page; nothing is loaded from the booking service until a visitor presses the button. The visitor's browser then loads the author's booking page from `https://calendly.com` or `https://cal.com`, and the visitor books directly with that service.
+Booking calendar block (Calendly or Cal.com). The page shows a notice, a button and a link; only when a visitor presses the button does their browser load the author's booking page from `https://calendly.com` or `https://cal.com`, and they book directly with that service.
 
 * Calendly terms: https://calendly.com/legal/customer-terms-of-use
 * Calendly privacy policy: https://calendly.com/legal/privacy-notice
@@ -98,7 +98,7 @@ WhatsApp chat button and contact buttons. These are plain links to `https://wa.m
 
 Code and QR code blocks use no external service: highlight.js 11.12.0 (BSD-3-Clause) and qrcode-generator 2.0.4 (MIT) are bundled and served from your own site.
 
-Crypto prices block (Pro). Prices come from CoinGecko's public API and need no key or account. Your site, not your visitors, asks CoinGecko: `https://api.coingecko.com/api/v3/simple/price` for current prices and `https://api.coingecko.com/api/v3/coins/<coin>/market_chart` for a price chart, sending only the coins and currency the block shows. The answers are kept on your site and refreshed in the background every few minutes (prices) or every hour (charts), and only while a page with the block is being visited; a visitor's page never waits for CoinGecko, and nothing about your visitors is sent. Previewing the block in the editor refreshes prices that are out of date.
+Crypto prices block (Pro). Your site, never your visitors, asks CoinGecko's public API (no key) for the coins and currency the block shows: `https://api.coingecko.com/api/v3/simple/price` and `https://api.coingecko.com/api/v3/coins/<coin>/market_chart`. Answers are kept on your site and refreshed in the background while pages with the block are visited; nothing about visitors is sent.
 
 * Service: https://www.coingecko.com
 * Terms: https://www.coingecko.com/en/terms
@@ -157,6 +157,10 @@ Newsletter signups (Pro, only if you set one up). A Newsletter signup block, or 
 
 Share buttons (Pro). The Share bar and Click to share quote blocks are plain links that open the chosen network's own share page (Facebook, X, LinkedIn, WhatsApp, Telegram, Reddit, Pinterest, Bluesky or Threads) with the page's address and title filled in. Nothing is loaded from those networks when a page is viewed; the network is contacted only if a visitor clicks the link, and then by the visitor's browser, under that network's terms and privacy policy.
 
+Forms (Pro). A submission goes only where that form's settings say, sent from your server: your site's mail, your database, an https webhook you enter (the fields as JSON), or one mailing list. For a list, the visitor's email (and name) is sent with the API key you saved, stored encrypted and never sent to Zinn Digital®, to Mailchimp (`https://<dc>.api.mailchimp.com`), Brevo (`https://api.brevo.com`), MailerLite (`https://connect.mailerlite.com`), Kit (`https://api.kit.com`) or ActiveCampaign (`https://<account>.api-us1.com`). Terms and privacy: https://mailchimp.com/legal/, https://www.brevo.com/legal/, https://www.mailerlite.com/legal/, https://kit.com/terms, https://www.activecampaign.com/legal/.
+
+Conversion tracking (Pro, only with an ID entered). Visitors' browsers load Google Analytics 4 or Tag Manager (`https://www.googletagmanager.com`) and the Meta Pixel (`https://connect.facebook.net`), sending page views and your conversions; with the cookie banner on, only after the visitor agrees. Terms and privacy: https://policies.google.com/privacy, https://www.facebook.com/privacy/policy/.
+
 == Installation ==
 
 1. Upload the `page-builder-sandwich` folder to `/wp-content/plugins/`, or install the zip from Plugins → Add New → Upload Plugin.
@@ -174,6 +178,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.22.0 =
+* Pro: forms with email, save, webhook and mailing-list actions (Mailchimp, Brevo, MailerLite, Kit, ActiveCampaign); popups, slide-ins and bars; entrance, scroll and hover motion; conversion tracking (GA4, Tag Manager, Meta Pixel); A/B tests; a cookie consent banner that blocks tracking until consent.
 
 = 6.20.0 =
 * Team libraries (Pro): deleting a team now asks in an accessible confirmation dialog instead of a browser pop-up.

@@ -122,6 +122,14 @@ module.exports = {
 			__dirname,
 			'src/admin-templates/pro__premium_only/index.js'
 		),
+		'marketing-admin-pro__premium_only': path.resolve(
+			__dirname,
+			'src/marketing/pro__premium_only/admin.js'
+		),
+		'marketing-editor-pro__premium_only': path.resolve(
+			__dirname,
+			'src/marketing/pro__premium_only/editor.js'
+		),
 		'cloud-pro__premium_only': path.resolve(
 			__dirname,
 			'src/cloud/pro__premium_only/index.js'

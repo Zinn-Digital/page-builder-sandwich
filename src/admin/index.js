@@ -1,5 +1,6 @@
 import { __ } from '@wordpress/i18n';
 import domReady from '@wordpress/dom-ready';
+import { applyFilters } from '@wordpress/hooks';
 import { lazy, Suspense } from '@wordpress/element';
 import { Spinner } from '@wordpress/components';
 
@@ -24,7 +25,13 @@ domReady( () => {
 	mountAdminKit(
 		root,
 		'page-builder-sandwich',
-		[
+		/**
+		 * Filters the routes of the plugin's admin screen: premium modules add theirs here
+		 * (the Pro Marketing route, pbs-m2 / pbs-r18 / pbs-r24).
+		 *
+		 * @param {Array<Object>} routes Routes: {id, label, render}.
+		 */
+		applyFilters( 'pbsw.admin.routes', [
 			{
 				id: 'settings',
 				label: __( 'Settings', 'page-builder-sandwich' ),
@@ -39,7 +46,7 @@ domReady( () => {
 					</Suspense>
 				),
 			},
-		],
+		] ),
 		[
 			{
 				id: 'settings',

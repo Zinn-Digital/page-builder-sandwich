@@ -44,6 +44,8 @@ export const SECTIONS = () => [
 	[ 'shadow', __( 'Shadow', 'page-builder-sandwich' ) ],
 	[ 'position', __( 'Position', 'page-builder-sandwich' ) ],
 	[ 'effects', __( 'Effects', 'page-builder-sandwich' ) ],
+	// Pro (pbs-m4, pbs-m5): empty — and so not shown — until the Pro motion props register.
+	[ 'motion', __( 'Motion', 'page-builder-sandwich' ) ],
 	[ 'advanced', __( 'Advanced', 'page-builder-sandwich' ) ],
 ];
 
