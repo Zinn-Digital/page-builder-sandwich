@@ -19,12 +19,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Licensing {
 
 	/**
-	 * May premium code run on this site?
+	 * Is the premium layer running?
+	 *
+	 * ⛔ WordPress.org guideline 5 (2026-10-01): the free plugin makes no licence check. The premium
+	 * entry (`includes/pro__premium_only/class-pro.php`, absent from the free package) answers
+	 * `pbsw_is_pro` with the licence; free code only asks to decide whether to SHOW an upgrade.
 	 *
 	 * @return bool
 	 */
 	public static function can_use_premium(): bool {
-		return function_exists( 'pbsw_fs' ) && pbsw_fs()->can_use_premium_code();
+		/**
+		 * Filters whether the premium layer is running. Only the premium layer answers it.
+		 *
+		 * @param bool $pro False in the free plugin.
+		 */
+		return (bool) apply_filters( 'pbsw_is_pro', false );
 	}
 
 	/**
@@ -89,7 +98,7 @@ final class Licensing {
 		if ( $fs->is_registered() ) {
 			$state['accountUrl'] = (string) $fs->get_account_url();
 		}
-		$state['available'] = $fs->is_premium() && $fs->is_registered();
+		$state['available'] = self::can_use_premium() && $fs->is_registered();
 		if ( $state['available'] ) {
 			$site             = $fs->get_site();
 			$state['enabled'] = is_object( $site ) && method_exists( $site, 'is_beta' ) && $site->is_beta();

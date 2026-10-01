@@ -62,7 +62,7 @@ require_once __DIR__ . '/ai-core/load.php';
 	array(
 		'slug'     => 'page-builder-sandwich',
 		'name'     => 'Page Builder Sandwich',
-		'pro'      => static fn(): bool => pbsw_fs()->can_use_premium_code(),
+		'pro'      => static fn(): bool => \ZinnDigital\PBS\Licensing::can_use_premium(),
 		// Every AI request this plugin sends passes through `pbsw_ai_messages` ($messages, $context:
 		// task, purpose, provider, model, user); the premium brand kit adds the brand (pbs-d10).
 		'messages' => static fn( array $messages, array $context ): array => (array) apply_filters( 'pbsw_ai_messages', $messages, $context ),
@@ -96,9 +96,12 @@ require_once __DIR__ . '/admin-kit/load.php';
  * file must reach the free zip byte-for-byte unchanged (CONTRACT §3, docs/adr/0032).
  */
 $pbsw_premium_entry = __DIR__ . '/pro_' . '_premium_only/class-pro.php'; // phpcs:ignore Generic.Strings.UnnecessaryStringConcat.Found -- deliberate split, see above.
-if ( is_readable( $pbsw_premium_entry ) && pbsw_fs()->can_use_premium_code() ) {
+if ( is_readable( $pbsw_premium_entry ) ) {
 	require_once $pbsw_premium_entry;
-	\ZinnDigital\PBS\Pro\Pro::boot();
+	\ZinnDigital\PBS\Pro\Pro::licence();
+	if ( \ZinnDigital\PBS\Licensing::can_use_premium() ) {
+		\ZinnDigital\PBS\Pro\Pro::boot();
+	}
 }
 unset( $pbsw_premium_entry );
 

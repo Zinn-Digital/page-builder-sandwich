@@ -11,7 +11,6 @@ namespace ZinnDigital\PBS\Assets;
 
 use ZinnDigital\PBS\Assets;
 use ZinnDigital\PBS\Core\Templates;
-use ZinnDigital\PBS\Licensing;
 use ZinnDigital\PBS\Migrate\Media;
 use ZinnDigital\PBS\Settings;
 
@@ -99,17 +98,25 @@ final class Legacy {
 		// when premium code ran) put two body classes on every page unless switched off, and the
 		// compat stylesheet's phone-width rules (stacking margins, responsive text sizes) hang off
 		// them. ⛔ Free 5.1.0 never printed them — measured on the free fixture, and adding them
-		// there moved every 390px comparison — so they follow the edition, as legacy's did.
-		if ( ! Licensing::can_use_premium() ) {
+		// there moved every 390px comparison — so only the premium layer adds them (no filter, no read).
+		if ( ! has_filter( 'pbsw_legacy_body_classes' ) ) {
 			return $classes;
 		}
-		$options = self::legacy_options();
-		if ( empty( $options['pbs_disable_responsive_text_sizes'] ) ) {
-			$classes[] = $prefix . '-l-responsive-text';
-		}
-		if ( empty( $options['pbs_force_mobile_responsive_adjustments'] ) ) {
-			$classes[] = $prefix . '-l-force-mobile-adjustments';
-		}
+		/**
+		 * Filters the legacy body classes. The premium layer adds legacy premium's responsive
+		 * classes here (guideline 5: that behaviour is not in the free plugin).
+		 *
+		 * @param array<int, string>   $classes Body classes.
+		 * @param array<string, mixed> $context `prefix` and the legacy `options`.
+		 */
+		$classes = (array) apply_filters(
+			'pbsw_legacy_body_classes',
+			$classes,
+			array(
+				'prefix'  => $prefix,
+				'options' => self::legacy_options(),
+			)
+		);
 		return $classes;
 	}
 
