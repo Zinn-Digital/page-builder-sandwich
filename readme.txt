@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.27.2
+Stable tag: 6.28.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -134,8 +134,7 @@ Recommended models list (off unless you turn it on). If you turn on the daily ch
 The plugin's Get help screen can send a support request to Zinn Digital®, the plugin's developer. Nothing is sent until you connect the site or send a request yourself.
 
 * Connecting the site (Get help → Connect) calls `https://api.zinndigital.com/v1/plugin-support/connections` with the email address and name you type, the plugin's name and version, this site's address and title, the WordPress and PHP versions and your language. The answer is a connection token, stored encrypted in your database. The screen checks it with `/v1/plugin-support/connection`; Disconnect deletes it there and here.
-* Sending a request calls `https://api.zinndigital.com/v1/plugin-support/tickets` with what you type (subject, message, your name), the plugin's name, your language, and your licence's plan and ids. Only if you tick "Include site details" does it add the site details the screen shows you before sending (site address, WordPress, PHP, theme and plugin versions, a few server settings and the last lines of the PHP error log). Any login you choose to add is sent over HTTPS, stored encrypted by Zinn Digital®, and deleted 30 days after the request is closed.
-* Temporary support access, only if you choose it with a request: the plugin creates a WordPress user on your own site with a support role that cannot install, edit or delete plugins or themes, manage users, update WordPress or export content, sends its login with the request, and deletes the user when the time you picked (1, 3 or 7 days) runs out, or sooner if you remove it on the Get help screen.
+* Sending a request calls `https://api.zinndigital.com/v1/plugin-support/tickets` with what you type (subject, message, your name), the plugin's name, your language, and your licence's plan and ids. Only if you tick "Include site details" does it add the site details the screen shows you before sending (site address, WordPress, PHP, theme and plugin versions, a few server settings and the last lines of the PHP error log).
 
 Adobe Fonts (Pro, off unless you connect it). If you enter an Adobe Fonts kit id under Appearance → Site design → Custom fonts, the plugin requests `https://typekit.com/api/v1/json/kits/<kit id>/published` once when you save it, to read the kit's font names (the request carries only the kit id). From then on your pages, and the editor, load the kit's stylesheet from `https://use.typekit.net/<kit id>.css`, and your visitors' browsers download the fonts from Adobe. Remove the kit id to stop it.
 
@@ -182,6 +181,9 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.28.0 =
+* Security: the Get help screen no longer creates a temporary support login and a support request never carries a login. It sends your message and, only if you tick it, the site details. Support users created by earlier versions are removed the next time an administrator opens wp-admin.
 
 = 6.27.2 =
 * Fix: in Sandwich Studio, a button with the theme's Outline style (and every other theme.json block style variation) now looks the same in the canvas as on the site; a kit's outline hero button was dark on dark.

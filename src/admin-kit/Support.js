@@ -1,5 +1,5 @@
 /* Generated from wp/packages/zinn-admin-kit/src/js/Support.js by wp/bin/build-admin-kit.php. Edit the package, never this copy. */
-import { __, _n, sprintf } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
 import { useEffect, useState } from '@wordpress/element';
 import {
 	Button,
@@ -23,9 +23,8 @@ import { kitFetch, errorMessage } from './api';
  * Everything goes to ONE place: Zinn Digital's support inbox (owner, D17), from the SERVER of this
  * site (`/<ns>/kit/support/*`), never from the browser. Nothing is sent before the site owner has
  * agreed (WordPress.org guideline 7), diagnostics only when ticked, with the exact payload shown
- * first. A temporary support login is a real user this owner creates here, which expires and is
- * deleted on its own; its password travels only inside the encrypted ticket field. ⛔ No link,
- * token or endpoint ever logs anybody in (CLAUDE.md §2.56).
+ * first. ⛔ A request never carries a login: no user is created and no credentials are sent
+ * (WordPress.org review 2026-10-01, CLAUDE.md §2.56). No link, token or endpoint logs anybody in.
  *
  * @param {Object} props
  * @param {Object} props.kit  Boot data.
@@ -66,9 +65,6 @@ export default function Support( { kit, mode } ) {
 				<>
 					{ 'help' === mode && <ConnectionCard kit={ kit } /> }
 					<TicketForm kit={ kit } mode={ mode } />
-					{ 'help' === mode && support.canGrant && (
-						<AccessList kit={ kit } />
-					) }
 				</>
 			) }
 		</div>
@@ -124,12 +120,6 @@ function Consent( { kit, onAgree } ) {
 					<li>
 						{ __(
 							'only if you tick it: site details (WordPress and PHP versions, theme, plugins, an excerpt of the error log with passwords and e-mail addresses removed), which you can read before sending;',
-							'page-builder-sandwich'
-						) }
-					</li>
-					<li>
-						{ __(
-							'only if you add them: logins for your site, stored encrypted and deleted 30 days after your request is closed.',
 							'page-builder-sandwich'
 						) }
 					</li>
@@ -309,14 +299,6 @@ function ConnectionCard( { kit } ) {
 	);
 }
 
-const EMPTY_LOGIN = {
-	kind: 'wp_admin',
-	url: '',
-	username: '',
-	secret: '',
-	notes: '',
-};
-
 /**
  * The request itself.
  *
@@ -349,8 +331,6 @@ function TicketForm( { kit, mode } ) {
 	const [ message, setMessage ] = useState( '' );
 	const [ withDiagnostics, setWithDiagnostics ] = useState( help );
 	const [ preview, setPreview ] = useState( null );
-	const [ logins, setLogins ] = useState( [] );
-	const [ accessDays, setAccessDays ] = useState( 0 );
 	const [ busy, setBusy ] = useState( false );
 	const [ result, setResult ] = useState( null );
 
@@ -369,13 +349,6 @@ function TicketForm( { kit, mode } ) {
 				)
 			);
 
-	const setLogin = ( index, key, value ) =>
-		setLogins(
-			logins.map( ( row, i ) =>
-				i === index ? { ...row, [ key ]: value } : row
-			)
-		);
-
 	const send = () => {
 		setBusy( true );
 		setResult( null );
@@ -388,16 +361,12 @@ function TicketForm( { kit, mode } ) {
 				subject,
 				message,
 				diagnostics: help && withDiagnostics,
-				credentials: help ? logins : [],
-				access_days: help ? accessDays : 0,
 			},
 		} )
 			.then( ( r ) => {
 				setResult( r );
 				setSubject( '' );
 				setMessage( '' );
-				setLogins( [] );
-				setAccessDays( 0 );
 			} )
 			.catch( ( e ) =>
 				setResult( {
@@ -413,17 +382,6 @@ function TicketForm( { kit, mode } ) {
 			)
 			.finally( () => setBusy( false ) );
 	};
-
-	const loginKinds = [
-		{ value: 'wp_admin', label: __( 'WordPress admin', 'page-builder-sandwich' ) },
-		{
-			value: 'file_manager',
-			label: __( 'File manager', 'page-builder-sandwich' ),
-		},
-		{ value: 'cpanel', label: __( 'cPanel', 'page-builder-sandwich' ) },
-		{ value: 'ftp', label: __( 'FTP / SFTP', 'page-builder-sandwich' ) },
-		{ value: 'other', label: __( 'Other', 'page-builder-sandwich' ) },
-	];
 
 	return (
 		<Card className="zak-card" data-zak-tour="ticket">
@@ -531,133 +489,6 @@ function TicketForm( { kit, mode } ) {
 								</pre>
 							</details>
 						) }
-						<fieldset className="zak-fieldset">
-							<legend>
-								{ __(
-									'Logins for support (optional, stored encrypted)',
-									'page-builder-sandwich'
-								) }
-							</legend>
-							<p className="zak-muted">
-								{ __(
-									'A login is only sent with its password. Leave a row out rather than half-filled.',
-									'page-builder-sandwich'
-								) }
-							</p>
-							{ logins.map( ( row, index ) => (
-								<div className="zak-login" key={ index }>
-									<SelectControl
-										__next40pxDefaultSize
-										label={ __( 'Type', 'page-builder-sandwich' ) }
-										value={ row.kind }
-										options={ loginKinds }
-										onChange={ ( v ) =>
-											setLogin( index, 'kind', v )
-										}
-									/>
-									<TextControl
-										__next40pxDefaultSize
-										label={ __(
-											'Login address',
-											'page-builder-sandwich'
-										) }
-										value={ row.url }
-										onChange={ ( v ) =>
-											setLogin( index, 'url', v )
-										}
-									/>
-									<TextControl
-										__next40pxDefaultSize
-										label={ __(
-											'Username',
-											'page-builder-sandwich'
-										) }
-										value={ row.username }
-										onChange={ ( v ) =>
-											setLogin( index, 'username', v )
-										}
-									/>
-									<TextControl
-										__next40pxDefaultSize
-										type="password"
-										autoComplete="new-password"
-										label={ __(
-											'Password',
-											'page-builder-sandwich'
-										) }
-										maxLength={ 2000 }
-										value={ row.secret }
-										onChange={ ( v ) =>
-											setLogin( index, 'secret', v )
-										}
-									/>
-									<Button
-										variant="link"
-										isDestructive
-										onClick={ () =>
-											setLogins(
-												logins.filter(
-													( _, i ) => i !== index
-												)
-											)
-										}
-									>
-										{ __( 'Remove', 'page-builder-sandwich' ) }
-									</Button>
-								</div>
-							) ) }
-							{ logins.length < 5 && (
-								<Button
-									variant="secondary"
-									onClick={ () =>
-										setLogins( [
-											...logins,
-											{ ...EMPTY_LOGIN },
-										] )
-									}
-								>
-									{ __( 'Add a login', 'page-builder-sandwich' ) }
-								</Button>
-							) }
-						</fieldset>
-						{ kit.support.canGrant && (
-							<SelectControl
-								__next40pxDefaultSize
-								label={ __(
-									'Create a temporary support login',
-									'page-builder-sandwich'
-								) }
-								help={ __(
-									'A separate user for our support team, without access to users, plugins installation or code editing. It is deleted automatically when it expires, or whenever you revoke it below.',
-									'page-builder-sandwich'
-								) }
-								value={ String( accessDays ) }
-								options={ [
-									{
-										value: '0',
-										label: __( 'No', 'page-builder-sandwich' ),
-									},
-									...( kit.support.accessDays || [] ).map(
-										( d ) => ( {
-											value: String( d ),
-											label: sprintf(
-												/* translators: %d: number of days. */
-												_n(
-													'Yes, for %d day',
-													'Yes, for %d days',
-													d,
-													'page-builder-sandwich'
-												),
-												d
-											),
-										} )
-									),
-								] }
-								onChange={ ( v ) =>
-									setAccessDays( parseInt( v, 10 ) || 0 )
-								}
-							/>
-						) }
 					</>
 				) }
 				<Button
@@ -668,105 +499,6 @@ function TicketForm( { kit, mode } ) {
 				>
 					{ __( 'Send', 'page-builder-sandwich' ) }
 				</Button>
-			</CardBody>
-		</Card>
-	);
-}
-
-/**
- * The temporary support logins on this site, with "Revoke now".
- *
- * @param {Object} props
- * @param {Object} props.kit Boot data.
- * @return {Element} The card.
- */
-function AccessList( { kit } ) {
-	const [ rows, setRows ] = useState( null );
-	const [ error, setError ] = useState( '' );
-
-	const load = () =>
-		kitFetch( kit, 'support/access' )
-			.then( setRows )
-			.catch( ( e ) =>
-				setError(
-					errorMessage(
-						e,
-						__( 'The list could not be loaded.', 'page-builder-sandwich' )
-					)
-				)
-			);
-	useEffect( () => {
-		load();
-	}, [] ); // eslint-disable-line react-hooks/exhaustive-deps
-
-	const revoke = ( ids ) =>
-		kitFetch( kit, 'support/access', { method: 'DELETE', data: { ids } } )
-			.then( ( r ) => setRows( r.access ) )
-			.catch( ( e ) =>
-				setError(
-					errorMessage(
-						e,
-						__(
-							'That login could not be removed.',
-							'page-builder-sandwich'
-						)
-					)
-				)
-			);
-
-	return (
-		<Card className="zak-card" data-zak-tour="access">
-			<CardHeader>
-				<h2 className="zak-card__title">
-					{ __( 'Temporary support logins', 'page-builder-sandwich' ) }
-				</h2>
-			</CardHeader>
-			<CardBody>
-				{ error && (
-					<Notice status="error" isDismissible={ false }>
-						{ error }
-					</Notice>
-				) }
-				{ null === rows && ! error && <Spinner /> }
-				{ rows && 0 === rows.length && (
-					<p className="zak-muted">
-						{ __(
-							'None. Support can only log in to this site if you create a login here.',
-							'page-builder-sandwich'
-						) }
-					</p>
-				) }
-				{ rows && rows.length > 0 && (
-					<ul className="zak-list">
-						{ rows.map( ( row ) => (
-							<li key={ row.id }>
-								<code>{ row.username }</code>{ ' ' }
-								{ row.expired
-									? __(
-											'expired, being removed',
-											'page-builder-sandwich'
-										)
-									: sprintf(
-											/* translators: %s: date and time. */
-											__(
-												'expires %s',
-												'page-builder-sandwich'
-											),
-											new Date(
-												row.expiresAt * 1000
-											).toLocaleString()
-										) }{ ' ' }
-								<Button
-									variant="link"
-									isDestructive
-									onClick={ () => revoke( [ row.id ] ) }
-								>
-									{ __( 'Revoke now', 'page-builder-sandwich' ) }
-								</Button>
-							</li>
-						) ) }
-					</ul>
-				) }
 			</CardBody>
 		</Card>
 	);
