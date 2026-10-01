@@ -321,7 +321,7 @@ final class Studio {
 		/** This action is documented in wp-admin/edit-form-blocks.php */
 		do_action( 'enqueue_block_editor_assets' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- core's own hook, fired as the block editor fires it.
 
-		$settings = get_block_editor_settings(
+		$settings   = get_block_editor_settings(
 			array(
 				'titlePlaceholder'                      => apply_filters( 'enter_title_here', __( 'Add title', 'page-builder-sandwich' ), $post ), // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- core filter.
 				'bodyPlaceholder'                       => apply_filters( 'write_your_story', __( 'Type / to choose a block', 'page-builder-sandwich' ), $post ), // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- core filter.
@@ -333,6 +333,15 @@ final class Studio {
 			),
 			$context
 		);
+		$variations = self::block_style_variation_css();
+		if ( '' !== $variations ) {
+			$settings['styles']   = (array) ( $settings['styles'] ?? array() );
+			$settings['styles'][] = array(
+				'css'            => $variations,
+				'__unstableType' => 'theme',
+				'isGlobalStyles' => true,
+			);
+		}
 		if ( ! empty( $type->template ) ) {
 			$settings['template']     = $type->template;
 			$settings['templateLock'] = ! empty( $type->template_lock ) ? $type->template_lock : false;
@@ -441,6 +450,66 @@ final class Studio {
 				'href'  => self::url( $post->ID ),
 			)
 		);
+	}
+
+	/**
+	 * The theme's block style variations (theme.json `styles.blocks.<block>.variations`: the
+	 * button's "outline"…) as plain `.is-style-<name>` rules, for the canvas.
+	 *
+	 * The block editor gets them per block from the global-styles data `@wordpress/editor` hands the
+	 * block editor through a private key; Studio mounts the block editor directly, so without these
+	 * an outline button showed the theme's filled button colours in the canvas (dark on dark on a
+	 * kit's hero) while the site was right. Appended after the global styles, as the site's
+	 * per-block variation styles come after them, so they win the same way.
+	 *
+	 * @return string CSS ('' when the theme declares no variation).
+	 */
+	public static function block_style_variation_css(): string {
+		if ( ! class_exists( '\WP_Theme_JSON_Resolver' ) ) {
+			return '';
+		}
+		$css = \WP_Theme_JSON_Resolver::get_merged_data()->get_stylesheet(
+			array( 'styles' ),
+			null,
+			array(
+				'include_block_style_variations' => true,
+				'skip_root_layout_styles'        => true,
+			)
+		);
+
+		return self::rules_matching( (string) $css, 'is-style-' );
+	}
+
+	/**
+	 * The top-level rules of a stylesheet whose selector contains $needle (at-rules are left out).
+	 *
+	 * @param string $css    Stylesheet.
+	 * @param string $needle Selector fragment.
+	 * @return string
+	 */
+	public static function rules_matching( string $css, string $needle ): string {
+		$out   = '';
+		$depth = 0;
+		$start = 0;
+		$len   = strlen( $css );
+		for ( $i = 0; $i < $len; $i++ ) {
+			if ( '{' === $css[ $i ] ) {
+				++$depth;
+			} elseif ( '}' === $css[ $i ] ) {
+				--$depth;
+				if ( 0 === $depth ) {
+					$rule  = substr( $css, $start, $i - $start + 1 );
+					$brace = strpos( $rule, '{' );
+					$sel   = false === $brace ? '' : trim( substr( $rule, 0, $brace ) );
+					if ( '' !== $sel && '@' !== $sel[0] && str_contains( $sel, $needle ) ) {
+						$out .= trim( $rule );
+					}
+					$start = $i + 1;
+				}
+			}
+		}
+
+		return $out;
 	}
 
 	/**
