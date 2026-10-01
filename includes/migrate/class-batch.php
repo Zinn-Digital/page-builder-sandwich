@@ -202,8 +202,17 @@ final class Batch {
 				return null;
 			}
 			$trigger = (string) ( $state['trigger'] ?? 'auto' );
-			$size    = max( 1, (int) apply_filters( 'pbsw_migration_batch_size', self::DEFAULT_SIZE ) );
-			$state   = Run::step(
+			/**
+			 * How many legacy (5.x) posts one background migration step converts. Each step is one
+			 * Action Scheduler action; a smaller batch suits a slow or memory-tight host, a larger
+			 * one a fast host with many posts. Values below 1 are treated as 1.
+			 *
+			 * @since 6.1.0
+			 *
+			 * @param int $size Posts per step (Batch::DEFAULT_SIZE).
+			 */
+			$size  = max( 1, (int) apply_filters( 'pbsw_migration_batch_size', self::DEFAULT_SIZE ) );
+			$state = Run::step(
 				$state,
 				static fn( int $after, int $limit, string $mode ): array => self::fetch( $after, $limit, $mode, $trigger ),
 				static fn( int $id, string $mode ): array => Run::UNDO === $mode ? self::undo_post( $id ) : self::convert_post( $id, $trigger ),

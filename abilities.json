@@ -161,6 +161,71 @@
       "mcp_tool": "pbs-add-section"
     },
     {
+      "name": "pbs/add-shop-block",
+      "label": "Add a product block or mini cart (Pro)",
+      "description": "Adds a WooCommerce block at the end of a post: a product element (part: title, gallery, image, price, rating, excerpt, description, add_to_cart, meta, tabs, related, upsells, sale_badge, stock; productId, or 0 for the product being viewed) or a mini cart (label).",
+      "edition": "pro",
+      "capability": "edit_post (the REST route's own check)",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "post": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "block": {
+            "type": "string",
+            "enum": [
+              "product-element",
+              "mini-cart"
+            ]
+          },
+          "part": {
+            "type": "string",
+            "enum": [
+              "title",
+              "gallery",
+              "image",
+              "price",
+              "rating",
+              "excerpt",
+              "add_to_cart",
+              "meta",
+              "tabs",
+              "related",
+              "upsells",
+              "sale_badge",
+              "stock",
+              "description"
+            ]
+          },
+          "productId": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "post",
+          "block"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/add-shop-block/run"
+      },
+      "mcp_tool": "pbs-add-shop-block"
+    },
+    {
       "name": "pbs/apply-brand-kit",
       "label": "Apply the brand kit (Pro)",
       "description": "Applies the saved brand kit's colours and fonts to the site design.",
@@ -968,6 +1033,98 @@
       "mcp_tool": "pbs-create-popup"
     },
     {
+      "name": "pbs/create-query-loop",
+      "label": "Add a query loop (Pro)",
+      "description": "Adds a query loop with a ready-made card, on a new page (pageTitle, status) or at the end of a post (post): source posts|users|terms|field, postType (product for a shop grid), perPage, columns, orderBy, order, pagination, and live filters [{type: search|taxonomy|meta|sort|price|onsale|instock, taxonomy, key, label, ui}].",
+      "edition": "pro",
+      "capability": "edit_post and edit_posts (the REST route's own check)",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "post": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "pageTitle": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "publish",
+              "private"
+            ]
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "posts",
+              "users",
+              "terms",
+              "field"
+            ]
+          },
+          "postType": {
+            "type": "string"
+          },
+          "perPage": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "columns": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "orderBy": {
+            "type": "string"
+          },
+          "order": {
+            "type": "string",
+            "enum": [
+              "ASC",
+              "DESC"
+            ]
+          },
+          "pagination": {
+            "type": "string",
+            "enum": [
+              "none",
+              "numbers",
+              "prevnext"
+            ]
+          },
+          "taxonomy": {
+            "type": "string"
+          },
+          "fieldKey": {
+            "type": "string"
+          },
+          "filters": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "default": {}
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/create-query-loop/run"
+      },
+      "mcp_tool": "pbs-create-query-loop"
+    },
+    {
       "name": "pbs/create-team",
       "label": "Create a library team (Agency)",
       "description": "Creates a team library (name) that other sites can join with an invite code.",
@@ -996,6 +1153,68 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/create-team/run"
       },
       "mcp_tool": "pbs-create-team"
+    },
+    {
+      "name": "pbs/create-theme-template",
+      "label": "Create a theme template (Pro)",
+      "description": "Creates a template (title, type) that replaces that part of every matching page, on classic and block themes. Without content it starts from a ready-made design for its type. include/exclude are display-condition rules ({kind, values, key, value, from, to, days}; see pbs/get-theme-builder-options); priority breaks ties; status publish (live) or draft.",
+      "edition": "pro",
+      "capability": "the REST route's own per-item permission check",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "pattern": "^[a-z_]{2,30}$"
+          },
+          "content": {
+            "type": "string"
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "exclude": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "publish",
+              "draft"
+            ]
+          }
+        },
+        "required": [
+          "title",
+          "type"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/create-theme-template/run"
+      },
+      "mcp_tool": "pbs-create-theme-template"
     },
     {
       "name": "pbs/deactivate-custom-font",
@@ -1189,6 +1408,37 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/delete-team/run"
       },
       "mcp_tool": "pbs-delete-team"
+    },
+    {
+      "name": "pbs/delete-theme-template",
+      "label": "Delete a theme template (Pro)",
+      "description": "Moves one template (id) to the trash; the theme's own design shows again where it applied. Restorable from the trash.",
+      "edition": "pro",
+      "capability": "the REST route's own per-item permission check",
+      "annotations": {
+        "readonly": false,
+        "destructive": true,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^\\d+$"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/delete-theme-template/run"
+      },
+      "mcp_tool": "pbs-delete-theme-template"
     },
     {
       "name": "pbs/disconnect-support",
@@ -1901,6 +2151,29 @@
       "mcp_tool": "pbs-get-support-connection"
     },
     {
+      "name": "pbs/get-theme-builder-options",
+      "label": "Read the theme builder's choices (Pro)",
+      "description": "Returns the template types, the display-condition kinds (page, post type, term, archive, search, 404, logged in, role, device, date, time, URL parameter, referrer, language, cart) with their choices on this site (roles, languages, post types, taxonomies), and the block attribute (pbswConditions: {match, rules}) that shows or hides any block — set it with pbs/update-block.",
+      "edition": "pro",
+      "capability": "edit_posts (the REST route's own check)",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "default": {}
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-theme-builder-options/run"
+      },
+      "mcp_tool": "pbs-get-theme-builder-options"
+    },
+    {
       "name": "pbs/get-white-label",
       "label": "Read white label (Agency)",
       "description": "Returns the white-label settings: on or off, the name shown and which users still see the original.",
@@ -2129,6 +2402,35 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-blocks/run"
       },
       "mcp_tool": "pbs-list-blocks"
+    },
+    {
+      "name": "pbs/list-dynamic-sources",
+      "label": "List the dynamic content sources (Pro)",
+      "description": "Returns what a block can be filled from (post, author, site, archive, custom field, product) with each source's fields, the field plugins on this site (ACF, Meta Box, Pods, JetEngine, Toolset, post meta) and a post type's fields (postType). Bind a block with pbs/update-block: attributes.metadata.bindings.<attribute> = {source, args}.",
+      "edition": "pro",
+      "capability": "edit_posts (the REST route's own check)",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "postType": {
+            "type": "string",
+            "pattern": "^[a-z0-9_\\-]{1,20}$"
+          }
+        },
+        "default": {}
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-dynamic-sources/run"
+      },
+      "mcp_tool": "pbs-list-dynamic-sources"
     },
     {
       "name": "pbs/list-form-submissions",
@@ -2645,6 +2947,29 @@
       "mcp_tool": "pbs-list-teams"
     },
     {
+      "name": "pbs/list-theme-templates",
+      "label": "List the theme templates (Pro)",
+      "description": "Lists the theme builder's templates (header, footer, single, archive, search, 404 and, with WooCommerce, product, shop, cart, checkout, thank-you and My Account): each one's type, where it shows (include/exclude rules), priority, status and blocks.",
+      "edition": "pro",
+      "capability": "the REST route's own per-item permission check",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "default": {}
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-theme-templates/run"
+      },
+      "mcp_tool": "pbs-list-theme-templates"
+    },
+    {
       "name": "pbs/list-transferable",
       "label": "List what can be exported",
       "description": "Lists the templates, patterns and settings that can be exported to another site.",
@@ -2768,6 +3093,58 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/open-support-ticket/run"
       },
       "mcp_tool": "pbs-open-support-ticket"
+    },
+    {
+      "name": "pbs/preview-dynamic-value",
+      "label": "Preview a dynamic value (Pro)",
+      "description": "Returns what a binding shows on one post (post, source, and field or provider + key, as text|url), to check a binding before or after adding it.",
+      "edition": "pro",
+      "capability": "edit_post (the REST route's own check)",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "post": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "source": {
+            "type": "string",
+            "pattern": "^pbsw/[a-z]{2,20}$"
+          },
+          "field": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "as": {
+            "type": "string",
+            "enum": [
+              "text",
+              "url"
+            ]
+          }
+        },
+        "required": [
+          "post",
+          "source"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/preview-dynamic-value/run"
+      },
+      "mcp_tool": "pbs-preview-dynamic-value"
     },
     {
       "name": "pbs/record-support-consent",
@@ -4308,6 +4685,71 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/update-settings/run"
       },
       "mcp_tool": "pbs-update-settings"
+    },
+    {
+      "name": "pbs/update-theme-template",
+      "label": "Change a theme template (Pro)",
+      "description": "Changes one template (id): any of title, type, content (block markup), include, exclude, priority, status. Only what you send changes.",
+      "edition": "pro",
+      "capability": "the REST route's own per-item permission check",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^\\d+$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "pattern": "^[a-z_]{2,30}$"
+          },
+          "content": {
+            "type": "string"
+          },
+          "include": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "exclude": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "publish",
+              "draft"
+            ]
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/update-theme-template/run"
+      },
+      "mcp_tool": "pbs-update-theme-template"
     },
     {
       "name": "pbs/update-tokens",

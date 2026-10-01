@@ -66,6 +66,11 @@ module.exports = {
 		blocks: path.resolve( __dirname, 'src/blocks/index.js' ),
 		// pbs-a1: the Accessibility checker (block editor sidebar and Studio panel).
 		'a11y-checker': path.resolve( __dirname, 'src/design/a11y/index.js' ),
+		// Lane L10 (Pro): theme builder, display conditions, dynamic data (premium path).
+		[ `theme-builder-editor-pro_${ '_premium_only' }` ]: path.resolve(
+			__dirname,
+			`src/theme-builder/pro_${ '_premium_only' }/index.js`
+		),
 		[ PRO_BLOCKS ]: path.resolve(
 			__dirname,
 			`src/blocks/pro_${ '_premium_only' }/index.js`

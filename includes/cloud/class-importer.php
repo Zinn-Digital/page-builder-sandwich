@@ -156,14 +156,14 @@ final class Importer {
 	public static function find( string $kit, string $page ): int {
 		$found = get_posts(
 			array(
-				'post_type'        => 'page',
-				'post_status'      => array( 'publish', 'draft', 'pending', 'private', 'future' ),
-				'numberposts'      => 1,
-				'fields'           => 'ids',
-				'no_found_rows'    => true,
-				'suppress_filters' => true,
+				'post_type'     => 'page',
+				'post_status'   => array( 'publish', 'draft', 'pending', 'private', 'future' ),
+				'numberposts'   => 1,
+				'fields'        => 'ids',
+				'no_found_rows' => true,
+				// get_posts() suppresses filters by default; saying so again fails Plugin Check (VIP SuppressFilters).
 				// phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_meta_query -- one indexed lookup per imported page, only when a person imports a kit.
-				'meta_query'       => array(
+				'meta_query'    => array(
 					'relation' => 'AND',
 					array(
 						'key'   => self::META_KIT,

@@ -137,6 +137,16 @@ final class Lcp {
 		if ( ! self::$run['on'] || ! is_string( $html ) || empty( $block['pbswTopLevel'] ) ) {
 			return $html;
 		}
+		/**
+		 * How far down the content counts as the first screen, in CSS pixels from its top. Blocks
+		 * starting above it are treated as above the fold: their images load eagerly and the
+		 * likeliest LCP image gets `fetchpriority="high"`; blocks below it lazy-load. Raise it for a
+		 * tall hero, lower it for a compact header.
+		 *
+		 * @since 6.1.0
+		 *
+		 * @param int $fold Estimated fold height in CSS pixels (Lcp::FOLD).
+		 */
 		$fold            = (int) apply_filters( 'pbsw_lcp_fold', self::FOLD );
 		$above           = self::$run['y'] < $fold;
 		$html            = self::apply( $html, $above, self::$run['dims'] );

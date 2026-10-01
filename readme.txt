@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.26.3
+Stable tag: 6.27.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -182,6 +182,12 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.27.0 =
+* Pro: theme builder — design your own header, footer, single post, archive, search and 404 templates, for classic and block themes, with display conditions (page, post type, role, device, date and time, URL parameter, referrer, language, cart).
+* Pro: dynamic content — fill any text, image or link from post, author, site or custom fields (ACF, Meta Box, Pods, JetEngine, Toolset) with WordPress's block bindings; a visual query loop with live filters.
+* Pro: WooCommerce builder — design product, shop and category, cart, checkout (compatible with WooCommerce's block checkout), thank-you and My Account pages; product blocks and a mini cart for any page; shop filters for price, sale and stock.
+* AI agents (MCP): 9 new abilities for theme templates, display conditions, dynamic content, query loops and shop blocks.
 
 = 6.26.3 =
 * Fix: the licence-activation fix in the previous release no longer adds a background request handler to the free plugin (it now applies only where the licensing service's own "Activate License" handler exists).
