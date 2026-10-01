@@ -57,7 +57,7 @@ final class Admin {
 			'manage_options',
 			self::SLUG,
 			array( self::class, 'render' ),
-			'dashicons-layout',
+			self::menu_icon(),
 			// Below Settings (80): WordPress.org's closure notice lists a high menu position (T-6/P-2, D28901).
 			81
 		);
@@ -152,5 +152,20 @@ final class Admin {
 				'companyUrl' => 'https://zinndigital.com',
 			)
 		);
+	}
+
+	/**
+	 * The admin menu icon: the product's own pictogram as a monochrome SVG data URI (PLUGIN-ICONS,
+	 * 2026-10-01 — the owner asked for the product icons "to be used everywhere", and a dashicon
+	 * is nobody's icon). Fill-only on purpose: WordPress's svg-painter recolours `fill` to the
+	 * admin colour scheme and leaves strokes alone. Source:
+	 * `ui/src/brand/product-icons/menu/page-builder-sandwich.svg`; `node scripts/product-icons.mjs --check`
+	 * fails when this copy drifts from it.
+	 *
+	 * @return string
+	 */
+	private static function menu_icon(): string {
+		$menu_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black"><path fill-rule="evenodd" d="M3.5 8.5A4.5 4.5 0 0 1 6.5 1h7a4.5 4.5 0 0 1 3 7.5V18a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM6.8 9.6a1.1 1.1 0 1 0 2.2 0 1.1 1.1 0 0 0-2.2 0zm4.2 0a1.1 1.1 0 1 0 2.2 0 1.1 1.1 0 0 0-2.2 0zM6.8 12.4h6.4a3.2 3.2 0 0 1-6.4 0z"/></svg>';
+		return 'data:image/svg+xml;base64,' . base64_encode( $menu_svg ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode -- a data URI is the documented form for a menu icon.
 	}
 }
