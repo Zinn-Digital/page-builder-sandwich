@@ -1693,6 +1693,29 @@
       "mcp_tool": "pbs-get-migration"
     },
     {
+      "name": "pbs/get-motion-options",
+      "label": "List the animation and interaction settings (Pro)",
+      "description": "Returns every motion setting (entrance animation, its length and delay, scroll effect, hover effect, stay in view, parallax, follow the pointer) with its choices or range, and the site's breakpoints.",
+      "edition": "pro",
+      "capability": "edit_posts (the REST route's own check)",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "default": {}
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-motion-options/run"
+      },
+      "mcp_tool": "pbs-get-motion-options"
+    },
+    {
       "name": "pbs/get-newsletter-keys",
       "label": "Read the newsletter connection (Pro)",
       "description": "Says whether a Mailchimp key is saved (the key itself is never returned).",
@@ -3046,6 +3069,54 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/save-library-item/run"
       },
       "mcp_tool": "pbs-save-library-item"
+    },
+    {
+      "name": "pbs/set-block-motion",
+      "label": "Animate a block (Pro)",
+      "description": "Sets or removes (null) motion settings on one block of a page, found by its path, at a breakpoint (base by default). Works on any block, including core blocks whose HTML is saved in the page. Visitors who ask for reduced motion never see the movement.",
+      "edition": "pro",
+      "capability": "edit_post (the REST route's own check)",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "post": {
+            "type": "string",
+            "pattern": "^\\d+$"
+          },
+          "path": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "breakpoint": {
+            "type": "string",
+            "default": "base",
+            "pattern": "^[a-z0-9-]{1,32}$"
+          },
+          "motion": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "post",
+          "path",
+          "motion"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/set-block-motion/run"
+      },
+      "mcp_tool": "pbs-set-block-motion"
     },
     {
       "name": "pbs/set-library-storage",
