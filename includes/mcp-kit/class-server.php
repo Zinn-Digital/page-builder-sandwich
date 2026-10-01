@@ -214,7 +214,7 @@ final class Server {
 		?>
 		<fieldset class="zd-mcp-panel">
 			<legend><strong><?php esc_html_e( 'AI agents (MCP)', 'page-builder-sandwich' ); ?></strong></legend>
-			<p><?php esc_html_e( 'Let AI assistants such as Claude, ChatGPT, Cursor or VS Code work on this site for you through MCP (Model Context Protocol). They sign in as a WordPress user with an application password and can do only what that user is allowed to do.', 'page-builder-sandwich' ); ?></p>
+			<p><?php esc_html_e( 'Let AI assistants such as Claude, Cursor or VS Code work on this site for you through MCP (Model Context Protocol). They sign in as a WordPress user with an application password and can do only what that user is allowed to do.', 'page-builder-sandwich' ); ?></p>
 			<?php if ( ! $mcp['available'] ) : ?>
 				<p><?php esc_html_e( 'AI agents need WordPress 6.9 or later. Update WordPress to use them.', 'page-builder-sandwich' ); ?></p>
 			<?php else : ?>
@@ -235,6 +235,7 @@ final class Server {
 					<p><a href="<?php echo esc_url( $mcp['passwords'] ); ?>"><?php esc_html_e( 'Create an application password for your user', 'page-builder-sandwich' ); ?></a></p>
 					<p><?php esc_html_e( 'Add this to your AI app’s MCP settings, with your username and that password:', 'page-builder-sandwich' ); ?></p>
 					<pre class="zd-mcp-panel__config" dir="ltr"><?php echo esc_html( $config ); ?></pre>
+					<p class="description"><?php esc_html_e( 'VS Code: put the same entry under "servers" in .vscode/mcp.json, not under "mcpServers".', 'page-builder-sandwich' ); ?></p>
 					<p>
 						<?php
 						/* translators: %d: how many tools an AI agent can use. */

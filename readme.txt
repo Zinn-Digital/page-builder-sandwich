@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.25.0
+Stable tag: 6.26.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -182,6 +182,9 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.26.0 =
+* AI agents (MCP): when the site refuses an action without a written reason, the AI app now gets a readable one (the error, or the HTTP status) instead of "Failed to execute tool".
 
 = 6.25.0 =
 * Pro: AI assistants (MCP) can list motion settings and animate any block on a page (pbs/get-motion-options, pbs/set-block-motion); the Forms screen links the marketing guides.
