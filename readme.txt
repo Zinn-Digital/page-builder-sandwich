@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.22.0
+Stable tag: 6.23.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -178,6 +178,9 @@ It is short and says nothing about which plugin produced the markup. You can cha
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
 == Changelog ==
+
+= 6.23.0 =
+* Security: popups can no longer be read over the WordPress REST API by visitors or subscribers (editors only).
 
 = 6.22.0 =
 * Pro: forms with email, save, webhook and mailing-list actions (Mailchimp, Brevo, MailerLite, Kit, ActiveCampaign); popups, slide-ins and bars; entrance, scroll and hover motion; conversion tracking (GA4, Tag Manager, Meta Pixel); A/B tests; a cookie consent banner that blocks tracking until consent.
