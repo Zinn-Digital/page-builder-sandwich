@@ -130,22 +130,38 @@ final class Kits {
 	 * @return \WP_REST_Response
 	 */
 	public static function list( \WP_REST_Request $request ): \WP_REST_Response {
+		$data = self::catalogue( (bool) $request->get_param( 'refresh' ) );
+		if ( isset( $data['failure'] ) ) {
+			return self::failure( (array) $data['failure'] );
+		}
+
+		return new \WP_REST_Response( $data, 200 );
+	}
+
+	/**
+	 * The catalogue in the admin's language, cached for an hour. The REST route and the
+	 * `pbs/list-kits` ability both read it here.
+	 *
+	 * @param bool $refresh Skip the cache.
+	 * @return array<string, mixed> The catalogue, or `failure` => the Engine::call() result.
+	 */
+	public static function catalogue( bool $refresh = false ): array {
 		$token  = self::token();
 		$locale = get_user_locale();
 		$key    = self::CACHE . '_' . substr( md5( $locale . '|' . $token ), 0, 16 );
-		$data   = $request->get_param( 'refresh' ) ? false : get_transient( $key );
+		$data   = $refresh ? false : get_transient( $key );
 		if ( ! is_array( $data ) ) {
 			// The catalogue in the admin's language; the engine falls back to English per string.
 			$result = Engine::call( 'GET', '/v1/pbs-library/kits?locale=' . rawurlencode( $locale ), null, $token );
 			if ( ! $result['ok'] ) {
-				return self::failure( $result );
+				return array( 'failure' => $result );
 			}
 			$data = (array) $result['body'];
 			set_transient( $key, $data, HOUR_IN_SECONDS );
 		}
 		$data['upgradeUrl'] = (string) \ZinnDigital\PBS\Licensing::upgrade_url();
 
-		return new \WP_REST_Response( $data, 200 );
+		return $data;
 	}
 
 	/**
@@ -155,14 +171,19 @@ final class Kits {
 	 * @return \WP_REST_Response
 	 */
 	public static function import( \WP_REST_Request $request ): \WP_REST_Response {
-		$slug = (string) $request->get_param( 'slug' );
-		// The pages in the SITE's language (what visitors read), not the admin's.
-		$result = Engine::call( 'GET', '/v1/pbs-library/kits/' . rawurlencode( $slug ) . '?locale=' . rawurlencode( get_locale() ), null, self::token() );
-		if ( ! $result['ok'] ) {
-			return self::failure( $result );
+		$done = self::apply(
+			(string) $request->get_param( 'slug' ),
+			array(
+				'pages'   => (array) $request->get_param( 'pages' ),
+				'publish' => (bool) $request->get_param( 'publish' ),
+				'front'   => (bool) $request->get_param( 'front' ),
+				'menu'    => (bool) $request->get_param( 'menu' ),
+			)
+		);
+		if ( isset( $done['failure'] ) ) {
+			return self::failure( (array) $done['failure'] );
 		}
-		$kit = (array) $result['body'];
-		if ( 'pbs-kit/1' !== ( $kit['format'] ?? '' ) || ( $kit['slug'] ?? '' ) !== $slug ) {
+		if ( isset( $done['bad_kit'] ) ) {
 			return new \WP_REST_Response(
 				array(
 					'code'    => 'bad_kit',
@@ -171,17 +192,31 @@ final class Kits {
 				502
 			);
 		}
-		$done = Importer::import(
-			$kit,
-			array(
-				'pages'   => (array) $request->get_param( 'pages' ),
-				'publish' => (bool) $request->get_param( 'publish' ),
-				'front'   => (bool) $request->get_param( 'front' ),
-				'menu'    => (bool) $request->get_param( 'menu' ),
-			)
-		);
 
 		return new \WP_REST_Response( $done, 200 );
+	}
+
+	/**
+	 * Fetch a kit and import it. The REST route and the `pbs/apply-kit` ability both run it here;
+	 * the library refuses a Pro kit to a site without a Pro session (`pro_required`).
+	 *
+	 * @param string               $slug    Kit slug.
+	 * @param array<string, mixed> $options Importer::import() options.
+	 * @return array<string, mixed> The import result, `failure` => the Engine::call() result, or
+	 *                              `bad_kit` => true.
+	 */
+	public static function apply( string $slug, array $options ): array {
+		// The pages in the SITE's language (what visitors read), not the admin's.
+		$result = Engine::call( 'GET', '/v1/pbs-library/kits/' . rawurlencode( $slug ) . '?locale=' . rawurlencode( get_locale() ), null, self::token() );
+		if ( ! $result['ok'] ) {
+			return array( 'failure' => $result );
+		}
+		$kit = (array) $result['body'];
+		if ( 'pbs-kit/1' !== ( $kit['format'] ?? '' ) || ( $kit['slug'] ?? '' ) !== $slug ) {
+			return array( 'bad_kit' => true );
+		}
+
+		return Importer::import( $kit, $options );
 	}
 
 	/**

@@ -37,6 +37,10 @@ require_once __DIR__ . '/workflow/load.php';
 require_once __DIR__ . '/design/a11y/load.php';
 // Lane L11 P11: the website-kit library, its importer and the translated section patterns.
 require_once __DIR__ . '/cloud/load.php';
+// Lane PLUGIN-MCP: the abilities (WordPress Abilities API) and this site's own MCP server, through
+// the shared MCP kit (wp/packages/zinn-mcp-kit) and the bundled WordPress MCP adapter.
+require_once __DIR__ . '/mcp-kit/load.php';
+require_once __DIR__ . '/mcp/class-abilities.php';
 
 /*
  * The licensing SDK's screens show THIS icon (the WordPress.org one, wp/dotorg-assets/page-builder-sandwich).
@@ -46,6 +50,7 @@ require_once __DIR__ . '/cloud/load.php';
 pbsw_fs()->add_filter( 'plugin_icon', static fn(): string => PBSW_DIR . 'assets/icon-256x256.png' );
 
 \ZinnDigital\PBS\Plugin::boot();
+\ZinnDigital\PBS\Mcp\Abilities::boot();
 
 /*
  * The shared AI core (wp/packages/zinn-ai-core, rendered into ai-core/ by wp/bin/build-ai-core.php).

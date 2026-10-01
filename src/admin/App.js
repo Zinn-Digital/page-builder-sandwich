@@ -15,6 +15,7 @@ import {
 import About from './About';
 import Breakpoints from './Breakpoints';
 import LegacyContent from './LegacyContent';
+import McpPanel from '../mcp-kit/McpPanel';
 import { isValidPrefix } from './prefix';
 
 /**
@@ -121,6 +122,7 @@ export default function App( { data } ) {
 						</Button>
 					</PanelBody>
 				) }
+				{ settings && <McpPanel path={ data.restPath } /> }
 				{ settings && data.breakpointsPath && (
 					<Breakpoints path={ data.breakpointsPath } />
 				) }

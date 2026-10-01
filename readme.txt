@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.23.0
+Stable tag: 6.24.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -177,7 +177,14 @@ It is short and says nothing about which plugin produced the markup. You can cha
 
 From a copy in your uploads folder, written when the plugin is activated, updated, or its prefix is changed.
 
+= Can an AI assistant build pages with it? =
+
+Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
+
 == Changelog ==
+
+= 6.24.0 =
+* AI agents (MCP) and REST: 115 abilities and the site's own MCP server — pages, sections, every block, block-level edits, kits, design, library, workflow and migration; in Pro, forms, popups, A/B tests, tracking, the cookie banner, bulk page building and AI page writing. On by default for signed-in users with the right permissions; switch in Settings.
 
 = 6.23.0 =
 * Security: popups can no longer be read over the WordPress REST API by visitors or subscribers (editors only).

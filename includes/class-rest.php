@@ -58,6 +58,10 @@ final class Rest {
 							'type'     => 'string',
 							'required' => false,
 						),
+						'mcp'    => array(
+							'type'     => 'boolean',
+							'required' => false,
+						),
 					),
 				),
 			)
@@ -93,6 +97,9 @@ final class Rest {
 		if ( null !== $request->get_param( 'prefix' ) ) {
 			$input['prefix'] = (string) $request->get_param( 'prefix' );
 		}
+		if ( null !== $request->get_param( 'mcp' ) ) {
+			$input['mcp'] = (bool) $request->get_param( 'mcp' );
+		}
 
 		$saved = Settings::save( $input );
 		if ( is_wp_error( $saved ) ) {
@@ -112,6 +119,8 @@ final class Rest {
 		return array(
 			'prefix' => Settings::get()['prefix'],
 			'beta'   => Licensing::beta(),
+			// The switch as saved, and what is live on THIS request (the kit booted before it).
+			'mcp'    => array( 'saved' => Settings::get()['mcp'] ) + \ZinnDigital\PBS\McpKit\Server::describe(),
 		);
 	}
 }

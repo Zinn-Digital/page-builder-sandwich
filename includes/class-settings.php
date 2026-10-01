@@ -33,7 +33,10 @@ final class Settings {
 	/**
 	 * The stored settings merged over the defaults.
 	 *
-	 * @return array{prefix: string}
+	 * `mcp` (default on, owner 2026-09-30): signed-in users with the right capability may drive the
+	 * plugin through AI agents (MCP) and the abilities REST API. Off, neither is registered.
+	 *
+	 * @return array{prefix: string, mcp: bool}
 	 */
 	public static function get(): array {
 		$stored = get_option( self::OPTION, array() );
@@ -45,6 +48,7 @@ final class Settings {
 			'prefix' => self::is_valid_prefix( (string) ( $stored['prefix'] ?? '' ) )
 				? (string) $stored['prefix']
 				: self::DEFAULT_PREFIX,
+			'mcp'    => ! array_key_exists( 'mcp', $stored ) || true === $stored['mcp'],
 		);
 	}
 
@@ -67,6 +71,9 @@ final class Settings {
 				);
 			}
 			$current['prefix'] = $prefix;
+		}
+		if ( array_key_exists( 'mcp', $input ) ) {
+			$current['mcp'] = (bool) $input['mcp'];
 		}
 
 		update_option( self::OPTION, $current, true );
