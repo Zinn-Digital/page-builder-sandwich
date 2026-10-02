@@ -170,6 +170,7 @@ final class Abilities {
 				'category'            => self::CATEGORY,
 				'input_schema'        => self::page_schema( true ),
 				'output_schema'       => $page_out,
+				'annotations'         => array( 'destructive' => false ),
 				'execute_callback'    => array( self::class, 'create_page' ),
 				'permission_callback' => static fn( array $input ): bool => current_user_can( 'edit_pages' ) && self::can_set_status( (string) ( $input['status'] ?? 'draft' ) ),
 			)
@@ -187,7 +188,10 @@ final class Abilities {
 				'output_schema'       => $page_out,
 				'execute_callback'    => array( self::class, 'update_page' ),
 				'permission_callback' => static fn( array $input ): bool => self::can_edit_page( Ability::int( $input, 'id' ) ) && ( ! isset( $input['status'] ) || self::can_set_status( (string) $input['status'] ) ),
-				'annotations'         => array( 'idempotent' => true ),
+				'annotations'         => array(
+					'destructive' => true,
+					'idempotent'  => true,
+				),
 			)
 		);
 
@@ -268,6 +272,7 @@ final class Abilities {
 					'additionalProperties' => false,
 				),
 				'output_schema'       => $page_out,
+				'annotations'         => array( 'destructive' => false ),
 				'execute_callback'    => array( self::class, 'add_section' ),
 				'permission_callback' => static fn( array $input ): bool => self::can_edit_page( Ability::int( $input, 'id' ) ),
 			)
@@ -339,7 +344,10 @@ final class Abilities {
 				'output_schema'       => array( 'type' => 'object' ),
 				'execute_callback'    => array( self::class, 'apply_kit' ),
 				'permission_callback' => static fn( array $input ): bool => Kits::can_import() && ( empty( $input['front'] ) || current_user_can( 'manage_options' ) ),
-				'annotations'         => array( 'idempotent' => true ),
+				'annotations'         => array(
+					'destructive' => false,
+					'idempotent'  => true,
+				),
 			)
 		);
 
@@ -431,7 +439,10 @@ final class Abilities {
 				'output_schema'       => array( 'type' => 'object' ),
 				'execute_callback'    => array( self::class, 'update_block' ),
 				'permission_callback' => static fn( array $input ): bool => self::can_edit_page( Ability::int( $input, 'id' ) ),
-				'annotations'         => array( 'idempotent' => true ),
+				'annotations'         => array(
+					'destructive' => true,
+					'idempotent'  => true,
+				),
 			)
 		);
 
@@ -490,6 +501,7 @@ final class Abilities {
 					'additionalProperties' => false,
 				),
 				'output_schema'       => array( 'type' => 'object' ),
+				'annotations'         => array( 'destructive' => false ),
 				'execute_callback'    => array( self::class, 'move_section' ),
 				'permission_callback' => static fn( array $input ): bool => self::can_edit_page( Ability::int( $input, 'id' ) ),
 			)
@@ -516,6 +528,7 @@ final class Abilities {
 					'additionalProperties' => false,
 				),
 				'output_schema'       => array( 'type' => 'object' ),
+				'annotations'         => array( 'destructive' => false ),
 				'execute_callback'    => array( self::class, 'duplicate_page' ),
 				'permission_callback' => static fn( array $input ): bool => current_user_can( 'edit_pages' ) && self::can_edit_page( Ability::int( $input, 'id' ) ),
 			)
@@ -557,6 +570,7 @@ final class Abilities {
 					'required'             => array( 'business' ),
 					'additionalProperties' => false,
 				),
+				'annotations'         => array( 'destructive' => false ),
 				'execute_callback'    => array( self::class, 'landing_page_prompt' ),
 				'permission_callback' => static fn(): bool => current_user_can( 'edit_pages' ),
 			)

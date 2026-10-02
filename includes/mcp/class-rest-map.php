@@ -1079,6 +1079,36 @@ final class Rest_Map {
 				'route'  => '/zd-v/v1/reviews',
 				'exempt' => 'public visitor route: live Google reviews for a page',
 			),
+			array(
+				'method' => 'GET',
+				'route'  => '/zinn-mcp/v1/oauth/\\.well-known/(?:openid-configuration|oauth-authorization-server)',
+				'exempt' => 'the MCP sign-in itself (OAuth 2.1 for AI apps): an agent signs in through it, it is not a tool',
+			),
+			array(
+				'method' => 'GET',
+				'route'  => '/zinn-mcp/v1/oauth/authorize',
+				'exempt' => 'the MCP sign-in itself (OAuth 2.1 for AI apps): an agent signs in through it, it is not a tool',
+			),
+			array(
+				'method' => 'POST',
+				'route'  => '/zinn-mcp/v1/oauth/register',
+				'exempt' => 'the MCP sign-in itself (OAuth 2.1 for AI apps): an agent signs in through it, it is not a tool',
+			),
+			array(
+				'method' => 'POST',
+				'route'  => '/zinn-mcp/v1/oauth/revoke',
+				'exempt' => 'the MCP sign-in itself (OAuth 2.1 for AI apps): an agent signs in through it, it is not a tool',
+			),
+			array(
+				'method' => 'POST',
+				'route'  => '/zinn-mcp/v1/oauth/token',
+				'exempt' => 'the MCP sign-in itself (OAuth 2.1 for AI apps): an agent signs in through it, it is not a tool',
+			),
+			array(
+				'method' => 'GET',
+				'route'  => '/zinn-mcp/v1/protected-resource/{route}',
+				'exempt' => 'the MCP sign-in itself (OAuth 2.1 for AI apps): an agent signs in through it, it is not a tool',
+			),
 		);
 	}
 }

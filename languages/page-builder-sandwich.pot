@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Page Builder Sandwich 6.29.1\n"
+"Project-Id-Version: Page Builder Sandwich 6.30.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/page-builder-sandwich\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-02T01:35:02+00:00\n"
+"POT-Creation-Date: 2026-10-02T01:53:47+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: page-builder-sandwich\n"
@@ -2085,7 +2085,7 @@ msgid "The prefix must be 1 to 8 lowercase letters or digits, start with a lette
 msgstr ""
 
 #: includes/cloud/class-kits.php:190
-#: includes/mcp/class-abilities.php:1178
+#: includes/mcp/class-abilities.php:1192
 msgid "The kit could not be read. Try again later."
 msgstr ""
 
@@ -4699,8 +4699,10 @@ msgstr ""
 
 #: includes/freemius-strings.php:868
 #: includes/freemius-strings.php:3745
+#: includes/mcp-kit/class-server.php:269
 #: src/admin-kit/Support.js:243
 #: src/marketing/pro__premium_only/admin.js:75
+#: src/mcp-kit/McpPanel.js:215
 msgid "Disconnect"
 msgstr ""
 
@@ -7739,8 +7741,57 @@ msgctxt "x-ago"
 msgid "%s ago"
 msgstr ""
 
-#: includes/mcp-kit/class-ability.php:82
+#: includes/mcp-kit/class-ability.php:94
 msgid "The action could not be completed. Try again, and if it keeps failing, contact the site administrator."
+msgstr ""
+
+#: includes/mcp-kit/class-oauth.php:639
+#: includes/mcp-kit/class-oauth.php:650
+msgid "Connect an AI app"
+msgstr ""
+
+#: includes/mcp-kit/class-oauth.php:652
+#: includes/mcp-kit/class-oauth.php:658
+#: includes/mcp-kit/class-oauth.php:699
+msgid "This connection request has expired. Go back to the app and start connecting again."
+msgstr ""
+
+#. translators: 1: the AI app's name, 2: the plugin's MCP server name, 3: the WordPress user's display name.
+#: includes/mcp-kit/class-oauth.php:666
+#, php-format
+msgid "%1$s is asking to use %2$s on this site as %3$s. It can do only what your WordPress account is allowed to do, and you can disconnect it at any time from the AI agents (MCP) settings."
+msgstr ""
+
+#. translators: 1: the AI app's name, 2: a domain name.
+#: includes/mcp-kit/class-oauth.php:669
+#, php-format
+msgid "%1$s identified itself from %2$s."
+msgstr ""
+
+#. translators: 1: the AI app's name, 2: a domain name.
+#: includes/mcp-kit/class-oauth.php:672
+#, php-format
+msgid "%1$s registered itself automatically. Only continue if you started this from %2$s."
+msgstr ""
+
+#: includes/mcp-kit/class-oauth.php:676
+msgid "Your account cannot use these tools on this site. Ask an administrator."
+msgstr ""
+
+#. translators: %s: a domain name.
+#: includes/mcp-kit/class-oauth.php:679
+#, php-format
+msgid "After you answer you will go back to %s."
+msgstr ""
+
+#. translators: %s: the AI app's name.
+#: includes/mcp-kit/class-oauth.php:684
+#, php-format
+msgid "Allow %s"
+msgstr ""
+
+#: includes/mcp-kit/class-oauth.php:685
+msgid "Do not allow"
 msgstr ""
 
 #: includes/mcp-kit/class-rest-bridge.php:322
@@ -7751,65 +7802,85 @@ msgstr ""
 msgid "The site refused the request."
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:220
+#: includes/mcp-kit/class-server.php:237
 #: src/mcp-kit/McpPanel.js:96
 msgid "AI agents (MCP)"
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:221
+#: includes/mcp-kit/class-server.php:238
 #: src/mcp-kit/McpPanel.js:112
-msgid "Let AI assistants such as Claude, Cursor or VS Code work on this site for you through MCP (Model Context Protocol). They sign in as a WordPress user with an application password and can do only what that user is allowed to do."
+msgid "Let AI assistants such as Claude, Cursor or VS Code work on this site for you through MCP (Model Context Protocol). They sign in as a WordPress user (Claude and ChatGPT by approving them here, others with an application password) and can do only what that user is allowed to do."
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:223
+#: includes/mcp-kit/class-server.php:240
 #: src/mcp-kit/McpPanel.js:133
 msgid "AI agents need WordPress 6.9 or later. Update WordPress to use them."
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:229
+#: includes/mcp-kit/class-server.php:246
 #: src/mcp-kit/McpPanel.js:119
 msgid "Allow AI agents (MCP)"
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:231
+#: includes/mcp-kit/class-server.php:248
 #: src/mcp-kit/McpPanel.js:123
 msgid "Off: the tools below and their REST routes are not registered at all."
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:236
+#: includes/mcp-kit/class-server.php:253
 #: src/mcp-kit/McpPanel.js:144
 msgid "Connection address (MCP endpoint)"
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:239
-#: src/mcp-kit/McpPanel.js:156
+#: includes/mcp-kit/class-server.php:257
+#: src/mcp-kit/McpPanel.js:157
+msgid "Claude and ChatGPT: sign in instead"
+msgstr ""
+
+#: includes/mcp-kit/class-server.php:258
+#: src/mcp-kit/McpPanel.js:163
+msgid "Add the connection address as a custom connector in Claude, or as an app in ChatGPT developer mode. They open this site so you can approve them; no password to copy."
+msgstr ""
+
+#: includes/mcp-kit/class-server.php:260
+#: src/mcp-kit/McpPanel.js:171
+msgid "AI apps connected to your account:"
+msgstr ""
+
+#: includes/mcp-kit/class-server.php:275
+#: src/mcp-kit/McpPanel.js:229
+msgid "Other AI apps: an application password"
+msgstr ""
+
+#: includes/mcp-kit/class-server.php:277
+#: src/mcp-kit/McpPanel.js:240
 msgid "Create an application password for your user"
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:240
-#: src/mcp-kit/McpPanel.js:163
+#: includes/mcp-kit/class-server.php:278
+#: src/mcp-kit/McpPanel.js:247
 msgid "Add this to your AI app’s MCP settings, with your username and that password:"
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:242
-#: src/mcp-kit/McpPanel.js:173
+#: includes/mcp-kit/class-server.php:280
+#: src/mcp-kit/McpPanel.js:257
 msgid "VS Code: put the same entry under \"servers\" in .vscode/mcp.json, not under \"mcpServers\"."
 msgstr ""
 
 #. translators: %d: how many tools an AI agent can use.
-#: includes/mcp-kit/class-server.php:246
-#: src/mcp-kit/McpPanel.js:181
+#: includes/mcp-kit/class-server.php:284
+#: src/mcp-kit/McpPanel.js:265
 #, php-format,js-format
 msgid "Tools an AI agent can use here (%d):"
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:257
-#: src/mcp-kit/McpPanel.js:200
+#: includes/mcp-kit/class-server.php:295
+#: src/mcp-kit/McpPanel.js:284
 msgid "User guide: AI agents and MCP"
 msgstr ""
 
-#: includes/mcp-kit/class-server.php:260
-#: src/mcp-kit/McpPanel.js:210
+#: includes/mcp-kit/class-server.php:298
+#: src/mcp-kit/McpPanel.js:294
 msgid "Developer docs: abilities, REST and MCP"
 msgstr ""
 
@@ -7849,199 +7920,199 @@ msgstr ""
 msgid "Creates a page from sections (see pbs/list-sections) and/or block content. A new page is a draft unless another status is asked for."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:183
+#: includes/mcp/class-abilities.php:184
 msgid "Update a page"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:184
+#: includes/mcp/class-abilities.php:185
 msgid "Changes a page's title, status or block content. Content you send replaces the page's content."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:199
+#: includes/mcp/class-abilities.php:203
 msgid "List sections"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:200
+#: includes/mcp/class-abilities.php:204
 msgid "Lists the ready-made sections (hero, features, FAQ, testimonials, call to action and more) that can be added to a page."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:207
+#: includes/mcp/class-abilities.php:211
 msgid "Words to match in a section's name or keywords."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:245
+#: includes/mcp/class-abilities.php:249
 msgid "Add a section to a page"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:246
+#: includes/mcp/class-abilities.php:250
 msgid "Adds a ready-made section to a page: at the start, at the end, or after the section at a given position."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:254
+#: includes/mcp/class-abilities.php:258
 msgid "A section name from pbs/list-sections."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:264
+#: includes/mcp/class-abilities.php:268
 msgid "With position \"after\": the 0-based position of the section to insert after."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:281
+#: includes/mcp/class-abilities.php:286
 msgid "List website kits"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:282
+#: includes/mcp/class-abilities.php:287
 msgid "Lists the website kits (a set of ready-made pages for one kind of business) this site can import."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:309
+#: includes/mcp/class-abilities.php:314
 msgid "Import a website kit"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:310
+#: includes/mcp/class-abilities.php:315
 msgid "Imports a website kit's pages (all of them, or the ones named), optionally publishing them, setting the home page and adding them to a menu. Importing again updates the same pages."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:351
+#: includes/mcp/class-abilities.php:359
 msgid "List the builder blocks"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:352
+#: includes/mcp/class-abilities.php:360
 msgid "Lists every Page Builder Sandwich block this site can use (Pro blocks too when Pro is active): name, title, category and description. Use pbs/get-block for a block's settings, then put the block in a page's content."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:376
+#: includes/mcp/class-abilities.php:384
 msgid "Describe a builder block"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:377
+#: includes/mcp/class-abilities.php:385
 msgid "Returns one block's settings (attributes with their types, choices and defaults), what it supports, which blocks it may contain, and a ready-to-use example in block markup."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:407
+#: includes/mcp/class-abilities.php:415
 msgid "Where the block is: its position among the page's sections, then among that block's inner blocks, and so on (0-based), as pbs/get-page lists them."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:415
+#: includes/mcp/class-abilities.php:423
 msgid "Change one block's settings"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:416
+#: includes/mcp/class-abilities.php:424
 msgid "Changes the settings (attributes) of one block inside a page, found by its path; attributes you send are merged over the current ones. Works on blocks the site renders from their settings; for a block whose HTML is saved in the page, send new markup with pbs/update-page."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:443
+#: includes/mcp/class-abilities.php:454
 msgid "Remove a block from a page"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:444
+#: includes/mcp/class-abilities.php:455
 msgid "Removes one block (a whole section, or a block inside one) from a page, found by its path. The page's previous version stays in its revisions."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:470
+#: includes/mcp/class-abilities.php:481
 msgid "Move a section"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:471
+#: includes/mcp/class-abilities.php:482
 msgid "Moves a section of a page from one position to another (0-based, as pbs/get-page lists them)."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:503
+#: includes/mcp/class-abilities.php:515
 msgid "Duplicate a page"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:504
+#: includes/mcp/class-abilities.php:516
 msgid "Copies a page (its title, content and template) into a new draft."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:529
+#: includes/mcp/class-abilities.php:542
 msgid "Move a page to the trash"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:530
+#: includes/mcp/class-abilities.php:543
 msgid "Moves a page to the trash. It can be restored from Pages, Trash for 30 days."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:546
+#: includes/mcp/class-abilities.php:559
 msgid "Build a landing page"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:547
+#: includes/mcp/class-abilities.php:560
 msgid "A guided workflow: the agent picks sections that fit your business, builds the page as a draft and writes its text."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:554
+#: includes/mcp/class-abilities.php:567
 msgid "The business, its offer and its audience."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:646
+#: includes/mcp/class-abilities.php:660
 msgid "A page can be a draft, pending review, published or private."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:658
+#: includes/mcp/class-abilities.php:672
 msgid "Give the page a title."
 msgstr ""
 
 #. translators: %s: a block name.
-#: includes/mcp/class-abilities.php:878
+#: includes/mcp/class-abilities.php:892
 #, php-format
 msgid "%s saves its HTML in the page, so its settings cannot be changed on their own. Send the page's new markup with pbs/update-page."
 msgstr ""
 
 #. translators: %s: the original page's title.
 #. translators: %s: class name.
-#: includes/mcp/class-abilities.php:943
+#: includes/mcp/class-abilities.php:957
 #: includes/pro__premium_only/design/class-global-classes.php:165
 #, php-format
 msgid "%s (copy)"
 msgstr ""
 
-#: includes/mcp/class-abilities.php:985
+#: includes/mcp/class-abilities.php:999
 msgid "The page could not be moved to the trash."
 msgstr ""
 
 #. translators: %s: the business the page is for.
-#: includes/mcp/class-abilities.php:1005
+#: includes/mcp/class-abilities.php:1019
 #, php-format
 msgid "Build a landing page on this WordPress site for: %s. Steps: 1) call pbs-list-sections and choose 4 to 6 sections in a sensible order (hero first, a call to action last); 2) call pbs-create-page with a title and those sections, as a draft; 3) call pbs-get-page and rewrite every piece of placeholder text for this business with pbs-update-page (keep every block comment and tag as it is); 4) if pbs-generate-page is available, you may use it instead of steps 1 to 3; 5) report the page's edit link and do not publish it without asking."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:1020
+#: includes/mcp/class-abilities.php:1034
 msgid "There is no block at that position. Read the page with pbs/get-page first."
 msgstr ""
 
 #. translators: %s: a block name.
-#: includes/mcp/class-abilities.php:1064
+#: includes/mcp/class-abilities.php:1078
 #, php-format
 msgid "There is no block called \"%s\". See pbs/list-blocks."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:1119
+#: includes/mcp/class-abilities.php:1133
 msgid "The page has no section at that position."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:1163
+#: includes/mcp/class-abilities.php:1177
 msgid "That is not a kit name. See pbs/list-kits."
 msgstr ""
 
 #. translators: %s: a section name.
-#: includes/mcp/class-abilities.php:1198
+#: includes/mcp/class-abilities.php:1212
 #, php-format
 msgid "There is no section called \"%s\". See pbs/list-sections."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:1313
+#: includes/mcp/class-abilities.php:1327
 msgid "Section names from pbs/list-sections, in page order. They come before any content given."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:1317
+#: includes/mcp/class-abilities.php:1331
 msgid "Block markup (the format the block editor saves)."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:1356
+#: includes/mcp/class-abilities.php:1370
 msgid "There is no page with that ID."
 msgstr ""
 
-#: includes/mcp/class-abilities.php:1365
+#: includes/mcp/class-abilities.php:1379
 msgid "You are not allowed to do that to this page."
 msgstr ""
 
@@ -8902,43 +8973,43 @@ msgstr ""
 msgid "Creates up to 50 pages in one call, each from sections and/or block content. Each page is checked and created on its own; the answer lists every page made and every one refused, with the reason."
 msgstr ""
 
-#: includes/mcp/pro__premium_only/class-pro-abilities.php:76
+#: includes/mcp/pro__premium_only/class-pro-abilities.php:77
 msgid "Write a page with AI"
 msgstr ""
 
-#: includes/mcp/pro__premium_only/class-pro-abilities.php:77
+#: includes/mcp/pro__premium_only/class-pro-abilities.php:78
 msgid "Builds a page from sections (given, or chosen by AI from the section library) and has AI rewrite all of its text for your brief, keeping the design. Uses the AI provider set up in the plugin's AI settings. The page is a draft unless another status is asked for."
 msgstr ""
 
-#: includes/mcp/pro__premium_only/class-pro-abilities.php:86
+#: includes/mcp/pro__premium_only/class-pro-abilities.php:87
 msgid "What the page is for: the business, the offer, the audience and the tone."
 msgstr ""
 
 #. translators: %d: the most pages one call may build.
-#: includes/mcp/pro__premium_only/class-pro-abilities.php:119
+#: includes/mcp/pro__premium_only/class-pro-abilities.php:121
 #, php-format
 msgid "Send between 1 and %d pages."
 msgstr ""
 
-#: includes/mcp/pro__premium_only/class-pro-abilities.php:151
+#: includes/mcp/pro__premium_only/class-pro-abilities.php:153
 msgid "AI is not available in this build."
 msgstr ""
 
-#: includes/mcp/pro__premium_only/class-pro-abilities.php:155
+#: includes/mcp/pro__premium_only/class-pro-abilities.php:157
 msgid "Describe the page in at least a sentence."
 msgstr ""
 
-#: includes/mcp/pro__premium_only/class-pro-abilities.php:248
+#: includes/mcp/pro__premium_only/class-pro-abilities.php:250
 msgid "The AI did not choose any section from the library. Name the sections yourself, or try a more detailed brief."
 msgstr ""
 
 #. translators: 1: pieces of text rewritten, 2: pieces of text on the page.
-#: includes/mcp/pro__premium_only/class-pro-abilities.php:375
+#: includes/mcp/pro__premium_only/class-pro-abilities.php:377
 #, php-format
 msgid "The AI rewrote %1$d of the page's %2$d pieces of text, so nothing was saved. Try again."
 msgstr ""
 
-#: includes/mcp/pro__premium_only/class-pro-abilities.php:409
+#: includes/mcp/pro__premium_only/class-pro-abilities.php:411
 msgid "The AI request failed. Try again."
 msgstr ""
 
