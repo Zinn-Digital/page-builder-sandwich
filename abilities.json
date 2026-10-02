@@ -1029,6 +1029,39 @@
       "mcp_tool": "pbs-build-pages"
     },
     {
+      "name": "pbs/check-performance",
+      "label": "Check a page's performance",
+      "description": "Reports what a page's content adds to its weight: its images (bytes, oversized ones and the smaller size that would do), the stylesheets of the blocks it uses and its third-party embeds, each problem with its fix.",
+      "edition": "pro",
+      "capability": "edit_post on the page",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "post_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/check-performance/run"
+      },
+      "mcp_tool": "pbs-check-performance"
+    },
+    {
       "name": "pbs/connect-adobe-fonts",
       "label": "Connect Adobe Fonts (Pro)",
       "description": "Connects an Adobe Fonts (Typekit) web project by its kit id, so its fonts appear in the font pickers.",
@@ -2889,6 +2922,39 @@
       "mcp_tool": "pbs-get-settings"
     },
     {
+      "name": "pbs/get-structured-data",
+      "label": "Read a page's structured data",
+      "description": "Lists the schema.org structured data a page's blocks print (FAQ, How-To, Product, Review, Breadcrumb) and which types are left to the site's SEO plugin so nothing is printed twice.",
+      "edition": "pro",
+      "capability": "edit_post on the page",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "post_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-structured-data/run"
+      },
+      "mcp_tool": "pbs-get-structured-data"
+    },
+    {
       "name": "pbs/get-support-connection",
       "label": "Read the support connection",
       "description": "Says whether this site is connected to Zinn Digital® support, and as whom.",
@@ -4562,6 +4628,74 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/set-white-label/run"
       },
       "mcp_tool": "pbs-set-white-label"
+    },
+    {
+      "name": "pbs/site-health-clean",
+      "label": "Clean up what the site health report found",
+      "description": "Cleans one kind of finding: revisions (keeps each post's newest 5, deletes older ones), patterns (moves unused synced patterns to the trash), images (a scaled copy WordPress uses; the original is kept), classes (removes unused design classes, kept for restoring). Each run cleans one batch; \"more\" is true while findings remain.",
+      "edition": "pro",
+      "capability": "manage_options",
+      "annotations": {
+        "readonly": false,
+        "destructive": true,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "what": {
+            "type": "string",
+            "enum": [
+              "revisions",
+              "patterns",
+              "images",
+              "classes"
+            ]
+          }
+        },
+        "required": [
+          "what"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/site-health-clean/run"
+      },
+      "mcp_tool": "pbs-site-health-clean"
+    },
+    {
+      "name": "pbs/site-health-report",
+      "label": "Run the site health report",
+      "description": "Finds old revisions, synced patterns nothing uses, heavy original images and design classes no page uses. Works in short steps: each run continues where the last one stopped while the status is \"scanning\"; restart starts over.",
+      "edition": "pro",
+      "capability": "manage_options",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "restart": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false,
+        "default": {}
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/site-health-report/run"
+      },
+      "mcp_tool": "pbs-site-health-report"
     },
     {
       "name": "pbs/start-migration",

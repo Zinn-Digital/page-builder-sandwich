@@ -1083,6 +1083,36 @@ final class Rest_Map {
 				'capability'  => 'manage_options (the REST route\'s own check)',
 			),
 			array(
+				'method'     => 'GET',
+				'route'      => '/pbs/v1/seo/health',
+				'covered_by' => 'pbs/site-health-report',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/seo/health',
+				'covered_by' => 'pbs/site-health-report',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/seo/health/clean',
+				'covered_by' => 'pbs/site-health-clean',
+			),
+			array(
+				'method'     => 'GET',
+				'route'      => '/pbs/v1/seo/performance',
+				'covered_by' => 'pbs/check-performance',
+			),
+			array(
+				'method' => 'POST',
+				'route'  => '/pbs/v1/seo/rendered',
+				'exempt' => 'editor-screen helper: the rendered page handed to the SEO plugins\' own analysis; nothing for an agent to act on',
+			),
+			array(
+				'method'     => 'GET',
+				'route'      => '/pbs/v1/seo/schema',
+				'covered_by' => 'pbs/get-structured-data',
+			),
+			array(
 				'method'      => 'GET',
 				'route'       => '/pbs/v1/settings',
 				'name'        => 'pbs/get-settings',

@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.32.1
+Stable tag: 6.33.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,29 +17,38 @@ Build pages from 48 blocks, section by section, in the block editor or Sandwich 
 
 = What it does =
 
-* **48 free blocks:** layout, content (accordion, tabs, steps, modal, tooltip and more), marketing (call to action, testimonial, a Form block for Contact Form 7, WPForms or Fluent Forms), media (map, booking calendar, QR code) and site blocks (table of contents, related posts, sitemap).
-* **Sandwich Studio**, a full-screen page editor with a command palette, and an **accessibility checker**.
-* **Site design:** global colours, fonts and styles, synced with your theme's `theme.json`.
-* **Footprint-free front end:** neutral class names with a short prefix (`zd` unless you change it), no HTML comments or generator tags, and each page loads only the styles of the blocks it uses, from your uploads folder.
-* **Pages made with earlier versions** are converted to blocks in the background after the update, with a backup and undo per page.
-* **Language switcher element** for sites that use Tranzly.
-* **Templates & kits:** one-click website kits, section patterns and a Pro cloud library.
+* **48 free blocks:** layout, content (accordion, tabs, steps, modal and more), marketing (call to action, testimonial, a Form block for Contact Form 7, WPForms or Fluent Forms), media (map, booking calendar, QR code) and site blocks.
+* **Sandwich Studio**, a full-screen editor with a command palette and an accessibility checker.
+* **Site design:** global styles synced with `theme.json`.
+* **Footprint-free front end:** short neutral class names (`zd` by default), no generator tags, only the styles each page uses.
+* **Older pages** are converted to blocks in the background, with a backup and undo per page.
+* **Templates & kits:** website kits, section patterns and a Pro cloud library.
 
 = Bundled icon sets =
 
-The icon picker offers these free icon sets, shipped with the plugin (editor only; a chosen icon is placed on the page as inline SVG): Font Awesome Free (icons: CC BY 4.0), Lucide (ISC), Material Symbols (Apache License 2.0) and Phosphor (MIT). Each set's licence is included in `assets/icons/licenses/`. The sets are rebuilt from their published packages, pinned by version and checksum, with `php wp/bin/pbs-icons-build.php` in the plugin's source repository.
+Font Awesome Free (icons: CC BY 4.0), Lucide (ISC), Material Symbols (Apache License 2.0) and Phosphor (MIT), placed as inline SVG; licences in `assets/icons/licenses/`.
 
 = Workflow and agency tools =
 
-* **Import and export** (free): move templates, patterns, the site design and the plugin's settings to another site as one file, or with `wp pbs export` / `wp pbs import`.
-* **Roles and client mode** (Pro): choose what each role can do in the builder, and lock a role to editing text and images only.
-* **Maintenance and pre-launch mode** (Pro): show visitors a page you designed, with the right answer for search engines.
-* **Find and replace across all pages** (Pro): text, links or colours, with a preview first and one-click undo.
-* **White label, client review and multisite** (Agency): rename the builder for client sites, let clients comment on a page before it goes live, and share templates across a network.
+* **Free:** import and export of templates, patterns, site design and settings (`wp pbs export` / `wp pbs import`).
+* **Pro:** roles and client mode, a maintenance or pre-launch page, and find and replace across all pages with undo.
+* **Agency:** white label, client review and templates shared across a multisite network.
+
+= AI inside the builder =
+
+On your own AI provider account, set under Settings → AI providers.
+
+* **Free:** write and rewrite any text, a designed section from a sentence, SEO titles and descriptions, and alt text for images.
+* **Pro:** an assistant that edits the page with real blocks (one click undoes it), a website from a description, custom blocks, designs from a screenshot or link, images, a CSS helper and accessibility fixes.
+
+= SEO and performance =
+
+* **Free:** Yoast SEO, Rank Math, SEOPress and All in One SEO analyse the page as visitors see it, dynamic text included.
+* **Pro:** a performance score with one-click image fixes, schema markup without duplicates, and site health and clean-up.
 
 = Bundled libraries =
 
-The 3D model viewer block (Pro) uses model-viewer 4.3.1 (Apache License 2.0), shipped with the plugin in `assets/pro__premium_only/model-viewer/` together with its licence and the licences of the libraries it includes (three.js, lit, gainmap-js). It is loaded from your own site, and only on pages that show a 3D model.
+The 3D model viewer block (Pro) uses model-viewer 4.3.1 (Apache License 2.0) with its included libraries' licences (three.js, lit, gainmap-js) in `assets/pro__premium_only/model-viewer/`, loaded only on pages that show a 3D model.
 
 = Build from source =
 
@@ -189,6 +198,9 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.33.0 =
+* SEO and performance: SEO plugins analyse the rendered page incl. dynamic text; Pro performance panel with one-click image fix, schema markup without duplicates, site health and clean-up; the AI assistant applies its edits in order (a new FAQ item is added and filled in).
 
 = 6.32.1 =
 * MCP tools for AI connector directories: tool descriptions state only what each tool does; every tool that takes input declares it; list results reach MCP clients as objects; AI image generation is not offered to Claude or ChatGPT connector apps.

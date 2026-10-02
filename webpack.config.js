@@ -109,6 +109,16 @@ module.exports = {
 			__dirname,
 			'src/ai/pro__premium_only/index.js'
 		),
+		// Lane L12 (P13): SEO + performance; Pro panels under premium-only entries.
+		seo: path.resolve( __dirname, 'src/seo/index.js' ),
+		'seo-pro__premium_only': path.resolve(
+			__dirname,
+			'src/seo/pro__premium_only/editor.js'
+		),
+		'seo-health-pro__premium_only': path.resolve(
+			__dirname,
+			'src/seo/pro__premium_only/health.js'
+		),
 		// Lane L12 (P14): workflow panels; Pro/Agency bundles live in premium-only paths.
 		workflow: path.resolve( __dirname, 'src/workflow/index.js' ),
 		'workflow-pro__premium_only': path.resolve(
