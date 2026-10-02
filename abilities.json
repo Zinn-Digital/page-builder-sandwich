@@ -226,6 +226,607 @@
       "mcp_tool": "pbs-add-shop-block"
     },
     {
+      "name": "pbs/ai-check-accessibility",
+      "label": "Check a page's accessibility",
+      "description": "Lists a page's accessibility problems: images without alt text, headings that skip a level, links whose text says nothing on its own, and links with no text. Each says whether it can be fixed automatically.",
+      "edition": "pro",
+      "capability": "edit_post on the page",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "post_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-check-accessibility/run"
+      },
+      "mcp_tool": "pbs-ai-check-accessibility"
+    },
+    {
+      "name": "pbs/ai-create-block",
+      "label": "Create a custom block with AI",
+      "description": "Designs a reusable component from a description (a pricing card, a team card, a banner) and saves it as a synced pattern in the editor's \"My patterns\", with each text overridable per placement. Returns its id and the block that places it.",
+      "edition": "pro",
+      "capability": "edit_posts and publish_posts; the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 2000
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-create-block/run"
+      },
+      "mcp_tool": "pbs-ai-create-block"
+    },
+    {
+      "name": "pbs/ai-css-help",
+      "label": "Explain, write or fix CSS with AI",
+      "description": "Explains, writes or fixes the custom CSS of one element, where `selector` stands for the element. Returns the CSS and an explanation; nothing is saved.",
+      "edition": "pro",
+      "capability": "edit_posts and the builder's code permission",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "explain",
+              "write",
+              "fix"
+            ]
+          },
+          "css": {
+            "type": "string",
+            "maxLength": 20000
+          },
+          "instruction": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "block": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-css-help/run"
+      },
+      "mcp_tool": "pbs-ai-css-help"
+    },
+    {
+      "name": "pbs/ai-design-from",
+      "label": "Design a page from a screenshot or a link with AI",
+      "description": "Recreates the layout of a screenshot (an image in the media library) or of a public web page (its address) as editable blocks in a new draft page: the same sections, columns, headings, text, lists and buttons. Logos and images are not copied.",
+      "edition": "pro",
+      "capability": "edit_pages (edit_post on the screenshot); the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "attachment_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string"
+          },
+          "instruction": {
+            "type": "string",
+            "maxLength": 2000
+          }
+        },
+        "required": [],
+        "additionalProperties": false,
+        "default": {}
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-design-from/run"
+      },
+      "mcp_tool": "pbs-ai-design-from"
+    },
+    {
+      "name": "pbs/ai-edit-page",
+      "label": "Edit a page with the AI assistant",
+      "description": "Changes a page as asked in plain words (\"make the hero text shorter\", \"add an FAQ about delivery after the pricing\", \"translate the page into German\"). AI answers with edit operations that are checked against the page's blocks and their settings before anything is applied; refused operations are listed with the reason. A revision is saved first and its id returned as undo_revision.",
+      "edition": "pro",
+      "capability": "edit_post on the page; the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": false,
+        "destructive": true,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "instruction": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 2000
+          }
+        },
+        "required": [
+          "post_id",
+          "instruction"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-edit-page/run"
+      },
+      "mcp_tool": "pbs-ai-edit-page"
+    },
+    {
+      "name": "pbs/ai-fix-accessibility",
+      "label": "Fix a page's accessibility with AI",
+      "description": "Fixes the accessibility problems that can be fixed (all, or the listed issue ids): alt text written by looking at each image, heading levels corrected, vague link texts rewritten. A revision is saved first and its id returned as undo_revision.",
+      "edition": "pro",
+      "capability": "edit_post on the page; the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "issues": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "post_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-fix-accessibility/run"
+      },
+      "mcp_tool": "pbs-ai-fix-accessibility"
+    },
+    {
+      "name": "pbs/ai-generate-image",
+      "label": "Generate an image with AI",
+      "description": "Creates an image from a description with the site's image model (OpenAI or Google) and saves it to the media library with alt text. Returns its id and address.",
+      "edition": "pro",
+      "capability": "upload_files; the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 4000
+          },
+          "size": {
+            "type": "string",
+            "enum": [
+              "square",
+              "landscape",
+              "portrait"
+            ]
+          },
+          "alt": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "post_id": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "prompt"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-generate-image/run"
+      },
+      "mcp_tool": "pbs-ai-generate-image"
+    },
+    {
+      "name": "pbs/ai-generate-section",
+      "label": "Generate a section with AI",
+      "description": "Turns a one-sentence description into a ready-designed section (real, editable blocks in the site's brand style) with text written for it. Returns the block markup, and adds it to the start or end of a page when a post_id is given (a revision keeps what was there before).",
+      "edition": "free",
+      "capability": "edit_posts; edit_post to add it to a page; the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "minLength": 5,
+            "maxLength": 2000
+          },
+          "section": {
+            "type": "string"
+          },
+          "post_id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "The post or page ID."
+          },
+          "position": {
+            "type": "string",
+            "enum": [
+              "start",
+              "end"
+            ]
+          }
+        },
+        "required": [
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-generate-section/run"
+      },
+      "mcp_tool": "pbs-ai-generate-section"
+    },
+    {
+      "name": "pbs/ai-plan-site",
+      "label": "Plan a website with AI",
+      "description": "From a description of the business, lists the pages a website needs (home first, contact last), each with a title and a brief for that page. Nothing is created; each page can then be built from its brief.",
+      "edition": "pro",
+      "capability": "edit_pages; the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "brief": {
+            "type": "string",
+            "minLength": 10,
+            "maxLength": 4000
+          }
+        },
+        "required": [
+          "brief"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-plan-site/run"
+      },
+      "mcp_tool": "pbs-ai-plan-site"
+    },
+    {
+      "name": "pbs/ai-save-seo-meta",
+      "label": "Save an SEO title and description",
+      "description": "Saves a meta title and description into the SEO plugin the site uses (Yoast SEO, Rank Math, SEOPress or All in One SEO) and says which ones were written.",
+      "edition": "free",
+      "capability": "edit_post on the page",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "The post or page ID."
+          },
+          "title": {
+            "type": "string",
+            "maxLength": 200
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "required": [
+          "post_id",
+          "title",
+          "description"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-save-seo-meta/run"
+      },
+      "mcp_tool": "pbs-ai-save-seo-meta"
+    },
+    {
+      "name": "pbs/ai-suggest-seo-meta",
+      "label": "Suggest an SEO title and description with AI",
+      "description": "Reads a page and suggests a meta title (up to 60 characters) and meta description (up to 155), optionally around a focus keyword. Nothing is saved.",
+      "edition": "free",
+      "capability": "edit_post on the page; the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "The post or page ID."
+          },
+          "keyword": {
+            "type": "string",
+            "maxLength": 100
+          }
+        },
+        "required": [
+          "post_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-suggest-seo-meta/run"
+      },
+      "mcp_tool": "pbs-ai-suggest-seo-meta"
+    },
+    {
+      "name": "pbs/ai-undo",
+      "label": "Undo an AI change",
+      "description": "Puts a page back the way it was before an AI change, from the undo_revision that change returned.",
+      "edition": "free",
+      "capability": "edit_post on the page",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "The post or page ID."
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "post_id",
+          "revision"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-undo/run"
+      },
+      "mcp_tool": "pbs-ai-undo"
+    },
+    {
+      "name": "pbs/ai-write-alt-text",
+      "label": "Write image alt text with AI",
+      "description": "Looks at images and saves alt text for them: one image (attachment_id), or every image on a page that has none (post_id). At most 20 images per call; the answer says how many remain.",
+      "edition": "free",
+      "capability": "upload_files and edit_post on the image or page; the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "attachment_id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "post_id": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "The post or page ID."
+          },
+          "only_missing": {
+            "type": "boolean"
+          },
+          "language": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "default": {}
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-write-alt-text/run"
+      },
+      "mcp_tool": "pbs-ai-write-alt-text"
+    },
+    {
+      "name": "pbs/ai-write-text",
+      "label": "Write or rewrite text with AI",
+      "description": "Writes new text, or improves, shortens, expands, changes the tone of or fixes the grammar of a piece of text, with the site's own AI provider. Returns the new text; nothing on the site is changed.",
+      "edition": "free",
+      "capability": "edit_posts (edit_post when post_id is given); the AI settings' role and spending rules",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "enum": [
+              "write",
+              "improve",
+              "shorten",
+              "expand",
+              "tone",
+              "fix",
+              "custom"
+            ]
+          },
+          "text": {
+            "type": "string",
+            "maxLength": 8000
+          },
+          "tone": {
+            "type": "string",
+            "enum": [
+              "professional",
+              "friendly",
+              "confident",
+              "playful",
+              "formal",
+              "simple"
+            ]
+          },
+          "instruction": {
+            "type": "string",
+            "maxLength": 2000
+          },
+          "context": {
+            "type": "string",
+            "maxLength": 4000
+          }
+        },
+        "required": [
+          "action"
+        ],
+        "additionalProperties": false
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-write-text/run"
+      },
+      "mcp_tool": "pbs-ai-write-text"
+    },
+    {
       "name": "pbs/apply-brand-kit",
       "label": "Apply the brand kit (Pro)",
       "description": "Applies the saved brand kit's colours and fonts to the site design.",

@@ -103,6 +103,12 @@ module.exports = {
 			__dirname,
 			`src/design/pro_${ '_premium_only' }/globals/editor.js`
 		),
+		// Lane L12 (P12): AI inside the builder; the Pro panels under a premium-only entry.
+		ai: path.resolve( __dirname, 'src/ai/index.js' ),
+		'ai-pro__premium_only': path.resolve(
+			__dirname,
+			'src/ai/pro__premium_only/index.js'
+		),
 		// Lane L12 (P14): workflow panels; Pro/Agency bundles live in premium-only paths.
 		workflow: path.resolve( __dirname, 'src/workflow/index.js' ),
 		'workflow-pro__premium_only': path.resolve(

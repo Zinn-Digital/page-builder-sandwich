@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.30.9
+Stable tag: 6.31.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -123,6 +123,8 @@ AI features use the AI provider you choose, with your own API key. Nothing is se
 * OpenRouter: https://openrouter.ai/api/v1 (terms: https://openrouter.ai/terms, privacy policy: https://openrouter.ai/privacy)
 * A service you run yourself (any OpenAI-compatible address you enter): only that address is contacted.
 
+Images and pages sent to AI (only when you use these features). Writing alt text sends that image (a resized copy) to your AI provider; designing a page from a screenshot sends the screenshot. Designing a page from a website address (Pro) makes one request to the address you type, from your own site, and sends only the text outline of that page (its headings, paragraphs, list items and button labels, never its images or code) to your AI provider.
+
 Recommended models list (off unless you turn it on). If you turn on the daily check for a newer recommended models list under Settings → AI providers, the plugin requests https://api.zinndigital.com/v1/ai-model-catalogue once a day. The request is a plain download: it carries no key, no site address and nothing about your content, and the list is signed so a changed copy is ignored.
 
 * Service: https://zinndigital.com
@@ -181,6 +183,9 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.31.0 =
+* AI inside the builder: write and rewrite text, a section from a sentence, SEO titles and descriptions into your SEO plugin and image alt text (free); the page assistant, a website from a description, custom blocks, designs from a screenshot or a link, image generation, a CSS helper and one-click accessibility fixes (Pro). All on your own AI provider account.
 
 = 6.30.9 =
 * Serbian: quotation marks are now „…“ throughout, as the Serbian WordPress translation team writes them.

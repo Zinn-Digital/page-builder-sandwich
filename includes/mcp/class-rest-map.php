@@ -31,6 +31,91 @@ final class Rest_Map {
 	public static function entries(): array {
 		return array(
 			array(
+				'method'     => 'GET',
+				'route'      => '/pbs/v1/ai/a11y',
+				'covered_by' => 'pbs/ai-check-accessibility',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/a11y/fix',
+				'covered_by' => 'pbs/ai-fix-accessibility',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/agent',
+				'covered_by' => 'pbs/ai-edit-page',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/alt-text',
+				'covered_by' => 'pbs/ai-write-alt-text',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/block',
+				'covered_by' => 'pbs/ai-create-block',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/css',
+				'covered_by' => 'pbs/ai-css-help',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/design',
+				'covered_by' => 'pbs/ai-design-from',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/edit-page',
+				'covered_by' => 'pbs/ai-edit-page',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/image',
+				'covered_by' => 'pbs/ai-generate-image',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/section',
+				'covered_by' => 'pbs/ai-generate-section',
+			),
+			array(
+				'method'     => 'GET',
+				'route'      => '/pbs/v1/ai/seo-meta',
+				'covered_by' => 'pbs/ai-suggest-seo-meta',
+			),
+			array(
+				'method'     => 'PUT',
+				'route'      => '/pbs/v1/ai/seo-meta',
+				'covered_by' => 'pbs/ai-save-seo-meta',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/site/page',
+				'covered_by' => 'pbs/generate-page',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/site/plan',
+				'covered_by' => 'pbs/ai-plan-site',
+			),
+			array(
+				'method' => 'GET',
+				'route'  => '/pbs/v1/ai/status',
+				'exempt' => 'editor-screen helper: whether AI is set up and which panels to show; nothing to act on',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/text',
+				'covered_by' => 'pbs/ai-write-text',
+			),
+			array(
+				'method'     => 'POST',
+				'route'      => '/pbs/v1/ai/undo',
+				'covered_by' => 'pbs/ai-undo',
+			),
+			array(
 				'method' => 'POST',
 				'route'  => '/pbs/v1/blocks/protected/hash',
 				'exempt' => 'editor helper: hashes a password typed into the Protected content block\'s sidebar',
