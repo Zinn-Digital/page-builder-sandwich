@@ -71,6 +71,19 @@ export function layoutSuffix( block, prefix ) {
 }
 
 /**
+ * A block's own selector: its design class twice (specificity 0,2,0), the twin of
+ * Compiler::selector(), so a theme rule scoped to the content area cannot override a Style value.
+ *
+ * @param {string} prefix Prefix.
+ * @param {string} id     Design id.
+ * @return {string} Selector.
+ */
+export function blockSelector( prefix, id ) {
+	const cls = `.${ prefix }-s-${ id }`;
+	return cls + cls;
+}
+
+/**
  * One block's rules per breakpoint (normal then hover), without media wrappers.
  *
  * @param {Object}   block  Parsed block.
@@ -84,7 +97,7 @@ export function blockRules( block, prefix, ids ) {
 	if ( ! ID_PATTERN.test( id ) || ! isObject( pbs.s ) ) {
 		return {};
 	}
-	const selector = `.${ prefix }-s-${ id }`;
+	const selector = blockSelector( prefix, id );
 	const suffix = layoutSuffix( block, prefix );
 	const out = {};
 	for ( const bp of ids ) {
@@ -214,7 +227,7 @@ export function previewCss( block, prefix, bpIds, hover = false ) {
 	if ( ! isObject( pbs ) || ! ID_PATTERN.test( pbs.id || '' ) ) {
 		return '';
 	}
-	const selector = `.${ prefix }-s-${ pbs.id }`;
+	const selector = blockSelector( prefix, pbs.id );
 	const suffix = layoutSuffix( block, prefix );
 	let css = '';
 	for ( const pseudo of hover

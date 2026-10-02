@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.31.0
+Stable tag: 6.32.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -70,6 +70,12 @@ Google Fonts are hosted on your own site. Only when an administrator adds a font
 * Service: https://fonts.google.com
 * Terms: https://developers.google.com/terms
 * Privacy policy: https://policies.google.com/privacy
+
+Figma import (Pro). Only when an administrator connects a Figma account (their own personal access token, stored encrypted) and someone imports a Figma frame, the site requests `https://api.figma.com/v1/me` (to check the token), `https://api.figma.com/v1/files/<file>/nodes`, `https://api.figma.com/v1/files/<file>/images` and `https://api.figma.com/v1/images/<file>` with that token, then downloads the frame's images from the addresses Figma returns into your media library. It sends the file and frame ids and the token; nothing about your visitors, and nothing to Zinn Digital®.
+
+* Service: https://www.figma.com
+* Terms: https://www.figma.com/legal/tos/
+* Privacy policy: https://www.figma.com/legal/privacy/
 
 Background videos from YouTube or Vimeo (Pro). Only when an author picks a YouTube or Vimeo background, and only once a visitor scrolls to that section on a device that does not ask for reduced motion, the visitor's browser loads the player from `https://www.youtube-nocookie.com` or `https://player.vimeo.com` ("do not track" on). Until then the page shows the poster stored on your site. The player receives what any embed does (IP address, browser details, the video's ID); the plugin sends nothing else.
 
@@ -183,6 +189,10 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.32.0 =
+* New (Pro): import pages built with Elementor, Divi (4 and 5), Beaver Builder and WPBakery into blocks, keeping the layout, fonts, colours and images. Each import is a new draft with a report of anything approximated or not converted; the original page is never changed. In wp-admin (Page Builder Sandwich, Import from other builders and Figma), with WP-CLI (`wp pbs importers`), the REST API and the MCP server.
+* New (Pro): import a Figma frame by its link, with your own Figma personal access token (stored encrypted): auto layout becomes rows, columns and grids, text keeps its styles, and images are copied into your media library.
 
 = 6.31.0 =
 * AI inside the builder: write and rewrite text, a section from a sentence, SEO titles and descriptions into your SEO plugin and image alt text (free); the page assistant, a website from a description, custom blocks, designs from a screenshot or a link, image generation, a CSS helper and one-click accessibility fixes (Pro). All on your own AI provider account.

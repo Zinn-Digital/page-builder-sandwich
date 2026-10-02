@@ -102,7 +102,7 @@ final class Compiler {
 					foreach ( self::block_rules( $block, $prefix, $ids ) as $bp => $css ) {
 						$rules[ $bp ] .= $css;
 					}
-					$custom .= self::custom_css( $pbs, '.' . $prefix . '-s-' . $id );
+					$custom .= self::custom_css( $pbs, self::selector( $prefix, $id ) );
 				}
 			}
 			if ( is_array( $block['innerBlocks'] ?? null ) ) {
@@ -126,7 +126,7 @@ final class Compiler {
 			return array();
 		}
 		$name     = (string) ( $block['blockName'] ?? '' );
-		$selector = '.' . $prefix . '-s-' . $id;
+		$selector = self::selector( $prefix, $id );
 		$suffix   = self::layout_suffix( $block, $prefix );
 		$out      = array();
 		foreach ( $ids as $bp ) {
@@ -212,7 +212,23 @@ final class Compiler {
 		}
 		$id = is_string( $pbs['id'] ?? null ) ? $pbs['id'] : '';
 
-		return 1 === preg_match( self::ID_PATTERN, $id ) && '' !== self::custom_css( $pbs, '.' . $prefix . '-s-' . $id );
+		return 1 === preg_match( self::ID_PATTERN, $id ) && '' !== self::custom_css( $pbs, self::selector( $prefix, $id ) );
+	}
+
+	/**
+	 * A block's own selector: its design class, twice. Specificity (0,2,0), so a theme rule
+	 * scoped to the content area (`.entry-content :where(h1)`, (0,1,0), printed after this sheet)
+	 * cannot silently override a value the Style tab set. Custom CSS uses the same selector and
+	 * is printed after the block's rules, so it still wins as it did.
+	 *
+	 * @param string $prefix Prefix.
+	 * @param string $id     Design id.
+	 * @return string
+	 */
+	public static function selector( string $prefix, string $id ): string {
+		$class = '.' . $prefix . '-s-' . $id;
+
+		return $class . $class;
 	}
 
 	/**

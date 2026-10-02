@@ -1134,6 +1134,113 @@
       "mcp_tool": "pbs-connect-support"
     },
     {
+      "name": "pbs/convert-builder-export",
+      "label": "Convert an export from another builder (Pro)",
+      "description": "Converts an export (builder: elementor, divi, beaver or wpbakery; content: the exported text) into a new draft page made of blocks, optionally copying its images into the media library (media). Answers with the draft and a conversion report.",
+      "edition": "pro",
+      "capability": "edit_pages (the REST route's own check)",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "builder": {
+            "type": "string",
+            "enum": [
+              "elementor",
+              "divi",
+              "beaver",
+              "wpbakery"
+            ]
+          },
+          "content": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "default": ""
+          },
+          "media": {
+            "type": "boolean",
+            "default": true
+          },
+          "dryRun": {
+            "type": "boolean",
+            "default": false
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "pending",
+              "private",
+              "publish"
+            ],
+            "default": "draft"
+          }
+        },
+        "required": [
+          "builder",
+          "content"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/convert-builder-export/run"
+      },
+      "mcp_tool": "pbs-convert-builder-export"
+    },
+    {
+      "name": "pbs/convert-builder-page",
+      "label": "Convert a page from another builder (Pro)",
+      "description": "Converts one page built with Elementor, Divi, Beaver Builder or WPBakery (id) into a new draft made of blocks, keeping its layout, typography, colours and images; the original page is not changed. Answers with the draft and a report of what was converted, approximated or not converted. dryRun converts without saving.",
+      "edition": "pro",
+      "capability": "edit_pages and edit_post (the REST route's own check)",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "dryRun": {
+            "type": "boolean",
+            "default": false
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "pending",
+              "private",
+              "publish"
+            ],
+            "default": "draft"
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/convert-builder-page/run"
+      },
+      "mcp_tool": "pbs-convert-builder-page"
+    },
+    {
       "name": "pbs/convert-post",
       "label": "Convert one legacy page",
       "description": "Converts one 5.x page to blocks (backed up first).",
@@ -2168,6 +2275,42 @@
       "mcp_tool": "pbs-export-designs"
     },
     {
+      "name": "pbs/find-builder-pages",
+      "label": "Find pages built with other builders (Pro)",
+      "description": "Lists the pages and posts built with Elementor, Divi, Beaver Builder or WPBakery (page, per_page), each with its builder and, when it was converted before, the converted draft.",
+      "edition": "pro",
+      "capability": "edit_pages (the REST route's own check)",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "page": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+          },
+          "per_page": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 50
+          }
+        },
+        "default": {}
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/find-builder-pages/run"
+      },
+      "mcp_tool": "pbs-find-builder-pages"
+    },
+    {
       "name": "pbs/generate-page",
       "label": "Write a page with AI",
       "description": "Builds a page from sections (given, or chosen by AI from the section library) and has AI rewrite all of its text for your brief, keeping the design. Uses the AI provider set up in the plugin's AI settings. The page is a draft unless another status is asked for.",
@@ -2391,6 +2534,29 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-diagnostics/run"
       },
       "mcp_tool": "pbs-get-diagnostics"
+    },
+    {
+      "name": "pbs/get-figma-connection",
+      "label": "Read the Figma connection (Pro)",
+      "description": "Returns whether the site has a Figma personal access token, the Figma account it belongs to and its last four characters. The token itself is never returned.",
+      "edition": "pro",
+      "capability": "manage_options (the REST route's own check)",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "default": {}
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-figma-connection/run"
+      },
+      "mcp_tool": "pbs-get-figma-connection"
     },
     {
       "name": "pbs/get-library-account",
@@ -2847,6 +3013,54 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/import-designs/run"
       },
       "mcp_tool": "pbs-import-designs"
+    },
+    {
+      "name": "pbs/import-figma-frame",
+      "label": "Import a Figma frame (Pro)",
+      "description": "Imports one Figma frame (url: the frame's link, with its node-id) into a new draft page made of blocks: auto layout becomes flex and grid containers, text keeps its fonts and sizes, images are copied into the media library. Uses the site's own Figma token. Answers with the draft and a conversion report.",
+      "edition": "pro",
+      "capability": "edit_pages and upload_files (the REST route's own check)",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "default": ""
+          },
+          "dryRun": {
+            "type": "boolean",
+            "default": false
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "draft",
+              "pending",
+              "private",
+              "publish"
+            ],
+            "default": "draft"
+          }
+        },
+        "required": [
+          "url"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/import-figma-frame/run"
+      },
+      "mcp_tool": "pbs-import-figma-frame"
     },
     {
       "name": "pbs/invite-team-member",

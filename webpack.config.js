@@ -127,6 +127,11 @@ module.exports = {
 			__dirname,
 			'src/workflow/pro__premium_only/network.js'
 		),
+		// Lane PBS-IMPORT (P15): the Import panel (other builders + Figma), Pro only.
+		'importers-pro__premium_only': path.resolve(
+			__dirname,
+			'src/importers/pro__premium_only/index.js'
+		),
 		// Lane L11 (pbs-c3, pbs-c4, BYO storage): the Templates screen's Pro tabs and the editors'
 		// cloud-library panel. Premium-only paths, dropped from the free build.
 		'templates-pro__premium_only': path.resolve(
