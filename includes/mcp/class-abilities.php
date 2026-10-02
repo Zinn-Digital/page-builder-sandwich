@@ -166,7 +166,7 @@ final class Abilities {
 				'edition'             => 'free',
 				'capability'          => 'edit_pages; publish_pages to publish or make private',
 				'label'               => __( 'Create a page', 'page-builder-sandwich' ),
-				'description'         => __( 'Creates a page from sections (see pbs/list-sections) and/or block content. A new page is a draft unless another status is asked for.', 'page-builder-sandwich' ),
+				'description'         => __( 'Creates a page from library sections and/or block content. A new page is a draft unless another status is asked for.', 'page-builder-sandwich' ),
 				'category'            => self::CATEGORY,
 				'input_schema'        => self::page_schema( true ),
 				'output_schema'       => $page_out,
@@ -255,7 +255,7 @@ final class Abilities {
 						'id'       => array( 'type' => 'integer' ),
 						'section'  => array(
 							'type'        => 'string',
-							'description' => __( 'A section name from pbs/list-sections.', 'page-builder-sandwich' ),
+							'description' => __( 'The name of a section in this site\'s section library.', 'page-builder-sandwich' ),
 						),
 						'position' => array(
 							'type'    => 'string',
@@ -357,7 +357,7 @@ final class Abilities {
 				'edition'             => 'free',
 				'capability'          => 'edit_posts',
 				'label'               => __( 'List the builder blocks', 'page-builder-sandwich' ),
-				'description'         => __( 'Lists every Page Builder Sandwich block this site can use (Pro blocks too when Pro is active): name, title, category and description. Use pbs/get-block for a block\'s settings, then put the block in a page\'s content.', 'page-builder-sandwich' ),
+				'description'         => __( 'Lists every Page Builder Sandwich block this site can use (Pro blocks too when Pro is active): name, title, category and description.', 'page-builder-sandwich' ),
 				'category'            => self::CATEGORY,
 				'input_schema'        => array(
 					'type'                 => 'object',
@@ -412,7 +412,7 @@ final class Abilities {
 				'minimum' => 0,
 			),
 			'minItems'    => 1,
-			'description' => __( 'Where the block is: its position among the page\'s sections, then among that block\'s inner blocks, and so on (0-based), as pbs/get-page lists them.', 'page-builder-sandwich' ),
+			'description' => __( 'Where the block is: its position among the page\'s sections, then among that block\'s inner blocks, and so on (0-based), in the order the page lists them.', 'page-builder-sandwich' ),
 		);
 
 		Ability::register(
@@ -421,7 +421,7 @@ final class Abilities {
 				'edition'             => 'free',
 				'capability'          => 'edit_post on that page',
 				'label'               => __( 'Change one block\'s settings', 'page-builder-sandwich' ),
-				'description'         => __( 'Changes the settings (attributes) of one block inside a page, found by its path; attributes you send are merged over the current ones. Works on blocks the site renders from their settings; for a block whose HTML is saved in the page, send new markup with pbs/update-page.', 'page-builder-sandwich' ),
+				'description'         => __( 'Changes the settings (attributes) of one block inside a page, found by its path; attributes you send are merged over the current ones. Works on blocks the site renders from their settings; a block whose HTML is saved in the page is changed by replacing the page\'s markup.', 'page-builder-sandwich' ),
 				'category'            => self::CATEGORY,
 				'input_schema'        => array(
 					'type'                 => 'object',
@@ -479,7 +479,7 @@ final class Abilities {
 				'edition'             => 'free',
 				'capability'          => 'edit_post on that page',
 				'label'               => __( 'Move a section', 'page-builder-sandwich' ),
-				'description'         => __( 'Moves a section of a page from one position to another (0-based, as pbs/get-page lists them).', 'page-builder-sandwich' ),
+				'description'         => __( 'Moves a section of a page from one position to another (0-based, in the order the page lists them).', 'page-builder-sandwich' ),
 				'category'            => self::CATEGORY,
 				'input_schema'        => array(
 					'type'                 => 'object',
@@ -1324,7 +1324,7 @@ final class Abilities {
 			'sections' => array(
 				'type'        => 'array',
 				'items'       => array( 'type' => 'string' ),
-				'description' => __( 'Section names from pbs/list-sections, in page order. They come before any content given.', 'page-builder-sandwich' ),
+				'description' => __( 'Names of sections in this site\'s section library, in page order. They come before any content given.', 'page-builder-sandwich' ),
 			),
 			'content'  => array(
 				'type'        => 'string',

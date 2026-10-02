@@ -26,7 +26,7 @@ final class Rest_Map {
 	/**
 	 * The entries. Called on `wp_abilities_api_init`, when translations are loaded.
 	 *
-	 * @return array<int, array<string, string>>
+	 * @return array<int, array<string, mixed>>
 	 */
 	public static function entries(): array {
 		return array(
@@ -283,7 +283,7 @@ final class Rest_Map {
 				'route'       => '/pbs/v1/dynamic/sources',
 				'name'        => 'pbs/list-dynamic-sources',
 				'label'       => __( 'List the dynamic content sources (Pro)', 'page-builder-sandwich' ),
-				'description' => __( 'Returns what a block can be filled from (post, author, site, archive, custom field, product) with each source\'s fields, the field plugins on this site (ACF, Meta Box, Pods, JetEngine, Toolset, post meta) and a post type\'s fields (postType). Bind a block with pbs/update-block: attributes.metadata.bindings.<attribute> = {source, args}.', 'page-builder-sandwich' ),
+				'description' => __( 'Returns what a block can be filled from (post, author, site, archive, custom field, product) with each source\'s fields, the field plugins on this site (ACF, Meta Box, Pods, JetEngine, Toolset, post meta) and a post type\'s fields (postType). A block is bound to a source through its attributes.metadata.bindings, one {source, args} per attribute.', 'page-builder-sandwich' ),
 				'edition'     => 'pro',
 				'capability'  => 'edit_posts (the REST route\'s own check)',
 			),
@@ -468,6 +468,13 @@ final class Rest_Map {
 				'description' => __( 'Records the administrator\'s consent to send diagnostics with support tickets.', 'page-builder-sandwich' ),
 				'edition'     => 'free',
 				'capability'  => 'manage_options (the REST route\'s own check)',
+				'args'        => array(
+					'consent' => array(
+						'type'        => 'boolean',
+						'required'    => true,
+						'description' => __( 'True records the administrator\'s consent to send diagnostics with support tickets.', 'page-builder-sandwich' ),
+					),
+				),
 			),
 			array(
 				'method'      => 'GET',
@@ -486,6 +493,35 @@ final class Rest_Map {
 				'description' => __( 'Files a support ticket (subject, message, kind, email), with this site\'s diagnostics when the administrator agreed. It never creates a login or sends one.', 'page-builder-sandwich' ),
 				'edition'     => 'free',
 				'capability'  => 'manage_options (the REST route\'s own check)',
+				'args'        => array(
+					'subject'     => array(
+						'type'        => 'string',
+						'required'    => true,
+						'description' => __( 'The ticket subject (up to 200 characters).', 'page-builder-sandwich' ),
+					),
+					'message'     => array(
+						'type'        => 'string',
+						'required'    => true,
+						'description' => __( 'What happened, or the question.', 'page-builder-sandwich' ),
+					),
+					'kind'        => array(
+						'type'        => 'string',
+						'enum'        => array( 'help', 'bug', 'feedback', 'feature_request' ),
+						'description' => __( 'The kind of request; help when omitted.', 'page-builder-sandwich' ),
+					),
+					'email'       => array(
+						'type'        => 'string',
+						'description' => __( 'Reply address; the connected support email when omitted.', 'page-builder-sandwich' ),
+					),
+					'name'        => array(
+						'type'        => 'string',
+						'description' => __( 'Name to reply to.', 'page-builder-sandwich' ),
+					),
+					'diagnostics' => array(
+						'type'        => 'boolean',
+						'description' => __( 'True attaches this site\'s diagnostics (needs the administrator\'s consent).', 'page-builder-sandwich' ),
+					),
+				),
 			),
 			array(
 				'method'      => 'POST',
@@ -600,6 +636,45 @@ final class Rest_Map {
 				'description' => __( 'Saves bring-your-own storage: provider (r2 or s3), bucket, region, endpoint, prefix, key_id, secret, enabled.', 'page-builder-sandwich' ),
 				'edition'     => 'pro',
 				'capability'  => 'manage_options (the REST route\'s own check)',
+				'args'        => array(
+					'enabled'   => array(
+						'type'        => 'boolean',
+						'description' => __( 'True stores the cloud library in this bucket.', 'page-builder-sandwich' ),
+					),
+					'provider'  => array(
+						'type'        => 'string',
+						'enum'        => array( 'r2', 's3', 'other' ),
+						'description' => __( 'Storage provider: Cloudflare R2, Amazon S3 or another S3-compatible service.', 'page-builder-sandwich' ),
+					),
+					'endpoint'  => array(
+						'type'        => 'string',
+						'description' => __( 'S3-compatible endpoint URL.', 'page-builder-sandwich' ),
+					),
+					'region'    => array(
+						'type'        => 'string',
+						'description' => __( 'Bucket region.', 'page-builder-sandwich' ),
+					),
+					'bucket'    => array(
+						'type'        => 'string',
+						'description' => __( 'Bucket name.', 'page-builder-sandwich' ),
+					),
+					'prefix'    => array(
+						'type'        => 'string',
+						'description' => __( 'Folder inside the bucket.', 'page-builder-sandwich' ),
+					),
+					'keyId'     => array(
+						'type'        => 'string',
+						'description' => __( 'Access key ID.', 'page-builder-sandwich' ),
+					),
+					'secret'    => array(
+						'type'        => 'string',
+						'description' => __( 'Secret access key; never returned, and empty keeps the saved one.', 'page-builder-sandwich' ),
+					),
+					'pathStyle' => array(
+						'type'        => 'boolean',
+						'description' => __( 'True uses path-style bucket URLs.', 'page-builder-sandwich' ),
+					),
+				),
 			),
 			array(
 				'method'      => 'POST',
@@ -762,6 +837,30 @@ final class Rest_Map {
 				'description' => __( 'Changes the consent banner. While it is on, tracking scripts wait for the visitor\'s consent.', 'page-builder-sandwich' ),
 				'edition'     => 'pro',
 				'capability'  => 'manage_options (the REST route\'s own check)',
+				'args'        => array(
+					'enabled'         => array(
+						'type'        => 'boolean',
+						'description' => __( 'True shows the cookie banner.', 'page-builder-sandwich' ),
+					),
+					'popup'           => array(
+						'type'        => 'integer',
+						'description' => __( 'ID of the popup used as the banner.', 'page-builder-sandwich' ),
+					),
+					'handles'         => array(
+						'type'        => 'array',
+						'items'       => array( 'type' => 'string' ),
+						'description' => __( 'Script handles held back until a visitor consents.', 'page-builder-sandwich' ),
+					),
+					'cookieDays'      => array(
+						'type'        => 'integer',
+						'minimum'     => 1,
+						'description' => __( 'How many days a visitor\'s choice is remembered.', 'page-builder-sandwich' ),
+					),
+					'optOutOutsideEu' => array(
+						'type'        => 'boolean',
+						'description' => __( 'True: outside the EU, tracking runs until a visitor opts out.', 'page-builder-sandwich' ),
+					),
+				),
 			),
 			array(
 				'method'      => 'POST',
@@ -870,6 +969,28 @@ final class Rest_Map {
 				'description' => __( 'Changes the Google Analytics 4, Google Tag Manager and Meta Pixel settings and which events are sent.', 'page-builder-sandwich' ),
 				'edition'     => 'pro',
 				'capability'  => 'manage_options (the REST route\'s own check)',
+				'args'        => array(
+					'ga4'       => array(
+						'type'        => 'string',
+						'description' => __( 'Google Analytics 4 measurement ID (G-…).', 'page-builder-sandwich' ),
+					),
+					'gtm'       => array(
+						'type'        => 'string',
+						'description' => __( 'Google Tag Manager container ID (GTM-…).', 'page-builder-sandwich' ),
+					),
+					'pixel'     => array(
+						'type'        => 'string',
+						'description' => __( 'Meta Pixel ID.', 'page-builder-sandwich' ),
+					),
+					'loadTags'  => array(
+						'type'        => 'boolean',
+						'description' => __( 'True loads these tags on the site.', 'page-builder-sandwich' ),
+					),
+					'formEvent' => array(
+						'type'        => 'string',
+						'description' => __( 'Event name sent when a form is submitted; generate_lead by default.', 'page-builder-sandwich' ),
+					),
+				),
 			),
 			array(
 				'method'      => 'GET',
@@ -998,7 +1119,7 @@ final class Rest_Map {
 				'route'       => '/pbs/v1/theme-builder/options',
 				'name'        => 'pbs/get-theme-builder-options',
 				'label'       => __( 'Read the theme builder\'s choices (Pro)', 'page-builder-sandwich' ),
-				'description' => __( 'Returns the template types, the display-condition kinds (page, post type, term, archive, search, 404, logged in, role, device, date, time, URL parameter, referrer, language, cart) with their choices on this site (roles, languages, post types, taxonomies), and the block attribute (pbswConditions: {match, rules}) that shows or hides any block — set it with pbs/update-block.', 'page-builder-sandwich' ),
+				'description' => __( 'Returns the template types, the display-condition kinds (page, post type, term, archive, search, 404, logged in, role, device, date, time, URL parameter, referrer, language, cart) with their choices on this site (roles, languages, post types, taxonomies), and the block attribute (pbswConditions: {match, rules}) that shows or hides any block.', 'page-builder-sandwich' ),
 				'edition'     => 'pro',
 				'capability'  => 'edit_posts (the REST route\'s own check)',
 			),
@@ -1016,7 +1137,7 @@ final class Rest_Map {
 				'route'       => '/pbs/v1/theme-builder/templates',
 				'name'        => 'pbs/create-theme-template',
 				'label'       => __( 'Create a theme template (Pro)', 'page-builder-sandwich' ),
-				'description' => __( 'Creates a template (title, type) that replaces that part of every matching page, on classic and block themes. Without content it starts from a ready-made design for its type. include/exclude are display-condition rules ({kind, values, key, value, from, to, days}; see pbs/get-theme-builder-options); priority breaks ties; status publish (live) or draft.', 'page-builder-sandwich' ),
+				'description' => __( 'Creates a template (title, type) that replaces that part of every matching page, on classic and block themes. Without content it starts from a ready-made design for its type. include/exclude are display-condition rules ({kind, values, key, value, from, to, days}, the kinds this site\'s theme builder offers); priority breaks ties; status publish (live) or draft.', 'page-builder-sandwich' ),
 				'edition'     => 'pro',
 				'capability'  => 'the REST route\'s own per-item permission check',
 			),
@@ -1052,7 +1173,7 @@ final class Rest_Map {
 				'route'       => '/pbs/v1/transfer/import',
 				'name'        => 'pbs/import-designs',
 				'label'       => __( 'Import designs and settings', 'page-builder-sandwich' ),
-				'description' => __( 'Imports a package made by pbs/export-designs (dryRun first to see what would change; mode: skip or replace; media; settings).', 'page-builder-sandwich' ),
+				'description' => __( 'Imports a Page Builder Sandwich design package (dryRun first to see what would change; mode: skip or replace; media; settings).', 'page-builder-sandwich' ),
 				'edition'     => 'free',
 				'capability'  => 'manage_options (the REST route\'s own check)',
 			),
@@ -1102,7 +1223,7 @@ final class Rest_Map {
 				'route'       => '/pbs/v1/workflow/replace',
 				'name'        => 'pbs/start-replace',
 				'label'       => __( 'Find and replace across the site (Pro)', 'page-builder-sandwich' ),
-				'description' => __( 'Starts a block-safe find-and-replace (find, replace, kind: text, link or colour; match_case; types). Nothing changes until pbs/apply-replace.', 'page-builder-sandwich' ),
+				'description' => __( 'Starts a block-safe find-and-replace (find, replace, kind: text, link or colour; match_case; types). Nothing changes until the previewed job is applied.', 'page-builder-sandwich' ),
 				'edition'     => 'pro',
 				'capability'  => 'manage_options (the REST route\'s own check)',
 			),
@@ -1120,7 +1241,7 @@ final class Rest_Map {
 				'route'       => '/pbs/v1/workflow/replace/{id}/apply',
 				'name'        => 'pbs/apply-replace',
 				'label'       => __( 'Apply a find-and-replace (Pro)', 'page-builder-sandwich' ),
-				'description' => __( 'Applies a previewed job. Every changed post keeps a backup for pbs/undo-replace.', 'page-builder-sandwich' ),
+				'description' => __( 'Applies a previewed job. Every changed post keeps a backup, so the job can be undone.', 'page-builder-sandwich' ),
 				'edition'     => 'pro',
 				'capability'  => 'manage_options (the REST route\'s own check)',
 			),
@@ -1168,6 +1289,45 @@ final class Rest_Map {
 				'description' => __( 'Turns white label on or off and sets the name clients see (enabled, name, agency_users).', 'page-builder-sandwich' ),
 				'edition'     => 'pro',
 				'capability'  => 'manage_options (the REST route\'s own check)',
+				'args'        => array(
+					'enabled'      => array(
+						'type'        => 'boolean',
+						'description' => __( 'True turns white label on.', 'page-builder-sandwich' ),
+					),
+					'name'         => array(
+						'type'        => 'string',
+						'description' => __( 'The builder\'s name shown to clients.', 'page-builder-sandwich' ),
+					),
+					'studio_name'  => array(
+						'type'        => 'string',
+						'description' => __( 'The agency\'s name.', 'page-builder-sandwich' ),
+					),
+					'author'       => array(
+						'type'        => 'string',
+						'description' => __( 'Author shown on the Plugins screen.', 'page-builder-sandwich' ),
+					),
+					'author_url'   => array(
+						'type'        => 'string',
+						'description' => __( 'Author website URL.', 'page-builder-sandwich' ),
+					),
+					'description'  => array(
+						'type'        => 'string',
+						'description' => __( 'Plugin description shown to clients.', 'page-builder-sandwich' ),
+					),
+					'menu_icon'    => array(
+						'type'        => 'string',
+						'description' => __( 'Menu icon: a dashicons-* name or an image URL.', 'page-builder-sandwich' ),
+					),
+					'hide_plugin'  => array(
+						'type'        => 'boolean',
+						'description' => __( 'True hides the plugin from clients\' Plugins screen.', 'page-builder-sandwich' ),
+					),
+					'agency_users' => array(
+						'type'        => 'array',
+						'items'       => array( 'type' => 'integer' ),
+						'description' => __( 'IDs of the users who always see the real plugin.', 'page-builder-sandwich' ),
+					),
+				),
 			),
 			array(
 				'method' => 'POST',

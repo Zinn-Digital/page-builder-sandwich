@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.32.0
+Stable tag: 6.32.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,13 +71,13 @@ Google Fonts are hosted on your own site. Only when an administrator adds a font
 * Terms: https://developers.google.com/terms
 * Privacy policy: https://policies.google.com/privacy
 
-Figma import (Pro). Only when an administrator connects a Figma account (their own personal access token, stored encrypted) and someone imports a Figma frame, the site requests `https://api.figma.com/v1/me` (to check the token), `https://api.figma.com/v1/files/<file>/nodes`, `https://api.figma.com/v1/files/<file>/images` and `https://api.figma.com/v1/images/<file>` with that token, then downloads the frame's images from the addresses Figma returns into your media library. It sends the file and frame ids and the token; nothing about your visitors, and nothing to Zinn Digital®.
+Figma import (Pro): only when an administrator connects their own Figma personal access token (stored encrypted) and imports a frame, the site calls https://api.figma.com/v1 (me, files/<file>/nodes, files/<file>/images, images/<file>) with that token and downloads the frame's images into the media library. Nothing is sent to Zinn Digital®.
 
 * Service: https://www.figma.com
 * Terms: https://www.figma.com/legal/tos/
 * Privacy policy: https://www.figma.com/legal/privacy/
 
-Background videos from YouTube or Vimeo (Pro). Only when an author picks a YouTube or Vimeo background, and only once a visitor scrolls to that section on a device that does not ask for reduced motion, the visitor's browser loads the player from `https://www.youtube-nocookie.com` or `https://player.vimeo.com` ("do not track" on). Until then the page shows the poster stored on your site. The player receives what any embed does (IP address, browser details, the video's ID); the plugin sends nothing else.
+Background videos from YouTube or Vimeo (Pro). Only for a YouTube or Vimeo background, once a visitor scrolls to it without asking for reduced motion, the browser loads the player from `https://www.youtube-nocookie.com` or `https://player.vimeo.com` ("do not track" on); until then the page shows a local poster. The player receives what any embed does (IP address, browser details, video ID); nothing else is sent.
 
 * YouTube terms: https://www.youtube.com/t/terms
 * YouTube (Google) privacy policy: https://policies.google.com/privacy
@@ -129,7 +129,7 @@ AI features use the AI provider you choose, with your own API key. Nothing is se
 * OpenRouter: https://openrouter.ai/api/v1 (terms: https://openrouter.ai/terms, privacy policy: https://openrouter.ai/privacy)
 * A service you run yourself (any OpenAI-compatible address you enter): only that address is contacted.
 
-Images and pages sent to AI (only when you use these features). Writing alt text sends that image (a resized copy) to your AI provider; designing a page from a screenshot sends the screenshot. Designing a page from a website address (Pro) makes one request to the address you type, from your own site, and sends only the text outline of that page (its headings, paragraphs, list items and button labels, never its images or code) to your AI provider.
+Images and pages sent to AI (only when you use these features). Writing alt text sends that image (resized) to your AI provider; designing from a screenshot sends the screenshot. Designing from a website address (Pro) fetches that address once from your site and sends only its text outline (headings, paragraphs, list items, button labels; never images or code) to your AI provider.
 
 Recommended models list (off unless you turn it on). If you turn on the daily check for a newer recommended models list under Settings → AI providers, the plugin requests https://api.zinndigital.com/v1/ai-model-catalogue once a day. The request is a plain download: it carries no key, no site address and nothing about your content, and the list is signed so a changed copy is ignored.
 
@@ -189,6 +189,9 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.32.1 =
+* MCP tools for AI connector directories: tool descriptions state only what each tool does; every tool that takes input declares it; list results reach MCP clients as objects; AI image generation is not offered to Claude or ChatGPT connector apps.
 
 = 6.32.0 =
 * New (Pro): import pages built with Elementor, Divi (4 and 5), Beaver Builder and WPBakery into blocks, keeping the layout, fonts, colours and images. Each import is a new draft with a report of anything approximated or not converted; the original page is never changed. In wp-admin (Page Builder Sandwich, Import from other builders and Figma), with WP-CLI (`wp pbs importers`), the REST API and the MCP server.

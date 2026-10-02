@@ -111,7 +111,7 @@
           },
           "section": {
             "type": "string",
-            "description": "A section name from pbs/list-sections."
+            "description": "The name of a section in this site's section library."
           },
           "position": {
             "type": "string",
@@ -903,7 +903,7 @@
     {
       "name": "pbs/apply-replace",
       "label": "Apply a find-and-replace (Pro)",
-      "description": "Applies a previewed job. Every changed post keeps a backup for pbs/undo-replace.",
+      "description": "Applies a previewed job. Every changed post keeps a backup, so the job can be undone.",
       "edition": "pro",
       "capability": "manage_options (the REST route's own check)",
       "annotations": {
@@ -1000,7 +1000,7 @@
                   "items": {
                     "type": "string"
                   },
-                  "description": "Section names from pbs/list-sections, in page order. They come before any content given."
+                  "description": "Names of sections in this site's section library, in page order. They come before any content given."
                 },
                 "content": {
                   "type": "string",
@@ -1630,7 +1630,7 @@
     {
       "name": "pbs/create-page",
       "label": "Create a page",
-      "description": "Creates a page from sections (see pbs/list-sections) and/or block content. A new page is a draft unless another status is asked for.",
+      "description": "Creates a page from library sections and/or block content. A new page is a draft unless another status is asked for.",
       "edition": "free",
       "capability": "edit_pages; publish_pages to publish or make private",
       "annotations": {
@@ -1658,7 +1658,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Section names from pbs/list-sections, in page order. They come before any content given."
+            "description": "Names of sections in this site's section library, in page order. They come before any content given."
           },
           "content": {
             "type": "string",
@@ -1865,7 +1865,7 @@
     {
       "name": "pbs/create-theme-template",
       "label": "Create a theme template (Pro)",
-      "description": "Creates a template (title, type) that replaces that part of every matching page, on classic and block themes. Without content it starts from a ready-made design for its type. include/exclude are display-condition rules ({kind, values, key, value, from, to, days}; see pbs/get-theme-builder-options); priority breaks ties; status publish (live) or draft.",
+      "description": "Creates a template (title, type) that replaces that part of every matching page, on classic and block themes. Without content it starts from a ready-made design for its type. include/exclude are display-condition rules ({kind, values, key, value, from, to, days}, the kinds this site's theme builder offers); priority breaks ties; status publish (live) or draft.",
       "edition": "pro",
       "capability": "the REST route's own per-item permission check",
       "annotations": {
@@ -2920,7 +2920,7 @@
     {
       "name": "pbs/get-theme-builder-options",
       "label": "Read the theme builder's choices (Pro)",
-      "description": "Returns the template types, the display-condition kinds (page, post type, term, archive, search, 404, logged in, role, device, date, time, URL parameter, referrer, language, cart) with their choices on this site (roles, languages, post types, taxonomies), and the block attribute (pbswConditions: {match, rules}) that shows or hides any block — set it with pbs/update-block.",
+      "description": "Returns the template types, the display-condition kinds (page, post type, term, archive, search, 404, logged in, role, device, date, time, URL parameter, referrer, language, cart) with their choices on this site (roles, languages, post types, taxonomies), and the block attribute (pbswConditions: {match, rules}) that shows or hides any block.",
       "edition": "pro",
       "capability": "edit_posts (the REST route's own check)",
       "annotations": {
@@ -2966,7 +2966,7 @@
     {
       "name": "pbs/import-designs",
       "label": "Import designs and settings",
-      "description": "Imports a package made by pbs/export-designs (dryRun first to see what would change; mode: skip or replace; media; settings).",
+      "description": "Imports a Page Builder Sandwich design package (dryRun first to see what would change; mode: skip or replace; media; settings).",
       "edition": "free",
       "capability": "manage_options (the REST route's own check)",
       "annotations": {
@@ -3191,7 +3191,7 @@
     {
       "name": "pbs/list-blocks",
       "label": "List the builder blocks",
-      "description": "Lists every Page Builder Sandwich block this site can use (Pro blocks too when Pro is active): name, title, category and description. Use pbs/get-block for a block's settings, then put the block in a page's content.",
+      "description": "Lists every Page Builder Sandwich block this site can use (Pro blocks too when Pro is active): name, title, category and description.",
       "edition": "free",
       "capability": "edit_posts",
       "annotations": {
@@ -3221,7 +3221,7 @@
     {
       "name": "pbs/list-dynamic-sources",
       "label": "List the dynamic content sources (Pro)",
-      "description": "Returns what a block can be filled from (post, author, site, archive, custom field, product) with each source's fields, the field plugins on this site (ACF, Meta Box, Pods, JetEngine, Toolset, post meta) and a post type's fields (postType). Bind a block with pbs/update-block: attributes.metadata.bindings.<attribute> = {source, args}.",
+      "description": "Returns what a block can be filled from (post, author, site, archive, custom field, product) with each source's fields, the field plugins on this site (ACF, Meta Box, Pods, JetEngine, Toolset, post meta) and a post type's fields (postType). A block is bound to a source through its attributes.metadata.bindings, one {source, args} per attribute.",
       "edition": "pro",
       "capability": "edit_posts (the REST route's own check)",
       "annotations": {
@@ -3823,7 +3823,7 @@
     {
       "name": "pbs/move-section",
       "label": "Move a section",
-      "description": "Moves a section of a page from one position to another (0-based, as pbs/get-page lists them).",
+      "description": "Moves a section of a page from one position to another (0-based, in the order the page lists them).",
       "edition": "free",
       "capability": "edit_post on that page",
       "annotations": {
@@ -3877,7 +3877,42 @@
       "input_schema": {
         "type": "object",
         "additionalProperties": true,
-        "default": {}
+        "properties": {
+          "subject": {
+            "type": "string",
+            "description": "The ticket subject (up to 200 characters)."
+          },
+          "message": {
+            "type": "string",
+            "description": "What happened, or the question."
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "help",
+              "bug",
+              "feedback",
+              "feature_request"
+            ],
+            "description": "The kind of request; help when omitted."
+          },
+          "email": {
+            "type": "string",
+            "description": "Reply address; the connected support email when omitted."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name to reply to."
+          },
+          "diagnostics": {
+            "type": "boolean",
+            "description": "True attaches this site's diagnostics (needs the administrator's consent)."
+          }
+        },
+        "required": [
+          "subject",
+          "message"
+        ]
       },
       "output_schema": {},
       "rest": {
@@ -3952,7 +3987,15 @@
       "input_schema": {
         "type": "object",
         "additionalProperties": true,
-        "default": {}
+        "properties": {
+          "consent": {
+            "type": "boolean",
+            "description": "True records the administrator's consent to send diagnostics with support tickets."
+          }
+        },
+        "required": [
+          "consent"
+        ]
       },
       "output_schema": {},
       "rest": {
@@ -4009,7 +4052,7 @@
               "minimum": 0
             },
             "minItems": 1,
-            "description": "Where the block is: its position among the page's sections, then among that block's inner blocks, and so on (0-based), as pbs/get-page lists them."
+            "description": "Where the block is: its position among the page's sections, then among that block's inner blocks, and so on (0-based), in the order the page lists them."
           }
         },
         "required": [
@@ -4268,6 +4311,49 @@
       "input_schema": {
         "type": "object",
         "additionalProperties": true,
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "True stores the cloud library in this bucket."
+          },
+          "provider": {
+            "type": "string",
+            "enum": [
+              "r2",
+              "s3",
+              "other"
+            ],
+            "description": "Storage provider: Cloudflare R2, Amazon S3 or another S3-compatible service."
+          },
+          "endpoint": {
+            "type": "string",
+            "description": "S3-compatible endpoint URL."
+          },
+          "region": {
+            "type": "string",
+            "description": "Bucket region."
+          },
+          "bucket": {
+            "type": "string",
+            "description": "Bucket name."
+          },
+          "prefix": {
+            "type": "string",
+            "description": "Folder inside the bucket."
+          },
+          "keyId": {
+            "type": "string",
+            "description": "Access key ID."
+          },
+          "secret": {
+            "type": "string",
+            "description": "Secret access key; never returned, and empty keeps the saved one."
+          },
+          "pathStyle": {
+            "type": "boolean",
+            "description": "True uses path-style bucket URLs."
+          }
+        },
         "default": {}
       },
       "output_schema": {},
@@ -4427,6 +4513,47 @@
       "input_schema": {
         "type": "object",
         "additionalProperties": true,
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "True turns white label on."
+          },
+          "name": {
+            "type": "string",
+            "description": "The builder's name shown to clients."
+          },
+          "studio_name": {
+            "type": "string",
+            "description": "The agency's name."
+          },
+          "author": {
+            "type": "string",
+            "description": "Author shown on the Plugins screen."
+          },
+          "author_url": {
+            "type": "string",
+            "description": "Author website URL."
+          },
+          "description": {
+            "type": "string",
+            "description": "Plugin description shown to clients."
+          },
+          "menu_icon": {
+            "type": "string",
+            "description": "Menu icon: a dashicons-* name or an image URL."
+          },
+          "hide_plugin": {
+            "type": "boolean",
+            "description": "True hides the plugin from clients' Plugins screen."
+          },
+          "agency_users": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "IDs of the users who always see the real plugin."
+          }
+        },
         "default": {}
       },
       "output_schema": {},
@@ -4462,7 +4589,7 @@
     {
       "name": "pbs/start-replace",
       "label": "Find and replace across the site (Pro)",
-      "description": "Starts a block-safe find-and-replace (find, replace, kind: text, link or colour; match_case; types). Nothing changes until pbs/apply-replace.",
+      "description": "Starts a block-safe find-and-replace (find, replace, kind: text, link or colour; match_case; types). Nothing changes until the previewed job is applied.",
       "edition": "pro",
       "capability": "manage_options (the REST route's own check)",
       "annotations": {
@@ -4646,7 +4773,7 @@
     {
       "name": "pbs/update-block",
       "label": "Change one block's settings",
-      "description": "Changes the settings (attributes) of one block inside a page, found by its path; attributes you send are merged over the current ones. Works on blocks the site renders from their settings; for a block whose HTML is saved in the page, send new markup with pbs/update-page.",
+      "description": "Changes the settings (attributes) of one block inside a page, found by its path; attributes you send are merged over the current ones. Works on blocks the site renders from their settings; a block whose HTML is saved in the page is changed by replacing the page's markup.",
       "edition": "free",
       "capability": "edit_post on that page",
       "annotations": {
@@ -4668,7 +4795,7 @@
               "minimum": 0
             },
             "minItems": 1,
-            "description": "Where the block is: its position among the page's sections, then among that block's inner blocks, and so on (0-based), as pbs/get-page lists them."
+            "description": "Where the block is: its position among the page's sections, then among that block's inner blocks, and so on (0-based), in the order the page lists them."
           },
           "attributes": {
             "type": "object"
@@ -4837,6 +4964,28 @@
       "input_schema": {
         "type": "object",
         "additionalProperties": true,
+        "properties": {
+          "ga4": {
+            "type": "string",
+            "description": "Google Analytics 4 measurement ID (G-…)."
+          },
+          "gtm": {
+            "type": "string",
+            "description": "Google Tag Manager container ID (GTM-…)."
+          },
+          "pixel": {
+            "type": "string",
+            "description": "Meta Pixel ID."
+          },
+          "loadTags": {
+            "type": "boolean",
+            "description": "True loads these tags on the site."
+          },
+          "formEvent": {
+            "type": "string",
+            "description": "Event name sent when a form is submitted; generate_lead by default."
+          }
+        },
         "default": {}
       },
       "output_schema": {},
@@ -4860,6 +5009,32 @@
       "input_schema": {
         "type": "object",
         "additionalProperties": true,
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "description": "True shows the cookie banner."
+          },
+          "popup": {
+            "type": "integer",
+            "description": "ID of the popup used as the banner."
+          },
+          "handles": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Script handles held back until a visitor consents."
+          },
+          "cookieDays": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "How many days a visitor's choice is remembered."
+          },
+          "optOutOutsideEu": {
+            "type": "boolean",
+            "description": "True: outside the EU, tracking runs until a visitor opts out."
+          }
+        },
         "default": {}
       },
       "output_schema": {},
@@ -5329,7 +5504,7 @@
             "items": {
               "type": "string"
             },
-            "description": "Section names from pbs/list-sections, in page order. They come before any content given."
+            "description": "Names of sections in this site's section library, in page order. They come before any content given."
           },
           "content": {
             "type": "string",
