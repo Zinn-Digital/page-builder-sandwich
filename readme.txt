@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.30.6
+Stable tag: 6.30.7
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -181,6 +181,9 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.30.7 =
+* Fix: the Navigation Menu block now runs WordPress's own menu filters (`wp_nav_menu_args`, `wp_nav_menu_objects`, `nav_menu_item_title`, `nav_menu_link_attributes`) like a theme menu does, so multilingual plugins (Tranzly, WPML, Polylang) translate its items and links.
 
 = 6.30.6 =
 * Ukrainian: a site's visitors are now «відвідувачі» everywhere; some screens called them «користувачі» (users).
