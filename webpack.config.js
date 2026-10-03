@@ -119,6 +119,8 @@ module.exports = {
 			__dirname,
 			'src/seo/pro__premium_only/health.js'
 		),
+		// Lane L12 (P16): add-ons' style controls in the editor.
+		dev: path.resolve( __dirname, 'src/dev/index.js' ),
 		// Lane L12 (P14): workflow panels; Pro/Agency bundles live in premium-only paths.
 		workflow: path.resolve( __dirname, 'src/workflow/index.js' ),
 		'workflow-pro__premium_only': path.resolve(

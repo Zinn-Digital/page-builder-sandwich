@@ -3314,6 +3314,32 @@
       "mcp_tool": "pbs-list-dynamic-sources"
     },
     {
+      "name": "pbs/list-extensions",
+      "label": "List the builder's add-on extensions",
+      "description": "Lists what other plugins have added to Page Builder Sandwich through its developer API: blocks, dynamic data sources, display conditions and form actions, each with its name, label and plugin.",
+      "edition": "free",
+      "capability": "edit_posts",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "properties": [],
+        "additionalProperties": false,
+        "default": {}
+      },
+      "output_schema": {
+        "type": "object"
+      },
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-extensions/run"
+      },
+      "mcp_tool": "pbs-list-extensions"
+    },
+    {
       "name": "pbs/list-form-submissions",
       "label": "Read form submissions (Pro)",
       "description": "Lists what visitors sent through the forms that save submissions (form narrows it), a page at a time.",

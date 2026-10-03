@@ -297,6 +297,11 @@ final class Rest_Map {
 				'capability'  => 'edit_post (the REST route\'s own check)',
 			),
 			array(
+				'method'     => 'GET',
+				'route'      => '/pbs/v1/extensions',
+				'covered_by' => 'pbs/list-extensions',
+			),
+			array(
 				'method'      => 'DELETE',
 				'route'       => '/pbs/v1/fonts',
 				'name'        => 'pbs/remove-local-font',

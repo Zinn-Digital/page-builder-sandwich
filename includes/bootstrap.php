@@ -38,6 +38,8 @@ require_once __DIR__ . '/workflow/load.php';
 require_once __DIR__ . '/ai/load.php';
 // Lane L12 P13: SEO plugins' analysis sees the rendered page (free part).
 require_once __DIR__ . '/seo/load.php';
+// Lane L12 P16: the developer platform (public PHP API for add-ons).
+require_once __DIR__ . '/dev/load.php';
 require_once __DIR__ . '/design/a11y/load.php';
 // Lane L11 P11: the website-kit library, its importer and the translated section patterns.
 require_once __DIR__ . '/cloud/load.php';
