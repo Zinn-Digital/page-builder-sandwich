@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.34.0
+Stable tag: 6.34.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -124,7 +124,7 @@ Reviews block (Pro, only if you set it up under Appearance → Site design → R
 * Google Places API (New): Google's terms do not allow its reviews to be stored, so when a visitor views a page with a Reviews block that shows Google, the visitor's browser asks your site for them and your site requests `https://places.googleapis.com/v1/places/<your place ID>` with your own API key (sent in a header). Each such page view is one request on your key, billed by Google. What is sent: the place ID, your key and the site language; nothing about the visitor. The plugin stores only the place ID. Terms: https://cloud.google.com/maps-platform/terms and https://cloud.google.com/maps-platform/terms/maps-service-terms, privacy policy: https://policies.google.com/privacy
 * Trustpilot: once a day, in the background, your site requests `https://api.trustpilot.com/v1/business-units/<your business unit ID>` and its reviews with your own API key (sent in a header), and keeps them on your site, so page views never call Trustpilot. Terms: https://legal.trustpilot.com/for-businesses/business-terms, privacy policy: https://legal.trustpilot.com/for-reviewers/end-user-privacy-terms
 
-Age gate and responsible gambling notice (Pro). Both use the visitor's country when your host or CDN provides it in the request (for example Cloudflare's `CF-IPCountry` header); the plugin never looks a country up and sends nothing anywhere to learn it. The age gate remembers the visitor's answer in a cookie on your own site. The notice can link to a national help service (for example BeGambleAware in the UK); those are links only, opened by the visitor.
+Age gate and responsible gambling notice (Pro). Both use the visitor's country when your host or CDN provides it in the request (for example Cloudflare's `CF-IPCountry` header); the plugin never looks a country up and sends nothing anywhere to learn it. The age gate remembers the visitor's answer in a cookie on your own site. The notice can link to a national help service (for example GambleAware in the UK), chosen by the visitor's country and your site's language; those are links only, opened by the visitor.
 
 Short links (Pro). Short links (`/go/<name>/`) are handled by your own site: a visit is counted and sent on to the address you entered. No link service is used.
 
@@ -198,6 +198,9 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.34.1 =
+* Fix: list fields keep what you type: the Pros & Cons lists (and form field choices, display-condition IDs and popup/cookie lists) no longer delete spaces and line breaks while you type. The responsible gambling notice links the help service in your site's language (GambleAware for en_GB, 1-800-GAMBLER for en_US, check-dein-spiel.de for German) instead of one chosen by the visitor's IP alone. The sample-content test blocks no longer appear in the block inserter. The casino comparison table's bonus column is no longer squeezed to one word per line.
 
 = 6.34.0 =
 * Developer platform: a documented PHP API for add-on blocks, style controls, dynamic data sources, display conditions and form actions, TypeScript types (@zinn-digital/pbs-types) and an example add-on.
