@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.34.1
+Stable tag: 6.34.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,9 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.34.2 =
+* The shared AI core can now ask Gemini for the least thinking a model accepts (this plugin's own requests are unchanged).
 
 = 6.34.1 =
 * Fix: list fields keep what you type: the Pros & Cons lists (and form field choices, display-condition IDs and popup/cookie lists) no longer delete spaces and line breaks while you type. The responsible gambling notice links the help service in your site's language (GambleAware for en_GB, 1-800-GAMBLER for en_US, check-dein-spiel.de for German) instead of one chosen by the visitor's IP alone. The sample-content test blocks no longer appear in the block inserter. The casino comparison table's bonus column is no longer squeezed to one word per line.
