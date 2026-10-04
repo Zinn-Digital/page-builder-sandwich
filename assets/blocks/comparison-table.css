@@ -113,3 +113,22 @@
 	white-space: nowrap;
 	border: 0;
 }
+
+/* On a phone a table of one to three plans fits the screen instead of scrolling: the minimum width
+   pushed the plan columns out of view and visitors saw only the feature names (pagebuildersandwich.com,
+   390 px, 2026-10-04). Wider tables still scroll inside their own box. */
+@media (max-width: 37.5em) {
+	.__PREFIX__-comparison-table__table:not(:has(thead th:nth-of-type(4))) {
+		min-inline-size: 0;
+	}
+
+	.__PREFIX__-comparison-table__table th,
+	.__PREFIX__-comparison-table__table td {
+		padding-inline: 0.4em;
+		overflow-wrap: break-word;
+	}
+
+	.__PREFIX__-comparison-table__feature {
+		inline-size: 50%;
+	}
+}
