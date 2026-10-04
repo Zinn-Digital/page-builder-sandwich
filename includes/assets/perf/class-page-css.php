@@ -348,6 +348,7 @@ final class Page_Css {
 		if ( '' !== $hash ) {
 			if ( is_string( $state['url'] ?? null ) ) {
 				wp_enqueue_style( $handle, Files::current_url( (string) $state['url'] ), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- the file name is its content hash.
+				Files::allow_inline( $handle, (string) $state['url'] );
 			} else {
 				wp_register_style( $handle, false, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- inline only.
 				wp_enqueue_style( $handle );

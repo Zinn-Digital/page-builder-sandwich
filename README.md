@@ -15,7 +15,7 @@ Both are the same file. The download page is the canonical one: it is served fro
 
 | | |
 |---|---|
-| Version | `6.34.3` |
+| Version | `6.34.4` |
 | Requires WordPress | 6.8 or later |
 | Tested up to | WordPress **7.1** |
 | Requires PHP | 8.2 or later |

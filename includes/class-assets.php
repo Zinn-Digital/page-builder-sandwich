@@ -167,6 +167,7 @@ final class Assets {
 		$url = self::published_url( $key );
 		if ( null !== $url && str_starts_with( basename( (string) wp_parse_url( $url, PHP_URL_PATH ) ), substr( sha1( $body ), 0, 12 ) . '.' ) ) {
 			wp_enqueue_style( $handle, $url, array(), $hash );
+			Assets\Perf\Files::allow_inline( $handle, $url );
 			return;
 		}
 
@@ -239,9 +240,34 @@ final class Assets {
 		if ( ! is_array( $file ) || ! is_string( $file['url'] ?? null ) ) {
 			return null;
 		}
+		// ⛔ The copy must still be ON DISK: a cleanup plugin, a restore without uploads or a migration
+		// deletes uploads/<prefix>-assets/, and the manifest went on naming the files, so every page
+		// loaded its block stylesheets as 404s and showed unstyled until the next version (W3,
+		// 2026-10-04). A missing copy is served inline now and the copies are published again.
+		if ( null === Assets\Perf\Files::current_path( (string) $file['url'] ) ) {
+			self::republish_later();
+			return null;
+		}
 		// ⛔ Re-based on TODAY's uploads URL, never read back as stored: a site that moved after the
 		// publish kept loading its stylesheets and view modules from the old host (Files::current_url()).
 		return Assets\Perf\Files::current_url( $file['url'] );
+	}
+
+	/**
+	 * Mark the published copies stale (once per request) so the next is_current() check publishes
+	 * them again.
+	 *
+	 * @return void
+	 */
+	private static function republish_later(): void {
+		static $done = false;
+		if ( $done ) {
+			return;
+		}
+		$done             = true;
+		$manifest         = self::manifest();
+		$manifest['keys'] = '';
+		update_option( self::MANIFEST_OPTION, $manifest, true );
 	}
 
 	/**

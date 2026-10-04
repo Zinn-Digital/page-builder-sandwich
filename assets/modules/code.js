@@ -29,6 +29,47 @@ function library() {
 }
 
 /**
+ * Resolves when the element comes within a screen of the viewport (at once without
+ * IntersectionObserver). Highlighting is the costly part of this block, and a page that is all
+ * code (a developer reference) paid for every block at load: the docs site's /mcp/ page spent one
+ * 421 ms task highlighting eleven blocks, and its mobile Lighthouse score was 89 (W5, 2026-10-04).
+ *
+ * @param {Element} el The block.
+ * @return {Promise<void>} Near the viewport.
+ */
+function near( el ) {
+	if ( ! ( 'IntersectionObserver' in window ) ) {
+		return Promise.resolve();
+	}
+	return new Promise( ( resolve ) => {
+		const io = new IntersectionObserver(
+			( entries ) => {
+				if ( entries.some( ( e ) => e.isIntersecting ) ) {
+					io.disconnect();
+					resolve();
+				}
+			},
+			{ rootMargin: '100% 0px' }
+		);
+		io.observe( el );
+	} );
+}
+
+/**
+ * Resolves in a task of its own when the browser is idle, so each block's highlighting is its own
+ * short task instead of one long one for every block together.
+ *
+ * @return {Promise<void>} Idle.
+ */
+function idle() {
+	return new Promise( ( resolve ) =>
+		window.requestIdleCallback
+			? window.requestIdleCallback( () => resolve(), { timeout: 1500 } )
+			: setTimeout( resolve, 0 )
+	);
+}
+
+/**
  * Copy text: the Clipboard API where the page is a secure context, else a selected text area and
  * the copy command (a site still served over http).
  *
@@ -76,23 +117,25 @@ store( '__PREFIX__', {
 			if ( ! code ) {
 				return;
 			}
-			library().then( ( hljs ) => {
-				if ( ! hljs ) {
-					return;
-				}
-				hljs.configure( { classPrefix: '__PREFIX__-hl-' } );
-				const lang = code.dataset.lang;
-				const text = code.textContent;
-				const result =
-					lang === 'auto' || ! hljs.getLanguage( lang )
-						? hljs.highlightAuto( text )
-						: hljs.highlight( text, {
-								language: lang,
-								ignoreIllegals: true,
-							} );
-				// highlight.js escapes the text it returns; nothing else is inserted.
-				code.innerHTML = result.value;
-			} );
+			Promise.all( [ library(), near( ref ) ] )
+				.then( ( [ hljs ] ) => idle().then( () => hljs ) )
+				.then( ( hljs ) => {
+					if ( ! hljs ) {
+						return;
+					}
+					hljs.configure( { classPrefix: '__PREFIX__-hl-' } );
+					const lang = code.dataset.lang;
+					const text = code.textContent;
+					const result =
+						lang === 'auto' || ! hljs.getLanguage( lang )
+							? hljs.highlightAuto( text )
+							: hljs.highlight( text, {
+									language: lang,
+									ignoreIllegals: true,
+								} );
+					// highlight.js escapes the text it returns; nothing else is inserted.
+					code.innerHTML = result.value;
+				} );
 		},
 	},
 } );

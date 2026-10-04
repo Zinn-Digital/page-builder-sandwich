@@ -269,6 +269,7 @@ final class Fonts {
 			$entry = self::upgrade_sheet( $family, $entry );
 		}
 		wp_enqueue_style( Settings::prefix() . '-f' . substr( (string) $entry['hash'], 0, 8 ), Files::current_url( (string) $entry['url'] ), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- the file name is its content hash.
+		Files::allow_inline( Settings::prefix() . '-f' . substr( (string) $entry['hash'], 0, 8 ), (string) $entry['url'] );
 
 		return true;
 	}

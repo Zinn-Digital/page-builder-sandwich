@@ -70,6 +70,47 @@ final class Files {
 	}
 
 	/**
+	 * The file on disk behind a generated URL (today's uploads folder), or null when it is not
+	 * one of ours or is not readable.
+	 *
+	 * @param string $stored The URL as stored.
+	 * @return string|null
+	 */
+	public static function current_path( string $stored ): ?string {
+		$uploads = wp_upload_dir( null, false );
+		$marker  = '/' . Settings::prefix() . '-assets/';
+		$at      = strrpos( (string) wp_parse_url( $stored, PHP_URL_PATH ), $marker );
+		if ( ! empty( $uploads['error'] ) || false === $at ) {
+			return null;
+		}
+		$rel  = substr( (string) wp_parse_url( $stored, PHP_URL_PATH ), $at );
+		$path = untrailingslashit( (string) $uploads['basedir'] ) . $rel;
+		return ( ! str_contains( $rel, '..' ) && is_readable( $path ) ) ? $path : null;
+	}
+
+	/**
+	 * Let WordPress print a small generated stylesheet INLINE instead of as a request.
+	 *
+	 * ⭐ W5 2026-10-04 (mobile Lighthouse, pagebuildersandwich.com: 81 → see docs/945): a page
+	 * using six blocks loaded six ~1-2 KB stylesheets, each a render-blocking request — on a
+	 * mobile connection every one costs a round trip before the first paint (Lighthouse priced
+	 * them at ~0.5 s each). Core already solves this for block styles: a handle that carries
+	 * `path` data is inlined by `wp_maybe_inline_styles()`, smallest first, within the
+	 * `styles_inline_size_limit` budget (40 KB by default), relative URLs rewritten. Giving our
+	 * handles the same data puts them under the same rule; anything over the budget stays a file.
+	 *
+	 * @param string $handle Registered style handle.
+	 * @param string $url    Its generated URL.
+	 * @return void
+	 */
+	public static function allow_inline( string $handle, string $url ): void {
+		$path = self::current_path( $url );
+		if ( null !== $path ) {
+			wp_style_add_data( $handle, 'path', $path );
+		}
+	}
+
+	/**
 	 * Write a file named after its content hash. Existing identical files are reused.
 	 *
 	 * @param string $body      File contents.
