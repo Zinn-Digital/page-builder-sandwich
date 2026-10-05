@@ -141,6 +141,12 @@ final class Data {
 		}
 		$code     = str_replace( array( "\r\n", "\r" ), "\n", rtrim( $code, "\n" ) );
 		$language = (string) ( $attributes['language'] ?? 'auto' );
+		// "Plain text" by any of its usual names means NO colouring. It used to fall through to
+		// detection, which compiles every bundled grammar on first use: one 38-character URL on
+		// docs.pagebuildersandwich.com/mcp/ cost a 400 ms task and a mobile score of 83.
+		if ( in_array( strtolower( $language ), array( 'plaintext', 'plain', 'text', 'txt' ), true ) ) {
+			$language = 'none';
+		}
 		if ( 'auto' !== $language && 'none' !== $language && ! isset( self::LANGUAGES[ $language ] ) ) {
 			$language = 'auto';
 		}
