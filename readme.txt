@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.34.12
+Stable tag: 6.34.13
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -57,6 +57,10 @@ The admin screen and editor scripts are built from the human-readable sources in
 `npm ci && npm run build`
 
 == External services ==
+
+= AI apps you connect (MCP sign-in) =
+
+Only when an AI app such as Claude or ChatGPT starts connecting to the site's MCP server does the site fetch that app's public OAuth client metadata from the address the app gives, for example `https://claude.ai/oauth/mcp-oauth-client-metadata` or `https://chatgpt.com/oauth/client.json`. No site content is sent. Anthropic's and OpenAI's terms and privacy policies are listed under AI features below.
 
 = Zinn Digital® kit and cloud library =
 
@@ -126,8 +130,6 @@ Reviews block (Pro, only if you set it up under Appearance → Site design → R
 
 Age gate and responsible gambling notice (Pro). Both use the visitor's country when your host or CDN provides it in the request (for example Cloudflare's `CF-IPCountry` header); the plugin never looks a country up and sends nothing anywhere to learn it. The age gate remembers the visitor's answer in a cookie on your own site. The notice can link to a national help service (for example GambleAware in the UK), chosen by the visitor's country and your site's language; those are links only, opened by the visitor.
 
-Short links (Pro). Short links (`/go/<name>/`) are handled by your own site: a visit is counted and sent on to the address you entered. No link service is used.
-
 AI features use the AI provider you choose, with your own API key. Nothing is sent to any AI provider until you add a key under Settings → AI providers and use an AI feature. When you do, the text the feature needs (for example, the content being written or translated) and your key are sent to that one provider, and to no one else. Keys are stored encrypted in your database and are never sent to Zinn Digital®. The "Save and test" button sends one short test request to the provider.
 
 * OpenAI: https://api.openai.com/v1 (terms: https://openai.com/policies/services-agreement/, privacy policy: https://openai.com/policies/privacy-policy/)
@@ -161,10 +163,7 @@ Adobe Fonts (Pro, off unless you connect it). If you enter an Adobe Fonts kit id
 
 YouTube and Vimeo videos in the video playlist and video gallery blocks (Pro). A page shows each video as a poster image stored on your own site and a play button; nothing is requested from YouTube or Vimeo until a visitor presses play. Then that one video's player is loaded from YouTube's privacy-enhanced domain `https://www.youtube-nocookie.com`, or from `https://player.vimeo.com` with "do not track" set, sending what any embedded video sends (the visitor's IP address and browser details, and the video's ID). The poster images are fetched once, when an author saves a post that uses these blocks (not when a page is viewed): from `https://i.ytimg.com` for YouTube, and for Vimeo the thumbnail address is read from `https://vimeo.com/api/oembed.json` and the image downloaded from `https://i.vimeocdn.com`. Those requests carry only the video's ID. A video given a poster from the media library is never fetched.
 
-* YouTube terms: https://www.youtube.com/t/terms
-* YouTube (Google) privacy policy: https://policies.google.com/privacy
-* Vimeo terms: https://vimeo.com/terms
-* Vimeo privacy policy: https://vimeo.com/privacy
+Terms and privacy policies: as for background videos above.
 
 Newsletter signups (Pro, only if you set one up). A Newsletter signup block, or a newsletter form made with an older version, sends the email address a visitor types into it — and nothing else about them — from your server to the service you chose for that form, only when the visitor ticks the consent box and presses the button: Mailchimp (`https://<data centre>.api.mailchimp.com/3.0/`, with the API key you saved) or AWeber (`https://www.aweber.com/scripts/addlead.pl`). MailPoet runs inside your own site and sends nothing elsewhere.
 
@@ -198,6 +197,9 @@ From a copy in your uploads folder, written when the plugin is activated, update
 Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs/v1/mcp` (WordPress 6.9 or later): pages, sections, every block, block-level edits, kits and site design, with the same permission checks as the screens. Pro adds bulk page building and AI page writing with your own AI key. Create an application password under Users, Profile, then see Settings, AI agents (MCP). REST: `/wp-json/wp-abilities/v1/abilities`.
 
 == Changelog ==
+
+= 6.34.13 =
+* WordPress.org readme: External services now lists the AI-app sign-in (MCP client metadata) request and is shorter; the changelog no longer names Pro-only abilities.
 
 = 6.34.12 =
 * Security-scan annotation on the AI agents (MCP) sign-in screen (no behaviour change): every value on its Allow button is escaped.
@@ -314,7 +316,7 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 * AI agents (MCP): when the site refuses an action without a written reason, the AI app now gets a readable one (the error, or the HTTP status) instead of "Failed to execute tool".
 
 = 6.25.0 =
-* Pro: AI assistants (MCP) can list motion settings and animate any block on a page (pbs/get-motion-options, pbs/set-block-motion); the Forms screen links the marketing guides.
+* Pro: AI assistants (MCP) can list motion settings and animate any block on a page; the Forms screen links the marketing guides.
 
 = 6.24.0 =
 * AI agents (MCP) and REST: 115 abilities and the site's own MCP server — pages, sections, every block, block-level edits, kits, design, library, workflow and migration; in Pro, forms, popups, A/B tests, tracking, the cookie banner, bulk page building and AI page writing. On by default for signed-in users with the right permissions; switch in Settings.
