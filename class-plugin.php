@@ -4,7 +4,7 @@
  * Plugin Name:       Page Builder Sandwich
  * Plugin URI:        https://zinndigital.com/wordpress-plugins/page-builder-sandwich
  * Description:       Build pages from 48 blocks, section by section, in the block editor or Sandwich Studio, with clean front-end HTML and no builder wrappers.
- * Version:           6.34.11
+ * Version:           6.34.12
  * Requires at least: 6.8
  * Requires PHP:      8.2
  * Author:            Neil Lock — CEO, Zinn Digital® Ltd
@@ -35,7 +35,7 @@ if ( function_exists( 'pbsw_fs' ) ) {
     pbsw_fs()->set_basename( false, __FILE__ );
     return;
 }
-define( 'PBSW_VERSION', '6.34.11' );
+define( 'PBSW_VERSION', '6.34.12' );
 define( 'PBSW_FILE', __FILE__ );
 define( 'PBSW_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PBSW_URL', plugin_dir_url( __FILE__ ) );
