@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.27
+Stable tag: 6.36.28
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.36.28 =
+* Rebuild only: the package no longer carries development files
+
 = 6.36.27 =
 * Fix: content made with versions 4 and 5 keeps its exact look after the update, on single posts and on the pages that list them.
 
@@ -222,12 +225,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 * Fix: front-end scripts and stylesheets keep the same address across updates (only a version number after it changes), and a file a previous version used is kept for one more release, so a page a cache saved before an update never points at a missing script. This stops an update from looking like broken pages to update checkers, and keeps the mobile menu working on cached pages.
 * Fix: after an update made without opening wp-admin (WP-CLI, a host's updater), the front-end files are published on the first page view, instead of loading from the plugin folder until someone visits the dashboard.
 * Fix: sites whose cached pages still pointed at the navigation menu and site header files 6.36.22 replaced get those files back, and on every update that changes the front-end files the page caches the plugin can reach are emptied (WP Rocket, LiteSpeed Cache, W3 Total Cache, WP Super Cache, SiteGround Optimizer, the Cloudflare plugin, Zinn® Cache). Hosts can hook `pbs_assets_changed` to purge a CDN.
-
-= 6.36.22 =
-* New: the Navigation Menu block is now free, with a fully adjustable mobile menu: fold it on phones, phones and tablets, below any width you choose, always or never; open it as a side panel from either side, full screen, or a dropdown under the button; pick the Menu button's icon, words and look; close it when a link is tapped; show submenus closed or all open; and preview it right in the editor.
-* New: submenu fade or slide animation, a short close delay for hover menus, an optional "Skip to content" link, and colours, spacing, corners and shadows for links, submenus, the mobile menu and the Menu button in the Styles tab (theme colours included).
-* New (Pro): mega menus as wide as their content, the menu bar, the header or any width, lined up with the item's start, centre or end, and on phones the panel, the item's own links, or nothing; menu item icons, badges, descriptions, and items shown only on phones or only on wider screens.
-* New (Pro): the site header can shrink once the page scrolls and hide while visitors scroll down (back as soon as they scroll up), with its own colours once scrolled, and comes in one-row, top-bar and centred-logo layouts.
-* Fix: on block themes, Appearance › Menus is available again so the Navigation Menu block has menus to show.
 
 The full history of every release is in changelog.txt, in the plugin's folder.
