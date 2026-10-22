@@ -6,7 +6,13 @@
  */
 import { store, getContext, getElement } from '@wordpress/interactivity';
 
-store( '__PREFIX__', {
+// The class prefix: written into the copy published under uploads, or read from this
+// module's own URL when it is served from the plugin folder (uploads not writable).
+const PFX = '__PREFIX__'.startsWith( '__' )
+	? new URL( import.meta.url ).searchParams.get( 'pfx' ) || ''
+	: '__PREFIX__';
+
+store( PFX, {
 	actions: {
 		dialogOpen() {
 			const dialog = document.getElementById( getContext().dialogId );

@@ -1,0 +1,144 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "pbs/nav-menu",
+    "title": "Navigation menu",
+    "category": "pbs-site",
+    "icon": "menu",
+    "description": "A WordPress menu with dropdowns and a mobile menu: a side drawer, a full-screen menu or a dropdown. Mega menus with Pro.",
+    "keywords": [
+        "navigation",
+        "menu",
+        "mega menu",
+        "dropdown",
+        "mobile menu"
+    ],
+    "textdomain": "page-builder-sandwich",
+    "attributes": {
+        "menuId": {
+            "type": "number",
+            "default": 0
+        },
+        "orientation": {
+            "type": "string",
+            "default": "horizontal",
+            "enum": [
+                "horizontal",
+                "vertical"
+            ]
+        },
+        "collapse": {
+            "type": "string",
+            "default": "mobile",
+            "enum": [
+                "mobile",
+                "tablet",
+                "always",
+                "never",
+                "custom"
+            ]
+        },
+        "openOn": {
+            "type": "string",
+            "default": "click",
+            "enum": [
+                "click",
+                "hover"
+            ]
+        },
+        "label": {
+            "type": "string",
+            "default": "",
+            "role": "content"
+        },
+        "breakpoint": {
+            "type": "number",
+            "default": 900
+        },
+        "mobileStyle": {
+            "type": "string",
+            "default": "drawer",
+            "enum": [
+                "drawer",
+                "fullscreen",
+                "dropdown"
+            ]
+        },
+        "drawerSide": {
+            "type": "string",
+            "default": "end",
+            "enum": [
+                "end",
+                "start"
+            ]
+        },
+        "toggleIcon": {
+            "type": "string",
+            "default": "menu",
+            "enum": [
+                "menu",
+                "menu-alt",
+                "grid",
+                "none"
+            ]
+        },
+        "toggleLabel": {
+            "type": "string",
+            "default": "",
+            "role": "content"
+        },
+        "toggleShowLabel": {
+            "type": "boolean",
+            "default": true
+        },
+        "toggleStyle": {
+            "type": "string",
+            "default": "outline",
+            "enum": [
+                "outline",
+                "solid",
+                "plain"
+            ]
+        },
+        "closeOnLink": {
+            "type": "boolean",
+            "default": true
+        },
+        "mobileSubmenus": {
+            "type": "string",
+            "default": "collapsed",
+            "enum": [
+                "collapsed",
+                "expanded"
+            ]
+        },
+        "closeDelay": {
+            "type": "number",
+            "default": 150
+        },
+        "animation": {
+            "type": "string",
+            "default": "fade",
+            "enum": [
+                "none",
+                "fade",
+                "slide"
+            ]
+        },
+        "skipLink": {
+            "type": "boolean",
+            "default": false
+        },
+        "skipTarget": {
+            "type": "string",
+            "default": "main"
+        }
+    },
+    "supports": {
+        "className": false,
+        "customClassName": false,
+        "html": false,
+        "interactivity": true
+    },
+    "editorScript": "pbsw-blocks-editor"
+}

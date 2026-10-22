@@ -87,6 +87,22 @@ final class Props {
 		'opacity'         => 'opacity',
 		'transition'      => 'transition',
 		'cursor'          => 'cursor',
+		'containerType'   => 'container-type',
+		// Menu (pbs/nav-menu, NAV1): custom properties its stylesheet reads.
+		'navHover'        => 'nav-hover',
+		'navActive'       => 'nav-active',
+		'navGap'          => 'nav-gap',
+		'navPad'          => 'nav-pad',
+		'navSubBg'        => 'nav-sub-bg',
+		'navSubColor'     => 'nav-sub-color',
+		'navSubRadius'    => 'nav-sub-radius',
+		'navSubShadow'    => 'nav-sub-shadow',
+		'navDrawerBg'     => 'nav-drawer-bg',
+		'navDrawerColor'  => 'nav-drawer-color',
+		'navBackdrop'     => 'nav-backdrop',
+		'navDrawerWidth'  => 'nav-drawer-width',
+		'navToggle'       => 'nav-toggle',
+		'navToggleBg'     => 'nav-toggle-bg',
 	);
 
 	/**

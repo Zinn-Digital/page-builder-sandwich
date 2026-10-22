@@ -11,6 +11,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once __DIR__ . '/class-icons.php';
-
 \ZinnDigital\PBS\Design\Icons\Icons::register();

@@ -16,8 +16,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once __DIR__ . '/class-site-data.php';
-
 /**
  * One public static `render_<slug>()` per block of the group (Registry::callback()). Every
  * callback REBUILDS the live HTML from the attributes, prints classes only through
@@ -39,6 +37,19 @@ final class Site {
 	}
 
 	/**
+	 * `pbs/nav-menu` (pbs-bp4; free since 6.36.22): a WordPress menu with dropdowns and a mobile
+	 * menu. Site\Nav builds it.
+	 *
+	 * @param array<string, mixed> $attributes Attributes.
+	 * @param string               $content    Saved content (its mega menu panels).
+	 * @param \WP_Block|null       $block      Block.
+	 * @return string
+	 */
+	public static function render_nav_menu( array $attributes, string $content = '', $block = null ): string {
+		return Site\Nav::render( $attributes, $block );
+	}
+
+	/**
 	 * `pbs/reading-progress`: a bar that fills as the visitor scrolls through the page.
 	 *
 	 * Decorative (`aria-hidden`): it repeats what the browser's scrollbar already tells every
@@ -55,7 +66,6 @@ final class Site {
 			. Markup::interactive( 'reading-progress', array() ) . ' data-wp-init="callbacks.readingInit">'
 			. '<div class="' . esc_attr( Frontend::cls( 'reading-progress__bar' ) ) . '"></div></div>';
 	}
-
 
 	/**
 	 * The data source (tests replace it).
@@ -99,6 +109,7 @@ final class Site {
 	public static function register(): void {
 		add_action( 'template_redirect', array( self::class, 'no_store' ), 5 );
 		add_action( 'rest_api_init', array( self::class, 'routes' ) );
+		Site\Nav::register();
 	}
 
 	/**

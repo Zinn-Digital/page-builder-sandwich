@@ -74,6 +74,32 @@ export function tidy( pbs, makeId ) {
 }
 
 /**
+ * The at-rule preset being edited, if it is still one of the presets in effect ('' otherwise —
+ * a preset removed from the `pbsw_style_at_rules` filter is never edited by accident).
+ *
+ * @param {string} id Selected preset id.
+ * @return {string} Id or ''.
+ */
+export function activeAtRule( id ) {
+	return id && ( config().atRules || [] ).some( ( p ) => p.id === id )
+		? id
+		: '';
+}
+
+/**
+ * Where an unset value comes from while a condition is edited: the desktop value (the condition
+ * adds to what applies at every width).
+ *
+ * @param {Object} s   `pbs.s`.
+ * @param {string} key Prop key.
+ * @return {{from:string,value:unknown}|null} Inherited value.
+ */
+export function atRuleInherited( s, key ) {
+	const value = s?.base?.[ key ];
+	return value === undefined ? null : { from: 'base', value };
+}
+
+/**
  * Ids already used in the post.
  *
  * @param {Array<Object>} blocks Editor blocks.
@@ -96,11 +122,12 @@ export function takenIds( blocks ) {
  * @return {Object} API.
  */
 export function useDesign( clientId ) {
-	const { pbs, bp, hover } = useSelect(
+	const { pbs, bp, hover, atRule } = useSelect(
 		( select ) => ( {
 			pbs: select( blockEditorStore ).getBlockAttributes( clientId )?.pbs,
 			bp: select( STORE ).getBreakpoint(),
 			hover: select( STORE ).isHover(),
+			atRule: activeAtRule( select( STORE ).getAtRule() ),
 		} ),
 		[ clientId ]
 	);
@@ -108,7 +135,7 @@ export function useDesign( clientId ) {
 	const registrySelect = useSelect( ( select ) => select, [] );
 	const list = config().breakpoints;
 	const state = hover ? ':hover' : '';
-	const stateKey = bp + state;
+	const stateKey = atRule ? `@${ atRule }` : bp + state;
 
 	const makeId = useCallback(
 		() =>
@@ -126,8 +153,12 @@ export function useDesign( clientId ) {
 		bp,
 		hover,
 		stateKey,
+		atRule,
 		get: ( key ) => pbs?.s?.[ stateKey ]?.[ key ],
-		inherited: ( key ) => inherited( pbs?.s, key, bp, list, state ),
+		inherited: ( key ) =>
+			atRule
+				? atRuleInherited( pbs?.s, key )
+				: inherited( pbs?.s, key, bp, list, state ),
 		set: ( key, value ) =>
 			write(
 				withValue(

@@ -11,19 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once __DIR__ . '/class-values.php';
-require_once __DIR__ . '/class-prop.php';
 foreach ( array( 'choice', 'length', 'color', 'sides', 'template', 'number', 'span', 'shadow' ) as $pbsw_kind ) {
 	require_once __DIR__ . '/kinds/class-' . $pbsw_kind . '-prop.php';
 }
 unset( $pbsw_kind );
-require_once __DIR__ . '/class-props.php';
 spl_autoload_register( array( \ZinnDigital\PBS\Design\Props::class, 'autoload' ) );
-require_once __DIR__ . '/class-breakpoints.php';
-require_once __DIR__ . '/class-compiler.php';
-require_once __DIR__ . '/class-styles.php';
-require_once __DIR__ . '/class-rest.php';
-require_once __DIR__ . '/class-editor.php';
 
 \ZinnDigital\PBS\Design\Styles::register();
 \ZinnDigital\PBS\Design\Rest::register();

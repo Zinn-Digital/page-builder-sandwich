@@ -289,12 +289,12 @@ final class Studio {
 
 		wp_add_inline_script(
 			'wp-blocks',
-			sprintf( 'wp.blocks.setCategories( %s );', wp_json_encode( get_block_categories( $post ), JSON_HEX_TAG | JSON_UNESCAPED_SLASHES ) ),
+			sprintf( 'wp.blocks.setCategories( %s );', wp_json_encode( get_block_categories( $post ), JSON_HEX_TAG ) ),
 			'after'
 		);
 		wp_add_inline_script(
 			'wp-blocks',
-			'wp.blocks.unstable__bootstrapServerSideBlockDefinitions(' . wp_json_encode( get_block_editor_server_block_settings(), JSON_HEX_TAG | JSON_UNESCAPED_SLASHES ) . ');'
+			'wp.blocks.unstable__bootstrapServerSideBlockDefinitions(' . wp_json_encode( get_block_editor_server_block_settings(), JSON_HEX_TAG ) . ');'
 		);
 		if ( function_exists( 'get_all_registered_block_bindings_sources' ) ) {
 			$sources = array();
@@ -308,7 +308,7 @@ final class Studio {
 			if ( $sources ) {
 				wp_add_inline_script(
 					'wp-blocks',
-					sprintf( 'for ( const source of %s ) { wp.blocks.registerBlockBindingsSource( source ); }', wp_json_encode( $sources, JSON_HEX_TAG | JSON_UNESCAPED_SLASHES ) )
+					sprintf( 'for ( const source of %s ) { wp.blocks.registerBlockBindingsSource( source ); }', wp_json_encode( $sources, JSON_HEX_TAG ) )
 				);
 			}
 		}
@@ -375,7 +375,7 @@ final class Studio {
 
 		wp_add_inline_script(
 			self::HANDLE,
-			'window.pbswStudio = ' . wp_json_encode( $boot, JSON_HEX_TAG | JSON_UNESCAPED_SLASHES | JSON_PARTIAL_OUTPUT_ON_ERROR ) . ';',
+			'window.pbswStudio = ' . wp_json_encode( $boot, JSON_HEX_TAG ) . ';',
 			'before'
 		);
 	}
@@ -533,7 +533,7 @@ final class Studio {
 		wp_enqueue_script( self::BUTTON_HANDLE );
 		wp_add_inline_script(
 			self::BUTTON_HANDLE,
-			'window.pbswStudioButton = ' . wp_json_encode( array( 'studioUrl' => admin_url( 'admin.php?page=' . self::PAGE ) ), JSON_HEX_TAG | JSON_UNESCAPED_SLASHES ) . ';',
+			'window.pbswStudioButton = ' . wp_json_encode( array( 'studioUrl' => admin_url( 'admin.php?page=' . self::PAGE ) ), JSON_HEX_TAG ) . ';',
 			'before'
 		);
 	}

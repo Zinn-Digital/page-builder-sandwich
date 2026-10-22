@@ -91,7 +91,7 @@ final class Editor {
 		}
 		wp_add_inline_script(
 			self::HANDLE,
-			'window.pbswDesign = ' . wp_json_encode( self::data(), JSON_HEX_TAG | JSON_UNESCAPED_SLASHES ) . ';',
+			'window.pbswDesign = ' . wp_json_encode( self::data(), JSON_HEX_TAG ) . ';',
 			'before'
 		);
 	}
@@ -108,8 +108,9 @@ final class Editor {
 			'prefix'        => Settings::prefix(),
 			'breakpoints'   => Breakpoints::media_list(),
 			'customAllowed' => Breakpoints::custom_allowed(),
+			'atRules'       => At_Rules::all(),
 			'tokens'        => is_array( $tokens ) ? $tokens : array(),
-			'elementCss'    => (bool) apply_filters( 'pbsw_design_element_css', false ) && current_user_can( 'unfiltered_html' ),
+			'elementCss'    => Compiler::element_css_enabled() && current_user_can( 'unfiltered_html' ),
 			'settingsUrl'   => admin_url( 'admin.php?page=page-builder-sandwich' ),
 		);
 	}

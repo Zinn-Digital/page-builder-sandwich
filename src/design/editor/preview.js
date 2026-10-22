@@ -10,6 +10,7 @@ import { useSelect } from '@wordpress/data';
 import { STORE, config } from '../store';
 import { cascade } from '../breakpoints';
 import { previewCss } from '../compiler';
+import { activeAtRule } from './use-design';
 
 /**
  * The documents the block canvas may live in.
@@ -62,12 +63,13 @@ export function applyPreview( clientId, css ) {
  * The preview CSS for a block (hidden-here blocks are dimmed, not removed, so they stay
  * selectable).
  *
- * @param {Object}  block {name, attributes}.
- * @param {string}  bp    Breakpoint being previewed.
- * @param {boolean} hover Show hover values as if hovered.
+ * @param {Object}  block  {name, attributes}.
+ * @param {string}  bp     Breakpoint being previewed.
+ * @param {boolean} hover  Show hover values as if hovered.
+ * @param {string}  atRule At-rule preset being edited ('' for none).
  * @return {string} CSS.
  */
-export function blockPreviewCss( block, bp, hover ) {
+export function blockPreviewCss( block, bp, hover, atRule = '' ) {
 	const { prefix, breakpoints } = config();
 	const pbs = block.attributes?.pbs;
 	if ( ! pbs?.id ) {
@@ -77,7 +79,8 @@ export function blockPreviewCss( block, bp, hover ) {
 		{ blockName: block.name, attrs: block.attributes },
 		prefix,
 		cascade( bp, breakpoints ),
-		hover
+		hover,
+		atRule
 	);
 	if ( Array.isArray( pbs.hide ) && pbs.hide.includes( bp ) ) {
 		css += `.${ prefix }-s-${ pbs.id }{opacity:.35!important;outline:1px dashed currentColor}`;
@@ -101,17 +104,19 @@ export default function DesignPreview( {
 	attributes,
 	isSelected,
 } ) {
-	const { bp, hover } = useSelect(
+	const { bp, hover, atRule } = useSelect(
 		( select ) => ( {
 			bp: select( STORE ).getBreakpoint(),
 			hover: select( STORE ).isHover(),
+			atRule: activeAtRule( select( STORE ).getAtRule() ),
 		} ),
 		[]
 	);
 	const css = blockPreviewCss(
 		{ name, attributes },
 		bp,
-		hover && isSelected
+		hover && isSelected,
+		isSelected ? atRule : ''
 	);
 	useEffect( () => {
 		applyPreview( clientId, css );

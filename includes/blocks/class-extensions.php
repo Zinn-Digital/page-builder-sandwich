@@ -137,6 +137,6 @@ final class Extensions {
 		if ( ! is_admin() || ! wp_style_is( 'pbsw-blocks-editor-style', 'enqueued' ) ) {
 			return;
 		}
-		wp_add_inline_style( 'pbsw-blocks-editor-style', implode( '', self::rules() ) );
+		wp_add_inline_style( 'pbsw-blocks-editor-style', \ZinnDigital\PBS\Assets::inline_css( implode( '', self::rules() ) ) );
 	}
 }

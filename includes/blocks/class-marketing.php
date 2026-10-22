@@ -246,50 +246,88 @@ final class Marketing {
 		$id      = Frontend::cls( 'ct-' . $count );
 		$caption = Kit::rich( $attributes['caption'] ?? '' );
 
-		$head = '<tr><td></td>';
+		$head_row = '<tr><td></td>';
 		foreach ( $columns as $col ) {
-			$hi    = ! empty( $col['highlight'] );
-			$head .= '<th scope="col" class="' . esc_attr( Frontend::cls( 'comparison-table__plan', $hi ? 'comparison-table__plan--highlight' : '' ) ) . '">' . Kit::rich( $col['title'] ?? '' )
+			$hi        = ! empty( $col['highlight'] );
+			$head_row .= '<th scope="col" class="' . esc_attr( Frontend::cls( 'comparison-table__plan', $hi ? 'comparison-table__plan--highlight' : '' ) ) . '">' . Kit::rich( $col['title'] ?? '' )
 				. ( $hi ? Kit::sr( esc_html__( '(recommended)', 'page-builder-sandwich' ) ) : '' ) . '</th>';
 		}
-		$head .= '</tr>';
+		$head_row .= '</tr>';
 
-		$body = '';
+		// Rows are grouped by their optional `group` label (one <tbody> per run, a heading row on
+		// top) and, with `onlyDifferences`, a row whose every cell gives the same answer is marked
+		// so the CSS-only "show only the differences" switch can hide it. A row with no group
+		// label renders exactly as before, so an existing table is unchanged.
+		$filter  = ! empty( $attributes['onlyDifferences'] );
+		$span    = count( $columns ) + 1;
+		$groups  = array();
+		$current = null;
 		foreach ( $rows as $row ) {
 			$label = Kit::rich( $row['label'] ?? '' );
 			if ( '' === $label ) {
 				continue;
 			}
-			$cells = Kit::items( $row['cells'] ?? array(), 8 );
-			$body .= '<tr><th scope="row" class="' . esc_attr( Frontend::cls( 'comparison-table__feature' ) ) . '">' . $label . '</th>';
-			foreach ( $columns as $i => $col ) {
-				$cell  = $cells[ $i ] ?? array();
-				$type  = Kit::choice( $cell['type'] ?? '', array( 'text', 'yes', 'no' ) );
-				$hi    = ! empty( $col['highlight'] ) ? 'comparison-table__cell--highlight' : '';
-				$body .= '<td class="' . esc_attr( Frontend::cls( 'comparison-table__cell', 'comparison-table__cell--' . $type, $hi ) ) . '">';
-				if ( 'yes' === $type ) {
-					$body .= Kit::icon( '', 'check' ) . Kit::sr( esc_html__( 'Included', 'page-builder-sandwich' ) );
-				} elseif ( 'no' === $type ) {
-					$body .= Kit::icon( '', 'cross' ) . Kit::sr( esc_html__( 'Not included', 'page-builder-sandwich' ) );
-				} else {
-					$body .= Kit::rich( $cell['text'] ?? '' );
-				}
-				$body .= '</td>';
+			$group = Kit::text( $row['group'] ?? '' );
+			if ( null === $current || $current['label'] !== $group ) {
+				$groups[] = array(
+					'label' => $group,
+					'rows'  => array(),
+					'same'  => true,
+				);
+				$current  = &$groups[ count( $groups ) - 1 ];
 			}
-			$body .= '</tr>';
+			$cells = Kit::items( $row['cells'] ?? array(), 8 );
+			$keys  = array();
+			$html  = '';
+			foreach ( $columns as $i => $col ) {
+				$cell   = $cells[ $i ] ?? array();
+				$type   = Kit::choice( $cell['type'] ?? '', array( 'text', 'yes', 'no' ) );
+				$keys[] = $type . ':' . ( 'text' === $type ? Kit::rich( $cell['text'] ?? '' ) : '' );
+				$hi     = ! empty( $col['highlight'] ) ? 'comparison-table__cell--highlight' : '';
+				$html  .= '<td class="' . esc_attr( Frontend::cls( 'comparison-table__cell', 'comparison-table__cell--' . $type, $hi ) ) . '">';
+				if ( 'yes' === $type ) {
+					$html .= Kit::icon( '', 'check' ) . Kit::sr( esc_html__( 'Included', 'page-builder-sandwich' ) );
+				} elseif ( 'no' === $type ) {
+					$html .= Kit::icon( '', 'cross' ) . Kit::sr( esc_html__( 'Not included', 'page-builder-sandwich' ) );
+				} else {
+					$html .= Kit::rich( $cell['text'] ?? '' );
+				}
+				$html .= '</td>';
+			}
+			$same              = count( array_unique( $keys ) ) <= 1;
+			$current['same']   = $current['same'] && $same;
+			$current['rows'][] = '<tr' . ( $filter && $same ? ' class="' . esc_attr( Frontend::cls( 'comparison-table__row--same' ) ) . '"' : '' ) . '>'
+				. '<th scope="row" class="' . esc_attr( Frontend::cls( 'comparison-table__feature' ) ) . '">' . $label . '</th>' . $html . '</tr>';
 		}
-		if ( '' === $body ) {
+		unset( $current );
+		if ( array() === $groups ) {
 			return '';
+		}
+
+		$body = '';
+		foreach ( $groups as $g ) {
+			$head = '';
+			if ( '' !== $g['label'] ) {
+				$head = '<tr class="' . esc_attr( Frontend::cls( 'comparison-table__group', $g['same'] ? 'comparison-table__group--same' : '' ) ) . '">'
+					. '<th scope="colgroup" colspan="' . (int) $span . '"><span class="' . esc_attr( Frontend::cls( 'comparison-table__group-label' ) ) . '">' . $g['label'] . '</span></th></tr>';
+			}
+			$body .= '<tbody>' . $head . implode( '', $g['rows'] ) . '</tbody>';
 		}
 
 		// A scrolling region must be reachable by keyboard and named (WCAG 2.1.1, axe
 		// scrollable-region-focusable): tabindex=0 and labelled by the caption.
-		$name = '' !== $caption ? ' aria-labelledby="' . esc_attr( $id ) . '"' : ' aria-label="' . esc_attr__( 'Comparison table', 'page-builder-sandwich' ) . '"';
+		$name   = '' !== $caption ? ' aria-labelledby="' . esc_attr( $id ) . '"' : ' aria-label="' . esc_attr__( 'Comparison table', 'page-builder-sandwich' ) . '"';
+		$sticky = ! empty( $attributes['stickyHeader'] ) ? 'comparison-table--sticky' : '';
+		$switch = '';
+		if ( $filter ) {
+			$switch = '<label class="' . esc_attr( Frontend::cls( 'comparison-table-filter' ) ) . '"><input type="checkbox"> <span>'
+				. esc_html__( 'Show only the differences', 'page-builder-sandwich' ) . '</span></label>';
+		}
 
-		return '<div class="' . esc_attr( Frontend::cls( 'comparison-table' ) ) . '" role="region"' . $name . ' tabindex="0">'
+		return $switch . '<div class="' . esc_attr( Frontend::cls( 'comparison-table', $sticky ) ) . '" role="region"' . $name . ' tabindex="0">'
 			. '<table class="' . esc_attr( Frontend::cls( 'comparison-table__table' ) ) . '">'
 			. ( '' !== $caption ? '<caption id="' . esc_attr( $id ) . '" class="' . esc_attr( Frontend::cls( 'comparison-table__caption' ) ) . '">' . $caption . '</caption>' : '' )
-			. '<thead>' . $head . '</thead><tbody>' . $body . '</tbody></table></div>';
+			. '<thead>' . $head_row . '</thead>' . $body . '</table></div>';
 	}
 
 	/** Contact channels: type → SVG drawing (24×24, stroke). */

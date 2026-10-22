@@ -151,6 +151,67 @@ final class Cache_Purge {
 	}
 
 	/**
+	 * The published front-end files changed (an update): empty every page cache within reach,
+	 * then announce it.
+	 *
+	 * ⛔ NAV1 / 6.36.23: 6.36.22 renamed the navigation menu's and site header's scripts and
+	 * deleted the old files, so a page a cache had saved went on naming them and its menu did
+	 * nothing — on sites nobody can purge from outside (a licensing-service auto-update). Every
+	 * publish that writes or deletes a file now lands here (Assets::publish()). Each cache is
+	 * asked through its own public API, only when it is installed; a failing one never breaks the
+	 * update that called it.
+	 *
+	 * @return array<int, string> The caches asked.
+	 */
+	public static function assets_changed(): array {
+		try {
+			$purged = self::purge_all(); // LiteSpeed, WP Rocket, W3 Total Cache, Zinn Cache.
+		} catch ( \Throwable $e ) {
+			$purged = array();
+		}
+		$ask = static function ( string $name, callable $purge ) use ( &$purged ): void {
+			try {
+				$purge();
+				$purged[] = $name;
+			} catch ( \Throwable $e ) {
+				unset( $e ); // A cache plugin's failure must never break the update that called it.
+			}
+		};
+		if ( function_exists( 'wp_cache_clear_cache' ) ) {
+			$ask( 'wp-super-cache', static fn() => wp_cache_clear_cache() );
+		}
+		if ( function_exists( 'sg_cachepress_purge_cache' ) ) {
+			$ask( 'sg-optimizer', static fn() => sg_cachepress_purge_cache() );
+		}
+		if ( class_exists( '\CF\WordPress\Hooks' ) && method_exists( '\CF\WordPress\Hooks', 'purgeCacheEverything' ) ) {
+			$ask( 'cloudflare', static fn() => ( new \CF\WordPress\Hooks() )->purgeCacheEverything() );
+		}
+		/**
+		 * Filters the extra purgers run when the published files change: name => callable. A host
+		 * adds its own (a CDN, a proxy); one that throws is skipped and not reported as purged.
+		 *
+		 * @param array<string, callable> $purgers Purgers.
+		 */
+		foreach ( (array) apply_filters( 'pbsw_cache_purgers', array() ) as $name => $purge ) {
+			if ( is_string( $name ) && is_callable( $purge ) ) {
+				$ask( $name, $purge );
+			}
+		}
+		if ( ! in_array( 'zinn-cache', $purged, true ) && has_action( 'zinn_cache_purge_all' ) ) {
+			$ask( 'zinn-cache', static fn() => do_action( 'zinn_cache_purge_all' ) ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Zinn Cache's own API.
+		}
+		/**
+		 * Fires when PBS's published front-end files changed and the page caches it can reach
+		 * were emptied: hook it to purge what PBS cannot reach (a CDN, a proxy, a host's cache).
+		 *
+		 * @param array<int, string> $purged The caches already asked.
+		 */
+		do_action( 'pbs_assets_changed', $purged ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- the public name of the legacy pbs_ hook family (pbs_enqueue_scripts).
+
+		return $purged;
+	}
+
+	/**
 	 * Forget per-request state (tests).
 	 *
 	 * @return void

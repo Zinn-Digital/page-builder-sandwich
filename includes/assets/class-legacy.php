@@ -31,16 +31,30 @@ if ( ! defined( 'ABSPATH' ) ) {
  *   and the post's own `pbs_style` rules are enqueued through Assets' neutral path (an empty
  *   hidden element keeps the place legacy's inline style element held, self::style_element()).
  *
- * ⛔ PERFORMANCE: only a singular request for a post that still carries legacy markers pays for
- * any of it. The test is one regex over the post's raw content, which WordPress already holds
- * in memory, plus one meta read from the already-primed meta cache — memoised per post id for
- * the request. A page with no legacy content gets neither the stylesheet, the wrapper nor a
- * single rewritten byte.
+ * A post with NO legacy markup that was last saved while 4.x/5.x was active (Legacy_Era) gets the
+ * neutral wrapper and only the plain-content subset of the stylesheet (assets/legacy-base.css),
+ * because 4.x/5.x wrapped every post and loaded its stylesheet on every page (COMPAT1). A post
+ * saved under 6.x gets nothing.
+ *
+ * ⛔ PERFORMANCE: only a request that renders a legacy post pays for any of it — the singular
+ * post, or the posts of an archive's main query (4.x/5.x wrapped those too). The test is one
+ * regex over the post's raw content, which WordPress already holds in memory, one meta read from
+ * the already-primed meta cache and one string comparison with an autoloaded option — memoised
+ * per post id for the request. A page with no legacy content gets neither a stylesheet, the
+ * wrapper nor a single rewritten byte.
  */
 final class Legacy {
 
 	/** Assets source key. */
 	public const CSS_KEY = 'legacy.css';
+
+	/** Assets source key of the plain-content subset (legacy-era posts with no legacy markup). */
+	public const BASE_CSS_KEY = 'legacy-base.css';
+
+	/** Levels of post_level(): not legacy, saved under 4.x/5.x with no legacy markup, legacy markup. */
+	public const LEVEL_NONE = 0;
+	public const LEVEL_ERA  = 1;
+	public const LEVEL_FULL = 2;
 
 	/** The legacy per-post pseudo-element stylesheet meta (kept by the converter for undo). */
 	public const STYLE_META = 'pbs_style';
@@ -63,11 +77,48 @@ final class Legacy {
 	private static array $cache = array();
 
 	/**
+	 * Memoised post levels for this request.
+	 *
+	 * @var array<int, int>
+	 */
+	private static array $levels = array();
+
+	/**
+	 * Posts whose stylesheet (and own rules) this request already enqueued.
+	 *
+	 * @var array<int, true>
+	 */
+	private static array $enqueued = array();
+
+	/**
+	 * Whether this request enqueued the full stylesheet (which holds every rule of the subset).
+	 *
+	 * @var bool
+	 */
+	private static bool $full = false;
+
+	/**
+	 * The priority wpautop was taken off for one legacy-era post (legacy_autop()), or 0.
+	 *
+	 * @var int
+	 */
+	private static int $autop_moved = 0;
+
+	/**
+	 * Whether 4.x/5.x would have skipped wpautop on the NEXT content filtered (legacy_autop()).
+	 *
+	 * @var bool
+	 */
+	private static bool $autop_skip_next = false;
+
+	/**
 	 * Hook the render filter and the enqueue.
 	 *
 	 * @return void
 	 */
 	public static function register(): void {
+		add_filter( 'the_content', array( self::class, 'legacy_autop' ), 8 );
+		add_filter( 'the_content', array( self::class, 'mark_content' ), 9 );
 		add_filter( 'the_content', array( self::class, 'filter_content' ), 999 );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue_for_request' ) );
 		add_filter( 'body_class', array( self::class, 'body_class' ) );
@@ -81,17 +132,14 @@ final class Legacy {
 	 * @return mixed
 	 */
 	public static function body_class( $classes ) {
-		if ( ! is_array( $classes ) || ! is_singular() ) {
+		if ( ! is_array( $classes ) || self::LEVEL_NONE === self::request_level() ) {
 			return $classes;
 		}
-		$post_id = (int) get_queried_object_id();
-		if ( $post_id < 1 || ! self::post_needs_legacy( $post_id ) ) {
-			return $classes;
-		}
-		$prefix = Settings::prefix();
+		$prefix  = Settings::prefix();
+		$post_id = is_singular() ? (int) get_queried_object_id() : 0;
 		// The STORED key: Core\Templates maps the legacy key to the neutral one on read, which hid
 		// it from this check and dropped legacy's blank-template body rules (min-height, spacing).
-		if ( str_ends_with( Templates::stored( $post_id ), '/template-blank.php' ) ) {
+		if ( $post_id > 0 && str_ends_with( Templates::stored( $post_id ), '/template-blank.php' ) ) {
 			$classes[] = $prefix . '-l-template-blank';
 		}
 		// Legacy PREMIUM's responsive settings (class-admin-settings-responsive.php, loaded only
@@ -179,13 +227,97 @@ final class Legacy {
 	}
 
 	/**
-	 * `wp_enqueue_scripts`: the singular post being viewed, and nothing else.
+	 * What a post needs: LEVEL_FULL (legacy markup or pseudo styles), LEVEL_ERA (last saved while
+	 * 4.x/5.x was active, no legacy markup) or LEVEL_NONE. Memoised for the request.
+	 *
+	 * @param int $post_id Post id.
+	 * @return int
+	 */
+	public static function post_level( int $post_id ): int {
+		if ( isset( self::$levels[ $post_id ] ) ) {
+			return self::$levels[ $post_id ];
+		}
+		$level = self::LEVEL_NONE;
+		if ( self::post_needs_legacy( $post_id ) ) {
+			$level = self::LEVEL_FULL;
+		} else {
+			$post = get_post( $post_id );
+			if ( $post instanceof \WP_Post && Legacy_Era::predates( $post, Legacy_Era::cutoff() ) ) {
+				$level = self::LEVEL_ERA;
+			}
+		}
+		self::$levels[ $post_id ] = $level;
+		return $level;
+	}
+
+	/**
+	 * The posts this front-end request renders as content: the singular post, or the posts of an
+	 * archive's (home, category, search, …) main query. Already in memory; no query.
+	 *
+	 * @return array<int, int>
+	 */
+	public static function request_posts(): array {
+		if ( is_singular() ) {
+			$id = (int) get_queried_object_id();
+			return $id > 0 ? array( $id ) : array();
+		}
+		global $wp_query;
+		if ( ! $wp_query instanceof \WP_Query || ! is_array( $wp_query->posts ) ) {
+			return array();
+		}
+		$ids = array();
+		foreach ( $wp_query->posts as $post ) {
+			if ( $post instanceof \WP_Post ) {
+				$ids[] = (int) $post->ID;
+			}
+		}
+		return $ids;
+	}
+
+	/**
+	 * The highest level among the posts this request renders.
+	 *
+	 * @return int
+	 */
+	public static function request_level(): int {
+		$level = self::LEVEL_NONE;
+		foreach ( self::request_posts() as $id ) {
+			$level = max( $level, self::post_level( $id ) );
+			if ( self::LEVEL_FULL === $level ) {
+				break;
+			}
+		}
+		return $level;
+	}
+
+	/**
+	 * `wp_enqueue_scripts`: the posts this request renders, and nothing else.
 	 *
 	 * @return void
 	 */
 	public static function enqueue_for_request(): void {
-		if ( is_singular() ) {
-			self::maybe_enqueue_for_post( (int) get_queried_object_id() );
+		foreach ( self::request_posts() as $id ) {
+			self::enqueue_for_level( $id, self::post_level( $id ) );
+		}
+	}
+
+	/**
+	 * Enqueue what a post of this level needs, once per post: the full stylesheet and the post's
+	 * own rules, or the plain-content subset (unless the full stylesheet is already on the page).
+	 *
+	 * @param int $post_id Post id.
+	 * @param int $level   self::post_level().
+	 * @return void
+	 */
+	private static function enqueue_for_level( int $post_id, int $level ): void {
+		if ( self::LEVEL_NONE === $level || isset( self::$enqueued[ $post_id ] ) ) {
+			return;
+		}
+		self::$enqueued[ $post_id ] = true;
+		if ( self::LEVEL_FULL === $level ) {
+			self::maybe_enqueue_for_post( $post_id );
+		} elseif ( ! self::$full ) {
+			Assets::enqueue_style( self::BASE_CSS_KEY );
 		}
 	}
 
@@ -200,6 +332,7 @@ final class Legacy {
 			return false;
 		}
 		Assets::enqueue_style( self::CSS_KEY );
+		self::$full = true;
 
 		$prefix = Settings::prefix();
 		$css    = self::post_style( (string) get_post_meta( $post_id, self::STYLE_META, true ), $prefix );
@@ -208,13 +341,134 @@ final class Legacy {
 			$handle = $prefix . '-' . substr( sha1( $css ), 0, 8 );
 			wp_register_style( $handle, false, array(), PBSW_VERSION );
 			wp_enqueue_style( $handle );
-			wp_add_inline_style( $handle, $css );
+			wp_add_inline_style( $handle, Assets::inline_css( $css ) );
 		}
 		return true;
 	}
 
 	/**
-	 * `the_content`, late: rewrite legacy tokens and add the neutral main wrapper.
+	 * `the_content` at 8: block content saved under 4.x/5.x gets wpautop where 4.x/5.x ran it.
+	 *
+	 * 4.x/5.x moved wpautop to priority 8 for every post (delay_the_content_filters()), BEFORE
+	 * core's do_blocks at 9, which otherwise turns wpautop off for block content. So a block
+	 * post rendered under 4.x/5.x went through wpautop: an empty `<p></p>` at its start and
+	 * paragraph breaks inside its blocks, which its visitors saw for years (COMPAT1: site 4901's
+	 * home page sat 16px higher without them). Only a post saved before the jump (Legacy_Era) and
+	 * holding blocks — a classic post gets wpautop anyway, and a converted post was saved after —
+	 * and, the other way, a pre-jump post filtered right after one, which 4.x/5.x left without it.
+	 * Restored right after (like core's _restore_wpautop_hook()), so no other content is touched.
+	 *
+	 * @param mixed $content Content.
+	 * @return mixed
+	 */
+	public static function legacy_autop( $content ) {
+		// Core's do_blocks() took wpautop off at 4.x/5.x's priority for a block post and queued
+		// its return at the next priority, which runs only on the NEXT the_content: so under
+		// 4.x/5.x the content filtered right after a block post got no wpautop at all (measured:
+		// a classic post listed after a block post on a 4.5.8 blog).
+		$skip                  = self::$autop_skip_next;
+		self::$autop_skip_next = false;
+		$cutoff                = Legacy_Era::cutoff(); // A site that never jumped (every 6.x-native site) stops here.
+		if ( Legacy_Era::NONE === $cutoff || ! is_string( $content ) || '' === $content ) {
+			return $content;
+		}
+		$post_id = (int) get_the_ID();
+		$post    = $post_id > 0 ? get_post( $post_id ) : null;
+		if ( ! $post instanceof \WP_Post || ! Legacy_Era::predates( $post, $cutoff ) ) {
+			return $content;
+		}
+		$priority = has_filter( 'the_content', 'wpautop' );
+		if ( false === $priority || $priority <= 8 ) {
+			return $content;
+		}
+		$blocks = has_blocks( $content );
+		if ( ! $skip && ! $blocks ) {
+			return $content; // A classic post gets wpautop where it always did.
+		}
+		remove_filter( 'the_content', 'wpautop', $priority );
+		self::$autop_moved = (int) $priority;
+		add_filter( 'the_content', array( self::class, 'restore_autop' ), $priority + 1 );
+		if ( $skip ) {
+			return $content;
+		}
+		self::$autop_skip_next = true;
+		return wpautop( $content );
+	}
+
+	/**
+	 * Put wpautop back where it was, after the post legacy_autop() ran it for.
+	 *
+	 * @param mixed $content Content.
+	 * @return mixed
+	 */
+	public static function restore_autop( $content ) {
+		if ( self::$autop_moved > 0 ) {
+			remove_filter( 'the_content', array( self::class, 'restore_autop' ), self::$autop_moved + 1 );
+			add_filter( 'the_content', 'wpautop', self::$autop_moved );
+			self::$autop_moved = 0;
+		}
+		return $content;
+	}
+
+	/**
+	 * `the_content` at 9, where 4.x/5.x added its wrapper: mark the wrapper's start and end. Filters
+	 * after 9 append their own output (share buttons, author boxes, related posts) OUTSIDE the
+	 * legacy wrapper, so the wrapper rules never reached it; wrapping everything at 999 moved that
+	 * output inside (COMPAT1: 22px more space above a share box on site 152748).
+	 *
+	 * @param mixed $content Content.
+	 * @return mixed
+	 */
+	public static function mark_content( $content ) {
+		if ( ! is_string( $content ) || '' === $content ) {
+			return $content;
+		}
+		$post_id = (int) get_the_ID();
+		if ( $post_id < 1 || self::LEVEL_NONE === self::post_level( $post_id ) ) {
+			return $content;
+		}
+		[ $open, $close ] = self::marks( Settings::prefix() );
+		return $open . $content . $close;
+	}
+
+	/**
+	 * The two empty elements mark_content() puts where 4.x/5.x put its wrapper's tags.
+	 *
+	 * @param string $prefix Neutral class prefix.
+	 * @return array{0: string, 1: string}
+	 */
+	private static function marks( string $prefix ): array {
+		return array(
+			'<div class="' . esc_attr( $prefix . '-l-wrap-open' ) . '"></div>',
+			'<div class="' . esc_attr( $prefix . '-l-wrap-close' ) . '"></div>',
+		);
+	}
+
+	/**
+	 * The wrapper around the content the marks enclose, or around all of it when another filter
+	 * dropped the marks.
+	 *
+	 * @param string $content Rendered content.
+	 * @param string $prefix  Neutral class prefix.
+	 * @return string
+	 */
+	public static function wrap( string $content, string $prefix ): string {
+		[ $open, $close ] = self::marks( $prefix );
+		$tag              = '<div class="' . esc_attr( $prefix . '-l-main-wrapper' ) . '">';
+		$at               = strpos( $content, $open );
+		$end              = strrpos( $content, $close );
+		if ( false === $at ) {
+			return $tag . str_replace( $close, '', $content ) . '</div>';
+		}
+		if ( false === $end || $end < $at ) {
+			return substr( $content, 0, $at ) . $tag . str_replace( array( $open, $close ), '', substr( $content, $at ) ) . '</div>';
+		}
+		$inner = str_replace( array( $open, $close ), '', substr( $content, $at + strlen( $open ), $end - $at - strlen( $open ) ) );
+		return substr( $content, 0, $at ) . $tag . $inner . '</div>' . str_replace( array( $open, $close ), '', substr( $content, $end + strlen( $close ) ) );
+	}
+
+	/**
+	 * `the_content`, late: rewrite legacy tokens and put the neutral main wrapper where the marks are.
 	 *
 	 * @param mixed $content Rendered content.
 	 * @return mixed
@@ -224,13 +478,28 @@ final class Legacy {
 			return $content;
 		}
 		$post_id = (int) get_the_ID();
-		if ( $post_id < 1 || ! self::post_needs_legacy( $post_id ) ) {
+		$level   = $post_id > 0 ? self::post_level( $post_id ) : self::LEVEL_NONE;
+		if ( self::LEVEL_NONE === $level ) {
 			return $content;
 		}
+		// Content rendered outside the main query (a widget, related posts) still gets its rules:
+		// enqueued after the head, WordPress prints them in the footer.
+		if ( did_action( 'wp_enqueue_scripts' ) ) {
+			self::enqueue_for_level( $post_id, $level );
+		}
 		$prefix = Settings::prefix();
+		// Already wrapped: a plugin that renders the content again from inside `the_content` (an
+		// excerpt plugin on archives, measured on site 75061) would otherwise nest a second wrapper.
+		if ( ! str_contains( $content, self::marks( $prefix )[0] ) && str_contains( $content, '<div class="' . esc_attr( $prefix . '-l-main-wrapper' ) . '">' ) ) {
+			return $content;
+		}
+		if ( self::LEVEL_ERA === $level ) {
+			// No legacy markup to rewrite: only the wrapper 4.x/5.x put around every post.
+			return self::wrap( $content, $prefix );
+		}
 		// A post not converted yet still names images in the legacy plugin folder (Migrate\Media).
 		$content = Media::localize( $content );
-		return self::style_element( $post_id, $prefix ) . '<div class="' . esc_attr( $prefix . '-l-main-wrapper' ) . '">' . self::rewrite_html( $content, $prefix ) . '</div>';
+		return self::style_element( $post_id, $prefix ) . self::wrap( self::rewrite_html( $content, $prefix ), $prefix );
 	}
 
 	/**

@@ -26,7 +26,7 @@ abstract class Prop {
 	/** The key stored in `pbs.s.<breakpoint>`. */
 	public const KEY = '';
 
-	/** Panel section: layout, spacing, size, typography, colour, border, shadow, position, effects, advanced. */
+	/** Panel section: layout, spacing, size, typography, colour, border, shadow, position, effects, menu, advanced. */
 	public const GROUP = 'advanced';
 
 	/**

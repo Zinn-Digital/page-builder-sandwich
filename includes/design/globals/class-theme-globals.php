@@ -98,7 +98,7 @@ final class Theme_Globals {
 		$handle = \ZinnDigital\PBS\Settings::prefix() . '-gf';
 		wp_register_style( $handle, false, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- inline only.
 		wp_enqueue_style( $handle );
-		wp_add_inline_style( $handle, $css );
+		wp_add_inline_style( $handle, \ZinnDigital\PBS\Assets::inline_css( $css ) );
 	}
 
 	/**

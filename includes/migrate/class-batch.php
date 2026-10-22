@@ -140,6 +140,9 @@ final class Batch {
 	 * @return array<string, mixed>|null
 	 */
 	public static function start( string $mode, string $trigger = 'manual' ): ?array {
+		// Before any state exists: the first run 6.x ever starts here is the jump from the legacy
+		// plugin, the moment Assets\Legacy_Era records (once) for content saved before it.
+		\ZinnDigital\PBS\Assets\Legacy_Era::record_from_migration( array() === self::state() );
 		if ( ! self::lock() ) {
 			return null;
 		}

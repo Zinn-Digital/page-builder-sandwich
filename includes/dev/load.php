@@ -14,10 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once __DIR__ . '/class-registry.php';
-require_once __DIR__ . '/class-style-control.php';
 require_once __DIR__ . '/api.php';
-require_once __DIR__ . '/class-dev-routes.php';
 
 \ZinnDigital\PBS\Dev\Registry::register();
 \ZinnDigital\PBS\Dev\Dev_Routes::register();

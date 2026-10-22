@@ -15,9 +15,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once __DIR__ . '/class-ai.php';
-require_once __DIR__ . '/class-writer.php';
-require_once __DIR__ . '/class-seo-writer.php';
-require_once __DIR__ . '/class-ai-routes.php';
-
 \ZinnDigital\PBS\Ai\Ai_Routes::register();

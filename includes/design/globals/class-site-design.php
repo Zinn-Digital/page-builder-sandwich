@@ -139,7 +139,7 @@ final class Site_Design {
 
 		wp_enqueue_script( $handle, PBSW_URL . 'build/' . $entry . '.js', $deps, (string) ( $asset['version'] ?? PBSW_VERSION ), true );
 		wp_set_script_translations( $handle, 'page-builder-sandwich', PBSW_DIR . 'languages' );
-		wp_add_inline_script( $handle, 'window.pbswSiteDesign = ' . wp_json_encode( self::data(), JSON_HEX_TAG | JSON_UNESCAPED_SLASHES ) . ';', 'before' );
+		wp_add_inline_script( $handle, 'window.pbswSiteDesign = ' . wp_json_encode( self::data(), JSON_HEX_TAG ) . ';', 'before' );
 		if ( is_readable( PBSW_DIR . 'build/' . $entry . '.css' ) ) {
 			wp_enqueue_style( $handle, PBSW_URL . 'build/' . $entry . '.css', array( 'wp-components' ), (string) ( $asset['version'] ?? PBSW_VERSION ) );
 			wp_style_add_data( $handle, 'rtl', 'replace' );

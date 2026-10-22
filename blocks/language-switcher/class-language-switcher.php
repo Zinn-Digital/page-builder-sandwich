@@ -57,6 +57,8 @@ final class Language_Switcher {
 			'style'       => (string) ( $attributes['design'] ?? 'pills' ),
 			'display'     => (string) ( $attributes['display'] ?? 'name' ),
 			'flags'       => ! empty( $attributes['flags'] ),
+			'flagShape'   => (string) ( $attributes['flagShape'] ?? '' ),
+			'flagSize'    => (string) ( $attributes['flagSize'] ?? '' ),
 			'showCurrent' => false !== ( $attributes['showCurrent'] ?? true ),
 			'hideMissing' => ! empty( $attributes['hideMissing'] ),
 			'vertical'    => ! empty( $attributes['vertical'] ),

@@ -47,7 +47,79 @@ export function token( value, types ) {
 	if ( ! /^[a-z0-9][a-z0-9-]{0,63}$/.test( value.v ) ) {
 		return null;
 	}
-	return { t: value.t, v: value.v };
+	const out = { t: value.t, v: value.v };
+	if ( value.t === 'color' ) {
+		// A shade (−95 darker … +95 lighter) and an opacity (0 … 99 %) of a palette colour. An
+		// invalid modifier is dropped and the plain colour kept, never the whole value.
+		const shade = value.sh;
+		if (
+			Number.isInteger( shade ) &&
+			shade !== 0 &&
+			shade >= -95 &&
+			shade <= 95
+		) {
+			out.sh = shade;
+		}
+		const opacity = value.o;
+		if ( Number.isInteger( opacity ) && opacity >= 0 && opacity <= 99 ) {
+			out.o = opacity;
+		}
+	}
+	return out;
+}
+
+/** The condition under which a mixed palette colour falls back to the plain one. */
+export const MIX_FALLBACK = '@supports not (color:color-mix(in oklch,red,red))';
+
+/** A mix written by mix(); group 1 is the plain colour. */
+const MIX_PATTERN =
+	/color-mix\(in oklch,(var\(--wp--preset--color--[a-z0-9-]+\)) [0-9.]+%,(?:white|black) [0-9.]+%\)/g;
+
+/**
+ * A palette colour's shade and opacity, mixed in OKLCH (Values::mix()): one `color-mix()` with
+ * white (lighter) or black (darker), both percentages scaled by the opacity — when they add up
+ * to less than 100 % the result takes that sum as its alpha.
+ *
+ * @param {string} base    The colour (a `var()`).
+ * @param {number} shade   −95 … 95.
+ * @param {number} opacity 0 … 100.
+ * @return {string} CSS colour.
+ */
+export function mix( base, shade, opacity ) {
+	if ( shade === 0 && opacity === 100 ) {
+		return base;
+	}
+	if ( opacity === 0 ) {
+		return 'transparent';
+	}
+	const towards = Math.abs( shade );
+	const own = ( opacity * ( 100 - towards ) ) / 100;
+	const other = ( opacity * towards ) / 100;
+	return `color-mix(in oklch,${ base } ${ num( own ) }%,${
+		shade > 0 ? 'white' : 'black'
+	} ${ num( other ) }%)`;
+}
+
+/**
+ * The declarations a browser without `color-mix()` needs instead (Values::mix_fallback()).
+ *
+ * @param {string} declarations `a:b;c:d`.
+ * @return {string} Fallback declarations, '' for none.
+ */
+export function mixFallback( declarations ) {
+	if (
+		! declarations.includes(
+			'color-mix(in oklch,var(--wp--preset--color--'
+		)
+	) {
+		return '';
+	}
+	return declarations
+		.split( ';' )
+		.map( ( d ) => [ d, d.replace( MIX_PATTERN, '$1' ) ] )
+		.filter( ( [ d, plain ] ) => plain !== d )
+		.map( ( [ , plain ] ) => plain )
+		.join( ';' );
 }
 
 /**
@@ -61,7 +133,11 @@ export function tokenCss( tok, prefix ) {
 	const v = tok.v;
 	switch ( tok.t ) {
 		case 'color':
-			return `var(--wp--preset--color--${ v })`;
+			return mix(
+				`var(--wp--preset--color--${ v })`,
+				tok.sh ?? 0,
+				tok.o ?? 100
+			);
 		case 'gradient':
 			return `var(--wp--preset--gradient--${ v })`;
 		case 'size':

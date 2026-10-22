@@ -41,7 +41,7 @@ final class Files {
 
 		return array(
 			trailingslashit( (string) $uploads['basedir'] ) . $name,
-			trailingslashit( (string) $uploads['baseurl'] ) . $name,
+			trailingslashit( self::request_scheme( (string) $uploads['baseurl'] ) ) . $name,
 		);
 	}
 
@@ -66,7 +66,23 @@ final class Files {
 			return $stored;
 		}
 
-		return untrailingslashit( (string) $uploads['baseurl'] ) . substr( $stored, $at );
+		return untrailingslashit( self::request_scheme( (string) $uploads['baseurl'] ) ) . substr( $stored, $at );
+	}
+
+	/**
+	 * The uploads URL in THIS request's scheme, as plugins_url() gives the plugin's own files.
+	 *
+	 * ⛔ WordPress builds the uploads URL from the stored site address, so a site whose address is
+	 * still `http://` but is served over HTTPS (a proxy or a forced redirect) got `http://` asset
+	 * URLs on an `https://` page; browsers block those as mixed content, and the page lost its
+	 * stylesheets and view modules (COMPAT1, 2026-10-20: site 80152 after the jump from 4.5.8,
+	 * 12% of the page moved; the legacy plugin's own files had followed the page's scheme).
+	 *
+	 * @param string $url Uploads URL.
+	 * @return string
+	 */
+	private static function request_scheme( string $url ): string {
+		return set_url_scheme( $url );
 	}
 
 	/**

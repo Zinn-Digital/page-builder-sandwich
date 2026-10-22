@@ -13,10 +13,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once __DIR__ . '/class-permissions.php';
-require_once __DIR__ . '/class-transfer.php';
-require_once __DIR__ . '/class-transfer-routes.php';
-require_once __DIR__ . '/class-workflow-admin.php';
-
 \ZinnDigital\PBS\Workflow\Transfer_Routes::register();
 \ZinnDigital\PBS\Workflow\Workflow_Admin::register();

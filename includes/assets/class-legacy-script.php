@@ -102,13 +102,13 @@ final class Legacy_Script {
 	}
 
 	/**
-	 * `wp_enqueue_scripts`: the singular post being viewed, and nothing else.
+	 * `wp_enqueue_scripts`: the posts this request renders (Legacy::request_posts()), and nothing else.
 	 *
 	 * @return void
 	 */
 	public static function enqueue_for_request(): void {
-		if ( is_singular() ) {
-			self::maybe_enqueue_for_post( (int) get_queried_object_id() );
+		foreach ( Legacy::request_posts() as $id ) {
+			self::maybe_enqueue_for_post( $id );
 		}
 	}
 
@@ -119,7 +119,9 @@ final class Legacy_Script {
 	 * @return array<int, string> The behaviours the script was loaded for; empty when it was not.
 	 */
 	public static function maybe_enqueue_for_post( int $post_id ): array {
-		if ( $post_id < 1 || ! Legacy::post_needs_legacy( $post_id ) ) {
+		// A post saved under 4.x/5.x with no legacy markup counts too: 5.x ran its script on every
+		// page, so an embedded video or an in-page link in such a post behaved as below (Legacy_Era).
+		if ( $post_id < 1 || Legacy::LEVEL_NONE === Legacy::post_level( $post_id ) ) {
 			return array();
 		}
 		$post    = get_post( $post_id );
@@ -129,7 +131,7 @@ final class Legacy_Script {
 		$handle  = null;
 
 		if ( array() !== $found ) {
-			$handle = Assets::enqueue_script( self::JS_KEY, 'window.' . $prefix . 'LegacyConfig=' . wp_json_encode( self::config() ) . ';' );
+			$handle = Assets::enqueue_script( self::JS_KEY, $prefix . 'LegacyConfig', self::config() );
 			$css    = self::pre_css( $found, $prefix );
 			if ( '' !== $css ) {
 				self::inline_style( $css, $prefix );
@@ -157,9 +159,12 @@ final class Legacy_Script {
 	 */
 	public static function inline_style( string $css, string $prefix ): void {
 		$handle = $prefix . '-' . substr( sha1( $css ), 0, 8 );
+		if ( wp_style_is( $handle, 'enqueued' ) ) {
+			return; // An archive page with several legacy posts asks for the same rules once each.
+		}
 		wp_register_style( $handle, false, array(), PBSW_VERSION );
 		wp_enqueue_style( $handle );
-		wp_add_inline_style( $handle, $css );
+		wp_add_inline_style( $handle, Assets::inline_css( $css ) );
 	}
 
 	/**

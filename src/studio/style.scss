@@ -184,6 +184,22 @@ html.wp-toolbar:has(body.pbsw-studio-screen) {
 	overflow: auto;
 }
 
+// The canvas guard's message sits over the canvas, never pushing it:
+// it is the reason the canvas is empty.
+.pbsw-studio-canvas {
+	position: relative;
+}
+
+.pbsw-studio-canvas-guard {
+	position: absolute;
+	inset-block-start: 16px;
+	inset-inline: 16px;
+	z-index: 2;
+	max-inline-size: 640px;
+	margin-inline: auto;
+	box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
 .pbsw-studio-device {
 	inline-size: 100%;
 	block-size: 100%;

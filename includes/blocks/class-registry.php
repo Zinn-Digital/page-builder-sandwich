@@ -102,6 +102,7 @@ final class Registry {
 		'contact-buttons'   => 'marketing',
 		'whatsapp'          => 'marketing',
 		'form'              => 'marketing',
+		'nav-menu'          => 'site',
 		// pbs-blocks:end.
 	);
 
@@ -122,6 +123,7 @@ final class Registry {
 		'map',
 		'booking',
 		'code',
+		'nav-menu',
 		// pbs-modules:end.
 	);
 
@@ -170,7 +172,7 @@ final class Registry {
 		}
 		wp_register_style( 'pbsw-blocks-editor-style', false, array(), PBSW_VERSION );
 		wp_enqueue_style( 'pbsw-blocks-editor-style' );
-		wp_add_inline_style( 'pbsw-blocks-editor-style', $css );
+		wp_add_inline_style( 'pbsw-blocks-editor-style', \ZinnDigital\PBS\Assets::inline_css( $css ) );
 	}
 
 	/**

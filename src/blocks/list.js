@@ -43,6 +43,7 @@ import * as protectedContent from './protected';
 import * as contactButtons from './contact-buttons';
 import * as whatsapp from './whatsapp';
 import * as form from './form';
+import * as navMenu from './nav-menu';
 // pbs-blocks-imports:end
 
 export const BLOCKS = [
@@ -85,5 +86,6 @@ export const BLOCKS = [
 	contactButtons,
 	whatsapp,
 	form,
+	navMenu,
 	// pbs-blocks-list:end
 ];

@@ -1,7 +1,13 @@
 /**
  * Sandwich Studio (pbs-f2): a full-screen editor over the SAME post the block editor edits.
  */
-import { useCallback, useEffect, useMemo, useState } from '@wordpress/element';
+import {
+	useCallback,
+	useEffect,
+	useMemo,
+	useRef,
+	useState,
+} from '@wordpress/element';
 import { useDispatch, useRegistry, useSelect } from '@wordpress/data';
 import {
 	store as coreStore,
@@ -39,6 +45,7 @@ import { uploadMedia } from '@wordpress/media-utils';
 import { __, sprintf } from '@wordpress/i18n';
 import { closeSmall } from '@wordpress/icons';
 import { BootContext, UiContext, useBoot, useUi } from './context';
+import { CanvasGuardNotice, useCanvasGuard } from './components/canvas-guard';
 import Header from './components/header';
 import Recovery from './components/recovery';
 import Revisions from './components/revisions';
@@ -102,6 +109,11 @@ function Editor() {
 	const lastAutosave = useAutosave( boot.autosaveInterval );
 	useSnapshot( resolved, boot.snapshotInterval );
 	useLeaveWarning();
+
+	// The canvas guard (SiteOrigin 2.38 parity): a blocked or stalled preview says so, with Retry.
+	const canvasRef = useRef( null );
+	const [ canvasAttempt, setCanvasAttempt ] = useState( 0 );
+	const canvasState = useCanvasGuard( canvasRef, canvasAttempt );
 
 	const width = deviceWidth( ui.device );
 	const layoutClass = boot.settings?.supportsLayout
@@ -175,13 +187,19 @@ function Editor() {
 					className="pbsw-studio-canvas"
 					aria-label={ __( 'Page canvas', 'page-builder-sandwich' ) }
 				>
+					<CanvasGuardNotice
+						state={ canvasState }
+						onRetry={ () => setCanvasAttempt( ( n ) => n + 1 ) }
+					/>
 					<div
+						ref={ canvasRef }
 						className={ `pbsw-studio-device is-${ ui.device }` }
 						style={
 							width ? { inlineSize: `${ width }px` } : undefined
 						}
 					>
 						<BlockCanvas
+							key={ canvasAttempt }
 							height="100%"
 							styles={ boot.settings?.styles }
 						>

@@ -11,6 +11,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once __DIR__ . '/class-checker.php';
-
 \ZinnDigital\PBS\Design\A11y\Checker::register();

@@ -119,6 +119,9 @@ final class Analysis {
 		if ( ! is_readable( $asset_file ) || ! current_user_can( 'edit_posts' ) ) {
 			return;
 		}
+		if ( Zinn_Seo::sole_analyser() ) {
+			return; // Zinn® SEO renders the page itself; this script feeds Yoast SEO and Rank Math only.
+		}
 		$asset = require $asset_file;
 		wp_enqueue_script( self::HANDLE, PBSW_URL . 'build/seo.js', (array) ( $asset['dependencies'] ?? array() ), (string) ( $asset['version'] ?? PBSW_VERSION ), true );
 	}

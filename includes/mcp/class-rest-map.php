@@ -166,6 +166,15 @@ final class Rest_Map {
 				'capability'  => 'edit_theme_options (the REST route\'s own check)',
 			),
 			array(
+				'method'      => 'PUT',
+				'route'       => '/pbs/v1/design/categories',
+				'name'        => 'pbs/update-design-categories',
+				'label'       => __( 'Change the class or token categories (Pro)', 'page-builder-sandwich' ),
+				'description' => __( 'Replaces one category list (group: classes or tokens; items: a list of slug and name). Entries filed under a removed category become uncategorised.', 'page-builder-sandwich' ),
+				'edition'     => 'pro',
+				'capability'  => 'edit_theme_options (the REST route\'s own check)',
+			),
+			array(
 				'method'      => 'POST',
 				'route'       => '/pbs/v1/design/classes',
 				'name'        => 'pbs/create-class',
@@ -229,6 +238,15 @@ final class Rest_Map {
 				'capability'  => 'edit_theme_options (the REST route\'s own check)',
 			),
 			array(
+				'method'      => 'GET',
+				'route'       => '/pbs/v1/design/export',
+				'name'        => 'pbs/export-design',
+				'label'       => __( 'Export the design system (Pro)', 'page-builder-sandwich' ),
+				'description' => __( 'Returns the Site design file: categories, global classes, variables, spacing, radius and shadow scales and custom colours (format page-builder-sandwich-design, version 1).', 'page-builder-sandwich' ),
+				'edition'     => 'pro',
+				'capability'  => 'edit_theme_options (the REST route\'s own check)',
+			),
+			array(
 				'method' => 'POST',
 				'route'  => '/pbs/v1/design/fx-preview',
 				'exempt' => 'editor helper: renders a live effect preview inside the block editor',
@@ -249,6 +267,15 @@ final class Rest_Map {
 				'label'       => __( 'Change the site design', 'page-builder-sandwich' ),
 				'description' => __( 'Changes the site-wide colours (colors), fonts (fonts, headingFont, bodyFont). Every page picks the change up; the theme\'s theme.json is kept in sync.', 'page-builder-sandwich' ),
 				'edition'     => 'free',
+				'capability'  => 'edit_theme_options (the REST route\'s own check)',
+			),
+			array(
+				'method'      => 'POST',
+				'route'       => '/pbs/v1/design/import',
+				'name'        => 'pbs/import-design',
+				'label'       => __( 'Import a design system file (Pro)', 'page-builder-sandwich' ),
+				'description' => __( 'Validates a Site design file (file) and, with apply false, returns what merge or replace (mode) would add, change and remove; with apply true, writes it.', 'page-builder-sandwich' ),
+				'edition'     => 'pro',
 				'capability'  => 'edit_theme_options (the REST route\'s own check)',
 			),
 			array(

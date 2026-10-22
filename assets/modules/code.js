@@ -9,6 +9,12 @@
  */
 import { store, getContext, getElement } from '@wordpress/interactivity';
 
+// The class prefix: written into the copy published under uploads, or read from this
+// module's own URL when it is served from the plugin folder (uploads not writable).
+const PFX = '__PREFIX__'.startsWith( '__' )
+	? new URL( import.meta.url ).searchParams.get( 'pfx' ) || ''
+	: '__PREFIX__';
+
 /**
  * highlight.js, once its (deferred) script has run.
  *
@@ -92,7 +98,7 @@ function copyText( text ) {
 	return ok ? Promise.resolve() : Promise.reject( new Error( 'copy' ) );
 }
 
-store( '__PREFIX__', {
+store( PFX, {
 	actions: {
 		*codeCopy() {
 			const { ref } = getElement();
@@ -123,7 +129,7 @@ store( '__PREFIX__', {
 					if ( ! hljs ) {
 						return;
 					}
-					hljs.configure( { classPrefix: '__PREFIX__-hl-' } );
+					hljs.configure( { classPrefix: PFX + '-hl-' } );
 					const lang = code.dataset.lang;
 					const text = code.textContent;
 					const result =

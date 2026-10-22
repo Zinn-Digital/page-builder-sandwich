@@ -14,8 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Writes a meta title and description straight into the SEO plugin the site uses (Yoast SEO,
- * Rank Math, SEOPress, All in One SEO), and alt text for images by looking at them.
+ * Writes a meta title and description straight into the SEO plugin the site uses (Zinn® SEO,
+ * through includes/seo/class-zinn-seo.php; Yoast SEO, Rank Math, SEOPress, All in One SEO), and
+ * alt text for images by looking at them.
  */
 final class Seo_Writer {
 
@@ -125,7 +126,7 @@ final class Seo_Writer {
 		}
 		$plugins = self::plugins();
 		if ( array() === $plugins ) {
-			return new \WP_Error( 'pbsw_no_seo_plugin', __( 'No supported SEO plugin is active (Yoast SEO, Rank Math, SEOPress or All in One SEO), so there is nowhere to save the meta title and description.', 'page-builder-sandwich' ), array( 'status' => 409 ) );
+			return new \WP_Error( 'pbsw_no_seo_plugin', __( 'No supported SEO plugin is active, so there is nowhere to save the meta title and description. It works with Zinn® SEO, Yoast SEO, Rank Math, SEOPress and All in One SEO.', 'page-builder-sandwich' ), array( 'status' => 409 ) );
 		}
 		$title       = sanitize_text_field( $title );
 		$description = sanitize_textarea_field( $description );
@@ -142,6 +143,8 @@ final class Seo_Writer {
 				$written[] = $plugin;
 			} elseif ( 'aioseo' === $plugin && self::aioseo( $post_id, $title, $description ) ) {
 				$written[] = $plugin;
+			} elseif ( true === self::written_by_plugin( (string) $plugin, $post_id, $title, $description ) ) {
+				$written[] = (string) $plugin;
 			}
 		}
 
@@ -151,6 +154,29 @@ final class Seo_Writer {
 			'description' => $description,
 			'written_to'  => $written,
 		);
+	}
+
+	/**
+	 * Let a plugin added on `pbsw_ai_seo_plugins` save the meta title and description itself.
+	 *
+	 * @param string $plugin      The plugin's key.
+	 * @param int    $post_id     Post.
+	 * @param string $title       Meta title.
+	 * @param string $description Meta description.
+	 * @return bool Saved.
+	 */
+	private static function written_by_plugin( string $plugin, int $post_id, string $title, string $description ): bool {
+		/**
+		 * Filters whether another SEO plugin took the meta title and description. A plugin added
+		 * on `pbsw_ai_seo_plugins` saves them here, in its own way, and answers true.
+		 *
+		 * @param bool   $written     Saved.
+		 * @param string $plugin      The plugin's key.
+		 * @param int    $post_id     Post.
+		 * @param string $title       Meta title.
+		 * @param string $description Meta description.
+		 */
+		return true === apply_filters( 'pbsw_ai_seo_write', false, $plugin, $post_id, $title, $description );
 	}
 
 	/**

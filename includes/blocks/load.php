@@ -15,13 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once __DIR__ . '/class-registry.php';
-require_once __DIR__ . '/class-markup.php';
-require_once __DIR__ . '/interactive/class-tabs.php';
-require_once __DIR__ . '/interactive/class-accordion.php';
-require_once __DIR__ . '/interactive/class-dialog.php';
-require_once __DIR__ . '/interactive/class-tooltip.php';
-require_once __DIR__ . '/site/class-toc.php';
 \ZinnDigital\PBS\Blocks\Registry::register();
+// Lane R35 (owner 2026-10-18): the free version of a Pro block when Pro is not running.
+require_once __DIR__ . '/class-pro-fallback.php';
+\ZinnDigital\PBS\Blocks\Pro_Fallback::register();
 // The inline "Tooltip" text format, and the anchors a table of contents links to.
 \ZinnDigital\PBS\Blocks\Interactive\Tooltip::register();
 \ZinnDigital\PBS\Blocks\Site\Toc::register();
@@ -30,7 +27,6 @@ require_once __DIR__ . '/site/class-toc.php';
 // joins the page sheet only when a page uses them (highlight, drop cap, pull quote).
 require_once __DIR__ . '/class-kit.php';
 require_once __DIR__ . '/class-glossary.php';
-require_once __DIR__ . '/class-extensions.php';
 \ZinnDigital\PBS\Blocks\Glossary::register();
 \ZinnDigital\PBS\Blocks\Extensions::register();
 
@@ -43,6 +39,5 @@ require_once __DIR__ . '/class-extensions.php';
 require_once __DIR__ . '/class-site.php';
 \ZinnDigital\PBS\Blocks\Site::register();
 require_once __DIR__ . '/class-forms.php';
-require_once __DIR__ . '/class-friendly.php';
 \ZinnDigital\PBS\Blocks\Forms::register(); // pbs-m6: the Form block's provider list.
 \ZinnDigital\PBS\Blocks\Friendly::register(); // pbs-b3: Widget and Shortcode block settings.

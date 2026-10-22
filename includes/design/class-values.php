@@ -32,6 +32,12 @@ final class Values {
 	/** Longest function value (calc, clamp, min, max) accepted. */
 	private const MAX_FUNCTION = 120;
 
+	/** The condition under which a mixed palette colour falls back to the plain one. */
+	public const MIX_FALLBACK = '@supports not (color:color-mix(in oklch,red,red))';
+
+	/** A mix written by self::mix(); group 1 is the plain colour. */
+	private const MIX_PATTERN = '/color-mix\(in oklch,(var\(--wp--preset--color--[a-z0-9-]+\)) [0-9.]+%,(?:white|black) [0-9.]+%\)/';
+
 	/**
 	 * A token reference `{"t":"color","v":"primary"}` whose type is one of $types.
 	 *
@@ -49,26 +55,89 @@ final class Values {
 		if ( 1 !== preg_match( '/^[a-z0-9][a-z0-9-]{0,63}$/', $value['v'] ) ) {
 			return null;
 		}
-
-		return array(
+		$out = array(
 			't' => $value['t'],
 			'v' => $value['v'],
 		);
+		if ( 'color' === $value['t'] ) {
+			// A shade (−95 darker … +95 lighter) and an opacity (0 … 99 %) of a palette colour. An
+			// invalid modifier is dropped and the plain colour kept, never the whole value.
+			$shade = $value['sh'] ?? null;
+			if ( is_int( $shade ) && 0 !== $shade && $shade >= -95 && $shade <= 95 ) {
+				$out['sh'] = $shade;
+			}
+			$opacity = $value['o'] ?? null;
+			if ( is_int( $opacity ) && $opacity >= 0 && $opacity <= 99 ) {
+				$out['o'] = $opacity;
+			}
+		}
+
+		return $out;
+	}
+
+	/**
+	 * A palette colour's shade and opacity, mixed in OKLCH: `color-mix()` with white (lighter)
+	 * or black (darker), the two percentages scaled by the opacity — when they add up to less
+	 * than 100 % the result takes that sum as its alpha (CSS Color 5), so ONE mix carries both.
+	 * Mixing in OKLCH keeps the hue and gives even steps to the eye.
+	 *
+	 * @param string $base    The colour (a `var()`).
+	 * @param int    $shade   −95 … 95 (0 = the colour itself).
+	 * @param int    $opacity 0 … 100.
+	 * @return string
+	 */
+	public static function mix( string $base, int $shade, int $opacity ): string {
+		if ( 0 === $shade && 100 === $opacity ) {
+			return $base;
+		}
+		if ( 0 === $opacity ) {
+			return 'transparent';
+		}
+		$towards = abs( $shade );
+		$own     = $opacity * ( 100 - $towards ) / 100;
+		$other   = $opacity * $towards / 100;
+
+		return 'color-mix(in oklch,' . $base . ' ' . self::num( $own ) . '%,' . ( $shade > 0 ? 'white' : 'black' ) . ' ' . self::num( $other ) . '%)';
+	}
+
+	/**
+	 * The declarations a browser without `color-mix()` needs instead (each mixed palette colour
+	 * back to the plain colour), or '' when none uses a mix. The compiler prints them under
+	 * self::MIX_FALLBACK after the rule, so they apply ONLY where the mix cannot: a duplicate
+	 * declaration cannot do it, because a value holding `var()` is accepted when parsed and
+	 * only fails later — it would wipe the fallback out instead of falling back to it.
+	 *
+	 * @param string $declarations `a:b;c:d`.
+	 * @return string
+	 */
+	public static function mix_fallback( string $declarations ): string {
+		if ( ! str_contains( $declarations, 'color-mix(in oklch,var(--wp--preset--color--' ) ) {
+			return '';
+		}
+		$out = array();
+		foreach ( explode( ';', $declarations ) as $declaration ) {
+			$plain = (string) preg_replace( self::MIX_PATTERN, '$1', $declaration );
+			if ( $plain !== $declaration ) {
+				$out[] = $plain;
+			}
+		}
+
+		return implode( ';', $out );
 	}
 
 	/**
 	 * The CSS for a token: a theme.json preset variable, or a Pro token variable that falls back
 	 * to the theme.json preset of the same slug where one exists.
 	 *
-	 * @param array{t: string, v: string} $token  Token.
-	 * @param string                      $prefix Class prefix.
+	 * @param array{t: string, v: string, sh?: int, o?: int} $token  Token.
+	 * @param string                                         $prefix Class prefix.
 	 * @return string
 	 */
 	public static function token_css( array $token, string $prefix ): string {
 		$v = $token['v'];
 		switch ( $token['t'] ) {
 			case 'color':
-				return 'var(--wp--preset--color--' . $v . ')';
+				return self::mix( 'var(--wp--preset--color--' . $v . ')', (int) ( $token['sh'] ?? 0 ), (int) ( $token['o'] ?? 100 ) );
 			case 'gradient':
 				return 'var(--wp--preset--gradient--' . $v . ')';
 			case 'size':

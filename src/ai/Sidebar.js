@@ -159,7 +159,7 @@ function SeoPanel( { postId } ) {
 			{ plugins.length === 0 ? (
 				<p>
 					{ __(
-						'Install Yoast SEO, Rank Math, SEOPress or All in One SEO to save a meta title and description.',
+						'Install Zinn® SEO, Yoast SEO, Rank Math, SEOPress or All in One SEO to save a meta title and description.',
 						'page-builder-sandwich'
 					) }
 				</p>

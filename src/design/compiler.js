@@ -8,6 +8,7 @@
 import { PROPS } from './props';
 import { appliesTo } from './kinds';
 import { media, mediaList, range } from './breakpoints';
+import { MIX_FALLBACK, mixFallback } from './values';
 
 export const ID_PATTERN = /^[a-z0-9]{8}$/;
 
@@ -49,6 +50,33 @@ export function declarations( values, prefix, blockName = '' ) {
 		all: out.all.join( ';' ),
 	};
 }
+
+/**
+ * One rule, plus the plain-colour fallback for browsers without `color-mix()` (Compiler::rule()).
+ *
+ * @param {string} selector Selector.
+ * @param {string} decls    Declarations.
+ * @return {string} CSS ('' for no declarations).
+ */
+export function rule( selector, decls ) {
+	if ( ! decls ) {
+		return '';
+	}
+	const fallback = mixFallback( decls );
+	return (
+		`${ selector }{${ decls }}` +
+		( fallback ? `${ MIX_FALLBACK }{${ selector }{${ fallback }}}` : '' )
+	);
+}
+
+/**
+ * The style keys of at-rule presets (`@<id>`), in output order (At_Rules::keys()).
+ *
+ * @param {Array<Object>} atRules Presets.
+ * @return {string[]} Keys.
+ */
+export const atKeys = ( atRules ) =>
+	( atRules || [] ).map( ( p ) => `@${ p.id }` );
 
 /**
  * The selector suffix of the element that lays out a block's children.
@@ -104,20 +132,17 @@ export function blockRules( block, prefix, ids ) {
 		let css = '';
 		for ( const pseudo of [ '', ':hover' ] ) {
 			const values = pbs.s[ bp + pseudo ];
-			if ( ! isObject( values ) ) {
+			// A condition (at-rule preset, `@<id>`) has no hover state.
+			if ( ! isObject( values ) || ( pseudo && bp.startsWith( '@' ) ) ) {
 				continue;
 			}
 			const d = declarations( values, prefix, block.blockName || '' );
 			if ( suffix === '' ) {
-				css += d.all ? `${ selector }${ pseudo }{${ d.all }}` : '';
+				css += rule( selector + pseudo, d.all );
 				continue;
 			}
-			if ( d.own ) {
-				css += `${ selector }${ pseudo }{${ d.own }}`;
-			}
-			if ( d.layout ) {
-				css += `${ selector }${ pseudo }${ suffix }{${ d.layout }}`;
-			}
+			css += rule( selector + pseudo, d.own );
+			css += rule( selector + pseudo + suffix, d.layout );
 		}
 		if ( css ) {
 			out[ bp ] = css;
@@ -146,15 +171,17 @@ export function hides( pbs, ids ) {
  * Compile a parsed block tree, exactly as Compiler::css() does (custom element CSS is Pro and
  * compiled by the server only).
  *
- * @param {Array<Object>} blocks Parsed blocks {blockName, attrs, innerBlocks}.
- * @param {string}        prefix Prefix.
- * @param {Object}        config Breakpoints option value.
+ * @param {Array<Object>} blocks  Parsed blocks {blockName, attrs, innerBlocks}.
+ * @param {string}        prefix  Prefix.
+ * @param {Object}        config  Breakpoints option value.
+ * @param {Array<Object>} atRules At-rule presets (At_Rules::all()).
  * @return {string} CSS.
  */
-export function compile( blocks, prefix, config ) {
+export function compile( blocks, prefix, config, atRules = [] ) {
 	const list = mediaList( config );
 	const ids = [ 'base', ...list.map( ( b ) => b.id ) ];
-	const rules = Object.fromEntries( ids.map( ( id ) => [ id, '' ] ) );
+	const keys = [ ...ids, ...atKeys( atRules ) ];
+	const rules = Object.fromEntries( keys.map( ( id ) => [ id, '' ] ) );
 	const hidden = new Set();
 	const seen = new Set();
 
@@ -170,7 +197,7 @@ export function compile( blocks, prefix, config ) {
 				if ( ID_PATTERN.test( id ) && ! seen.has( id ) ) {
 					seen.add( id );
 					for ( const [ bp, css ] of Object.entries(
-						blockRules( block, prefix, ids )
+						blockRules( block, prefix, keys )
 					) ) {
 						rules[ bp ] += css;
 					}
@@ -187,11 +214,19 @@ export function compile( blocks, prefix, config ) {
 			css += `@media ${ media( bp ) }{${ rules[ bp.id ] }}`;
 		}
 	}
+	// At-rule presets after the screen sizes: a condition wins over the widths it overlaps.
+	for ( const preset of atRules || [] ) {
+		if ( rules[ `@${ preset.id }` ] ) {
+			css += `@${ preset.type } ${ preset.query }{${
+				rules[ `@${ preset.id }` ]
+			}}`;
+		}
+	}
 	for ( const id of ids ) {
 		if ( hidden.has( id ) ) {
 			const r = range( id, list ) || '';
-			const rule = `.${ prefix }-hide-${ id }{display:none!important}`;
-			css += r === '' ? rule : `@media ${ r }{${ rule }}`;
+			const hide = `.${ prefix }-hide-${ id }{display:none!important}`;
+			css += r === '' ? hide : `@media ${ r }{${ hide }}`;
 		}
 	}
 	if ( css.includes( 'transition-duration:' ) ) {
@@ -220,9 +255,11 @@ export const hasStyles = ( block, prefix, ids ) =>
  * @param {string}   prefix Prefix.
  * @param {string[]} bpIds  cascade() output.
  * @param {boolean}  hover  Show hover values as if hovered.
+ * @param {string}   atRule An at-rule preset being edited: its values are applied too, as if
+ *                          its condition held.
  * @return {string} CSS.
  */
-export function previewCss( block, prefix, bpIds, hover = false ) {
+export function previewCss( block, prefix, bpIds, hover = false, atRule = '' ) {
 	const pbs = block.attrs?.pbs;
 	if ( ! isObject( pbs ) || ! ID_PATTERN.test( pbs.id || '' ) ) {
 		return '';
@@ -247,6 +284,16 @@ export function previewCss( block, prefix, bpIds, hover = false ) {
 				css += d.own ? `${ sel }{${ d.own }}` : '';
 				css += d.layout ? `${ sel }${ suffix }{${ d.layout }}` : '';
 			}
+		}
+	}
+	const forced = atRule ? pbs.s?.[ `@${ atRule }` ] : null;
+	if ( isObject( forced ) ) {
+		const d = declarations( forced, prefix, block.blockName || '' );
+		if ( suffix === '' ) {
+			css += d.all ? `${ selector }{${ d.all }}` : '';
+		} else {
+			css += d.own ? `${ selector }{${ d.own }}` : '';
+			css += d.layout ? `${ selector }${ suffix }{${ d.layout }}` : '';
 		}
 	}
 	return css;

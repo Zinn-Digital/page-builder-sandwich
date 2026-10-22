@@ -20,7 +20,10 @@
 .__PREFIX__-comparison-table__table {
 	inline-size: 100%;
 	min-inline-size: 28em;
-	border-collapse: collapse;
+	/* `separate`, not `collapse`: a collapsed border belongs to the table, so it would not travel
+	   with a sticky cell. Same lines on screen, drawn per cell. */
+	border-collapse: separate;
+	border-spacing: 0;
 }
 
 .__PREFIX__-comparison-table__caption {
@@ -76,6 +79,73 @@
 
 .__PREFIX__-comparison-table__cell--no {
 	color: #8a1f1f;
+}
+
+/* Sticky header ("Sticky header" on): the box is bounded in height so the plan row has something
+   to stick to while a long table scrolls under it, and the feature column sticks to the start
+   edge while a phone swipes across the plans. Logical properties, so it mirrors in RTL. */
+.__PREFIX__-comparison-table--sticky {
+	max-block-size: min(78svh, 46rem);
+	overscroll-behavior-inline: contain;
+}
+
+.__PREFIX__-comparison-table--sticky thead th,
+.__PREFIX__-comparison-table--sticky thead td {
+	position: sticky;
+	inset-block-start: 0;
+	z-index: 2;
+	background-color: var(--wp--preset--color--base, #fff);
+}
+
+.__PREFIX__-comparison-table--sticky .__PREFIX__-comparison-table__feature {
+	position: sticky;
+	inset-inline-start: 0;
+	z-index: 1;
+	background-color: var(--wp--preset--color--base, #fff);
+}
+
+.__PREFIX__-comparison-table--sticky thead td:first-child {
+	inset-inline-start: 0;
+	z-index: 3;
+}
+
+/* Row groups: a heading row on top of each group; the label stays in view while you swipe. */
+.__PREFIX__-comparison-table__group > th {
+	padding-block: 1em 0.45em;
+	font-size: 0.875em;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-align: start;
+	text-transform: uppercase;
+	background-color: rgb(0 0 0 / 4%);
+}
+
+.__PREFIX__-comparison-table__group-label {
+	position: sticky;
+	inset-inline-start: 0.75em;
+}
+
+/* "Show only the differences": a real checkbox, and `:has()` hides every row (and every group)
+   whose answers are all the same. No script; unchecked, or in a browser without `:has()`, every
+   row shows. */
+.__PREFIX__-comparison-table-filter {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5em;
+	min-block-size: 44px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.__PREFIX__-comparison-table-filter input {
+	inline-size: 1.15em;
+	block-size: 1.15em;
+	margin: 0;
+}
+
+.__PREFIX__-comparison-table-filter:has(input:checked) + .__PREFIX__-comparison-table .__PREFIX__-comparison-table__row--same,
+.__PREFIX__-comparison-table-filter:has(input:checked) + .__PREFIX__-comparison-table .__PREFIX__-comparison-table__group--same {
+	display: none;
 }
 
 /* Shared by the G-B blocks. Each block file carries its own copy, because a page loads only the

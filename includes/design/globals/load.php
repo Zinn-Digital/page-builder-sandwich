@@ -15,10 +15,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-require_once __DIR__ . '/class-theme-globals.php';
-require_once __DIR__ . '/class-design-rest.php';
-require_once __DIR__ . '/class-site-design.php';
-
 \ZinnDigital\PBS\Design\Globals\Theme_Globals::register();
 \ZinnDigital\PBS\Design\Globals\Design_Rest::register();
 \ZinnDigital\PBS\Design\Globals\Site_Design::register();

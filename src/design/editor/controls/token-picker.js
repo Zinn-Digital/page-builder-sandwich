@@ -5,7 +5,9 @@ import { __, sprintf } from '@wordpress/i18n';
 import { Button, Dropdown, MenuGroup, MenuItem } from '@wordpress/components';
 import { check, styles } from '@wordpress/icons';
 
-import { useTokenOptions } from '../tokens';
+import { useSelect } from '@wordpress/data';
+
+import { designData, groupOptions, useTokenOptions } from '../tokens';
 
 /**
  * @param {Object}   props
@@ -16,9 +18,18 @@ import { useTokenOptions } from '../tokens';
  */
 export default function TokenPicker( { types, value, onChange } ) {
 	const options = useTokenOptions( types );
+	const categories = useSelect(
+		( select ) => designData( select )?.categories?.tokens || [],
+		[]
+	);
 	if ( ! options.length ) {
 		return null;
 	}
+	const groups = groupOptions(
+		options,
+		categories,
+		__( 'Presets', 'page-builder-sandwich' )
+	);
 	return (
 		<Dropdown
 			className="pbsw-design-token"
@@ -33,42 +44,47 @@ export default function TokenPicker( { types, value, onChange } ) {
 					isPressed={ !! value?.t }
 				/>
 			) }
-			renderContent={ ( { onClose } ) => (
-				<MenuGroup
-					label={ __( 'Presets', 'page-builder-sandwich' ) }
-					className="pbsw-design-token__menu"
-				>
-					{ options.map( ( o ) => {
-						const active = value?.t === o.t && value?.v === o.v;
-						return (
-							<MenuItem
-								key={ `${ o.t }:${ o.v }` }
-								icon={ active ? check : undefined }
-								isSelected={ active }
-								role="menuitemradio"
-								info={ o.value || undefined }
-								onClick={ () => {
-									onChange( { t: o.t, v: o.v } );
-									onClose();
-								} }
-							>
-								{ o.t === 'color' ? (
-									<span className="pbsw-design-token__row">
-										<span
-											className="pbsw-design-swatch"
-											style={ { background: o.value } }
-											aria-hidden="true"
-										/>
-										{ o.label }
-									</span>
-								) : (
-									o.label
-								) }
-							</MenuItem>
-						);
-					} ) }
-				</MenuGroup>
-			) }
+			renderContent={ ( { onClose } ) =>
+				groups.map( ( group ) => (
+					<MenuGroup
+						key={ group.label }
+						label={ group.label }
+						className="pbsw-design-token__menu"
+					>
+						{ group.options.map( ( o ) => {
+							const active = value?.t === o.t && value?.v === o.v;
+							return (
+								<MenuItem
+									key={ `${ o.t }:${ o.v }` }
+									icon={ active ? check : undefined }
+									isSelected={ active }
+									role="menuitemradio"
+									info={ o.value || undefined }
+									onClick={ () => {
+										onChange( { t: o.t, v: o.v } );
+										onClose();
+									} }
+								>
+									{ o.t === 'color' ? (
+										<span className="pbsw-design-token__row">
+											<span
+												className="pbsw-design-swatch"
+												style={ {
+													background: o.value,
+												} }
+												aria-hidden="true"
+											/>
+											{ o.label }
+										</span>
+									) : (
+										o.label
+									) }
+								</MenuItem>
+							);
+						} ) }
+					</MenuGroup>
+				) )
+			}
 		/>
 	);
 }

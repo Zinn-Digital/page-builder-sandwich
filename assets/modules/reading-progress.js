@@ -5,7 +5,13 @@
  */
 import { store, getElement } from '@wordpress/interactivity';
 
-store( '__PREFIX__', {
+// The class prefix: written into the copy published under uploads, or read from this
+// module's own URL when it is served from the plugin folder (uploads not writable).
+const PFX = '__PREFIX__'.startsWith( '__' )
+	? new URL( import.meta.url ).searchParams.get( 'pfx' ) || ''
+	: '__PREFIX__';
+
+store( PFX, {
 	callbacks: {
 		readingInit() {
 			const { ref } = getElement();
@@ -18,7 +24,7 @@ store( '__PREFIX__', {
 					room > 0
 						? Math.min( 1, Math.max( 0, window.scrollY / room ) )
 						: 1;
-				ref.style.setProperty( '--__PREFIX__-reading', String( p ) );
+				ref.style.setProperty( '--' + PFX + '-reading', String( p ) );
 			};
 			const onScroll = () => {
 				if ( ! queued ) {

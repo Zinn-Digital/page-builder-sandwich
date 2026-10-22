@@ -9,7 +9,12 @@ import {
 	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
-import { Button, PanelBody, ToggleControl } from '@wordpress/components';
+import {
+	Button,
+	PanelBody,
+	TextControl,
+	ToggleControl,
+} from '@wordpress/components';
 
 import { cls } from '../shared/cls';
 import { Icon, ItemTools, Sr, listOps } from '../shared/kit';
@@ -32,7 +37,8 @@ export function cellsOf( row, count ) {
 }
 
 export default function Edit( { attributes, setAttributes, isSelected } ) {
-	const { caption, columns, rows } = attributes;
+	const { caption, columns, rows, stickyHeader, onlyDifferences } =
+		attributes;
 	const cols = columns.length ? columns : [ { title: '' }, { title: '' } ];
 	const body = rows.length ? rows : [ { label: '', cells: [] } ];
 	const setCols = ( next ) => setAttributes( { columns: next } );
@@ -128,6 +134,35 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						</Button>
 					) }
 				</PanelBody>
+				<PanelBody title={ __( 'Display', 'page-builder-sandwich' ) }>
+					<ToggleControl
+						__nextHasNoMarginBottom
+						label={ __( 'Sticky header', 'page-builder-sandwich' ) }
+						help={ __(
+							'The plan names and the feature column stay in view while a long table scrolls.',
+							'page-builder-sandwich'
+						) }
+						checked={ !! stickyHeader }
+						onChange={ ( v ) =>
+							setAttributes( { stickyHeader: v } )
+						}
+					/>
+					<ToggleControl
+						__nextHasNoMarginBottom
+						label={ __(
+							'Show only the differences switch',
+							'page-builder-sandwich'
+						) }
+						help={ __(
+							'Visitors can hide the rows where every column gives the same answer.',
+							'page-builder-sandwich'
+						) }
+						checked={ !! onlyDifferences }
+						onChange={ ( v ) =>
+							setAttributes( { onlyDifferences: v } )
+						}
+					/>
+				</PanelBody>
 				<PanelBody
 					title={ __( 'Rows', 'page-builder-sandwich' ) }
 					initialOpen={ false }
@@ -143,6 +178,26 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						return (
 							<div key={ i } className="pbsw-kit-row">
 								<strong>{ name }</strong>
+								<TextControl
+									__nextHasNoMarginBottom
+									__next40pxDefaultSize
+									label={ __(
+										'Group',
+										'page-builder-sandwich'
+									) }
+									help={ __(
+										'Rows with the same group sit under one heading.',
+										'page-builder-sandwich'
+									) }
+									value={ row.group || '' }
+									onChange={ ( v ) =>
+										setRows(
+											listOps.update( body, i, {
+												group: v,
+											} )
+										)
+									}
+								/>
 								<ItemTools
 									index={ i }
 									count={ body.length }

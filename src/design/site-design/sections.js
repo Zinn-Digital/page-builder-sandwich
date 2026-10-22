@@ -26,9 +26,11 @@ function upsells() {
 			__( 'Spacing, radius and shadows', 'page-builder-sandwich' ),
 			50,
 		],
+		[ 'categories', __( 'Categories', 'page-builder-sandwich' ), 55 ],
 		[ 'dark-mode', __( 'Dark mode', 'page-builder-sandwich' ), 60 ],
 		[ 'brand-kit', __( 'Brand kit', 'page-builder-sandwich' ), 70 ],
 		[ 'custom-fonts', __( 'Custom fonts', 'page-builder-sandwich' ), 80 ],
+		[ 'transfer', __( 'Import and export', 'page-builder-sandwich' ), 85 ],
 		[ 'page-css', __( 'Page CSS', 'page-builder-sandwich' ), 90 ],
 	].map( ( [ name, title, order ] ) => ( {
 		name,

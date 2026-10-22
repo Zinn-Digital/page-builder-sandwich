@@ -16,11 +16,12 @@ export const config = () =>
 			{ id: 'mobile', label: 'Mobile', max: 767 },
 		],
 		tokens: {},
+		atRules: [],
 		customAllowed: false,
 		elementCss: false,
 	};
 
-const DEFAULT = { breakpoint: 'base', hover: false };
+const DEFAULT = { breakpoint: 'base', hover: false, atRule: '' };
 
 export const store = createReduxStore( STORE, {
 	reducer( state = DEFAULT, action ) {
@@ -33,6 +34,10 @@ export const store = createReduxStore( STORE, {
 				return state.hover === action.hover
 					? state
 					: { ...state, hover: action.hover };
+			case 'SET_AT_RULE':
+				return state.atRule === action.atRule
+					? state
+					: { ...state, atRule: action.atRule };
 		}
 		return state;
 	},
@@ -42,10 +47,16 @@ export const store = createReduxStore( STORE, {
 			breakpoint,
 		} ),
 		setHover: ( hover ) => ( { type: 'SET_HOVER', hover: !! hover } ),
+		// An at-rule preset id ('' = no condition): the Style tab then edits `pbs.s['@<id>']`.
+		setAtRule: ( atRule ) => ( {
+			type: 'SET_AT_RULE',
+			atRule: typeof atRule === 'string' ? atRule : '',
+		} ),
 	},
 	selectors: {
 		getBreakpoint: ( state ) => state.breakpoint,
 		isHover: ( state ) => state.hover,
+		getAtRule: ( state ) => state.atRule,
 	},
 } );
 

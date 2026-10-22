@@ -44,6 +44,8 @@ export function normalise( list ) {
 			value: String(
 				p.color ?? p.size ?? p.value ?? p.fontFamily ?? p.shadow ?? ''
 			),
+			// A Pro token's category (Site design › Categories): picker grouping only.
+			cat: typeof p.cat === 'string' ? p.cat : '',
 		} ) );
 }
 
@@ -91,7 +93,13 @@ export function useTokenOptions( types ) {
 	const out = [];
 	const add = ( t, items ) =>
 		seenOnce( items ).forEach( ( i ) =>
-			out.push( { t, v: i.slug, label: i.label, value: i.value } )
+			out.push( {
+				t,
+				v: i.slug,
+				label: i.label,
+				value: i.value,
+				cat: i.cat || '',
+			} )
 		);
 	if ( types.includes( 'color' ) ) {
 		add( 'color', normalise( palette ) );
@@ -128,3 +136,26 @@ export function useTokenOptions( types ) {
  */
 export const isToken = ( v ) =>
 	!! v && typeof v === 'object' && ! Array.isArray( v ) && 't' in v;
+
+/**
+ * Options grouped for a menu: one group per token category that has options (in the
+ * categories' order), then everything uncategorised under `rest`. Pure.
+ *
+ * @param {Array<Object>} options    useTokenOptions() result.
+ * @param {Array<Object>} categories `{ slug, name }` (Site design › Categories › tokens).
+ * @param {string}        rest       Label of the uncategorised group.
+ * @return {Array<{label: string, options: Array<Object>}>} Groups.
+ */
+export function groupOptions( options, categories, rest ) {
+	const known = new Set( ( categories || [] ).map( ( c ) => c.slug ) );
+	const groups = ( categories || [] )
+		.map( ( c ) => ( {
+			label: c.name,
+			options: options.filter( ( o ) => o.cat === c.slug ),
+		} ) )
+		.filter( ( g ) => g.options.length );
+	const others = options.filter( ( o ) => ! o.cat || ! known.has( o.cat ) );
+	return others.length
+		? [ ...groups, { label: rest, options: others } ]
+		: groups;
+}

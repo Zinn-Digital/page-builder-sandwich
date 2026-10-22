@@ -14,6 +14,8 @@ import fixture from '../../blocks/fixture/block.json';
 import switcher from '../../blocks/fixture-switcher/block.json';
 // The language switcher element (Tranzly tz-l2); its block.json is in blocks/language-switcher/.
 import './language-switcher';
+// Lane R35: locked Pro blocks after a trial ends unpaid ("upgrade, or convert to the free version").
+import './pro-fallback';
 
 /*
  * Both blocks are dynamic: the server renders them (includes/class-pbs-fixture.php), so the

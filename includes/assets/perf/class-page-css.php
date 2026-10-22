@@ -352,7 +352,7 @@ final class Page_Css {
 			} else {
 				wp_register_style( $handle, false, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- inline only.
 				wp_enqueue_style( $handle );
-				wp_add_inline_style( $handle, (string) ( $state['css'] ?? '' ) );
+				wp_add_inline_style( $handle, Assets::inline_css( (string) ( $state['css'] ?? '' ) ) );
 			}
 		}
 		self::$active = array(

@@ -55,6 +55,21 @@ import overflowProp from './overflow';
 import opacityProp from './opacity';
 import transitionProp from './transition';
 import cursorProp from './cursor';
+import containerTypeProp from './container-type';
+import navHoverProp from './nav-hover';
+import navActiveProp from './nav-active';
+import navGapProp from './nav-gap';
+import navPadProp from './nav-pad';
+import navSubBgProp from './nav-sub-bg';
+import navSubColorProp from './nav-sub-color';
+import navSubRadiusProp from './nav-sub-radius';
+import navSubShadowProp from './nav-sub-shadow';
+import navDrawerBgProp from './nav-drawer-bg';
+import navDrawerColorProp from './nav-drawer-color';
+import navBackdropProp from './nav-backdrop';
+import navDrawerWidthProp from './nav-drawer-width';
+import navToggleProp from './nav-toggle';
+import navToggleBgProp from './nav-toggle-bg';
 
 export const PROPS = [
 	displayProp,
@@ -108,6 +123,21 @@ export const PROPS = [
 	opacityProp,
 	transitionProp,
 	cursorProp,
+	containerTypeProp,
+	navHoverProp,
+	navActiveProp,
+	navGapProp,
+	navPadProp,
+	navSubBgProp,
+	navSubColorProp,
+	navSubRadiusProp,
+	navSubShadowProp,
+	navDrawerBgProp,
+	navDrawerColorProp,
+	navBackdropProp,
+	navDrawerWidthProp,
+	navToggleProp,
+	navToggleBgProp,
 ];
 
 /** Key → prop. */

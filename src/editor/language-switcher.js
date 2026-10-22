@@ -40,6 +40,41 @@ export function withVar( vars, key, value ) {
 	return next;
 }
 
+/**
+ * Flag shapes (Tranzly's Switcher::FLAG_SHAPES); '' follows the site's Tranzly setting.
+ *
+ * @return {Array<{value:string,label:string}>} Options.
+ */
+export function flagShapes() {
+	return [
+		{ value: '', label: __( 'Site setting', 'page-builder-sandwich' ) },
+		{
+			value: 'rectangle',
+			label: __( 'Rectangle', 'page-builder-sandwich' ),
+		},
+		{
+			value: 'rounded',
+			label: __( 'Rounded rectangle', 'page-builder-sandwich' ),
+		},
+		{ value: 'square', label: __( 'Square', 'page-builder-sandwich' ) },
+		{ value: 'circle', label: __( 'Circle', 'page-builder-sandwich' ) },
+	];
+}
+
+/**
+ * Flag sizes (Tranzly's Switcher::FLAG_SIZES); '' follows the site's Tranzly setting.
+ *
+ * @return {Array<{value:string,label:string}>} Options.
+ */
+export function flagSizes() {
+	return [
+		{ value: '', label: __( 'Site setting', 'page-builder-sandwich' ) },
+		{ value: 'small', label: __( 'Small', 'page-builder-sandwich' ) },
+		{ value: 'medium', label: __( 'Medium', 'page-builder-sandwich' ) },
+		{ value: 'large', label: __( 'Large', 'page-builder-sandwich' ) },
+	];
+}
+
 function Empty() {
 	return (
 		<p>
@@ -139,6 +174,36 @@ function Edit( { attributes, setAttributes } ) {
 						checked={ attributes.flags }
 						onChange={ ( flags ) => setAttributes( { flags } ) }
 					/>
+					{ attributes.flags && (
+						<>
+							<SelectControl
+								__next40pxDefaultSize
+								__nextHasNoMarginBottom
+								label={ __(
+									'Flag shape',
+									'page-builder-sandwich'
+								) }
+								value={ attributes.flagShape }
+								options={ flagShapes() }
+								onChange={ ( flagShape ) =>
+									setAttributes( { flagShape } )
+								}
+							/>
+							<SelectControl
+								__next40pxDefaultSize
+								__nextHasNoMarginBottom
+								label={ __(
+									'Flag size',
+									'page-builder-sandwich'
+								) }
+								value={ attributes.flagSize }
+								options={ flagSizes() }
+								onChange={ ( flagSize ) =>
+									setAttributes( { flagSize } )
+								}
+							/>
+						</>
+					) }
 					<ToggleControl
 						__nextHasNoMarginBottom
 						label={ __(

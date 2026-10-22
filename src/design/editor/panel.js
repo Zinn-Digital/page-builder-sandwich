@@ -13,6 +13,7 @@ import {
 	Button,
 	CheckboxControl,
 	PanelBody,
+	SelectControl,
 	Slot,
 	Tooltip,
 	// eslint-disable-next-line @wordpress/no-unsafe-wp-apis -- no stable export exists (WordPress 6.8-7.1); core's own panels use it.
@@ -26,7 +27,12 @@ import { PROPS } from '../props';
 import { STORE, config } from '../store';
 import { CONTROLS } from './controls';
 import { TextPropControl } from './controls/basic';
-import { useDesign, withValue } from './use-design';
+import {
+	activeAtRule,
+	atRuleInherited,
+	useDesign,
+	withValue,
+} from './use-design';
 import { inherited as inheritedFrom } from '../breakpoints';
 import { layoutMode, visibleProps } from './visibility';
 import { switcherItems } from './breakpoint-items';
@@ -46,6 +52,8 @@ export const SECTIONS = () => [
 	[ 'effects', __( 'Effects', 'page-builder-sandwich' ) ],
 	// Pro (pbs-m4, pbs-m5): empty — and so not shown — until the Pro motion props register.
 	[ 'motion', __( 'Motion', 'page-builder-sandwich' ) ],
+	// The navigation menu's and site header's own colours and sizes (NAV1): shown only on them.
+	[ 'menu', __( 'Menu and header', 'page-builder-sandwich' ) ],
 	[ 'advanced', __( 'Advanced', 'page-builder-sandwich' ) ],
 ];
 
@@ -75,8 +83,9 @@ function widthText( bp ) {
  * @return {Element} Switcher.
  */
 export function Switcher( { design } ) {
-	const { setBreakpoint, setHover } = useDispatch( STORE );
+	const { setBreakpoint, setHover, setAtRule } = useDispatch( STORE );
 	const items = switcherItems();
+	const presets = config().atRules || [];
 	const set = ( id ) =>
 		Object.keys( design.pbs?.s || {} ).some(
 			( k ) => k === id || k === `${ id }:hover`
@@ -126,6 +135,43 @@ export function Switcher( { design } ) {
 					label={ __( 'Hover', 'page-builder-sandwich' ) }
 				/>
 			</ToggleGroupControl>
+			{ presets.length > 0 && (
+				<SelectControl
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
+					className="pbsw-design-switcher__condition"
+					label={ __( 'Condition', 'page-builder-sandwich' ) }
+					help={
+						design.atRule
+							? __(
+									'These values apply at every screen size, only when the condition holds.',
+									'page-builder-sandwich'
+								)
+							: undefined
+					}
+					value={ design.atRule || '' }
+					onChange={ ( v ) => setAtRule( v ) }
+					options={ [
+						{
+							value: '',
+							label: __( 'Always', 'page-builder-sandwich' ),
+						},
+						...presets.map( ( p ) => ( {
+							value: p.id,
+							label: design.pbs?.s?.[ `@${ p.id }` ]
+								? sprintf(
+										/* translators: %s: a condition such as "When printing". */
+										__(
+											'%s (set)',
+											'page-builder-sandwich'
+										),
+										p.label
+									)
+								: p.label,
+						} ) ),
+					] }
+				/>
+			) }
 			{ design.pbs?.s?.[ design.stateKey ] && (
 				<Button
 					variant="link"
@@ -139,8 +185,11 @@ export function Switcher( { design } ) {
 							'Reset every value set for %s',
 							'page-builder-sandwich'
 						),
-						items.find( ( b ) => b.id === design.bp )?.label ||
-							design.bp
+						( design.atRule
+							? presets.find( ( p ) => p.id === design.atRule )
+									?.label
+							: items.find( ( b ) => b.id === design.bp )
+									?.label ) || design.bp
 					) }
 				</Button>
 			) }
@@ -297,21 +346,25 @@ export function Sections( { design, shown, blockName, advanced = null } ) {
  * @param {Function} onChange Receives the new map.
  * @param {string}   bp       Breakpoint.
  * @param {boolean}  hover    Hover state.
+ * @param {string}   atRule   At-rule preset being edited ('' for none).
  * @return {Object} Design API.
  */
-export function designFromValue( value, onChange, bp, hover ) {
+export function designFromValue( value, onChange, bp, hover, atRule = '' ) {
 	const s = value && typeof value === 'object' ? value : {};
 	const state = hover ? ':hover' : '';
-	const stateKey = bp + state;
+	const stateKey = atRule ? `@${ atRule }` : bp + state;
 	const write = ( next ) => onChange( next );
 	return {
 		pbs: { s },
 		bp,
 		hover,
+		atRule,
 		stateKey,
 		get: ( key ) => s[ stateKey ]?.[ key ],
 		inherited: ( key ) =>
-			inheritedFrom( s, key, bp, config().breakpoints, state ),
+			atRule
+				? atRuleInherited( s, key )
+				: inheritedFrom( s, key, bp, config().breakpoints, state ),
 		set: ( key, v ) =>
 			write( withValue( { s }, stateKey, key, v, () => 'x' )?.s || {} ),
 		setMany: ( values ) => {
@@ -339,14 +392,15 @@ export function designFromValue( value, onChange, bp, hover ) {
  * @return {Element} Editor.
  */
 export function StylePanel( { value, onChange } ) {
-	const { bp, hover } = useSelect(
+	const { bp, hover, atRule } = useSelect(
 		( select ) => ( {
 			bp: select( STORE ).getBreakpoint(),
 			hover: select( STORE ).isHover(),
+			atRule: activeAtRule( select( STORE ).getAtRule() ),
 		} ),
 		[]
 	);
-	const design = designFromValue( value, onChange, bp, hover );
+	const design = designFromValue( value, onChange, bp, hover, atRule );
 	const shown = PROPS.filter( ( p ) => ! p.blocks.length );
 	return (
 		<div className="pbsw-design pbsw-design--class">

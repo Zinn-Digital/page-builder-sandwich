@@ -231,7 +231,7 @@ final class Styles {
 		wp_register_style( $handle, false, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- inline only.
 		wp_enqueue_style( $handle );
 		// The compiler emits only validated values; this makes a closing tag impossible anyway.
-		wp_add_inline_style( $handle, str_replace( '</', '<\\/', $css ) );
+		wp_add_inline_style( $handle, \ZinnDigital\PBS\Assets::inline_css( $css ) );
 	}
 
 	/**
@@ -343,7 +343,7 @@ final class Styles {
 	 * @return string
 	 */
 	public static function signature( $signature ): string {
-		return (string) $signature . '|bp:' . Breakpoints::hash();
+		return (string) $signature . '|bp:' . Breakpoints::hash() . '|at:' . At_Rules::hash();
 	}
 
 	/**

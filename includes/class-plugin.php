@@ -42,6 +42,7 @@ final class Plugin {
 	 * @return void
 	 */
 	public static function activate(): void {
+		Assets\Legacy_Era::record_on_activation();
 		Assets::publish();
 	}
 }

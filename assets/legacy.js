@@ -15,10 +15,18 @@
  */
 ( function ( win, doc ) {
 	'use strict';
+	// The class prefix: written into the copy published under uploads, or read from this
+	// script's own URL when it is served from the plugin folder (uploads not writable).
+	var PFX =
+		'__PREFIX__'.indexOf( '__' ) === 0
+			? ( document.currentScript &&
+					new URL( document.currentScript.src ).searchParams.get( 'pfx' ) ) ||
+			  ''
+			: '__PREFIX__';
 
-	var P = '__PREFIX__-l-';
-	var D = 'data-__PREFIX__-l-';
-	var CFG = win.__PREFIX__LegacyConfig || {};
+	var P = PFX + '-l-';
+	var D = 'data-' + PFX + '-l-';
+	var CFG = win[ PFX + 'LegacyConfig' ] || {};
 	var root = doc.documentElement;
 	var reduced = !! (
 		win.matchMedia && win.matchMedia( '(prefers-reduced-motion: reduce)' ).matches

@@ -13,11 +13,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Legacy front-end compatibility: class rewrite, neutral wrapper, compat stylesheet (L08 worker W3).
-require_once __DIR__ . '/class-legacy.php';
 \ZinnDigital\PBS\Assets\Legacy::register();
 
 // Legacy front-end behaviour: the script and its server-side halves (L08 worker W8).
-require_once __DIR__ . '/class-legacy-script.php';
 \ZinnDigital\PBS\Assets\Legacy_Script::register();
 
 // P2 performance engine: per-block assets, compiled page CSS, LCP/CLS, fonts, cache purge (L08 worker W7).

@@ -1379,6 +1379,10 @@
           },
           "s": {
             "type": "object"
+          },
+          "cat": {
+            "type": "string",
+            "pattern": "^(?:|[a-z0-9][a-z0-9-]{0,31})$"
           }
         },
         "required": [
@@ -2272,6 +2276,29 @@
       "mcp_tool": "pbs-duplicate-page"
     },
     {
+      "name": "pbs/export-design",
+      "label": "Export the design system (Pro)",
+      "description": "Returns the Site design file: categories, global classes, variables, spacing, radius and shadow scales and custom colours (format page-builder-sandwich-design, version 1).",
+      "edition": "pro",
+      "capability": "edit_theme_options (the REST route's own check)",
+      "annotations": {
+        "readonly": true,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "default": {}
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "GET",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/export-design/run"
+      },
+      "mcp_tool": "pbs-export-design"
+    },
+    {
       "name": "pbs/export-designs",
       "label": "Export designs and settings",
       "description": "Exports the chosen templates and patterns (ids) and, optionally, settings as one package for another site.",
@@ -3028,6 +3055,48 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-white-label/run"
       },
       "mcp_tool": "pbs-get-white-label"
+    },
+    {
+      "name": "pbs/import-design",
+      "label": "Import a design system file (Pro)",
+      "description": "Validates a Site design file (file) and, with apply false, returns what merge or replace (mode) would add, change and remove; with apply true, writes it.",
+      "edition": "pro",
+      "capability": "edit_theme_options (the REST route's own check)",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": false
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "file": {
+            "type": "object"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "merge",
+              "replace"
+            ],
+            "default": "merge"
+          },
+          "apply": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "required": [
+          "file"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/import-design/run"
+      },
+      "mcp_tool": "pbs-import-design"
     },
     {
       "name": "pbs/import-designs",
@@ -5097,6 +5166,10 @@
           },
           "s": {
             "type": "object"
+          },
+          "cat": {
+            "type": "string",
+            "pattern": "^(?:|[a-z0-9][a-z0-9-]{0,31})$"
           }
         },
         "required": [
@@ -5241,6 +5314,57 @@
         "path": "/wp-json/wp-abilities/v1/abilities/pbs/update-dark-mode/run"
       },
       "mcp_tool": "pbs-update-dark-mode"
+    },
+    {
+      "name": "pbs/update-design-categories",
+      "label": "Change the class or token categories (Pro)",
+      "description": "Replaces one category list (group: classes or tokens; items: a list of slug and name). Entries filed under a removed category become uncategorised.",
+      "edition": "pro",
+      "capability": "edit_theme_options (the REST route's own check)",
+      "annotations": {
+        "readonly": false,
+        "destructive": false,
+        "idempotent": true
+      },
+      "input_schema": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "group": {
+            "type": "string",
+            "enum": [
+              "classes",
+              "tokens"
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "slug": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string",
+                  "maxLength": 200
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "group",
+          "items"
+        ]
+      },
+      "output_schema": {},
+      "rest": {
+        "method": "POST",
+        "path": "/wp-json/wp-abilities/v1/abilities/pbs/update-design-categories/run"
+      },
+      "mcp_tool": "pbs-update-design-categories"
     },
     {
       "name": "pbs/update-design-globals",
@@ -5874,6 +5998,9 @@
                 },
                 "value": {
                   "type": "string"
+                },
+                "cat": {
+                  "type": "string"
                 }
               },
               "required": [
@@ -5896,6 +6023,9 @@
                 },
                 "value": {
                   "type": "string"
+                },
+                "cat": {
+                  "type": "string"
                 }
               },
               "required": [
@@ -5917,6 +6047,9 @@
                   "type": "string"
                 },
                 "value": {
+                  "type": "string"
+                },
+                "cat": {
                   "type": "string"
                 }
               },
@@ -5967,6 +6100,9 @@
                   "type": "string"
                 },
                 "value": {
+                  "type": "string"
+                },
+                "cat": {
                   "type": "string"
                 }
               },

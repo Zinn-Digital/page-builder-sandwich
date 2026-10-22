@@ -127,7 +127,16 @@ final class Dev_Compat {
 		if ( ! $screen || ! $screen->is_block_editor() ) {
 			return;
 		}
-		wp_print_inline_script_tag( self::stub_js( self::definitions() ) );
+		// The definitions as data, then the stub as a FILE, both blocking and at the top of the head,
+		// so they still run before any add-on script. The stub is never printed inline (WordPress.org
+		// review P0TDX382477HGN: plugin code in an inline script is an unescaped sink).
+		wp_print_inline_script_tag( self::data_js( self::definitions() ) );
+		wp_print_script_tag(
+			array(
+				'src' => add_query_arg( 'ver', PBSW_VERSION, PBSW_URL . 'includes/core/dev-compat-stub.js' ),
+				'id'  => 'pbsw-dev-compat-stub-js',
+			)
+		);
 	}
 
 	/**
@@ -145,20 +154,14 @@ final class Dev_Compat {
 	}
 
 	/**
-	 * The inline script: the definitions, then the stub.
+	 * The inline data script: the definitions, JSON-encoded (JSON_HEX_TAG: a `</script>` inside an
+	 * add-on's label cannot end the tag early).
 	 *
 	 * @param array<string, array<string, mixed>> $definitions From definitions().
 	 * @return string
 	 */
-	public static function stub_js( array $definitions ): string {
-		// JSON_HEX_TAG: a `</script>` inside an add-on's label cannot end the tag early.
-		$data = (string) wp_json_encode(
-			array( 'shortcodes' => (object) $definitions ),
-			JSON_HEX_TAG | JSON_HEX_AMP | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
-		);
-		$stub = (string) file_get_contents( __DIR__ . '/dev-compat-stub.js' ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- a file shipped in this plugin, read locally.
-
-		return 'window.pbswDevCompat = ' . $data . ";\n" . $stub;
+	public static function data_js( array $definitions ): string {
+		return 'window.pbswDevCompat = ' . wp_json_encode( array( 'shortcodes' => (object) $definitions ), JSON_HEX_TAG | JSON_HEX_AMP ) . ';';
 	}
 
 	/**

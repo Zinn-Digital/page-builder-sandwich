@@ -41,8 +41,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * When the published copy is missing (a source added after the last publish), the module is written
  * to the same neutral folder on first use. When uploads cannot be written at all, the module is
- * printed INLINE (inline()) — never from the plugin path, and not as a `data:` URL: WordPress's HTML
- * API passes a script `src` through esc_url(), which drops the `data:` scheme (measured on 7.1.2).
+ * loaded from the plugin folder with the prefix in its URL (Assets::plugin_url(); each module reads
+ * `pfx` from `import.meta.url` when its token was not replaced). It is never printed inline:
+ * plugin code in an inline script is an unescaped sink (WordPress.org review P0TDX382477HGN).
  */
 final class Modules {
 
@@ -55,20 +56,6 @@ final class Modules {
 	 * @var array<string, string>
 	 */
 	private static array $modules = array();
-
-	/**
-	 * Modules to print inline (uploads not writable), id → source.
-	 *
-	 * @var array<string, string>
-	 */
-	private static array $inline = array();
-
-	/**
-	 * The runtime's URL as WordPress prints it (pre-7.0 inline path).
-	 *
-	 * @var string|null
-	 */
-	private static ?string $runtime_src = null;
 
 	/**
 	 * Hooks (none yet; kept for symmetry and so later hooks have a home).
@@ -116,105 +103,14 @@ final class Modules {
 			return null;
 		}
 		$id  = self::id( $body, Settings::prefix() );
-		$src = Assets::published_url( $key ) ?? ( Files::write( $body, 'js' )['url'] ?? null );
+		$src = Assets::published_url( $key ) ?? ( Files::write( $body, 'js' )['url'] ?? null ) ?? Assets::plugin_url( $key );
 		if ( null === $src ) {
-			self::inline( $id, $body );
-			return $id;
+			return null;
 		}
 		wp_register_script_module( $id, $src, array( self::RUNTIME ), null );
 		wp_enqueue_script_module( $id );
 
 		return $id;
-	}
-
-	/**
-	 * Uploads cannot be written: print the module INLINE (`<script type="module">`), after the
-	 * import map, so the block still becomes interactive and nothing points at the plugin path.
-	 *
-	 * The inline module imports `@wordpress/interactivity` by its bare specifier, so the runtime
-	 * must be in WordPress's import map. WordPress 7.0+ adds the `module_dependencies` of a CLASSIC
-	 * script to the import map, so a src-less classic handle declares that dependency. Before 7.0
-	 * the import map only lists dependencies of enqueued MODULES, so there the runtime itself is
-	 * enqueued and the specifier is rewritten to the exact URL WordPress prints for it (the same
-	 * URL string, so the same module instance as every other importer).
-	 *
-	 * @param string $id   Neutral module id.
-	 * @param string $body Module source (prefix applied).
-	 * @return void
-	 */
-	private static function inline( string $id, string $body ): void {
-		if ( isset( self::$inline[ $id ] ) ) {
-			return;
-		}
-		self::$inline[ $id ] = $body;
-		if ( self::classic_module_dependencies() ) {
-			wp_register_script( $id . '-deps', false, array(), null, array( 'in_footer' => true ) ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- no file.
-			wp_script_add_data( $id . '-deps', 'module_dependencies', array( self::RUNTIME ) );
-			wp_enqueue_script( $id . '-deps' );
-		} else {
-			wp_enqueue_script_module( self::RUNTIME );
-			add_filter( 'script_module_loader_src', array( self::class, 'capture_runtime_src' ), 10, 2 );
-		}
-		if ( ! has_action( 'wp_footer', array( self::class, 'print_inline' ) ) ) {
-			// After the import map (printed in wp_head by a block theme, in wp_footer by a classic one).
-			add_action( 'wp_footer', array( self::class, 'print_inline' ), 1000 );
-		}
-	}
-
-	/**
-	 * Does this WordPress put a classic script's `module_dependencies` into the import map (7.0+)?
-	 *
-	 * @return bool
-	 */
-	public static function classic_module_dependencies(): bool {
-		return version_compare( (string) get_bloginfo( 'version' ), '7.0-alpha', '>=' );
-	}
-
-	/**
-	 * `script_module_loader_src`: remember the runtime's printed URL (pre-7.0 path).
-	 *
-	 * @param string|mixed $src Source.
-	 * @param string|mixed $id  Module id.
-	 * @return string|mixed
-	 */
-	public static function capture_runtime_src( $src, $id ) {
-		if ( self::RUNTIME === $id && is_string( $src ) && '' !== $src ) {
-			self::$runtime_src = $src;
-		}
-
-		return $src;
-	}
-
-	/**
-	 * `wp_footer` (1000): print every inline module.
-	 *
-	 * @return void
-	 */
-	public static function print_inline(): void {
-		foreach ( self::$inline as $id => $body ) {
-			if ( ! self::classic_module_dependencies() && null !== self::$runtime_src ) {
-				$body = self::rewrite_runtime( $body, self::$runtime_src );
-			}
-			wp_print_inline_script_tag(
-				$body,
-				array(
-					'type' => 'module',
-					'id'   => $id . '-js-module',
-				)
-			);
-		}
-		self::$inline = array();
-	}
-
-	/**
-	 * Point `from '@wordpress/interactivity'` imports at a URL (the pure half of the pre-7.0 path).
-	 *
-	 * @param string $body Module source.
-	 * @param string $url  Runtime URL.
-	 * @return string
-	 */
-	public static function rewrite_runtime( string $body, string $url ): string {
-		return (string) preg_replace( '/(\bfrom\s*|\bimport\s*\(\s*|\bimport\s+)([\'"])@wordpress\/interactivity\2/', '$1$2' . addcslashes( $url, '\\$' ) . '$2', $body );
 	}
 
 	/**

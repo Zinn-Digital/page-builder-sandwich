@@ -38,25 +38,34 @@ final class Compiler {
 	/**
 	 * Compile every block in a parsed tree (inner blocks included).
 	 *
-	 * @param array<int, array<string, mixed>> $blocks      Parsed blocks.
-	 * @param string                           $prefix      Class prefix.
-	 * @param array<string, mixed>|null        $breakpoints Breakpoints config (tests); null reads the option.
+	 * @param array<int, array<string, mixed>>       $blocks      Parsed blocks.
+	 * @param string                                 $prefix      Class prefix.
+	 * @param array<string, mixed>|null              $breakpoints Breakpoints config (tests); null reads the option.
+	 * @param array<int, array<string, string>>|null $at_rules At-rule presets (tests, already clean); null reads At_Rules::all().
 	 * @return string
 	 */
-	public static function css( array $blocks, string $prefix, ?array $breakpoints = null ): string {
-		$list = Breakpoints::media_list( $breakpoints );
-		$ids  = array_merge( array( 'base' ), array_column( $list, 'id' ) );
+	public static function css( array $blocks, string $prefix, ?array $breakpoints = null, ?array $at_rules = null ): string {
+		$list     = Breakpoints::media_list( $breakpoints );
+		$ids      = array_merge( array( 'base' ), array_column( $list, 'id' ) );
+		$at_rules = $at_rules ?? At_Rules::all();
+		$keys     = array_merge( $ids, At_Rules::keys( $at_rules ) );
 
-		$rules  = array_fill_keys( $ids, '' );
+		$rules  = array_fill_keys( $keys, '' );
 		$hides  = array();
 		$custom = '';
 		$seen   = array();
-		self::walk( $blocks, $prefix, $ids, $rules, $hides, $custom, $seen );
+		self::walk( $blocks, $prefix, $ids, $keys, $rules, $hides, $custom, $seen );
 
 		$css = $rules['base'];
 		foreach ( $list as $bp ) {
 			if ( '' !== $rules[ $bp['id'] ] ) {
 				$css .= '@media ' . Breakpoints::media( $bp ) . '{' . $rules[ $bp['id'] ] . '}';
+			}
+		}
+		// At-rule presets after the screen sizes: a condition wins over the widths it overlaps.
+		foreach ( $at_rules as $preset ) {
+			if ( '' !== $rules[ '@' . $preset['id'] ] ) {
+				$css .= At_Rules::prelude( $preset ) . '{' . $rules[ '@' . $preset['id'] ] . '}';
 			}
 		}
 		foreach ( $ids as $id ) {
@@ -80,13 +89,14 @@ final class Compiler {
 	 * @param array<int, mixed>     $blocks Parsed blocks.
 	 * @param string                $prefix Prefix.
 	 * @param array<int, string>    $ids    Known breakpoint ids.
-	 * @param array<string, string> $rules  Rules per breakpoint (by reference).
+	 * @param array<int, string>    $keys   Style keys compiled: the ids, then `@<preset>` keys.
+	 * @param array<string, string> $rules  Rules per key (by reference).
 	 * @param array<string, bool>   $hides  Breakpoints some block hides on (by reference).
 	 * @param string                $custom Custom element CSS (by reference).
 	 * @param array<string, bool>   $seen   Element ids already written (by reference).
 	 * @return void
 	 */
-	private static function walk( array $blocks, string $prefix, array $ids, array &$rules, array &$hides, string &$custom, array &$seen ): void {
+	private static function walk( array $blocks, string $prefix, array $ids, array $keys, array &$rules, array &$hides, string &$custom, array &$seen ): void {
 		foreach ( $blocks as $block ) {
 			if ( ! is_array( $block ) ) {
 				continue;
@@ -99,24 +109,25 @@ final class Compiler {
 				$id = is_string( $pbs['id'] ?? null ) ? $pbs['id'] : '';
 				if ( 1 === preg_match( self::ID_PATTERN, $id ) && ! isset( $seen[ $id ] ) ) {
 					$seen[ $id ] = true;
-					foreach ( self::block_rules( $block, $prefix, $ids ) as $bp => $css ) {
+					foreach ( self::block_rules( $block, $prefix, $keys ) as $bp => $css ) {
 						$rules[ $bp ] .= $css;
 					}
 					$custom .= self::custom_css( $pbs, self::selector( $prefix, $id ) );
 				}
 			}
 			if ( is_array( $block['innerBlocks'] ?? null ) ) {
-				self::walk( $block['innerBlocks'], $prefix, $ids, $rules, $hides, $custom, $seen );
+				self::walk( $block['innerBlocks'], $prefix, $ids, $keys, $rules, $hides, $custom, $seen );
 			}
 		}
 	}
 
 	/**
-	 * One block's rules, per breakpoint (normal then hover), without media wrappers.
+	 * One block's rules, per breakpoint (normal then hover) and per at-rule preset key
+	 * (`@<id>`, normal only), without media wrappers.
 	 *
 	 * @param array<string, mixed> $block  Parsed block.
 	 * @param string               $prefix Prefix.
-	 * @param array<int, string>   $ids    Known breakpoint ids.
+	 * @param array<int, string>   $ids    Known style keys (breakpoint ids, then `@<preset>`).
 	 * @return array<string, string> breakpoint id → rules.
 	 */
 	public static function block_rules( array $block, string $prefix, array $ids ): array {
@@ -136,20 +147,16 @@ final class Compiler {
 				':hover' => ':hover',
 			) as $state => $pseudo ) {
 				$values = $pbs['s'][ $bp . $state ] ?? null;
-				if ( ! is_array( $values ) ) {
+				if ( ! is_array( $values ) || ( '' !== $state && str_starts_with( $bp, '@' ) ) ) {
 					continue;
 				}
 				$decl = self::declarations( $values, $prefix, $name );
 				if ( '' === $suffix ) {
-					$css .= '' === $decl['all'] ? '' : $selector . $pseudo . '{' . $decl['all'] . '}';
+					$css .= self::rule( $selector . $pseudo, $decl['all'] );
 					continue;
 				}
-				if ( '' !== $decl[''] ) {
-					$css .= $selector . $pseudo . '{' . $decl[''] . '}';
-				}
-				if ( '' !== $decl['layout'] ) {
-					$css .= $selector . $pseudo . $suffix . '{' . $decl['layout'] . '}';
-				}
+				$css .= self::rule( $selector . $pseudo, $decl[''] );
+				$css .= self::rule( $selector . $pseudo . $suffix, $decl['layout'] );
 			}
 			if ( '' !== $css ) {
 				$out[ $bp ] = $css;
@@ -157,6 +164,23 @@ final class Compiler {
 		}
 
 		return $out;
+	}
+
+	/**
+	 * One rule, plus — when it mixes a palette colour (a shade or an opacity) — the plain colour
+	 * for browsers without `color-mix()`, under Values::MIX_FALLBACK. '' for no declarations.
+	 *
+	 * @param string $selector     Selector.
+	 * @param string $declarations Declarations.
+	 * @return string
+	 */
+	public static function rule( string $selector, string $declarations ): string {
+		if ( '' === $declarations ) {
+			return '';
+		}
+		$fallback = Values::mix_fallback( $declarations );
+
+		return $selector . '{' . $declarations . '}' . ( '' === $fallback ? '' : Values::MIX_FALLBACK . '{' . $selector . '{' . $fallback . '}}' );
 	}
 
 	/**
@@ -207,7 +231,7 @@ final class Compiler {
 		if ( ! is_array( $pbs ) ) {
 			return false;
 		}
-		if ( array() !== self::block_rules( $block, $prefix, Breakpoints::ids() ) ) {
+		if ( array() !== self::block_rules( $block, $prefix, array_merge( Breakpoints::ids(), At_Rules::keys( At_Rules::all() ) ) ) ) {
 			return true;
 		}
 		$id = is_string( $pbs['id'] ?? null ) ? $pbs['id'] : '';
@@ -285,12 +309,7 @@ final class Compiler {
 		if ( ! is_string( $css ) || '' === trim( $css ) || strlen( $css ) > self::MAX_CUSTOM_CSS ) {
 			return '';
 		}
-		/**
-		 * Filters whether per-element custom CSS is compiled (the premium layer enables it, d8).
-		 *
-		 * @param bool $enabled Default false.
-		 */
-		if ( ! apply_filters( 'pbsw_design_element_css', false ) ) {
+		if ( ! self::element_css_enabled() ) {
 			return '';
 		}
 		if ( ! self::safe_css( $css ) ) {
@@ -298,6 +317,26 @@ final class Compiler {
 		}
 
 		return str_replace( 'selector', $selector, trim( $css ) );
+	}
+
+	/**
+	 * Whether per-element custom CSS is compiled at all.
+	 *
+	 * ⛔ Only with the premium layer's own class present, not on a filter alone (WordPress.org
+	 * review P0TDX382477HGN, 2026-10-08: no free-text CSS per block or page in the directory
+	 * build). The free and WordPress.org builds do not ship that class, so stored CSS stays in the
+	 * block attributes untouched and is neither rendered nor editable there; a site that adds Pro
+	 * gets it back exactly as saved.
+	 *
+	 * @return bool
+	 */
+	public static function element_css_enabled(): bool {
+		/**
+		 * Filters whether per-element custom CSS is compiled (the premium layer enables it, d8).
+		 *
+		 * @param bool $enabled Default false.
+		 */
+		return class_exists( '\\ZinnDigital\\PBS\\Pro\\Design\\Custom_Css' ) && (bool) apply_filters( 'pbsw_design_element_css', false );
 	}
 
 	/**
