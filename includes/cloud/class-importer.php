@@ -25,6 +25,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * ⛔ Nothing here runs without a person asking: the REST route that calls it needs
  * `edit_pages` + `publish_pages` (`Kits::can_import`), and pages are created as DRAFTS unless the
  * person ticks "Publish". A kit never replaces the front page unless asked.
+ *
+ * ⛔ The importer re-checks every capability itself, whoever calls it (REST route, ability, a
+ * hook): the front page only for `manage_options` (`Kits::can_set_front`), the menu only for
+ * `edit_theme_options` (`Kits::can_add_menu`), publishing only for `publish_pages`, and a page
+ * it made earlier is updated only when this person may edit THAT page.
  */
 final class Importer {
 
@@ -44,7 +49,7 @@ final class Importer {
 	 */
 	public static function import( array $kit, array $options ): array {
 		$wanted = array_values( array_filter( array_map( 'strval', (array) ( $options['pages'] ?? array() ) ) ) );
-		$status = ! empty( $options['publish'] ) ? 'publish' : 'draft';
+		$status = ! empty( $options['publish'] ) && current_user_can( 'publish_pages' ) ? 'publish' : 'draft';
 		$slug   = sanitize_key( (string) ( $kit['slug'] ?? '' ) );
 		$pages  = array_values(
 			array_filter(
@@ -62,7 +67,10 @@ final class Importer {
 				continue;
 			}
 			$existing = self::find( $slug, $page_slug );
-			$postarr  = array(
+			if ( $existing && ! current_user_can( 'edit_post', $existing ) ) {
+				continue;
+			}
+			$postarr = array(
 				'post_type'   => 'page',
 				'post_title'  => sanitize_text_field( (string) ( $page['title'] ?? $page_slug ) ),
 				'post_status' => $status,
@@ -114,7 +122,7 @@ final class Importer {
 		}
 
 		$front = 0;
-		if ( ! empty( $options['front'] ) ) {
+		if ( ! empty( $options['front'] ) && Kits::can_set_front() ) {
 			foreach ( $pages as $page ) {
 				$page_slug = sanitize_title( (string) ( $page['slug'] ?? '' ) );
 				if ( ! empty( $page['front'] ) && isset( $ids[ $page_slug ] ) ) {
@@ -222,6 +230,9 @@ final class Importer {
 	 * @return int The navigation post or menu id, 0 when nothing was made.
 	 */
 	private static function menu( string $name, array $order, array $ids ): int {
+		if ( ! Kits::can_add_menu() ) {
+			return 0;
+		}
 		$items = array();
 		foreach ( $order as $page_slug ) {
 			$page_slug = sanitize_title( (string) $page_slug );

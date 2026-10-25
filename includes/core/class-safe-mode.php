@@ -222,6 +222,13 @@ final class Safe_Mode {
 		if ( is_readable( $target ) && hash_file( 'sha256', $target ) === hash( 'sha256', $source ) ) {
 			return true;
 		}
+		// Writing a must-use plugin is installing code for the whole site (the whole network on
+		// multisite), so it needs `install_plugins` — false for single-site admins of a network
+		// and wherever DISALLOW_FILE_MODS is set — not just the `activate_plugins` that lets a
+		// user turn safe mode on once the file is in place (WordPress.org review, 2026-10-25).
+		if ( ! current_user_can( 'install_plugins' ) ) {
+			return new \WP_Error( 'pbsw_safe_mode_install', __( 'Safe mode needs a small must-use plugin that only a user who can install plugins can add. Ask the site’s administrator to turn safe mode on once.', 'page-builder-sandwich' ), array( 'status' => rest_authorization_required_code() ) );
+		}
 		$filesystem = self::filesystem();
 		if ( null === $filesystem ) {
 			return new \WP_Error( 'pbsw_safe_mode_fs', __( 'Safe mode needs write access to the wp-content/mu-plugins folder.', 'page-builder-sandwich' ), array( 'status' => 500 ) );

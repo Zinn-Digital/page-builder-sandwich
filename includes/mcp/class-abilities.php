@@ -310,7 +310,7 @@ final class Abilities {
 			'pbs/apply-kit',
 			array(
 				'edition'             => 'free',
-				'capability'          => 'edit_pages and publish_pages; manage_options to set the home page',
+				'capability'          => 'edit_pages and publish_pages; manage_options to set the home page; edit_theme_options to create a menu',
 				'label'               => __( 'Import a website kit', 'page-builder-sandwich' ),
 				'description'         => __( 'Imports a website kit\'s pages (all of them, or the ones named), optionally publishing them, setting the home page and adding them to a menu. Importing again updates the same pages.', 'page-builder-sandwich' ),
 				'category'            => self::CATEGORY,
@@ -334,8 +334,7 @@ final class Abilities {
 							'default' => false,
 						),
 						'menu'    => array(
-							'type'    => 'boolean',
-							'default' => true,
+							'type' => 'boolean',
 						),
 					),
 					'required'             => array( 'slug' ),
@@ -343,7 +342,7 @@ final class Abilities {
 				),
 				'output_schema'       => array( 'type' => 'object' ),
 				'execute_callback'    => array( self::class, 'apply_kit' ),
-				'permission_callback' => static fn( array $input ): bool => Kits::can_import() && ( empty( $input['front'] ) || current_user_can( 'manage_options' ) ),
+				'permission_callback' => static fn( array $input ): bool => Kits::can_import() && ( empty( $input['front'] ) || Kits::can_set_front() ) && ( empty( $input['menu'] ) || Kits::can_add_menu() ),
 				'annotations'         => array(
 					'destructive' => false,
 					'idempotent'  => true,
@@ -1181,8 +1180,8 @@ final class Abilities {
 			array(
 				'pages'   => Ability::strings( $input, 'pages' ),
 				'publish' => ! empty( $input['publish'] ) && current_user_can( 'publish_pages' ),
-				'front'   => ! empty( $input['front'] ) && current_user_can( 'manage_options' ),
-				'menu'    => ! isset( $input['menu'] ) || ! empty( $input['menu'] ),
+				'front'   => ! empty( $input['front'] ) && Kits::can_set_front(),
+				'menu'    => ( ! isset( $input['menu'] ) || ! empty( $input['menu'] ) ) && Kits::can_add_menu(),
 			)
 		);
 		if ( isset( $done['failure'] ) ) {

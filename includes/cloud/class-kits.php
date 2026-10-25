@@ -71,7 +71,7 @@ final class Kits {
 			array(
 				'methods'             => \WP_REST_Server::CREATABLE,
 				'callback'            => array( self::class, 'import' ),
-				'permission_callback' => static fn(): bool => current_user_can( 'edit_pages' ) && current_user_can( 'publish_pages' ),
+				'permission_callback' => array( self::class, 'import_permission' ),
 				'args'                => array(
 					'slug'    => array(
 						'type'     => 'string',
@@ -91,13 +91,66 @@ final class Kits {
 						'type'    => 'boolean',
 						'default' => false,
 					),
+					// No default: an omitted `menu` means "a menu if this user may create one".
 					'menu'    => array(
-						'type'    => 'boolean',
-						'default' => true,
+						'type' => 'boolean',
 					),
 				),
 			)
 		);
+	}
+
+	/**
+	 * Who may set the site's front page from a kit: the person who may change site settings.
+	 * `show_on_front` / `page_on_front` are site-wide options, so this is `manage_options`
+	 * (the capability WordPress itself requires on Settings → Reading).
+	 *
+	 * @return bool
+	 */
+	public static function can_set_front(): bool {
+		return current_user_can( 'manage_options' );
+	}
+
+	/**
+	 * Who may create a site navigation menu from a kit: `edit_theme_options`, the capability
+	 * WordPress requires for Appearance → Menus and for `wp_navigation` posts.
+	 *
+	 * @return bool
+	 */
+	public static function can_add_menu(): bool {
+		return current_user_can( 'edit_theme_options' );
+	}
+
+	/**
+	 * Permission for POST /kits/import. Importing pages needs `edit_pages` + `publish_pages`;
+	 * the site-wide side effects need their own capability on top — `front` needs
+	 * `manage_options` and `menu` needs `edit_theme_options`. An editor can still import the
+	 * pages; asking for a site-wide change they may not make is refused with a 403, never
+	 * silently applied or silently dropped.
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 * @return bool|\WP_Error
+	 */
+	public static function import_permission( \WP_REST_Request $request ) {
+		if ( ! self::can_import() ) {
+			return false;
+		}
+		if ( $request->get_param( 'front' ) && ! self::can_set_front() ) {
+			return new \WP_Error(
+				'pbsw_kit_front_forbidden',
+				__( 'Only an administrator can change the site’s front page. Import the pages without that option, or ask an administrator.', 'page-builder-sandwich' ),
+				array( 'status' => rest_authorization_required_code() )
+			);
+		}
+		if ( $request->get_param( 'menu' ) && ! self::can_add_menu() ) {
+			return new \WP_Error(
+				'pbsw_kit_menu_forbidden',
+				__( 'Only a user who can edit menus can create a site menu. Import the pages without that option, or ask an administrator.', 'page-builder-sandwich' ),
+				array( 'status' => rest_authorization_required_code() )
+			);
+		}
+
+		return true;
 	}
 
 	/**
@@ -134,6 +187,11 @@ final class Kits {
 		if ( isset( $data['failure'] ) ) {
 			return self::failure( (array) $data['failure'] );
 		}
+		// Which site-wide import options this user may choose; the screen hides the others.
+		$data['can'] = array(
+			'front' => self::can_set_front(),
+			'menu'  => self::can_add_menu(),
+		);
 
 		return new \WP_REST_Response( $data, 200 );
 	}
@@ -176,8 +234,10 @@ final class Kits {
 			array(
 				'pages'   => (array) $request->get_param( 'pages' ),
 				'publish' => (bool) $request->get_param( 'publish' ),
-				'front'   => (bool) $request->get_param( 'front' ),
-				'menu'    => (bool) $request->get_param( 'menu' ),
+				// Checked in import_permission(); re-checked here so no other caller of this
+				// callback can reach a site-wide change without the capability.
+				'front'   => (bool) $request->get_param( 'front' ) && self::can_set_front(),
+				'menu'    => ( null === $request->get_param( 'menu' ) || (bool) $request->get_param( 'menu' ) ) && self::can_add_menu(),
 			)
 		);
 		if ( isset( $done['failure'] ) ) {

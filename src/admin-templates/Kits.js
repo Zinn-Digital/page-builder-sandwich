@@ -48,14 +48,15 @@ function Swatches( { palette } ) {
  *
  * @param {Object}   props
  * @param {Object}   props.kit     Catalogue entry.
+ * @param {Object}   props.can     Site-wide options this user may choose ({ front, menu }).
  * @param {Function} props.onClose Close.
  * @return {Element} Modal.
  */
-function ImportDialog( { kit, onClose } ) {
+function ImportDialog( { kit, can, onClose } ) {
 	const [ pages, setPages ] = useState( kit.pages.map( ( p ) => p.slug ) );
 	const [ publish, setPublish ] = useState( false );
 	const [ front, setFront ] = useState( false );
-	const [ menu, setMenu ] = useState( true );
+	const [ menu, setMenu ] = useState( !! can.menu );
 	const [ busy, setBusy ] = useState( false );
 	const [ result, setResult ] = useState( null );
 	const [ error, setError ] = useState( '' );
@@ -66,7 +67,13 @@ function ImportDialog( { kit, onClose } ) {
 		apiFetch( {
 			path: '/pbs/v1/kits/import',
 			method: 'POST',
-			data: { slug: kit.slug, pages, publish, front, menu },
+			data: {
+				slug: kit.slug,
+				pages,
+				publish,
+				front: !! can.front && front,
+				menu: !! can.menu && menu,
+			},
 		} )
 			.then( setResult )
 			.catch( ( e ) => setError( e.message ) )
@@ -158,22 +165,26 @@ function ImportDialog( { kit, onClose } ) {
 						checked={ publish }
 						onChange={ setPublish }
 					/>
-					<ToggleControl
-						label={ __(
-							'Use the kit’s home page as the site’s front page',
-							'page-builder-sandwich'
-						) }
-						checked={ front }
-						onChange={ setFront }
-					/>
-					<ToggleControl
-						label={ __(
-							'Create a menu with the imported pages',
-							'page-builder-sandwich'
-						) }
-						checked={ menu }
-						onChange={ setMenu }
-					/>
+					{ can.front && (
+						<ToggleControl
+							label={ __(
+								'Use the kit’s home page as the site’s front page',
+								'page-builder-sandwich'
+							) }
+							checked={ front }
+							onChange={ setFront }
+						/>
+					) }
+					{ can.menu && (
+						<ToggleControl
+							label={ __(
+								'Create a menu with the imported pages',
+								'page-builder-sandwich'
+							) }
+							checked={ menu }
+							onChange={ setMenu }
+						/>
+					) }
 					<p className="pbs-kit-import__note">
 						{ __(
 							'Importing never changes your existing pages. Importing the same kit again updates the pages it created before.',
@@ -380,6 +391,7 @@ export default function Kits( { data } ) {
 			{ importing && (
 				<ImportDialog
 					kit={ importing }
+					can={ ( catalogue && catalogue.can ) || {} }
 					onClose={ () => setImporting( null ) }
 				/>
 			) }
