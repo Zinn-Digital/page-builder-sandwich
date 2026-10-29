@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.32
+Stable tag: 6.36.33
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.36.33 =
+* Dependency security update (Renovate).
+
 = 6.36.32 =
 * Dependency security update.
 
@@ -232,10 +235,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 * New (Pro): a mobile toggle bar designer for the navigation menu: drag the Menu button, logo, site title, a search box, links and texts into the bar a folded menu shows.
 * New (Pro): per-row sticky site header: let a top bar scroll away while the logo and menu stay.
 * Fix: breadcrumbs stay on one line (earlier steps are shortened), so a web font loading late can no longer move the page.
-
-= 6.36.23 =
-* Fix: front-end scripts and stylesheets keep the same address across updates (only a version number after it changes), and a file a previous version used is kept for one more release, so a page a cache saved before an update never points at a missing script. This stops an update from looking like broken pages to update checkers, and keeps the mobile menu working on cached pages.
-* Fix: after an update made without opening wp-admin (WP-CLI, a host's updater), the front-end files are published on the first page view, instead of loading from the plugin folder until someone visits the dashboard.
-* Fix: sites whose cached pages still pointed at the navigation menu and site header files 6.36.22 replaced get those files back, and on every update that changes the front-end files the page caches the plugin can reach are emptied (WP Rocket, LiteSpeed Cache, W3 Total Cache, WP Super Cache, SiteGround Optimizer, the Cloudflare plugin, Zinn® Cache). Hosts can hook `pbs_assets_changed` to purge a CDN.
 
 The full history of every release is in changelog.txt, in the plugin's folder.
