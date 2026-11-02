@@ -147,6 +147,7 @@ return array(
 	'ZinnDigital\\PBS\\Design\\Rest' => 'includes/design/class-rest.php',
 	'ZinnDigital\\PBS\\Design\\Styles' => 'includes/design/class-styles.php',
 	'ZinnDigital\\PBS\\Design\\Values' => 'includes/design/class-values.php',
+	'ZinnDigital\\PBS\\Dev\\Debug' => 'includes/dev/class-debug.php',
 	'ZinnDigital\\PBS\\Dev\\Dev_Routes' => 'includes/dev/class-dev-routes.php',
 	'ZinnDigital\\PBS\\Dev\\Registry' => 'includes/dev/class-registry.php',
 	'ZinnDigital\\PBS\\Dev\\Style_Control' => 'includes/dev/class-style-control.php',

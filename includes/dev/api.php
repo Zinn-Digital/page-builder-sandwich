@@ -37,6 +37,7 @@ if ( ! function_exists( 'pbsw_register_block' ) ) {
 		unset( $args['plugin'] );
 		$file = str_ends_with( $path_or_name, 'block.json' ) ? $path_or_name : trailingslashit( $path_or_name ) . 'block.json';
 		$name = $path_or_name;
+		$meta = null;
 		if ( is_readable( $file ) ) {
 			$meta = json_decode( (string) file_get_contents( $file ), true ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- the add-on's own block.json.
 			$name = is_array( $meta ) ? (string) ( $meta['name'] ?? '' ) : '';
@@ -50,8 +51,12 @@ if ( ! function_exists( 'pbsw_register_block' ) ) {
 			'blocks',
 			$name,
 			array(
-				'label'  => (string) ( $args['title'] ?? $name ),
-				'plugin' => $plugin,
+				'label'   => (string) ( $args['title'] ?? $name ),
+				'plugin'  => $plugin,
+				// Debug mode (row 71a): the add-on's version, and its folder (a render callback
+				// defined outside it is reported as an override).
+				'version' => (string) ( $args['version'] ?? ( is_array( $meta ?? null ) ? ( $meta['version'] ?? '' ) : '' ) ),
+				'dir'     => is_readable( $file ) ? dirname( $file ) : '',
 			),
 			array()
 		) ) {

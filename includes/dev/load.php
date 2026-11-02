@@ -18,3 +18,4 @@ require_once __DIR__ . '/api.php';
 
 \ZinnDigital\PBS\Dev\Registry::register();
 \ZinnDigital\PBS\Dev\Dev_Routes::register();
+\ZinnDigital\PBS\Dev\Debug::register();

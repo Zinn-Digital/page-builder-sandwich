@@ -14,6 +14,7 @@ import {
 
 import About from './About';
 import Breakpoints from './Breakpoints';
+import Debug from './Debug';
 import LegacyContent from './LegacyContent';
 import McpPanel from '../mcp-kit/McpPanel';
 import { isValidPrefix } from './prefix';
@@ -164,6 +165,9 @@ export default function App( { data } ) {
 							</p>
 						) }
 					</PanelBody>
+				) }
+				{ settings && data.debugPath && (
+					<Debug path={ data.debugPath } version={ data.version } />
 				) }
 				{ data.migrationPath && (
 					<LegacyContent path={ data.migrationPath } />

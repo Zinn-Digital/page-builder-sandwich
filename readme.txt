@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.33
+Stable tag: 6.36.34
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.36.34 =
+* Debug mode lists block versions and overrides; Events: categories with colours, canceled/postponed status (shown or hidden), The Events Calendar source.
+
 = 6.36.33 =
 * Dependency security update (Renovate).
 
@@ -226,14 +229,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.25 =
 * New: a Zinn® Ads card among the Zinn® services on this plugin's own screens — Google Ads management that asks before it spends, with a click-fraud shield free on Zinn® hosting. It links to the page in your language and is never shown on a footprint-free site.
-
-= 6.36.24 =
-* New: shades and opacity for palette colours. Pick a palette colour in any colour setting, then make it lighter, darker or see-through; it is mixed in OKLCH so the hue stays true, it still follows the palette colour, and browsers without colour mixing get the plain colour.
-* New: conditions in the Style tab. Style an element only when printing, in a dark colour scheme, with reduced motion or on a device with a mouse; developers add their own media, container and supports conditions with the `pbsw_style_at_rules` filter. New Advanced setting "Query container" for container conditions.
-* New (Pro): categories for global classes, variables and spacing, radius and shadow scales, with filters in Site design and in the editor's class and preset pickers.
-* New (Pro): import and export your design system (Site design › Import and export): one JSON file with categories, classes, variables, scales and custom colours, checked before import, merge or replace, with a preview of what changes.
-* New (Pro): a mobile toggle bar designer for the navigation menu: drag the Menu button, logo, site title, a search box, links and texts into the bar a folded menu shows.
-* New (Pro): per-row sticky site header: let a top bar scroll away while the logo and menu stay.
-* Fix: breadcrumbs stay on one line (earlier steps are shortened), so a web font loading late can no longer move the page.
 
 The full history of every release is in changelog.txt, in the plugin's folder.
