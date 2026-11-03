@@ -5,6 +5,7 @@
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { useSelect, useDispatch } from '@wordpress/data';
+import { useState } from '@wordpress/element';
 import {
 	InspectorControls,
 	store as blockEditorStore,
@@ -49,6 +50,8 @@ export const SECTIONS = () => [
 	[ 'border', __( 'Border', 'page-builder-sandwich' ) ],
 	[ 'shadow', __( 'Shadow', 'page-builder-sandwich' ) ],
 	[ 'position', __( 'Position', 'page-builder-sandwich' ) ],
+	// Rotate, scale, skew and offset (pbs-p4b): every block, rows and columns included.
+	[ 'transform', __( 'Transform', 'page-builder-sandwich' ) ],
 	[ 'effects', __( 'Effects', 'page-builder-sandwich' ) ],
 	// Pro (pbs-m4, pbs-m5): empty — and so not shown — until the Pro motion props register.
 	[ 'motion', __( 'Motion', 'page-builder-sandwich' ) ],
@@ -421,11 +424,13 @@ export function StylePanel( { value, onChange } ) {
 export default function DesignPanel( { clientId, name } ) {
 	const design = useDesign( clientId );
 	const list = config().breakpoints;
-	const { attributes, parent } = useSelect(
+	const [ target, setTarget ] = useState( 'block' );
+	const { attributes, parent, hasItems } = useSelect(
 		( select ) => {
 			const be = select( blockEditorStore );
 			const rootId = be.getBlockRootClientId( clientId );
 			return {
+				hasItems: be.getBlockCount( clientId ) > 0,
 				attributes: be.getBlockAttributes( clientId ),
 				parent: rootId
 					? {
@@ -451,26 +456,111 @@ export default function DesignPanel( { clientId, name } ) {
 		position,
 	} );
 
+	const items = hasItems && target === 'items';
+	const itemDesign = designFromValue(
+		design.pbs?.items,
+		( next ) => design.setField( 'items', next ),
+		design.bp,
+		design.hover,
+		design.atRule
+	);
+
 	return (
 		<InspectorControls group="styles">
 			<div className="pbsw-design">
-				<Switcher design={ design } />
-				<Sections
-					design={ design }
-					shown={ shown }
-					blockName={ name }
-					advanced={
-						<>
-							<HideOn design={ design } />
-							{ /* Global classes and custom CSS (Pro) render here. */ }
-							<Slot
-								name="PbswDesignAdvanced"
-								fillProps={ { clientId, design } }
-							/>
-						</>
-					}
-				/>
+				{ hasItems && (
+					<ItemTarget
+						value={ items ? 'items' : 'block' }
+						onChange={ setTarget }
+						count={ Object.keys( design.pbs?.items || {} ).length }
+					/>
+				) }
+				<Switcher design={ items ? itemDesign : design } />
+				{ items && (
+					<Sections
+						design={ itemDesign }
+						shown={ itemProps( PROPS ) }
+						blockName=""
+					/>
+				) }
+				{ ! items && (
+					<Sections
+						design={ design }
+						shown={ shown }
+						blockName={ name }
+						advanced={
+							<>
+								<HideOn design={ design } />
+								{ /* Global classes and custom CSS (Pro) render here. */ }
+								<Slot
+									name="PbswDesignAdvanced"
+									fillProps={ { clientId, design } }
+								/>
+							</>
+						}
+					/>
+				) }
 			</div>
 		</InspectorControls>
+	);
+}
+
+/**
+ * The props offered as item defaults (pbs-p4c): every prop not tied to a block type, except the
+ * Pro motion props, which need a class on the item itself.
+ *
+ * @param {Array<Object>} props Registered props.
+ * @return {Array<Object>} Props.
+ */
+export function itemProps( props ) {
+	return props.filter( ( p ) => ! p.blocks.length && p.group !== 'motion' );
+}
+
+/**
+ * What the Style tab edits on a block that holds items (a row's columns, an accordion's items,
+ * the blocks in a section): the block itself, or the defaults every item inside it uses.
+ *
+ * @param {Object}   props
+ * @param {string}   props.value    'block' or 'items'.
+ * @param {Function} props.onChange Change.
+ * @param {number}   props.count    States with item defaults set.
+ * @return {Element} Control.
+ */
+function ItemTarget( { value, onChange, count } ) {
+	return (
+		<div className="pbsw-design-target">
+			<ToggleGroupControl
+				__next40pxDefaultSize
+				__nextHasNoMarginBottom
+				isBlock
+				label={ __( 'Style', 'page-builder-sandwich' ) }
+				value={ value }
+				onChange={ onChange }
+			>
+				<ToggleGroupControlOption
+					value="block"
+					label={ __( 'This block', 'page-builder-sandwich' ) }
+				/>
+				<ToggleGroupControlOption
+					value="items"
+					label={
+						count
+							? __(
+									'Item defaults (set)',
+									'page-builder-sandwich'
+								)
+							: __( 'Item defaults', 'page-builder-sandwich' )
+					}
+				/>
+			</ToggleGroupControl>
+			{ value === 'items' && (
+				<p className="pbsw-design-target__help">
+					{ __(
+						'Every item directly inside this block uses these values, including items you add later. An item that sets its own value keeps it.',
+						'page-builder-sandwich'
+					) }
+				</p>
+			) }
+		</div>
 	);
 }

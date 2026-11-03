@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.34
+Stable tag: 6.36.35
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.36.35 =
+* PBS: transform options (rotate, scale, skew, move) on every block including rows and columns; default item styles for rows, sections, accordions, tabs and other blocks that hold items; Pro: the cookie banner can be switched on or off from the General settings. Zinn® Cache Pro: the warm-up also warms page 2 onwards of the blog and of every category, tag and custom-taxonomy archive (a new setting, on by default).
+
 = 6.36.34 =
 * Debug mode lists block versions and overrides; Events: categories with colours, canceled/postponed status (shown or hidden), The Events Calendar source.
 
@@ -226,8 +229,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 = 6.36.26 =
 * New: if the Studio's page preview is blocked by a security setting or does not load within 30 seconds, the Studio now says why and offers a Retry button. Your work is never lost.
 * New: the Language switcher element's flags can be a rectangle, rounded rectangle, square or circle, and small, medium or large (with Tranzly 3.27.26 or later).
-
-= 6.36.25 =
-* New: a Zinn® Ads card among the Zinn® services on this plugin's own screens — Google Ads management that asks before it spends, with a click-fraud shield free on Zinn® hosting. It links to the page in your language and is never shown on a footprint-free site.
 
 The full history of every release is in changelog.txt, in the plugin's folder.

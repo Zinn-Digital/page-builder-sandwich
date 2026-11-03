@@ -56,7 +56,11 @@ export function dedupe( blocks, owners, random = Math.random ) {
 		const id = pbs?.id;
 		// Styled but no id yet: a block inserted from a variation or a pattern that carries preset
 		// design values (the compiler ignores a block without an id).
-		if ( ! id && pbs && ( pbs.s || pbs.hide || pbs.cls || pbs.css ) ) {
+		if (
+			! id &&
+			pbs &&
+			( pbs.s || pbs.items || pbs.hide || pbs.cls || pbs.css )
+		) {
 			missing.push( b.clientId );
 		}
 		if ( typeof id === 'string' && id ) {

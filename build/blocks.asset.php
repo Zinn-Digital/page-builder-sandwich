@@ -15,5 +15,5 @@
 		'wp-rich-text',
 		'wp-server-side-render'
 	),
-	'version' => 'e163bfdfa6f4e0efcec3'
+	'version' => '3f47645880d3203a7b7b'
 );

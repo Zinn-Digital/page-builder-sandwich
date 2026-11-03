@@ -51,6 +51,7 @@ import textShadowProp from './text-shadow';
 import positionProp from './position';
 import insetProp from './inset';
 import zIndexProp from './z-index';
+import transformProp from './transform';
 import overflowProp from './overflow';
 import opacityProp from './opacity';
 import transitionProp from './transition';
@@ -119,6 +120,7 @@ export const PROPS = [
 	positionProp,
 	insetProp,
 	zIndexProp,
+	transformProp,
 	overflowProp,
 	opacityProp,
 	transitionProp,

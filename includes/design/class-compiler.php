@@ -79,6 +79,10 @@ final class Compiler {
 			// A visitor who asks for reduced motion gets the end state at once.
 			$css .= '@media (prefers-reduced-motion:reduce){[class*="' . $prefix . '-s-"]{transition:none!important}}';
 		}
+		if ( str_contains( $css, 'var(--' . $prefix . '-tdir,1)' ) ) {
+			// A horizontal offset (transform) runs towards the end of the line in either direction.
+			$css .= '[dir=rtl]{--' . $prefix . '-tdir:-1}[dir=ltr]{--' . $prefix . '-tdir:1}';
+		}
 
 		return $css . $custom;
 	}
@@ -131,9 +135,10 @@ final class Compiler {
 	 * @return array<string, string> breakpoint id → rules.
 	 */
 	public static function block_rules( array $block, string $prefix, array $ids ): array {
-		$pbs = $block['attrs']['pbs'] ?? null;
-		$id  = is_array( $pbs ) && is_string( $pbs['id'] ?? null ) ? $pbs['id'] : '';
-		if ( 1 !== preg_match( self::ID_PATTERN, $id ) || ! is_array( $pbs['s'] ?? null ) ) {
+		$pbs   = $block['attrs']['pbs'] ?? null;
+		$id    = is_array( $pbs ) && is_string( $pbs['id'] ?? null ) ? $pbs['id'] : '';
+		$items = is_array( $pbs ) && is_array( $pbs['items'] ?? null ) ? $pbs['items'] : null;
+		if ( 1 !== preg_match( self::ID_PATTERN, $id ) || ( ! is_array( $pbs['s'] ?? null ) && null === $items ) ) {
 			return array();
 		}
 		$name     = (string) ( $block['blockName'] ?? '' );
@@ -158,12 +163,41 @@ final class Compiler {
 				$css .= self::rule( $selector . $pseudo, $decl[''] );
 				$css .= self::rule( $selector . $pseudo . $suffix, $decl['layout'] );
 			}
+			$css .= self::item_rules( $items[ $bp ] ?? null, $items[ $bp . ':hover' ] ?? null, $bp, $prefix, $id, $suffix );
 			if ( '' !== $css ) {
 				$out[ $bp ] = $css;
 			}
 		}
 
 		return $out;
+	}
+
+	/**
+	 * Item defaults (pbs-p4c): what a group or repeatable block (a row's columns, an accordion's
+	 * items, a section's blocks…) sets for EVERY item directly inside it, stored in `pbs.items`
+	 * with the same shape as `pbs.s`. An item that sets the same prop itself wins at every screen
+	 * size: the default rule is one class strong (0,1,0) and an item's own rule two (0,2,0). A new
+	 * item takes the defaults the moment it is added, because they are CSS, not copied values.
+	 *
+	 * @param mixed  $values Normal-state values at this breakpoint.
+	 * @param mixed  $hover  Hover-state values at this breakpoint.
+	 * @param string $bp     Breakpoint id or `@<preset>`.
+	 * @param string $prefix Prefix.
+	 * @param string $id     The group block's design id.
+	 * @param string $suffix The group's layout suffix ('' or '>.<prefix>-section__in').
+	 * @return string
+	 */
+	public static function item_rules( $values, $hover, string $bp, string $prefix, string $id, string $suffix ): string {
+		$base = '.' . $prefix . '-s-' . $id . ( '' === $suffix ? '' : (string) preg_replace( '/(\.[a-z0-9_-]+)$/', ':where($1)', $suffix ) ) . '>';
+		$css  = '';
+		if ( is_array( $values ) ) {
+			$css .= self::rule( $base . '*', self::declarations( $values, $prefix )['all'] );
+		}
+		if ( is_array( $hover ) && ! str_starts_with( $bp, '@' ) ) {
+			$css .= self::rule( $base . ':where(*:hover)', self::declarations( $hover, $prefix )['all'] );
+		}
+
+		return $css;
 	}
 
 	/**

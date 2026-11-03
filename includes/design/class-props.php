@@ -81,6 +81,8 @@ final class Props {
 		'position'        => 'position',
 		'inset'           => 'inset',
 		'zIndex'          => 'z-index',
+		// Transform (pbs-p4b): rotate, scale, skew, offset.
+		'transform'       => 'transform',
 		// Effects: W3 (pbs-r14) adds its lines here.
 		// Advanced.
 		'overflow'        => 'overflow',

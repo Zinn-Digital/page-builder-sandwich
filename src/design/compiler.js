@@ -122,7 +122,8 @@ export function blockSelector( prefix, id ) {
 export function blockRules( block, prefix, ids ) {
 	const pbs = block.attrs?.pbs;
 	const id = isObject( pbs ) && typeof pbs.id === 'string' ? pbs.id : '';
-	if ( ! ID_PATTERN.test( id ) || ! isObject( pbs.s ) ) {
+	const items = isObject( pbs ) && isObject( pbs.items ) ? pbs.items : null;
+	if ( ! ID_PATTERN.test( id ) || ( ! isObject( pbs.s ) && ! items ) ) {
 		return {};
 	}
 	const selector = blockSelector( prefix, id );
@@ -131,7 +132,7 @@ export function blockRules( block, prefix, ids ) {
 	for ( const bp of ids ) {
 		let css = '';
 		for ( const pseudo of [ '', ':hover' ] ) {
-			const values = pbs.s[ bp + pseudo ];
+			const values = pbs.s?.[ bp + pseudo ];
 			// A condition (at-rule preset, `@<id>`) has no hover state.
 			if ( ! isObject( values ) || ( pseudo && bp.startsWith( '@' ) ) ) {
 				continue;
@@ -144,11 +145,49 @@ export function blockRules( block, prefix, ids ) {
 			css += rule( selector + pseudo, d.own );
 			css += rule( selector + pseudo + suffix, d.layout );
 		}
+		css += itemRules(
+			items?.[ bp ],
+			items?.[ bp + ':hover' ],
+			bp,
+			prefix,
+			id,
+			suffix
+		);
 		if ( css ) {
 			out[ bp ] = css;
 		}
 	}
 	return out;
+}
+
+/**
+ * Item defaults (pbs-p4c): a group or repeatable block's `pbs.items`, applied to every item
+ * directly inside it. One class strong, so an item's own value (two classes) always wins.
+ * Twin of Compiler::item_rules().
+ *
+ * @param {Object} values Normal-state values at this breakpoint.
+ * @param {Object} hover  Hover-state values at this breakpoint.
+ * @param {string} bp     Breakpoint id or `@<preset>`.
+ * @param {string} prefix Prefix.
+ * @param {string} id     The group block's design id.
+ * @param {string} suffix The group's layout suffix.
+ * @return {string} CSS.
+ */
+export function itemRules( values, hover, bp, prefix, id, suffix ) {
+	const base = `.${ prefix }-s-${ id }${
+		suffix ? suffix.replace( /(\.[a-z0-9_-]+)$/, ':where($1)' ) : ''
+	}>`;
+	let css = '';
+	if ( isObject( values ) ) {
+		css += rule( `${ base }*`, declarations( values, prefix ).all );
+	}
+	if ( isObject( hover ) && ! bp.startsWith( '@' ) ) {
+		css += rule(
+			`${ base }:where(*:hover)`,
+			declarations( hover, prefix ).all
+		);
+	}
+	return css;
 }
 
 /**
@@ -232,6 +271,10 @@ export function compile( blocks, prefix, config, atRules = [] ) {
 	if ( css.includes( 'transition-duration:' ) ) {
 		css += `@media (prefers-reduced-motion:reduce){[class*="${ prefix }-s-"]{transition:none!important}}`;
 	}
+	if ( css.includes( `var(--${ prefix }-tdir,1)` ) ) {
+		// A horizontal offset (transform) runs towards the end of the line in either direction.
+		css += `[dir=rtl]{--${ prefix }-tdir:-1}[dir=ltr]{--${ prefix }-tdir:1}`;
+	}
 	return css;
 }
 
@@ -286,6 +329,7 @@ export function previewCss( block, prefix, bpIds, hover = false, atRule = '' ) {
 			}
 		}
 	}
+	css += previewItemsCss( pbs, prefix, bpIds, hover, atRule );
 	const forced = atRule ? pbs.s?.[ `@${ atRule }` ] : null;
 	if ( isObject( forced ) ) {
 		const d = declarations( forced, prefix, block.blockName || '' );
@@ -295,6 +339,49 @@ export function previewCss( block, prefix, bpIds, hover = false, atRule = '' ) {
 			css += d.own ? `${ selector }{${ d.own }}` : '';
 			css += d.layout ? `${ selector }${ suffix }{${ d.layout }}` : '';
 		}
+	}
+	return css;
+}
+
+/**
+ * Editor preview of item defaults (pbs-p4c). In the canvas a block's items sit either directly
+ * in it or in the editor's own list wrapper, so both are matched — never an item of a group
+ * nested further down. Zero specificity beyond the group's one class, as on the site.
+ *
+ * @param {Object}   pbs    `pbs` attribute.
+ * @param {string}   prefix Prefix.
+ * @param {string[]} bpIds  cascade() output.
+ * @param {boolean}  hover  Show hover values as if hovered.
+ * @param {string}   atRule At-rule preset being edited.
+ * @return {string} CSS.
+ */
+export function previewItemsCss(
+	pbs,
+	prefix,
+	bpIds,
+	hover = false,
+	atRule = ''
+) {
+	if ( ! isObject( pbs.items ) ) {
+		return '';
+	}
+	const group = `.${ prefix }-s-${ pbs.id }`;
+	const items = `${ group }>:where([data-block]),${ group } :where(.block-editor-block-list__layout:not(${ group } [data-block] .block-editor-block-list__layout))>:where([data-block])`;
+	const hovered = items.replace( /\[data-block\]\)/g, '[data-block]:hover)' );
+	let css = '';
+	const add = ( sel, values ) => {
+		const d = isObject( values ) ? declarations( values, prefix ).all : '';
+		css += d ? `${ sel }{${ d }}` : '';
+	};
+	for ( const bp of bpIds ) {
+		add( items, pbs.items[ bp ] );
+		add( hovered, pbs.items[ `${ bp }:hover` ] );
+		if ( hover ) {
+			add( items, pbs.items[ `${ bp }:hover` ] );
+		}
+	}
+	if ( atRule ) {
+		add( items, pbs.items[ `@${ atRule }` ] );
 	}
 	return css;
 }

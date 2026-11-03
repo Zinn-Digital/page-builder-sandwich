@@ -1,6 +1,6 @@
 /**
  * Structured controls: grid tracks and areas, aspect ratio, font, background image, border,
- * shadow and transition.
+ * shadow, transition and transform.
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { useState } from '@wordpress/element';
@@ -23,6 +23,7 @@ import TokenPicker, { tokenLabel } from './token-picker';
 import { isToken, useTokenOptions } from '../tokens';
 import { STYLES } from '../../props/border';
 import { EASINGS, PROPERTIES } from '../../props/transition';
+import { OFFSET, RANGES } from '../../props/transform';
 
 const COUNTED = /^repeat\((\d{1,2}),minmax\(0,1fr\)\)$/;
 
@@ -753,6 +754,98 @@ export function TransitionControl( { prop, value, onChange } ) {
 					/>
 				</>
 			) }
+		</fieldset>
+	);
+}
+
+/**
+ * Transform (pbs-p4b): rotate, scale, skew and offset. Each part is optional; clearing every part
+ * removes the value at this breakpoint. The inherited value shows greyed in each field.
+ *
+ * @param {Object}   props             Control props.
+ * @param {Object}   props.prop        The prop.
+ * @param {unknown}  props.value       Value.
+ * @param {unknown}  props.placeholder Inherited value.
+ * @param {Function} props.onChange    Change.
+ * @return {Element} Control.
+ */
+export function TransformControl( { prop, value, placeholder, onChange } ) {
+	const v = value && typeof value === 'object' ? value : {};
+	const inherited =
+		placeholder && typeof placeholder === 'object' ? placeholder : {};
+	const set = ( part, next ) => {
+		const out = { ...v };
+		if ( next === '' || next === undefined || next === null ) {
+			delete out[ part ];
+		} else {
+			out[ part ] = next;
+		}
+		onChange( Object.keys( out ).length ? out : undefined );
+	};
+	const numbers = [
+		[ 'rotate', __( 'Rotate (degrees)', 'page-builder-sandwich' ), 1 ],
+		[
+			'scale',
+			__( 'Scale (1 = actual size)', 'page-builder-sandwich' ),
+			0.05,
+		],
+		[
+			'skewX',
+			__( 'Skew horizontally (degrees)', 'page-builder-sandwich' ),
+			1,
+		],
+		[
+			'skewY',
+			__( 'Skew vertically (degrees)', 'page-builder-sandwich' ),
+			1,
+		],
+	];
+	return (
+		<fieldset className="pbsw-design-transform">
+			<legend className="pbsw-design-sides__legend">
+				{ prop.label }
+			</legend>
+			{ numbers.map( ( [ part, label, step ] ) => (
+				<NumberControl
+					key={ part }
+					__next40pxDefaultSize
+					label={ label }
+					min={ RANGES[ part ][ 0 ] }
+					max={ RANGES[ part ][ 1 ] }
+					step={ step }
+					value={ v[ part ] ?? '' }
+					placeholder={
+						inherited[ part ] === undefined
+							? undefined
+							: String( inherited[ part ] )
+					}
+					onChange={ ( n ) =>
+						set(
+							part,
+							n === '' || n === undefined
+								? undefined
+								: Number( n )
+						)
+					}
+				/>
+			) ) }
+			<LengthControl
+				label={ __(
+					'Offset towards the end of the line',
+					'page-builder-sandwich'
+				) }
+				opts={ OFFSET }
+				value={ v.x }
+				placeholder={ inherited.x }
+				onChange={ ( x ) => set( 'x', x ) }
+			/>
+			<LengthControl
+				label={ __( 'Offset downwards', 'page-builder-sandwich' ) }
+				opts={ OFFSET }
+				value={ v.y }
+				placeholder={ inherited.y }
+				onChange={ ( y ) => set( 'y', y ) }
+			/>
 		</fieldset>
 	);
 }

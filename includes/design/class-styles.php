@@ -205,7 +205,7 @@ final class Styles {
 		$copy['innerBlocks']          = array(); // Inner blocks queue themselves when they render.
 		$copy['attrs']['pbs']['hide'] = $hides;
 		if ( ! $need ) {
-			unset( $copy['attrs']['pbs']['s'], $copy['attrs']['pbs']['css'] );
+			unset( $copy['attrs']['pbs']['s'], $copy['attrs']['pbs']['items'], $copy['attrs']['pbs']['css'] );
 		}
 		self::$pending[] = $copy;
 	}

@@ -29,6 +29,7 @@ import {
 	GridAreasControl,
 	GridTemplateControl,
 	ShadowControl,
+	TransformControl,
 	TransitionControl,
 } from './complex';
 
@@ -56,4 +57,5 @@ export const CONTROLS = {
 	border: BorderControl,
 	shadow: ShadowControl,
 	transition: TransitionControl,
+	transform: TransformControl,
 };
