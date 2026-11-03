@@ -141,6 +141,7 @@ return array(
 	'ZinnDigital\\PBS\\Design\\Props\\Text_Decoration' => 'includes/design/props/class-text-decoration.php',
 	'ZinnDigital\\PBS\\Design\\Props\\Text_Shadow' => 'includes/design/props/class-text-shadow.php',
 	'ZinnDigital\\PBS\\Design\\Props\\Text_Transform' => 'includes/design/props/class-text-transform.php',
+	'ZinnDigital\\PBS\\Design\\Props\\Transform' => 'includes/design/props/class-transform.php',
 	'ZinnDigital\\PBS\\Design\\Props\\Transition' => 'includes/design/props/class-transition.php',
 	'ZinnDigital\\PBS\\Design\\Props\\Width' => 'includes/design/props/class-width.php',
 	'ZinnDigital\\PBS\\Design\\Props\\Z_Index' => 'includes/design/props/class-z-index.php',
