@@ -35,6 +35,7 @@ import { layoutMode } from '../../design/editor/visibility';
 import { LengthControl } from '../../design/editor/controls/length';
 import { switcherItems } from '../../design/editor/breakpoint-items';
 import GridOverlay from './grid-overlay';
+import { labelOf, metadataWithLabel } from './label';
 
 const prefix = () => window.pbswDesign?.prefix || 'zd';
 
@@ -107,9 +108,40 @@ export default function LayoutEdit( props ) {
 		name: props.name,
 		attributes,
 	} );
+	// pbs-d17: the row's name, shown on the canvas so a long page reads like an outline.
+	const rowName = labelOf( attributes );
 	const layoutEl = (
-		<div { ...innerRest } ref={ mergedInnerRef }>
+		<div
+			{ ...innerRest }
+			ref={ mergedInnerRef }
+			style={
+				rowName
+					? { ...( innerRest.style || {} ), position: 'relative' }
+					: innerRest.style
+			}
+		>
 			{ ! boxed && layers }
+			{ rowName && (
+				<span
+					className="pbsw-layout-label"
+					aria-hidden="true"
+					style={ {
+						position: 'absolute',
+						insetBlockStart: 0,
+						insetInlineStart: 0,
+						zIndex: 2,
+						paddingBlock: '2px',
+						paddingInline: '6px',
+						fontSize: '11px',
+						lineHeight: 1.4,
+						background: 'var(--wp-admin-theme-color, #3858e9)',
+						color: '#fff',
+						pointerEvents: 'none',
+					} }
+				>
+					{ rowName }
+				</span>
+			) }
 			{ children }
 			{ showGrid && (
 				<GridOverlay
@@ -182,6 +214,22 @@ export default function LayoutEdit( props ) {
 			</BlockControls>
 			<InspectorControls>
 				<PanelBody title={ __( 'Layout', 'page-builder-sandwich' ) }>
+					<TextControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						className="pbsw-layout-name"
+						label={ __( 'Label', 'page-builder-sandwich' ) }
+						help={ __(
+							'A name for this row, shown in the editor and in Layers. Visitors never see it.',
+							'page-builder-sandwich'
+						) }
+						value={ attributes.metadata?.name || '' }
+						onChange={ ( name ) =>
+							setAttributes( {
+								metadata: metadataWithLabel( attributes, name ),
+							} )
+						}
+					/>
 					<p className="pbsw-layout-bp">
 						{ sprintf(
 							/* translators: %s: a screen size such as "Tablet". */

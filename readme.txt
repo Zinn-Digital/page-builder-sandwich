@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.38
+Stable tag: 6.36.39
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -199,6 +199,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.36.39 =
+* New: give any section or container a Label from its Layout settings; the name shows on the row in the editor and in Layers, and is never printed on the page.
+
 = 6.36.38 =
 * Dependency security update (Renovate).
 
@@ -225,8 +228,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.30 =
 * Security: the kit importer checks your permissions again itself, and only updates a page it imported before if you are allowed to edit that page.
-
-= 6.36.29 =
-* Security: importing a website kit now needs the administrator capability (manage_options) to set the site's front page and the menu capability (edit_theme_options) to create a menu; editors can still import the pages. Safe mode's one-time must-use plugin install now needs the capability to install plugins.
 
 The full history of every release is in changelog.txt, in the plugin's folder.
