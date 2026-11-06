@@ -495,7 +495,7 @@ final class Matrix {
 			'pbs-r2'   => __( 'Starter kits in Free, Pro kits shown greyed out', 'page-builder-sandwich' ),
 			'pbs-r3'   => __( 'Affiliate and iGaming blocks', 'page-builder-sandwich' ),
 			'pbs-r4'   => __( 'Age gate and responsible-gambling notices', 'page-builder-sandwich' ),
-			'pbs-r5'   => __( 'Google and Trustpilot reviews block', 'page-builder-sandwich' ),
+			'pbs-r5'   => __( 'Reviews block: your Google reviews and more review sources', 'page-builder-sandwich' ),
 			'pbs-r6'   => __( 'Content blocks', 'page-builder-sandwich' ),
 			'pbs-r7'   => __( 'Media blocks', 'page-builder-sandwich' ),
 			'pbs-r8'   => __( 'Marketing blocks', 'page-builder-sandwich' ),

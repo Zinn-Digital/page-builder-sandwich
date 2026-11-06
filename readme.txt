@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.39
+Stable tag: 6.36.40
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -127,7 +127,6 @@ Crypto prices block (Pro). Your site, never your visitors, asks CoinGecko's publ
 Reviews block (Pro, only if you set it up under Appearance → Site design → Reviews).
 
 * Google Places API (New): Google's terms do not allow its reviews to be stored, so when a visitor views a page with a Reviews block that shows Google, the visitor's browser asks your site for them and your site requests `https://places.googleapis.com/v1/places/<your place ID>` with your own API key (sent in a header). Each such page view is one request on your key, billed by Google. What is sent: the place ID, your key and the site language; nothing about the visitor. The plugin stores only the place ID. Terms: https://cloud.google.com/maps-platform/terms and https://cloud.google.com/maps-platform/terms/maps-service-terms, privacy policy: https://policies.google.com/privacy
-* Trustpilot: once a day, in the background, your site requests `https://api.trustpilot.com/v1/business-units/<your business unit ID>` and its reviews with your own API key (sent in a header), and keeps them on your site, so page views never call Trustpilot. Terms: https://corporate.trustpilot.com/legal/for-businesses/terms-of-use-and-sale-for-businesses, privacy policy: https://legal.trustpilot.com/for-reviewers/end-user-privacy-terms
 
 Age gate and responsible gambling notice (Pro). Both use the visitor's country when your host or CDN provides it in the request (for example Cloudflare's `CF-IPCountry` header); the plugin never looks a country up and sends nothing anywhere to learn it. The age gate remembers the visitor's answer in a cookie on your own site. The notice can link to a national help service (for example GambleAware in the UK), chosen by the visitor's country and your site's language; those are links only, opened by the visitor.
 
@@ -199,6 +198,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.36.40 =
+* WordPress.org review: the free plugin no longer contains the third-party review-service API integration, its daily refresh, its AI-agent (MCP) actions or its readme references. The Reviews block (Google, plus more review sources) stays in Pro.
+
 = 6.36.39 =
 * New: give any section or container a Label from its Layout settings; the name shows on the row in the editor and in Layers, and is never printed on the page.
 
@@ -225,8 +227,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.31 =
 * Security: the AI-app sign-in's "Disconnect" action checks the signed-in user's capability as well as the nonce (shared MCP kit; WordPress.org review standards).
-
-= 6.36.30 =
-* Security: the kit importer checks your permissions again itself, and only updates a page it imported before if you are allowed to edit that page.
 
 The full history of every release is in changelog.txt, in the plugin's folder.
