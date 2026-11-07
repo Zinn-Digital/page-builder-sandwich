@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.40
+Stable tag: 6.36.41
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.36.41 =
+* The AI agents (MCP) panel now says to add the connection address as a custom MCP server in ChatGPT; developer mode is no longer needed.
+
 = 6.36.40 =
 * WordPress.org review: the free plugin no longer contains the third-party review-service API integration, its daily refresh, its AI-agent (MCP) actions or its readme references. The Reviews block (Google, plus more review sources) stays in Pro.
 
@@ -224,8 +227,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.32 =
 * Dependency security update.
-
-= 6.36.31 =
-* Security: the AI-app sign-in's "Disconnect" action checks the signed-in user's capability as well as the nonce (shared MCP kit; WordPress.org review standards).
 
 The full history of every release is in changelog.txt, in the plugin's folder.
