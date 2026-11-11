@@ -46,6 +46,44 @@ final class Zinn_Seo {
 		add_filter( 'pbsw_ai_seo_plugins', array( self::class, 'ai_plugins' ) );
 		add_filter( 'pbsw_ai_seo_write', array( self::class, 'ai_write' ), 10, 5 );
 		add_filter( 'pbsw_schema_skip', array( self::class, 'schema_skip' ), 30 );
+		add_filter( 'pbsw_admin_data', array( self::class, 'admin_data' ) );
+	}
+
+	/**
+	 * The settings screen's Agent Ready panel: Zinn® SEO's score for how ready the site is for AI
+	 * agents and answer engines, its open checks and where to fix them (zs-784). Without Zinn® SEO
+	 * (or with its Agent Ready module off) the panel says what the check is and where to get it.
+	 *
+	 * @param mixed $data Boot data.
+	 * @return array<string, mixed>
+	 */
+	public static function admin_data( $data ): array {
+		$data   = is_array( $data ) ? $data : array();
+		$api    = self::active() ? call_user_func( 'zinn_seo' ) : null;
+		$report = is_object( $api ) && is_callable( array( $api, 'agent_ready' ) ) ? $api->agent_ready() : null;
+		if ( ! is_array( $report ) ) {
+			$data['agentReady'] = array(
+				'active' => self::active(),
+				'url'    => self::active() ? admin_url( 'admin.php?page=zinn-seo&view=discovery#/agent' ) : 'https://zinnseo.com/',
+			);
+
+			return $data;
+		}
+		$open = array();
+		foreach ( (array) ( $report['checks'] ?? array() ) as $check ) {
+			if ( 'fail' === ( $check['state'] ?? '' ) ) {
+				$open[] = (string) ( $check['label'] ?? '' );
+			}
+		}
+		$data['agentReady'] = array(
+			'active' => true,
+			'score'  => (int) ( $report['score'] ?? 0 ),
+			'grade'  => (string) ( $report['grade'] ?? '' ),
+			'open'   => $open,
+			'url'    => admin_url( 'admin.php?page=zinn-seo&view=discovery#/agent' ),
+		);
+
+		return $data;
 	}
 
 	/**

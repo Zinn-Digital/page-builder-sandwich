@@ -13,6 +13,7 @@ import {
 } from '@wordpress/components';
 
 import About from './About';
+import AgentReady from './AgentReady';
 import Breakpoints from './Breakpoints';
 import Debug from './Debug';
 import LegacyContent from './LegacyContent';
@@ -124,6 +125,7 @@ export default function App( { data } ) {
 					</PanelBody>
 				) }
 				{ settings && <McpPanel path={ data.restPath } /> }
+				{ settings && <AgentReady report={ data.agentReady } /> }
 				{ settings && data.breakpointsPath && (
 					<Breakpoints path={ data.breakpointsPath } />
 				) }
