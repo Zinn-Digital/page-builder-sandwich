@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.44
+Stable tag: 6.36.45
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.36.45 =
+* Dependency security update (Renovate).
+
 = 6.36.44 =
 * New: the settings screen shows your site's AI agent readiness score from Zinn® SEO, with the checks to fix and a link to fix them.
 
@@ -224,11 +227,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.36 =
 * Dependency security update (Renovate).
-
-= 6.36.35 =
-* PBS: transform options (rotate, scale, skew, move) on every block including rows and columns; default item styles for rows, sections, accordions, tabs and other blocks that hold items; Pro: the cookie banner can be switched on or off from the General settings. Zinn® Cache Pro: the warm-up also warms page 2 onwards of the blog and of every category, tag and custom-taxonomy archive (a new setting, on by default).
-
-= 6.36.34 =
-* Debug mode lists block versions and overrides; Events: categories with colours, canceled/postponed status (shown or hidden), The Events Calendar source.
 
 The full history of every release is in changelog.txt, in the plugin's folder.
