@@ -52,7 +52,7 @@ export function withValue( pbs, stateKey, key, value, makeId ) {
  */
 export function tidy( pbs, makeId ) {
 	const out = { ...pbs };
-	for ( const k of [ 's', 'items', 'hide', 'cls' ] ) {
+	for ( const k of [ 's', 'items', 'hide', 'cls', 'attrs' ] ) {
 		if (
 			isEmpty( out[ k ] ) ||
 			( Array.isArray( out[ k ] ) && ! out[ k ].length )

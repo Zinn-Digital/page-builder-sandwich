@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.47
+Stable tag: 6.37.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.37.0 =
+* New: custom HTML attributes on any block. Add data-* and aria-* attributes from the block's Style tab, Advanced section; only those two families are accepted and values are escaped.
+
 = 6.36.47 =
 * Pro licences include full enterprise-level 24/7 support in 50+ languages.
 * The Zinn® Pro Membership card now opens the membership page in your admin language.
@@ -225,8 +228,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.39 =
 * New: give any section or container a Label from its Layout settings; the name shows on the row in the editor and in Layers, and is never printed on the page.
-
-= 6.36.38 =
-* Dependency security update (Renovate).
 
 The full history of every release is in changelog.txt, in the plugin's folder.

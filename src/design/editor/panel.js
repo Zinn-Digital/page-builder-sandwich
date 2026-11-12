@@ -37,6 +37,7 @@ import {
 import { inherited as inheritedFrom } from '../breakpoints';
 import { layoutMode, visibleProps } from './visibility';
 import { switcherItems } from './breakpoint-items';
+import { HtmlAttributes } from './html-attributes-control';
 
 export { switcherItems };
 
@@ -491,6 +492,10 @@ export default function DesignPanel( { clientId, name } ) {
 						advanced={
 							<>
 								<HideOn design={ design } />
+								<HtmlAttributes
+									key={ clientId }
+									design={ design }
+								/>
 								{ /* Global classes and custom CSS (Pro) render here. */ }
 								<Slot
 									name="PbswDesignAdvanced"

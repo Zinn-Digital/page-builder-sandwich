@@ -18,6 +18,7 @@ unset( $pbsw_kind );
 spl_autoload_register( array( \ZinnDigital\PBS\Design\Props::class, 'autoload' ) );
 
 \ZinnDigital\PBS\Design\Styles::register();
+\ZinnDigital\PBS\Design\Html_Attributes::register();
 \ZinnDigital\PBS\Design\Rest::register();
 \ZinnDigital\PBS\Design\Editor::register();
 

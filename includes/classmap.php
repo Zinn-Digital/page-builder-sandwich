@@ -67,6 +67,7 @@ return array(
 	'ZinnDigital\\PBS\\Design\\Globals\\Design_Rest' => 'includes/design/globals/class-design-rest.php',
 	'ZinnDigital\\PBS\\Design\\Globals\\Site_Design' => 'includes/design/globals/class-site-design.php',
 	'ZinnDigital\\PBS\\Design\\Globals\\Theme_Globals' => 'includes/design/globals/class-theme-globals.php',
+	'ZinnDigital\\PBS\\Design\\Html_Attributes' => 'includes/design/class-html-attributes.php',
 	'ZinnDigital\\PBS\\Design\\Icons\\Icons' => 'includes/design/icons/class-icons.php',
 	'ZinnDigital\\PBS\\Design\\Kinds\\Choice_Prop' => 'includes/design/kinds/class-choice-prop.php',
 	'ZinnDigital\\PBS\\Design\\Kinds\\Color_Prop' => 'includes/design/kinds/class-color-prop.php',
