@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.36.45
+Stable tag: 6.36.46
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -198,6 +198,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.36.46 =
+* Shows the Zinn® Pro Membership offer in the plugin's Zinn® panel.
+
 = 6.36.45 =
 * Dependency security update (Renovate).
 
@@ -224,8 +227,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.37 =
 * Fix: the new transform options are translated in every language (their editor strings were missing from the translation map).
-
-= 6.36.36 =
-* Dependency security update (Renovate).
 
 The full history of every release is in changelog.txt, in the plugin's folder.
