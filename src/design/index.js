@@ -6,7 +6,9 @@
  * - the block inspector gets the Style tab;
  * - the canvas previews each styled block for the breakpoint being edited;
  * - element ids stay unique after a duplicate or paste;
- * - the breakpoint follows the editor's device preview and back.
+ * - the breakpoint follows the editor's device preview and back;
+ * - a block dropped at the top level of a page is wrapped in a Row or a Container, if the
+ *   settings say so.
  */
 import { addFilter } from '@wordpress/hooks';
 import { createHigherOrderComponent } from '@wordpress/compose';
@@ -20,6 +22,7 @@ import { STORE, config } from './store';
 import DesignPanel, { StylePanel } from './editor/panel';
 import DesignPreview from './editor/preview';
 import { watchIds } from './editor/ids-watch';
+import { watchDrops } from './editor/drop-wrap';
 import { syncDevice } from './editor/device-sync';
 import './style.scss';
 import './canvas.scss';
@@ -95,5 +98,6 @@ addFilter( 'pbsw.design.stylePanel', 'pbsw/engine', () => StylePanel );
 
 domReady( () => {
 	watchIds();
+	watchDrops();
 	syncDevice();
 } );

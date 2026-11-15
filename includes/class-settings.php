@@ -21,6 +21,15 @@ final class Settings {
 	/** The option name. */
 	public const OPTION = 'pbsw_settings';
 
+	/**
+	 * The editor-only "wrap a block dropped at the top level" choice. Its own option row, because
+	 * saving `pbsw_settings` purges the page cache and this changes nothing a visitor sees.
+	 */
+	public const DROP_WRAP_OPTION = 'pbsw_drop_wrap';
+
+	/** What a block dropped at the top level of a page may be wrapped in: nothing, a Row or a Container. */
+	public const DROP_WRAPS = array( 'none', 'row', 'container' );
+
 	/** The prefix every front-end class name, handle and asset folder starts with. */
 	public const DEFAULT_PREFIX = 'zd';
 
@@ -72,13 +81,39 @@ final class Settings {
 			}
 			$current['prefix'] = $prefix;
 		}
+		if ( array_key_exists( 'drop_wrap', $input ) ) {
+			$wrap = (string) $input['drop_wrap'];
+			if ( ! in_array( $wrap, self::DROP_WRAPS, true ) ) {
+				return new \WP_Error(
+					'pbsw_invalid_drop_wrap',
+					__( 'A dropped block can be wrapped in nothing, a Row or a Container.', 'page-builder-sandwich' ),
+					array( 'status' => 400 )
+				);
+			}
+			if ( self::drop_wrap() !== $wrap ) {
+				update_option( self::DROP_WRAP_OPTION, $wrap, false );
+			}
+		}
 		if ( array_key_exists( 'mcp', $input ) ) {
 			$current['mcp'] = (bool) $input['mcp'];
 		}
 
-		update_option( self::OPTION, $current, true );
+		if ( self::get() !== $current ) {
+			update_option( self::OPTION, $current, true );
+		}
 
 		return true;
+	}
+
+	/**
+	 * What a block dropped at the top level of a page is wrapped in, in the block editor:
+	 * `none` (the default), `row` (a Row with one Column) or `container`.
+	 *
+	 * @return string
+	 */
+	public static function drop_wrap(): string {
+		$wrap = get_option( self::DROP_WRAP_OPTION, 'none' );
+		return in_array( $wrap, self::DROP_WRAPS, true ) ? (string) $wrap : 'none';
 	}
 
 	/**

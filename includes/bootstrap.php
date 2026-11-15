@@ -52,4 +52,5 @@ function pbsw_uninstall(): void {
 	\ZinnDigital\PBS\AiCore\Core::uninstall( 'page-builder-sandwich' );
 	\ZinnDigital\PBS\Assets::remove_all();
 	delete_option( \ZinnDigital\PBS\Settings::OPTION );
+	delete_option( \ZinnDigital\PBS\Settings::DROP_WRAP_OPTION );
 }

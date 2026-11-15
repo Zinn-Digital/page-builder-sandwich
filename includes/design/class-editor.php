@@ -112,6 +112,7 @@ final class Editor {
 			'tokens'        => is_array( $tokens ) ? $tokens : array(),
 			'elementCss'    => Compiler::element_css_enabled() && current_user_can( 'unfiltered_html' ),
 			'settingsUrl'   => admin_url( 'admin.php?page=page-builder-sandwich' ),
+			'dropWrap'      => Settings::drop_wrap(),
 		);
 	}
 }

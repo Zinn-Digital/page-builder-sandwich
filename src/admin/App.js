@@ -16,6 +16,7 @@ import About from './About';
 import AgentReady from './AgentReady';
 import Breakpoints from './Breakpoints';
 import Debug from './Debug';
+import DropWrap from './DropWrap';
 import LegacyContent from './LegacyContent';
 import McpPanel from '../mcp-kit/McpPanel';
 import { isValidPrefix } from './prefix';
@@ -123,6 +124,13 @@ export default function App( { data } ) {
 							{ __( 'Save', 'page-builder-sandwich' ) }
 						</Button>
 					</PanelBody>
+				) }
+				{ settings && (
+					<DropWrap
+						path={ data.restPath }
+						value={ settings.drop_wrap }
+						onSaved={ setSettings }
+					/>
 				) }
 				{ settings && <McpPanel path={ data.restPath } /> }
 				{ settings && <AgentReady report={ data.agentReady } /> }

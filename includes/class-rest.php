@@ -54,12 +54,17 @@ final class Rest {
 					'callback'            => array( self::class, 'update_settings' ),
 					'permission_callback' => array( self::class, 'can_manage' ),
 					'args'                => array(
-						'prefix' => array(
+						'prefix'    => array(
 							'type'     => 'string',
 							'required' => false,
 						),
-						'mcp'    => array(
+						'mcp'       => array(
 							'type'     => 'boolean',
+							'required' => false,
+						),
+						'drop_wrap' => array(
+							'type'     => 'string',
+							'enum'     => Settings::DROP_WRAPS,
 							'required' => false,
 						),
 					),
@@ -100,6 +105,9 @@ final class Rest {
 		if ( null !== $request->get_param( 'mcp' ) ) {
 			$input['mcp'] = (bool) $request->get_param( 'mcp' );
 		}
+		if ( null !== $request->get_param( 'drop_wrap' ) ) {
+			$input['drop_wrap'] = (string) $request->get_param( 'drop_wrap' );
+		}
 
 		$saved = Settings::save( $input );
 		if ( is_wp_error( $saved ) ) {
@@ -117,10 +125,11 @@ final class Rest {
 	 */
 	private static function payload(): array {
 		return array(
-			'prefix' => Settings::get()['prefix'],
-			'beta'   => Licensing::beta(),
+			'prefix'    => Settings::get()['prefix'],
+			'beta'      => Licensing::beta(),
+			'drop_wrap' => Settings::drop_wrap(),
 			// The switch as saved, and what is live on THIS request (the kit booted before it).
-			'mcp'    => array( 'saved' => Settings::get()['mcp'] ) + \ZinnDigital\PBS\McpKit\Server::describe(),
+			'mcp'       => array( 'saved' => Settings::get()['mcp'] ) + \ZinnDigital\PBS\McpKit\Server::describe(),
 		);
 	}
 }

@@ -62,6 +62,7 @@ final class Transfer {
 	public static function options(): array {
 		$options = array(
 			\ZinnDigital\PBS\Settings::OPTION,
+			\ZinnDigital\PBS\Settings::DROP_WRAP_OPTION,
 			'pbsw_breakpoints',
 			'pbsw_classes',
 			'pbsw_css_vars',
