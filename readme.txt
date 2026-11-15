@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.37.1
+Stable tag: 6.37.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,9 +53,11 @@ The 3D model viewer block (Pro) uses model-viewer 4.3.1 (Apache License 2.0) wit
 
 = Build from source =
 
-The admin screen and editor scripts are built from the human-readable sources in `src/` with `@wordpress/scripts`:
+The admin screen and editor scripts are built from the human-readable sources in `src/` with `@wordpress/scripts`. The `package.json` and `package-lock.json` that pin the build tools ship in the plugin folder; run this there:
 
 `npm ci && npm run build`
+
+The same source and build tools are public at https://github.com/Zinn-Digital/page-builder-sandwich
 
 == External services ==
 
@@ -198,6 +200,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.37.2 =
+* Ships package.json and package-lock.json beside the JavaScript sources, so npm ci && npm run build rebuilds the shipped build/ from the plugin folder; the readme links the public source repository.
+
 = 6.37.1 =
 * Dependency security update (Renovate).
 
@@ -225,8 +230,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.41 =
 * The AI agents (MCP) panel now says to add the connection address as a custom MCP server in ChatGPT; developer mode is no longer needed.
-
-= 6.36.40 =
-* WordPress.org review: the free plugin no longer contains the third-party review-service API integration, its daily refresh, its AI-agent (MCP) actions or its readme references. The Reviews block (Google, plus more review sources) stays in Pro.
 
 The full history of every release is in changelog.txt, in the plugin's folder.
