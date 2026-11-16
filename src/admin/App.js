@@ -18,6 +18,7 @@ import Breakpoints from './Breakpoints';
 import Debug from './Debug';
 import DropWrap from './DropWrap';
 import LegacyContent from './LegacyContent';
+import PausedTabs from './PausedTabs';
 import McpPanel from '../mcp-kit/McpPanel';
 import { isValidPrefix } from './prefix';
 
@@ -182,6 +183,10 @@ export default function App( { data } ) {
 				{ data.migrationPath && (
 					<LegacyContent path={ data.migrationPath } />
 				) }
+				<PausedTabs
+					count={ data.pausedTabs }
+					upgradeUrl={ data.upgradeUrl }
+				/>
 				{ /*
 				 * Panels added by modules (workflow, SEO, AI, developer tools): each entry is
 				 * { name, Component }; Component receives { data }.

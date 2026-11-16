@@ -84,6 +84,8 @@ final class Admin {
 			echo '<div class="notice notice-error"><p>' . esc_html__( 'The admin screen\'s scripts are missing from this copy of the plugin. Reinstall it from a released package.', 'page-builder-sandwich' ) . '</p></div>';
 		}
 		echo '<div id="pbs-admin-root"></div>';
+		// Tabs added through `pbsw_admin_tabs`: their content, printed here and moved into view by the app.
+		Admin_Tabs::print_panels();
 		echo '<noscript><h1>' . esc_html__( 'Page Builder Sandwich', 'page-builder-sandwich' ) . '</h1><p>' . esc_html__( 'This screen needs JavaScript.', 'page-builder-sandwich' ) . '</p></noscript></div>';
 	}
 
@@ -150,6 +152,8 @@ final class Admin {
 				'upgradeUrl' => Licensing::upgrade_url(),
 				'productUrl' => 'https://pagebuildersandwich.com',
 				'companyUrl' => 'https://zinndigital.com',
+				'tabs'       => Admin_Tabs::boot_data(),
+				'pausedTabs' => Admin_Tabs::paused_for( Licensing::can_use_premium() ),
 			)
 		);
 	}

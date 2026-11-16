@@ -12,6 +12,7 @@ defined( 'ABSPATH' ) || exit;
 // phpcs:disable WordPress.Arrays.ArrayDeclarationSpacing,WordPress.Arrays.MultipleStatementAlignment -- generated data.
 return array(
 	'ZinnDigital\\PBS\\Admin' => 'includes/class-admin.php',
+	'ZinnDigital\\PBS\\Admin_Tabs' => 'includes/class-admin-tabs.php',
 	'ZinnDigital\\PBS\\Ai\\Ai' => 'includes/ai/class-ai.php',
 	'ZinnDigital\\PBS\\Ai\\Ai_Routes' => 'includes/ai/class-ai-routes.php',
 	'ZinnDigital\\PBS\\Ai\\Seo_Writer' => 'includes/ai/class-seo-writer.php',

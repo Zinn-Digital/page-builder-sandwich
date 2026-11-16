@@ -124,6 +124,11 @@ module.exports = {
 		dev: path.resolve( __dirname, 'src/dev/index.js' ),
 		// Lane L12 (P14): workflow panels; Pro/Agency bundles live in premium-only paths.
 		workflow: path.resolve( __dirname, 'src/workflow/index.js' ),
+		// The site's own admin tabs (Pro): the "Your own tabs" editor panel.
+		'admin-tabs-pro__premium_only': path.resolve(
+			__dirname,
+			'src/admin/pro__premium_only/custom-tabs.js'
+		),
 		'workflow-pro__premium_only': path.resolve(
 			__dirname,
 			'src/workflow/pro__premium_only/admin.js'

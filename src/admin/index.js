@@ -6,6 +6,7 @@ import { Spinner } from '@wordpress/components';
 
 import { mountAdminKit } from '../admin-kit';
 import App from './App';
+import { withAddedTabs } from './tabs';
 import './admin.scss';
 
 // Templates & kits (pbs-c1, pbs-c2): its own chunk, fetched only when the route opens (§2.22).
@@ -31,22 +32,27 @@ domReady( () => {
 		 *
 		 * @param {Array<Object>} routes Routes: {id, label, render}.
 		 */
-		applyFilters( 'pbsw.admin.routes', [
-			{
-				id: 'settings',
-				label: __( 'Settings', 'page-builder-sandwich' ),
-				render: () => <App data={ data } />,
-			},
-			{
-				id: 'templates',
-				label: __( 'Templates & kits', 'page-builder-sandwich' ),
-				render: () => (
-					<Suspense fallback={ <Spinner /> }>
-						<Templates data={ data } />
-					</Suspense>
-				),
-			},
-		] ),
+		// Tabs added from PHP (`pbsw_admin_tabs`: add-ons, and the site's own tabs in Pro) go
+		// after every route a module added, and never take a route's id.
+		withAddedTabs(
+			applyFilters( 'pbsw.admin.routes', [
+				{
+					id: 'settings',
+					label: __( 'Settings', 'page-builder-sandwich' ),
+					render: () => <App data={ data } />,
+				},
+				{
+					id: 'templates',
+					label: __( 'Templates & kits', 'page-builder-sandwich' ),
+					render: () => (
+						<Suspense fallback={ <Spinner /> }>
+							<Templates data={ data } />
+						</Suspense>
+					),
+				},
+			] ),
+			data.tabs
+		),
 		[
 			{
 				id: 'settings',
