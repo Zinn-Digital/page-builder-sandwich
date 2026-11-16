@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.37.4
+Stable tag: 6.37.5
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -200,6 +200,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.37.5 =
+* Dependency security update (Renovate).
+
 = 6.37.4 =
 * Fix: a block chosen with a slash command ("/separator" in an empty paragraph) is wrapped like any other inserted block; text that only starts with a slash and is transformed from the toolbar is never wrapped.
 
@@ -227,8 +230,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.44 =
 * New: the settings screen shows your site's AI agent readiness score from Zinn® SEO, with the checks to fix and a link to fix them.
-
-= 6.36.43 =
-* Dependency security update (Renovate).
 
 The full history of every release is in changelog.txt, in the plugin's folder.
