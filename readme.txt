@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.37.3
+Stable tag: 6.37.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -200,6 +200,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.37.4 =
+* Fix: a block chosen with a slash command ("/separator" in an empty paragraph) is wrapped like any other inserted block; text that only starts with a slash and is transformed from the toolbar is never wrapped.
+
 = 6.37.3 =
 * New: choose what a block dropped at the top level of a page is wrapped in (Settings, Editing): nothing, a Row with one Column, or a Container. Text you type and layout blocks are never wrapped, and one Undo removes the block.
 
@@ -227,8 +230,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.36.43 =
 * Dependency security update (Renovate).
-
-= 6.36.42 =
-* Translation fix: Amharic, Burmese, Khmer and Hausa strings no longer end with a Chinese full stop.
 
 The full history of every release is in changelog.txt, in the plugin's folder.

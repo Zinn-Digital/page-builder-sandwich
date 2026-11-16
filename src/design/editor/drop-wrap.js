@@ -11,7 +11,9 @@
  * (createBlock -> uuid): typing "## ", "- " or "> ", a toolbar transform and Enter in a heading
  * all either REPLACE a block that had content or CHANGE a top-level block in the same step, and
  * neither ever wraps. Only the inserter's own replacement of an empty default block (inserting at
- * an empty paragraph) still counts as an insertion.
+ * an empty paragraph) still counts as an insertion, and so does a slash command: typing
+ * "/separator" in a paragraph and choosing the block replaces a paragraph whose only text was
+ * the command, which is the inserter, not a transform of what the author wrote.
  */
 import { select, dispatch, subscribe } from '@wordpress/data';
 import {
@@ -111,10 +113,29 @@ export function editedInPlace( roots, previous, isEmpty ) {
 	return ( previous || [] ).some( ( b ) => {
 		const still = now.get( b.clientId );
 		if ( ! still ) {
-			return ! isEmpty( b );
+			return ! isEmpty( b ) && ! isSlashCommand( b );
 		}
 		return still !== b;
 	} );
+}
+
+/**
+ * Is a block a paragraph holding only a slash command ("/separator"): the block inserter typed in
+ * place. Choosing the block replaces the paragraph, so its removal is an insertion.
+ *
+ * The WHOLE text must be one "/token" (no space, no second slash): the slash inserter only opens
+ * on a paragraph holding nothing but its query. Typed text that merely starts with a slash
+ * ("/path text", "/usr/bin") and is then transformed from the toolbar is an edit in place.
+ *
+ * @param {Object} block A top-level block before the change.
+ * @return {boolean} True for a paragraph whose whole text is one "/command" token.
+ */
+export function isSlashCommand( block ) {
+	if ( block?.name !== 'core/paragraph' ) {
+		return false;
+	}
+	const content = block.attributes?.content;
+	return /^\/[^\s/]*$/.test( String( content ?? '' ).trim() );
 }
 
 /**
