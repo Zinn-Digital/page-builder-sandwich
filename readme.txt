@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.37.7
+Stable tag: 6.37.8
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -200,6 +200,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.37.8 =
+* Dependency security update (Renovate).
+
 = 6.37.7 =
 * Dashboard tabs: add-ons can add their own tabs to the Page Builder Sandwich dashboard (pbsw_admin_tabs filter), and Pro lets you add your own tabs with your notes, links and help for clients.
 
@@ -227,8 +230,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 = 6.36.47 =
 * Pro licences include full enterprise-level 24/7 support in 50+ languages.
 * The Zinn® Pro Membership card now opens the membership page in your admin language.
-
-= 6.36.46 =
-* Shows the Zinn® Pro Membership offer in the plugin's Zinn® panel.
 
 The full history of every release is in changelog.txt, in the plugin's folder.
