@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.37.11
+Stable tag: 6.37.12
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -200,6 +200,9 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 == Changelog ==
 
+= 6.37.12 =
+* Dependency security update (Renovate).
+
 = 6.37.11 =
 * Dependency security update (Renovate).
 
@@ -226,8 +229,5 @@ Yes. The plugin adds WordPress abilities and its own MCP server at `/wp-json/pbs
 
 = 6.37.3 =
 * New: choose what a block dropped at the top level of a page is wrapped in (Settings, Editing): nothing, a Row with one Column, or a Container. Text you type and layout blocks are never wrapped, and one Undo removes the block.
-
-= 6.37.2 =
-* Ships package.json and package-lock.json beside the JavaScript sources, so npm ci && npm run build rebuilds the shipped build/ from the plugin folder; the readme links the public source repository.
 
 The full history of every release is in changelog.txt, in the plugin's folder.
