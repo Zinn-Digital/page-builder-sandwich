@@ -1,5 +1,5 @@
 /**
- * pbs/reading-progress — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/reading-progress — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/reading-progress/block.json';

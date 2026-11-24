@@ -1,6 +1,6 @@
 <?php
 /**
- * `pbs/tabs` + `pbs/tab` — the WAI-ARIA Authoring Practices "Tabs" pattern (automatic activation).
+ * `pbsw/tabs` + `pbsw/tab` — the WAI-ARIA Authoring Practices "Tabs" pattern (automatic activation).
  *
  * @package ZinnDigital\PBS
  */
@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Tabs {
 
 	/**
-	 * `pbs/tabs`.
+	 * `pbsw/tabs`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: label, vertical, selected.
 	 * @param string               $content    Rendered inner content.
@@ -39,7 +39,7 @@ final class Tabs {
 		unset( $content );
 		$children = array();
 		foreach ( Markup::children( $block ) as [ $child, $html ] ) {
-			if ( 'pbs/tab' === $child->name && '' !== trim( $html ) ) {
+			if ( 'pbsw/tab' === $child->name && '' !== trim( $html ) ) {
 				$children[] = array( $child, $html );
 			}
 		}
@@ -100,7 +100,7 @@ final class Tabs {
 	}
 
 	/**
-	 * `pbs/tab`: one panel. Its title is printed by the parent's tab button.
+	 * `pbsw/tab`: one panel. Its title is printed by the parent's tab button.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Rendered inner content.

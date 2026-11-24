@@ -1,9 +1,9 @@
 <?php
 /**
- * `pbs/nav-menu` — a WordPress menu as a WAI-ARIA disclosure navigation with a mobile menu.
+ * `pbsw/nav-menu` — a WordPress menu as a WAI-ARIA disclosure navigation with a mobile menu.
  *
  * ⚖️ Free since 6.36.22 (NAV1, owner ruling 2026-10-19 "Basic free, mega Pro"): the responsive
- * menu and every mobile-menu option are free. Mega menu panels (pbs/mega-panel), per-item icons,
+ * menu and every mobile-menu option are free. Mega menu panels (pbsw/mega-panel), per-item icons,
  * badges, descriptions and visibility, and the site header are Pro. When Pro is not running
  * (a trial ended unpaid, §2.62) a mega panel is not registered, so its item simply shows its
  * ordinary submenu and the Pro item options are not applied: the menu never breaks.
@@ -53,13 +53,13 @@ final class Nav {
 	/** Close delays of a hover menu, in milliseconds. */
 	public const DELAYS = array( 0, 150, 300, 500 );
 
-	/** What a mega panel's item shows on phones (pbs/mega-panel `mobile`). */
+	/** What a mega panel's item shows on phones (pbsw/mega-panel `mobile`). */
 	public const PANEL_MOBILE = array( 'show', 'links', 'hide' );
 
-	/** The narrowest and widest custom breakpoint, in pixels. */
+	/** The narrowest width a menu breakpoint may take, in pixels. */
 	public const MIN_WIDTH = 320;
 
-	/** Widest custom breakpoint. */
+	/** The widest width a menu breakpoint may take, in pixels. */
 	public const MAX_WIDTH = 2560;
 
 	/**
@@ -147,10 +147,10 @@ final class Nav {
 		}
 		$panels = array();
 		$mobile = array();
-		if ( $block instanceof \WP_Block && class_exists( \WP_Block_Type_Registry::class ) && \WP_Block_Type_Registry::get_instance()->is_registered( 'pbs/mega-panel' ) ) {
+		if ( $block instanceof \WP_Block && class_exists( \WP_Block_Type_Registry::class ) && \WP_Block_Type_Registry::get_instance()->is_registered( 'pbsw/mega-panel' ) ) {
 			foreach ( $block->inner_blocks as $child ) {
 				$item = (int) ( $child->attributes['itemId'] ?? 0 );
-				if ( $item > 0 && 'pbs/mega-panel' === $child->name ) {
+				if ( $item > 0 && 'pbsw/mega-panel' === $child->name ) {
 					$html = (string) $child->render();
 					if ( '' !== trim( $html ) ) {
 						$panels[ $item ] = $html;

@@ -16,7 +16,7 @@ const ICON = 'superhero';
 
 addFilter(
 	'editor.BlockEdit',
-	'pbs/ai/text-menu',
+	'pbsw/ai/text-menu',
 	createHigherOrderComponent(
 		( BlockEdit ) =>
 			function WithAiTextMenu( props ) {
@@ -34,7 +34,7 @@ addFilter(
 );
 
 if ( window.pbswStudio ) {
-	addFilter( 'pbs.studio.sidebars', 'pbs/ai/sidebar', ( list ) => [
+	addFilter( 'pbsw.studio.sidebars', 'pbsw/ai/sidebar', ( list ) => [
 		...list,
 		{
 			name: 'ai',

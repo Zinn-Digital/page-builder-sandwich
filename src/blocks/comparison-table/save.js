@@ -1,5 +1,5 @@
 /**
- * pbs/comparison-table saved markup: the footprint-free fallback — a real table with header
+ * pbsw/comparison-table saved markup: the footprint-free fallback — a real table with header
  * cells, ✓ / ✗ for included / not included (symbols, not words: save() must not depend on the
  * editor's language). The live HTML is rebuilt by Blocks\Marketing::render_comparison_table().
  */

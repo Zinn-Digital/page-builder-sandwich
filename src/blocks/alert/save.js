@@ -1,5 +1,5 @@
 /**
- * pbs/alert saved markup: the footprint-free fallback a reader gets if the plugin is switched
+ * pbsw/alert saved markup: the footprint-free fallback a reader gets if the plugin is switched
  * off (no classes, no data-wp-* — the test bar asserts both). The live HTML is rebuilt by
  * Blocks\Content::render_alert().
  */

@@ -1,5 +1,5 @@
 /**
- * pbs/steps editor: the front end's own numbered list, each step's heading and text edited in
+ * pbsw/steps editor: the front end's own numbered list, each step's heading and text edited in
  * place; layout and colour in the sidebar.
  */
 import { __, sprintf } from '@wordpress/i18n';

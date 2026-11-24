@@ -1,6 +1,6 @@
 /**
  * Breakpoints on the settings screen (pbs-d2): the tablet and mobile widths, saved through
- * `pbs/v1/design/breakpoints`. The premium layer adds its custom-breakpoint editor through the
+ * `pbsw/v1/design/breakpoints`. The premium layer adds its custom-breakpoint editor through the
  * `pbsw.admin.breakpointsExtra` filter (pbs-d3), so the free build carries no premium UI.
  */
 import { __ } from '@wordpress/i18n';
@@ -44,11 +44,14 @@ export default function Breakpoints( { path } ) {
 		apiFetch( {
 			path,
 			method: 'POST',
-			data: {
-				tablet: Number( draft.tablet ),
-				mobile: Number( draft.mobile ),
-				custom: draft.custom || [],
-			},
+			data: applyFilters(
+				'pbsw.admin.breakpointsPayload',
+				{
+					tablet: Number( draft.tablet ),
+					mobile: Number( draft.mobile ),
+				},
+				draft
+			),
 		} )
 			.then( ( r ) => {
 				setData( r );
@@ -68,7 +71,7 @@ export default function Breakpoints( { path } ) {
 	};
 
 	/**
-	 * Premium: the custom-breakpoint editor, or nothing.
+	 * An extension's extra controls for this panel, or nothing.
 	 *
 	 * @type {Function|null}
 	 */
@@ -124,14 +127,7 @@ export default function Breakpoints( { path } ) {
 							}
 						/>
 					</div>
-					{ Extra && (
-						<Extra
-							value={ draft.custom || [] }
-							onChange={ ( custom ) =>
-								setDraft( { ...draft, custom } )
-							}
-						/>
-					) }
+					{ Extra && <Extra draft={ draft } onChange={ setDraft } /> }
 					<p>
 						<Button
 							variant="primary"

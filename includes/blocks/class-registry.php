@@ -45,10 +45,10 @@ final class Registry {
 	 * map so Block_Assets has ONE source (these four were its hardcoded MAP until L09).
 	 */
 	public const CORE_STYLES = array(
-		'pbs/row'    => 'block/row.css',
-		'pbs/column' => 'block/column.css',
-		'pbs/button' => 'block/button.css',
-		'pbs/icon'   => 'block/icon.css',
+		'pbsw/row'    => 'block/row.css',
+		'pbsw/column' => 'block/column.css',
+		'pbsw/button' => 'block/button.css',
+		'pbsw/icon'   => 'block/icon.css',
 	);
 
 	/**
@@ -320,7 +320,7 @@ final class Registry {
 	public static function styles(): array {
 		$map = self::CORE_STYLES;
 		foreach ( array_keys( self::BLOCKS ) as $slug ) {
-			$map[ 'pbs/' . $slug ] = 'block/' . $slug . '.css';
+			$map[ 'pbsw/' . $slug ] = 'block/' . $slug . '.css';
 		}
 
 		return $map;
@@ -334,7 +334,7 @@ final class Registry {
 	public static function style_sources(): array {
 		$out = array();
 		foreach ( self::styles() as $name => $key ) {
-			$out[ $key ] = 'assets/blocks/' . substr( $name, 4 ) . '.css';
+			$out[ $key ] = 'assets/blocks/' . substr( $name, 5 ) . '.css';
 		}
 
 		return $out;
@@ -348,10 +348,10 @@ final class Registry {
 	public static function tested(): array {
 		$out = array();
 		foreach ( self::CORE_TESTED as $slug ) {
-			$out[ 'pbs/' . $slug ] = array( '', null );
+			$out[ 'pbsw/' . $slug ] = array( '', null );
 		}
 		foreach ( self::BLOCKS as $slug => $group ) {
-			$out[ 'pbs/' . $slug ] = array( '', $group );
+			$out[ 'pbsw/' . $slug ] = array( '', $group );
 		}
 
 		return $out;

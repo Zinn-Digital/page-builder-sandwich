@@ -78,7 +78,7 @@ function StudioPanel() {
 
 if ( window.pbswStudio ) {
 	registerPlugin( `${ NAME }-studio`, {
-		scope: 'pbs-studio',
+		scope: 'pbsw-studio',
 		render: StudioPanel,
 	} );
 } else {

@@ -5,7 +5,7 @@ import { addFilter } from '@wordpress/hooks';
 
 import TransferPanel from './TransferPanel';
 
-addFilter( 'pbs.admin.panels', 'pbs/workflow/transfer', ( panels ) => [
+addFilter( 'pbsw.admin.panels', 'pbsw/workflow/transfer', ( panels ) => [
 	...panels,
 	{ name: 'transfer', Component: TransferPanel },
 ] );

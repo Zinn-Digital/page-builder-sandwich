@@ -1,5 +1,5 @@
 /**
- * pbs/code editor: the code typed straight into the canvas (monospace, tab key inserts a tab), the
+ * pbsw/code editor: the code typed straight into the canvas (monospace, tab key inserts a tab), the
  * language, file name and options in the sidebar.
  */
 import { __ } from '@wordpress/i18n';

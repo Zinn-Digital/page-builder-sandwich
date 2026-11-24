@@ -1,5 +1,5 @@
 /**
- * pbs/nav-menu — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/nav-menu — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/nav-menu/block.json';

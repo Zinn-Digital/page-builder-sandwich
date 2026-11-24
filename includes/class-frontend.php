@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Frontend {
 
 	/**
-	 * Prefixed class names: `cls( 'fx', 'fx--accent' )` gives `zd-fx zd-fx--accent`.
+	 * Prefixed class names: `cls( 'fx', 'fx--accent' )` gives `<prefix>-fx <prefix>-fx--accent`.
 	 *
 	 * @param string ...$parts Class suffixes.
 	 * @return string

@@ -45,7 +45,7 @@ final class Content {
 	);
 
 	/**
-	 * `pbs/alert`.
+	 * `pbsw/alert`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: variant, title, content, showIcon, dismissible.
 	 * @return string
@@ -116,7 +116,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/tabs`.
+	 * `pbsw/tabs`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Rendered inner content.
@@ -128,7 +128,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/tab`.
+	 * `pbsw/tab`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Rendered inner content.
@@ -140,7 +140,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/accordion`.
+	 * `pbsw/accordion`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Rendered inner content.
@@ -152,7 +152,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/accordion-item`.
+	 * `pbsw/accordion-item`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Rendered inner content.
@@ -164,7 +164,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/modal`.
+	 * `pbsw/modal`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Rendered inner content.
@@ -176,7 +176,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/off-canvas`.
+	 * `pbsw/off-canvas`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Rendered inner content.
@@ -188,7 +188,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/tooltip`.
+	 * `pbsw/tooltip`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @return string
@@ -200,7 +200,7 @@ final class Content {
 	// ── Group G-B (lane L09 P5): lists, boxes and headings ──────────────────────────────────
 
 	/**
-	 * `pbs/icon-list`: a list whose every line starts with an icon.
+	 * `pbsw/icon-list`: a list whose every line starts with an icon.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: items [{text, icon, iconId}], icon, layout, accent.
 	 * @return string
@@ -227,7 +227,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/info-box`: an icon, a heading, a short text and an optional link.
+	 * `pbsw/info-box`: an icon, a heading, a short text and an optional link.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: svg, icon, title, content, linkUrl, linkText, newTab, align, level, accent.
 	 * @return string
@@ -265,7 +265,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/feature-list`: a grid of features, each an icon, a heading and a text.
+	 * `pbsw/feature-list`: a grid of features, each an icon, a heading and a text.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: items [{title, text, icon, iconId}], icon, columns, level, accent.
 	 * @return string
@@ -297,7 +297,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/steps`: numbered steps of a process.
+	 * `pbsw/steps`: numbered steps of a process.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: items [{title, text}], layout, level, accent.
 	 * @return string
@@ -331,7 +331,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/checklist`: items that are done or still to do, said in words as well as drawn.
+	 * `pbsw/checklist`: items that are done or still to do, said in words as well as drawn.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: items [{text, done}], accent.
 	 * @return string
@@ -358,7 +358,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/badge`: a short label ("New", "Best value").
+	 * `pbsw/badge`: a short label ("New", "Best value").
 	 *
 	 * @param array<string, mixed> $attributes Attributes: content, variant, justify.
 	 * @return string
@@ -375,7 +375,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/dual-heading`: one heading in two parts, the second one accented.
+	 * `pbsw/dual-heading`: one heading in two parts, the second one accented.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: first, second, level, look, stacked, justify.
 	 * @return string
@@ -405,7 +405,7 @@ final class Content {
 	}
 
 	/**
-	 * `pbs/glossary`: terms and their definitions, optionally A–Z, each with its own anchor.
+	 * `pbsw/glossary`: terms and their definitions, optionally A–Z, each with its own anchor.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: items [{term, definition}], sort, showIndex.
 	 * @return string

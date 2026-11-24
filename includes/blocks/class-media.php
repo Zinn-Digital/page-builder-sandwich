@@ -36,7 +36,7 @@ final class Media {
 	);
 
 	/**
-	 * `pbs/map`: an OpenStreetMap map (no key, no account), loaded when the visitor asks.
+	 * `pbsw/map`: an OpenStreetMap map (no key, no account), loaded when the visitor asks.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: lat, lng, zoom, label.
 	 * @return string
@@ -90,7 +90,7 @@ final class Media {
 	}
 
 	/**
-	 * `pbs/booking`: a Calendly or Cal.com booking page, loaded when the visitor asks.
+	 * `pbsw/booking`: a Calendly or Cal.com booking page, loaded when the visitor asks.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: provider, url, label.
 	 * @return string
@@ -208,7 +208,7 @@ final class Media {
 	}
 
 	/**
-	 * `pbs/qr-code`: a QR code the editor generated locally (no service), as sanitised inline SVG.
+	 * `pbsw/qr-code`: a QR code the editor generated locally (no service), as sanitised inline SVG.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: text, svg, caption.
 	 * @return string

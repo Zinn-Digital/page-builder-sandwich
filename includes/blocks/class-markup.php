@@ -79,7 +79,7 @@ final class Markup {
 	}
 
 	/**
-	 * A unique, neutral id for this request (`zd-tabs-3`).
+	 * A unique, neutral id for this request (`<prefix>-tabs-3`).
 	 *
 	 * @param string $what What it names.
 	 * @return string

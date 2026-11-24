@@ -107,7 +107,12 @@ final class Importer {
 			if ( ! isset( $ids[ $page_slug ] ) ) {
 				continue;
 			}
-			$content = self::relink( (string) ( $page['content'] ?? '' ), $map );
+			// The engine serves pbs/* names to every installed version; store this release's.
+			$content = \ZinnDigital\PBS\Core\Import_Clean::content(
+				\ZinnDigital\PBS\Core\Block_Names::upgrade_markup(
+					self::relink( (string) ( $page['content'] ?? '' ), $map )
+				)
+			);
 			wp_update_post(
 				wp_slash(
 					array(

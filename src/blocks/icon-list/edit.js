@@ -1,5 +1,5 @@
 /**
- * pbs/icon-list editor: the front end's own markup and classes, each line edited in place; the
+ * pbsw/icon-list editor: the front end's own markup and classes, each line edited in place; the
  * icon, layout and colour in the sidebar, and a per-line icon from the library.
  */
 import { __, sprintf } from '@wordpress/i18n';

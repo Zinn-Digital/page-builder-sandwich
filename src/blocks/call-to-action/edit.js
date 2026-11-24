@@ -1,5 +1,5 @@
 /**
- * pbs/call-to-action editor: the front end's own markup; heading, text and button labels edited
+ * pbsw/call-to-action editor: the front end's own markup; heading, text and button labels edited
  * in place, the addresses in the sidebar.
  */
 import { __ } from '@wordpress/i18n';

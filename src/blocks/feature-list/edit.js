@@ -1,5 +1,5 @@
 /**
- * pbs/feature-list editor: the front end's own grid, each feature's heading and text edited in
+ * pbsw/feature-list editor: the front end's own grid, each feature's heading and text edited in
  * place; icons, columns and colour in the sidebar.
  */
 import { __, sprintf } from '@wordpress/i18n';

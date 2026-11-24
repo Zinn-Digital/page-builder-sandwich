@@ -1,5 +1,5 @@
 /**
- * pbs/progress-bar editor: the same labelled bar the page shows (Blocks\Data::render_progress_bar()).
+ * pbsw/progress-bar editor: the same labelled bar the page shows (Blocks\Data::render_progress_bar()).
  */
 import { __, sprintf } from '@wordpress/i18n';
 import {

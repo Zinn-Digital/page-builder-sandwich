@@ -1,5 +1,5 @@
 /**
- * pbs/checklist editor: the front end's own list; each line's text edited in place and its
+ * pbsw/checklist editor: the front end's own list; each line's text edited in place and its
  * done / to-do state toggled from its own check button (keyboard reachable, labelled).
  */
 import { __, sprintf } from '@wordpress/i18n';

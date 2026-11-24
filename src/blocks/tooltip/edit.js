@@ -1,5 +1,5 @@
 /**
- * pbs/tooltip editor: the trigger as visitors see it, with the tip shown under it while the
+ * pbsw/tooltip editor: the trigger as visitors see it, with the tip shown under it while the
  * block is selected (on the page it shows on hover and keyboard focus).
  */
 import { __ } from '@wordpress/i18n';

@@ -1,5 +1,5 @@
 /**
- * pbs/testimonial editor: the front end's own markup, the quote, name and role edited in place;
+ * pbsw/testimonial editor: the front end's own markup, the quote, name and role edited in place;
  * photo, rating and layout in the sidebar.
  */
 import { __, sprintf } from '@wordpress/i18n';

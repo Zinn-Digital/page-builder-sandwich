@@ -30,8 +30,16 @@ final class Settings {
 	/** What a block dropped at the top level of a page may be wrapped in: nothing, a Row or a Container. */
 	public const DROP_WRAPS = array( 'none', 'row', 'container' );
 
+	/**
+	 * The prefix of the wordpress.org build, fixed: the directory requires every handle, cookie,
+	 * uploads folder and REST namespace to carry the plugin's own prefix.
+	 */
+	public const DOTORG_PREFIX = 'pbsw';
+
+	// dotorg-omit:begin
 	/** The prefix every front-end class name, handle and asset folder starts with. */
 	public const DEFAULT_PREFIX = 'zd';
+	// dotorg-omit:end
 
 	/**
 	 * Words a prefix may not contain, because each one would put the plugin's identity back
@@ -53,10 +61,13 @@ final class Settings {
 			$stored = array();
 		}
 
+		$prefix = self::DOTORG_PREFIX;
+		// dotorg-omit:begin
+		$prefix = self::is_valid_prefix( (string) ( $stored['prefix'] ?? '' ) ) ? (string) $stored['prefix'] : self::DEFAULT_PREFIX;
+		// dotorg-omit:end
+
 		return array(
-			'prefix' => self::is_valid_prefix( (string) ( $stored['prefix'] ?? '' ) )
-				? (string) $stored['prefix']
-				: self::DEFAULT_PREFIX,
+			'prefix' => $prefix,
 			'mcp'    => ! array_key_exists( 'mcp', $stored ) || true === $stored['mcp'],
 		);
 	}
@@ -70,6 +81,8 @@ final class Settings {
 	public static function save( array $input ) {
 		$current = self::get();
 
+		// The wordpress.org build keeps its fixed prefix: a submitted one is ignored.
+		// dotorg-omit:begin
 		if ( array_key_exists( 'prefix', $input ) ) {
 			$prefix = strtolower( trim( (string) $input['prefix'] ) );
 			if ( ! self::is_valid_prefix( $prefix ) ) {
@@ -81,6 +94,7 @@ final class Settings {
 			}
 			$current['prefix'] = $prefix;
 		}
+		// dotorg-omit:end
 		if ( array_key_exists( 'drop_wrap', $input ) ) {
 			$wrap = (string) $input['drop_wrap'];
 			if ( ! in_array( $wrap, self::DROP_WRAPS, true ) ) {
@@ -124,14 +138,33 @@ final class Settings {
 	 * @return string
 	 */
 	public static function prefix(): string {
+		$prefix = self::DOTORG_PREFIX;
+		// dotorg-omit:begin
 		/**
 		 * Filters the neutral front-end class prefix.
 		 *
 		 * @param string $prefix The stored prefix, `zd` by default.
 		 */
 		$prefix = (string) apply_filters( 'pbsw_frontend_prefix', self::get()['prefix'] );
+		$prefix = self::is_valid_prefix( $prefix ) ? $prefix : self::DEFAULT_PREFIX;
+		// dotorg-omit:end
 
-		return self::is_valid_prefix( $prefix ) ? $prefix : self::DEFAULT_PREFIX;
+		return $prefix;
+	}
+
+	/**
+	 * Is the prefix fixed by the build? It is in the wordpress.org build, where the settings
+	 * screen hides the field and save() ignores a submitted value.
+	 *
+	 * @return bool
+	 */
+	public static function prefix_locked(): bool {
+		$locked = true;
+		// dotorg-omit:begin
+		$locked = false;
+		// dotorg-omit:end
+
+		return $locked;
 	}
 
 	/**

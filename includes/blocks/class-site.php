@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Site {
 
 	/**
-	 * `pbs/table-of-contents`.
+	 * `pbsw/table-of-contents`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @return string
@@ -37,7 +37,7 @@ final class Site {
 	}
 
 	/**
-	 * `pbs/nav-menu` (pbs-bp4; free since 6.36.22): a WordPress menu with dropdowns and a mobile
+	 * `pbsw/nav-menu` (pbs-bp4; free since 6.36.22): a WordPress menu with dropdowns and a mobile
 	 * menu. Site\Nav builds it.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
@@ -50,7 +50,7 @@ final class Site {
 	}
 
 	/**
-	 * `pbs/reading-progress`: a bar that fills as the visitor scrolls through the page.
+	 * `pbsw/reading-progress`: a bar that fills as the visitor scrolls through the page.
 	 *
 	 * Decorative (`aria-hidden`): it repeats what the browser's scrollbar already tells every
 	 * user, so announcing it would only be noise. Fixed to the top (below the admin bar) or the
@@ -74,7 +74,7 @@ final class Site {
 	 */
 	public static ?Site_Data $data = null;
 
-	/** The details pbs/post-meta can show, in display order. */
+	/** The details pbsw/post-meta can show, in display order. */
 	public const META_ITEMS = array( 'author', 'date', 'modified', 'categories', 'tags', 'readingTime', 'comments' );
 
 	/** Words a minute, for reading time. */
@@ -138,10 +138,10 @@ final class Site {
 		return max( 2, min( 6, $level ) );
 	}
 
-	// ── pbs/related-posts ──────────────────────────────────────────────────────────────────────
+	// ── pbsw/related-posts ──────────────────────────────────────────────────────────────────────
 
 	/**
-	 * `pbs/related-posts`: posts sharing the current post's categories and/or tags.
+	 * `pbsw/related-posts`: posts sharing the current post's categories and/or tags.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: count, by, heading, headingLevel, showImage, showDate, showExcerpt.
 	 * @param string               $content    Unused.
@@ -185,10 +185,10 @@ final class Site {
 		return $html . '</ul></section>';
 	}
 
-	// ── pbs/post-meta ──────────────────────────────────────────────────────────────────────────
+	// ── pbsw/post-meta ──────────────────────────────────────────────────────────────────────────
 
 	/**
-	 * `pbs/post-meta`: author, dates, terms, reading time, comments.
+	 * `pbsw/post-meta`: author, dates, terms, reading time, comments.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: items (list of META_ITEMS).
 	 * @param string               $content    Unused.
@@ -262,10 +262,10 @@ final class Site {
 		return '';
 	}
 
-	// ── pbs/sitemap ────────────────────────────────────────────────────────────────────────────
+	// ── pbsw/sitemap ────────────────────────────────────────────────────────────────────────────
 
 	/**
-	 * `pbs/sitemap`: every published page/post (and other public types chosen) as a list of links;
+	 * `pbsw/sitemap`: every published page/post (and other public types chosen) as a list of links;
 	 * pages keep their parent/child tree.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: postTypes, showHeadings, headingLevel.
@@ -339,10 +339,10 @@ final class Site {
 		return $render( $root_id, 0 );
 	}
 
-	// ── pbs/user-profile ───────────────────────────────────────────────────────────────────────
+	// ── pbsw/user-profile ───────────────────────────────────────────────────────────────────────
 
 	/**
-	 * `pbs/user-profile`: the post's author (or a chosen user): picture, name, bio, links.
+	 * `pbsw/user-profile`: the post's author (or a chosen user): picture, name, bio, links.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: source (author|user), userId, showAvatar, showBio, showLinks.
 	 * @param string               $content    Unused.
@@ -385,10 +385,10 @@ final class Site {
 		return $html . '</div></div>';
 	}
 
-	// ── pbs/protected ──────────────────────────────────────────────────────────────────────────
+	// ── pbsw/protected ──────────────────────────────────────────────────────────────────────────
 
 	/**
-	 * `pbs/protected`: inner blocks shown only to a visitor who entered the password. While locked
+	 * `pbsw/protected`: inner blocks shown only to a visitor who entered the password. While locked
 	 * the page carries a password form and NOTHING of the content — it is never rendered, so it is
 	 * not in the HTML, the REST API's rendered content, a feed or an excerpt.
 	 *
@@ -442,7 +442,7 @@ final class Site {
 	 * @return string
 	 */
 	public static function proof( string $lock, string $hash ): string {
-		return hash_hmac( 'sha256', $lock . '|' . $hash, wp_salt( 'auth' ) );
+		return wp_hash( $lock . '|' . $hash, 'auth', 'sha256' );
 	}
 
 	/**
@@ -494,7 +494,7 @@ final class Site {
 	 */
 	public static function no_store(): void {
 		$post = get_queried_object();
-		if ( $post instanceof \WP_Post && str_contains( (string) $post->post_content, '<!-- wp:pbs/protected' ) ) {
+		if ( $post instanceof \WP_Post && \ZinnDigital\PBS\Core\Block_Names::in_content( (string) $post->post_content, 'protected' ) ) {
 			nocache_headers();
 		}
 	}
@@ -575,7 +575,7 @@ final class Site {
 			if ( ! is_array( $b ) ) {
 				continue;
 			}
-			if ( 'pbs/protected' === ( $b['blockName'] ?? '' ) && ( $b['attrs']['lockId'] ?? null ) === $lock && is_string( $b['attrs']['hash'] ?? null ) && '' !== $b['attrs']['hash'] ) {
+			if ( 'pbsw/protected' === ( $b['blockName'] ?? '' ) && ( $b['attrs']['lockId'] ?? null ) === $lock && is_string( $b['attrs']['hash'] ?? null ) && '' !== $b['attrs']['hash'] ) {
 				return $b['attrs']['hash'];
 			}
 			$found = self::find_hash( is_array( $b['innerBlocks'] ?? null ) ? $b['innerBlocks'] : array(), $lock );
@@ -588,7 +588,7 @@ final class Site {
 	}
 
 	/**
-	 * `rest_api_init`: POST pbs/v1/blocks/protected/hash {password} → {hash}. The editor stores
+	 * `rest_api_init`: POST pbsw/v1/blocks/protected/hash {password} → {hash}. The editor stores
 	 * only the hash, so the password itself is never saved in the post.
 	 *
 	 * @return void
@@ -620,7 +620,7 @@ final class Site {
 			)
 		);
 		register_rest_route(
-			'pbs/v1',
+			'pbsw/v1',
 			'/blocks/protected/hash',
 			array(
 				'methods'             => \WP_REST_Server::CREATABLE,

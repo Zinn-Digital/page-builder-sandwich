@@ -1,5 +1,5 @@
 /**
- * pbs/dual-heading saved markup: the footprint-free fallback (one heading, the second part
+ * pbsw/dual-heading saved markup: the footprint-free fallback (one heading, the second part
  * emphasised). The live HTML is rebuilt by Blocks\Content::render_dual_heading().
  */
 import { RichText } from '@wordpress/block-editor';

@@ -1,5 +1,5 @@
 /**
- * The Site design screen's REST client (`pbs/v1/design/*`) and boot data.
+ * The Site design screen's REST client (`pbsw/v1/design/*`) and boot data.
  */
 import apiFetch from '@wordpress/api-fetch';
 
@@ -12,7 +12,7 @@ export function boot() {
 	return (
 		window.pbswSiteDesign || {
 			edition: 'free',
-			namespace: 'pbs/v1',
+			namespace: 'pbsw/v1',
 			base: '/design',
 			prefix: 'zd',
 			canWriteCss: false,

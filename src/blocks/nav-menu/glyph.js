@@ -1,5 +1,5 @@
 /**
- * pbs/nav-menu's glyphs, from the same file the render callback reads
+ * pbsw/nav-menu's glyphs, from the same file the render callback reads
  * (includes/blocks/site/nav-glyphs.json), so the editor draws exactly what the page prints.
  */
 import GLYPHS from '../../../includes/blocks/site/nav-glyphs.json';

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Publishes front-end CSS/JS out of the plugin directory into `uploads/<prefix>-assets/`.
  *
  * ⭐ WHY A COPY, AND WHY IT IS DONE IN wp-admin RATHER THAN ON A PAGE VIEW (docs/adr/0033).
- * A stylesheet enqueued from the plugin directory prints `/wp-content/plugins/page-builder-sandwich/`
+ * A stylesheet enqueued from the plugin directory prints the plugin's own folder URL (plugins_url())
  * into every page, which is the single loudest footprint a plugin leaves (CONTRACT §7). The
  * alternatives were a rewrite rule (needs a flush, breaks on nginx without extra config, and
  * serves every asset through PHP) and a REST/query endpoint (PHP on every asset request, no

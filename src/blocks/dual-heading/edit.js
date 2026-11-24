@@ -1,5 +1,5 @@
 /**
- * pbs/dual-heading editor: the front end's own heading, both parts edited in place.
+ * pbsw/dual-heading editor: the front end's own heading, both parts edited in place.
  */
 import { __ } from '@wordpress/i18n';
 import {

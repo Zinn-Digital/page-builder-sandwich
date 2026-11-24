@@ -27,9 +27,9 @@ return array(
 <h2 class="wp-block-heading">@@PBS_T0@@</h2>
 <!-- /wp:heading -->
 
-<!-- wp:pbs/feature-list {"items":[{"title":"@@PBS_T1@@","text":"@@PBS_T2@@"},{"title":"@@PBS_T3@@","text":"@@PBS_T4@@"},{"title":"@@PBS_T5@@","text":"@@PBS_T6@@"},{"title":"@@PBS_T7@@","text":"@@PBS_T8@@"},{"title":"@@PBS_T9@@","text":"@@PBS_T10@@"},{"title":"@@PBS_T11@@","text":"@@PBS_T12@@"}],"level":3} -->
+<!-- wp:pbsw/feature-list {"items":[{"title":"@@PBS_T1@@","text":"@@PBS_T2@@"},{"title":"@@PBS_T3@@","text":"@@PBS_T4@@"},{"title":"@@PBS_T5@@","text":"@@PBS_T6@@"},{"title":"@@PBS_T7@@","text":"@@PBS_T8@@"},{"title":"@@PBS_T9@@","text":"@@PBS_T10@@"},{"title":"@@PBS_T11@@","text":"@@PBS_T12@@"}],"level":3} -->
 <ul><li><h3>@@PBS_T1@@</h3><p>@@PBS_T2@@</p></li><li><h3>@@PBS_T3@@</h3><p>@@PBS_T4@@</p></li><li><h3>@@PBS_T5@@</h3><p>@@PBS_T6@@</p></li><li><h3>@@PBS_T7@@</h3><p>@@PBS_T8@@</p></li><li><h3>@@PBS_T9@@</h3><p>@@PBS_T10@@</p></li><li><h3>@@PBS_T11@@</h3><p>@@PBS_T12@@</p></li></ul>
-<!-- /wp:pbs/feature-list --></div>
+<!-- /wp:pbsw/feature-list --></div>
 <!-- /wp:group -->',
 		array(
 			__( 'Everything your team needs', 'page-builder-sandwich' ),

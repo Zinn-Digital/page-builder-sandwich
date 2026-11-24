@@ -18,5 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once PBSW_DIR . 'vendor/woocommerce/action-scheduler/action-scheduler.php';
 \ZinnDigital\PBS\Migrate\Batch::register();
 \ZinnDigital\PBS\Migrate\First_Open::register();
+\ZinnDigital\PBS\Migrate\Waiting::register();
 \ZinnDigital\PBS\Migrate\Rest_Routes::register();
 \ZinnDigital\PBS\Migrate\Cli::register();

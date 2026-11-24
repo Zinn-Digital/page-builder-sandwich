@@ -1,5 +1,5 @@
 /**
- * pbs/dual-heading — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/dual-heading — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/dual-heading/block.json';

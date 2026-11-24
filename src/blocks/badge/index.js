@@ -1,5 +1,5 @@
 /**
- * pbs/badge — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/badge — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/badge/block.json';

@@ -1,5 +1,5 @@
 /**
- * pbs/form — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/form — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/form/block.json';

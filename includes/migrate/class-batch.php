@@ -56,6 +56,7 @@ final class Batch {
 	public const OPTOUT_META    = '_pbsw_migration_optout';
 	public const BACKUP_META    = '_pbsw_legacy_backup';
 	public const CONVERTED_META = '_pbsw_converted';
+	public const WAITING_META   = '_pbsw_migration_waiting';
 
 	/** Posts per action; filterable with `pbsw_migration_batch_size`. */
 	public const DEFAULT_SIZE = 25;
@@ -215,6 +216,8 @@ final class Batch {
 			 * @param int $size Posts per step (Batch::DEFAULT_SIZE).
 			 */
 			$size  = max( 1, (int) apply_filters( 'pbsw_migration_batch_size', self::DEFAULT_SIZE ) );
+			// Runs as whoever is current (no one, under WP-Cron). A post kses would change is not
+			// written: it waits for an administrator (see convert_waiting()).
 			$state = Run::step(
 				$state,
 				static fn( int $after, int $limit, string $mode ): array => self::fetch( $after, $limit, $mode, $trigger ),
@@ -244,7 +247,11 @@ final class Batch {
 			$result  = Converter::convert_post( $post_id );
 			$status  = strtolower( (string) ( $result['status'] ?? '' ) );
 			$message = (string) ( $result['message'] ?? '' );
-			// Converter statuses (W2): converted | already-converted | not-legacy | missing | write-failed.
+			// Converter statuses (W2): converted | already-converted | not-legacy | missing | write-failed | needs-admin.
+			if ( Converter::NEEDS_ADMIN === $status ) {
+				self::wait( $post_id, 'convert:' . ( 'manual' === $trigger ? 'manual' : 'auto' ) );
+				return array( 'outcome' => 'skipped' );
+			}
 			if ( 'failed' === $status || 'error' === $status || str_ends_with( $status, '-failed' ) ) {
 				$outcome = 'failed';
 				$message = '' === $message ? $status : $message;
@@ -264,6 +271,7 @@ final class Batch {
 			);
 		}
 		delete_post_meta( $post_id, self::ERROR_META );
+		delete_post_meta( $post_id, self::WAITING_META );
 		if ( 'converted' === $outcome && 'manual' === $trigger ) {
 			delete_post_meta( $post_id, self::OPTOUT_META );
 		}
@@ -277,6 +285,11 @@ final class Batch {
 	 * @return array{outcome:string, message?:string}
 	 */
 	public static function undo_post( int $post_id ): array {
+		$backup = Backup::read( $post_id );
+		if ( null !== $backup && Backup::write_would_filter( (string) $backup['post_content'] ) ) {
+			self::wait( $post_id, 'undo' );
+			return array( 'outcome' => 'skipped' );
+		}
 		try {
 			$restored = Backup::restore( $post_id );
 		} catch ( \Throwable $e ) {
@@ -295,7 +308,72 @@ final class Batch {
 		// again behind their back. A manual convert (REST, CLI, the admin button) clears this.
 		update_post_meta( $post_id, self::OPTOUT_META, '1' );
 		delete_post_meta( $post_id, self::ERROR_META );
+		delete_post_meta( $post_id, self::WAITING_META );
 		return array( 'outcome' => 'restored' );
+	}
+
+	/**
+	 * Leave a post for an administrator: kses would change its write here. The cursor moves on;
+	 * the post itself is untouched and keeps this marker until convert_waiting() handles it.
+	 *
+	 * @param int    $post_id Post id.
+	 * @param string $what    `convert:auto`, `convert:manual` or `undo`.
+	 * @return void
+	 */
+	private static function wait( int $post_id, string $what ): void {
+		update_post_meta( $post_id, self::WAITING_META, $what );
+	}
+
+	/**
+	 * Post ids waiting for an administrator, ascending, after `$after`.
+	 *
+	 * @param int $after Cursor.
+	 * @param int $limit At most this many.
+	 * @return list<int>
+	 */
+	public static function waiting_ids( int $after, int $limit ): array {
+		global $wpdb;
+		$ids = $wpdb->get_col( $wpdb->prepare( "SELECT m.post_id FROM {$wpdb->postmeta} m INNER JOIN {$wpdb->posts} p ON p.ID = m.post_id WHERE m.meta_key = %s AND m.post_id > %d GROUP BY m.post_id ORDER BY m.post_id ASC LIMIT %d", self::WAITING_META, $after, $limit ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- a cursor scan on the indexed meta_key.
+		return array_map( 'intval', (array) $ids );
+	}
+
+	/**
+	 * How many posts wait for an administrator.
+	 *
+	 * @return int
+	 */
+	public static function waiting_count(): int {
+		global $wpdb;
+		return (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(DISTINCT m.post_id) FROM {$wpdb->postmeta} m INNER JOIN {$wpdb->posts} p ON p.ID = m.post_id WHERE m.meta_key = %s", self::WAITING_META ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery -- one indexed count, only for a user who can act on it.
+	}
+
+	/**
+	 * Handle the given waiting posts in THIS request, which must be an administrator's own: with
+	 * unfiltered_html, Backup::write_content() writes each one exactly. Nobody is switched to;
+	 * without the capability nothing is written (each post simply keeps waiting).
+	 *
+	 * @param list<int> $ids Waiting post ids (waiting_ids()).
+	 * @return int How many are no longer waiting.
+	 */
+	public static function convert_waiting( array $ids ): int {
+		if ( ! current_user_can( 'unfiltered_html' ) ) {
+			return 0;
+		}
+		$done = 0;
+		foreach ( $ids as $id ) {
+			$id   = (int) $id;
+			$what = (string) get_post_meta( $id, self::WAITING_META, true );
+			if ( '' === $what ) {
+				continue;
+			}
+			$result = 'undo' === $what ? self::undo_post( $id ) : self::convert_post( $id, 'convert:manual' === $what ? 'manual' : 'auto' );
+			if ( '' === (string) get_post_meta( $id, self::WAITING_META, true ) ) {
+				++$done;
+			} elseif ( 'failed' === $result['outcome'] ) {
+				delete_post_meta( $id, self::WAITING_META ); // Recorded in ERROR_META; never retried for ever.
+			}
+		}
+		return $done;
 	}
 
 	/**

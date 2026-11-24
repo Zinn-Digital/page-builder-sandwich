@@ -18,7 +18,6 @@ import Breakpoints from './Breakpoints';
 import Debug from './Debug';
 import DropWrap from './DropWrap';
 import LegacyContent from './LegacyContent';
-import PausedTabs from './PausedTabs';
 import McpPanel from '../mcp-kit/McpPanel';
 import { isValidPrefix } from './prefix';
 
@@ -95,7 +94,7 @@ export default function App( { data } ) {
 						</p>
 					</PanelBody>
 				) }
-				{ settings && (
+				{ settings && ! settings.prefix_locked && (
 					<PanelBody
 						title={ __(
 							'Front-end output',
@@ -183,15 +182,11 @@ export default function App( { data } ) {
 				{ data.migrationPath && (
 					<LegacyContent path={ data.migrationPath } />
 				) }
-				<PausedTabs
-					count={ data.pausedTabs }
-					upgradeUrl={ data.upgradeUrl }
-				/>
 				{ /*
 				 * Panels added by modules (workflow, SEO, AI, developer tools): each entry is
 				 * { name, Component }; Component receives { data }.
 				 */ }
-				{ applyFilters( 'pbs.admin.panels', [], data ).map(
+				{ applyFilters( 'pbsw.admin.panels', [], data ).map(
 					( { name, Component } ) => (
 						<Component key={ name } data={ data } />
 					)

@@ -1,5 +1,5 @@
 /**
- * pbs/table-of-contents — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/table-of-contents — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/table-of-contents/block.json';

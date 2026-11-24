@@ -1,5 +1,5 @@
 /**
- * pbs/checklist saved markup: the footprint-free fallback. Each line starts with ✓ (done) or
+ * pbsw/checklist saved markup: the footprint-free fallback. Each line starts with ✓ (done) or
  * ○ (to do), so the list keeps its meaning with the plugin off. No words here: save() output
  * must not depend on the editor's language, or a block saved in one language would be invalid
  * in another. The live HTML (Blocks\Content::render_checklist()) says the state in words.

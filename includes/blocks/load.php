@@ -30,12 +30,12 @@ require_once __DIR__ . '/class-glossary.php';
 \ZinnDigital\PBS\Blocks\Glossary::register();
 \ZinnDigital\PBS\Blocks\Extensions::register();
 
-// pbs/code: highlight.js 11.12.0 (BSD-3-Clause, assets/vendor/highlight/LICENSE), bundled locally and
+// pbsw/code: highlight.js 11.12.0 (BSD-3-Clause, assets/vendor/highlight/LICENSE), bundled locally and
 // published through the neutral path like every front-end asset; loaded only on a page that
 // renders a code block (Data::render_code()).
 \ZinnDigital\PBS\Assets::add_source( 'vendor/highlight.js', 'assets/vendor/highlight/highlight-core.js' );
 
-// pbs/protected: the password form's POST, no-store headers, and the editor's hashing route.
+// pbsw/protected: the password form's POST, no-store headers, and the editor's hashing route.
 require_once __DIR__ . '/class-site.php';
 \ZinnDigital\PBS\Blocks\Site::register();
 require_once __DIR__ . '/class-forms.php';

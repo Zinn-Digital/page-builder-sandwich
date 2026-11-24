@@ -1,5 +1,5 @@
 /**
- * pbs/table-of-contents editor: the list built live from the headings being edited, exactly as
+ * pbsw/table-of-contents editor: the list built live from the headings being edited, exactly as
  * the page will show it.
  */
 import { __, sprintf } from '@wordpress/i18n';

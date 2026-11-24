@@ -3,8 +3,7 @@
  * Loads the site-wide design globals (lane L09, P4, worker W2). Required from ../../bootstrap.php.
  *
  * The free half: colours and fonts shared with the theme (pbs-d4), the Site design screen and
- * its REST routes. The premium half (classes, variables, tokens, custom CSS, dark mode, brand
- * kit, custom fonts) lives in includes/pro__premium_only/design/ and is booted by Pro::boot().
+ * its REST routes.
  *
  * @package ZinnDigital\PBS
  */

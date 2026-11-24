@@ -1,5 +1,5 @@
 /**
- * pbs/qr-code saved markup: with the plugin off, the QR code itself and its caption (no classes,
+ * pbsw/qr-code saved markup: with the plugin off, the QR code itself and its caption (no classes,
  * no data-wp-*). The live figure is rebuilt by Media::render_qr_code() from the sanitised SVG.
  */
 import { RawHTML } from '@wordpress/element';

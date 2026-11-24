@@ -1,5 +1,5 @@
 /**
- * pbs/table-of-contents view module (Interactivity API): scroll-spy. The link of the section the
+ * pbsw/table-of-contents view module (Interactivity API): scroll-spy. The link of the section the
  * visitor is reading gets `aria-current="true"` (and the matching style): the last heading that
  * has scrolled past the upper third of the window, or the last heading once the page's end is
  * reached (a short final section never gets to the top). One passive scroll listener, at most

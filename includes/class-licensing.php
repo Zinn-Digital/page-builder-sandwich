@@ -21,9 +21,8 @@ final class Licensing {
 	/**
 	 * Is the premium layer running?
 	 *
-	 * ⛔ WordPress.org guideline 5 (2026-10-01): the free plugin makes no licence check. The premium
-	 * entry (`includes/pro__premium_only/class-pro.php`, absent from the free package) answers
-	 * `pbsw_is_pro` with the licence; free code only asks to decide whether to SHOW an upgrade.
+	 * WordPress.org guideline 5: this plugin has no licence check and every feature in it works
+	 * for everyone. This answer only decides whether an upgrade link is worth showing.
 	 *
 	 * @return bool
 	 */
@@ -34,27 +33,6 @@ final class Licensing {
 		 * @param bool $pro False in the free plugin.
 		 */
 		return (bool) apply_filters( 'pbsw_is_pro', false );
-	}
-
-	/**
-	 * Is this site on the Agency plan (white label, client review, multisite network features)?
-	 *
-	 * Agency code lives only in premium paths, so the free package never reaches this with `true`.
-	 *
-	 * @return bool
-	 */
-	public static function is_agency(): bool {
-		// ⛔ Ask the admin kit, never the SDK's is_plan(): that ranks plans by store position, and
-		// the legacy plan (673) predates Agency, so an unlimited legacy licence would never be
-		// Agency here although D34 makes it one (docs/843; LegacyAgencyGateTest).
-		$agency = 'agency' === \ZinnDigital\PBS\AdminKit\Licence::tier();
-
-		/**
-		 * Filters whether the Agency plan's features are available on this site.
-		 *
-		 * @param bool $agency True on the Agency plan.
-		 */
-		return (bool) apply_filters( 'pbsw_is_agency', $agency );
 	}
 
 	/**

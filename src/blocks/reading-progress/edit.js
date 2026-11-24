@@ -1,5 +1,5 @@
 /**
- * pbs/reading-progress editor: the bar as it looks part-filled, with a note of where it sits on
+ * pbsw/reading-progress editor: the bar as it looks part-filled, with a note of where it sits on
  * the page (it is fixed to the window edge there, which the editor canvas cannot show).
  */
 import { __ } from '@wordpress/i18n';

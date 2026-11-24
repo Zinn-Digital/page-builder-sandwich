@@ -24,7 +24,6 @@ import {
 	page as pageIcon,
 	plus,
 	redo as redoIcon,
-	shield,
 	tablet,
 	undo as undoIcon,
 	wordpress,
@@ -32,7 +31,6 @@ import {
 } from '@wordpress/icons';
 import { useSave } from '../hooks/use-save';
 import { useBoot, useUi } from '../context';
-import { useSafeModeToggle } from './safe-mode';
 import { useStudioClipboard } from './style-transfer-panel';
 
 /**
@@ -87,7 +85,7 @@ function useAddBlockCommands( { search } ) {
 				),
 				searchLabel: `${ t.title } ${ ( t.keywords || [] ).join( ' ' ) } block`,
 				// The palette's Icon clones this as a React ELEMENT, but a block's icon may be a
-				// Dashicon name (pbs/testimonial's `format-quote`), a component or an element:
+				// Dashicon name (pbsw/testimonial's `format-quote`), a component or an element:
 				// typing "quote" crashed the whole palette on the string (D28371). BlockIcon is
 				// how the inserter renders every one of those shapes.
 				icon: t.icon?.src ? (
@@ -195,7 +193,6 @@ export default function StudioCommands() {
 	const ui = useUi();
 	const { save } = useSave();
 	const { undo, redo } = useDispatch( coreStore );
-	const safeMode = useSafeModeToggle();
 	const clip = useStudioClipboard();
 	useSelect( ( select ) => select( blocksStore ).getBlockTypes(), [] );
 
@@ -335,21 +332,6 @@ export default function StudioCommands() {
 			},
 		} );
 	}
-	useCommand( {
-		name: 'pbsw/studio/safe-mode',
-		label: boot.safeMode?.active
-			? __( 'Turn off safe mode', 'page-builder-sandwich' )
-			: __(
-					'Turn on safe mode (other plugins off, for you, in Studio only)',
-					'page-builder-sandwich'
-				),
-		icon: shield,
-		disabled: ! safeMode,
-		callback: ( { close } ) => {
-			close();
-			safeMode?.();
-		},
-	} );
 	useCommandLoader( {
 		name: 'pbsw/studio/add-block',
 		hook: useAddBlockCommands,

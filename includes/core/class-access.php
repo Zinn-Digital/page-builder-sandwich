@@ -54,12 +54,21 @@ final class Access {
 	}
 
 	/**
-	 * The post id a REST request names: the `post_id` param, else the `id` URL param.
+	 * The post id a REST request names: the route's own `id`, else the `post_id` param.
+	 *
+	 * The route's id is read from the URL parameters on purpose: `get_param()` prefers a body or
+	 * query value over the URL, so a request could pass the check for one post and act on another.
+	 * The permission callback and its handler must both call this.
 	 *
 	 * @param \WP_REST_Request $request Request.
 	 * @return int
 	 */
 	public static function request_post_id( \WP_REST_Request $request ): int {
+		$url = $request->get_url_params();
+		if ( isset( $url['id'] ) ) {
+			return is_numeric( $url['id'] ) ? (int) $url['id'] : 0;
+		}
+
 		$id = $request->get_param( 'post_id' );
 		if ( null === $id || '' === $id ) {
 			$id = $request->get_param( 'id' );

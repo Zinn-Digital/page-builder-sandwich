@@ -2,12 +2,12 @@
 /**
  * REST routes and WP-CLI commands for import and export (pbs-g5).
  *
- *   GET  pbs/v1/transfer/items   what this site can export
- *   POST pbs/v1/transfer/export  { ids[], settings } → the package
- *   POST pbs/v1/transfer/import  { package, mode, settings, media, dryRun } → the report
+ *   GET  pbsw/v1/transfer/items   what this site can export
+ *   POST pbsw/v1/transfer/export  { ids[], settings } → the package
+ *   POST pbsw/v1/transfer/import  { package, mode, settings, media, dryRun } → the report
  *
- *   wp pbs export [--types=<a,b>] [--no-settings] [--file=<path>]
- *   wp pbs import <file> [--mode=skip|replace|duplicate] [--no-settings] [--media] [--dry-run]
+ *   wp pbsw export [--types=<a,b>] [--no-settings]
+ *   wp pbsw import <file> [--mode=skip|replace|duplicate] [--no-settings] [--media] [--dry-run]
  *
  * @package ZinnDigital\PBS
  */
@@ -35,8 +35,8 @@ final class Transfer_Routes {
 	public static function register(): void {
 		add_action( 'rest_api_init', array( self::class, 'routes' ) );
 		if ( defined( 'WP_CLI' ) && WP_CLI && class_exists( '\WP_CLI' ) ) {
-			\WP_CLI::add_command( 'pbs export', array( self::class, 'cli_export' ) );
-			\WP_CLI::add_command( 'pbs import', array( self::class, 'cli_import' ) );
+			\WP_CLI::add_command( 'pbsw export', array( self::class, 'cli_export' ) );
+			\WP_CLI::add_command( 'pbsw import', array( self::class, 'cli_import' ) );
 		}
 	}
 
@@ -141,43 +141,8 @@ final class Transfer_Routes {
 		return is_wp_error( $result ) ? $result : new \WP_REST_Response( $result );
 	}
 
-	/** The folder under uploads that `wp pbs export --file` writes into (WordPress.org review P0TDX382477HGN). */
-	public const EXPORT_DIR = 'page-builder-sandwich-exports';
-
 	/**
-	 * Where an export file NAME is written: only inside the plugin's own folder under uploads,
-	 * which is created with deny-all files so the web server never serves an export.
-	 *
-	 * @param string $name The `--file` value.
-	 * @return string|\WP_Error Absolute path, or why the name is refused.
-	 */
-	public static function export_path( string $name ) {
-		if ( 1 !== preg_match( '/^[A-Za-z0-9][A-Za-z0-9._-]{0,120}\.json$/', $name ) || str_contains( $name, '..' ) ) {
-			return new \WP_Error( 'pbs_export_name', 'Give --file a file NAME ending .json (letters, digits, dot, dash, underscore), not a path. It is written to wp-content/uploads/' . self::EXPORT_DIR . '/. To save elsewhere, leave out --file and redirect the output.' );
-		}
-		$uploads = wp_upload_dir( null, false );
-		if ( ! empty( $uploads['error'] ) || empty( $uploads['basedir'] ) ) {
-			return new \WP_Error( 'pbs_export_uploads', 'The uploads folder is not available.' );
-		}
-		$dir = trailingslashit( (string) $uploads['basedir'] ) . self::EXPORT_DIR;
-		if ( ! wp_mkdir_p( $dir ) ) {
-			return new \WP_Error( 'pbs_export_dir', 'Could not create ' . $dir );
-		}
-		$guards = array(
-			'index.php'  => "<?php\n// Silence is golden.\n",
-			'.htaccess'  => "Require all denied\nDeny from all\n",
-			'web.config' => "<?xml version=\"1.0\"?>\n<configuration><system.webServer><authorization><deny users=\"*\" /></authorization></system.webServer></configuration>\n",
-		);
-		foreach ( $guards as $file => $body ) {
-			if ( ! is_file( $dir . '/' . $file ) ) {
-				file_put_contents( $dir . '/' . $file, $body ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents -- the deny-all guard files of the plugin's own export folder.
-			}
-		}
-		return $dir . '/' . $name;
-	}
-
-	/**
-	 * Export templates, patterns and settings to a file.
+	 * Print templates, patterns and settings as JSON. Redirect it to keep a copy.
 	 *
 	 * ## OPTIONS
 	 *
@@ -187,11 +152,6 @@ final class Transfer_Routes {
 	 * [--no-settings]
 	 * : Leave the plugin's settings out.
 	 *
-	 * [--file=<name>]
-	 * : Write to this file NAME (letters, digits, dot, dash, underscore; ending .json) in the
-	 * site's private export folder, wp-content/uploads/page-builder-sandwich-exports/, instead of
-	 * printing. Any path is refused; to put the export elsewhere, print it and redirect stdout.
-	 *
 	 * @param array<int, string>    $args  Positional arguments.
 	 * @param array<string, string> $assoc Named arguments.
 	 * @return void
@@ -199,6 +159,9 @@ final class Transfer_Routes {
 	public static function cli_export( array $args, array $assoc ): void {
 		unset( $args );
 		self::cli_admin();
+		if ( isset( $assoc['file'] ) ) {
+			\WP_CLI::error( 'The plugin no longer writes export files. Run: wp pbsw export > export.json' );
+		}
 		$types = isset( $assoc['types'] ) ? array_filter( array_map( 'trim', explode( ',', (string) $assoc['types'] ) ) ) : array();
 		$ids   = array();
 		foreach ( Transfer::exportable() as $item ) {
@@ -208,17 +171,6 @@ final class Transfer_Routes {
 		}
 		$settings = ! isset( $assoc['settings'] ) || 'false' !== (string) $assoc['settings'];
 		$json     = (string) wp_json_encode( Transfer::export( $ids, $settings ), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE );
-		if ( isset( $assoc['file'] ) ) {
-			$target = self::export_path( (string) $assoc['file'] );
-			if ( is_wp_error( $target ) ) {
-				\WP_CLI::error( $target->get_error_message() );
-			}
-			if ( false === file_put_contents( $target, $json ) ) { // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents -- WP-CLI only, into the plugin's own protected folder under uploads (export_path()).
-				\WP_CLI::error( 'Could not write ' . $target );
-			}
-			\WP_CLI::success( sprintf( 'Exported %d items to %s', count( $ids ), $target ) );
-			return;
-		}
 		\WP_CLI::line( $json );
 	}
 
@@ -297,7 +249,7 @@ final class Transfer_Routes {
 	 */
 	private static function cli_admin(): void {
 		if ( ! current_user_can( 'manage_options' ) ) {
-			\WP_CLI::error( 'Run this command as an administrator, for example: wp pbs export --user=admin' );
+			\WP_CLI::error( 'Run this command as an administrator, for example: wp pbsw export --user=admin' );
 		}
 	}
 }

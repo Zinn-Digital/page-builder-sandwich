@@ -1,5 +1,5 @@
 /**
- * pbs/accordion-item saved markup: a native <details>, which keeps working with the plugin off.
+ * pbsw/accordion-item saved markup: a native <details>, which keeps working with the plugin off.
  * No classes, no data-wp-*.
  */
 import { InnerBlocks, RichText } from '@wordpress/block-editor';

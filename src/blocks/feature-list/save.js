@@ -1,5 +1,5 @@
 /**
- * pbs/feature-list saved markup: the footprint-free fallback (a plain list of headings and
+ * pbsw/feature-list saved markup: the footprint-free fallback (a plain list of headings and
  * texts, no classes, no data-wp-*). The live HTML is rebuilt by Blocks\Content::render_feature_list().
  */
 import { RichText } from '@wordpress/block-editor';

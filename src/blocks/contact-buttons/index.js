@@ -1,5 +1,5 @@
 /**
- * pbs/contact-buttons — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/contact-buttons — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/contact-buttons/block.json';

@@ -1,5 +1,5 @@
 /**
- * pbs/glossary — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/glossary — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/glossary/block.json';

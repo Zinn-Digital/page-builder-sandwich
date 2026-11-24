@@ -1,5 +1,5 @@
 /**
- * pbs/accordion-item — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/accordion-item — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/accordion-item/block.json';

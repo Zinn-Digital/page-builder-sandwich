@@ -1,7 +1,8 @@
 /**
  * Small helpers over the core-data entity Studio edits.
  */
-import { parse, serialize } from '@wordpress/blocks';
+import { serialize } from '@wordpress/blocks';
+import { parse } from '../../core/parse';
 
 /**
  * The edited content of the post as markup. core-data stores it as a function of the edited

@@ -2,9 +2,9 @@ import { applyFilters } from '@wordpress/hooks';
 
 /**
  * Extra right-hand panels for Sandwich Studio, registered by other modules (client review, the AI
- * assistant) and by add-ons through the `pbs.studio.sidebars` filter:
+ * assistant) and by add-ons through the `pbsw.studio.sidebars` filter:
  *
- *   addFilter( 'pbs.studio.sidebars', 'my/plugin', ( list ) => [
+ *   addFilter( 'pbsw.studio.sidebars', 'my/plugin', ( list ) => [
  *     ...list,
  *     { name: 'my-panel', title: __( 'My panel' ), icon: myIcon, Component: MyPanel },
  *   ] );
@@ -16,7 +16,7 @@ import { applyFilters } from '@wordpress/hooks';
  * @return {Array<Object>} Panels: { name, title, icon, Component }.
  */
 export function getSidebars() {
-	const list = applyFilters( 'pbs.studio.sidebars', [] );
+	const list = applyFilters( 'pbsw.studio.sidebars', [] );
 	return Array.isArray( list )
 		? list.filter(
 				( s ) =>

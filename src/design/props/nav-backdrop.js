@@ -1,5 +1,5 @@
 /**
- * Design prop `navBackdrop` (NAV1, pbs/nav-menu). Twin: includes/design/props/class-nav-backdrop.php.
+ * Design prop `navBackdrop` (NAV1, pbsw/nav-menu). Twin: includes/design/props/class-nav-backdrop.php.
  */
 import { __ } from '@wordpress/i18n';
 
@@ -9,7 +9,7 @@ import { colorProp } from '../kinds';
 export default colorProp( {
 	key: 'navBackdrop',
 	group: 'menu',
-	blocks: [ 'pbs/nav-menu' ],
+	blocks: [ 'pbsw/nav-menu' ],
 	property: '',
 	label: __( 'Page dimming behind the mobile menu', 'page-builder-sandwich' ),
 	control: 'color',

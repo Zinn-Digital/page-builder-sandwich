@@ -39,7 +39,7 @@ final class Admin_Tabs {
 	public const CUSTOM_OPTION = 'pbsw_custom_tabs';
 
 	/** The id of each tab's hidden content holder starts with this. */
-	public const PANEL_PREFIX = 'pbs-admin-tab-';
+	public const PANEL_PREFIX = 'pbsw-admin-tab-';
 
 	/** Longest label kept, in characters: the label is a button in the screen's tab bar. */
 	public const LABEL_MAX = 40;
@@ -150,30 +150,6 @@ final class Admin_Tabs {
 	}
 
 	/**
-	 * How many of the site's own tabs (a Pro feature, kept in `pbsw_custom_tabs`) are stored. The
-	 * free screen says they are kept but hidden while Pro is not active; nothing deletes them,
-	 * so renewing shows them again (CLAUDE.md §2.62).
-	 *
-	 * @return int
-	 */
-	public static function paused_count(): int {
-		$stored = get_option( self::CUSTOM_OPTION, array() );
-
-		return is_array( $stored ) ? count( array_filter( $stored, 'is_array' ) ) : 0;
-	}
-
-	/**
-	 * The kept tabs the free screen reports as hidden: none while Pro is active (they show as
-	 * tabs then), every stored one while it is not.
-	 *
-	 * @param bool $can_use_premium Whether the Pro features are on (Licensing::can_use_premium()).
-	 * @return int
-	 */
-	public static function paused_for( bool $can_use_premium ): int {
-		return $can_use_premium ? 0 : self::paused_count();
-	}
-
-	/**
 	 * What the app needs to draw the tabs (no callbacks: they run in print_panels()).
 	 *
 	 * @param list<array{id:string, label:string, url:string, callback:callable|null, position:int}>|null $tabs Tabs, or null for self::tabs().
@@ -202,9 +178,9 @@ final class Admin_Tabs {
 		if ( array() === $tabs ) {
 			return;
 		}
-		echo '<div class="pbs-admin-tab-holder" hidden>';
+		echo '<div class="pbsw-admin-tab-holder" hidden>';
 		foreach ( $tabs as $tab ) {
-			echo '<div class="pbs-admin-tab-panel" id="' . esc_attr( self::PANEL_PREFIX . $tab['id'] ) . '">';
+			echo '<div class="pbsw-admin-tab-panel" id="' . esc_attr( self::PANEL_PREFIX . $tab['id'] ) . '">';
 			try {
 				call_user_func( $tab['callback'] );
 			} catch ( \Throwable $error ) {

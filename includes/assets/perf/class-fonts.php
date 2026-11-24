@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * `font-display: swap` (text shows at once in a fallback face, then swaps without a layout jump).
  *
  * ⛔ No request to Google ever happens on the front end — the download is triggered by an
- * administrator (REST `POST pbs/v1/fonts`, or `wp pbsw fonts download`), and a page view only
+ * administrator (REST `POST pbsw/v1/fonts`, or `wp pbsw fonts download`), and a page view only
  * ever enqueues the local stylesheet. That is the GDPR point (a visitor's IP never reaches Google)
  * as well as the speed one (no third-party connection before first paint).
  *
@@ -62,7 +62,7 @@ final class Fonts {
 	}
 
 	/**
-	 * `pbs/v1/fonts`: list (GET), download (POST), remove (DELETE). Administrators only.
+	 * `pbsw/v1/fonts`: list (GET), download (POST), remove (DELETE). Administrators only.
 	 *
 	 * @return void
 	 */

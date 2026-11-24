@@ -1,5 +1,5 @@
 /**
- * pbs/feature-list — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/feature-list — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/feature-list/block.json';

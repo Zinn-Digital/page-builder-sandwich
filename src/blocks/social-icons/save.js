@@ -1,5 +1,5 @@
 /**
- * pbs/social-icons saved markup: the footprint-free fallback (a list of text links, no icons,
+ * pbsw/social-icons saved markup: the footprint-free fallback (a list of text links, no icons,
  * no classes). The live HTML is rebuilt by Blocks\Marketing::render_social_icons().
  */
 import { safeUrl } from '../shared/kit-url';

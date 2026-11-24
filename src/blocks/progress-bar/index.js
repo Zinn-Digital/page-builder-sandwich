@@ -1,5 +1,5 @@
 /**
- * pbs/progress-bar — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/progress-bar — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/progress-bar/block.json';

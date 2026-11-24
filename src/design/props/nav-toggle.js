@@ -1,5 +1,5 @@
 /**
- * Design prop `navToggle` (NAV1, pbs/nav-menu). Twin: includes/design/props/class-nav-toggle.php.
+ * Design prop `navToggle` (NAV1, pbsw/nav-menu). Twin: includes/design/props/class-nav-toggle.php.
  */
 import { __ } from '@wordpress/i18n';
 
@@ -9,7 +9,7 @@ import { colorProp } from '../kinds';
 export default colorProp( {
 	key: 'navToggle',
 	group: 'menu',
-	blocks: [ 'pbs/nav-menu' ],
+	blocks: [ 'pbsw/nav-menu' ],
 	property: '',
 	label: __( 'Menu button colour', 'page-builder-sandwich' ),
 	control: 'color',

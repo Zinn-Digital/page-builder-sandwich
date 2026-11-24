@@ -1,5 +1,5 @@
 /**
- * pbs/icon-list — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/icon-list — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/icon-list/block.json';

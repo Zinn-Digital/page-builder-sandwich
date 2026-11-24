@@ -25,7 +25,6 @@ import {
 import { displayShortcut } from '@wordpress/keycodes';
 import { useBoot, useUi } from '../context';
 import { useSave } from '../hooks/use-save';
-import { SafeModeButton } from './safe-mode';
 import { titleOf } from '../lib/entity';
 import { breakpoints } from '../lib/devices';
 
@@ -77,7 +76,7 @@ export default function Header( { lastAutosave } ) {
 			: __( 'Unsaved changes', 'page-builder-sandwich' );
 	}
 
-	// Desktop, Tablet, Mobile, then every custom breakpoint (pbs-d3), each resizing the canvas.
+	// Desktop, Tablet, Mobile, then every custom breakpoint the site defines, each resizing the canvas.
 	const devices = [
 		[
 			'desktop',
@@ -249,9 +248,11 @@ export default function Header( { lastAutosave } ) {
 					onClick={ () => ui.setHelpOpen( true ) }
 					size="compact"
 				/>
-				{ /* Plugins scoped `pbs-studio` add tools here (the Site design panel, L09). */ }
-				<Slot name="PbswStudioHeaderTools" />
-				<SafeModeButton />
+				{ /* Plugins scoped `pbsw-studio` add tools here (the Site design panel, L09). */ }
+				<Slot
+					name="PbswStudioHeaderTools"
+					fillProps={ { isDirty, save } }
+				/>
 				{ boot.viewUrl && (
 					<Button
 						icon={ external }

@@ -1,5 +1,5 @@
 /**
- * pbs/modal editor (shared with pbs/off-canvas: src/blocks/shared/dialog-edit.js).
+ * pbsw/modal editor (shared with pbsw/off-canvas: src/blocks/shared/dialog-edit.js).
  */
 import { dialogEdit } from '../shared/dialog-edit';
 

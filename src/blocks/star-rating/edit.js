@@ -1,5 +1,5 @@
 /**
- * pbs/star-rating editor: the same stars the page shows (Blocks\Data::render_star_rating()).
+ * pbsw/star-rating editor: the same stars the page shows (Blocks\Data::render_star_rating()).
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';

@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * callback REBUILDS the live HTML from the attributes, prints classes only through
  * Frontend::cls(), escapes every value it prints, and translates every string it adds.
  *
- * The layout blocks pbs/section and pbs/container (pbs-d1): a section is a page band (full width by default, its
+ * The layout blocks pbsw/section and pbsw/container (pbs-d1): a section is a page band (full width by default, its
  * content boxed to the theme's content width); a container nests inside anything. Both lay their
  * children out with flexbox or CSS grid, set per breakpoint in the Style tab (`pbs.s.<bp>.display`
  * …). A boxed block lays out in its inner wrapper (Design\Compiler::layout_suffix()), a full-width
@@ -35,7 +35,7 @@ final class Design {
 	public const TAGS = array( 'section', 'div', 'header', 'footer', 'article', 'aside', 'main', 'nav' );
 
 	/**
-	 * `pbs/section`.
+	 * `pbsw/section`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Inner blocks already rendered (the test bar), or the saved fallback.
@@ -47,7 +47,7 @@ final class Design {
 	}
 
 	/**
-	 * `pbs/container`.
+	 * `pbsw/container`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Inner blocks already rendered (the test bar), or the saved fallback.

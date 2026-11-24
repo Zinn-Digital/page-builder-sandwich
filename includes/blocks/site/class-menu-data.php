@@ -1,6 +1,6 @@
 <?php
 /**
- * What `pbs/nav-menu` reads from WordPress, behind one seam: Site\Nav only formats, and the unit
+ * What `pbsw/nav-menu` reads from WordPress, behind one seam: Site\Nav only formats, and the unit
  * bar swaps this for a fixed menu. Real WordPress is proven by the browser leg
  * (wp/tests/e2e/pbs-blocks/blocks/nav-menu.mjs).
  *
@@ -49,7 +49,7 @@ class Menu_Data {
 				'depth'          => 3,
 				'theme_location' => '',
 				'item_spacing'   => 'discard',
-				'pbs_block'      => 'pbs/nav-menu',
+				'pbsw_block'      => 'pbsw/nav-menu',
 			)
 		);
 		$menu = wp_get_nav_menu_object( $args->menu ?? $menu_id );

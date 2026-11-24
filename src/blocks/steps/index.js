@@ -1,5 +1,5 @@
 /**
- * pbs/steps — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/steps — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/steps/block.json';

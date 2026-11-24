@@ -1,5 +1,5 @@
 /**
- * pbs/booking view module (Interactivity API), published through the neutral path by
+ * pbsw/booking view module (Interactivity API), published through the neutral path by
  * Assets\Perf\Modules. `__PREFIX__` is the store namespace.
  *
  * Click-to-load: the frame gets its `src` only when the visitor presses the button, so nothing

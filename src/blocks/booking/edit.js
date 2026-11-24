@@ -1,5 +1,5 @@
 /**
- * pbs/booking editor: the service and the booking page address; the canvas shows the same
+ * pbsw/booking editor: the service and the booking page address; the canvas shows the same
  * click-to-load card visitors get, and the author can load the live calendar to check it.
  */
 import { __, sprintf } from '@wordpress/i18n';

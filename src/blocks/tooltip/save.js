@@ -1,5 +1,5 @@
 /**
- * pbs/tooltip saved markup: the word and its explanation in brackets — what a reader gets with
+ * pbsw/tooltip saved markup: the word and its explanation in brackets — what a reader gets with
  * the plugin off. No classes, no data-wp-*.
  */
 import { RichText } from '@wordpress/block-editor';

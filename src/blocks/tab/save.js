@@ -1,5 +1,5 @@
 /**
- * pbs/tab saved markup: the panel's content under its title as a heading — what a reader gets
+ * pbsw/tab saved markup: the panel's content under its title as a heading — what a reader gets
  * with the plugin off. No classes, no data-wp-*.
  */
 import { InnerBlocks, RichText } from '@wordpress/block-editor';

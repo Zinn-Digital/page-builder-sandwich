@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * `pbs/v1/migration`, `pbs/v1/migration/undo`, `pbs/v1/posts/<id>/convert|undo`.
+ * `pbsw/v1/migration`, `pbsw/v1/migration/undo`, `pbsw/v1/posts/<id>/convert|undo`.
  *
  * ⛔ pbs-f7: every route has a real permission_callback. The site-wide routes need
  * `manage_options`; the per-post routes need `edit_post` on THAT post id — a person who may edit
@@ -129,7 +129,7 @@ final class Rest_Routes {
 	 * @return \WP_REST_Response
 	 */
 	public static function post_convert( \WP_REST_Request $request ): \WP_REST_Response {
-		$id = (int) $request->get_param( 'id' );
+		$id = Access::request_post_id( $request );
 		return new \WP_REST_Response( array( 'id' => $id ) + Batch::convert_post( $id, 'manual' ) );
 	}
 
@@ -140,7 +140,7 @@ final class Rest_Routes {
 	 * @return \WP_REST_Response
 	 */
 	public static function post_undo( \WP_REST_Request $request ): \WP_REST_Response {
-		$id = (int) $request->get_param( 'id' );
+		$id = Access::request_post_id( $request );
 		return new \WP_REST_Response( array( 'id' => $id ) + Batch::undo_post( $id ) );
 	}
 

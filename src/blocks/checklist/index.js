@@ -1,5 +1,5 @@
 /**
- * pbs/checklist — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/checklist — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/checklist/block.json';

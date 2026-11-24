@@ -17,12 +17,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Stores what a post held before conversion in `_pbsw_legacy_backup` (JSON) and restores it
  * byte-for-byte.
  *
- * ⛔ Content is written with the kses content filters lifted for that one write. They are
- * active whenever the acting user lacks `unfiltered_html` — including a cron or WP-CLI run with
- * no user — and `safecss_filter_attr()` rewrites style attributes: that would make the undo
- * inexact, and would change a converted block's saved HTML so the editor reported it invalid.
- * Nothing new enters the post by this path: a restore writes back what the post held, and a
- * conversion writes the post's own markup restructured, with every style it moved sanitized.
+ * ⛔ For a user with `unfiltered_html`, content is written with the kses content filters lifted
+ * for that one write: `safecss_filter_attr()` rewrites style attributes, which would make the
+ * undo inexact and change a converted block's saved HTML. For anyone else (a user without the
+ * capability, or a cron or WP-CLI run with no user) the filters stay on and kses filters the
+ * write, as it would any save by that user (wp.org review A-L2). So a write kses WOULD change
+ * is never made there at all (write_would_filter()): the post waits for an administrator's own
+ * request (Batch::convert_waiting()). No user is ever switched to.
  */
 final class Backup {
 
@@ -92,7 +93,7 @@ final class Backup {
 	 */
 	public static function restore( int $post_id ): bool {
 		$backup = self::read( $post_id );
-		if ( null === $backup || ! get_post( $post_id ) ) {
+		if ( null === $backup || ! get_post( $post_id ) || self::write_would_filter( $backup['post_content'] ) ) {
 			return false;
 		}
 		if ( ! self::write_content( $post_id, $backup['post_content'] ) ) {
@@ -122,14 +123,30 @@ final class Backup {
 	}
 
 	/**
-	 * Writes post content exactly (no kses rewrite; see the class note).
+	 * Whether write_content() would come out different from `$content`: no unfiltered_html here,
+	 * kses is on, and kses changes this markup. Such a write is never made (see the class note).
+	 *
+	 * @param string $content Content to write.
+	 * @return bool
+	 */
+	public static function write_would_filter( string $content ): bool {
+		if ( current_user_can( 'unfiltered_html' ) || false === has_filter( 'content_save_pre', 'wp_filter_post_kses' ) ) {
+			return false;
+		}
+		return wp_kses_post( $content ) !== $content;
+	}
+
+	/**
+	 * Writes post content exactly for a user with unfiltered_html (no kses rewrite; see the class
+	 * note). For anyone else, including a background run with no user, kses filters the write.
 	 *
 	 * @param int    $post_id Post ID.
 	 * @param string $content Content.
 	 * @return bool
 	 */
 	public static function write_content( int $post_id, string $content ): bool {
-		$filtered = false !== has_filter( 'content_save_pre', 'wp_filter_post_kses' );
+		// Lifted only for a user who may post unfiltered HTML anyway; anyone else writes through kses.
+		$filtered = current_user_can( 'unfiltered_html' ) && false !== has_filter( 'content_save_pre', 'wp_filter_post_kses' );
 		if ( $filtered ) {
 			kses_remove_filters();
 		}

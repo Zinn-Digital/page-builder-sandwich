@@ -3,7 +3,7 @@
     "plugin": "page-builder-sandwich",
     "category": "page-builder-sandwich",
     "mcp": {
-        "http_endpoint": "/wp-json/pbs/v1/mcp",
+        "http_endpoint": "/wp-json/pbsw/v1/mcp",
         "stdio": "wp mcp-adapter serve --server=page-builder-sandwich --user=<login>",
         "auth": "a WordPress application password (HTTP) or --user (WP-CLI); the user needs the capability each ability names",
         "switch": "Settings: Allow AI agents (MCP), on by default"
@@ -18,7 +18,7 @@
     },
     "abilities": [
         {
-            "name": "pbs/add-local-font",
+            "name": "pbsw/add-local-font",
             "label": "Self-host a font",
             "description": "Downloads a Google font family (family, weights, italic) and serves it from this site.",
             "edition": "free",
@@ -57,12 +57,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/add-local-font/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/add-local-font/run"
             },
-            "mcp_tool": "pbs-add-local-font"
+            "mcp_tool": "pbsw-add-local-font"
         },
         {
-            "name": "pbs/add-section",
+            "name": "pbsw/add-section",
             "label": "Add a section to a page",
             "description": "Adds a ready-made section to a page: at the start, at the end, or after the section at a given position.",
             "edition": "free",
@@ -125,12 +125,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/add-section/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/add-section/run"
             },
-            "mcp_tool": "pbs-add-section"
+            "mcp_tool": "pbsw-add-section"
         },
         {
-            "name": "pbs/ai-generate-section",
+            "name": "pbsw/ai-generate-section",
             "label": "Generate a section with AI",
             "description": "Turns a one-sentence description into a ready-designed section (real, editable blocks in the site's brand style) with text written for it. Returns the block markup, and adds it to the start or end of a page when a post_id is given (a revision keeps what was there before).",
             "edition": "free",
@@ -174,12 +174,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-generate-section/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/ai-generate-section/run"
             },
-            "mcp_tool": "pbs-ai-generate-section"
+            "mcp_tool": "pbsw-ai-generate-section"
         },
         {
-            "name": "pbs/ai-save-seo-meta",
+            "name": "pbsw/ai-save-seo-meta",
             "label": "Save an SEO title and description",
             "description": "Saves a meta title and description into the SEO plugin the site uses (Yoast SEO, Rank Math, SEOPress or All in One SEO) and says which ones were written.",
             "edition": "free",
@@ -218,12 +218,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-save-seo-meta/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/ai-save-seo-meta/run"
             },
-            "mcp_tool": "pbs-ai-save-seo-meta"
+            "mcp_tool": "pbsw-ai-save-seo-meta"
         },
         {
-            "name": "pbs/ai-suggest-seo-meta",
+            "name": "pbsw/ai-suggest-seo-meta",
             "label": "Suggest an SEO title and description with AI",
             "description": "Reads a page and suggests a meta title (up to 60 characters) and meta description (up to 155), optionally around a focus keyword. Nothing is saved.",
             "edition": "free",
@@ -256,12 +256,12 @@
             },
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-suggest-seo-meta/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/ai-suggest-seo-meta/run"
             },
-            "mcp_tool": "pbs-ai-suggest-seo-meta"
+            "mcp_tool": "pbsw-ai-suggest-seo-meta"
         },
         {
-            "name": "pbs/ai-undo",
+            "name": "pbsw/ai-undo",
             "label": "Undo an AI change",
             "description": "Puts a page back the way it was before an AI change, from the undo_revision that change returned.",
             "edition": "free",
@@ -295,12 +295,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-undo/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/ai-undo/run"
             },
-            "mcp_tool": "pbs-ai-undo"
+            "mcp_tool": "pbsw-ai-undo"
         },
         {
-            "name": "pbs/ai-write-alt-text",
+            "name": "pbsw/ai-write-alt-text",
             "label": "Write image alt text with AI",
             "description": "Looks at images and saves alt text for them: one image (attachment_id), or every image on a page that has none (post_id). At most 20 images per call; the answer says how many remain.",
             "edition": "free",
@@ -337,12 +337,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-write-alt-text/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/ai-write-alt-text/run"
             },
-            "mcp_tool": "pbs-ai-write-alt-text"
+            "mcp_tool": "pbsw-ai-write-alt-text"
         },
         {
-            "name": "pbs/ai-write-text",
+            "name": "pbsw/ai-write-text",
             "label": "Write or rewrite text with AI",
             "description": "Writes new text, or improves, shortens, expands, changes the tone of or fixes the grammar of a piece of text, with the site's own AI provider. Returns the new text; nothing on the site is changed.",
             "edition": "free",
@@ -401,12 +401,12 @@
             },
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/ai-write-text/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/ai-write-text/run"
             },
-            "mcp_tool": "pbs-ai-write-text"
+            "mcp_tool": "pbsw-ai-write-text"
         },
         {
-            "name": "pbs/apply-kit",
+            "name": "pbsw/apply-kit",
             "label": "Import a website kit",
             "description": "Imports a website kit's pages (all of them, or the ones named), optionally publishing them, setting the home page and adding them to a menu. Importing again updates the same pages.",
             "edition": "free",
@@ -451,12 +451,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/apply-kit/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/apply-kit/run"
             },
-            "mcp_tool": "pbs-apply-kit"
+            "mcp_tool": "pbsw-apply-kit"
         },
         {
-            "name": "pbs/build-landing-page",
+            "name": "pbsw/build-landing-page",
             "label": "Build a landing page",
             "description": "A guided workflow: the agent picks sections that fit your business, builds the page as a draft and writes its text.",
             "edition": "free",
@@ -482,12 +482,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/build-landing-page/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/build-landing-page/run"
             },
-            "mcp_tool": "pbs-build-landing-page"
+            "mcp_tool": "pbsw-build-landing-page"
         },
         {
-            "name": "pbs/connect-support",
+            "name": "pbsw/connect-support",
             "label": "Connect to support",
             "description": "Connects this site to Zinn Digital® support (name, email, consent).",
             "edition": "free",
@@ -519,12 +519,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/connect-support/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/connect-support/run"
             },
-            "mcp_tool": "pbs-connect-support"
+            "mcp_tool": "pbsw-connect-support"
         },
         {
-            "name": "pbs/convert-post",
+            "name": "pbsw/convert-post",
             "label": "Convert one legacy page",
             "description": "Converts one 5.x page to blocks (backed up first).",
             "edition": "free",
@@ -550,12 +550,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/convert-post/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/convert-post/run"
             },
-            "mcp_tool": "pbs-convert-post"
+            "mcp_tool": "pbsw-convert-post"
         },
         {
-            "name": "pbs/create-page",
+            "name": "pbsw/create-page",
             "label": "Create a page",
             "description": "Creates a page from library sections and/or block content. A new page is a draft unless another status is asked for.",
             "edition": "free",
@@ -619,12 +619,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/create-page/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/create-page/run"
             },
-            "mcp_tool": "pbs-create-page"
+            "mcp_tool": "pbsw-create-page"
         },
         {
-            "name": "pbs/delete-icon",
+            "name": "pbsw/delete-icon",
             "label": "Delete an uploaded icon",
             "description": "Removes an uploaded icon; blocks that used it keep their own copy.",
             "edition": "free",
@@ -650,12 +650,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/delete-icon/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/delete-icon/run"
             },
-            "mcp_tool": "pbs-delete-icon"
+            "mcp_tool": "pbsw-delete-icon"
         },
         {
-            "name": "pbs/delete-page",
+            "name": "pbsw/delete-page",
             "label": "Move a page to the trash",
             "description": "Moves a page to the trash. It can be restored from Pages, Trash for 30 days.",
             "edition": "free",
@@ -683,12 +683,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/delete-page/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/delete-page/run"
             },
-            "mcp_tool": "pbs-delete-page"
+            "mcp_tool": "pbsw-delete-page"
         },
         {
-            "name": "pbs/disconnect-support",
+            "name": "pbsw/disconnect-support",
             "label": "Disconnect from support",
             "description": "Disconnects this site from support.",
             "edition": "free",
@@ -706,12 +706,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/disconnect-support/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/disconnect-support/run"
             },
-            "mcp_tool": "pbs-disconnect-support"
+            "mcp_tool": "pbsw-disconnect-support"
         },
         {
-            "name": "pbs/duplicate-page",
+            "name": "pbsw/duplicate-page",
             "label": "Duplicate a page",
             "description": "Copies a page (its title, content and template) into a new draft.",
             "edition": "free",
@@ -742,12 +742,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/duplicate-page/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/duplicate-page/run"
             },
-            "mcp_tool": "pbs-duplicate-page"
+            "mcp_tool": "pbsw-duplicate-page"
         },
         {
-            "name": "pbs/export-designs",
+            "name": "pbsw/export-designs",
             "label": "Export designs and settings",
             "description": "Exports the chosen templates and patterns (ids) and, optionally, settings as one package for another site.",
             "edition": "free",
@@ -778,12 +778,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/export-designs/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/export-designs/run"
             },
-            "mcp_tool": "pbs-export-designs"
+            "mcp_tool": "pbsw-export-designs"
         },
         {
-            "name": "pbs/get-block",
+            "name": "pbsw/get-block",
             "label": "Describe a builder block",
             "description": "Returns one block's settings (attributes with their types, choices and defaults), what it supports, which blocks it may contain, and a ready-to-use example in block markup.",
             "edition": "free",
@@ -798,7 +798,7 @@
                 "properties": {
                     "name": {
                         "type": "string",
-                        "pattern": "^pbs/[a-z0-9-]+$"
+                        "pattern": "^pbsw/[a-z0-9-]+$"
                     }
                 },
                 "required": [
@@ -811,14 +811,14 @@
             },
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-block/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/get-block/run"
             },
-            "mcp_tool": "pbs-get-block"
+            "mcp_tool": "pbsw-get-block"
         },
         {
-            "name": "pbs/get-breakpoints",
+            "name": "pbsw/get-breakpoints",
             "label": "Read the responsive breakpoints",
-            "description": "Returns the tablet and mobile widths (and custom breakpoints in Pro) the responsive controls use.",
+            "description": "Returns the tablet and mobile breakpoint widths the responsive controls use.",
             "edition": "free",
             "capability": "edit_theme_options (the REST route's own check)",
             "annotations": {
@@ -834,12 +834,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-breakpoints/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/get-breakpoints/run"
             },
-            "mcp_tool": "pbs-get-breakpoints"
+            "mcp_tool": "pbsw-get-breakpoints"
         },
         {
-            "name": "pbs/get-design-globals",
+            "name": "pbsw/get-design-globals",
             "label": "Read the site design",
             "description": "Returns the site-wide colours and fonts (heading and body) every block uses, as the Site design screen shows them.",
             "edition": "free",
@@ -857,12 +857,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-design-globals/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/get-design-globals/run"
             },
-            "mcp_tool": "pbs-get-design-globals"
+            "mcp_tool": "pbsw-get-design-globals"
         },
         {
-            "name": "pbs/get-diagnostics",
+            "name": "pbsw/get-diagnostics",
             "label": "Read the site diagnostics",
             "description": "Returns the diagnostics a support ticket would carry: versions, active plugins, limits and recent errors.",
             "edition": "free",
@@ -880,12 +880,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-diagnostics/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/get-diagnostics/run"
             },
-            "mcp_tool": "pbs-get-diagnostics"
+            "mcp_tool": "pbsw-get-diagnostics"
         },
         {
-            "name": "pbs/get-licence",
+            "name": "pbsw/get-licence",
             "label": "Read the licence",
             "description": "Returns this site's Page Builder Sandwich plan, licence state, renewal date and what the plan includes.",
             "edition": "free",
@@ -903,12 +903,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-licence/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/get-licence/run"
             },
-            "mcp_tool": "pbs-get-licence"
+            "mcp_tool": "pbsw-get-licence"
         },
         {
-            "name": "pbs/get-migration",
+            "name": "pbsw/get-migration",
             "label": "Read the legacy migration",
             "description": "Returns the 5.x content conversion's progress and report.",
             "edition": "free",
@@ -926,12 +926,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-migration/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/get-migration/run"
             },
-            "mcp_tool": "pbs-get-migration"
+            "mcp_tool": "pbsw-get-migration"
         },
         {
-            "name": "pbs/get-page",
+            "name": "pbsw/get-page",
             "label": "Read a page",
             "description": "Returns a page's title, status, links and block content, and the sections (top-level blocks) it is made of.",
             "edition": "free",
@@ -959,12 +959,12 @@
             },
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-page/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/get-page/run"
             },
-            "mcp_tool": "pbs-get-page"
+            "mcp_tool": "pbsw-get-page"
         },
         {
-            "name": "pbs/get-settings",
+            "name": "pbsw/get-settings",
             "label": "Read the plugin settings",
             "description": "Returns the front-end class prefix, the beta-updates state, what a block dropped at the top level of a page is wrapped in (drop_wrap: none, row or container) and whether AI agents (MCP) are allowed.",
             "edition": "free",
@@ -982,12 +982,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-settings/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/get-settings/run"
             },
-            "mcp_tool": "pbs-get-settings"
+            "mcp_tool": "pbsw-get-settings"
         },
         {
-            "name": "pbs/get-support-connection",
+            "name": "pbsw/get-support-connection",
             "label": "Read the support connection",
             "description": "Says whether this site is connected to Zinn Digital® support, and as whom.",
             "edition": "free",
@@ -1011,12 +1011,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/get-support-connection/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/get-support-connection/run"
             },
-            "mcp_tool": "pbs-get-support-connection"
+            "mcp_tool": "pbsw-get-support-connection"
         },
         {
-            "name": "pbs/import-designs",
+            "name": "pbsw/import-designs",
             "label": "Import designs and settings",
             "description": "Imports a Page Builder Sandwich design package (dryRun first to see what would change; mode: skip or replace; media; settings).",
             "edition": "free",
@@ -1062,14 +1062,14 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/import-designs/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/import-designs/run"
             },
-            "mcp_tool": "pbs-import-designs"
+            "mcp_tool": "pbsw-import-designs"
         },
         {
-            "name": "pbs/list-blocks",
+            "name": "pbsw/list-blocks",
             "label": "List the builder blocks",
-            "description": "Lists every Page Builder Sandwich block this site can use (Pro blocks too when Pro is active): name, title, category and description.",
+            "description": "Lists every Page Builder Sandwich block this site can use: name, title, category and description.",
             "edition": "free",
             "capability": "edit_posts",
             "annotations": {
@@ -1092,12 +1092,12 @@
             },
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-blocks/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/list-blocks/run"
             },
-            "mcp_tool": "pbs-list-blocks"
+            "mcp_tool": "pbsw-list-blocks"
         },
         {
-            "name": "pbs/list-extensions",
+            "name": "pbsw/list-extensions",
             "label": "List the builder's add-on extensions",
             "description": "Lists what other plugins have added to Page Builder Sandwich through its developer API: blocks, dynamic data sources, display conditions and form actions, each with its name, label and plugin.",
             "edition": "free",
@@ -1118,12 +1118,12 @@
             },
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-extensions/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/list-extensions/run"
             },
-            "mcp_tool": "pbs-list-extensions"
+            "mcp_tool": "pbsw-list-extensions"
         },
         {
-            "name": "pbs/list-forms",
+            "name": "pbsw/list-forms",
             "label": "List forms",
             "description": "Lists the forms built with the Form block and the form plugins it can embed.",
             "edition": "free",
@@ -1141,12 +1141,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-forms/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/list-forms/run"
             },
-            "mcp_tool": "pbs-list-forms"
+            "mcp_tool": "pbsw-list-forms"
         },
         {
-            "name": "pbs/list-kits",
+            "name": "pbsw/list-kits",
             "label": "List website kits",
             "description": "Lists the website kits (a set of ready-made pages for one kind of business) this site can import.",
             "edition": "free",
@@ -1172,12 +1172,12 @@
             },
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-kits/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/list-kits/run"
             },
-            "mcp_tool": "pbs-list-kits"
+            "mcp_tool": "pbsw-list-kits"
         },
         {
-            "name": "pbs/list-local-fonts",
+            "name": "pbsw/list-local-fonts",
             "label": "List self-hosted fonts",
             "description": "Lists the Google fonts this site hosts itself (downloaded once, served from the site, no request to Google).",
             "edition": "free",
@@ -1195,12 +1195,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-local-fonts/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/list-local-fonts/run"
             },
-            "mcp_tool": "pbs-list-local-fonts"
+            "mcp_tool": "pbsw-list-local-fonts"
         },
         {
-            "name": "pbs/list-pages",
+            "name": "pbsw/list-pages",
             "label": "List pages",
             "description": "Lists the pages you can edit, newest first, with an optional search.",
             "edition": "free",
@@ -1275,12 +1275,12 @@
             },
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-pages/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/list-pages/run"
             },
-            "mcp_tool": "pbs-list-pages"
+            "mcp_tool": "pbsw-list-pages"
         },
         {
-            "name": "pbs/list-sections",
+            "name": "pbsw/list-sections",
             "label": "List sections",
             "description": "Lists the ready-made sections (hero, features, FAQ, testimonials, call to action and more) that can be added to a page.",
             "edition": "free",
@@ -1328,12 +1328,12 @@
             },
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-sections/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/list-sections/run"
             },
-            "mcp_tool": "pbs-list-sections"
+            "mcp_tool": "pbsw-list-sections"
         },
         {
-            "name": "pbs/list-transferable",
+            "name": "pbsw/list-transferable",
             "label": "List what can be exported",
             "description": "Lists the templates, patterns and settings that can be exported to another site.",
             "edition": "free",
@@ -1351,12 +1351,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-transferable/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/list-transferable/run"
             },
-            "mcp_tool": "pbs-list-transferable"
+            "mcp_tool": "pbsw-list-transferable"
         },
         {
-            "name": "pbs/list-uploaded-icons",
+            "name": "pbsw/list-uploaded-icons",
             "label": "List uploaded icons",
             "description": "Lists the SVG icons uploaded to the icon library, newest first.",
             "edition": "free",
@@ -1387,12 +1387,12 @@
             "output_schema": {},
             "rest": {
                 "method": "GET",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/list-uploaded-icons/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/list-uploaded-icons/run"
             },
-            "mcp_tool": "pbs-list-uploaded-icons"
+            "mcp_tool": "pbsw-list-uploaded-icons"
         },
         {
-            "name": "pbs/move-section",
+            "name": "pbsw/move-section",
             "label": "Move a section",
             "description": "Moves a section of a page from one position to another (0-based, in the order the page lists them).",
             "edition": "free",
@@ -1430,12 +1430,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/move-section/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/move-section/run"
             },
-            "mcp_tool": "pbs-move-section"
+            "mcp_tool": "pbsw-move-section"
         },
         {
-            "name": "pbs/open-support-ticket",
+            "name": "pbsw/open-support-ticket",
             "label": "Open a support ticket",
             "description": "Files a support ticket (subject, message, kind, email), with this site's diagnostics when the administrator agreed. It never creates a login or sends one.",
             "edition": "free",
@@ -1488,12 +1488,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/open-support-ticket/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/open-support-ticket/run"
             },
-            "mcp_tool": "pbs-open-support-ticket"
+            "mcp_tool": "pbsw-open-support-ticket"
         },
         {
-            "name": "pbs/record-support-consent",
+            "name": "pbsw/record-support-consent",
             "label": "Consent to support diagnostics",
             "description": "Records the administrator's consent to send diagnostics with support tickets.",
             "edition": "free",
@@ -1519,12 +1519,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/record-support-consent/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/record-support-consent/run"
             },
-            "mcp_tool": "pbs-record-support-consent"
+            "mcp_tool": "pbsw-record-support-consent"
         },
         {
-            "name": "pbs/remove-block",
+            "name": "pbsw/remove-block",
             "label": "Remove a block from a page",
             "description": "Removes one block (a whole section, or a block inside one) from a page, found by its path. The page's previous version stays in its revisions.",
             "edition": "free",
@@ -1562,12 +1562,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/remove-block/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/remove-block/run"
             },
-            "mcp_tool": "pbs-remove-block"
+            "mcp_tool": "pbsw-remove-block"
         },
         {
-            "name": "pbs/remove-local-font",
+            "name": "pbsw/remove-local-font",
             "label": "Remove a self-hosted font",
             "description": "Deletes a self-hosted font family's files.",
             "edition": "free",
@@ -1592,12 +1592,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/remove-local-font/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/remove-local-font/run"
             },
-            "mcp_tool": "pbs-remove-local-font"
+            "mcp_tool": "pbsw-remove-local-font"
         },
         {
-            "name": "pbs/start-migration",
+            "name": "pbsw/start-migration",
             "label": "Convert legacy content",
             "description": "Starts (or restarts) converting every 5.x page to blocks; each post is backed up first.",
             "edition": "free",
@@ -1615,35 +1615,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/start-migration/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/start-migration/run"
             },
-            "mcp_tool": "pbs-start-migration"
+            "mcp_tool": "pbsw-start-migration"
         },
         {
-            "name": "pbs/start-trial",
-            "label": "Start the free Pro trial",
-            "description": "Starts the 14-day Page Builder Sandwich Pro trial for this site (no payment needed).",
-            "edition": "free",
-            "capability": "manage_options (the REST route's own check)",
-            "annotations": {
-                "readonly": false,
-                "destructive": false,
-                "idempotent": false
-            },
-            "input_schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "default": {}
-            },
-            "output_schema": {},
-            "rest": {
-                "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/start-trial/run"
-            },
-            "mcp_tool": "pbs-start-trial"
-        },
-        {
-            "name": "pbs/undo-convert-post",
+            "name": "pbsw/undo-convert-post",
             "label": "Undo one conversion",
             "description": "Restores one converted page from its backup.",
             "edition": "free",
@@ -1669,12 +1646,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/undo-convert-post/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/undo-convert-post/run"
             },
-            "mcp_tool": "pbs-undo-convert-post"
+            "mcp_tool": "pbsw-undo-convert-post"
         },
         {
-            "name": "pbs/undo-migration",
+            "name": "pbsw/undo-migration",
             "label": "Undo the legacy migration",
             "description": "Restores every converted post from its backup.",
             "edition": "free",
@@ -1692,12 +1669,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/undo-migration/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/undo-migration/run"
             },
-            "mcp_tool": "pbs-undo-migration"
+            "mcp_tool": "pbsw-undo-migration"
         },
         {
-            "name": "pbs/update-block",
+            "name": "pbsw/update-block",
             "label": "Change one block's settings",
             "description": "Changes the settings (attributes) of one block inside a page, found by its path; attributes you send are merged over the current ones. Works on blocks the site renders from their settings; a block whose HTML is saved in the page is changed by replacing the page's markup.",
             "edition": "free",
@@ -1739,14 +1716,14 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/update-block/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/update-block/run"
             },
-            "mcp_tool": "pbs-update-block"
+            "mcp_tool": "pbsw-update-block"
         },
         {
-            "name": "pbs/update-breakpoints",
+            "name": "pbsw/update-breakpoints",
             "label": "Change the responsive breakpoints",
-            "description": "Changes the tablet and mobile widths in pixels; with Pro, custom extra breakpoints.",
+            "description": "Changes the breakpoint widths in pixels.",
             "edition": "free",
             "capability": "edit_theme_options (the REST route's own check)",
             "annotations": {
@@ -1773,12 +1750,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/update-breakpoints/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/update-breakpoints/run"
             },
-            "mcp_tool": "pbs-update-breakpoints"
+            "mcp_tool": "pbsw-update-breakpoints"
         },
         {
-            "name": "pbs/update-design-globals",
+            "name": "pbsw/update-design-globals",
             "label": "Change the site design",
             "description": "Changes the site-wide colours (colors), fonts (fonts, headingFont, bodyFont). Every page picks the change up; the theme's theme.json is kept in sync.",
             "edition": "free",
@@ -1922,12 +1899,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/update-design-globals/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/update-design-globals/run"
             },
-            "mcp_tool": "pbs-update-design-globals"
+            "mcp_tool": "pbsw-update-design-globals"
         },
         {
-            "name": "pbs/update-page",
+            "name": "pbsw/update-page",
             "label": "Update a page",
             "description": "Changes a page's title, status or block content. Content you send replaces the page's content.",
             "edition": "free",
@@ -1995,12 +1972,12 @@
             },
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/update-page/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/update-page/run"
             },
-            "mcp_tool": "pbs-update-page"
+            "mcp_tool": "pbsw-update-page"
         },
         {
-            "name": "pbs/update-settings",
+            "name": "pbsw/update-settings",
             "label": "Change the plugin settings",
             "description": "Changes the front-end class prefix (1 to 8 lowercase letters or digits, starting with a letter) and/or what a block dropped at the top level of a page is wrapped in, in the editor (drop_wrap: none, row or container) and/or turns AI agents (MCP) on or off (mcp: false removes every ability and the MCP endpoint).",
             "edition": "free",
@@ -2034,12 +2011,12 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/update-settings/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/update-settings/run"
             },
-            "mcp_tool": "pbs-update-settings"
+            "mcp_tool": "pbsw-update-settings"
         },
         {
-            "name": "pbs/upload-icon",
+            "name": "pbsw/upload-icon",
             "label": "Upload an icon",
             "description": "Adds an SVG icon (name, svg markup) to the icon library; the SVG is sanitised first.",
             "edition": "free",
@@ -2068,9 +2045,9 @@
             "output_schema": {},
             "rest": {
                 "method": "POST",
-                "path": "/wp-json/wp-abilities/v1/abilities/pbs/upload-icon/run"
+                "path": "/wp-json/wp-abilities/v1/abilities/pbsw/upload-icon/run"
             },
-            "mcp_tool": "pbs-upload-icon"
+            "mcp_tool": "pbsw-upload-icon"
         }
     ]
 }

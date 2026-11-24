@@ -2,19 +2,17 @@
 /**
  * What a visitor sees of a Pro block on a site where Pro is not running.
  *
- * ⚖️ Owner decision 2026-10-18 (lane R35): when a card-free trial ends unpaid, every Pro block
- * already placed falls back to a free version, or is hidden when there is none. The page never
- * breaks and no PHP notice is raised. The content stays exactly as saved, so paying restores
- * every Pro block instantly with nothing lost. The editor half (src/editor/pro-fallback.js)
- * offers "Upgrade to keep it, or convert to the free version" on each block, and "convert all".
+ * When a page holds blocks saved by Page Builder Sandwich Pro and Pro is not active (it was
+ * deactivated, or the site was moved without it), each such block renders as a free equivalent,
+ * or is left out when there is none. The page never breaks and no PHP notice is raised. The saved
+ * content is never changed, so activating Pro again shows every block as it was saved. This class
+ * only renders; it adds nothing to the editor.
  *
- * Measured before this existed, on WordPress 7.1.3 with the trial switched off
- * (wp/tests/page-builder-sandwich/trial-expiry.sh): WordPress renders an unregistered block's
- * saved markup, so most Pro blocks already left static HTML. But an A/B test showed BOTH
- * variants, a content switcher showed BOTH panes, a query loop showed its template's
- * placeholder text, a form left an empty box, and the navigation menu, search form, login form
- * and posts list vanished, taking a site header's navigation with them. (The navigation menu is
- * free since 6.36.22, NAV1: only its mega panels are Pro, and they fall back to the item's submenu.)
+ * Without it, WordPress renders an unregistered block's saved markup: most blocks already leave
+ * static HTML, but an A/B test showed BOTH variants, a content switcher showed BOTH panes, a query
+ * loop showed its template's placeholder text, a form left an empty box, and the search form,
+ * login form and posts list vanished. (The navigation menu is free: only its mega panels come
+ * from Pro, and they fall back to the item's submenu.)
  *
  * ⛔ Free code by design (WordPress.org guideline 5): this keeps a visitor's page whole when Pro
  * is not running. It unlocks nothing; it shows the free version of what was saved.
@@ -142,7 +140,6 @@ final class Pro_Fallback {
 	 */
 	public static function register(): void {
 		add_filter( 'render_block', array( self::class, 'render' ), 10, 2 );
-		add_action( 'enqueue_block_editor_assets', array( self::class, 'editor_data' ) );
 	}
 
 	/**
@@ -152,10 +149,10 @@ final class Pro_Fallback {
 	 * @return string|null
 	 */
 	public static function strategy( string $name ): ?string {
-		if ( 0 !== strpos( $name, 'pbs/' ) ) {
+		if ( 0 !== strpos( $name, 'pbsw/' ) ) {
 			return null;
 		}
-		$slug = substr( $name, 4 );
+		$slug = substr( $name, 5 );
 		if ( ! isset( self::BLOCKS[ $slug ] ) || \WP_Block_Type_Registry::get_instance()->is_registered( $name ) ) {
 			return null;
 		}
@@ -227,22 +224,5 @@ final class Pro_Fallback {
 		);
 
 		return self::visible( render_block( $parsed ) );
-	}
-
-	/**
-	 * The editor's data: which blocks fall back how, and where to upgrade. Only when Pro is not
-	 * running; with Pro the blocks are registered and none of this is used.
-	 *
-	 * @return void
-	 */
-	public static function editor_data(): void {
-		if ( \ZinnDigital\PBS\Licensing::can_use_premium() ) {
-			return;
-		}
-		$data = array(
-			'blocks'     => self::BLOCKS,
-			'upgradeUrl' => (string) \ZinnDigital\PBS\Licensing::upgrade_url(),
-		);
-		wp_add_inline_script( \ZinnDigital\PBS\Blocks::EDITOR_HANDLE, 'window.pbswProFallback = ' . wp_json_encode( $data ) . ';', 'before' );
 	}
 }

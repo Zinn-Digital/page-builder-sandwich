@@ -1,6 +1,6 @@
 /**
  * Friendly settings for well-known shortcodes that no add-on declared (pbs-b3): WordPress's own
- * media shortcodes and the four form plugins. A definition has the legacy `pbsAddInspector`
+ * media shortcodes and the four form plugins. A definition has the legacy `pbswAddInspector`
  * shape, so it is drawn by the same OptionControl as an add-on's; any attribute it does not name
  * stays editable in the generic "Other attributes" list, so nothing a user typed is ever hidden.
  */
@@ -9,7 +9,7 @@ import { __ } from '@wordpress/i18n';
 /**
  * The form choices for a form plugin's shortcode, from the Form block's provider list.
  *
- * @param {Array}  providers `pbs/v1/forms`.
+ * @param {Array}  providers `pbsw/v1/forms`.
  * @param {string} provider  Provider key.
  * @return {Array<{value: string, label: string}>} Choices.
  */

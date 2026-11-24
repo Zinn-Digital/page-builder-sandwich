@@ -1,5 +1,5 @@
 /**
- * pbs/whatsapp editor: the button shown in place (not floating, so it does not cover the editor),
+ * pbsw/whatsapp editor: the button shown in place (not floating, so it does not cover the editor),
  * its number, message, text and corner in the sidebar.
  */
 import { __ } from '@wordpress/i18n';

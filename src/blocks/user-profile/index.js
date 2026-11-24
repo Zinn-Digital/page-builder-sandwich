@@ -1,5 +1,5 @@
 /**
- * pbs/user-profile — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/user-profile — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/user-profile/block.json';

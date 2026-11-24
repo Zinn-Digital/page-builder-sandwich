@@ -1,6 +1,6 @@
 <?php
 /**
- * `pbs/tooltip` and the inline "Tooltip" text format — the WAI-ARIA "Tooltip" pattern.
+ * `pbsw/tooltip` and the inline "Tooltip" text format — the WAI-ARIA "Tooltip" pattern.
  *
  * @package ZinnDigital\PBS
  */
@@ -46,7 +46,7 @@ final class Tooltip {
 	}
 
 	/**
-	 * `pbs/tooltip`.
+	 * `pbsw/tooltip`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: text, tip, placement.
 	 * @return string
@@ -107,8 +107,9 @@ final class Tooltip {
 				$tip  = preg_match( '/\btitle="([^"]*)"/i', $m[1], $t ) ? $t[1] : '';
 				$tip  = trim( wp_kses( html_entity_decode( $tip, ENT_QUOTES | ENT_HTML5, 'UTF-8' ), array() ) );
 				$text = trim( wp_kses( $m[2], Tabs::inline_tags() ) );
+				// No tip to show: the trigger text alone, as filtered above, never the saved markup.
 				if ( '' === $tip || '' === $text ) {
-					return $m[2];
+					return $text;
 				}
 				$found = true;
 
@@ -117,7 +118,7 @@ final class Tooltip {
 			$html
 		);
 		if ( $found && class_exists( Block_Assets::class ) ) {
-			Block_Assets::ensure( 'pbs/tooltip' );
+			Block_Assets::ensure( 'pbsw/tooltip' );
 		}
 
 		return $out;

@@ -28,7 +28,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Site_Design {
 
 	/** Admin page slug. */
-	public const PAGE = 'pbs-site-design';
+	public const PAGE = 'pbsw-site-design';
 
 	/** Editor script handle. */
 	public const EDITOR_HANDLE = 'pbsw-site-design';
@@ -166,7 +166,6 @@ final class Site_Design {
 				'base'         => Design_Rest::BASE,
 				'prefix'       => Settings::prefix(),
 				'canWriteCss'  => Design_Rest::can_write_css(),
-				'upgradeUrl'   => \ZinnDigital\PBS\Licensing::upgrade_url(),
 				'siteEditUrl'  => wp_is_block_theme() ? admin_url( 'site-editor.php?p=%2Fstyles' ) : '',
 				'adminPageUrl' => admin_url( 'themes.php?page=' . self::PAGE ),
 			)

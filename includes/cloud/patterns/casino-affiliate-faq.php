@@ -27,25 +27,25 @@ return array(
 <h2 class="wp-block-heading">@@PBS_T0@@</h2>
 <!-- /wp:heading -->
 
-<!-- wp:pbs/accordion {"single":true,"faq":true} -->
-<div><!-- wp:pbs/accordion-item {"title":"@@PBS_T1@@","open":true} -->
+<!-- wp:pbsw/accordion {"single":true,"faq":true} -->
+<div><!-- wp:pbsw/accordion-item {"title":"@@PBS_T1@@","open":true} -->
 <details open><summary>@@PBS_T1@@</summary><!-- wp:paragraph -->
 <p>@@PBS_T2@@</p>
 <!-- /wp:paragraph --></details>
-<!-- /wp:pbs/accordion-item -->
+<!-- /wp:pbsw/accordion-item -->
 
-<!-- wp:pbs/accordion-item {"title":"@@PBS_T3@@"} -->
+<!-- wp:pbsw/accordion-item {"title":"@@PBS_T3@@"} -->
 <details><summary>@@PBS_T3@@</summary><!-- wp:paragraph -->
 <p>@@PBS_T4@@</p>
 <!-- /wp:paragraph --></details>
-<!-- /wp:pbs/accordion-item -->
+<!-- /wp:pbsw/accordion-item -->
 
-<!-- wp:pbs/accordion-item {"title":"@@PBS_T5@@"} -->
+<!-- wp:pbsw/accordion-item {"title":"@@PBS_T5@@"} -->
 <details><summary>@@PBS_T5@@</summary><!-- wp:paragraph -->
 <p>@@PBS_T6@@</p>
 <!-- /wp:paragraph --></details>
-<!-- /wp:pbs/accordion-item --></div>
-<!-- /wp:pbs/accordion --></div>
+<!-- /wp:pbsw/accordion-item --></div>
+<!-- /wp:pbsw/accordion --></div>
 <!-- /wp:group -->',
 		array(
 			__( 'Common questions', 'page-builder-sandwich' ),

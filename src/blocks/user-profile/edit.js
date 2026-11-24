@@ -1,5 +1,5 @@
 /**
- * pbs/user-profile editor: the server's own render, the person and what to show in the sidebar.
+ * pbsw/user-profile editor: the server's own render, the person and what to show in the sidebar.
  */
 import { __ } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
@@ -89,7 +89,7 @@ export default function Edit( { attributes, setAttributes, context } ) {
 				</PanelBody>
 			</InspectorControls>
 			<ServerSideRender
-				block="pbs/user-profile"
+				block="pbsw/user-profile"
 				attributes={ attributes }
 				urlQueryArgs={
 					context?.postId ? { post_id: context.postId } : undefined

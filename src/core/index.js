@@ -16,7 +16,7 @@ for ( const { metadata, save, edit } of BLOCKS ) {
 // 6.2: an icon inserted from the inserter sits on its own line (a block the theme's layout
 // sizes and aligns). 6.1 icons keep no `display` and are placed automatically by the server
 // (Core\Blocks::icon_display()); the Placement setting changes either.
-registerBlockVariation( 'pbs/icon', {
+registerBlockVariation( 'pbsw/icon', {
 	name: 'icon-block',
 	title: __( 'Icon', 'page-builder-sandwich' ),
 	isDefault: true,

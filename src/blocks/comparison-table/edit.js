@@ -1,5 +1,5 @@
 /**
- * pbs/comparison-table editor: the front end's own table, every heading and text cell edited in
+ * pbsw/comparison-table editor: the front end's own table, every heading and text cell edited in
  * place. Each cell has a small button that switches it between text, "included" (a tick) and
  * "not included" (a cross); rows and columns are added, moved and removed in the sidebar.
  */

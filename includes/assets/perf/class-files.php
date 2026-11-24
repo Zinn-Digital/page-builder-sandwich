@@ -60,13 +60,30 @@ final class Files {
 	 */
 	public static function current_url( string $stored ): string {
 		$uploads = wp_upload_dir( null, false );
-		$marker  = '/' . Settings::prefix() . '-assets/';
-		$at      = strrpos( $stored, $marker );
+		$at      = self::assets_segment( $stored );
 		if ( ! empty( $uploads['error'] ) || false === $at ) {
 			return $stored;
 		}
 
 		return untrailingslashit( self::request_scheme( (string) $uploads['baseurl'] ) ) . substr( $stored, $at );
+	}
+
+	/**
+	 * Where the last `/<prefix>-assets/` segment of a URL or path starts, for ANY valid prefix,
+	 * or false. A file written under an earlier prefix stays where it is and keeps working: the
+	 * wordpress.org build moved from `zd-assets` to `pbsw-assets`, and a font sheet stored before
+	 * that names `zd-assets` (nothing moves or deletes those files on update).
+	 *
+	 * @param string $url A URL or a URL path.
+	 * @return int|false
+	 */
+	private static function assets_segment( string $url ) {
+		if ( ! preg_match_all( '#/[a-z][a-z0-9]{0,7}-assets/#', $url, $found, PREG_OFFSET_CAPTURE ) ) {
+			return false;
+		}
+		$last = end( $found[0] );
+
+		return is_array( $last ) ? (int) $last[1] : false;
 	}
 
 	/**
@@ -94,8 +111,7 @@ final class Files {
 	 */
 	public static function current_path( string $stored ): ?string {
 		$uploads = wp_upload_dir( null, false );
-		$marker  = '/' . Settings::prefix() . '-assets/';
-		$at      = strrpos( (string) wp_parse_url( $stored, PHP_URL_PATH ), $marker );
+		$at      = self::assets_segment( (string) wp_parse_url( $stored, PHP_URL_PATH ) );
 		if ( ! empty( $uploads['error'] ) || false === $at ) {
 			return null;
 		}

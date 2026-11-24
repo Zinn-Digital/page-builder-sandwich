@@ -1,6 +1,6 @@
 <?php
 /**
- * `pbs/accordion` + `pbs/accordion-item` — native disclosure widgets (`<details>`/`<summary>`).
+ * `pbsw/accordion` + `pbsw/accordion-item` — native disclosure widgets (`<details>`/`<summary>`).
  *
  * @package ZinnDigital\PBS
  */
@@ -30,7 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Accordion {
 
 	/**
-	 * `pbs/accordion`.
+	 * `pbsw/accordion`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: single, faq.
 	 * @param string               $content    Rendered inner content.
@@ -43,7 +43,7 @@ final class Accordion {
 		$items = '';
 		$faq   = array();
 		foreach ( Markup::children( $block ) as [ $child, $html ] ) {
-			if ( 'pbs/accordion-item' !== $child->name || '' === trim( $html ) ) {
+			if ( 'pbsw/accordion-item' !== $child->name || '' === trim( $html ) ) {
 				continue;
 			}
 			$items .= '' === $group ? $html : Markup::add_attributes( $html, array( 'name' => $group ) );
@@ -86,7 +86,7 @@ final class Accordion {
 	}
 
 	/**
-	 * `pbs/accordion-item`.
+	 * `pbsw/accordion-item`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: title, open, level.
 	 * @param string               $content    Rendered inner content.

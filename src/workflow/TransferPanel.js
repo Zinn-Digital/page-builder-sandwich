@@ -32,7 +32,7 @@ export default function TransferPanel() {
 	const [ preview, setPreview ] = useState( null );
 
 	useEffect( () => {
-		apiFetch( { path: '/pbs/v1/transfer/items' } )
+		apiFetch( { path: '/pbsw/v1/transfer/items' } )
 			.then( ( list ) => {
 				setItems( list );
 				setPicked(
@@ -56,7 +56,7 @@ export default function TransferPanel() {
 		setBusy( true );
 		setNotice( null );
 		apiFetch( {
-			path: '/pbs/v1/transfer/export',
+			path: '/pbsw/v1/transfer/export',
 			method: 'POST',
 			data: { ids, settings: withSettings },
 		} )
@@ -89,7 +89,7 @@ export default function TransferPanel() {
 		setBusy( true );
 		setNotice( null );
 		apiFetch( {
-			path: '/pbs/v1/transfer/import',
+			path: '/pbsw/v1/transfer/import',
 			method: 'POST',
 			data: {
 				package: pkg,

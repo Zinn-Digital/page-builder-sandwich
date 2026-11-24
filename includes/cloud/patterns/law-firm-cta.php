@@ -23,9 +23,9 @@ return array(
 	'keywords' => array( 'legal', 'cta' ),
 	'content'  => Patterns::fill(
 		'<!-- wp:group {"align":"full","style":{"color":{"background":"#8a6d3b","text":"#ffffff"},"spacing":{"padding":{"top":"72px","bottom":"72px","left":"24px","right":"24px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignfull has-text-color has-background" style="color:#ffffff;background-color:#8a6d3b;padding-top:72px;padding-right:24px;padding-bottom:72px;padding-left:24px"><!-- wp:pbs/call-to-action {"title":"@@PBS_T0@@","content":"@@PBS_T1@@","primaryText":"@@PBS_T2@@","primaryUrl":"/contact/"} -->
+<div class="wp-block-group alignfull has-text-color has-background" style="color:#ffffff;background-color:#8a6d3b;padding-top:72px;padding-right:24px;padding-bottom:72px;padding-left:24px"><!-- wp:pbsw/call-to-action {"title":"@@PBS_T0@@","content":"@@PBS_T1@@","primaryText":"@@PBS_T2@@","primaryUrl":"/contact/"} -->
 <div><h2>@@PBS_T0@@</h2><p>@@PBS_T1@@</p><p><span><a href="/contact/">@@PBS_T2@@</a></span></p></div>
-<!-- /wp:pbs/call-to-action --></div>
+<!-- /wp:pbsw/call-to-action --></div>
 <!-- /wp:group -->',
 		array(
 			__( 'Talk to a solicitor', 'page-builder-sandwich' ),

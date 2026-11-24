@@ -1,6 +1,6 @@
 /**
- * Studio's preview widths follow the design breakpoints (pbs-d2, pbs-d3): Desktop, Tablet, Mobile
- * and every custom breakpoint, each resizing the canvas to its width. The device IS the design
+ * Studio's preview widths follow the design breakpoints (pbs-d2): every breakpoint the store
+ * lists, each resizing the canvas to its width. The device IS the design
  * breakpoint being edited (store `pbsw/design`), so the Style tab and the canvas always agree.
  */
 

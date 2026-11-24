@@ -29,10 +29,10 @@ export const DROP_WRAPS = [ 'none', 'row', 'container' ];
 
 /** Blocks that are already a layout: never wrapped. */
 export const LAYOUT_BLOCKS = new Set( [
-	'pbs/row',
-	'pbs/column',
-	'pbs/container',
-	'pbs/section',
+	'pbsw/row',
+	'pbsw/column',
+	'pbsw/container',
+	'pbsw/section',
 	'core/group',
 	'core/columns',
 	'core/column',
@@ -156,13 +156,13 @@ export function wrapperFor(
 	const inner = clone( block );
 	if ( mode === 'row' ) {
 		return {
-			wrapper: create( 'pbs/row', {}, [
-				create( 'pbs/column', {}, [ inner ] ),
+			wrapper: create( 'pbsw/row', {}, [
+				create( 'pbsw/column', {}, [ inner ] ),
 			] ),
 			inner,
 		};
 	}
-	return { wrapper: create( 'pbs/container', {}, [ inner ] ), inner };
+	return { wrapper: create( 'pbsw/container', {}, [ inner ] ), inner };
 }
 
 /**

@@ -1,6 +1,6 @@
 /**
  * The Widget block's friendly settings (pbs-b3): the chosen widget's own settings as real
- * controls, read from the widget's form by `pbs/v1/widgets/fields`. Settings the form does not
+ * controls, read from the widget's form by `pbsw/v1/widgets/fields`. Settings the form does not
  * list stay editable in the generic editor, so nothing already saved is hidden.
  */
 import { __ } from '@wordpress/i18n';
@@ -28,7 +28,7 @@ export function loadFields( widget ) {
 		cache.set(
 			widget,
 			apiFetch( {
-				path: addQueryArgs( '/pbs/v1/widgets/fields', { widget } ),
+				path: addQueryArgs( '/pbsw/v1/widgets/fields', { widget } ),
 			} )
 				.then( ( r ) => ( Array.isArray( r?.fields ) ? r.fields : [] ) )
 				.catch( () => {

@@ -1,5 +1,5 @@
 /**
- * Design prop `navSubColor` (NAV1, pbs/nav-menu). Twin: includes/design/props/class-nav-sub-color.php.
+ * Design prop `navSubColor` (NAV1, pbsw/nav-menu). Twin: includes/design/props/class-nav-sub-color.php.
  */
 import { __ } from '@wordpress/i18n';
 
@@ -9,7 +9,7 @@ import { colorProp } from '../kinds';
 export default colorProp( {
 	key: 'navSubColor',
 	group: 'menu',
-	blocks: [ 'pbs/nav-menu' ],
+	blocks: [ 'pbsw/nav-menu' ],
 	property: '',
 	label: __( 'Submenu text', 'page-builder-sandwich' ),
 	control: 'color',

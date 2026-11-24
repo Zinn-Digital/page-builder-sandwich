@@ -1,12 +1,12 @@
 /**
- * pbs/nav-menu editor: pick a WordPress menu; the canvas shows its items with the front end's own
+ * pbsw/nav-menu editor: pick a WordPress menu; the canvas shows its items with the front end's own
  * classes (links inert). The sidebar holds every free option: layout, how submenus open, and the
  * mobile menu (when it appears, its shape, the Menu button, how it closes). "Preview the mobile
  * menu" draws the folded bar, and the open menu, right in the canvas.
  *
  * Pro adds its panels through `editor.BlockEdit` (mega menu panels, item icons, badges,
  * descriptions and visibility) and its item extras through the `pbsw.navMenu.itemLabel` filter;
- * the mega menu panels themselves (pbs/mega-panel) are inner blocks.
+ * the mega menu panels themselves (pbsw/mega-panel) are inner blocks.
  */
 import { __ } from '@wordpress/i18n';
 import { applyFilters } from '@wordpress/hooks';
@@ -154,12 +154,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		[ clientId ]
 	);
 	// Mega panels are Pro: offer the appender only when that block exists here.
-	const megaAvailable = !! getBlockType( 'pbs/mega-panel' );
+	const megaAvailable = !! getBlockType( 'pbsw/mega-panel' );
 	const blockProps = useBlockProps();
 	const innerProps = useInnerBlocksProps(
 		{ className: 'pbsw-nav-menu__panels' },
 		{
-			allowedBlocks: [ 'pbs/mega-panel' ],
+			allowedBlocks: [ 'pbsw/mega-panel' ],
 			renderAppender:
 				menuId && megaAvailable
 					? InnerBlocks.ButtonBlockAppender

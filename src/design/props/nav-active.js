@@ -1,5 +1,5 @@
 /**
- * Design prop `navActive` (NAV1, pbs/nav-menu). Twin: includes/design/props/class-nav-active.php.
+ * Design prop `navActive` (NAV1, pbsw/nav-menu). Twin: includes/design/props/class-nav-active.php.
  */
 import { __ } from '@wordpress/i18n';
 
@@ -9,7 +9,7 @@ import { colorProp } from '../kinds';
 export default colorProp( {
 	key: 'navActive',
 	group: 'menu',
-	blocks: [ 'pbs/nav-menu' ],
+	blocks: [ 'pbsw/nav-menu' ],
 	property: '',
 	label: __( 'Current page link colour', 'page-builder-sandwich' ),
 	control: 'color',

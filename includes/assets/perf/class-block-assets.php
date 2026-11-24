@@ -62,7 +62,7 @@ final class Block_Assets {
 	 * focus, reduced motion, the screen-reader-only and skip-link utilities. A pseudo block name,
 	 * so it rides the same page sheet and per-block fallback as the blocks' own CSS.
 	 */
-	public const BASE = 'pbs/*';
+	public const BASE = 'pbsw/*';
 
 	/** Its published key. */
 	public const BASE_KEY = 'block/a11y.css';
@@ -70,7 +70,7 @@ final class Block_Assets {
 	/**
 	 * Add a block's stylesheet (the premium registry, at boot).
 	 *
-	 * @param string $name     Block name, e.g. `pbs/pricing`.
+	 * @param string $name     Block name, e.g. `pbsw/pricing`.
 	 * @param string $relative Stylesheet path inside the plugin.
 	 * @return void
 	 */
@@ -82,7 +82,7 @@ final class Block_Assets {
 
 	/** Legacy shortcodes that render a block's markup, → the block they render as. */
 	public const SHORTCODES = array(
-		'pbs_button' => 'pbs/button',
+		'pbsw_button' => 'pbsw/button',
 	);
 
 	/**
@@ -162,7 +162,7 @@ final class Block_Assets {
 		$found = array();
 		self::walk( $blocks, $found );
 		if ( $button_shortcode ) {
-			$found['pbs/button'] = true;
+			$found['pbsw/button'] = true;
 		}
 		if ( array() !== $found ) {
 			$found[ self::BASE ] = true;
@@ -192,7 +192,7 @@ final class Block_Assets {
 			$content = (string) $post->post_content;
 			$names   = null !== $state
 				? (array) $state['names']
-				: self::names_in( parse_blocks( $content ), has_shortcode( $content, 'pbs_button' ) );
+				: self::names_in( parse_blocks( $content ), \ZinnDigital\PBS\Core\Shortcodes::uses_button( $content ) );
 			foreach ( $names as $name ) {
 				self::ensure( $name );
 			}

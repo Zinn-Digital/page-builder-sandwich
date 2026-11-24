@@ -1,6 +1,6 @@
 /**
- * Developer compatibility layer (feature pbs-dev5): the pbs/shortcode block plus the legacy
- * `window.pbsAddInspector()` / `pbs_shortcodes` API on top of it.
+ * Developer compatibility layer (feature pbs-dev5): the pbsw/shortcode block plus the legacy
+ * `window.pbswAddInspector()` / `pbsw_shortcodes` API on top of it.
  *
  * Built as its own bundle (`build/dev-compat.js`, handle `pbsw-dev-compat`), loaded only in the
  * block editor. `setupDevCompat()` is exported so the core editor bundle can import it

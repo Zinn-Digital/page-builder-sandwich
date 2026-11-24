@@ -10,7 +10,7 @@ const FLEX = [ 'flex', 'inline-flex' ];
 const GRID = [ 'grid', 'inline-grid' ];
 
 /** Blocks that lay out their children with flexbox unless told otherwise. */
-export const FLEX_BY_DEFAULT = [ 'pbs/section', 'pbs/container' ];
+export const FLEX_BY_DEFAULT = [ 'pbsw/section', 'pbsw/container' ];
 
 /**
  * The value that applies at a breakpoint: its own, else the nearest wider one's.
@@ -112,7 +112,7 @@ export function visibleProps( props, ctx ) {
 		if (
 			p.key === 'contentWidth' &&
 			( ctx.attributes?.width ??
-				( ctx.name === 'pbs/section' ? 'boxed' : 'full' ) ) !== 'boxed'
+				( ctx.name === 'pbsw/section' ? 'boxed' : 'full' ) ) !== 'boxed'
 		) {
 			return false;
 		}

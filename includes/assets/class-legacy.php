@@ -56,8 +56,14 @@ final class Legacy {
 	public const LEVEL_ERA  = 1;
 	public const LEVEL_FULL = 2;
 
-	/** The legacy per-post pseudo-element stylesheet meta (kept by the converter for undo). */
-	public const STYLE_META = 'pbs_style';
+	/**
+	 * The per-post pseudo-element stylesheet meta. Underscore-prefixed, so it is protected: no custom-fields box
+	 * or meta endpoint offers it (wp.org review: an unprotected key let any editor print CSS).
+	 */
+	public const STYLE_META = '_pbsw_style';
+
+	/** The 5.x key the legacy plugin saved (kept by the converter for undo); read when the new key is absent. */
+	public const OLD_STYLE_META = 'pbs_style';
 
 	/**
 	 * Markers of legacy content in a post's raw content (unconverted or converted). A converted
@@ -122,6 +128,66 @@ final class Legacy {
 		add_filter( 'the_content', array( self::class, 'filter_content' ), 999 );
 		add_action( 'wp_enqueue_scripts', array( self::class, 'enqueue_for_request' ) );
 		add_filter( 'body_class', array( self::class, 'body_class' ) );
+		add_action( 'init', array( self::class, 'register_meta' ) );
+		add_filter( 'is_protected_meta', array( self::class, 'protect_meta' ), 10, 2 );
+	}
+
+	/**
+	 * Register both style keys: a string, never in REST, tags stripped on save, and only a user who may post
+	 * unfiltered HTML may write one, or a no-user WP-CLI command (anyone else's value is saved as an empty string).
+	 *
+	 * @return void
+	 */
+	public static function register_meta(): void {
+		foreach ( array( self::STYLE_META, self::OLD_STYLE_META ) as $key ) {
+			register_post_meta(
+				'',
+				$key,
+				array(
+					'type'              => 'string',
+					'single'            => true,
+					'show_in_rest'      => false,
+					// Saved without unfiltered_html (the form, REST, a visitor, real WP-Cron), it is stripped.
+					'sanitize_callback' => static fn( $value ): string => self::may_write_style() ? wp_strip_all_tags( (string) $value ) : '',
+					'auth_callback'     => static fn(): bool => current_user_can( 'unfiltered_html' ),
+				)
+			);
+		}
+	}
+
+	/**
+	 * Whether this write may store a stylesheet: a user with unfiltered_html, or a WP-CLI command with no user,
+	 * which core trusts the same way (WP-CLI removes kses for it on purpose). Any other no-user write may not.
+	 *
+	 * @return bool
+	 */
+	public static function may_write_style(): bool {
+		if ( current_user_can( 'unfiltered_html' ) ) {
+			return true;
+		}
+		return defined( 'WP_CLI' ) && WP_CLI && 0 === get_current_user_id();
+	}
+
+	/**
+	 * Mark the old key protected too (the new one is protected by its underscore).
+	 *
+	 * @param bool   $is_protected Whether the key is protected so far.
+	 * @param string $key          Meta key.
+	 * @return bool
+	 */
+	public static function protect_meta( $is_protected, $key ): bool {
+		return in_array( $key, array( self::STYLE_META, self::OLD_STYLE_META ), true ) || (bool) $is_protected;
+	}
+
+	/**
+	 * A post's style rules: the new key, else the 5.x one.
+	 *
+	 * @param int $post_id Post id.
+	 * @return string
+	 */
+	public static function style_meta( int $post_id ): string {
+		$css = (string) get_post_meta( $post_id, self::STYLE_META, true );
+		return '' !== $css ? $css : (string) get_post_meta( $post_id, self::OLD_STYLE_META, true );
 	}
 
 	/**
@@ -221,7 +287,7 @@ final class Legacy {
 		}
 		self::$cache[ $post_id ] = self::needs_legacy(
 			(string) $post->post_content,
-			str_contains( (string) $post->post_content, 'pbs' ) && '' !== trim( (string) get_post_meta( $post_id, self::STYLE_META, true ) )
+			str_contains( (string) $post->post_content, 'pbs' ) && '' !== trim( self::style_meta( $post_id ) )
 		);
 		return self::$cache[ $post_id ];
 	}
@@ -335,7 +401,7 @@ final class Legacy {
 		self::$full = true;
 
 		$prefix = Settings::prefix();
-		$css    = self::post_style( (string) get_post_meta( $post_id, self::STYLE_META, true ), $prefix );
+		$css    = self::post_style( self::style_meta( $post_id ), $prefix );
 		if ( '' !== $css ) {
 			// A handle is printed as an element id, so it is the neutral prefix and a hash.
 			$handle = $prefix . '-' . substr( sha1( $css ), 0, 8 );
@@ -515,7 +581,7 @@ final class Legacy {
 	 * @return string
 	 */
 	private static function style_element( int $post_id, string $prefix ): string {
-		return '' === self::post_style( (string) get_post_meta( $post_id, self::STYLE_META, true ), $prefix ) ? '' : '<div hidden></div>';
+		return '' === self::post_style( self::style_meta( $post_id ), $prefix ) ? '' : '<div hidden></div>';
 	}
 
 	/**
@@ -582,7 +648,35 @@ final class Legacy {
 		$css = (string) preg_replace( '/@import[^;]*;?/i', '', $css );
 		$css = (string) preg_replace( '/url\(\s*[\'"]?\s*(?:javascript|vbscript|data)\s*:[^)]*\)/i', 'none', $css );
 		$css = (string) preg_replace( '/expression\s*\(|behavior\s*:|-moz-binding\s*:/i', '', $css );
+		$css = (string) preg_replace( '/(?:javascript|vbscript)\s*:/i', '', $css );
+		// A CSS escape or a comment can spell any of those (`expr\65ssion(`, `java\73cript:`, `\3c/style`):
+		// decode both on a copy, and if a forbidden token appears there the whole stylesheet is refused.
+		if ( self::spells_forbidden( $css ) ) {
+			return '';
+		}
 		$css = str_replace( 'data-pbs-', 'data-' . $prefix . '-l-', $css );
 		return trim( self::rewrite_tokens( $css, $prefix ) );
+	}
+
+	/**
+	 * Whether the CSS, with comments removed and escapes decoded, holds a token that loads, runs or closes.
+	 *
+	 * @param string $css Stylesheet, already stripped.
+	 * @return bool
+	 */
+	private static function spells_forbidden( string $css ): bool {
+		$plain = (string) preg_replace( '#/\*.*?(?:\*/|$)#s', '', $css );
+		$plain = (string) preg_replace_callback(
+			'/\\\\(?:([0-9a-fA-F]{1,6})\s?|(.))/s',
+			static function ( array $m ): string {
+				if ( isset( $m[2] ) && '' !== $m[2] ) {
+					return $m[2];
+				}
+				$code = hexdec( $m[1] );
+				return $code > 0 && $code < 0x80 ? chr( (int) $code ) : ' ';
+			},
+			$plain
+		);
+		return 1 === preg_match( '/<|@import|expression\s*\(|behavior\s*:|-moz-binding\s*:|javascript\s*:|vbscript\s*:/i', $plain );
 	}
 }

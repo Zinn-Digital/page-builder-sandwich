@@ -42,7 +42,7 @@ export function failureText( message ) {
 /**
  * A one-line summary of the current state.
  *
- * @param {Object} status Payload of GET /pbs/v1/migration.
+ * @param {Object} status Payload of GET /pbsw/v1/migration.
  * @return {string} Summary.
  */
 export function summaryText( status ) {
@@ -99,7 +99,7 @@ export function summaryText( status ) {
  * The "Legacy content" panel: progress of the conversion to blocks, failures, run and undo.
  *
  * @param {Object} props
- * @param {string} props.path REST path of the migration status (pbs/v1/migration).
+ * @param {string} props.path REST path of the migration status (pbsw/v1/migration).
  * @return {Element} The panel.
  */
 export default function LegacyContent( { path } ) {

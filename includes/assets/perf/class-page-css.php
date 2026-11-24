@@ -214,7 +214,7 @@ final class Page_Css {
 		}
 
 		$blocks   = parse_blocks( $content );
-		$compiled = self::compile( $blocks, Settings::prefix(), array( self::class, 'ref_blocks' ), has_shortcode( $content, 'pbs_button' ), null, $post_id );
+		$compiled = self::compile( $blocks, Settings::prefix(), array( self::class, 'ref_blocks' ), \ZinnDigital\PBS\Core\Shortcodes::uses_button( $content ), null, $post_id );
 		$state    = array(
 			'schema' => self::SCHEMA,
 			'sig'    => self::signature( $post ),

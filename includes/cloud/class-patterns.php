@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Patterns {
 
 	/** The pattern category. */
-	public const CATEGORY = 'pbs-sections';
+	public const CATEGORY = 'pbsw-sections';
 
 	/**
 	 * Hook registration.
@@ -64,7 +64,7 @@ final class Patterns {
 				continue;
 			}
 			register_block_pattern(
-				'pbs/' . basename( $file, '.php' ),
+				'pbsw/' . basename( $file, '.php' ),
 				array(
 					'title'      => (string) $pattern['title'],
 					'categories' => array( self::CATEGORY ),

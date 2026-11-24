@@ -24,12 +24,12 @@ if ( ! defined( 'ABSPATH' ) ) {
  * The mapping, and why each rule is the way it is:
  *
  * - `<table class="pbsandwich_column">` (pre-4.0) and `div.pbs-row` / `div.pbs-col` (4.x–5.x),
- *   at any nesting depth → `pbs/row` + `pbs/column`. One row per table `<tr>`: legacy's own
+ *   at any nesting depth → `pbsw/row` + `pbsw/column`. One row per table `<tr>`: legacy's own
  *   migration kept only the first and silently dropped the rest.
  * - `a.pbs-button` (alone in its paragraph, or alone between blocks) and the pre-4.0
- *   `[pbs_button]` shortcode → `pbs/button`. ⛔ The shortcode's label is ESCAPED here: legacy's
+ *   `[pbs_button]` shortcode → `pbsw/button`. ⛔ The shortcode's label is ESCAPED here: legacy's
  *   migration printed it raw (10-audit-pbs.md §3, stored XSS).
- * - `[pbs_widget]` / `[pbs_sidebar]` → `pbs/widget` / `pbs/sidebar`; any other shortcode that
+ * - `[pbs_widget]` / `[pbs_sidebar]` → `pbsw/widget` / `pbsw/sidebar`; any other shortcode that
  *   stands alone → `core/shortcode`.
  * - A leaf becomes a CORE block only when the markup written here is byte-for-byte what that
  *   block's `save()` produces, so the editor never reports "This block contains unexpected or
@@ -43,6 +43,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * converted, which is what makes conversion idempotent.
  */
 final class Converter {
+
+	/** convert_post() status for a post only a user with unfiltered_html can convert exactly. */
+	public const NEEDS_ADMIN = 'needs-admin';
 
 	/** Legacy markers that mean "this content was written by legacy PBS". */
 	private const MARKER_RE = '/pbsandwich_column|\[pbs_(?:button|widget|sidebar)\b|\bclass\s*=\s*["\'][^"\']*(?<![\w-])pbs-[\w-]/i';
@@ -81,7 +84,7 @@ final class Converter {
 	/** Row children legacy's script created at runtime (see is_runtime_layer()). */
 	private const RUNTIME_LAYERS = array( 'pbs-video-bg', 'pbs-parallax', 'pbs-kenburns-bg', 'pbs-carousel-bullet-wrapper' );
 
-	/** Row widths the `pbs/row` block understands. */
+	/** Row widths the `pbsw/row` block understands. */
 	private const ROW_WIDTHS = array( 'full-width', 'full-width-retain-content' );
 
 	/**
@@ -149,7 +152,6 @@ final class Converter {
 			);
 		}
 
-		Backup::save( $post_id );
 		$content = (string) $post->post_content;
 		// Images legacy bundled in its own folder are gone after the update: point them at uploads.
 		$converted = Media::localize( self::convert_html( $content ) );
@@ -158,6 +160,16 @@ final class Converter {
 			$converted = Fallback::fill_widgets( $converted, array( Fallback::class, 'render_widget_block' ) );
 		}
 		$changed = $converted !== $content;
+		if ( $changed && Backup::write_would_filter( $converted ) ) {
+			// ⛔ kses would rewrite this write (no unfiltered_html here: WP-Cron, a visitor's
+			// request, an editor). Nothing is written; the post waits for an administrator's
+			// request, which writes it exactly (Batch::convert_waiting()). No user is switched.
+			return array(
+				'status'  => self::NEEDS_ADMIN,
+				'changed' => false,
+			);
+		}
+		Backup::save( $post_id );
 		if ( $changed && ! Backup::write_content( $post_id, $converted ) ) {
 			return array(
 				'status'  => 'write-failed',
@@ -430,7 +442,7 @@ final class Converter {
 			return array( $this->row( $node ) );
 		}
 		if ( $this->has_class( $node, 'pbs-col' ) ) {
-			return array( Serializer::block( 'pbs/row', array(), '<div style="display:flex;flex-wrap:wrap">', array( $this->column( $node ) ), '</div>' ) );
+			return array( Serializer::block( 'pbsw/row', array(), '<div style="display:flex;flex-wrap:wrap">', array( $this->column( $node ) ), '</div>' ) );
 		}
 		if ( 'p' === $tag ) {
 			return $this->p( $node );
@@ -570,7 +582,7 @@ final class Converter {
 	/* ─── structure ────────────────────────────────────────────────────────────────────── */
 
 	/**
-	 * `table.pbsandwich_column` → one `pbs/row` per table row, one column per cell.
+	 * `table.pbsandwich_column` → one `pbsw/row` per table row, one column per cell.
 	 *
 	 * @param \DOMElement $table Table.
 	 * @return string[]
@@ -581,17 +593,17 @@ final class Converter {
 			$columns = array();
 			foreach ( $tr->childNodes as $cell ) {
 				if ( $cell instanceof \DOMElement && in_array( strtolower( $cell->tagName ), array( 'td', 'th' ), true ) ) {
-					$columns[] = Serializer::block( 'pbs/column', array(), '<div style="flex:1 1 0;min-width:0">', $this->nodes( iterator_to_array( $cell->childNodes ), true ), '</div>' );
+					$columns[] = Serializer::block( 'pbsw/column', array(), '<div style="flex:1 1 0;min-width:0">', $this->nodes( iterator_to_array( $cell->childNodes ), true ), '</div>' );
 				}
 			}
-			$rows[] = Serializer::block( 'pbs/row', array(), '<div style="display:flex;flex-wrap:wrap">', $columns, '</div>' );
+			$rows[] = Serializer::block( 'pbsw/row', array(), '<div style="display:flex;flex-wrap:wrap">', $columns, '</div>' );
 		}
 
 		return $rows;
 	}
 
 	/**
-	 * `div.pbs-row` → `pbs/row`. Children that are not columns are gathered into a column so no
+	 * `div.pbs-row` → `pbsw/row`. Children that are not columns are gathered into a column so no
 	 * content is lost (the block's inner blocks may only be columns).
 	 *
 	 * @param \DOMElement $row Row.
@@ -612,7 +624,7 @@ final class Converter {
 			}
 			if ( $child instanceof \DOMElement && $this->has_class( $child, 'pbs-col' ) ) {
 				if ( $this->has_content( $stray ) ) {
-					$columns[] = Serializer::block( 'pbs/column', array(), '<div style="flex:1 1 0;min-width:0">', $this->nodes( $stray ), '</div>' );
+					$columns[] = Serializer::block( 'pbsw/column', array(), '<div style="flex:1 1 0;min-width:0">', $this->nodes( $stray ), '</div>' );
 				}
 				$stray     = array();
 				$columns[] = $this->column( $child );
@@ -621,10 +633,10 @@ final class Converter {
 			$stray[] = $child;
 		}
 		if ( $this->has_content( $stray ) ) {
-			$columns[] = Serializer::block( 'pbs/column', array(), '<div style="flex:1 1 0;min-width:0">', $this->nodes( $stray ), '</div>' );
+			$columns[] = Serializer::block( 'pbsw/column', array(), '<div style="flex:1 1 0;min-width:0">', $this->nodes( $stray ), '</div>' );
 		}
 
-		return Serializer::block( 'pbs/row', $attrs, '<div style="' . self::attr( 'display:flex;flex-wrap:wrap' . ( isset( $attrs['style'] ) ? ';' . $attrs['style'] : '' ) ) . '">', $columns, '</div>' );
+		return Serializer::block( 'pbsw/row', $attrs, '<div style="' . self::attr( 'display:flex;flex-wrap:wrap' . ( isset( $attrs['style'] ) ? ';' . $attrs['style'] : '' ) ) . '">', $columns, '</div>' );
 	}
 
 	/**
@@ -647,7 +659,7 @@ final class Converter {
 	}
 
 	/**
-	 * `div.pbs-col` → `pbs/column`.
+	 * `div.pbs-col` → `pbsw/column`.
 	 *
 	 * @param \DOMElement $col Column.
 	 * @return string
@@ -655,7 +667,7 @@ final class Converter {
 	private function column( \DOMElement $col ): string {
 		$attrs = $this->common_attrs( $col, 'pbs-col', '' );
 
-		return Serializer::block( 'pbs/column', $attrs, '<div style="' . self::attr( 'flex:1 1 0;min-width:0' . ( isset( $attrs['style'] ) ? ';' . $attrs['style'] : '' ) ) . '">', $this->nodes( iterator_to_array( $col->childNodes ), true ), '</div>' );
+		return Serializer::block( 'pbsw/column', $attrs, '<div style="' . self::attr( 'flex:1 1 0;min-width:0' . ( isset( $attrs['style'] ) ? ';' . $attrs['style'] : '' ) ) . '">', $this->nodes( iterator_to_array( $col->childNodes ), true ), '</div>' );
 	}
 
 	/**
@@ -731,7 +743,7 @@ final class Converter {
 	/* ─── buttons, widgets, shortcodes ─────────────────────────────────────────────────── */
 
 	/**
-	 * `a.pbs-button` → `pbs/button`.
+	 * `a.pbs-button` → `pbsw/button`.
 	 *
 	 * @param \DOMElement $a     The anchor.
 	 * @param string      $align Alignment from the wrapping paragraph.
@@ -768,7 +780,7 @@ final class Converter {
 	}
 
 	/**
-	 * `pbs/button` markup: comment attributes plus the static save() fallback.
+	 * `pbsw/button` markup: comment attributes plus the static save() fallback.
 	 *
 	 * @param array $b Button fields.
 	 * @return string
@@ -803,7 +815,7 @@ final class Converter {
 		$wrap = implode( ';', array_filter( array( '' !== $align ? 'text-align:' . $align : '', (string) ( $b['wrapStyle'] ?? '' ) ) ) );
 		$html = '' !== $wrap ? '<p style="' . self::attr( $wrap ) . '">' . $a . '</p>' : ( ! empty( $attrs['wrapped'] ) ? '<p>' . $a . '</p>' : $a );
 
-		return Serializer::block( 'pbs/button', $attrs, $html );
+		return Serializer::block( 'pbsw/button', $attrs, $html );
 	}
 
 	/**
@@ -817,7 +829,7 @@ final class Converter {
 		if ( '[' === $sc[1] && ']' === ( $sc[6] ?? '' ) ) {
 			return array( $this->paragraph( $this->parse( $raw ), '' ) ); // [[escaped]] is text.
 		}
-		$tag  = strtolower( $sc[2] );
+		$tag  = (string) preg_replace( '/^pbsw_(widget|sidebar|button)$/', 'pbs_$1', strtolower( $sc[2] ) ); // Both spellings convert alike.
 		$atts = self::shortcode_atts( html_entity_decode( $sc[3], ENT_QUOTES | ENT_HTML5, 'UTF-8' ) );
 
 		if ( 'pbs_button' === $tag ) {
@@ -859,7 +871,7 @@ final class Converter {
 			}
 			return array(
 				Serializer::block(
-					'pbs/widget',
+					'pbsw/widget',
 					array(
 						'widget'   => $widget,
 						'instance' => (object) array_map( 'strval', $atts ),
@@ -870,7 +882,7 @@ final class Converter {
 		if ( 'pbs_sidebar' === $tag ) {
 			$id = (string) ( $atts['id'] ?? '' );
 			// Legacy rendered nothing for a sidebar with no id, so nothing is lost by dropping it.
-			return '' === $id ? array() : array( Serializer::block( 'pbs/sidebar', array( 'sidebar' => $id ) ) );
+			return '' === $id ? array() : array( Serializer::block( 'pbsw/sidebar', array( 'sidebar' => $id ) ) );
 		}
 		if ( function_exists( 'shortcode_exists' ) && ! shortcode_exists( $tag ) && ! str_starts_with( $tag, 'pbs_' ) ) {
 			// Not a shortcode on this site: it is text, and stays in a paragraph.

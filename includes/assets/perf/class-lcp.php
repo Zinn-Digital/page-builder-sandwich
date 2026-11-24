@@ -212,13 +212,13 @@ final class Lcp {
 			: self::css_px( (string) $style, 'min-height' );
 
 		switch ( $name ) {
-			case 'pbs/row':
+			case 'pbsw/row':
 				$tallest = 0;
 				foreach ( $inner as $child ) {
 					$tallest = max( $tallest, self::estimate( $child ) );
 				}
 				return max( $min, $tallest );
-			case 'pbs/column':
+			case 'pbsw/column':
 			case 'core/group':
 			case 'core/column':
 				$sum = 0;
@@ -244,8 +244,8 @@ final class Lcp {
 				return 20 + 30 * max( 1, substr_count( $html, '<li' ) + count( $inner ) );
 			case 'core/separator':
 				return 50;
-			case 'pbs/button':
-			case 'pbs/icon':
+			case 'pbsw/button':
+			case 'pbsw/icon':
 				return 60;
 		}
 		if ( str_contains( $html, '<img' ) ) {
@@ -326,7 +326,7 @@ final class Lcp {
 			if ( ! is_array( $block ) || null === ( $block['blockName'] ?? null ) ) {
 				continue; // Whitespace between blocks.
 			}
-			if ( 'pbs/row' !== $block['blockName'] ) {
+			if ( 'pbsw/row' !== $block['blockName'] ) {
 				return null;
 			}
 			$url = self::background_url( (string) ( $block['attrs']['style'] ?? '' ) );

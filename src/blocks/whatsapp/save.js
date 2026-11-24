@@ -1,5 +1,5 @@
 /**
- * pbs/whatsapp saved markup: a plain link to the chat (no classes, no data-wp-*, no translated
+ * pbsw/whatsapp saved markup: a plain link to the chat (no classes, no data-wp-*, no translated
  * text). The floating button is rebuilt by Marketing::render_whatsapp().
  */
 import { contactHref } from '../contact-buttons/links';

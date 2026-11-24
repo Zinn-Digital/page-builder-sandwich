@@ -20,7 +20,3 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // P2 performance engine: per-block assets, compiled page CSS, LCP/CLS, fonts, cache purge (L08 worker W7).
 require_once __DIR__ . '/perf/load.php';
-
-// The signup route behind legacy newsletter forms; the premium layer supplies the services.
-require_once __DIR__ . '/class-legacy-newsletter.php';
-\ZinnDigital\PBS\Assets\Legacy_Newsletter::register();

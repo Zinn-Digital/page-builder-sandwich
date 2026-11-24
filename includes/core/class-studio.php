@@ -32,8 +32,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Studio {
 
-	/** Admin page slug (admin.php?page=pbs-studio&post=<id>). */
-	public const PAGE = 'pbs-studio';
+	/** Admin page slug (admin.php?page=pbsw-studio&post=<id>). */
+	public const PAGE = 'pbsw-studio';
 
 	/** The Studio app's script/style handle (wp-admin only, so it may carry the name). */
 	public const HANDLE = 'pbsw-studio';
@@ -369,7 +369,6 @@ final class Studio {
 			'autosaveInterval'  => self::AUTOSAVE_SECONDS,
 			'snapshotInterval'  => self::SNAPSHOT_SECONDS,
 			'lockedBy'          => $lock_name,
-			'safeMode'          => Safe_Mode::state(),
 			'settings'          => $settings,
 		);
 

@@ -14,12 +14,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * `pbs/v1/design/breakpoints` — read and save the breakpoints (edit_theme_options).
+ * `pbsw/v1/design/breakpoints` — read and save the breakpoints (edit_theme_options).
  */
 final class Rest {
 
 	/** Namespace. */
-	public const NAMESPACE = 'pbs/v1';
+	public const NAMESPACE = 'pbsw/v1';
 
 	/**
 	 * Hooks.
@@ -88,9 +88,13 @@ final class Rest {
 		$input   = array(
 			'tablet' => $request->get_param( 'tablet' ) ?? $current['tablet'],
 			'mobile' => $request->get_param( 'mobile' ) ?? $current['mobile'],
-			'custom' => $request->get_param( 'custom' ) ?? $current['custom'],
 		);
-		$saved   = Breakpoints::save( $input );
+		// `custom` exists only when an extension adds it to Breakpoints::get(); the free plugin has none.
+		$custom = $request->get_param( 'custom' ) ?? ( $current['custom'] ?? null );
+		if ( null !== $custom ) {
+			$input['custom'] = $custom;
+		}
+		$saved = Breakpoints::save( $input );
 		if ( $saved instanceof \WP_Error ) {
 			return $saved;
 		}
@@ -107,8 +111,7 @@ final class Rest {
 		return array_merge(
 			Breakpoints::get(),
 			array(
-				'customAllowed' => Breakpoints::custom_allowed(),
-				'defaults'      => Breakpoints::DEFAULTS,
+				'defaults' => Breakpoints::DEFAULTS,
 			)
 		);
 	}

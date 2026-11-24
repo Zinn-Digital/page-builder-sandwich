@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Registers pbs/row, pbs/column, pbs/button, pbs/icon, pbs/widget and pbs/sidebar.
+ * Registers pbsw/row, pbsw/column, pbsw/button, pbsw/icon, pbsw/widget and pbsw/sidebar.
  *
  * Every block is hybrid (docs/plugins-overhaul/plan/lanes/state/L08.md §P1.1): its save() stores
  * footprint-free fallback HTML that survives the plugin being turned off, and a render callback
@@ -49,7 +49,7 @@ final class Blocks {
 	}
 
 	/**
-	 * A pbs/icon saved by 6.1 carries no `display`. At the TOP level of the content it is a block
+	 * A pbsw/icon saved by 6.1 carries no `display`. At the TOP level of the content it is a block
 	 * of its own (as a block theme lays out every top-level block) — 6.1 printed a bare inline
 	 * span there, which the theme's layout could not give margins, so it sat at the page edge.
 	 * Inside another block (a row or column from converted legacy content) it stays inline.
@@ -61,7 +61,7 @@ final class Blocks {
 	 * @return mixed
 	 */
 	public static function icon_display( $parsed_block, $source_block = null, $parent_block = null ) {
-		if ( ! is_array( $parsed_block ) || 'pbs/icon' !== ( $parsed_block['blockName'] ?? '' ) || isset( $parsed_block['attrs']['display'] ) || null !== $parent_block ) {
+		if ( ! is_array( $parsed_block ) || 'pbsw/icon' !== ( $parsed_block['blockName'] ?? '' ) || isset( $parsed_block['attrs']['display'] ) || null !== $parent_block ) {
 			return $parsed_block;
 		}
 		$parsed_block['attrs']['display'] = 'block';
@@ -82,7 +82,7 @@ final class Blocks {
 			return $data;
 		}
 		$raw = wp_unslash( $data['post_content'] );
-		if ( ! str_contains( $raw, 'wp:pbs/widget' ) && ! str_contains( $raw, 'wp:pbs/sidebar' ) ) {
+		if ( ! Block_Names::in_content( $raw, 'widget' ) && ! Block_Names::in_content( $raw, 'sidebar' ) ) {
 			return $data;
 		}
 		$data['post_content'] = wp_slash( Fallback::fill_widgets( $raw, array( Fallback::class, 'render_widget_block' ) ) );
@@ -190,7 +190,7 @@ final class Blocks {
 	}
 
 	/**
-	 * Render callback for pbs/row.
+	 * Render callback for pbsw/row.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Saved content (ignored — rebuilt).
@@ -202,7 +202,7 @@ final class Blocks {
 	}
 
 	/**
-	 * Render callback for pbs/column.
+	 * Render callback for pbsw/column.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @param string               $content    Saved content (ignored — rebuilt).
@@ -214,7 +214,7 @@ final class Blocks {
 	}
 
 	/**
-	 * Render callback for pbs/button.
+	 * Render callback for pbsw/button.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @return string
@@ -224,7 +224,7 @@ final class Blocks {
 	}
 
 	/**
-	 * Render callback for pbs/icon.
+	 * Render callback for pbsw/icon.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @return string
@@ -234,7 +234,7 @@ final class Blocks {
 	}
 
 	/**
-	 * Render callback for pbs/widget.
+	 * Render callback for pbsw/widget.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @return string
@@ -247,7 +247,7 @@ final class Blocks {
 	}
 
 	/**
-	 * Render callback for pbs/sidebar.
+	 * Render callback for pbsw/sidebar.
 	 *
 	 * @param array<string, mixed> $attributes Attributes.
 	 * @return string

@@ -1,5 +1,5 @@
 /**
- * pbs/accordion-item editor: the title row as visitors see it (edited in place) and the content
+ * pbsw/accordion-item editor: the title row as visitors see it (edited in place) and the content
  * below it, always shown while editing so it can be edited.
  */
 import { __, sprintf } from '@wordpress/i18n';

@@ -1,5 +1,5 @@
 /**
- * pbs/info-box saved markup: the footprint-free fallback (no classes, no data-wp-*). The live
+ * pbsw/info-box saved markup: the footprint-free fallback (no classes, no data-wp-*). The live
  * HTML is rebuilt by Blocks\Content::render_info_box().
  */
 import { RichText } from '@wordpress/block-editor';

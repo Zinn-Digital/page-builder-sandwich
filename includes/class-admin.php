@@ -113,12 +113,12 @@ final class Admin {
 			true
 		);
 		wp_set_script_translations( self::HANDLE, 'page-builder-sandwich', PBSW_DIR . 'languages' );
-		wp_add_inline_script( self::HANDLE, 'window.pbsAdmin = ' . wp_json_encode( self::data() ) . ';', 'before' );
+		wp_add_inline_script( self::HANDLE, 'window.pbswAdmin = ' . wp_json_encode( self::data() ) . ';', 'before' );
 		\ZinnDigital\PBS\AdminKit\Kit::enqueue( self::HANDLE );
 
 		/**
 		 * Fires after the admin screen's script is enqueued, so a module can enqueue a script that
-		 * adds a panel through the `pbs.admin.panels` JavaScript filter (it must depend on this
+		 * adds a panel through the `pbsw.admin.panels` JavaScript filter (it must depend on this
 		 * handle; the screen renders on DOM ready, after every footer script has run).
 		 *
 		 * @param string $handle The admin screen's script handle.
@@ -153,7 +153,6 @@ final class Admin {
 				'productUrl' => 'https://pagebuildersandwich.com',
 				'companyUrl' => 'https://zinndigital.com',
 				'tabs'       => Admin_Tabs::boot_data(),
-				'pausedTabs' => Admin_Tabs::paused_for( Licensing::can_use_premium() ),
 			)
 		);
 	}

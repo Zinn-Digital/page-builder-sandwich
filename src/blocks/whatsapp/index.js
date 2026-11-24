@@ -1,5 +1,5 @@
 /**
- * pbs/whatsapp — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/whatsapp — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/whatsapp/block.json';

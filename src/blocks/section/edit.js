@@ -1,5 +1,5 @@
 /**
- * pbs/section editor: the shared layout editor as a section.
+ * pbsw/section editor: the shared layout editor as a section.
  */
 import LayoutEdit from '../layout/edit';
 

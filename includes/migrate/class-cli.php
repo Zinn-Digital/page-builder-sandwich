@@ -1,6 +1,6 @@
 <?php
 /**
- * `wp pbs migrate status|run|undo [--post=<id>]`.
+ * `wp pbsw migrate status|run|undo [--post=<id>]`.
  *
  * @package ZinnDigital\PBS
  */
@@ -28,7 +28,7 @@ final class Cli {
 	 */
 	public static function register(): void {
 		if ( defined( 'WP_CLI' ) && WP_CLI && class_exists( '\WP_CLI' ) ) {
-			\WP_CLI::add_command( 'pbs migrate', self::class );
+			\WP_CLI::add_command( 'pbsw migrate', self::class );
 		}
 	}
 

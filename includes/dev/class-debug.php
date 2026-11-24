@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * `GET|POST pbs/v1/debug`.
+ * `GET|POST pbsw/v1/debug`.
  */
 final class Debug {
 
@@ -122,7 +122,7 @@ final class Debug {
 	}
 
 	/**
-	 * Every block of this plugin (`pbs/*`) and of its add-ons (pbsw_register_block), sorted by
+	 * Every block of this plugin (`pbsw/*`) and of its add-ons (pbsw_register_block), sorted by
 	 * name: name, title, where it comes from, its version, and what overrides it.
 	 *
 	 * @return array<int, array{name: string, title: string, source: string, version: string, overridden: bool, overrides: array<int, array{hook: string, by: string}>}>
@@ -135,7 +135,7 @@ final class Debug {
 		$out = array();
 		foreach ( \WP_Block_Type_Registry::get_instance()->get_all_registered() as $name => $type ) {
 			$name  = (string) $name;
-			$own   = str_starts_with( $name, 'pbs/' );
+			$own   = str_starts_with( $name, 'pbsw/' );
 			$addon = $addons[ $name ] ?? null;
 			if ( ! $own && null === $addon ) {
 				continue;
@@ -143,7 +143,7 @@ final class Debug {
 			if ( $own ) {
 				$file   = self::block_file( $name );
 				$folder = PBSW_DIR;
-				$source = '' !== $file && PBSW_DIR . 'blocks/' . substr( $name, 4 ) . '/block.json' !== $file ? 'pro' : 'free';
+				$source = '' !== $file && PBSW_DIR . 'blocks/' . substr( $name, 5 ) . '/block.json' !== $file ? 'pro' : 'free';
 				$meta   = self::block_meta( $file );
 				$ver    = '' !== (string) ( $meta['version'] ?? '' ) ? (string) $meta['version'] : PBSW_VERSION;
 			} else {
@@ -248,13 +248,47 @@ final class Debug {
 		if ( '' === $dir ) {
 			return '';
 		}
-		$dir     = wp_normalize_path( $dir );
-		$plugins = defined( 'WP_PLUGIN_DIR' ) ? trailingslashit( wp_normalize_path( WP_PLUGIN_DIR ) ) : '';
-		if ( '' !== $plugins && str_starts_with( $dir, $plugins ) ) {
-			return $plugins . strtok( substr( $dir, strlen( $plugins ) ), '/' );
+		$dir = untrailingslashit( wp_normalize_path( $dir ) );
+		$rel = self::plugin_relative( $dir );
+		if ( '' !== $rel && str_ends_with( $dir, '/' . $rel ) ) {
+			return substr( $dir, 0, strlen( $dir ) - strlen( $rel ) ) . strtok( $rel, '/' );
 		}
 
 		return $dir;
+	}
+
+	/**
+	 * A path relative to the plugins (or must-use plugins) folder, or empty when it is in neither.
+	 * Asks core's plugin_basename(), which knows where those folders are, rather than a constant.
+	 *
+	 * @param string $path File or folder.
+	 * @return string
+	 */
+	private static function plugin_relative( string $path ): string {
+		$path = wp_normalize_path( $path );
+		$rel  = plugin_basename( $path );
+
+		return trim( $path, '/' ) === $rel ? '' : $rel;
+	}
+
+	/**
+	 * Whether a path relative to the plugins folder belongs to an installed plugin.
+	 *
+	 * @param string $rel Path from plugin_relative().
+	 * @return bool
+	 */
+	private static function is_plugin_path( string $rel ): bool {
+		if ( ! function_exists( 'get_plugins' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+		$top = (string) strtok( $rel, '/' );
+		foreach ( array_keys( get_plugins() ) as $file ) {
+			if ( $file === $rel || dirname( (string) $file ) === $top ) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**
@@ -301,35 +335,31 @@ final class Debug {
 	 */
 	public static function origin( string $file ): string {
 		$file  = wp_normalize_path( $file );
-		$roots = array(
-			'plugin'          => defined( 'WP_PLUGIN_DIR' ) ? WP_PLUGIN_DIR : '',
-			'must-use plugin' => defined( 'WPMU_PLUGIN_DIR' ) ? WPMU_PLUGIN_DIR : '',
-			'theme'           => function_exists( 'get_theme_root' ) ? get_theme_root() : '',
-		);
-		foreach ( $roots as $kind => $root ) {
-			$root = '' === $root ? '' : trailingslashit( wp_normalize_path( (string) $root ) );
-			if ( '' !== $root && str_starts_with( $file, $root ) ) {
-				$rest = substr( $file, strlen( $root ) );
-				return $kind . ': ' . ( 'must-use plugin' === $kind ? $rest : strtok( $rest, '/' ) );
-			}
+		$theme = function_exists( 'get_theme_root' ) ? trailingslashit( wp_normalize_path( get_theme_root() ) ) : '';
+		if ( '/' !== $theme && '' !== $theme && str_starts_with( $file, $theme ) ) {
+			return 'theme: ' . strtok( substr( $file, strlen( $theme ) ), '/' );
 		}
-		$content = defined( 'WP_CONTENT_DIR' ) ? trailingslashit( wp_normalize_path( WP_CONTENT_DIR ) ) : '';
-		if ( '' !== $content && str_starts_with( $file, $content ) ) {
-			return 'wp-content/' . substr( $file, strlen( $content ) );
+		$rel = self::plugin_relative( $file );
+		if ( '' !== $rel ) {
+			return self::is_plugin_path( $rel ) ? 'plugin: ' . strtok( $rel, '/' ) : 'must-use plugin: ' . $rel;
+		}
+		$content = '' === $theme ? '' : trailingslashit( wp_normalize_path( dirname( $theme ) ) );
+		if ( '' !== $content && '/' !== $content && str_starts_with( $file, $content ) ) {
+			return 'content folder: ' . substr( $file, strlen( $content ) );
 		}
 
 		return basename( $file );
 	}
 
 	/**
-	 * A `pbs/*` block's own block.json: in `blocks/<slug>/` for a free block, one folder deeper
+	 * A `pbsw/*` block's own block.json: in `blocks/<slug>/` for a free block, one folder deeper
 	 * (the edition's segment) for a block of the paid edition.
 	 *
 	 * @param string $name Block name.
 	 * @return string Empty when the block has no block.json in this plugin.
 	 */
 	private static function block_file( string $name ): string {
-		$slug = substr( $name, 4 );
+		$slug = substr( $name, 5 );
 		$free = PBSW_DIR . 'blocks/' . $slug . '/block.json';
 		if ( is_readable( $free ) ) {
 			return $free;

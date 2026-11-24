@@ -1,5 +1,5 @@
 /**
- * pbs/sitemap editor: the server's own render (live pages), the content types in the sidebar.
+ * pbsw/sitemap editor: the server's own render (live pages), the content types in the sidebar.
  */
 import { __ } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
@@ -72,7 +72,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 			<ServerSideRender
-				block="pbs/sitemap"
+				block="pbsw/sitemap"
 				attributes={ attributes }
 				EmptyResponsePlaceholder={ () => (
 					<Placeholder

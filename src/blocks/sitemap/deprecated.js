@@ -1,5 +1,5 @@
 /**
- * pbs/sitemap deprecations, newest first. Entry n needs the fixture
+ * pbsw/sitemap deprecations, newest first. Entry n needs the fixture
  * wp/tests/fixtures/pbs-blocks/sitemap.deprecated-<n>.html (the vitest leg fails without it).
  */
 export default [];

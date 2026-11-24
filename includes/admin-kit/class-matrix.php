@@ -161,7 +161,7 @@ final class Matrix {
 		'pbs-r14'  => 'personal',
 		'pbs-r15'  => 'free',
 		'pbs-r16'  => 'free',
-		'pbs-r17'  => 'free',
+		'pbs-r17'  => 'personal',
 		'pbs-r18'  => 'personal',
 		'pbs-r19'  => 'personal',
 		'pbs-r20'  => 'agency',
@@ -340,6 +340,7 @@ final class Matrix {
 		'sh-r8'    => array( 18, true ),
 	);
 
+	// dotorg-omit:begin
 	/**
 	 * The lowest plan that includes a feature, or null for an unknown id.
 	 *
@@ -349,6 +350,7 @@ final class Matrix {
 	public static function min_plan( string $feature ): ?string {
 		return self::MIN_PLAN[ $feature ] ?? null;
 	}
+	// dotorg-omit:end
 
 	/**
 	 * The plans, lowest first, with their site limits (null = unlimited).

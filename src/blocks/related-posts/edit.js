@@ -1,5 +1,5 @@
 /**
- * pbs/related-posts editor: the server's own render (live posts), options in the sidebar.
+ * pbsw/related-posts editor: the server's own render (live posts), options in the sidebar.
  */
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
@@ -121,7 +121,7 @@ export default function Edit( { attributes, setAttributes, context } ) {
 				</PanelBody>
 			</InspectorControls>
 			<ServerSideRender
-				block="pbs/related-posts"
+				block="pbsw/related-posts"
 				attributes={ attributes }
 				urlQueryArgs={
 					context?.postId ? { post_id: context.postId } : undefined

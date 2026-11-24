@@ -57,7 +57,7 @@ final class Perf {
 	 */
 	public static function is_pbs_content( string $content ): bool {
 		// `"pbs":{` = any block (core ones too) carrying design styles (pbs-p4).
-		return str_contains( $content, '<!-- wp:pbs/' ) || str_contains( $content, '[pbs_' ) || str_contains( $content, '"pbs":{' );
+		return \ZinnDigital\PBS\Core\Block_Names::in_content( $content ) || str_contains( $content, '[pbs_' ) || str_contains( $content, '"pbs":{' );
 	}
 
 	/**

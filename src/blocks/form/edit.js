@@ -1,5 +1,5 @@
 /**
- * pbs/form editor (pbs-m6): pick the form plugin and the form in the Content tab, the look in the
+ * pbsw/form editor (pbs-m6): pick the form plugin and the form in the Content tab, the look in the
  * Styles tab; the preview is the real form, rendered by its plugin through the block's own render
  * callback (live data, so ServerSideRender), inside the block's wrapper.
  */
@@ -20,7 +20,7 @@ import ServerSideRender from '@wordpress/server-side-render';
 let pending = null;
 export function loadProviders() {
 	if ( ! pending ) {
-		pending = apiFetch( { path: '/pbs/v1/forms' } ).catch( ( e ) => {
+		pending = apiFetch( { path: '/pbsw/v1/forms' } ).catch( ( e ) => {
 			pending = null;
 			throw e;
 		} );

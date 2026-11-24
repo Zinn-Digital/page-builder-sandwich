@@ -74,8 +74,8 @@ export function RowEdit( props ) {
 		},
 	} );
 	const innerBlocksProps = useInnerBlocksProps( blockProps, {
-		allowedBlocks: [ 'pbs/column' ],
-		template: [ [ 'pbs/column' ], [ 'pbs/column' ] ],
+		allowedBlocks: [ 'pbsw/column' ],
+		template: [ [ 'pbsw/column' ], [ 'pbsw/column' ] ],
 		orientation: 'horizontal',
 	} );
 	return (

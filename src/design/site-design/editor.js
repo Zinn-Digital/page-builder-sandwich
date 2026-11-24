@@ -2,7 +2,7 @@
  * Entry `site-design`: the Site design sidebar in the block editor and in Sandwich Studio.
  *
  * - Block editor: a PluginSidebar (toolbar button + "Site design" in the options menu).
- * - Studio: a `pbs-studio`-scoped plugin that fills Studio's header tools and right-hand panel
+ * - Studio: a `pbsw-studio`-scoped plugin that fills Studio's header tools and right-hand panel
  *   slots (`PbswStudioHeaderTools`, `PbswStudioSidebar`), so Studio shows the same panel.
  */
 import { __ } from '@wordpress/i18n';
@@ -75,7 +75,7 @@ function StudioSidebar() {
 
 if ( window.pbswStudio ) {
 	registerPlugin( `${ NAME }-studio`, {
-		scope: 'pbs-studio',
+		scope: 'pbsw-studio',
 		render: StudioSidebar,
 	} );
 } else {

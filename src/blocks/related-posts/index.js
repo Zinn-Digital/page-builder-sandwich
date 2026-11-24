@@ -1,5 +1,5 @@
 /**
- * pbs/related-posts — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/related-posts — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/related-posts/block.json';

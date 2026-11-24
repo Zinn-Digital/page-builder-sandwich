@@ -9,7 +9,7 @@ import { lengthProp } from '../kinds';
 export default lengthProp( {
 	key: 'contentWidth',
 	group: 'layout',
-	blocks: [ 'pbs/section', 'pbs/container' ],
+	blocks: [ 'pbsw/section', 'pbsw/container' ],
 	property: '',
 	opts: { tokens: [ 'var' ] },
 	label: __( 'Content width', 'page-builder-sandwich' ),

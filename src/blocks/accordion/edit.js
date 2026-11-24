@@ -1,5 +1,5 @@
 /**
- * pbs/accordion editor: its items, and the two options that matter.
+ * pbsw/accordion editor: its items, and the two options that matter.
  */
 import { __ } from '@wordpress/i18n';
 import {
@@ -13,15 +13,15 @@ import { PanelBody, ToggleControl } from '@wordpress/components';
 import { cls } from '../shared/cls';
 
 const TEMPLATE = [
-	[ 'pbs/accordion-item', { open: true }, [ [ 'core/paragraph' ] ] ],
-	[ 'pbs/accordion-item', {}, [ [ 'core/paragraph' ] ] ],
+	[ 'pbsw/accordion-item', { open: true }, [ [ 'core/paragraph' ] ] ],
+	[ 'pbsw/accordion-item', {}, [ [ 'core/paragraph' ] ] ],
 ];
 
 export default function Edit( { attributes, setAttributes } ) {
 	const innerBlocksProps = useInnerBlocksProps(
 		useBlockProps( { className: cls( 'accordion' ) } ),
 		{
-			allowedBlocks: [ 'pbs/accordion-item' ],
+			allowedBlocks: [ 'pbsw/accordion-item' ],
 			template: TEMPLATE,
 			renderAppender: InnerBlocks.ButtonBlockAppender,
 		}

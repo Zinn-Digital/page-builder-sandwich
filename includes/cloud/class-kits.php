@@ -17,23 +17,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * REST routes the kit screen calls (`pbs/v1/kits…`), each a server-side call to the Zinn API.
+ * REST routes the kit screen calls (`pbsw/v1/kits…`), each a server-side call to the Zinn API.
  *
  * ⛔ External service (WordPress.org guideline 7, declared in readme.txt "External services"): the
  * kit catalogue and each kit's pages come from `https://api.zinndigital.com/v1/pbs-library/kits`,
- * and ONLY when an administrator opens the Kits screen or presses Import. What is sent: the
- * request, and the plugin name, version and site address in the User-Agent header; a Pro site also
- * sends its library session token, which unlocks Pro kits. The browser never calls the API directly.
+ * and ONLY after an administrator has switched the library on (off by default, `OPT_IN`). Until
+ * then nothing is contacted. What is sent once it is on: the request, its language, and the plugin
+ * name in the User-Agent header, never the site address or version; a Pro site also sends its
+ * library session token, which unlocks Pro kits. The browser never calls the API directly.
  *
- * ⭐ Free code, no locked code: the free plugin lists every kit, shows Pro kits greyed out with a
- * Go Pro link (the API marks them `locked`), and imports free kits. Whether a Pro kit unlocks is
- * decided by the API from the session token the premium code supplies through the
- * `pbsw_library_token` filter — the free plugin contains no Pro gate of its own.
+ * The list holds only kits this site can import: a kit the API marks `locked` is left out, so
+ * nothing is shown greyed out. The API decides from the session token, if any, that another
+ * plugin supplies through the `pbsw_library_token` filter.
  */
 final class Kits {
 
 	/** Transient holding the catalogue (per token state), refreshed hourly. */
 	public const CACHE = 'pbsw_kit_catalogue';
+
+	/** Option holding an administrator's explicit opt-in to the kit library. Absent means off. */
+	public const OPT_IN = 'pbsw_kit_library_opt_in';
 
 	/**
 	 * Hook registration.
@@ -97,6 +100,63 @@ final class Kits {
 					),
 				),
 			)
+		);
+		register_rest_route(
+			Rest::NAMESPACE,
+			'/kits/opt-in',
+			array(
+				'methods'             => \WP_REST_Server::CREATABLE,
+				'callback'            => array( self::class, 'set_opt_in' ),
+				'permission_callback' => static fn(): bool => current_user_can( 'manage_options' ),
+				'args'                => array(
+					'enabled' => array(
+						'type'     => 'boolean',
+						'required' => true,
+					),
+				),
+			)
+		);
+	}
+
+	/**
+	 * Has an administrator switched the kit library on? Nothing is contacted until one has.
+	 *
+	 * @return bool
+	 */
+	public static function opted_in(): bool {
+		return '1' === (string) get_option( self::OPT_IN, '' );
+	}
+
+	/**
+	 * POST /kits/opt-in: switch the library on, or off again (also dropping this user's cached list).
+	 *
+	 * @param \WP_REST_Request $request Request.
+	 * @return \WP_REST_Response
+	 */
+	public static function set_opt_in( \WP_REST_Request $request ): \WP_REST_Response {
+		if ( rest_sanitize_boolean( $request->get_param( 'enabled' ) ) ) {
+			update_option( self::OPT_IN, '1', false );
+		} else {
+			delete_option( self::OPT_IN );
+			delete_transient( self::CACHE . '_' . substr( md5( get_user_locale() . '|' . self::token() ), 0, 16 ) );
+		}
+
+		return new \WP_REST_Response( array( 'optIn' => self::opted_in() ), 200 );
+	}
+
+	/**
+	 * The refusal for any path that would contact the library before the opt-in.
+	 *
+	 * @return array<string, mixed> An Engine::call()-shaped failure.
+	 */
+	private static function not_opted_in(): array {
+		return array(
+			'ok'          => false,
+			'status'      => 403,
+			'body'        => array(),
+			'code'        => 'kit_library_off',
+			'message'     => __( 'The kit library is off. An administrator can switch it on under Page Builder Sandwich, Templates, Kits.', 'page-builder-sandwich' ),
+			'retry_after' => 0,
 		);
 	}
 
@@ -183,12 +243,25 @@ final class Kits {
 	 * @return \WP_REST_Response
 	 */
 	public static function list( \WP_REST_Request $request ): \WP_REST_Response {
+		if ( ! self::opted_in() ) {
+			// The screen explains the service and offers the switch; no request has been made.
+			return new \WP_REST_Response(
+				array(
+					'optIn'    => false,
+					'canOptIn' => current_user_can( 'manage_options' ),
+					'kits'     => array(),
+				),
+				200
+			);
+		}
 		$data = self::catalogue( (bool) $request->get_param( 'refresh' ) );
 		if ( isset( $data['failure'] ) ) {
 			return self::failure( (array) $data['failure'] );
 		}
 		// Which site-wide import options this user may choose; the screen hides the others.
-		$data['can'] = array(
+		$data['optIn']    = true;
+		$data['canOptIn'] = current_user_can( 'manage_options' );
+		$data['can']      = array(
 			'front' => self::can_set_front(),
 			'menu'  => self::can_add_menu(),
 		);
@@ -198,12 +271,15 @@ final class Kits {
 
 	/**
 	 * The catalogue in the admin's language, cached for an hour. The REST route and the
-	 * `pbs/list-kits` ability both read it here.
+	 * `pbsw/list-kits` ability both read it here.
 	 *
 	 * @param bool $refresh Skip the cache.
 	 * @return array<string, mixed> The catalogue, or `failure` => the Engine::call() result.
 	 */
 	public static function catalogue( bool $refresh = false ): array {
+		if ( ! self::opted_in() ) {
+			return array( 'failure' => self::not_opted_in() );
+		}
 		$token  = self::token();
 		$locale = get_user_locale();
 		$key    = self::CACHE . '_' . substr( md5( $locale . '|' . $token ), 0, 16 );
@@ -217,7 +293,14 @@ final class Kits {
 			$data = (array) $result['body'];
 			set_transient( $key, $data, HOUR_IN_SECONDS );
 		}
-		$data['upgradeUrl'] = (string) \ZinnDigital\PBS\Licensing::upgrade_url();
+		if ( isset( $data['kits'] ) && is_array( $data['kits'] ) ) {
+			$data['kits'] = array_values(
+				array_filter(
+					$data['kits'],
+					static fn( $kit ): bool => is_array( $kit ) && empty( $kit['locked'] )
+				)
+			);
+		}
 
 		return $data;
 	}
@@ -257,7 +340,7 @@ final class Kits {
 	}
 
 	/**
-	 * Fetch a kit and import it. The REST route and the `pbs/apply-kit` ability both run it here;
+	 * Fetch a kit and import it. The REST route and the `pbsw/apply-kit` ability both run it here;
 	 * the library refuses a Pro kit to a site without a Pro session (`pro_required`).
 	 *
 	 * @param string               $slug    Kit slug.
@@ -266,6 +349,9 @@ final class Kits {
 	 *                              `bad_kit` => true.
 	 */
 	public static function apply( string $slug, array $options ): array {
+		if ( ! self::opted_in() ) {
+			return array( 'failure' => self::not_opted_in() );
+		}
 		// The pages in the SITE's language (what visitors read), not the admin's.
 		$result = Engine::call( 'GET', '/v1/pbs-library/kits/' . rawurlencode( $slug ) . '?locale=' . rawurlencode( get_locale() ), null, self::token() );
 		if ( ! $result['ok'] ) {
@@ -288,8 +374,10 @@ final class Kits {
 	public static function failure( array $result ): \WP_REST_Response {
 		$status = (int) ( $result['status'] ?? 0 );
 		$code   = (string) ( $result['code'] ?? 'unreachable' );
-		if ( 'pro_required' === $code ) {
-			$message = __( 'This kit comes with Page Builder Sandwich Pro.', 'page-builder-sandwich' );
+		if ( 'kit_library_off' === $code ) {
+			$message = (string) $result['message'];
+		} elseif ( 'pro_required' === $code ) {
+			$message = __( 'This kit is not available on this site.', 'page-builder-sandwich' );
 		} elseif ( 0 === $status || $status >= 500 ) {
 			$message = __( 'The kit library could not be reached. Check this site can make outgoing connections, then try again.', 'page-builder-sandwich' );
 		} else {

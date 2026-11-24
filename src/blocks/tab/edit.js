@@ -1,5 +1,5 @@
 /**
- * pbs/tab editor: the panel's blocks (its title is edited in the parent's tab row, or here).
+ * pbsw/tab editor: the panel's blocks (its title is edited in the parent's tab row, or here).
  */
 import { __ } from '@wordpress/i18n';
 import {

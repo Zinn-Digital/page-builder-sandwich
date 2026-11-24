@@ -1,6 +1,6 @@
 <?php
 /**
- * Design prop `navDrawerBg` (NAV1, pbs/nav-menu).
+ * Design prop `navDrawerBg` (NAV1, pbsw/nav-menu).
  *
  * @package ZinnDigital\PBS
  */
@@ -29,7 +29,7 @@ final class Nav_Drawer_Bg extends Color_Prop {
 	public const GROUP = 'menu';
 
 	/** The block it styles. */
-	public const BLOCKS = array( 'pbs/nav-menu' );
+	public const BLOCKS = array( 'pbsw/nav-menu' );
 
 	/**
 	 * {@inheritDoc}

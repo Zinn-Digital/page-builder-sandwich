@@ -7,7 +7,7 @@ import { useEffect, useMemo, useState } from '@wordpress/element';
 import { useDispatch } from '@wordpress/data';
 import { store as coreStore } from '@wordpress/core-data';
 import { store as noticesStore } from '@wordpress/notices';
-import { parse } from '@wordpress/blocks';
+import { parse } from '../../core/parse';
 import { BlockPreview } from '@wordpress/block-editor';
 import apiFetch from '@wordpress/api-fetch';
 import { Button, Modal, Spinner, Notice } from '@wordpress/components';

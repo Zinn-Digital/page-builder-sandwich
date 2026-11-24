@@ -1,10 +1,10 @@
 /**
- * The legacy developer API — `window.pbsAddInspector()` / `window.pbsRemoveInspector()` and the
- * PHP `pbs_shortcodes` filter — kept working on top of block variations.
+ * The legacy developer API — `window.pbswAddInspector()` / `window.pbswRemoveInspector()` and the
+ * PHP `pbsw_shortcodes` filter — kept working on top of block variations.
  *
  * Legacy 5.1.0 kept every shortcode definition in `PBSInspectorOptions.Shortcode` and built its
  * inspector panel from it (js/dev/script.js:18864). Here each definition becomes a VARIATION of
- * the pbs/shortcode block instead, so a third-party add-on written against the old API shows up
+ * the pbsw/shortcode block instead, so a third-party add-on written against the old API shows up
  * in the block inserter with the controls it declared, and nothing in the add-on changes.
  *
  * The merge rules are the legacy ones, deliberately:
@@ -103,7 +103,7 @@ export function createRegistry( sink ) {
 	};
 
 	/**
-	 * window.pbsAddInspector( tag | tag[], args ).
+	 * window.pbswAddInspector( tag | tag[], args ).
 	 *
 	 * @param {string|string[]} tag  Tag or tags.
 	 * @param {Object}          args Legacy definition.
@@ -143,7 +143,7 @@ export function createRegistry( sink ) {
 	};
 
 	/**
-	 * window.pbsRemoveInspector( tag | tag[] ).
+	 * window.pbswRemoveInspector( tag | tag[] ).
 	 *
 	 * @param {string|string[]} tag Tag or tags.
 	 * @return {void}
@@ -207,6 +207,6 @@ export function install( win, registry ) {
 	win.pbswDevCompatQueue = { push: apply };
 	queued.forEach( apply );
 
-	win.pbsAddInspector = ( tag, args ) => registry.add( tag, args );
-	win.pbsRemoveInspector = ( tag ) => registry.remove( tag );
+	win.pbswAddInspector = ( tag, args ) => registry.add( tag, args );
+	win.pbswRemoveInspector = ( tag ) => registry.remove( tag );
 }

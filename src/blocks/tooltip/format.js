@@ -21,7 +21,7 @@ import {
 import { useState } from '@wordpress/element';
 import { info } from '@wordpress/icons';
 
-export const NAME = 'pbs/tooltip';
+export const NAME = 'pbsw/tooltip';
 
 const settings = {
 	title: __( 'Tooltip', 'page-builder-sandwich' ),

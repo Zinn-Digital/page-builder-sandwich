@@ -1,5 +1,5 @@
 /**
- * pbs/tabs view module (Interactivity API): the WAI-ARIA Tabs pattern, automatic activation.
+ * pbsw/tabs view module (Interactivity API): the WAI-ARIA Tabs pattern, automatic activation.
  * The server rendered the initial state (ids, aria-selected, tabindex, hidden panels); this only
  * moves the selection. Arrow keys follow the reading direction (mirrored in right-to-left),
  * Up/Down on vertical tabs, Home/End jump to the ends. `__PREFIX__` is the store namespace.

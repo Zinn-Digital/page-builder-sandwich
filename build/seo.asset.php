@@ -5,5 +5,5 @@
 		'wp-data',
 		'wp-hooks'
 	),
-	'version' => 'a924006c771599fff99e'
+	'version' => '7b4f5882462fe318feed'
 );

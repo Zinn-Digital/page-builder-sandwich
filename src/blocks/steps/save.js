@@ -1,5 +1,5 @@
 /**
- * pbs/steps saved markup: the footprint-free fallback (an ordered list, no classes, no
+ * pbsw/steps saved markup: the footprint-free fallback (an ordered list, no classes, no
  * data-wp-*). The live HTML is rebuilt by Blocks\Content::render_steps().
  */
 import { RichText } from '@wordpress/block-editor';

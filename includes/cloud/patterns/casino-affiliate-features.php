@@ -31,9 +31,9 @@ return array(
 <p>@@PBS_T1@@</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:pbs/feature-list {"items":[{"title":"@@PBS_T2@@","text":"@@PBS_T3@@"},{"title":"@@PBS_T4@@","text":"@@PBS_T5@@"},{"title":"@@PBS_T6@@","text":"@@PBS_T7@@"},{"title":"@@PBS_T8@@","text":"@@PBS_T9@@"},{"title":"@@PBS_T10@@","text":"@@PBS_T11@@"},{"title":"@@PBS_T12@@","text":"@@PBS_T13@@"}],"level":3} -->
+<!-- wp:pbsw/feature-list {"items":[{"title":"@@PBS_T2@@","text":"@@PBS_T3@@"},{"title":"@@PBS_T4@@","text":"@@PBS_T5@@"},{"title":"@@PBS_T6@@","text":"@@PBS_T7@@"},{"title":"@@PBS_T8@@","text":"@@PBS_T9@@"},{"title":"@@PBS_T10@@","text":"@@PBS_T11@@"},{"title":"@@PBS_T12@@","text":"@@PBS_T13@@"}],"level":3} -->
 <ul><li><h3>@@PBS_T2@@</h3><p>@@PBS_T3@@</p></li><li><h3>@@PBS_T4@@</h3><p>@@PBS_T5@@</p></li><li><h3>@@PBS_T6@@</h3><p>@@PBS_T7@@</p></li><li><h3>@@PBS_T8@@</h3><p>@@PBS_T9@@</p></li><li><h3>@@PBS_T10@@</h3><p>@@PBS_T11@@</p></li><li><h3>@@PBS_T12@@</h3><p>@@PBS_T13@@</p></li></ul>
-<!-- /wp:pbs/feature-list --></div>
+<!-- /wp:pbsw/feature-list --></div>
 <!-- /wp:group -->',
 		array(
 			__( 'How we review a casino', 'page-builder-sandwich' ),

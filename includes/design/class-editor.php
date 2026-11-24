@@ -105,14 +105,12 @@ final class Editor {
 		$tokens = get_option( 'pbsw_tokens', array() );
 
 		return array(
-			'prefix'        => Settings::prefix(),
-			'breakpoints'   => Breakpoints::media_list(),
-			'customAllowed' => Breakpoints::custom_allowed(),
-			'atRules'       => At_Rules::all(),
-			'tokens'        => is_array( $tokens ) ? $tokens : array(),
-			'elementCss'    => Compiler::element_css_enabled() && current_user_can( 'unfiltered_html' ),
-			'settingsUrl'   => admin_url( 'admin.php?page=page-builder-sandwich' ),
-			'dropWrap'      => Settings::drop_wrap(),
+			'prefix'      => Settings::prefix(),
+			'breakpoints' => Breakpoints::media_list(),
+			'atRules'     => At_Rules::all(),
+			'tokens'      => is_array( $tokens ) ? $tokens : array(),
+			'settingsUrl' => admin_url( 'admin.php?page=page-builder-sandwich' ),
+			'dropWrap'    => Settings::drop_wrap(),
 		);
 	}
 }

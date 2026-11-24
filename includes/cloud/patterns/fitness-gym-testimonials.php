@@ -29,15 +29,15 @@ return array(
 
 <!-- wp:columns -->
 <div class="wp-block-columns"><!-- wp:column -->
-<div class="wp-block-column"><!-- wp:pbs/testimonial {"quote":"@@PBS_T1@@","name":"@@PBS_T2@@","role":"@@PBS_T3@@","rating":5} -->
+<div class="wp-block-column"><!-- wp:pbsw/testimonial {"quote":"@@PBS_T1@@","name":"@@PBS_T2@@","role":"@@PBS_T3@@","rating":5} -->
 <figure><blockquote><p>@@PBS_T1@@</p></blockquote><figcaption>@@PBS_T2@@, @@PBS_T3@@</figcaption></figure>
-<!-- /wp:pbs/testimonial --></div>
+<!-- /wp:pbsw/testimonial --></div>
 <!-- /wp:column -->
 
 <!-- wp:column -->
-<div class="wp-block-column"><!-- wp:pbs/testimonial {"quote":"@@PBS_T4@@","name":"@@PBS_T5@@","role":"@@PBS_T3@@","rating":5} -->
+<div class="wp-block-column"><!-- wp:pbsw/testimonial {"quote":"@@PBS_T4@@","name":"@@PBS_T5@@","role":"@@PBS_T3@@","rating":5} -->
 <figure><blockquote><p>@@PBS_T4@@</p></blockquote><figcaption>@@PBS_T5@@, @@PBS_T3@@</figcaption></figure>
-<!-- /wp:pbs/testimonial --></div>
+<!-- /wp:pbsw/testimonial --></div>
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->',

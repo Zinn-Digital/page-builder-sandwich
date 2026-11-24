@@ -1,5 +1,5 @@
 /**
- * pbs/alert editor: the live look (the front end's own classes and stylesheet), the title and
+ * pbsw/alert editor: the live look (the front end's own classes and stylesheet), the title and
  * the text edited in place, and the options in the sidebar.
  */
 import { __ } from '@wordpress/i18n';

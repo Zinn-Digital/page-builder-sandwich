@@ -31,8 +31,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Media {
 
-	/** A legacy plugin-folder URL: any host (or none), either edition's folder, any file. */
-	private const URL_RE = '#(?:(?:https?:)?//[^\s"\'()<>]+?)?/wp-content/plugins/[A-Za-z0-9_-]+/page_builder_sandwich/(?:[A-Za-z0-9_-]+/)*([A-Za-z0-9_.-]+\.(?:jpe?g|png|gif|webp|svg))#i';
+	/**
+	 * A legacy plugin-folder URL: any host (or none), any content-folder name (a site may move it),
+	 * either edition's folder, any file.
+	 */
+	private const URL_RE = '#(?:(?:https?:)?//[^\s"\'()<>]+?)?/(?:[A-Za-z0-9_.-]+/)*plugins/[A-Za-z0-9_-]+/page_builder_sandwich/(?:[A-Za-z0-9_-]+/)*([A-Za-z0-9_.-]+\.(?:jpe?g|png|gif|webp|svg))#i';
 
 	/**
 	 * Resolved URLs for this request (basename → URL or '' when not bundled / not copyable).
@@ -80,7 +83,19 @@ final class Media {
 	 * @return string
 	 */
 	public static function localize( string $html ): string {
-		return self::has_legacy_urls( $html ) ? self::rewrite( $html, array( self::class, 'url_for' ) ) : $html;
+		if ( ! self::has_legacy_urls( $html ) ) {
+			return $html;
+		}
+
+		// This path prints into a page, so the uploads URL is escaped for HTML here. The raw
+		// `url_for` stays for the conversion path, which also writes CSS and block JSON.
+		return self::rewrite(
+			$html,
+			static function ( string $basename ): string {
+				$url = self::url_for( $basename );
+				return '' === $url ? '' : esc_url( $url );
+			}
+		);
 	}
 
 	/**

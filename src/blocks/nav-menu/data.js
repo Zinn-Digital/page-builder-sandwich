@@ -1,6 +1,6 @@
 /**
  * The chosen menu's items (and every menu, for the picker), from core's REST API. Shared by
- * pbs/nav-menu's editor and the Pro mega panel and item options.
+ * pbsw/nav-menu's editor and the Pro mega panel and item options.
  */
 import { useSelect } from '@wordpress/data';
 import { store as coreStore } from '@wordpress/core-data';

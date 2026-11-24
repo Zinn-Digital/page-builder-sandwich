@@ -1,5 +1,5 @@
 /**
- * pbs/protected — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/protected — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/protected/block.json';

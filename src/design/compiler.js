@@ -88,12 +88,12 @@ export const atKeys = ( atRules ) =>
 export function layoutSuffix( block, prefix ) {
 	const name = block.blockName || '';
 	const width =
-		block.attrs?.width ?? ( name === 'pbs/section' ? 'boxed' : 'full' );
+		block.attrs?.width ?? ( name === 'pbsw/section' ? 'boxed' : 'full' );
 	if (
-		( name === 'pbs/section' || name === 'pbs/container' ) &&
+		( name === 'pbsw/section' || name === 'pbsw/container' ) &&
 		width === 'boxed'
 	) {
-		return `>.${ prefix }-${ name.slice( 4 ) }__in`;
+		return `>.${ prefix }-${ name.slice( 5 ) }__in`;
 	}
 	return '';
 }

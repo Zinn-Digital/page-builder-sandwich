@@ -1,5 +1,5 @@
 /**
- * pbs/reading-progress view module (Interactivity API): how far down the page the visitor is,
+ * pbsw/reading-progress view module (Interactivity API): how far down the page the visitor is,
  * written as a 0–1 custom property the stylesheet scales the bar by. One passive scroll listener,
  * at most one update per frame. `__PREFIX__` is the store namespace (and the property's prefix).
  */

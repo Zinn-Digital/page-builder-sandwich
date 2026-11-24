@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * `pbs/v1/settings` — read and save the plugin settings.
+ * `pbsw/v1/settings` — read and save the plugin settings.
  *
  * ⛔ Every route carries a real `permission_callback` (`manage_options`). The REST cookie nonce
  * proves the request came from this site's admin screen; it does not prove the person may change
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Rest {
 
 	/** REST namespace. */
-	public const NAMESPACE = 'pbs/v1';
+	public const NAMESPACE = 'pbsw/v1';
 
 	/**
 	 * Hook route registration.
@@ -54,10 +54,12 @@ final class Rest {
 					'callback'            => array( self::class, 'update_settings' ),
 					'permission_callback' => array( self::class, 'can_manage' ),
 					'args'                => array(
+						// dotorg-omit:begin
 						'prefix'    => array(
 							'type'     => 'string',
 							'required' => false,
 						),
+						// dotorg-omit:end
 						'mcp'       => array(
 							'type'     => 'boolean',
 							'required' => false,
@@ -99,9 +101,11 @@ final class Rest {
 	 */
 	public static function update_settings( \WP_REST_Request $request ) {
 		$input = array();
+		// dotorg-omit:begin
 		if ( null !== $request->get_param( 'prefix' ) ) {
 			$input['prefix'] = (string) $request->get_param( 'prefix' );
 		}
+		// dotorg-omit:end
 		if ( null !== $request->get_param( 'mcp' ) ) {
 			$input['mcp'] = (bool) $request->get_param( 'mcp' );
 		}
@@ -125,11 +129,12 @@ final class Rest {
 	 */
 	private static function payload(): array {
 		return array(
-			'prefix'    => Settings::get()['prefix'],
-			'beta'      => Licensing::beta(),
-			'drop_wrap' => Settings::drop_wrap(),
+			'prefix'        => Settings::get()['prefix'],
+			'prefix_locked' => Settings::prefix_locked(),
+			'beta'          => Licensing::beta(),
+			'drop_wrap'     => Settings::drop_wrap(),
 			// The switch as saved, and what is live on THIS request (the kit booted before it).
-			'mcp'       => array( 'saved' => Settings::get()['mcp'] ) + \ZinnDigital\PBS\McpKit\Server::describe(),
+			'mcp'           => array( 'saved' => Settings::get()['mcp'] ) + \ZinnDigital\PBS\McpKit\Server::describe(),
 		);
 	}
 }

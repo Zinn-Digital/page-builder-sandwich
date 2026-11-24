@@ -1,5 +1,5 @@
 /**
- * pbs/glossary editor: terms and definitions edited in place, in the order entered (the page
+ * pbsw/glossary editor: terms and definitions edited in place, in the order entered (the page
  * sorts them A–Z when "Sort A to Z" is on, as the sidebar says).
  */
 import { __, sprintf } from '@wordpress/i18n';

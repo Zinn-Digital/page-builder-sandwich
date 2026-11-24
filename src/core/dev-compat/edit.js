@@ -1,5 +1,5 @@
 /**
- * pbs/shortcode edit(): the controls the add-on declared, in the block sidebar.
+ * pbsw/shortcode edit(): the controls the add-on declared, in the block sidebar.
  *
  * The canvas shows the add-on's label and the shortcode text, not a live server render: a live
  * preview would mean executing a shortcode built from editor input on the server, which is the
@@ -72,7 +72,7 @@ function GenericControls( {
 	showContent = true,
 } ) {
 	const attrs = attributes.attrs || {};
-	const tags = useSiteData( 'tags', '/pbs/v1/shortcodes', true );
+	const tags = useSiteData( 'tags', '/pbsw/v1/shortcodes', true );
 	return (
 		<>
 			{ tags && (
@@ -159,7 +159,7 @@ export function makeEdit( registry ) {
 		].includes( attributes.tag );
 		const providers = useSiteData(
 			'forms',
-			'/pbs/v1/forms',
+			'/pbsw/v1/forms',
 			isForm && ! def
 		);
 		const known = def

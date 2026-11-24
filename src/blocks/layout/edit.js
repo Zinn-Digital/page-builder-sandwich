@@ -1,5 +1,5 @@
 /**
- * The editor of pbs/section and pbs/container (pbs-d1): the same markup the server renders, the
+ * The editor of pbsw/section and pbsw/container (pbs-d1): the same markup the server renders, the
  * block's own settings (tag, width, link) in the Settings tab with quick layout controls that write
  * the Style tab's values for the breakpoint being edited, and the visual grid editor.
  */

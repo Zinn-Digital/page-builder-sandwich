@@ -63,13 +63,7 @@ final class Transfer {
 		$options = array(
 			\ZinnDigital\PBS\Settings::OPTION,
 			\ZinnDigital\PBS\Settings::DROP_WRAP_OPTION,
-			'pbsw_breakpoints',
-			'pbsw_classes',
-			'pbsw_css_vars',
-			'pbsw_tokens',
-			'pbsw_brand_kit',
-			'pbsw_roles',
-			'pbsw_maintenance',
+			\ZinnDigital\PBS\Design\Breakpoints::OPTION,
 		);
 
 		/**
@@ -213,7 +207,7 @@ final class Transfer {
 	 * @return array<int, string>
 	 */
 	private static function portable_meta_keys(): array {
-		$keys = array( 'wp_pattern_sync_status', '_pbsw_page_custom_css', '_pbsw_display_conditions', '_pbsw_template_location' );
+		$keys = array( 'wp_pattern_sync_status', '_pbsw_display_conditions', '_pbsw_template_location' );
 
 		/**
 		 * Filters the post meta keys import and export carry with each item.
@@ -360,9 +354,8 @@ final class Transfer {
 			if ( $download_media && ! $dry_run ) {
 				$content = self::localise_media( $content, (string) ( $package['uploads'] ?? '' ), $media, $report );
 			}
-			if ( ! current_user_can( 'unfiltered_html' ) ) {
-				$content = wp_kses_post( $content );
-			}
+			// For every user: importing a file is never a way to add code.
+			$content = \ZinnDigital\PBS\Core\Import_Clean::content( $content );
 
 			if ( $dry_run ) {
 				$report[ $existing && 'replace' === $mode ? 'replaced' : 'created' ][] = $label;
@@ -388,7 +381,12 @@ final class Transfer {
 						continue;
 					}
 					if ( ! $dry_run ) {
-						update_option( (string) $name, self::clean_setting( $value ) );
+						$saved = self::write_setting( (string) $name, $value );
+						if ( is_wp_error( $saved ) ) {
+							/* translators: 1: setting name, 2: the reason. */
+							$report['errors'][] = sprintf( __( 'The setting %1$s was not imported: %2$s', 'page-builder-sandwich' ), (string) $name, $saved->get_error_message() );
+							continue;
+						}
 					}
 					$report['settings'][] = (string) $name;
 				}
@@ -406,6 +404,31 @@ final class Transfer {
 		}
 
 		return $report;
+	}
+
+	/**
+	 * Save one imported setting through the validation its own screen uses. A package never
+	 * changes whether the site's MCP server is on.
+	 *
+	 * @param string $name  Option name, already on the allow-list.
+	 * @param mixed  $value Value from the package.
+	 * @return true|\WP_Error
+	 */
+	private static function write_setting( string $name, $value ) {
+		if ( \ZinnDigital\PBS\Settings::OPTION === $name ) {
+			$value = is_array( $value ) ? array_intersect_key( $value, array( 'prefix' => true ) ) : array();
+			return \ZinnDigital\PBS\Settings::save( $value );
+		}
+		if ( \ZinnDigital\PBS\Settings::DROP_WRAP_OPTION === $name ) {
+			return \ZinnDigital\PBS\Settings::save( array( 'drop_wrap' => is_scalar( $value ) ? (string) $value : '' ) );
+		}
+		if ( \ZinnDigital\PBS\Design\Breakpoints::OPTION === $name ) {
+			$saved = \ZinnDigital\PBS\Design\Breakpoints::save( is_array( $value ) ? $value : array() );
+			return is_wp_error( $saved ) ? $saved : true;
+		}
+		update_option( $name, self::clean_setting( $value ) );
+
+		return true;
 	}
 
 	/**
@@ -540,9 +563,6 @@ final class Transfer {
 		if ( ! preg_match_all( $pattern, $content, $found ) ) {
 			return $content;
 		}
-		require_once ABSPATH . 'wp-admin/includes/file.php';
-		require_once ABSPATH . 'wp-admin/includes/media.php';
-		require_once ABSPATH . 'wp-admin/includes/image.php';
 		foreach ( array_unique( $found[0] ) as $url ) {
 			if ( isset( $media[ $url ] ) ) {
 				continue;
@@ -550,7 +570,7 @@ final class Transfer {
 			if ( str_ends_with( strtolower( $url ), '.svg' ) ) {
 				continue; // WordPress does not accept SVG uploads by default; leave the original link.
 			}
-			$id = media_sideload_image( $url, 0, null, 'id' );
+			$id = self::sideload_image( $url );
 			if ( is_wp_error( $id ) ) {
 				/* translators: 1: image address, 2: the reason. */
 				$report['errors'][] = sprintf( __( 'The image %1$s was not copied: %2$s', 'page-builder-sandwich' ), $url, $id->get_error_message() );
@@ -564,5 +584,27 @@ final class Transfer {
 		}
 
 		return strtr( $content, $media );
+	}
+
+	/**
+	 * Copy one remote image into the media library. Outside wp-admin core has not loaded what
+	 * media_sideload_image() runs on: it calls download_url() and, through
+	 * media_handle_sideload(), wp_generate_attachment_metadata(). Each file loads only if missing.
+	 *
+	 * @param string $url Image address.
+	 * @return int|string|\WP_Error Attachment id, or why it failed.
+	 */
+	private static function sideload_image( string $url ) {
+		if ( ! function_exists( 'download_url' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/file.php';
+		}
+		if ( ! function_exists( 'wp_generate_attachment_metadata' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/image.php';
+		}
+		if ( ! function_exists( 'media_sideload_image' ) ) {
+			require_once ABSPATH . 'wp-admin/includes/media.php';
+		}
+
+		return media_sideload_image( $url, 0, null, 'id' );
 	}
 }

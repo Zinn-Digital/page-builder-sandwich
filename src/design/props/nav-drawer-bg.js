@@ -1,5 +1,5 @@
 /**
- * Design prop `navDrawerBg` (NAV1, pbs/nav-menu). Twin: includes/design/props/class-nav-drawer-bg.php.
+ * Design prop `navDrawerBg` (NAV1, pbsw/nav-menu). Twin: includes/design/props/class-nav-drawer-bg.php.
  */
 import { __ } from '@wordpress/i18n';
 
@@ -9,7 +9,7 @@ import { colorProp } from '../kinds';
 export default colorProp( {
 	key: 'navDrawerBg',
 	group: 'menu',
-	blocks: [ 'pbs/nav-menu' ],
+	blocks: [ 'pbsw/nav-menu' ],
 	property: '',
 	label: __( 'Mobile menu background', 'page-builder-sandwich' ),
 	control: 'color',

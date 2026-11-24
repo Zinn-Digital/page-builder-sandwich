@@ -1,5 +1,5 @@
 /**
- * pbs/form saved markup: the form plugin's own shortcode, as plain text in a paragraph. With this
+ * pbsw/form saved markup: the form plugin's own shortcode, as plain text in a paragraph. With this
  * plugin switched off WordPress still runs the shortcode, so the visitor still gets the working
  * form (unstyled) — the footprint-free fallback. The live, styled HTML comes from
  * Marketing::render_form().

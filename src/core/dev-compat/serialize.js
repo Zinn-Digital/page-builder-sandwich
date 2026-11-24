@@ -1,5 +1,5 @@
 /**
- * Shortcode text for a pbs/shortcode block: `[tag a="b" /]` or `[tag a="b"]content[/tag]`.
+ * Shortcode text for a pbsw/shortcode block: `[tag a="b" /]` or `[tag a="b"]content[/tag]`.
  *
  * This string is what the block SAVES, so it is what stays in post_content if the plugin is ever
  * deactivated — WordPress then runs it as an ordinary shortcode. It must therefore be text that

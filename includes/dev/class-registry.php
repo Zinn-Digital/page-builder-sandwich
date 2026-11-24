@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * One registry for everything an add-on adds: blocks, dynamic data sources, display conditions and
  * form actions. The public functions in api.php (`pbsw_register_*`) are the documented way in; this
- * class validates, keeps the list (for `pbsw_get_extensions()`, the `pbs/list-extensions` ability
+ * class validates, keeps the list (for `pbsw_get_extensions()`, the `pbsw/list-extensions` ability
  * and the developer screen) and wires each kind into the module that uses it, through that module's
  * own filters. Dynamic sources, conditions and form actions take effect where the Pro modules run
  * (dynamic data, the theme builder and element conditions, the form builder); registering them on a
@@ -105,7 +105,7 @@ final class Registry {
 			return new \WP_Error( 'pbsw_dev_name', sprintf( 'Page Builder Sandwich: "%s" is not a valid name. Use "vendor/name" in lowercase letters, digits and hyphens.', $name ) );
 		}
 		if ( str_starts_with( $name, 'pbs/' ) || str_starts_with( $name, 'pbsw/' ) ) {
-			return new \WP_Error( 'pbsw_dev_reserved', sprintf( 'Page Builder Sandwich: "%s" uses a reserved namespace (pbs/, pbsw/).', $name ) );
+			return new \WP_Error( 'pbsw_dev_reserved', sprintf( 'Page Builder Sandwich: "%s" uses a reserved namespace (pbsw/, pbsw/).', $name ) );
 		}
 		if ( isset( self::$items[ $kind ][ $name ] ) ) {
 			return new \WP_Error( 'pbsw_dev_taken', sprintf( 'Page Builder Sandwich: "%s" is already registered.', $name ) );

@@ -27,11 +27,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class Html_Attributes {
 
 	/**
-	 * Accepted names: `data-` or `aria-` followed by a lower-case name.
+	 * Accepted names: `data-` or `aria-` followed by a lower-case name. `data-wp-*` is refused: those
+	 * are Interactivity API directives, which run behaviour, and a Contributor stores these values.
 	 *
 	 * @var string
 	 */
-	public const NAME_PATTERN = '/^(?:data-[a-z0-9][a-z0-9_.:-]{0,62}|aria-[a-z]{2,40})$/';
+	public const NAME_PATTERN = '/^(?:data-(?!wp-)[a-z0-9][a-z0-9_.:-]{0,62}|aria-[a-z]{2,40})$/';
 
 	/**
 	 * Attributes per block.

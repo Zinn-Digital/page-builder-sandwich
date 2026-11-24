@@ -1,5 +1,5 @@
 /**
- * pbs/post-meta editor: the server's own render, and which details to show.
+ * pbsw/post-meta editor: the server's own render, and which details to show.
  */
 import { __ } from '@wordpress/i18n';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
@@ -55,7 +55,7 @@ export default function Edit( { attributes, setAttributes, context } ) {
 				</PanelBody>
 			</InspectorControls>
 			<ServerSideRender
-				block="pbs/post-meta"
+				block="pbsw/post-meta"
 				attributes={ attributes }
 				urlQueryArgs={
 					context?.postId ? { post_id: context.postId } : undefined

@@ -1,5 +1,5 @@
 /**
- * pbs/booking — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/booking — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/booking/block.json';

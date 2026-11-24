@@ -255,7 +255,7 @@ final class Ai_Routes {
 			'description' => __( 'The post or page ID.', 'page-builder-sandwich' ),
 		);
 		Ability::register(
-			'pbs/ai-write-text',
+			'pbsw/ai-write-text',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_posts (edit_post when post_id is given); the AI settings\' role and spending rules',
@@ -296,7 +296,7 @@ final class Ai_Routes {
 			)
 		);
 		Ability::register(
-			'pbs/ai-generate-section',
+			'pbsw/ai-generate-section',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_posts; edit_post to add it to a page; the AI settings\' role and spending rules',
@@ -328,7 +328,7 @@ final class Ai_Routes {
 			)
 		);
 		Ability::register(
-			'pbs/ai-suggest-seo-meta',
+			'pbsw/ai-suggest-seo-meta',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on the page; the AI settings\' role and spending rules',
@@ -354,7 +354,7 @@ final class Ai_Routes {
 			)
 		);
 		Ability::register(
-			'pbs/ai-save-seo-meta',
+			'pbsw/ai-save-seo-meta',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on the page',
@@ -387,7 +387,7 @@ final class Ai_Routes {
 			)
 		);
 		Ability::register(
-			'pbs/ai-write-alt-text',
+			'pbsw/ai-write-alt-text',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'upload_files and edit_post on the image or page; the AI settings\' role and spending rules',
@@ -414,7 +414,7 @@ final class Ai_Routes {
 			)
 		);
 		Ability::register(
-			'pbs/ai-undo',
+			'pbsw/ai-undo',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on the page',

@@ -1,7 +1,7 @@
 /**
  * Debug mode on the settings screen (row 71a): a switch, and while it is on every block of the
  * plugin and its add-ons with its version and whether something overrides it (and what), read
- * from `pbs/v1/debug`. The list can be copied as plain text for a support ticket.
+ * from `pbsw/v1/debug`. The list can be copied as plain text for a support ticket.
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { useEffect, useState } from '@wordpress/element';

@@ -12,11 +12,11 @@ import './admin.scss';
 // Templates & kits (pbs-c1, pbs-c2): its own chunk, fetched only when the route opens (§2.22).
 const Templates = lazy( () => import( '../admin-templates/Templates' ) );
 
-// DOM ready, not at parse time: modules add panels through the `pbs.admin.panels` filter from
+// DOM ready, not at parse time: modules add panels through the `pbsw.admin.panels` filter from
 // their own footer scripts (Admin::enqueue's `pbsw_admin_enqueue` action), which run after this one.
 domReady( () => {
 	const root = document.getElementById( 'pbs-admin-root' );
-	const data = window.pbsAdmin;
+	const data = window.pbswAdmin;
 	if ( ! root || ! data ) {
 		return;
 	}

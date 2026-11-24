@@ -1,6 +1,6 @@
 /**
- * pbs/protected editor: the protected blocks edited in place; the password is set in the sidebar.
- * Only its hash is stored (hashed by the server, pbs/v1/blocks/protected/hash), never the password.
+ * pbsw/protected editor: the protected blocks edited in place; the password is set in the sidebar.
+ * Only its hash is stored (hashed by the server, pbsw/v1/blocks/protected/hash), never the password.
  */
 import { __ } from '@wordpress/i18n';
 import { useEffect, useState } from '@wordpress/element';
@@ -30,7 +30,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const save = () => {
 		setState( 'busy' );
 		apiFetch( {
-			path: '/pbs/v1/blocks/protected/hash',
+			path: '/pbsw/v1/blocks/protected/hash',
 			method: 'POST',
 			data: { password },
 		} )

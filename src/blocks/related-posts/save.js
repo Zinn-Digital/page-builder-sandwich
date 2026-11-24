@@ -1,5 +1,5 @@
 /**
- * pbs/related-posts saved markup: nothing. The block shows live site data (other posts), which static markup
+ * pbsw/related-posts saved markup: nothing. The block shows live site data (other posts), which static markup
  * could only get wrong, so it is rendered on every view by Site::render_related_posts() — and with the
  * plugin off the page simply does not show it.
  */

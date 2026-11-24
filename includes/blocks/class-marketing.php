@@ -82,7 +82,7 @@ final class Marketing {
 	}
 
 	/**
-	 * `pbs/social-icons`: links to profiles, each an icon with an accessible name.
+	 * `pbsw/social-icons`: links to profiles, each an icon with an accessible name.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: items [{networkSlug, url, label, icon, iconId}], look, shape, size, justify, newTab.
 	 * @return string
@@ -125,7 +125,7 @@ final class Marketing {
 	}
 
 	/**
-	 * `pbs/testimonial`: a customer's words, who said them, and an optional star rating.
+	 * `pbsw/testimonial`: a customer's words, who said them, and an optional star rating.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: quote, name, role, imageUrl, imageAlt, rating, layout, align.
 	 * @return string
@@ -195,7 +195,7 @@ final class Marketing {
 	}
 
 	/**
-	 * `pbs/call-to-action`: a heading, a sentence and one or two buttons.
+	 * `pbsw/call-to-action`: a heading, a sentence and one or two buttons.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: title, content, level, primary*, secondary*, layout, align.
 	 * @return string
@@ -228,7 +228,7 @@ final class Marketing {
 	}
 
 	/**
-	 * `pbs/comparison-table`: plans or products side by side. Yes/no cells are drawn AND said in
+	 * `pbsw/comparison-table`: plans or products side by side. Yes/no cells are drawn AND said in
 	 * words ("Included" / "Not included"); the table scrolls sideways on its own, never the page.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: caption, columns [{title, highlight}], rows [{label, cells [{type, text}]}].
@@ -404,7 +404,7 @@ final class Marketing {
 	}
 
 	/**
-	 * `pbs/contact-buttons`: call / email / text / WhatsApp buttons.
+	 * `pbsw/contact-buttons`: call / email / text / WhatsApp buttons.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: items [{type, value, label}], message.
 	 * @return string
@@ -440,7 +440,7 @@ final class Marketing {
 	}
 
 	/**
-	 * `pbs/whatsapp`: a floating "chat on WhatsApp" button, fixed to a bottom corner (the logical
+	 * `pbsw/whatsapp`: a floating "chat on WhatsApp" button, fixed to a bottom corner (the logical
 	 * end corner by default, so it sits on the left in a right-to-left page). It is a plain link:
 	 * nothing is loaded from WhatsApp until the visitor presses it.
 	 *
@@ -470,7 +470,7 @@ final class Marketing {
 	private const FIELD_STYLES = array( 'outlined', 'filled', 'underlined' );
 
 	/**
-	 * `pbs/form` (pbs-m6): the chosen form plugin's form, rendered by that plugin (its own
+	 * `pbsw/form` (pbs-m6): the chosen form plugin's form, rendered by that plugin (its own
 	 * shortcode) and styled by the design system through the block's classes. When the plugin is
 	 * not active or no form is chosen, a short notice replaces it rather than the raw shortcode
 	 * text WordPress would otherwise print.
@@ -501,6 +501,6 @@ final class Marketing {
 			return '<div class="' . esc_attr( Frontend::cls( 'form', 'form--missing' ) ) . '"><p class="' . esc_attr( Frontend::cls( 'form__missing' ) ) . '">' . esc_html( $message ) . '</p></div>';
 		}
 
-		return '<div class="' . esc_attr( Frontend::cls( ...$classes ) ) . '">' . do_shortcode( $shortcode ) . '</div>';
+		return '<div class="' . esc_attr( Frontend::cls( ...$classes ) ) . '">' . \ZinnDigital\PBS\Core\Dev_Compat::shortcode_for_output( $shortcode ) . '</div>';
 	}
 }

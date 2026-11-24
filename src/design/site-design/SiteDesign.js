@@ -4,8 +4,8 @@
  */
 import { __, isRTL } from '@wordpress/i18n';
 import { useEffect, useRef, useState } from '@wordpress/element';
-import { Button, ExternalLink, Icon } from '@wordpress/components';
-import { chevronLeft, chevronRight, lock } from '@wordpress/icons';
+import { Button, ExternalLink } from '@wordpress/components';
+import { chevronLeft, chevronRight } from '@wordpress/icons';
 import { boot } from './api';
 import { getSections } from './sections';
 
@@ -16,7 +16,7 @@ import { getSections } from './sections';
  */
 export default function SiteDesign( { hasPost = false, initial = '' } ) {
 	const data = boot();
-	const sections = getSections( { hasPost, edition: data.edition } );
+	const sections = getSections( { hasPost } );
 	const [ active, setView ] = useState( initial );
 	const navigated = useRef( false );
 	const setActive = ( name ) => {
@@ -70,17 +70,7 @@ export default function SiteDesign( { hasPost = false, initial = '' } ) {
 			<ul className="pbsw-sd__list" tabIndex={ -1 } ref={ listRef }>
 				{ sections.map( ( s ) => (
 					<li key={ s.name }>
-						{ s.upsell ? (
-							<div className="pbsw-sd__item is-locked">
-								<span className="pbsw-sd__item-title">
-									{ s.title }
-								</span>
-								<span className="pbsw-sd__pro">
-									{ __( 'Pro', 'page-builder-sandwich' ) }
-								</span>
-							</div>
-						) : (
-							<Button
+						<Button
 								className="pbsw-sd__item"
 								onClick={ () => setActive( s.name ) }
 								icon={ isRTL() ? chevronLeft : chevronRight }
@@ -95,21 +85,9 @@ export default function SiteDesign( { hasPost = false, initial = '' } ) {
 									</span>
 								) }
 							</Button>
-						) }
 					</li>
 				) ) }
 			</ul>
-			{ data.edition === 'free' && data.upgradeUrl && (
-				<p className="pbsw-sd__upgrade">
-					<Icon icon={ lock } className="pbsw-sd__lock" />
-					<ExternalLink href={ data.upgradeUrl }>
-						{ __(
-							'Classes, tokens, dark mode, brand kit and custom fonts come with Pro',
-							'page-builder-sandwich'
-						) }
-					</ExternalLink>
-				</p>
-			) }
 			{ data.siteEditUrl && (
 				<p className="pbsw-sd-help">
 					<ExternalLink href={ data.siteEditUrl }>

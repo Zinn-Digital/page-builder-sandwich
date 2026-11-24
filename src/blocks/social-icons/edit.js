@@ -1,5 +1,5 @@
 /**
- * pbs/social-icons editor: the front end's own list of icon links. Choosing a network stores
+ * pbsw/social-icons editor: the front end's own list of icon links. Choosing a network stores
  * that network's brand icon (Font Awesome Free brands, from the bundled icon set) with the link,
  * so the page draws it as inline SVG with no request. Any icon from the library can replace it.
  */

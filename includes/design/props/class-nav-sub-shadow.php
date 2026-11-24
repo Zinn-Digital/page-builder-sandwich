@@ -1,6 +1,6 @@
 <?php
 /**
- * Design prop `navSubShadow` (NAV1, pbs/nav-menu).
+ * Design prop `navSubShadow` (NAV1, pbsw/nav-menu).
  *
  * @package ZinnDigital\PBS
  */
@@ -28,7 +28,7 @@ final class Nav_Sub_Shadow extends Shadow_Prop {
 	public const GROUP = 'menu';
 
 	/** The block it styles. */
-	public const BLOCKS = array( 'pbs/nav-menu' );
+	public const BLOCKS = array( 'pbsw/nav-menu' );
 
 	/** Read back by to_css() (any non-empty name: the output key is the custom property). */
 	public const PROPERTY = 'box-shadow';

@@ -14,7 +14,7 @@ import { RichTextToolbarButton } from '@wordpress/block-editor';
 import { Button, Popover } from '@wordpress/components';
 import { useState } from '@wordpress/element';
 
-export const NAME = 'pbs/highlight';
+export const NAME = 'pbsw/highlight';
 export const LOOKS = [ 'marker', 'underline', 'background' ];
 
 /**

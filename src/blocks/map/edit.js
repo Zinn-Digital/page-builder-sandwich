@@ -1,5 +1,5 @@
 /**
- * pbs/map editor: the place (latitude, longitude, zoom) and its name in the sidebar; the canvas
+ * pbsw/map editor: the place (latitude, longitude, zoom) and its name in the sidebar; the canvas
  * shows the same click-to-load card visitors get, and the author can load the live map to check it.
  */
 import { __, sprintf } from '@wordpress/i18n';

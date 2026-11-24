@@ -1,6 +1,6 @@
 /**
  * Keeps the Style tab's breakpoint and the block editor's device preview in step (pbs-d2): choose
- * Tablet in either and the other follows. A custom breakpoint previews on the nearest device.
+ * Tablet in either and the other follows. Any other width previews on the nearest device.
  */
 import { dispatch, select, subscribe } from '@wordpress/data';
 

@@ -1,5 +1,5 @@
 /**
- * pbs/star-rating saved markup: the rating as text ("4.5/5") — what a reader gets with the
+ * pbsw/star-rating saved markup: the rating as text ("4.5/5") — what a reader gets with the
  * plugin off. No words (a saved string cannot follow the site's language), no classes.
  *
  * @param {Object} props            Block props.

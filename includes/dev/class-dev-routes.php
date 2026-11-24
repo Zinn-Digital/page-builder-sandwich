@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * `GET pbs/v1/extensions` and the `pbs/list-extensions` ability: what add-ons registered.
+ * `GET pbsw/v1/extensions` and the `pbsw/list-extensions` ability: what add-ons registered.
  */
 final class Dev_Routes {
 
@@ -56,7 +56,7 @@ final class Dev_Routes {
 	 */
 	public static function abilities(): void {
 		Ability::register(
-			'pbs/list-extensions',
+			'pbsw/list-extensions',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_posts',

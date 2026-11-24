@@ -1,5 +1,5 @@
 /**
- * pbs/qr-code editor: type what the code should hold; the QR code is drawn here, in the browser,
+ * pbsw/qr-code editor: type what the code should hold; the QR code is drawn here, in the browser,
  * and saved with the block (no QR service is contacted).
  */
 import { __ } from '@wordpress/i18n';

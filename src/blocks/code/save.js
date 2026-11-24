@@ -1,5 +1,5 @@
 /**
- * pbs/code saved markup: with the plugin off, the code in a plain <pre><code> (no classes, no
+ * pbsw/code saved markup: with the plugin off, the code in a plain <pre><code> (no classes, no
  * data-wp-*). The live figure is rebuilt by Data::render_code().
  *
  * @param {Object} props            Block props.

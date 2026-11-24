@@ -1,6 +1,6 @@
 /**
  * The inspector control for an icon attribute: a preview, "Choose icon" (opens the IconPicker in
- * a modal) and "Remove". Used by the pbs/icon block and by any block that carries an icon.
+ * a modal) and "Remove". Used by the pbsw/icon block and by any block that carries an icon.
  */
 import { __ } from '@wordpress/i18n';
 import { Button, Modal } from '@wordpress/components';

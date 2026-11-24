@@ -1,5 +1,5 @@
 /**
- * pbs/progress-bar saved markup: its label and value as text — what a reader gets with the
+ * pbsw/progress-bar saved markup: its label and value as text — what a reader gets with the
  * plugin off. No classes.
  *
  * @param {Object} props            Block props.

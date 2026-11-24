@@ -1,5 +1,5 @@
 /**
- * pbs/modal and pbs/off-canvas view module (Interactivity API): opens the block's native
+ * pbsw/modal and pbsw/off-canvas view module (Interactivity API): opens the block's native
  * <dialog> as a MODAL, so the browser traps focus, makes the page behind inert, closes on Escape
  * and returns focus to the button. A click on the backdrop closes it when the block allows.
  * `__PREFIX__` is the store namespace.

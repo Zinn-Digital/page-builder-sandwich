@@ -1,5 +1,5 @@
 /**
- * Design prop `navDrawerWidth` (NAV1, pbs/nav-menu). Twin: includes/design/props/class-nav-drawer-width.php.
+ * Design prop `navDrawerWidth` (NAV1, pbsw/nav-menu). Twin: includes/design/props/class-nav-drawer-width.php.
  */
 import { __ } from '@wordpress/i18n';
 
@@ -9,7 +9,7 @@ import { lengthProp } from '../kinds';
 export default lengthProp( {
 	key: 'navDrawerWidth',
 	group: 'menu',
-	blocks: [ 'pbs/nav-menu' ],
+	blocks: [ 'pbsw/nav-menu' ],
 	property: '',
 	opts: { tokens: [ 'var' ] },
 	label: __( 'Mobile menu width', 'page-builder-sandwich' ),

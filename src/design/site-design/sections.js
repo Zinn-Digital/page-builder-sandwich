@@ -12,43 +12,13 @@ import ColorsSection from './ColorsSection';
 import FontsSection from './FontsSection';
 
 /**
- * The premium sections' names and titles, shown as upgrade rows in the free edition so a
- * customer can see what the Pro plan adds (with no controls behind them).
- *
- * @return {Array<Object>} Rows.
- */
-function upsells() {
-	return [
-		[ 'classes', __( 'Classes', 'page-builder-sandwich' ), 30 ],
-		[ 'variables', __( 'Variables', 'page-builder-sandwich' ), 40 ],
-		[
-			'tokens',
-			__( 'Spacing, radius and shadows', 'page-builder-sandwich' ),
-			50,
-		],
-		[ 'categories', __( 'Categories', 'page-builder-sandwich' ), 55 ],
-		[ 'dark-mode', __( 'Dark mode', 'page-builder-sandwich' ), 60 ],
-		[ 'brand-kit', __( 'Brand kit', 'page-builder-sandwich' ), 70 ],
-		[ 'custom-fonts', __( 'Custom fonts', 'page-builder-sandwich' ), 80 ],
-		[ 'transfer', __( 'Import and export', 'page-builder-sandwich' ), 85 ],
-		[ 'page-css', __( 'Page CSS', 'page-builder-sandwich' ), 90 ],
-	].map( ( [ name, title, order ] ) => ( {
-		name,
-		title,
-		order,
-		upsell: true,
-	} ) );
-}
-
-/**
  * The sections, sorted, for the given context.
  *
  * @param {Object}  context
  * @param {boolean} context.hasPost A post is being edited.
- * @param {string}  context.edition `free` or `pro`.
  * @return {Array<Object>} Sections.
  */
-export function getSections( { hasPost = false, edition = 'free' } = {} ) {
+export function getSections( { hasPost = false } = {} ) {
 	const base = [
 		{
 			name: 'colors',
@@ -70,7 +40,6 @@ export function getSections( { hasPost = false, edition = 'free' } = {} ) {
 			order: 20,
 			Component: FontsSection,
 		},
-		...( edition === 'free' ? upsells() : [] ),
 	];
 	const sections = applyFilters( 'pbsw.siteDesign.sections', base );
 	return ( Array.isArray( sections ) ? sections : base )

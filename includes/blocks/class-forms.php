@@ -95,7 +95,7 @@ final class Forms {
 	}
 
 	/**
-	 * `GET pbs/v1/forms`: the providers, which are active, and each active one's forms.
+	 * `GET pbsw/v1/forms`: the providers, which are active, and each active one's forms.
 	 *
 	 * @return void
 	 */

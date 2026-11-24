@@ -1,5 +1,5 @@
 /**
- * pbs/alert — the REFERENCE block of the design system (lane L09): copy this folder's shape.
+ * pbsw/alert — the REFERENCE block of the design system (lane L09): copy this folder's shape.
  * Exports what src/blocks/index.js registers and what the test bar registers: metadata +
  * settings, nothing else.
  */

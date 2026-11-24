@@ -1,5 +1,5 @@
 /**
- * Design prop `navSubShadow` (NAV1, pbs/nav-menu). Twin: includes/design/props/class-nav-sub-shadow.php.
+ * Design prop `navSubShadow` (NAV1, pbsw/nav-menu). Twin: includes/design/props/class-nav-sub-shadow.php.
  */
 import { __ } from '@wordpress/i18n';
 
@@ -10,7 +10,7 @@ const base = shadowProp( { key: 'navSubShadow', property: 'box-shadow' } );
 export default shadowProp( {
 	key: 'navSubShadow',
 	group: 'menu',
-	blocks: [ 'pbs/nav-menu' ],
+	blocks: [ 'pbsw/nav-menu' ],
 	property: 'box-shadow',
 	label: __( 'Submenu shadow', 'page-builder-sandwich' ),
 	control: 'shadow',

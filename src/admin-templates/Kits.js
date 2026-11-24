@@ -1,8 +1,7 @@
 /**
  * The website-kit library: browse, preview and import complete sites in one click.
  *
- * ⭐ Every kit is listed; a Pro kit on a free site is greyed out with a "Go Pro" link (pbs-r2).
- * The lock comes from the API (`locked`), so the free plugin holds no Pro gate of its own.
+ * Lists the kits this site can import; the server leaves out any others.
  */
 import { __, _n, sprintf } from '@wordpress/i18n';
 import { useEffect, useMemo, useState } from '@wordpress/element';
@@ -65,7 +64,7 @@ function ImportDialog( { kit, can, onClose } ) {
 		setBusy( true );
 		setError( '' );
 		apiFetch( {
-			path: '/pbs/v1/kits/import',
+			path: '/pbsw/v1/kits/import',
 			method: 'POST',
 			data: {
 				slug: kit.slug,
@@ -219,12 +218,29 @@ export default function Kits( { data } ) {
 	const [ category, setCategory ] = useState( '' );
 	const [ tier, setTier ] = useState( '' );
 	const [ importing, setImporting ] = useState( null );
+	const [ switching, setSwitching ] = useState( false );
 
-	useEffect( () => {
-		apiFetch( { path: '/pbs/v1/kits' } )
+	const load = () =>
+		apiFetch( { path: '/pbsw/v1/kits' } )
 			.then( setCatalogue )
 			.catch( ( e ) => setError( e.message ) );
+
+	useEffect( () => {
+		load();
 	}, [] );
+
+	const setOptIn = ( enabled ) => {
+		setSwitching( true );
+		setError( '' );
+		apiFetch( {
+			path: '/pbsw/v1/kits/opt-in',
+			method: 'POST',
+			data: { enabled },
+		} )
+			.then( load )
+			.catch( ( e ) => setError( e.message ) )
+			.finally( () => setSwitching( false ) );
+	};
 
 	const kits = useMemo(
 		() => ( catalogue ? catalogue.kits : [] ),
@@ -243,7 +259,9 @@ export default function Kits( { data } ) {
 					.toLowerCase()
 					.includes( search.toLowerCase() ) )
 	);
-	const upgradeUrl = ( catalogue && catalogue.upgradeUrl ) || data.upgradeUrl;
+	const mixedTiers =
+		kits.some( ( k ) => 'pro' === k.tier ) &&
+		kits.some( ( k ) => 'pro' !== k.tier );
 
 	if ( error ) {
 		return (
@@ -254,6 +272,45 @@ export default function Kits( { data } ) {
 	}
 	if ( ! catalogue ) {
 		return <Spinner />;
+	}
+	if ( ! catalogue.optIn ) {
+		return (
+			<div className="pbs-kits">
+				<h2>{ __( 'Connect to the kit library?', 'page-builder-sandwich' ) }</h2>
+				<p>
+					{ __(
+						'Website kits are stored on the Zinn Digital service. This site has not contacted it. If you switch the library on, this site requests the kit list and the kits you import from api.zinndigital.com. Each request sends your language and the plugin name, and your server address is visible to the service as with any web request. Your site address and content are not sent.',
+						'page-builder-sandwich'
+					) }
+				</p>
+				<p>
+					<ExternalLink href="https://zinndigital.com/legal/terms">
+						{ __( 'Terms of Service', 'page-builder-sandwich' ) }
+					</ExternalLink>
+					{ ' ' }
+					<ExternalLink href="https://zinndigital.com/legal/privacy">
+						{ __( 'Privacy Policy', 'page-builder-sandwich' ) }
+					</ExternalLink>
+				</p>
+				{ catalogue.canOptIn ? (
+					<Button
+						variant="primary"
+						isBusy={ switching }
+						disabled={ switching }
+						onClick={ () => setOptIn( true ) }
+					>
+						{ __( 'Switch on the kit library', 'page-builder-sandwich' ) }
+					</Button>
+				) : (
+					<Notice status="info" isDismissible={ false }>
+						{ __(
+							'An administrator needs to switch on the kit library.',
+							'page-builder-sandwich'
+						) }
+					</Notice>
+				) }
+			</div>
+		);
 	}
 
 	return (
@@ -291,6 +348,7 @@ export default function Kits( { data } ) {
 					] }
 					onChange={ setCategory }
 				/>
+				{ mixedTiers && (
 				<SelectControl
 					__next40pxDefaultSize
 					__nextHasNoMarginBottom
@@ -315,12 +373,13 @@ export default function Kits( { data } ) {
 					] }
 					onChange={ setTier }
 				/>
+				) }
 			</div>
 			<ul className="pbs-kits__grid">
 				{ shown.map( ( kit ) => (
 					<li
 						key={ kit.slug }
-						className={ `pbs-kit${ kit.locked ? ' is-locked' : '' }` }
+						className="pbs-kit"
 					>
 						{ kit.preview && kit.preview.image ? (
 							<img
@@ -336,17 +395,7 @@ export default function Kits( { data } ) {
 						) }
 						<div className="pbs-kit__body">
 							<h3 className="pbs-kit__name">
-								{ kit.name }{ ' ' }
-								<span
-									className={ `pbs-kit__tier is-${ kit.tier }` }
-								>
-									{ 'pro' === kit.tier
-										? __( 'Pro', 'page-builder-sandwich' )
-										: __(
-												'Free',
-												'page-builder-sandwich'
-											) }
-								</span>
+								{ kit.name }
 							</h3>
 							<p className="pbs-kit__category">
 								{ kit.category }
@@ -359,23 +408,12 @@ export default function Kits( { data } ) {
 									.map( ( p ) => p.title )
 									.join( ' · ' ) }
 							</p>
-							{ kit.locked ? (
-								upgradeUrl && (
-									<ExternalLink href={ upgradeUrl }>
-										{ __(
-											'Go Pro to import',
-											'page-builder-sandwich'
-										) }
-									</ExternalLink>
-								)
-							) : (
-								<Button
+							<Button
 									variant="secondary"
 									onClick={ () => setImporting( kit ) }
 								>
 									{ __( 'Import', 'page-builder-sandwich' ) }
 								</Button>
-							) }
 						</div>
 					</li>
 				) ) }

@@ -1,5 +1,5 @@
 /**
- * pbs/booking saved markup: with the plugin off, a plain link to the booking page (no classes, no
+ * pbsw/booking saved markup: with the plugin off, a plain link to the booking page (no classes, no
  * data-wp-*, nothing loaded from a third party, no translated text). The live card is rebuilt by
  * Media::render_booking().
  */

@@ -1,5 +1,5 @@
 /**
- * The saved (fallback) HTML of pbs/section and pbs/container: the chosen tag around the inner
+ * The saved (fallback) HTML of pbsw/section and pbsw/container: the chosen tag around the inner
  * blocks, no class, no style, no data attribute (docs/adr/0033). It is what a visitor reads if the
  * plugin is ever switched off; while it is on, Blocks\Layout rebuilds the live HTML.
  */

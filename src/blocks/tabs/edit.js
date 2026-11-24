@@ -1,5 +1,5 @@
 /**
- * pbs/tabs editor: the tab row as visitors see it (titles edited in place, a "+" to add one),
+ * pbsw/tabs editor: the tab row as visitors see it (titles edited in place, a "+" to add one),
  * and the panel of the tab being edited. Selecting anything inside a tab switches to it.
  */
 import { __, sprintf } from '@wordpress/i18n';
@@ -25,8 +25,8 @@ import { plus } from '@wordpress/icons';
 import { cls } from '../shared/cls';
 
 const TEMPLATE = [
-	[ 'pbs/tab', {}, [ [ 'core/paragraph' ] ] ],
-	[ 'pbs/tab', {}, [ [ 'core/paragraph' ] ] ],
+	[ 'pbsw/tab', {}, [ [ 'core/paragraph' ] ] ],
+	[ 'pbsw/tab', {}, [ [ 'core/paragraph' ] ] ],
 ];
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
@@ -62,7 +62,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	const innerBlocksProps = useInnerBlocksProps(
 		{ className: cls( 'tabs__panels' ) },
 		{
-			allowedBlocks: [ 'pbs/tab' ],
+			allowedBlocks: [ 'pbsw/tab' ],
 			template: TEMPLATE,
 			renderAppender: false,
 		}
@@ -158,7 +158,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						label={ __( 'Add a tab', 'page-builder-sandwich' ) }
 						onClick={ () => {
 							insertBlock(
-								createBlock( 'pbs/tab', {}, [
+								createBlock( 'pbsw/tab', {}, [
 									createBlock( 'core/paragraph' ),
 								] ),
 								tabs.length,

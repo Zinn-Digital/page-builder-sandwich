@@ -1,5 +1,5 @@
 /**
- * pbs/shortcode save(): the shortcode as plain text, nothing around it.
+ * pbsw/shortcode save(): the shortcode as plain text, nothing around it.
  *
  * ⭐ No wrapper element, so no class and no markup: the front end gets exactly what the
  * add-on's shortcode prints (footprint-free, docs/adr/0033). And if the plugin is deactivated,

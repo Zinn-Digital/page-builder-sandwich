@@ -21,7 +21,7 @@ export function prefix() {
 }
 
 /**
- * Prefixed class names: `cls( 'alert', 'alert--info' )` → `zd-alert zd-alert--info`.
+ * Prefixed class names: `cls( 'alert', 'alert--info' )` → `<prefix>-alert <prefix>-alert--info`.
  *
  * @param {...(string|false|null|undefined)} parts Class suffixes; falsy ones are skipped.
  * @return {string} Class names.

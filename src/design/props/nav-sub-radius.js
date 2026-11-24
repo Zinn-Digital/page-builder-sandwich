@@ -1,5 +1,5 @@
 /**
- * Design prop `navSubRadius` (NAV1, pbs/nav-menu). Twin: includes/design/props/class-nav-sub-radius.php.
+ * Design prop `navSubRadius` (NAV1, pbsw/nav-menu). Twin: includes/design/props/class-nav-sub-radius.php.
  */
 import { __ } from '@wordpress/i18n';
 
@@ -9,7 +9,7 @@ import { lengthProp } from '../kinds';
 export default lengthProp( {
 	key: 'navSubRadius',
 	group: 'menu',
-	blocks: [ 'pbs/nav-menu' ],
+	blocks: [ 'pbsw/nav-menu' ],
 	property: '',
 	opts: { tokens: [ 'radius', 'var' ] },
 	label: __( 'Submenu corners', 'page-builder-sandwich' ),

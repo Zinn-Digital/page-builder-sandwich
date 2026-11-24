@@ -206,7 +206,7 @@ final class Cache_Purge {
 		 *
 		 * @param array<int, string> $purged The caches already asked.
 		 */
-		do_action( 'pbs_assets_changed', $purged ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- the public name of the legacy pbs_ hook family (pbs_enqueue_scripts).
+		do_action( 'pbsw_assets_changed', $purged ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- the public name of the legacy pbs_ hook family (pbsw_enqueue_scripts).
 
 		return $purged;
 	}

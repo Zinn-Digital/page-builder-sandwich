@@ -1,5 +1,5 @@
 /**
- * pbs/nav-menu view module (Interactivity API), published through the neutral path by
+ * pbsw/nav-menu view module (Interactivity API), published through the neutral path by
  * Assets\Perf\Modules. `__PREFIX__` is the store namespace and the class prefix; every name is
  * `navMenu…`.
  *

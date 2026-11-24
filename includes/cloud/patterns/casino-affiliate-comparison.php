@@ -31,9 +31,9 @@ return array(
 <p>@@PBS_T1@@</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:pbs/comparison-table {"caption":"@@PBS_T2@@","columns":[{"title":"@@PBS_T3@@","highlight":true},{"title":"@@PBS_T4@@"},{"title":"@@PBS_T5@@"}],"rows":[{"label":"@@PBS_T6@@","cells":[{"type":"text","text":"@@PBS_T7@@"},{"type":"text","text":"@@PBS_T8@@"},{"type":"text","text":"@@PBS_T9@@"}]},{"label":"@@PBS_T10@@","cells":[{"type":"text","text":"@@PBS_T11@@"},{"type":"text","text":"@@PBS_T12@@"},{"type":"text","text":"@@PBS_T13@@"}]},{"label":"@@PBS_T14@@","cells":[{"type":"yes"},{"type":"yes"},{"type":"no"}]},{"label":"@@PBS_T15@@","cells":[{"type":"yes"},{"type":"no"},{"type":"yes"}]},{"label":"@@PBS_T16@@","cells":[{"type":"yes"},{"type":"yes"},{"type":"yes"}]}]} -->
+<!-- wp:pbsw/comparison-table {"caption":"@@PBS_T2@@","columns":[{"title":"@@PBS_T3@@","highlight":true},{"title":"@@PBS_T4@@"},{"title":"@@PBS_T5@@"}],"rows":[{"label":"@@PBS_T6@@","cells":[{"type":"text","text":"@@PBS_T7@@"},{"type":"text","text":"@@PBS_T8@@"},{"type":"text","text":"@@PBS_T9@@"}]},{"label":"@@PBS_T10@@","cells":[{"type":"text","text":"@@PBS_T11@@"},{"type":"text","text":"@@PBS_T12@@"},{"type":"text","text":"@@PBS_T13@@"}]},{"label":"@@PBS_T14@@","cells":[{"type":"yes"},{"type":"yes"},{"type":"no"}]},{"label":"@@PBS_T15@@","cells":[{"type":"yes"},{"type":"no"},{"type":"yes"}]},{"label":"@@PBS_T16@@","cells":[{"type":"yes"},{"type":"yes"},{"type":"yes"}]}]} -->
 <table><caption>@@PBS_T2@@</caption><thead><tr><td></td><th scope="col">@@PBS_T3@@</th><th scope="col">@@PBS_T4@@</th><th scope="col">@@PBS_T5@@</th></tr></thead><tbody><tr><th scope="row">@@PBS_T6@@</th><td>@@PBS_T7@@</td><td>@@PBS_T8@@</td><td>@@PBS_T9@@</td></tr><tr><th scope="row">@@PBS_T10@@</th><td>@@PBS_T11@@</td><td>@@PBS_T12@@</td><td>@@PBS_T13@@</td></tr><tr><th scope="row">@@PBS_T14@@</th><td>✓</td><td>✓</td><td>✗</td></tr><tr><th scope="row">@@PBS_T15@@</th><td>✓</td><td>✗</td><td>✓</td></tr><tr><th scope="row">@@PBS_T16@@</th><td>✓</td><td>✓</td><td>✓</td></tr></tbody></table>
-<!-- /wp:pbs/comparison-table -->
+<!-- /wp:pbsw/comparison-table -->
 
 <!-- wp:paragraph {"fontSize":"small"} -->
 <p class="has-small-font-size">@@PBS_T17@@</p>

@@ -125,7 +125,7 @@ final class Glossary {
 			foreach ( (array) ( $block['innerBlocks'] ?? array() ) as $child ) {
 				$stack[] = $child;
 			}
-			if ( 'pbs/glossary' !== ( $block['blockName'] ?? '' ) || empty( $block['attrs']['autoLink'] ) ) {
+			if ( 'pbsw/glossary' !== ( $block['blockName'] ?? '' ) || empty( $block['attrs']['autoLink'] ) ) {
 				continue;
 			}
 			foreach ( self::entries( (array) $block['attrs'] ) as $e ) {
@@ -174,7 +174,9 @@ final class Glossary {
 		if ( array() === $terms ) {
 			return $html;
 		}
-		$parts = preg_split( '/(<[^>]*>)/', $html, -1, PREG_SPLIT_DELIM_CAPTURE );
+		// A tag ends at the first `>` OUTSIDE its quotes: output from a shortcode or an administrator
+		// can hold `>` in an attribute, and text found there must never receive a link.
+		$parts = preg_split( '/(<!--.*?-->|<[a-zA-Z\/!?](?:[^>"\']++|"[^"]*+"|\'[^\']*+\')*+>)/s', $html, -1, PREG_SPLIT_DELIM_CAPTURE );
 		if ( false === $parts ) {
 			return $html;
 		}
@@ -210,6 +212,10 @@ final class Glossary {
 					$skip[] = array( $tag, 1 );
 				}
 				continue;
+			}
+			// A tag that never closes its quote: what follows cannot be told from an attribute.
+			if ( 1 === preg_match( '/<[a-zA-Z\/!?]/', $part ) ) {
+				break;
 			}
 			if ( array() !== $skip || array() === $todo ) {
 				continue;

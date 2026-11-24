@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * ⛔ And block.json's `viewScriptModule` cannot be used, for the same reason `style`/`viewScript`
  * are banned (docs/adr/0033): WordPress would print the module from the plugin directory
- * (`/wp-content/plugins/page-builder-sandwich/…`) with an id derived from the block name
+ * (the plugin's own folder URL, plugins_url()) with an id derived from the block name
  * (`pbs-…-view-script-module`). So a block registers its module here instead:
  *
  *     Modules::add( 'tabs', 'assets/modules/tabs.js' );      // at load

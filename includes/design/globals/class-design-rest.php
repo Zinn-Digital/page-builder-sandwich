@@ -1,6 +1,6 @@
 <?php
 /**
- * REST routes for the Site design screen: `pbs/v1/design/*`.
+ * REST routes for the Site design screen: `pbsw/v1/design/*`.
  *
  * @package ZinnDigital\PBS
  */

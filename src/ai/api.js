@@ -9,7 +9,7 @@ import { Notice, ExternalLink } from '@wordpress/components';
 /**
  * Call an AI route.
  *
- * @param {string} route  Route under /pbs/v1/ai (e.g. 'text').
+ * @param {string} route  Route under /pbsw/v1/ai (e.g. 'text').
  * @param {Object} data   Body (POST) or query (GET when method is GET).
  * @param {string} method HTTP method.
  * @return {Promise<Object>} The answer.
@@ -18,10 +18,10 @@ export function ai( route, data = {}, method = 'POST' ) {
 	if ( method === 'GET' ) {
 		const query = new URLSearchParams( data ).toString();
 		return apiFetch( {
-			path: `/pbs/v1/ai/${ route }${ query ? `?${ query }` : '' }`,
+			path: `/pbsw/v1/ai/${ route }${ query ? `?${ query }` : '' }`,
 		} );
 	}
-	return apiFetch( { path: `/pbs/v1/ai/${ route }`, method, data } );
+	return apiFetch( { path: `/pbsw/v1/ai/${ route }`, method, data } );
 }
 
 /**

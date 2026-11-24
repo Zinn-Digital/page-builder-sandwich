@@ -10,7 +10,7 @@ import { Button, Notice } from '@wordpress/components';
  */
 
 /** The id of each tab's content holder starts with this (Admin_Tabs::PANEL_PREFIX). */
-export const PANEL_PREFIX = 'pbs-admin-tab-';
+export const PANEL_PREFIX = 'pbsw-admin-tab-';
 
 /**
  * A content tab: shows the node PHP printed for it.
@@ -66,7 +66,7 @@ export function ContentTab( { id } ) {
  */
 export function LinkTab( { label, url } ) {
 	return (
-		<div className="pbs-admin-tab pbs-admin-tab--link">
+		<div className="pbs-admin-tab pbsw-admin-tab--link">
 			<p>
 				{ sprintf(
 					/* translators: %s: the tab's label. */

@@ -1,5 +1,5 @@
 /**
- * pbs/container fallback HTML: `<div>` (or the chosen tag) around the content.
+ * pbsw/container fallback HTML: `<div>` (or the chosen tag) around the content.
  */
 import { layoutSave } from '../layout/save';
 

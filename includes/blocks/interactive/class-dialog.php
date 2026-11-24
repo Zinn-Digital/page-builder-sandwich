@@ -1,6 +1,6 @@
 <?php
 /**
- * `pbs/modal` and `pbs/off-canvas` — the WAI-ARIA "Dialog (Modal)" pattern on the native `<dialog>`.
+ * `pbsw/modal` and `pbsw/off-canvas` — the WAI-ARIA "Dialog (Modal)" pattern on the native `<dialog>`.
  *
  * @package ZinnDigital\PBS
  */

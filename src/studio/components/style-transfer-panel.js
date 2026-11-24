@@ -12,7 +12,8 @@ import {
 	BlockSettingsMenuControls,
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import { getBlockType, parse, serialize } from '@wordpress/blocks';
+import { getBlockType, serialize } from '@wordpress/blocks';
+import { parse } from '../../core/parse';
 import { store as noticesStore } from '@wordpress/notices';
 import {
 	MenuGroup,

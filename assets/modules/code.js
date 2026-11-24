@@ -1,5 +1,5 @@
 /**
- * pbs/code view module (Interactivity API), published through the neutral path by
+ * pbsw/code view module (Interactivity API), published through the neutral path by
  * Assets\Perf\Modules. `__PREFIX__` is the store namespace.
  *
  * - Highlighting: highlight.js (bundled, published through the neutral path, loaded only on pages

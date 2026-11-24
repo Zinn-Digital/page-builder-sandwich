@@ -90,7 +90,7 @@ final class Props {
 		'transition'      => 'transition',
 		'cursor'          => 'cursor',
 		'containerType'   => 'container-type',
-		// Menu (pbs/nav-menu, NAV1): custom properties its stylesheet reads.
+		// Menu (pbsw/nav-menu, NAV1): custom properties its stylesheet reads.
 		'navHover'        => 'nav-hover',
 		'navActive'       => 'nav-active',
 		'navGap'          => 'nav-gap',

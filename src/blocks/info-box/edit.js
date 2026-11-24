@@ -1,5 +1,5 @@
 /**
- * pbs/info-box editor: the front end's own markup, the heading and text edited in place, the
+ * pbsw/info-box editor: the front end's own markup, the heading and text edited in place, the
  * icon, link and layout in the sidebar.
  */
 import { __ } from '@wordpress/i18n';

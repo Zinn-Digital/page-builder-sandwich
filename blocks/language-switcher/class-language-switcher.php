@@ -1,6 +1,6 @@
 <?php
 /**
- * `pbs/language-switcher`: Page Builder Sandwich's language switcher element (Tranzly tz-l2).
+ * `pbsw/language-switcher`: Page Builder Sandwich's language switcher element (Tranzly tz-l2).
  *
  * @package ZinnDigital\PBS
  */
@@ -36,7 +36,8 @@ final class Language_Switcher {
 			return '';
 		}
 
-		return (string) tranzly_language_switcher( self::args( $attributes ) );
+		// Another plugin's HTML: filtered here, as every callback output is.
+		return \ZinnDigital\PBS\Core\Dev_Compat::filter_output( (string) tranzly_language_switcher( self::args( $attributes ) ) );
 	}
 
 	/**

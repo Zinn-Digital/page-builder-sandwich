@@ -1,5 +1,5 @@
 /**
- * pbs/call-to-action saved markup: the footprint-free fallback (heading, text and the buttons as
+ * pbsw/call-to-action saved markup: the footprint-free fallback (heading, text and the buttons as
  * plain links, no classes). The live HTML is rebuilt by Blocks\Marketing::render_call_to_action().
  */
 import { RichText } from '@wordpress/block-editor';

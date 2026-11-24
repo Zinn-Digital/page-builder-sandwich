@@ -17,8 +17,6 @@ export const config = () =>
 		],
 		tokens: {},
 		atRules: [],
-		customAllowed: false,
-		elementCss: false,
 	};
 
 const DEFAULT = { breakpoint: 'base', hover: false, atRule: '' };

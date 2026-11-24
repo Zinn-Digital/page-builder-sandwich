@@ -1,5 +1,5 @@
 /**
- * pbs/badge editor: the front end's own markup, the label edited in place.
+ * pbsw/badge editor: the front end's own markup, the label edited in place.
  */
 import { __ } from '@wordpress/i18n';
 import {

@@ -24,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * none of them and no icon font: a picked icon is stored in the block as sanitised inline SVG.
  *
  * ⭐⭐ Custom uploads are NOT files. An uploaded SVG is read by the picker, sent as text to
- * `POST pbs/v1/icons/uploads`, sanitised HERE by Svg::sanitize() and kept as post meta on a
+ * `POST pbsw/v1/icons/uploads`, sanitised HERE by Svg::sanitize() and kept as post meta on a
  * private `pbsw_icon` post. So:
  * - the allowed upload file types are never widened, not even for one request — there is no
  *   file upload to allow;
@@ -42,7 +42,7 @@ final class Icons {
 	public const META = '_pbsw_svg';
 
 	/** REST namespace. */
-	public const REST_NS = 'pbs/v1';
+	public const REST_NS = 'pbsw/v1';
 
 	/** Largest SVG accepted (bytes), the sanitiser's own ceiling. */
 	public const MAX_BYTES = 512000;

@@ -5,7 +5,7 @@
  */
 
 export const NAME_PATTERN =
-	/^(?:data-[a-z0-9][a-z0-9_.:-]{0,62}|aria-[a-z]{2,40})$/;
+	/^(?:data-(?!wp-)[a-z0-9][a-z0-9_.:-]{0,62}|aria-[a-z]{2,40})$/;
 export const MAX = 20;
 export const MAX_VALUE = 500;
 

@@ -3,7 +3,7 @@
  *
  * Yoast SEO and Rank Math analyse the editor's saved markup, where dynamic text (block bindings,
  * query loops, server-rendered blocks) is not filled in yet. This asks the server for the page as a
- * visitor gets it (POST /pbs/v1/seo/rendered, cached on the server by content) and hands it to each
+ * visitor gets it (POST /pbsw/v1/seo/rendered, cached on the server by content) and hands it to each
  * plugin's own content hook: Yoast's `registerModification( 'content' )`, Rank Math's
  * `rank_math_content` filter. Nothing is asked for while the page has no dynamic part.
  */
@@ -24,7 +24,7 @@ let lastContent = null;
  */
 export function isDynamic( content ) {
 	// Any of our blocks (many are rendered on the server) or any block binding.
-	return /<!-- wp:pbs\//.test( content ) || /"bindings"\s*:/.test( content );
+	return /<!-- wp:pbsw?\//.test( content ) || /"bindings"\s*:/.test( content );
 }
 
 /**
@@ -60,7 +60,7 @@ const refresh = debounce( () => {
 		return;
 	}
 	apiFetch( {
-		path: '/pbs/v1/seo/rendered',
+		path: '/pbsw/v1/seo/rendered',
 		method: 'POST',
 		data: { post_id: postId, content },
 	} )
@@ -83,7 +83,7 @@ function registerYoast() {
 	app.__pbsRegistered = true;
 }
 
-addFilter( 'rank_math_content', 'pbs/seo/rendered', contentFor );
+addFilter( 'rank_math_content', 'pbsw/seo/rendered', contentFor );
 
 if ( window.YoastSEO?.app ) {
 	registerYoast();
@@ -93,6 +93,6 @@ if ( window.YoastSEO?.app ) {
 window.addEventListener( 'load', registerYoast );
 
 // Expose for tests and add-ons: what the analysis currently receives.
-window.pbsSeoContent = ( base ) => contentFor( base );
+window.pbswSeoContent = ( base ) => contentFor( base );
 
 subscribe( refresh );

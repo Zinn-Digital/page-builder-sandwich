@@ -36,7 +36,7 @@ final class Render {
 	private const FOOTPRINT = '/pbs|sandwich|page-builder|tranzly|wp-block-/i';
 
 	/**
-	 * `pbs/row`.
+	 * `pbsw/row`.
 	 *
 	 * @param array<string, mixed> $attrs  Attributes.
 	 * @param string               $inner  Rendered columns.
@@ -66,7 +66,7 @@ final class Render {
 	}
 
 	/**
-	 * `pbs/column`.
+	 * `pbsw/column`.
 	 *
 	 * @param array<string, mixed> $attrs  Attributes.
 	 * @param string               $inner  Rendered inner blocks.
@@ -78,7 +78,7 @@ final class Render {
 	}
 
 	/**
-	 * `pbs/button` (and the legacy `[pbs_button]` shortcode, through Shortcodes).
+	 * `pbsw/button` (and the legacy `[pbs_button]` shortcode, through Shortcodes).
 	 *
 	 * @param array<string, mixed> $attrs  Attributes: url, text (inline HTML), style, target, rel, align, legacyClass.
 	 * @param string               $prefix Class prefix.
@@ -136,7 +136,7 @@ final class Render {
 	}
 
 	/**
-	 * `pbs/icon`.
+	 * `pbsw/icon`.
 	 *
 	 * @param array<string, mixed> $attrs  Attributes: svg, style, label.
 	 * @param string               $prefix Class prefix.

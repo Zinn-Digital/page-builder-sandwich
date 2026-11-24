@@ -27,7 +27,7 @@ import IconGrid from './IconGrid';
 import { SETS, firstStyles, loadSet, loadStyle, search } from './sets';
 import { iconSvg, sanitizeSvg, sizedSvg } from './sanitize';
 
-export const UPLOADS_PATH = '/pbs/v1/icons/uploads';
+export const UPLOADS_PATH = '/pbsw/v1/icons/uploads';
 
 /**
  * Translated label of a style id.

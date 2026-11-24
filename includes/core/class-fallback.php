@@ -38,7 +38,7 @@ final class Fallback {
 	public const COLUMN_STYLE = 'flex:1 1 0;min-width:0';
 
 	/**
-	 * `pbs/row` saved HTML.
+	 * `pbsw/row` saved HTML.
 	 *
 	 * @param array<string, mixed> $attrs Attributes.
 	 * @param string               $inner Saved inner blocks (serialized, with their delimiters).
@@ -49,7 +49,7 @@ final class Fallback {
 	}
 
 	/**
-	 * `pbs/column` saved HTML.
+	 * `pbsw/column` saved HTML.
 	 *
 	 * @param array<string, mixed> $attrs Attributes.
 	 * @param string               $inner Saved inner blocks.
@@ -60,7 +60,7 @@ final class Fallback {
 	}
 
 	/**
-	 * `pbs/button` saved HTML.
+	 * `pbsw/button` saved HTML.
 	 *
 	 * @param array<string, mixed> $attrs Attributes.
 	 * @return string
@@ -91,7 +91,7 @@ final class Fallback {
 	}
 
 	/**
-	 * `pbs/icon` saved HTML.
+	 * `pbsw/icon` saved HTML.
 	 *
 	 * @param array<string, mixed> $attrs Attributes.
 	 * @return string
@@ -140,7 +140,7 @@ final class Fallback {
 	}
 
 	/**
-	 * `pbs/widget` / `pbs/sidebar` saved HTML: the `fallbackHtml` snapshot, as RawHTML writes it.
+	 * `pbsw/widget` / `pbsw/sidebar` saved HTML: the `fallbackHtml` snapshot, as RawHTML writes it.
 	 *
 	 * @param array<string, mixed> $attrs Attributes.
 	 * @return string
@@ -174,7 +174,7 @@ final class Fallback {
 
 
 	/**
-	 * Give every `pbs/widget` and `pbs/sidebar` block in serialized content its fallback, freshly
+	 * Give every `pbsw/widget` and `pbsw/sidebar` block in serialized content its fallback, freshly
 	 * rendered: self-closing ones are expanded, existing snapshots replaced. The attributes JSON
 	 * is kept byte-for-byte (the snapshot lives in the block's inner HTML, read as the raw
 	 * `fallbackHtml` attribute), so nothing else about the block changes.
@@ -184,12 +184,12 @@ final class Fallback {
 	 * @return string
 	 */
 	public static function fill_widgets( string $content, callable $render ): string {
-		if ( ! str_contains( $content, 'wp:pbs/widget' ) && ! str_contains( $content, 'wp:pbs/sidebar' ) ) {
+		if ( ! Block_Names::in_content( $content, 'widget' ) && ! Block_Names::in_content( $content, 'sidebar' ) ) {
 			return $content;
 		}
 
 		return (string) preg_replace_callback(
-			'#<!-- wp:(pbs/(?:widget|sidebar))(\s+(\{.*?\}))?\s+(?:/-->|-->(.*?)<!-- /wp:\1 -->)#s',
+			'#<!-- wp:(pbsw?/(?:widget|sidebar))(\s+(\{.*?\}))?\s+(?:/-->|-->(.*?)<!-- /wp:\1 -->)#s',
 			static function ( array $m ) use ( $render ): string {
 				$name  = $m[1];
 				$json  = $m[3] ?? '';
@@ -197,7 +197,7 @@ final class Fallback {
 				if ( ! is_array( $attrs ) ) {
 					return $m[0];
 				}
-				$html = self::widget_html( (string) $render( $name, $attrs ) );
+				$html = self::widget_html( (string) $render( Block_Names::name( $name ), $attrs ) );
 				$head = '<!-- wp:' . $name . ( '' === $json ? '' : ' ' . $json );
 
 				return '' === $html ? $head . ' /-->' : $head . " -->\n" . $html . "\n<!-- /wp:" . $name . ' -->';
@@ -209,12 +209,12 @@ final class Fallback {
 	/**
 	 * The live output of a widget or sidebar block (the renderer fill_widgets() uses on a site).
 	 *
-	 * @param string               $name  `pbs/widget` or `pbs/sidebar`.
+	 * @param string               $name  `pbsw/widget` or `pbsw/sidebar`.
 	 * @param array<string, mixed> $attrs Attributes.
 	 * @return string
 	 */
 	public static function render_widget_block( string $name, array $attrs ): string {
-		if ( 'pbs/sidebar' === $name ) {
+		if ( 'pbsw/sidebar' === $name ) {
 			return Widgets::sidebar( (string) ( $attrs['sidebar'] ?? '' ) );
 		}
 		$instance = is_array( $attrs['instance'] ?? null ) ? $attrs['instance'] : array();

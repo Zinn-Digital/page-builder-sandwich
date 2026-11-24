@@ -1,5 +1,5 @@
 /**
- * pbs/sitemap — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/sitemap — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/sitemap/block.json';

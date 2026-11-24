@@ -19,12 +19,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * - `GET pbs/v1/widgets/fields?widget=<class>`: a widget's settings as real controls. Every
+ * - `GET pbsw/v1/widgets/fields?widget=<class>`: a widget's settings as real controls. Every
  *   classic widget already describes its settings in its own form() (the admin Widgets screen
  *   draws it); that HTML is read here into a field list — name, kind, label, choices, default —
  *   so ANY widget, core or a plugin's, gets proper inputs, checkboxes and dropdowns. A widget
  *   whose form cannot be read gets the generic key/value editor instead.
- * - `GET pbs/v1/shortcodes`: the shortcode tags registered on this site, for the Shortcode
+ * - `GET pbsw/v1/shortcodes`: the shortcode tags registered on this site, for the Shortcode
  *   block's tag picker.
  */
 final class Friendly {

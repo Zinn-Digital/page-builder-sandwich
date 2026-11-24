@@ -1,5 +1,5 @@
 /**
- * pbs/qr-code — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/qr-code — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/qr-code/block.json';

@@ -50,7 +50,6 @@ import Header from './components/header';
 import Recovery from './components/recovery';
 import Revisions from './components/revisions';
 import StudioCommands from './components/commands';
-import { SafeModeBanner } from './components/safe-mode';
 import { ShortcutsHelp, StudioShortcuts } from './components/shortcuts';
 import { BlockMenuItems, PasteDialog } from './components/style-transfer-panel';
 import SavePatternMenu from './components/save-pattern';
@@ -78,6 +77,14 @@ function Notices() {
 			onRemove={ removeNotice }
 		/>
 	);
+}
+
+/**
+ * Notices from add-ons, which get Studio's save so they can keep work safe before a reload.
+ */
+function StudioNotices() {
+	const { isDirty, save } = useSave();
+	return <Slot name="PbswStudioNotices" fillProps={ { isDirty, save } } />;
 }
 
 /**
@@ -123,7 +130,7 @@ function Editor() {
 	return (
 		<div className="pbsw-studio">
 			<Header lastAutosave={ lastAutosave } />
-			<SafeModeBanner />
+			<StudioNotices />
 			{ boot.lockedBy && (
 				<Notice
 					status="warning"
@@ -224,7 +231,7 @@ function Editor() {
 								__( 'Block settings', 'page-builder-sandwich' )
 					}
 				>
-					{ /* A `pbs-studio` plugin panel (Site design, L09) takes the place of the inspector while open;
+					{ /* A `pbsw-studio` plugin panel (Site design, L09) takes the place of the inspector while open;
 					otherwise revisions, a registered Studio sidebar (L12), or the block inspector. */ }
 					<Slot name="PbswStudioSidebar">
 						{ ( fills ) => {
@@ -264,7 +271,7 @@ function Editor() {
 			<PasteDialog />
 			<ShortcutsHelp />
 			<Notices />
-			<PluginArea scope="pbs-studio" />
+			<PluginArea scope="pbsw-studio" />
 			<Popover.Slot />
 		</div>
 	);

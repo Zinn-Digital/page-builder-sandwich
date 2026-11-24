@@ -1,5 +1,5 @@
 /**
- * pbs/modal and pbs/off-canvas saved markup: the window's title and blocks shown in place — what
+ * pbsw/modal and pbsw/off-canvas saved markup: the window's title and blocks shown in place — what
  * a reader gets with the plugin off. No classes, no data-wp-*. The live button and dialog are
  * rebuilt by Blocks\Interactive\Dialog.
  */

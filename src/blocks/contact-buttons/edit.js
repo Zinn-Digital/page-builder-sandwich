@@ -1,5 +1,5 @@
 /**
- * pbs/contact-buttons editor: the buttons as visitors see them, each channel edited in the sidebar.
+ * pbsw/contact-buttons editor: the buttons as visitors see them, each channel edited in the sidebar.
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';

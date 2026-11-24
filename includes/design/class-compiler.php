@@ -18,10 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  *   .<p>-s-<id>{…}  .<p>-s-<id>:hover{…}                      base (desktop)
  *
- *   @media (min-width:1440px){…}                                 Pro "from a width" breakpoints
- *   @media (max-width:1024px){…} @media (max-width:767px){…}     tablet, mobile, Pro "up to"
+ *   @media (max-width:1024px){…} @media (max-width:767px){…}     tablet, mobile
  *   @media (min-width:768px) and (max-width:1024px){.<p>-hide-tablet{display:none!important}}
- *   custom element CSS (Pro, d8)
+ *
+ * Extra breakpoints and per-element CSS are added by other code through the
+ * `pbsw_design_layout_suffix` and `pbsw_design_element_extra_css` filters; this class adds none.
  *
  * ⛔ Pure: no database, no globals beyond the prop registry and the filters it documents. The
  * render filter, the per-page sheet and the fallback `<style>` all call the same function, and
@@ -31,9 +32,6 @@ final class Compiler {
 
 	/** A valid element id. */
 	public const ID_PATTERN = '/^[a-z0-9]{8}$/';
-
-	/** Longest custom element CSS accepted. */
-	private const MAX_CUSTOM_CSS = 20000;
 
 	/**
 	 * Compile every block in a parsed tree (inner blocks included).
@@ -52,9 +50,9 @@ final class Compiler {
 
 		$rules  = array_fill_keys( $keys, '' );
 		$hides  = array();
-		$custom = '';
+		$extra  = '';
 		$seen   = array();
-		self::walk( $blocks, $prefix, $ids, $keys, $rules, $hides, $custom, $seen );
+		self::walk( $blocks, $prefix, $ids, $keys, $rules, $hides, $extra, $seen );
 
 		$css = $rules['base'];
 		foreach ( $list as $bp ) {
@@ -84,7 +82,7 @@ final class Compiler {
 			$css .= '[dir=rtl]{--' . $prefix . '-tdir:-1}[dir=ltr]{--' . $prefix . '-tdir:1}';
 		}
 
-		return $css . $custom;
+		return $css . $extra;
 	}
 
 	/**
@@ -96,11 +94,11 @@ final class Compiler {
 	 * @param array<int, string>    $keys   Style keys compiled: the ids, then `@<preset>` keys.
 	 * @param array<string, string> $rules  Rules per key (by reference).
 	 * @param array<string, bool>   $hides  Breakpoints some block hides on (by reference).
-	 * @param string                $custom Custom element CSS (by reference).
+	 * @param string                $extra  Extension CSS for elements (by reference).
 	 * @param array<string, bool>   $seen   Element ids already written (by reference).
 	 * @return void
 	 */
-	private static function walk( array $blocks, string $prefix, array $ids, array $keys, array &$rules, array &$hides, string &$custom, array &$seen ): void {
+	private static function walk( array $blocks, string $prefix, array $ids, array $keys, array &$rules, array &$hides, string &$extra, array &$seen ): void {
 		foreach ( $blocks as $block ) {
 			if ( ! is_array( $block ) ) {
 				continue;
@@ -116,11 +114,11 @@ final class Compiler {
 					foreach ( self::block_rules( $block, $prefix, $keys ) as $bp => $css ) {
 						$rules[ $bp ] .= $css;
 					}
-					$custom .= self::custom_css( $pbs, self::selector( $prefix, $id ) );
+					$extra .= self::element_extra( $pbs, self::selector( $prefix, $id ) );
 				}
 			}
 			if ( is_array( $block['innerBlocks'] ?? null ) ) {
-				self::walk( $block['innerBlocks'], $prefix, $ids, $keys, $rules, $hides, $custom, $seen );
+				self::walk( $block['innerBlocks'], $prefix, $ids, $keys, $rules, $hides, $extra, $seen );
 			}
 		}
 	}
@@ -270,7 +268,7 @@ final class Compiler {
 		}
 		$id = is_string( $pbs['id'] ?? null ) ? $pbs['id'] : '';
 
-		return 1 === preg_match( self::ID_PATTERN, $id ) && '' !== self::custom_css( $pbs, self::selector( $prefix, $id ) );
+		return 1 === preg_match( self::ID_PATTERN, $id ) && '' !== self::element_extra( $pbs, self::selector( $prefix, $id ) );
 	}
 
 	/**
@@ -313,9 +311,9 @@ final class Compiler {
 	public static function layout_suffix( array $block, string $prefix ): string {
 		$name = (string) ( $block['blockName'] ?? '' );
 		// parse_blocks() leaves defaults out: a section is boxed unless it says otherwise.
-		$width = $block['attrs']['width'] ?? ( 'pbs/section' === $name ? 'boxed' : 'full' );
-		if ( in_array( $name, array( 'pbs/section', 'pbs/container' ), true ) && 'boxed' === $width ) {
-			return '>.' . $prefix . '-' . substr( $name, 4 ) . '__in';
+		$width = $block['attrs']['width'] ?? ( 'pbsw/section' === $name ? 'boxed' : 'full' );
+		if ( in_array( $name, array( 'pbsw/section', 'pbsw/container' ), true ) && 'boxed' === $width ) {
+			return '>.' . $prefix . '-' . substr( $name, 5 ) . '__in';
 		}
 		/**
 		 * Filters the layout-element selector suffix for a block ('' = the block's own element).
@@ -330,63 +328,22 @@ final class Compiler {
 	}
 
 	/**
-	 * Custom element CSS (Pro, d8): `selector` stands for this element. Kept only when the
-	 * premium layer enables it, and never when it contains something that could escape the
-	 * stylesheet or load anything.
+	 * Extra CSS an extension writes for one element, printed after the element's own rules.
 	 *
 	 * @param array<string, mixed> $pbs      The `pbs` attribute.
 	 * @param string               $selector This element's selector.
 	 * @return string
 	 */
-	public static function custom_css( array $pbs, string $selector ): string {
-		$css = $pbs['css'] ?? null;
-		if ( ! is_string( $css ) || '' === trim( $css ) || strlen( $css ) > self::MAX_CUSTOM_CSS ) {
-			return '';
-		}
-		if ( ! self::element_css_enabled() ) {
-			return '';
-		}
-		if ( ! self::safe_css( $css ) ) {
-			return '';
-		}
-
-		return str_replace( 'selector', $selector, trim( $css ) );
-	}
-
-	/**
-	 * Whether per-element custom CSS is compiled at all.
-	 *
-	 * ⛔ Only with the premium layer's own class present, not on a filter alone (WordPress.org
-	 * review P0TDX382477HGN, 2026-10-08: no free-text CSS per block or page in the directory
-	 * build). The free and WordPress.org builds do not ship that class, so stored CSS stays in the
-	 * block attributes untouched and is neither rendered nor editable there; a site that adds Pro
-	 * gets it back exactly as saved.
-	 *
-	 * @return bool
-	 */
-	public static function element_css_enabled(): bool {
+	private static function element_extra( array $pbs, string $selector ): string {
 		/**
-		 * Filters whether per-element custom CSS is compiled (the premium layer enables it, d8).
+		 * Filters the extra CSS for one element.
 		 *
-		 * @param bool $enabled Default false.
+		 * @param string               $css      Default ''.
+		 * @param array<string, mixed> $pbs      The `pbs` attribute.
+		 * @param string               $selector This element's selector.
 		 */
-		return class_exists( '\\ZinnDigital\\PBS\\Pro\\Design\\Custom_Css' ) && (bool) apply_filters( 'pbsw_design_element_css', false );
-	}
+		$css = apply_filters( 'pbsw_design_element_extra_css', '', $pbs, $selector );
 
-	/**
-	 * Refuse CSS that could close the style element, import, run script or run an expression.
-	 *
-	 * @param string $css CSS.
-	 * @return bool
-	 */
-	public static function safe_css( string $css ): bool {
-		$lower = strtolower( $css );
-		foreach ( array( '</', '<!--', '@import', 'expression(', 'javascript:', 'behavior:', '-moz-binding', '\\' ) as $bad ) {
-			if ( str_contains( $lower, $bad ) ) {
-				return false;
-			}
-		}
-		// Braces must balance, or the rules after this element's would be swallowed.
-		return substr_count( $css, '{' ) === substr_count( $css, '}' );
+		return is_string( $css ) ? $css : '';
 	}
 }

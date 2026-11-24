@@ -30,7 +30,7 @@ final class Content_Width extends Length_Prop {
 	public const GROUP = 'layout';
 
 	/** The blocks that have a boxed content area. */
-	public const BLOCKS = array( 'pbs/section', 'pbs/container' );
+	public const BLOCKS = array( 'pbsw/section', 'pbsw/container' );
 
 	/** Values::length() options. */
 	public const OPTS = array(

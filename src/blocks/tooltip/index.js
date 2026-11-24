@@ -1,5 +1,5 @@
 /**
- * pbs/tooltip — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/tooltip — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/tooltip/block.json';

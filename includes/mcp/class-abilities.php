@@ -23,8 +23,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * The free abilities (owner, 2026-09-30: basic abilities free, bulk and AI in Pro).
  *
- * Abilities: pbs/list-pages · pbs/get-page · pbs/create-page · pbs/update-page
- * pbs/list-sections · pbs/add-section · pbs/list-kits · pbs/apply-kit
+ * Abilities: pbsw/list-pages · pbsw/get-page · pbsw/create-page · pbsw/update-page
+ * pbsw/list-sections · pbsw/add-section · pbsw/list-kits · pbsw/apply-kit
  *
  * Each checks the SAME capability WordPress checks for the same action in wp-admin, per post:
  * `edit_pages` to see the list, `edit_post` for the page it reads or changes, `publish_pages` to
@@ -90,7 +90,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/list-pages',
+			'pbsw/list-pages',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_pages; only pages the user can edit are listed',
@@ -142,7 +142,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/get-page',
+			'pbsw/get-page',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on that page',
@@ -161,7 +161,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/create-page',
+			'pbsw/create-page',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_pages; publish_pages to publish or make private',
@@ -177,7 +177,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/update-page',
+			'pbsw/update-page',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on that page; publish_pages to publish or make private',
@@ -196,7 +196,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/list-sections',
+			'pbsw/list-sections',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_pages',
@@ -242,7 +242,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/add-section',
+			'pbsw/add-section',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on that page',
@@ -279,7 +279,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/list-kits',
+			'pbsw/list-kits',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_pages and publish_pages',
@@ -307,7 +307,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/apply-kit',
+			'pbsw/apply-kit',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_pages and publish_pages; manage_options to set the home page; edit_theme_options to create a menu',
@@ -351,12 +351,12 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/list-blocks',
+			'pbsw/list-blocks',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_posts',
 				'label'               => __( 'List the builder blocks', 'page-builder-sandwich' ),
-				'description'         => __( 'Lists every Page Builder Sandwich block this site can use (Pro blocks too when Pro is active): name, title, category and description.', 'page-builder-sandwich' ),
+				'description'         => __( 'Lists every Page Builder Sandwich block this site can use: name, title, category and description.', 'page-builder-sandwich' ),
 				'category'            => self::CATEGORY,
 				'input_schema'        => array(
 					'type'                 => 'object',
@@ -376,7 +376,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/get-block',
+			'pbsw/get-block',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_posts',
@@ -388,7 +388,7 @@ final class Abilities {
 					'properties'           => array(
 						'name' => array(
 							'type'    => 'string',
-							'pattern' => '^pbs/[a-z0-9-]+$',
+							'pattern' => '^pbsw/[a-z0-9-]+$',
 						),
 					),
 					'required'             => array( 'name' ),
@@ -415,7 +415,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/update-block',
+			'pbsw/update-block',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on that page',
@@ -446,7 +446,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/remove-block',
+			'pbsw/remove-block',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on that page',
@@ -473,7 +473,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/move-section',
+			'pbsw/move-section',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on that page',
@@ -507,7 +507,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/duplicate-page',
+			'pbsw/duplicate-page',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_post on the page and edit_pages',
@@ -534,7 +534,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/delete-page',
+			'pbsw/delete-page',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'delete_post on that page',
@@ -550,7 +550,7 @@ final class Abilities {
 		);
 
 		Ability::register(
-			'pbs/build-landing-page',
+			'pbsw/build-landing-page',
 			array(
 				'edition'             => 'free',
 				'capability'          => 'edit_pages',
@@ -587,7 +587,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/list-pages`.
+	 * `pbsw/list-pages`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>
@@ -621,7 +621,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/get-page`.
+	 * `pbsw/get-page`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -641,14 +641,14 @@ final class Abilities {
 		return self::page_summary( $post ) + array(
 			'content'  => $post->post_content,
 			'sections' => $sections,
-			// The block tree with positions, for pbs/update-block, pbs/remove-block (paths).
+			// The block tree with positions, for pbsw/update-block, pbsw/remove-block (paths).
 			'outline'  => self::outline( self::real( parse_blocks( $post->post_content ) ) ),
 			'modified' => mysql_to_rfc3339( $post->post_modified_gmt ),
 		);
 	}
 
 	/**
-	 * `pbs/create-page`. Public so the Pro bulk ability builds each page the same way.
+	 * `pbsw/create-page`. Public so the Pro bulk ability builds each page the same way.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -689,7 +689,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/update-page`.
+	 * `pbsw/update-page`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -726,7 +726,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/list-sections`.
+	 * `pbsw/list-sections`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>
@@ -858,7 +858,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/update-block`.
+	 * `pbsw/update-block`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -888,14 +888,14 @@ final class Abilities {
 		}
 		if ( null !== $refused ) {
 			/* translators: %s: a block name. */
-			return new \WP_Error( 'pbsw_static_block', sprintf( __( '%s saves its HTML in the page, so its settings cannot be changed on their own. Send the page\'s new markup with pbs/update-page.', 'page-builder-sandwich' ), $refused ), array( 'status' => 409 ) );
+			return new \WP_Error( 'pbsw_static_block', sprintf( __( '%s saves its HTML in the page, so its settings cannot be changed on their own. Send the page\'s new markup with pbsw/update-page.', 'page-builder-sandwich' ), $refused ), array( 'status' => 409 ) );
 		}
 
 		return self::save_blocks( $post, $blocks );
 	}
 
 	/**
-	 * `pbs/remove-block`.
+	 * `pbsw/remove-block`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -918,7 +918,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/move-section`.
+	 * `pbsw/move-section`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -941,7 +941,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/duplicate-page`.
+	 * `pbsw/duplicate-page`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -978,7 +978,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/delete-page`.
+	 * `pbsw/delete-page`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -999,7 +999,7 @@ final class Abilities {
 	}
 
 	/**
-	 * The `pbs/build-landing-page` prompt.
+	 * The `pbsw/build-landing-page` prompt.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>
@@ -1030,11 +1030,11 @@ final class Abilities {
 	 * @return \WP_Error
 	 */
 	private static function bad_path(): \WP_Error {
-		return new \WP_Error( 'pbsw_bad_path', __( 'There is no block at that position. Read the page with pbs/get-page first.', 'page-builder-sandwich' ), array( 'status' => 400 ) );
+		return new \WP_Error( 'pbsw_bad_path', __( 'There is no block at that position. Read the page with pbsw/get-page first.', 'page-builder-sandwich' ), array( 'status' => 400 ) );
 	}
 
 	/**
-	 * `pbs/list-blocks`.
+	 * `pbsw/list-blocks`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>
@@ -1043,7 +1043,7 @@ final class Abilities {
 		$search = strtolower( trim( (string) ( $input['search'] ?? '' ) ) );
 		$out    = array();
 		foreach ( \WP_Block_Type_Registry::get_instance()->get_all_registered() as $name => $type ) {
-			if ( ! str_starts_with( (string) $name, 'pbs/' ) ) {
+			if ( ! str_starts_with( (string) $name, 'pbsw/' ) ) {
 				continue;
 			}
 			$row = array(
@@ -1064,17 +1064,17 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/get-block`.
+	 * `pbsw/get-block`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
 	 */
 	public static function get_block( array $input ) {
 		$name = (string) ( $input['name'] ?? '' );
-		$type = str_starts_with( $name, 'pbs/' ) ? \WP_Block_Type_Registry::get_instance()->get_registered( $name ) : null;
+		$type = str_starts_with( $name, 'pbsw/' ) ? \WP_Block_Type_Registry::get_instance()->get_registered( $name ) : null;
 		if ( ! $type instanceof \WP_Block_Type ) {
 			/* translators: %s: a block name. */
-			return new \WP_Error( 'pbsw_unknown_block', sprintf( __( 'There is no block called "%s". See pbs/list-blocks.', 'page-builder-sandwich' ), $name ), array( 'status' => 404 ) );
+			return new \WP_Error( 'pbsw_unknown_block', sprintf( __( 'There is no block called "%s". See pbsw/list-blocks.', 'page-builder-sandwich' ), $name ), array( 'status' => 404 ) );
 		}
 		$attributes = array();
 		foreach ( (array) $type->attributes as $attr => $schema ) {
@@ -1108,7 +1108,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/add-section`.
+	 * `pbsw/add-section`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -1153,7 +1153,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/list-kits`.
+	 * `pbsw/list-kits`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -1165,7 +1165,7 @@ final class Abilities {
 	}
 
 	/**
-	 * `pbs/apply-kit`.
+	 * `pbsw/apply-kit`.
 	 *
 	 * @param array<string, mixed> $input Input.
 	 * @return array<string, mixed>|\WP_Error
@@ -1173,7 +1173,7 @@ final class Abilities {
 	public static function apply_kit( array $input ) {
 		$slug = (string) ( $input['slug'] ?? '' );
 		if ( 1 !== preg_match( '/^[a-z0-9][a-z0-9-]{1,60}$/', $slug ) ) {
-			return new \WP_Error( 'pbsw_bad_kit', __( 'That is not a kit name. See pbs/list-kits.', 'page-builder-sandwich' ), array( 'status' => 400 ) );
+			return new \WP_Error( 'pbsw_bad_kit', __( 'That is not a kit name. See pbsw/list-kits.', 'page-builder-sandwich' ), array( 'status' => 400 ) );
 		}
 		$done = Kits::apply(
 			$slug,
@@ -1208,7 +1208,7 @@ final class Abilities {
 				return new \WP_Error(
 					'pbsw_unknown_section',
 					/* translators: %s: a section name. */
-					sprintf( __( 'There is no section called "%s". See pbs/list-sections.', 'page-builder-sandwich' ), $name ),
+					sprintf( __( 'There is no section called "%s". See pbsw/list-sections.', 'page-builder-sandwich' ), $name ),
 					array( 'status' => 400 )
 				);
 			}

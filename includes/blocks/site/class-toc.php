@@ -1,6 +1,6 @@
 <?php
 /**
- * `pbs/table-of-contents` — built from the headings of the post it sits in.
+ * `pbsw/table-of-contents` — built from the headings of the post it sits in.
  *
  * @package ZinnDigital\PBS
  */
@@ -98,7 +98,7 @@ final class Toc {
 	}
 
 	/**
-	 * `pbs/table-of-contents`.
+	 * `pbsw/table-of-contents`.
 	 *
 	 * @param array<string, mixed> $attributes Attributes: title, minLevel, maxLevel, ordered, collapsible, spy.
 	 * @return string
@@ -168,7 +168,7 @@ final class Toc {
 	public static function anchor_heading( $html, $block ) {
 		unset( $block );
 		$post = self::post();
-		if ( ! is_string( $html ) || ! $post || ! has_block( 'pbs/table-of-contents', $post ) || preg_match( '/^\s*<h[1-6][^>]*\sid=/i', $html ) ) {
+		if ( ! is_string( $html ) || ! $post || ! \ZinnDigital\PBS\Core\Block_Names::has_block( 'table-of-contents', $post ) || preg_match( '/^\s*<h[1-6][^>]*\sid=/i', $html ) ) {
 			return $html;
 		}
 		$id = (int) $post->ID;

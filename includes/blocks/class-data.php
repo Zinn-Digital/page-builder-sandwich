@@ -28,7 +28,7 @@ final class Data {
 	private const STAR = 'M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z';
 
 	/**
-	 * `pbs/star-rating`: a rating shown as stars, in half-star steps.
+	 * `pbsw/star-rating`: a rating shown as stars, in half-star steps.
 	 *
 	 * One image to assistive technology (`role="img"` with "Rated 4.5 out of 5"); the stars are
 	 * decoration. Each star is drawn full, half or empty — no inline style, and a half star is
@@ -62,7 +62,7 @@ final class Data {
 	}
 
 	/**
-	 * `pbs/progress-bar`: a labelled `<progress>` element — the progressbar role, value and range
+	 * `pbsw/progress-bar`: a labelled `<progress>` element — the progressbar role, value and range
 	 * come from the element itself, so every assistive technology reads it; no inline style. The
 	 * fill grows in when the page loads unless the visitor prefers reduced motion (CSS only).
 	 *
@@ -127,7 +127,7 @@ final class Data {
 	);
 
 	/**
-	 * `pbs/code`: a code listing. The code is printed escaped by the server (readable with no
+	 * `pbsw/code`: a code listing. The code is printed escaped by the server (readable with no
 	 * script at all); highlight.js — bundled, published through the neutral path, loaded only on
 	 * pages with a code block — colours it in the browser with neutral class names.
 	 *

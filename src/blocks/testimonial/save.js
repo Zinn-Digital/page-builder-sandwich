@@ -1,5 +1,5 @@
 /**
- * pbs/testimonial saved markup: the footprint-free fallback (a quote and who said it, no
+ * pbsw/testimonial saved markup: the footprint-free fallback (a quote and who said it, no
  * classes). The live HTML is rebuilt by Blocks\Marketing::render_testimonial().
  */
 import { RichText } from '@wordpress/block-editor';

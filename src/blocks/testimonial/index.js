@@ -1,5 +1,5 @@
 /**
- * pbs/testimonial — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/testimonial — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/testimonial/block.json';

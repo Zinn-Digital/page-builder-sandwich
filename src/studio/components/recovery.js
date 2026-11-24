@@ -5,7 +5,7 @@
 import { useEffect, useState } from '@wordpress/element';
 import { useDispatch, useRegistry } from '@wordpress/data';
 import { store as coreStore } from '@wordpress/core-data';
-import { parse } from '@wordpress/blocks';
+import { parse } from '../../core/parse';
 import apiFetch from '@wordpress/api-fetch';
 import { Button, Modal } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';

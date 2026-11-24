@@ -1,5 +1,5 @@
 /**
- * pbs/contact-buttons saved markup: plain links (no classes, no data-wp-*, no translated text — the
+ * pbsw/contact-buttons saved markup: plain links (no classes, no data-wp-*, no translated text — the
  * link shows the number or address itself). Buttons are rebuilt by Marketing::render_contact_buttons().
  */
 import { contactHref } from './links';

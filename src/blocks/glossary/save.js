@@ -1,5 +1,5 @@
 /**
- * pbs/glossary saved markup: the footprint-free fallback (a description list in the order the
+ * pbsw/glossary saved markup: the footprint-free fallback (a description list in the order the
  * author wrote it). The live HTML — sorted, anchored, with the optional index — is rebuilt by
  * Blocks\Content::render_glossary().
  */

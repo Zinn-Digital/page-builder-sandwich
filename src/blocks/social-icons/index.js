@@ -1,5 +1,5 @@
 /**
- * pbs/social-icons — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/social-icons — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/social-icons/block.json';

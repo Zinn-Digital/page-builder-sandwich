@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Registers the editor script and the fixture blocks.
+ * Registers the editor script and the language switcher block.
  *
  * ⭐ The block metadata (`blocks/<name>/block.json`) carries NO `style` or `viewScript`: WordPress
  * would serve those from the plugin directory on the front end. Front-end CSS goes through
@@ -53,14 +53,6 @@ final class Blocks {
 			wp_set_script_translations( self::EDITOR_HANDLE, 'page-builder-sandwich', PBSW_DIR . 'languages' );
 		}
 
-		register_block_type(
-			PBSW_DIR . 'blocks/fixture',
-			array( 'render_callback' => array( Fixture::class, 'render_block' ) )
-		);
-		register_block_type(
-			PBSW_DIR . 'blocks/fixture-switcher',
-			array( 'render_callback' => array( Fixture::class, 'render_switcher_block' ) )
-		);
 		// The language switcher element (Tranzly tz-l2): languages and markup from Tranzly's API.
 		require_once PBSW_DIR . 'blocks/language-switcher/class-language-switcher.php';
 		register_block_type(

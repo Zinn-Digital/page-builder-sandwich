@@ -1,12 +1,12 @@
 /**
  * The AI sidebar (block editor and Sandwich Studio): a section from a sentence (pbs-ai2), SEO title
- * and description and image alt text (pbs-ai8); the Pro panels join through `pbs.ai.panels`.
+ * and description and image alt text (pbs-ai8); the Pro panels join through `pbsw.ai.panels`.
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { useState, useMemo } from '@wordpress/element';
 import { applyFilters } from '@wordpress/hooks';
 import { useSelect, useDispatch } from '@wordpress/data';
-import { parse } from '@wordpress/blocks';
+import { parse } from '../core/parse';
 import { store as blockEditorStore } from '@wordpress/block-editor';
 import {
 	PanelBody,
@@ -322,7 +322,7 @@ export default function Sidebar( { postId } ) {
 	if ( ! status().ready ) {
 		return <NotReady />;
 	}
-	const panels = applyFilters( 'pbs.ai.panels', [] );
+	const panels = applyFilters( 'pbsw.ai.panels', [] );
 	return (
 		<>
 			<SectionPanel />

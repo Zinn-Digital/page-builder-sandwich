@@ -1,5 +1,5 @@
 /**
- * pbs/call-to-action — editor module: metadata + settings, registered by src/blocks/index.js and
+ * pbsw/call-to-action — editor module: metadata + settings, registered by src/blocks/index.js and
  * by the test bar.
  */
 import metadata from '../../../blocks/call-to-action/block.json';

@@ -1,5 +1,5 @@
 /**
- * The editor of pbs/modal and pbs/off-canvas: the trigger button as visitors see it, and below it
+ * The editor of pbsw/modal and pbsw/off-canvas: the trigger button as visitors see it, and below it
  * the window (or panel) itself, open, so its title and blocks can be edited in place.
  */
 import { __ } from '@wordpress/i18n';

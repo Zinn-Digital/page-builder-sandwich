@@ -1,6 +1,6 @@
 <?php
 /**
- * Design prop `navSubColor` (NAV1, pbs/nav-menu).
+ * Design prop `navSubColor` (NAV1, pbsw/nav-menu).
  *
  * @package ZinnDigital\PBS
  */
@@ -29,7 +29,7 @@ final class Nav_Sub_Color extends Color_Prop {
 	public const GROUP = 'menu';
 
 	/** The block it styles. */
-	public const BLOCKS = array( 'pbs/nav-menu' );
+	public const BLOCKS = array( 'pbsw/nav-menu' );
 
 	/**
 	 * {@inheritDoc}

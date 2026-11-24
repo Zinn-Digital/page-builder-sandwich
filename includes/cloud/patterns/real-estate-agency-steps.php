@@ -27,9 +27,9 @@ return array(
 <h2 class="wp-block-heading">@@PBS_T0@@</h2>
 <!-- /wp:heading -->
 
-<!-- wp:pbs/steps {"items":[{"title":"@@PBS_T1@@","text":"@@PBS_T2@@"},{"title":"@@PBS_T3@@","text":"@@PBS_T4@@"},{"title":"@@PBS_T5@@","text":"@@PBS_T6@@"}],"layout":"horizontal","level":3} -->
+<!-- wp:pbsw/steps {"items":[{"title":"@@PBS_T1@@","text":"@@PBS_T2@@"},{"title":"@@PBS_T3@@","text":"@@PBS_T4@@"},{"title":"@@PBS_T5@@","text":"@@PBS_T6@@"}],"layout":"horizontal","level":3} -->
 <ol><li><h3>@@PBS_T1@@</h3><p>@@PBS_T2@@</p></li><li><h3>@@PBS_T3@@</h3><p>@@PBS_T4@@</p></li><li><h3>@@PBS_T5@@</h3><p>@@PBS_T6@@</p></li></ol>
-<!-- /wp:pbs/steps --></div>
+<!-- /wp:pbsw/steps --></div>
 <!-- /wp:group -->',
 		array(
 			__( 'How it works', 'page-builder-sandwich' ),

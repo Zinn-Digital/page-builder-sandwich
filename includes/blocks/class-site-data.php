@@ -121,7 +121,7 @@ class Site_Data {
 	}
 
 	/**
-	 * Details of a post for pbs/post-meta.
+	 * Details of a post for pbsw/post-meta.
 	 *
 	 * @param int $post_id Post.
 	 * @return array<string, mixed>|null author, author_url, date, date_text, modified, modified_text, categories, tags, words, comments, comments_url.
@@ -220,7 +220,7 @@ class Site_Data {
 	}
 
 	/**
-	 * A user, as pbs/user-profile prints them.
+	 * A user, as pbsw/user-profile prints them.
 	 *
 	 * @param int $user_id User.
 	 * @return array<string, string>|null name, bio, posts_url, website, avatar (URL).
@@ -255,7 +255,7 @@ class Site_Data {
 	/**
 	 * A REST route's public address.
 	 *
-	 * @param string $path Route, e.g. `zd-u/v1/unlock`.
+	 * @param string $path Route, e.g. `<prefix>-u/v1/unlock`.
 	 * @return string
 	 */
 	public function rest_url( string $path ): string {
