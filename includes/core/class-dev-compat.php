@@ -378,10 +378,23 @@ final class Dev_Compat {
 		$handle = 'pbsw-shortcode-inline-' . substr( md5( $body ), 0, 12 );
 		if ( ! wp_script_is( $handle, 'registered' ) ) {
 			wp_register_script( $handle, false, array(), $version, false );
-			wp_add_inline_script( $handle, $body );
+			wp_add_inline_script( $handle, self::inline_js( $body ) );
 		}
 		wp_enqueue_script( $handle );
 		return '';
+	}
+
+	/**
+	 * Escape a moved script body late, at the sink: WordPress prints it inside its own `<script>` element, so any
+	 * `</script` or `<!--` in it could close or comment out that element. `<\/` and `<\!--` are the same characters
+	 * to JavaScript inside a string, regex or comment, and neither can appear anywhere else in valid code, so the
+	 * script runs exactly as its owning plugin wrote it (WordPress.org review P0TDX382477HGN: no unescaped sink).
+	 *
+	 * @param string $body Script source the owning plugin printed.
+	 * @return string
+	 */
+	public static function inline_js( string $body ): string {
+		return (string) preg_replace( array( '@</(script)@i', '@<!--@' ), array( '<\\/$1', '<\\!--' ), $body );
 	}
 
 	/**
@@ -393,16 +406,86 @@ final class Dev_Compat {
 		$allowed = wp_kses_allowed_html( 'post' );
 		$common  = (array) ( $allowed['span'] ?? array() ); // WordPress's global attributes.
 		$extra   = array(
-			'form'     => array( 'action' => true, 'method' => true, 'enctype' => true, 'name' => true, 'novalidate' => true, 'target' => true, 'autocomplete' => true ),
-			'input'    => array( 'type' => true, 'name' => true, 'value' => true, 'placeholder' => true, 'checked' => true, 'disabled' => true, 'readonly' => true, 'required' => true, 'min' => true, 'max' => true, 'step' => true, 'maxlength' => true, 'minlength' => true, 'pattern' => true, 'size' => true, 'multiple' => true, 'accept' => true, 'autocomplete' => true ),
-			'select'   => array( 'name' => true, 'disabled' => true, 'required' => true, 'multiple' => true, 'size' => true ),
-			'option'   => array( 'value' => true, 'selected' => true, 'disabled' => true, 'label' => true ),
-			'optgroup' => array( 'label' => true, 'disabled' => true ),
-			'textarea' => array( 'name' => true, 'rows' => true, 'cols' => true, 'placeholder' => true, 'disabled' => true, 'readonly' => true, 'required' => true, 'maxlength' => true ),
-			'button'   => array( 'type' => true, 'name' => true, 'value' => true, 'disabled' => true ),
+			'form'     => array(
+				'action'       => true,
+				'method'       => true,
+				'enctype'      => true,
+				'name'         => true,
+				'novalidate'   => true,
+				'target'       => true,
+				'autocomplete' => true,
+			),
+			'input'    => array(
+				'type'         => true,
+				'name'         => true,
+				'value'        => true,
+				'placeholder'  => true,
+				'checked'      => true,
+				'disabled'     => true,
+				'readonly'     => true,
+				'required'     => true,
+				'min'          => true,
+				'max'          => true,
+				'step'         => true,
+				'maxlength'    => true,
+				'minlength'    => true,
+				'pattern'      => true,
+				'size'         => true,
+				'multiple'     => true,
+				'accept'       => true,
+				'autocomplete' => true,
+			),
+			'select'   => array(
+				'name'     => true,
+				'disabled' => true,
+				'required' => true,
+				'multiple' => true,
+				'size'     => true,
+			),
+			'option'   => array(
+				'value'    => true,
+				'selected' => true,
+				'disabled' => true,
+				'label'    => true,
+			),
+			'optgroup' => array(
+				'label'    => true,
+				'disabled' => true,
+			),
+			'textarea' => array(
+				'name'        => true,
+				'rows'        => true,
+				'cols'        => true,
+				'placeholder' => true,
+				'disabled'    => true,
+				'readonly'    => true,
+				'required'    => true,
+				'maxlength'   => true,
+			),
+			'button'   => array(
+				'type'     => true,
+				'name'     => true,
+				'value'    => true,
+				'disabled' => true,
+			),
 			'label'    => array( 'for' => true ),
-			'a'        => array( 'hreflang' => true, 'rel' => true, 'target' => true, 'download' => true ),
-			'iframe'   => array( 'src' => true, 'width' => true, 'height' => true, 'name' => true, 'loading' => true, 'allow' => true, 'allowfullscreen' => true, 'referrerpolicy' => true, 'sandbox' => true ),
+			'a'        => array(
+				'hreflang' => true,
+				'rel'      => true,
+				'target'   => true,
+				'download' => true,
+			),
+			'iframe'   => array(
+				'src'             => true,
+				'width'           => true,
+				'height'          => true,
+				'name'            => true,
+				'loading'         => true,
+				'allow'           => true,
+				'allowfullscreen' => true,
+				'referrerpolicy'  => true,
+				'sandbox'         => true,
+			),
 		);
 		foreach ( $extra as $tag => $attributes ) {
 			$allowed[ $tag ] = array_merge( (array) ( $allowed[ $tag ] ?? array() ), $common, $attributes );

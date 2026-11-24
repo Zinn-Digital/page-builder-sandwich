@@ -54,9 +54,9 @@ final class First_Open {
 
 		$config = array(
 			'path'    => '/pbsw/v1/posts/' . (int) $post->ID . '/convert',
-			'message' => __( 'This page uses the older Page Builder Sandwich format. Convert it to blocks to edit it here. A backup is kept, and you can undo the conversion.', 'page-builder-sandwich-by-zinn-digital' ),
-			'button'  => __( 'Convert to blocks', 'page-builder-sandwich-by-zinn-digital' ),
-			'failed'  => __( 'This page could not be converted. It has not been changed.', 'page-builder-sandwich-by-zinn-digital' ),
+			'message' => __( 'This page uses the older Page Builder Sandwich format. Convert it to blocks to edit it here. A backup is kept, and you can undo the conversion.', 'page-builder-sandwich' ),
+			'button'  => __( 'Convert to blocks', 'page-builder-sandwich' ),
+			'failed'  => __( 'This page could not be converted. It has not been changed.', 'page-builder-sandwich' ),
 		);
 
 		wp_enqueue_script( 'pbsw-first-open', plugins_url( 'assets/first-open.js', PBSW_FILE ), array( 'wp-api-fetch', 'wp-data', 'wp-dom-ready', 'wp-notices' ), PBSW_VERSION, true );
@@ -81,12 +81,12 @@ final class First_Open {
 		$post_id = (int) $post->ID;
 		?>
 		<div class="notice notice-warning">
-			<p><?php esc_html_e( 'This page uses the older Page Builder Sandwich format. Convert it to blocks to edit it here. A backup is kept, and you can undo the conversion.', 'page-builder-sandwich-by-zinn-digital' ); ?></p>
+			<p><?php esc_html_e( 'This page uses the older Page Builder Sandwich format. Convert it to blocks to edit it here. A backup is kept, and you can undo the conversion.', 'page-builder-sandwich' ); ?></p>
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<input type="hidden" name="action" value="<?php echo esc_attr( self::ACTION ); ?>" />
 				<input type="hidden" name="post_id" value="<?php echo esc_attr( (string) $post_id ); ?>" />
 				<?php wp_nonce_field( self::ACTION . '_' . $post_id ); ?>
-				<p><button type="submit" class="button button-primary"><?php esc_html_e( 'Convert to blocks', 'page-builder-sandwich-by-zinn-digital' ); ?></button></p>
+				<p><button type="submit" class="button button-primary"><?php esc_html_e( 'Convert to blocks', 'page-builder-sandwich' ); ?></button></p>
 			</form>
 		</div>
 		<?php
@@ -102,7 +102,7 @@ final class First_Open {
 		$post_id = isset( $_POST['post_id'] ) ? absint( wp_unslash( $_POST['post_id'] ) ) : 0;
 		check_admin_referer( self::ACTION . '_' . $post_id );
 		if ( $post_id < 1 || ! current_user_can( 'edit_post', $post_id ) ) {
-			wp_die( esc_html__( 'You are not allowed to convert this page.', 'page-builder-sandwich-by-zinn-digital' ), '', array( 'response' => 403 ) );
+			wp_die( esc_html__( 'You are not allowed to convert this page.', 'page-builder-sandwich' ), '', array( 'response' => 403 ) );
 		}
 		if ( self::can_offer( $post_id ) ) {
 			Batch::convert_post( $post_id, 'manual' );

@@ -40,7 +40,7 @@ final class Waiting {
 	}
 
 	/** The per-user dismiss action, and the user meta holding the count dismissed at. */
-	public const DISMISS = 'pbsw_convert_waiting_dismiss';
+	public const DISMISS        = 'pbsw_convert_waiting_dismiss';
 	public const DISMISSED_META = 'pbsw_waiting_dismissed';
 
 	/**
@@ -89,7 +89,7 @@ final class Waiting {
 	public static function dismiss(): void {
 		check_admin_referer( self::DISMISS );
 		if ( ! self::allowed() ) {
-			wp_die( esc_html__( 'You are not allowed to convert these pages.', 'page-builder-sandwich-by-zinn-digital' ), '', array( 'response' => 403 ) );
+			wp_die( esc_html__( 'You are not allowed to convert these pages.', 'page-builder-sandwich' ), '', array( 'response' => 403 ) );
 		}
 		update_user_meta( get_current_user_id(), self::DISMISSED_META, max( 1, Batch::waiting_count() ) );
 		wp_safe_redirect( wp_get_referer() ? wp_get_referer() : admin_url( 'edit.php?post_type=page' ) );
@@ -136,7 +136,7 @@ final class Waiting {
 						'Page Builder Sandwich: %s page in the older format is waiting to be converted to blocks. It contains markup that only an administrator can save unchanged, so it was not converted in the background.',
 						'Page Builder Sandwich: %s pages in the older format are waiting to be converted to blocks. They contain markup that only an administrator can save unchanged, so they were not converted in the background.',
 						$count,
-						'page-builder-sandwich-by-zinn-digital'
+						'page-builder-sandwich'
 					),
 					number_format_i18n( $count )
 				)
@@ -147,9 +147,9 @@ final class Waiting {
 				<input type="hidden" name="action" value="<?php echo esc_attr( self::ACTION ); ?>" />
 				<?php wp_nonce_field( self::ACTION ); ?>
 				<p>
-					<button type="submit" class="button button-primary"><?php esc_html_e( 'Convert now', 'page-builder-sandwich-by-zinn-digital' ); ?></button>
+					<button type="submit" class="button button-primary"><?php esc_html_e( 'Convert now', 'page-builder-sandwich' ); ?></button>
 					<?php if ( $scoped ) : ?>
-						<a class="button-link" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=' . self::DISMISS ), self::DISMISS ) ); ?>"><?php esc_html_e( 'Dismiss', 'page-builder-sandwich-by-zinn-digital' ); ?></a>
+						<a class="button-link" href="<?php echo esc_url( wp_nonce_url( admin_url( 'admin-post.php?action=' . self::DISMISS ), self::DISMISS ) ); ?>"><?php esc_html_e( 'Dismiss', 'page-builder-sandwich' ); ?></a>
 					<?php endif; ?>
 				</p>
 			</form>
@@ -166,7 +166,7 @@ final class Waiting {
 	public static function handle(): void {
 		check_admin_referer( self::ACTION );
 		if ( ! self::allowed() ) {
-			wp_die( esc_html__( 'You are not allowed to convert these pages.', 'page-builder-sandwich-by-zinn-digital' ), '', array( 'response' => 403 ) );
+			wp_die( esc_html__( 'You are not allowed to convert these pages.', 'page-builder-sandwich' ), '', array( 'response' => 403 ) );
 		}
 		// The cursor only ever arrives on the continuation redirect below (a GET); the button's own
 		// POST starts at 0.
@@ -175,10 +175,11 @@ final class Waiting {
 		do {
 			$ids = Batch::waiting_ids( $after, self::CHUNK );
 			Batch::convert_waiting( $ids );
+			$found = count( $ids );
 			if ( array() !== $ids ) {
 				$after = (int) max( $ids );
 			}
-		} while ( count( $ids ) === self::CHUNK && time() < $until );
+		} while ( self::CHUNK === $found && time() < $until );
 
 		if ( count( $ids ) === self::CHUNK ) {
 			wp_safe_redirect(

@@ -48,10 +48,10 @@ final class Compiler {
 		$at_rules = $at_rules ?? At_Rules::all();
 		$keys     = array_merge( $ids, At_Rules::keys( $at_rules ) );
 
-		$rules  = array_fill_keys( $keys, '' );
-		$hides  = array();
-		$extra  = '';
-		$seen   = array();
+		$rules = array_fill_keys( $keys, '' );
+		$hides = array();
+		$extra = '';
+		$seen  = array();
 		self::walk( $blocks, $prefix, $ids, $keys, $rules, $hides, $extra, $seen );
 
 		$css = $rules['base'];

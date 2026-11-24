@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Converter {
 
-	/** convert_post() status for a post only a user with unfiltered_html can convert exactly. */
+	/** The convert_post() status for a post only a user with unfiltered_html can convert exactly. */
 	public const NEEDS_ADMIN = 'needs-admin';
 
 	/** Legacy markers that mean "this content was written by legacy PBS". */

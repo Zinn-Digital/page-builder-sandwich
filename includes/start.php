@@ -79,6 +79,7 @@ require_once __DIR__ . '/admin-kit/load.php';
 );
 
 // dotorg-omit:begin
+
 /*
  * The separate Pro package adds its own code here. The WordPress.org build removes this region
  * (wp/bin/build-plugin.php), and no free feature depends on it.

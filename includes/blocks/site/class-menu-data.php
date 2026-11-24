@@ -49,7 +49,7 @@ class Menu_Data {
 				'depth'          => 3,
 				'theme_location' => '',
 				'item_spacing'   => 'discard',
-				'pbsw_block'      => 'pbsw/nav-menu',
+				'pbsw_block'     => 'pbsw/nav-menu',
 			)
 		);
 		$menu = wp_get_nav_menu_object( $args->menu ?? $menu_id );

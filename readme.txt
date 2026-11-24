@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.37.15
+Stable tag: 6.37.16
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -215,6 +215,9 @@ The same source and build tools are public at https://github.com/Zinn-Digital/pa
 
 == Changelog ==
 
+= 6.37.16 =
+* Release build fixes: a form plugin's script moved off a block template is escaped where it is printed, and the WordPress coding standards pass on every file.
+
 = 6.37.15 =
 * An AI provider key saved by an older version is re-sealed from the admin screens only, never during a visitor's request; small admin screen fixes.
 
@@ -242,8 +245,5 @@ The same source and build tools are public at https://github.com/Zinn-Digital/pa
 
 = 6.37.7 =
 * Dashboard tabs: add-ons can add their own tabs to the Page Builder Sandwich dashboard (pbsw_admin_tabs filter), and Pro lets you add your own tabs with your notes, links and help for clients.
-
-= 6.37.6 =
-* Dependency security update (Renovate).
 
 The full history of every release is in changelog.txt, in the plugin's folder.

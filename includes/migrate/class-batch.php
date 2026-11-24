@@ -215,7 +215,7 @@ final class Batch {
 			 *
 			 * @param int $size Posts per step (Batch::DEFAULT_SIZE).
 			 */
-			$size  = max( 1, (int) apply_filters( 'pbsw_migration_batch_size', self::DEFAULT_SIZE ) );
+			$size = max( 1, (int) apply_filters( 'pbsw_migration_batch_size', self::DEFAULT_SIZE ) );
 			// Runs as whoever is current (no one, under WP-Cron). A post kses would change is not
 			// written: it waits for an administrator (see convert_waiting()).
 			$state = Run::step(
@@ -352,7 +352,7 @@ final class Batch {
 	 * unfiltered_html, Backup::write_content() writes each one exactly. Nobody is switched to;
 	 * without the capability nothing is written (each post simply keeps waiting).
 	 *
-	 * @param list<int> $ids Waiting post ids (waiting_ids()).
+	 * @param int[] $ids Waiting post ids (waiting_ids()).
 	 * @return int How many are no longer waiting.
 	 */
 	public static function convert_waiting( array $ids ): int {
