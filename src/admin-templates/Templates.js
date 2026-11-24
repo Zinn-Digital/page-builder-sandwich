@@ -21,7 +21,7 @@ export default function Templates( { data } ) {
 		{
 			name: 'kits',
 			title: __( 'Website kits', 'page-builder-sandwich' ),
-			render: () => <Kits data={ data } />,
+			render: () => <Kits />,
 		},
 	];
 	const extra = applyFilters( 'pbsw.admin.templatesTabs', [], data ) || [];

@@ -207,11 +207,9 @@ function ImportDialog( { kit, can, onClose } ) {
 /**
  * The library.
  *
- * @param {Object} props
- * @param {Object} props.data Boot data.
  * @return {Element} Kits.
  */
-export default function Kits( { data } ) {
+export default function Kits() {
 	const [ catalogue, setCatalogue ] = useState( null );
 	const [ error, setError ] = useState( '' );
 	const [ search, setSearch ] = useState( '' );
@@ -276,7 +274,12 @@ export default function Kits( { data } ) {
 	if ( ! catalogue.optIn ) {
 		return (
 			<div className="pbs-kits">
-				<h2>{ __( 'Connect to the kit library?', 'page-builder-sandwich' ) }</h2>
+				<h2>
+					{ __(
+						'Connect to the kit library?',
+						'page-builder-sandwich'
+					) }
+				</h2>
 				<p>
 					{ __(
 						'Website kits are stored on the Zinn Digital service. This site has not contacted it. If you switch the library on, this site requests the kit list and the kits you import from api.zinndigital.com. Each request sends your language and the plugin name, and your server address is visible to the service as with any web request. Your site address and content are not sent.',
@@ -286,8 +289,7 @@ export default function Kits( { data } ) {
 				<p>
 					<ExternalLink href="https://zinndigital.com/legal/terms">
 						{ __( 'Terms of Service', 'page-builder-sandwich' ) }
-					</ExternalLink>
-					{ ' ' }
+					</ExternalLink>{ ' ' }
 					<ExternalLink href="https://zinndigital.com/legal/privacy">
 						{ __( 'Privacy Policy', 'page-builder-sandwich' ) }
 					</ExternalLink>
@@ -299,7 +301,10 @@ export default function Kits( { data } ) {
 						disabled={ switching }
 						onClick={ () => setOptIn( true ) }
 					>
-						{ __( 'Switch on the kit library', 'page-builder-sandwich' ) }
+						{ __(
+							'Switch on the kit library',
+							'page-builder-sandwich'
+						) }
 					</Button>
 				) : (
 					<Notice status="info" isDismissible={ false }>
@@ -349,38 +354,35 @@ export default function Kits( { data } ) {
 					onChange={ setCategory }
 				/>
 				{ mixedTiers && (
-				<SelectControl
-					__next40pxDefaultSize
-					__nextHasNoMarginBottom
-					label={ __( 'Edition', 'page-builder-sandwich' ) }
-					value={ tier }
-					options={ [
-						{
-							label: __(
-								'Free and Pro',
-								'page-builder-sandwich'
-							),
-							value: '',
-						},
-						{
-							label: __( 'Free', 'page-builder-sandwich' ),
-							value: 'free',
-						},
-						{
-							label: __( 'Pro', 'page-builder-sandwich' ),
-							value: 'pro',
-						},
-					] }
-					onChange={ setTier }
-				/>
+					<SelectControl
+						__next40pxDefaultSize
+						__nextHasNoMarginBottom
+						label={ __( 'Edition', 'page-builder-sandwich' ) }
+						value={ tier }
+						options={ [
+							{
+								label: __(
+									'Free and Pro',
+									'page-builder-sandwich'
+								),
+								value: '',
+							},
+							{
+								label: __( 'Free', 'page-builder-sandwich' ),
+								value: 'free',
+							},
+							{
+								label: __( 'Pro', 'page-builder-sandwich' ),
+								value: 'pro',
+							},
+						] }
+						onChange={ setTier }
+					/>
 				) }
 			</div>
 			<ul className="pbs-kits__grid">
 				{ shown.map( ( kit ) => (
-					<li
-						key={ kit.slug }
-						className="pbs-kit"
-					>
+					<li key={ kit.slug } className="pbs-kit">
 						{ kit.preview && kit.preview.image ? (
 							<img
 								className="pbs-kit__preview"
@@ -394,9 +396,7 @@ export default function Kits( { data } ) {
 							<Swatches palette={ kit.palette } />
 						) }
 						<div className="pbs-kit__body">
-							<h3 className="pbs-kit__name">
-								{ kit.name }
-							</h3>
+							<h3 className="pbs-kit__name">{ kit.name }</h3>
 							<p className="pbs-kit__category">
 								{ kit.category }
 							</p>
@@ -409,11 +409,11 @@ export default function Kits( { data } ) {
 									.join( ' · ' ) }
 							</p>
 							<Button
-									variant="secondary"
-									onClick={ () => setImporting( kit ) }
-								>
-									{ __( 'Import', 'page-builder-sandwich' ) }
-								</Button>
+								variant="secondary"
+								onClick={ () => setImporting( kit ) }
+							>
+								{ __( 'Import', 'page-builder-sandwich' ) }
+							</Button>
 						</div>
 					</li>
 				) ) }

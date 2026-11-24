@@ -71,20 +71,20 @@ export default function SiteDesign( { hasPost = false, initial = '' } ) {
 				{ sections.map( ( s ) => (
 					<li key={ s.name }>
 						<Button
-								className="pbsw-sd__item"
-								onClick={ () => setActive( s.name ) }
-								icon={ isRTL() ? chevronLeft : chevronRight }
-								iconPosition="right"
-							>
-								<span className="pbsw-sd__item-title">
-									{ s.title }
+							className="pbsw-sd__item"
+							onClick={ () => setActive( s.name ) }
+							icon={ isRTL() ? chevronLeft : chevronRight }
+							iconPosition="right"
+						>
+							<span className="pbsw-sd__item-title">
+								{ s.title }
+							</span>
+							{ s.description && (
+								<span className="pbsw-sd__item-desc">
+									{ s.description }
 								</span>
-								{ s.description && (
-									<span className="pbsw-sd__item-desc">
-										{ s.description }
-									</span>
-								) }
-							</Button>
+							) }
+						</Button>
 					</li>
 				) ) }
 			</ul>

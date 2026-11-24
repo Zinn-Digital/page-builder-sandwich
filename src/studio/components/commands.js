@@ -189,7 +189,6 @@ function useJumpCommands( { search } ) {
  * Registers every Studio command.
  */
 export default function StudioCommands() {
-	const boot = useBoot();
 	const ui = useUi();
 	const { save } = useSave();
 	const { undo, redo } = useDispatch( coreStore );

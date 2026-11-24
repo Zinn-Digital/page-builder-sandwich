@@ -24,7 +24,9 @@ let lastContent = null;
  */
 export function isDynamic( content ) {
 	// Any of our blocks (many are rendered on the server) or any block binding.
-	return /<!-- wp:pbsw?\//.test( content ) || /"bindings"\s*:/.test( content );
+	return (
+		/<!-- wp:pbsw?\//.test( content ) || /"bindings"\s*:/.test( content )
+	);
 }
 
 /**
