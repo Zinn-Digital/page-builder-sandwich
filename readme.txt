@@ -17,7 +17,7 @@ Build pages from 47 blocks, section by section, in the block editor or Sandwich 
 
 = What it does =
 
-* **47 free blocks:** layout, content (accordion, tabs, steps, modal), marketing (call to action, testimonial, a Form block for Contact Form 7, WPForms or Fluent Forms), media (map, booking calendar, QR code) and site blocks, including a navigation menu with an adjustable mobile menu.
+* **44 free blocks:** layout, content (accordion, tabs, steps, modal), marketing (call to action, testimonial, a Form block for Contact Form 7, WPForms or Fluent Forms), media (map, booking calendar, QR code) and site blocks, including a navigation menu with an adjustable mobile menu.
 * **Pro navigation:** mega menus, menu icons and badges, and a header that sticks, shrinks or hides on scroll.
 * **Sandwich Studio**, a full-screen editor with a command palette and an accessibility checker.
 * **Site design:** global styles synced with `theme.json`.
