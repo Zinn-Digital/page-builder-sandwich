@@ -53,9 +53,11 @@ final class Waiting {
 	public static function scoped(): bool {
 		// dotorg-omit:begin
 		return false;
+		// phpcs:disable Squiz.PHP.NonExecutableCode.Unreachable -- the return below is reached in the WordPress.org build, where this dotorg-omit block is removed.
 		// dotorg-omit:end
 		return true;
 	}
+	// phpcs:enable Squiz.PHP.NonExecutableCode.Unreachable
 
 	/**
 	 * Whether a screen id is one the scoped notice may show on: the Pages list or a screen of

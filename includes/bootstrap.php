@@ -89,9 +89,11 @@ function pbsw_uninstall(): void {
 	// dotorg-omit:begin
 	// A self-hosted build keeps Pro's own options for a reinstall; only this sweep is skipped.
 	return;
+	// phpcs:disable Squiz.PHP.NonExecutableCode.Unreachable -- the sweep below is reached in the WordPress.org build, where this dotorg-omit block is removed.
 	// dotorg-omit:end
 	pbsw_uninstall_sweep( plugin_basename( PBSW_FILE ) );
 }
+// phpcs:enable Squiz.PHP.NonExecutableCode.Unreachable
 
 /**
  * The WordPress.org build's full sweep (review round 6): every option starting `pbsw_` (including
@@ -99,16 +101,16 @@ function pbsw_uninstall(): void {
  * pbsw_safe_mode), every `_pbsw_` post meta key, and the per-user notice dismissal. Skipped while
  * another copy of the plugin (Pro) is still installed, because that copy shares the data.
  *
- * @param string $self This plugin's basename.
+ * @param string $own_basename This plugin's basename.
  * @return void
  */
-function pbsw_uninstall_sweep( string $self ): void {
+function pbsw_uninstall_sweep( string $own_basename ): void {
 	global $wpdb;
 	if ( ! function_exists( 'get_plugins' ) ) {
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';
 	}
 	foreach ( array_keys( get_plugins() ) as $basename ) {
-		if ( $basename !== $self && str_starts_with( dirname( (string) $basename ), 'page-builder-sandwich' ) ) {
+		if ( $basename !== $own_basename && str_starts_with( dirname( (string) $basename ), 'page-builder-sandwich' ) ) {
 			return;
 		}
 	}

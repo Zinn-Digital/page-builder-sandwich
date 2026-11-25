@@ -24,10 +24,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Delete every user's kit preferences, unless another kit plugin still uses the shared key.
  *
  * @param string $meta_key The preferences meta key (`Prefs::META`).
- * @param string $self     This plugin's basename, which does not count as "another" plugin.
+ * @param string $own_basename This plugin's basename, which does not count as "another" plugin.
  * @return bool Whether the key was deleted.
  */
-function pbsw_uninstall_kit_prefs( string $meta_key, string $self ): bool {
+function pbsw_uninstall_kit_prefs( string $meta_key, string $own_basename ): bool {
 	// dotorg-omit:begin
 	if ( ! function_exists( 'get_plugins' ) ) {
 		require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -35,7 +35,7 @@ function pbsw_uninstall_kit_prefs( string $meta_key, string $self ): bool {
 	$installed = array_keys( (array) get_plugins() );
 	foreach ( \ZinnDigital\PBS\AdminKit\Data::products() as $product ) {
 		foreach ( (array) ( $product['main_files'] ?? array() ) as $file ) {
-			if ( $self !== $file && in_array( (string) $file, $installed, true ) ) {
+			if ( $own_basename !== $file && in_array( (string) $file, $installed, true ) ) {
 				return false;
 			}
 		}

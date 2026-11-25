@@ -411,7 +411,7 @@ final class Licence {
 		if ( ! $out['premium'] ) {
 			$out['upgradeUrl'] = self::url( $fs, 'get_upgrade_url' );
 			// dotorg-omit:begin
-			$out['trialUrl']   = $out['trial']['available'] ? self::url( $fs, 'get_trial_url' ) : '';
+			$out['trialUrl'] = $out['trial']['available'] ? self::url( $fs, 'get_trial_url' ) : '';
 			// dotorg-omit:end
 		}
 		$out['pricingUrl'] = self::url( $fs, 'pricing_url' );
