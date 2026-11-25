@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.37.17
+Stable tag: 6.37.18
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,11 +51,11 @@ Only when an AI app such as Claude or ChatGPT starts connecting to the site's MC
 
 = Zinn Digital® kit and cloud library =
 
-Off by default. Nothing is contacted until an administrator presses "Switch on the kit library" under Templates & kits, and it can be switched off again. Once on, opening the screen or importing a kit requests `https://api.zinndigital.com/v1/pbs-library/kits/` with the site's language and the plugin name; the site address, version and content are not sent. Pro, only when a design is saved, inserted or managed: `/v1/pbs-library/sessions`, `/v1/pbs-library/team-sessions`, `/v1/pbs-library/items/`, `/v1/pbs-library/images/`, `/v1/pbs-library/account`, `/v1/pbs-library/teams/` (same host), sending the design, its resized images, its name and the site address; the licence key is never sent. With your own R2/S3 bucket nothing is sent to Zinn Digital®. Terms: https://zinndigital.com/legal/terms · Privacy policy: https://zinndigital.com/legal/privacy
+Off by default: nothing is contacted until an administrator presses "Switch on the kit library" under Templates & kits (it can be switched off). Once on, opening the screen or importing a kit requests `https://api.zinndigital.com/v1/pbs-library/kits/` with the site's language and the plugin name; the site address, version and content are not sent. Pro, only when a design is saved, inserted or managed: `/v1/pbs-library/sessions`, `/v1/pbs-library/team-sessions`, `/v1/pbs-library/items/`, `/v1/pbs-library/images/`, `/v1/pbs-library/account`, `/v1/pbs-library/teams/` (same host), sending the design, its resized images, its name and the site address; the licence key is never sent. With your own R2/S3 bucket nothing is sent to Zinn Digital®. Terms: https://zinndigital.com/legal/terms · Privacy policy: https://zinndigital.com/legal/privacy
 
 The plugin bundles the Freemius SDK, which handles licences and updates for the Pro edition and, only if you agree, product usage data.
 
-Nothing is sent until you opt in on the screen shown after activation, or activate a licence. When you do, the SDK sends your site's URL, WordPress, PHP and plugin versions, language, and the administrator's name and email address to Freemius, and checks it periodically for licence status and updates. Before connecting it checks that the service is reachable by requesting `https://api.freemius.com/v1/ping.json`, which sends nothing about your site. You can opt out at any time from the plugin's Account page.
+Nothing is sent until you opt in on the screen shown after activation, or activate a licence; then the SDK sends your site's URL, WordPress, PHP and plugin versions, language, and the administrator's name and email address to Freemius, and checks it periodically for licence status and updates. Before connecting it requests `https://api.freemius.com/v1/ping.json` to check the service is reachable, sending nothing about your site. You can opt out at any time from the plugin's Account page.
 
 * Service: https://freemius.com
 * Terms: https://freemius.com/terms/
@@ -67,7 +67,7 @@ Google Fonts are hosted on your own site. Only when an administrator adds a font
 * Terms: https://developers.google.com/terms
 * Privacy policy: https://policies.google.com/privacy
 
-Background videos from YouTube or Vimeo, set on a section in Page Builder Sandwich 5.x and still shown by this version. Only for a YouTube or Vimeo background, once a visitor scrolls to it without asking for reduced motion, the browser loads the player from `https://www.youtube-nocookie.com` or `https://player.vimeo.com` ("do not track" on); until then the page shows a local poster. The player receives what any embed does (IP address, browser details, video ID); nothing else is sent.
+Background videos from YouTube or Vimeo, set on a section in Page Builder Sandwich 5.x and still shown. Only once a visitor scrolls to such a background, without asking for reduced motion, does the browser load the player from `https://www.youtube-nocookie.com` or `https://player.vimeo.com` ("do not track" on); until then the page shows a local poster. The player receives what any embed does (IP address, browser details, video ID); nothing else is sent.
 
 * YouTube terms: https://www.youtube.com/t/terms
 * YouTube (Google) privacy policy: https://policies.google.com/privacy
@@ -80,7 +80,7 @@ Map block. The map comes from OpenStreetMap (no key or account). The page shows 
 * Terms: https://osmfoundation.org/wiki/Terms_of_Use
 * Privacy policy: https://osmfoundation.org/wiki/Privacy_Policy
 
-Maps saved with Page Builder Sandwich 5.x. New maps use OpenStreetMap as above. A page that still holds a map element saved by version 5.x shows it with Google's keyless map embed: when a visitor scrolls near the map, their browser loads `https://maps.google.com/maps` with the map's saved location, zoom and the page language, sending what any embedded map does (IP address, browser details and the address of the page). Pages without such a map never contact Google.
+Maps saved with Page Builder Sandwich 5.x (new maps use OpenStreetMap) show with Google's keyless map embed: when a visitor scrolls near one, their browser loads `https://maps.google.com/maps` with the map's saved location, zoom and the page language, sending what any embedded map does (IP address, browser details and the address of the page). Pages without such a map never contact Google.
 
 * Service: https://www.google.com/maps
 * Terms: https://policies.google.com/terms
@@ -103,7 +103,7 @@ Code and QR code blocks use no external service: highlight.js 11.12.0 (BSD-3-Cla
 
 Importing an export file made by this plugin on another site. An image the file links to on another site is copied into your media library by WordPress's own `media_sideload_image()`: your site downloads that one image from the address in the file, which is usually the site the export came from. Nothing else is sent, and an import that links no outside images makes no request.
 
-AI features use the AI provider you choose, with your own API key. Nothing is sent to any AI provider until you add a key under Settings → AI providers and use an AI feature. When you do, the text the feature needs (for example, the content being written or translated) and your key are sent to that one provider, and to no one else. Keys are stored encrypted in your database and are never sent to Zinn Digital®. The "Save and test" button sends one short test request to the provider.
+AI features use the provider you choose, with your own API key. Nothing is sent until you add a key under Settings → AI providers and use an AI feature; then the text the feature needs (for example, the content being written or translated) and your key go to that one provider only. Keys are stored encrypted in your database and are never sent to Zinn Digital®. The "Save and test" button sends one short test request to the provider.
 
 * OpenAI: https://api.openai.com/v1 (terms: https://openai.com/policies/services-agreement/, privacy policy: https://openai.com/policies/privacy-policy/)
 * Anthropic (Claude): https://api.anthropic.com/v1 (terms: https://www.anthropic.com/legal/commercial-terms, privacy policy: https://www.anthropic.com/legal/privacy)
@@ -134,7 +134,7 @@ These services are used only by the Pro edition. Its code is not part of the fre
 
 = Zinn Digital® hosting-customer discount (only on sites Zinn Digital® hosts) =
 
-On a WordPress site hosted by Zinn Digital®, the plugin's screen shows administrators a card offering hosting customers a personal discount code for the Pro edition. Only when an administrator presses the card's button does the site send one request to Zinn Digital® at `https://api.zinndigital.com/v1/wp/pro-discount/<site id>`, containing the plugin's slug, the word `issue` and the administrator's WordPress language, signed with the site's own key. The card reuses only the host and site id of the address the platform writes into wp-config.php (ending in `/v1/wp/plugin-update/<site id>`) and sends nothing there itself. No other site shows the card. The answer is the customer's code and a Freemius checkout link, to which the browser is then sent. Terms: https://zinndigital.com/legal/terms · Privacy policy: https://zinndigital.com/legal/privacy
+On a site hosted by Zinn Digital®, administrators see a card offering a personal Pro discount code. Only when an administrator presses its button does the site send one request to `https://api.zinndigital.com/v1/wp/pro-discount/<site id>`, with the plugin's slug, the word `issue` and the administrator's language, signed with the site's own key. It reuses only the host and site id of the address the platform writes into wp-config.php (ending `/v1/wp/plugin-update/<site id>`) and sends nothing there. No other site shows the card. The answer is the code and a Freemius checkout link, which the browser then opens. Terms: https://zinndigital.com/legal/terms · Privacy policy: https://zinndigital.com/legal/privacy
 
 Figma import (Pro): only when an administrator connects their own Figma personal access token (stored encrypted) and imports a frame, the site calls https://api.figma.com/v1 (me, files/<file>/nodes, files/<file>/images, images/<file>) with that token and downloads the frame's images into the media library from the addresses Figma's API returns (Figma hosts them, for example on `s3.us-west-2.amazonaws.com`). Nothing is sent to Zinn Digital®.
 
@@ -150,9 +150,9 @@ Crypto prices block (Pro). Your site, never your visitors, asks CoinGecko's publ
 
 Reviews block (Pro, only if you set it up under Appearance → Site design → Reviews).
 
-* Google Places API (New): Google's terms do not allow its reviews to be stored, so when a visitor views a page with a Reviews block that shows Google, the visitor's browser asks your site for them and your site requests `https://places.googleapis.com/v1/places/<your place ID>` with your own API key (sent in a header). Each such page view is one request on your key, billed by Google. What is sent: the place ID, your key and the site language; nothing about the visitor. The plugin stores only the place ID. Terms: https://cloud.google.com/maps-platform/terms and https://cloud.google.com/maps-platform/terms/maps-service-terms, privacy policy: https://policies.google.com/privacy
+* Google Places API (New): Google's terms forbid storing its reviews, so when a visitor views a page whose Reviews block shows Google, their browser asks your site, which requests `https://places.googleapis.com/v1/places/<your place ID>` with your own API key (sent in a header). Each such view is one request on your key, billed by Google, sending the place ID, your key and the site language; nothing about the visitor. The plugin stores only the place ID. Terms: https://cloud.google.com/maps-platform/terms and https://cloud.google.com/maps-platform/terms/maps-service-terms, privacy policy: https://policies.google.com/privacy
 
-Age gate and responsible gambling notice (Pro). Both use the visitor's country when your host or CDN provides it in the request (for example Cloudflare's `CF-IPCountry` header); the plugin never looks a country up and sends nothing anywhere to learn it. The age gate remembers the visitor's answer in a cookie on your own site. The notice can link to a national help service (for example GambleAware in the UK), chosen by the visitor's country and your site's language; those are links only, opened by the visitor.
+Age gate and responsible gambling notice (Pro). Both use the visitor's country when your host or CDN puts it in the request (for example Cloudflare's `CF-IPCountry` header); the plugin never looks a country up or sends anything to learn it. The age gate remembers the visitor's answer in a cookie on your own site. The notice can link to a national help service (for example GambleAware in the UK), chosen by the visitor's country and your site's language; those are links only, opened by the visitor.
 
 Adobe Fonts (Pro, off unless you connect it). If you enter an Adobe Fonts kit id under Appearance → Site design → Custom fonts, the plugin requests `https://typekit.com/api/v1/json/kits/<kit id>/published` once when you save it, to read the kit's font names (the request carries only the kit id). From then on your pages, and the editor, load the kit's stylesheet from `https://use.typekit.net/<kit id>.css`, and your visitors' browsers download the fonts from Adobe. Remove the kit id to stop it.
 
@@ -160,11 +160,11 @@ Adobe Fonts (Pro, off unless you connect it). If you enter an Adobe Fonts kit id
 * Terms: https://www.adobe.com/legal/terms.html
 * Privacy policy: https://www.adobe.com/privacy/policy.html
 
-YouTube and Vimeo videos in the video playlist and video gallery blocks (Pro). A page shows each video as a poster image stored on your own site and a play button; nothing is requested from YouTube or Vimeo until a visitor presses play. Then that one video's player is loaded from YouTube's privacy-enhanced domain `https://www.youtube-nocookie.com`, or from `https://player.vimeo.com` with "do not track" set, sending what any embedded video sends (the visitor's IP address and browser details, and the video's ID). The poster images are fetched once, when an author saves a post that uses these blocks (not when a page is viewed): from `https://i.ytimg.com` for YouTube, and for Vimeo the thumbnail address is read from `https://vimeo.com/api/oembed.json` and the image downloaded from `https://i.vimeocdn.com`. Those requests carry only the video's ID. A video given a poster from the media library is never fetched.
+YouTube and Vimeo videos in the video playlist and video gallery blocks (Pro). Each video shows as a poster stored on your site and a play button; nothing is requested from YouTube or Vimeo until a visitor presses play. Then that video's player loads from `https://www.youtube-nocookie.com`, or `https://player.vimeo.com` with "do not track" set, sending what any embed sends (IP address, browser details, video ID). Posters are fetched once, when an author saves the post (never on a page view): from `https://i.ytimg.com` for YouTube; for Vimeo the address is read from `https://vimeo.com/api/oembed.json` and the image downloaded from `https://i.vimeocdn.com`. Those requests carry only the video ID. A video given a poster from the media library is never fetched.
 
 Terms and privacy policies: as for background videos above.
 
-Newsletter signups (Pro, only if you set one up). A Newsletter signup block, or a newsletter form made with an older version, sends the email address a visitor types into it — and nothing else about them — from your server to the service you chose for that form, only when the visitor ticks the consent box and presses the button: Mailchimp (`https://<data centre>.api.mailchimp.com/3.0/`, with the API key you saved) or AWeber (`https://www.aweber.com/scripts/addlead.pl`, which also receives your site's address as the page to return the visitor to). MailPoet runs inside your own site and sends nothing elsewhere.
+Newsletter signups (Pro, only if you set one up). A Newsletter signup block, or an older newsletter form, sends only the email address a visitor types, from your server to the service chosen for that form, and only when the visitor ticks the consent box and presses the button: Mailchimp (`https://<data centre>.api.mailchimp.com/3.0/`, with the API key you saved) or AWeber (`https://www.aweber.com/scripts/addlead.pl`, which also receives your site's address as the page to return the visitor to). MailPoet runs inside your own site and sends nothing elsewhere.
 
 * Mailchimp: terms https://mailchimp.com/legal/terms/, privacy policy https://www.intuit.com/privacy/statement/
 * AWeber: terms https://www.aweber.com/service-agreement.htm, privacy policy https://www.aweber.com/privacy.htm
@@ -215,6 +215,9 @@ The same source and build tools are public at https://github.com/Zinn-Digital/pa
 
 == Changelog ==
 
+= 6.37.18 =
+* Readme tightened to the directory word limit, the kits notice names Zinn Digital® correctly in every language, and the developer hook reference documents pbs_enqueue_scripts.
+
 = 6.37.17 =
 * Dependency security update (Renovate).
 
@@ -242,8 +245,3 @@ The same source and build tools are public at https://github.com/Zinn-Digital/pa
 
 = 6.37.9 =
 * Dependency security update (Renovate).
-
-= 6.37.8 =
-* Dependency security update (Renovate).
-
-The full history of every release is in changelog.txt, in the plugin's folder.

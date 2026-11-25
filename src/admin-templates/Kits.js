@@ -282,7 +282,7 @@ export default function Kits() {
 				</h2>
 				<p>
 					{ __(
-						'Website kits are stored on the Zinn Digital service. This site has not contacted it. If you switch the library on, this site requests the kit list and the kits you import from api.zinndigital.com. Each request sends your language and the plugin name, and your server address is visible to the service as with any web request. Your site address and content are not sent.',
+						'Website kits are stored on the Zinn Digital® service. This site has not contacted it. If you switch the library on, this site requests the kit list and the kits you import from api.zinndigital.com. Each request sends your language and the plugin name, and your server address is visible to the service as with any web request. Your site address and content are not sent.',
 						'page-builder-sandwich'
 					) }
 				</p>
