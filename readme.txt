@@ -7,7 +7,7 @@ Tags: page builder, blocks, footprint, clean html
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.2
-Stable tag: 6.37.18
+Stable tag: 6.37.20
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -215,6 +215,12 @@ The same source and build tools are public at https://github.com/Zinn-Digital/pa
 
 == Changelog ==
 
+= 6.37.20 =
+* Dependency security update (Renovate).
+
+= 6.37.19 =
+* Dependency security update (Renovate).
+
 = 6.37.18 =
 * Readme tightened to the directory word limit, the kits notice names Zinn Digital® correctly in every language, and the developer hook reference documents pbs_enqueue_scripts.
 
@@ -240,8 +246,4 @@ The same source and build tools are public at https://github.com/Zinn-Digital/pa
 = 6.37.11 =
 * Dependency security update (Renovate).
 
-= 6.37.10 =
-* Dependency security update (Renovate).
-
-= 6.37.9 =
-* Dependency security update (Renovate).
+The full history of every release is in changelog.txt, in the plugin's folder.
